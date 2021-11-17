@@ -1,2 +1,2 @@
 # PlatziNotas
-Acá están las notas de las clases de Platzi que voy tomando
+Acá están las notas de los cursos de Platzi que voy tomando

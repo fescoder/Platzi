@@ -8,114 +8,111 @@
 - [Fundamentos de Bases de Datos](#fundamentos-de-bases-de-datos)
   - [Indice](#indice)
   - [Modulo 1. Bienvenida conceptos básicos y contexto histórico de las Bases de Datos](#modulo-1-bienvenida-conceptos-básicos-y-contexto-histórico-de-las-bases-de-datos)
-    - [Clase 1Expert Session: resuelve tus dudas sobre las bases de datos](#clase-1expert-session-resuelve-tus-dudas-sobre-las-bases-de-datos)
-    - [Clase 2 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos](#clase-2-bienvenida-conceptos-básicos-y-contexto-histórico-de-las-bases-de-datos)
+    - [Clase 1 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos](#clase-2-bienvenida-conceptos-básicos-y-contexto-histórico-de-las-bases-de-datos)
       - [Tipos de bases de datos](#tipos-de-bases-de-datos)
       - [Servicios](#servicios)
   - [Modulo 2. Introducción a las bases de datos relacionales](#modulo-2-introducción-a-las-bases-de-datos-relacionales)
-    - [Clase 3 Historia de las RDB (relational data bases)](#clase-3-historia-de-las-rdb-relational-data-bases)
-    - [Clase 4 Entidades y atributos](#clase-4-entidades-y-atributos)
+    - [Clase 2 Historia de las RDB (relational data bases)](#clase-3-historia-de-las-rdb-relational-data-bases)
+    - [Clase 3 Entidades y atributos](#clase-4-entidades-y-atributos)
       - [Atributos](#atributos)
       - [Entidades](#entidades)
-      - [Clase 5 Entidades de Platzi Blog](#clase-5-entidades-de-platzi-blog)
-    - [Clase 6 Relaciones](#clase-6-relaciones)
+      - [Clase 4 Entidades de Platzi Blog](#clase-5-entidades-de-platzi-blog)
+    - [Clase 5 Relaciones](#clase-6-relaciones)
       - [Cardinalidad: 1 a 1](#cardinalidad-1-a-1)
       - [Cardinalidad: 0 a 1](#cardinalidad-0-a-1)
       - [Cardinalidad: 1 a N (1 a muchos)](#cardinalidad-1-a-n-1-a-muchos)
       - [Cardinalidad: 0 a N](#cardinalidad-0-a-n)
-    - [Clase 7 Multiples muchos](#clase-7-multiples-muchos)
-    - [Clase 8 Diagrama ER](#clase-8-diagrama-er)
-    - [Clase 9 Diagrama Físico: tipos de datos y constraints](#clase-9-diagrama-físico-tipos-de-datos-y-constraints)
+    - [Clase 6 Multiples muchos](#clase-7-multiples-muchos)
+    - [Clase 7 Diagrama ER](#clase-8-diagrama-er)
+    - [Clase 8 Diagrama Físico: tipos de datos y constraints](#clase-9-diagrama-físico-tipos-de-datos-y-constraints)
       - [Tipos de dato](#tipos-de-dato)
       - [Constraints (Restricciones)](#constraints-restricciones)
-    - [Clase 10 Diagrama Físico: normalizacion](#clase-10-diagrama-físico-normalizacion)
-    - [Clase 11 Diagrama Físico: normalizando Platziblog](#clase-11-diagrama-físico-normalizando-platziblog)
+    - [Clase 9 Diagrama Físico: normalizacion](#clase-10-diagrama-físico-normalizacion)
+    - [Clase 10 Diagrama Físico: normalizando Platziblog](#clase-11-diagrama-físico-normalizando-platziblog)
       - [Diagram Entidad Relacion](#diagram-entidad-relacion)
       - [Diagrama fisico Paso 1](#diagrama-fisico-paso-1)
       - [Diagrama fisico Paso 2](#diagrama-fisico-paso-2)
       - [Diagrama fisico Paso 3](#diagrama-fisico-paso-3)
-    - [Clase 12 Formas normales en DB relacionales](#clase-12-formas-normales-en-db-relacionales)
+    - [Clase 11 Formas normales en DB relacionales](#clase-12-formas-normales-en-db-relacionales)
       - [Primera Forma Normal (1FN)](#primera-forma-normal-1fn)
       - [Segunda Forma Normal (2FN)](#segunda-forma-normal-2fn)
       - [Tercera Forma Normal (3FN)](#tercera-forma-normal-3fn)
       - [Cuarta Forma Normal (4FN)](#cuarta-forma-normal-4fn)
   - [Modulo 3 RDBMS (MySQL) o cómo hacer lo anterior de manera práctica](#modulo-3-rdbms-mysql-o-cómo-hacer-lo-anterior-de-manera-práctica)
-    - [Clase 13 RDB Qué](#clase-13-rdb-qué)
-    - [Clase 14 Instalación local de un RDBMS (Windows)](#clase-14-instalación-local-de-un-rdbms-windows)
-    - [Clase 15  Instalación local de un RDBMS (Mac)](#clase-15-instalación-local-de-un-rdbms-mac)
-    - [Clase 16 Instalación local de un RDBMS (Ubuntu)](#clase-16-instalación-local-de-un-rdbms-ubuntu)
-    - [Clase 17 Clientes Graficos](#clase-17-clientes-graficos)
-    - [Clase 18 Servicios administrados](#clase-18-servicios-administrados)
+    - [Clase 12 RDB Qué](#clase-13-rdb-qué)
+    - [Clase 13 Instalación local de un RDBMS (Windows)](#clase-14-instalación-local-de-un-rdbms-windows)
+    - [Clase 14  Instalación local de un RDBMS (Mac)](#clase-15-instalación-local-de-un-rdbms-mac)
+    - [Clase 15 Instalación local de un RDBMS (Ubuntu)](#clase-16-instalación-local-de-un-rdbms-ubuntu)
+    - [Clase 16 Clientes Graficos](#clase-17-clientes-graficos)
+    - [Clase 17 Servicios administrados](#clase-18-servicios-administrados)
   - [Modulo 4 SQL hasta en la sopa](#modulo-4-sql-hasta-en-la-sopa)
-    - [Clase 19 Historia de SQL](#clase-19-historia-de-sql)
-    - [Clase 20 DDL create](#clase-20-ddl-create)
-    - [Clase 21 CREATE VIEW y DDL ALTER](#clase-21-create-view-y-ddl-alter)
+    - [Clase 18 Historia de SQL](#clase-19-historia-de-sql)
+    - [Clase 19 DDL create](#clase-20-ddl-create)
+    - [Clase 20 CREATE VIEW y DDL ALTER](#clase-21-create-view-y-ddl-alter)
       - [Create view](#create-view)
       - [Alter Table](#alter-table)
       - [Drop Column Borrando una columna](#drop-column-borrando-una-columna)
-    - [Clase 22 DDL drop](#clase-22-ddl-drop)
-    - [Clase 23 DML](#clase-23-dml)
+    - [Clase 21 DDL drop](#clase-22-ddl-drop)
+    - [Clase 22 DML](#clase-23-dml)
       - [Insert](#insert)
       - [Update](#update)
       - [Delete](#delete)
       - [Select](#select)
-    - [Clase 24 Que tan standard es SQL](#clase-24-que-tan-standard-es-sql)
-    - [Clase 25 Creando Platziblog: tablas independientes](#clase-25-creando-platziblog-tablas-independientes)
-    - [Clase 26 Creando Platziblog: tablas transitivas](#clase-26-creando-platziblog-tablas-transitivas)
-    - [Clase 27 Creando Platziblog: tablas transitivas](#clase-27-creando-platziblog-tablas-transitivas)
+    - [Clase 23 Que tan standard es SQL](#clase-24-que-tan-standard-es-sql)
+    - [Clase 24 Creando Platziblog: tablas independientes](#clase-25-creando-platziblog-tablas-independientes)
+    - [Clase 25 Creando Platziblog: tablas transitivas](#clase-26-creando-platziblog-tablas-transitivas)
+    - [Clase 26 Creando Platziblog: tablas transitivas](#clase-27-creando-platziblog-tablas-transitivas)
       - [Reverse Engineer](#reverse-engineer)
-    - [Clase 28 Por qué las consultas son tan importantes](#clase-28-por-qué-las-consultas-son-tan-importantes)
-    - [Clase 29 Estructura básica de un Query](#clase-29-estructura-básica-de-un-query)
+    - [Clase 27 Por qué las consultas son tan importantes](#clase-28-por-qué-las-consultas-son-tan-importantes)
+    - [Clase 28 Estructura básica de un Query](#clase-29-estructura-básica-de-un-query)
       - [Primer Consulta](#primer-consulta)
-    - [Clase 30 SELECT](#clase-30-select)
-    - [Clase 31 FROM](#clase-31-from)
-    - [Clase 32 Utilizando la sentencia FROM](#clase-32-utilizando-la-sentencia-from)
-    - [Clase 33 WHERE](#clase-33-where)
-    - [Clase 34 Utilizando la sentencia WHERE nulo y no nulo](#clase-34-utilizando-la-sentencia-where-nulo-y-no-nulo)
-    - [Clase 35 GROUP BY](#clase-35-group-by)
-    - [Clase 36 ORDER BY y HAVING](#clase-36-order-by-y-having)
-    - [Clase 37 El interminable agujero de conejo (Nested queries)](#clase-37-el-interminable-agujero-de-conejo-nested-queries)
-    - [Clase 38 Como convertir una pregunta en un query SQL](#clase-38-como-convertir-una-pregunta-en-un-query-sql)
+    - [Clase 29 SELECT](#clase-30-select)
+    - [Clase 30 FROM](#clase-31-from)
+    - [Clase 31 Utilizando la sentencia FROM](#clase-32-utilizando-la-sentencia-from)
+    - [Clase 32 WHERE](#clase-33-where)
+    - [Clase 33 Utilizando la sentencia WHERE nulo y no nulo](#clase-34-utilizando-la-sentencia-where-nulo-y-no-nulo)
+    - [Clase 34 GROUP BY](#clase-35-group-by)
+    - [Clase 35 ORDER BY y HAVING](#clase-36-order-by-y-having)
+    - [Clase 36 El interminable agujero de conejo (Nested queries)](#clase-37-el-interminable-agujero-de-conejo-nested-queries)
+    - [Clase 37 Como convertir una pregunta en un query SQL](#clase-38-como-convertir-una-pregunta-en-un-query-sql)
       - [De pregunta a Query](#de-pregunta-a-query)
-    - [Clase 39 Preguntandole a la base de datos](#clase-39-preguntandole-a-la-base-de-datos)
-    - [Clase 40 Consultando PlatziBlog](#clase-40-consultando-platziblog)
+    - [Clase 38 Preguntandole a la base de datos](#clase-39-preguntandole-a-la-base-de-datos)
+    - [Clase 39 Consultando PlatziBlog](#clase-40-consultando-platziblog)
   - [Modulo 4 Introduccion a la bases de datos NO relacionales](#modulo-4-introduccion-a-la-bases-de-datos-no-relacionales)
-    - [Clase 41 Que son y cuales son los tipos de bases de datos no relacionales](#clase-41-que-son-y-cuales-son-los-tipos-de-bases-de-datos-no-relacionales)
+    - [Clase 40 Que son y cuales son los tipos de bases de datos no relacionales](#clase-41-que-son-y-cuales-son-los-tipos-de-bases-de-datos-no-relacionales)
       - [Tipos de bases de datos no relacionales:](#tipos-de-bases-de-datos-no-relacionales)
-    - [Clase 42 Servicios administrados y jerarquía de datos](#clase-42-servicios-administrados-y-jerarquía-de-datos)
+    - [Clase 41 Servicios administrados y jerarquía de datos](#clase-42-servicios-administrados-y-jerarquía-de-datos)
   - [Modulo 5 Manejo de modelos de datos en bases de datos no relacionales](#modulo-5-manejo-de-modelos-de-datos-en-bases-de-datos-no-relacionales)
-    - [Clase 43 Top level collection con Firebase](#clase-43-top-level-collection-con-firebase)
-    - [Clase 44 Creando y borrando documentos en Firestore](#clase-44-creando-y-borrando-documentos-en-firestore)
-    - [Clase 45 Colecciones vs subcolecciones](#clase-45-colecciones-vs-subcolecciones)
-    - [Clase 46 Recreando Platziblog](#clase-46-recreando-platziblog)
-    - [Clase 47 Construyendo Platziblog en Firestore](#clase-47-construyendo-platziblog-en-firestore)
-    - [Clase 48 Proyecto final: transformando tu proyecto en una db no relacional](#clase-48-proyecto-final-transformando-tu-proyecto-en-una-db-no-relacional)
+    - [Clase 42 Top level collection con Firebase](#clase-43-top-level-collection-con-firebase)
+    - [Clase 43 Creando y borrando documentos en Firestore](#clase-44-creando-y-borrando-documentos-en-firestore)
+    - [Clase 44 Colecciones vs subcolecciones](#clase-45-colecciones-vs-subcolecciones)
+    - [Clase 45 Recreando Platziblog](#clase-46-recreando-platziblog)
+    - [Clase 46 Construyendo Platziblog en Firestore](#clase-47-construyendo-platziblog-en-firestore)
+    - [Clase 47 Proyecto final: transformando tu proyecto en una db no relacional](#clase-48-proyecto-final-transformando-tu-proyecto-en-una-db-no-relacional)
       - [Regla 1. Piensa en la vista de tu aplicación](#regla-1-piensa-en-la-vista-de-tu-aplicación)
   - [Modulo 6 Bases de datos en la vida real](#modulo-6-bases-de-datos-en-la-vida-real)
-    - [Clase 49 Bases de datos en la vida real](#clase-49-bases-de-datos-en-la-vida-real)
-    - [Clase 50 Big Data](#clase-50-big-data)
-    - [Clase 51 Data warehouse](#clase-51-data-warehouse)
-    - [Clase 52 Data mining](#clase-52-data-mining)
-    - [Clase 53 ETL](#clase-53-etl)
-    - [Clase 54 Business intelligence](#clase-54-business-intelligence)
-    - [Clase 55 Machine Learning](#clase-55-machine-learning)
-    - [Clase 56 Data Science](#clase-56-data-science)
-    - [Clase 57 Por que aprender bases de datos hoy](#clase-57-por-que-aprender-bases-de-datos-hoy)
+    - [Clase 48 Bases de datos en la vida real](#clase-49-bases-de-datos-en-la-vida-real)
+    - [Clase 49 Big Data](#clase-50-big-data)
+    - [Clase 50 Data warehouse](#clase-51-data-warehouse)
+    - [Clase 51 Data mining](#clase-52-data-mining)
+    - [Clase 52 ETL](#clase-53-etl)
+    - [Clase 53 Business intelligence](#clase-54-business-intelligence)
+    - [Clase 54 Machine Learning](#clase-55-machine-learning)
+    - [Clase 55 Data Science](#clase-56-data-science)
+    - [Clase 56 Por que aprender bases de datos hoy](#clase-57-por-que-aprender-bases-de-datos-hoy)
   - [Bonus](#bonus)
-    - [Clase 58 Bases de datos relacionales vs no relacionales](#clase-58-bases-de-datos-relacionales-vs-no-relacionales)
+    - [Clase 57 Bases de datos relacionales vs no relacionales](#clase-58-bases-de-datos-relacionales-vs-no-relacionales)
 
 ## Modulo 1. Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
 
-### Clase 1Expert Session: resuelve tus dudas sobre las bases de datos
-
-![1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg](src/1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg)
-
-### Clase 2 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
+### Clase 1 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
 
 Tu profesor será Israel Vázquez, senior web developer en San Francisco, seminarista de bases de datos y entusiasta data engineering.
 El almacenamiento en la nube tiene un gran pro comparada con los otros métodos de almacenamiento ya que es accesible desde cualquier parte del mundo. Además es centralizada y puede ser usada por varias personas al mismo tiempo.
 
 Las bases de datos entran cuando hacemos la transición a medios digitales.
+
+![1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg](src/1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg)
 
 #### Tipos de bases de datos
 
@@ -129,7 +126,7 @@ Las bases de datos entran cuando hacemos la transición a medios digitales.
 
 ## Modulo 2. Introducción a las bases de datos relacionales
 
-### Clase 3 Historia de las RDB (relational data bases)
+### Clase 2 Historia de las RDB (relational data bases)
 
 Las bases de datos surgen de la necesidad de conservar la información más allá de lo que existe en la memoria RAM.
 
@@ -201,7 +198,7 @@ b) El esquema lógico es el mismo independientemente de si la BD es distribuida 
 **Regla 12:** La regla de la no subversión.
 a) La base de datos no permitirá que exista un lenguaje o forma de acceso, que permita saltarse las reglas anteriores.
 
-### Clase 4 Entidades y atributos
+### Clase 3 Entidades y atributos
 
 Una **entidad** es algo similar a un objeto (programación orientada a objetos) y representa algo en el mundo real, incluso algo abstracto. Tienen atributos que son las cosas que los hacen ser una entidad, se diagraman dentro de cuadrados  y **por convención se ponen en plural**.
 
@@ -240,10 +237,10 @@ Las entidades debiles pueden serlo por dos motivos:
 ![3_Entidades_y_atributos_01.jpg](src/3_Entidades_y_atributos_01.jpg)
 ![3_Entidades_y_atributos_02.jpg](src/3_Entidades_y_atributos_02.jpg)
 ![3_Entidades_y_atributos_03.jpg](src/3_Entidades_y_atributos_03.jpg)
-![3_Entidades_y_atributos_04.jpg](src/3_Entidades_y_atributos_04.jpg)
+![3_Entidades_y_atributos_04.png](src/3_Entidades_y_atributos_04.png)
 ![3_Entidades_y_atributos_05.jpg](src/3_Entidades_y_atributos_05.jpg)
 
-#### Clase 5 Entidades de Platzi Blog
+#### Clase 4 Entidades de Platzi Blog
 
 Nuestro proyecto será un manejador de Blogpost. Es un contexto familiar y nos representará retos muy interesantes.
 
@@ -257,7 +254,7 @@ Nuestro proyecto será un manejador de Blogpost. Es un contexto familiar y nos r
 
 ![src/entidades_platziblog_3.png](src/entidades_platziblog_3.png)
 
-### Clase 6 Relaciones
+### Clase 5 Relaciones
 
 Las **relaciones** nos permiten ligar o unir nuestras diferentes entidades y se representan con rombos. Por convención se definen a través de verbos.
 
@@ -294,19 +291,19 @@ Un automóvil tiene N automóviles, pero 1 automóvil solo tiene 1 dueño.
 
 ![src/33333333333333333333333333333333333333333333333333333333333333333333.png](src/cardinalidad_0_N.png)
 
-### Clase 7 Multiples muchos
+### Clase 6 Multiples muchos
 
 Este tipo de cardinalidad es muy interesante por ello su clase aparte,se vera cuando veamos los campos clave.
 
 Cardinalidad: N a N
 
-### Clase 8 Diagrama ER
+### Clase 7 Diagrama ER
 
 Un diagrama es como un mapa y nos ayuda a entender cuáles son las entidades con las que vamos a trabajar, cuáles son sus relaciones y qué papel van a jugar en las aplicaciones de la base de datos.
 
 ![src/diagrama_ER.png](src/diagrama_ER.png)
 
-### Clase 9 Diagrama Físico: tipos de datos y constraints
+### Clase 8 Diagrama Físico: tipos de datos y constraints
 
 Para llevar a la práctica un diagrama debemos ir más allá y darle detalle con parámetros como:
 
@@ -331,7 +328,7 @@ Char(8) reserva 8 espacios en memoria de forma fija, Varchar(8) hace lo mismo pe
 **- DEFAULT:** Coloca un valor por defecto cuando no hay un valor especificado
 **- INDEX:** Se crea por columna para permitir búsquedas más rápidas, tiene la desventaja de que tiene que reindexar los registros cada vez, lo que vuelve muy lenta la operación de la bd.
 
-### Clase 10 Diagrama Físico: normalizacion
+### Clase 9 Diagrama Físico: normalizacion
 
 La normalización como su nombre lo indica nos ayuda a dejar todo de una forma normal. Esto obedece a las 12 reglas de Codd y nos permiten separar componentes en la base de datos:
 
@@ -358,7 +355,7 @@ La normalización como su nombre lo indica nos ayuda a dejar todo de una forma n
 
 ![src/diagrama_fisico_4N.png](src/diagrama_fisico_4N.png)
 
-### Clase 11 Diagrama Físico: normalizando Platziblog
+### Clase 10 Diagrama Físico: normalizando Platziblog
 
 #### Diagram Entidad Relacion
 
@@ -368,7 +365,7 @@ La normalización como su nombre lo indica nos ayuda a dejar todo de una forma n
 
 Generar los campos básicos de cada entidad
 
-![src/Diagrama_Fisico_paso_1.png](src/Diagrama_Fisico_paso_1.png)
+![src/diagrama_fisico_paso_1.png](src/diagrama_fisico_paso_1.png)
 
 #### Diagrama fisico Paso 2
 
@@ -386,7 +383,7 @@ Para manejar las relaciones muchos a muchos, es necesario generar una tabla inte
 
 Observa que post_id y etiqueta_id usan llaves compuestas para hacer combinaciones únicas, o podemos generar también la forma anterior con un id
 
-### Clase 12 Formas normales en DB relacionales
+### Clase 11 Formas normales en DB relacionales
 
 La normalización en las bases de datos relacionales es uno de esos temas que, por un lado es sumamente importante y por el otro suena algo esotérico. Vamos a tratar de entender las formas normales (FN) de una manera simple para que puedas aplicarlas en tus proyectos profesionales.
 
@@ -459,11 +456,11 @@ Algunos autores precisan una 5FN que hace referencia a que después de realizar 
 
 ## Modulo 3 RDBMS (MySQL) o cómo hacer lo anterior de manera práctica
 
-### Clase 13 RDB Qué
+### Clase 12 RDB Qué
 
 **RDBMS** significa Relational Database Management System o sistema manejador de bases de datos relacionales. Es un programa que se encarga de seguir las reglas de Codd y se puede utilizar de manera programática.
 
-### Clase 14 Instalación local de un RDBMS (Windows)
+### Clase 13 Instalación local de un RDBMS (Windows)
 
 Hay dos maneras de acceder a manejadores de bases de datos:
 
@@ -488,7 +485,7 @@ Procedimiento:
 ![Instalador_mysql_2](src/Instalador_mysql_2.png)
 ![Instalador_mysql_3](src/Instalador_mysql_3.png)
 
-### Clase 15  Instalación local de un RDBMS (Mac)
+### Clase 14  Instalación local de un RDBMS (Mac)
 
 La instalación es similar al todos los instaladores en mac, descarga el archivo .dmg
 
@@ -498,7 +495,7 @@ Para macOS debes descargar workbench aparte.
 
 <https://dev.mysql.com/downloads/mysql/5.7.html>
 
-### Clase 16 Instalación local de un RDBMS (Ubuntu)
+### Clase 15 Instalación local de un RDBMS (Ubuntu)
 
 Visita la dirección de descarga de la versión de comunidad de MySql
 <https://dev.mysql.com/downloads/mysql/5.7.html#downloads>
@@ -509,7 +506,7 @@ Los pasos son similares a los otros sistemas, descarga el paquete .deb, también
 
 sudo apt-get install mysql-server
 
-### Clase 17 Clientes Graficos
+### Clase 16 Clientes Graficos
 
 Observamos el preview y pasos para crear un schema en Mysql workbench
 
@@ -519,7 +516,7 @@ Observamos el preview y pasos para crear un schema en Mysql workbench
 
 ![worckbench_3](src/worckbench_3.png)
 
-### Clase 18 Servicios administrados
+### Clase 17 Servicios administrados
 
 Hoy en día muchas empresas ya no tienen instalados en sus servidores los RDBMS sino que los contratan a otras personas. Estos servicios administrados cloud te permiten concentrarte en la base de datos y no en su administración y actualización.
 
@@ -527,7 +524,7 @@ Introducción a google cloud, toma el curso para configurarlo.
 
 ## Modulo 4 SQL hasta en la sopa
 
-### Clase 19 Historia de SQL
+### Clase 18 Historia de SQL
 
 **SQL** significa Structured Query Language y tiene una estructura clara y fija. Su objetivo es hacer un solo lenguaje para consultar cualquier manejador de bases de datos volviéndose un gran estándar.
 
@@ -535,7 +532,7 @@ Ahora existe el **NOSQL** o Not Only Structured Query Language que significa que
 
 ![18_Historia_de_SQL_01.jpg](src/18_Historia_de_SQL_01.jpg)
 
-### Clase 20 DDL create
+### Clase 19 DDL create
 
 ![19_DDL_create_01.png](src/19_DDL_create_01.png)
 
@@ -575,7 +572,7 @@ El creamos con workbench la tabla anterior, definimos  cada uno de los campos de
 
 ![worckbench_new_table_3.png](src/worckbench_new_table_3.png)
 
-### Clase 21 CREATE VIEW y DDL ALTER
+### Clase 20 CREATE VIEW y DDL ALTER
 
 #### Create view
 
@@ -621,7 +618,7 @@ Click derecho y deled selected
 
 !![drop_column_1](src/drop_column_2.png)
 
-### Clase 22 DDL drop
+### Clase 21 DDL drop
 
 Está puede ser la sentencia ¡más peligrosa! (????), sobre todo cuando somos principiantes. Básicamente borra o desaparece de nuestra base de datos algún elemento.
 
@@ -647,7 +644,7 @@ Pasos para borrar la base de datos o schema
 
 Nota: las herramientas del DDL se utilizan mayormente en la fase de construcción y mantenimiento de las bases de datos, la manipulación u operación se hace con DML.
 
-### Clase 23 DML
+### Clase 22 DML
 
 **DML** trata del contenido de la base de datos. Son las siglas de Data Manipulation Language y sus comandos son:
 
@@ -708,7 +705,7 @@ SELECT first_name, last_name FROM people;
 
 ![select_command_1.png](src/select_command_1.png)
 
-### Clase 24 Que tan standard es SQL
+### Clase 23 Que tan standard es SQL
 
 La utilidad más grande de SQL fue unificar la forma en la que pensamos y hacemos preguntas a un repositorio de datos. Ahora que nacen nuevas bases de datos igualmente siguen tomando elementos de SQL.
 
@@ -769,7 +766,7 @@ DROP TABLE people;
 
 El DDL y DML en ambos  motores de bases de datos es estandar, cambian solo funciones internas.
 
-### Clase 25 Creando Platziblog: tablas independientes
+### Clase 24 Creando Platziblog: tablas independientes
 
 - Una buena práctica es comenzar creando las entidades que no tienen una llave foránea.
 - Generalmente en los nombres de bases de datos se evita usar eñes o acentos para evitar problemas en los manejadores de las bases de datos.
@@ -779,7 +776,7 @@ El DDL y DML en ambos  motores de bases de datos es estandar, cambian solo funci
 Creamos el schema `platziblog` y seleccionamos como default y creamos las siguientes tablas
 
 - categorías
-  
+
 ![platziblog_tabla_etiquetas_1](src/platziblog_tabla_caracteristicas_1.png)
 
 ![platziblog_tabla_caracteristicas_2](src/platziblog_tabla_caracteristicas_2.png)
@@ -796,7 +793,7 @@ Tabla Usuarios
 
 ![platziblog_tabla_usuarios_2.png](src/platziblog_tabla_usuarios_2.png)
 
-### Clase 26 Creando Platziblog: tablas transitivas
+### Clase 25 Creando Platziblog: tablas transitivas
 
 Creando Platziblog: tablas dependientes
 El comando **“cascade”** sirve para que cada que se haga un update en la tabla principal, se refleje también en la tabla en la que estamos creando la relación.
@@ -815,7 +812,7 @@ Asignamos la llave foranea del usuario_id
 
 ![platziblog_tabla_post_fk_categorias_id_1.png](src/platziblog_tabla_post_fk_categorias_id_1.png)
 
-### Clase 27 Creando Platziblog: tablas transitivas
+### Clase 26 Creando Platziblog: tablas transitivas
 
 - Las tablas transitivas sirven como puente para unir dos tablas. No tienen contenido semántico.
 
@@ -878,12 +875,12 @@ Seleccionamos la opción Database para acceder a reverse engineer
 
 ![reverse_engineer_7](src/reverse_engineer_7.png)
 
-### Clase 28 Por qué las consultas son tan importantes
+### Clase 27 Por qué las consultas son tan importantes
 
 Las consultas o queries a una base de datos son una parte fundamental ya que esto podría salvar un negocio o empresa.
 Alrededor de las consultas a las bases de datos se han creado varias especialidades como ETL o transformación de datos, business intelligence e incluso machine learning.
 
-### Clase 29 Estructura básica de un Query
+### Clase 28 Estructura básica de un Query
 
 Los queries son la forma en la que estructuramos las preguntas que se harán a la base de datos. Transforma preguntas en sintaxis.
 
@@ -1131,7 +1128,7 @@ FROM posts
 WHERE fecha_publicacion < '2024'
 ```
 
-### Clase 30 SELECT
+### Clase 29 SELECT
 
 **SELECT** se encarga de proyectar o mostrar datos.
 
@@ -1171,7 +1168,7 @@ SELECT COUNT(*) AS numero_post
 FROM posts;
 ```
 
-### Clase 31 FROM
+### Clase 30 FROM
 
 **FROM** indica de dónde se deben traer los datos y puede ayudar a hacer sentencias y filtros complejos cuando se quieren unir tablas. La sentencia compañera que nos ayuda con este proceso es **JOIN**.
 
@@ -1181,7 +1178,7 @@ Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde
 
 ![teoria_conjuntos_sentencias](src/teoria_conjuntos_sentencias.jpg)
 
-### Clase 32 Utilizando la sentencia FROM
+### Clase 31 Utilizando la sentencia FROM
 
 Comandos de la clase
 
@@ -1253,7 +1250,7 @@ FROM usuarios
 WHERE posts.usuario_id IS NULL;
 ```
 
-### Clase 33 WHERE
+### Clase 32 WHERE
 
 **WHERE** es la sentencia que nos ayuda a filtrar tuplas o registros dependiendo de las características que elegimos.
 
@@ -1349,7 +1346,7 @@ FROM posts
 WHERE MONTH(fecha_publicacion) = "04";
 ```
 
-### Clase 34 Utilizando la sentencia WHERE nulo y no nulo
+### Clase 33 Utilizando la sentencia WHERE nulo y no nulo
 
 El valor nulo en una tabla generalmente es su valor por defecto cuando nadie le asignó algo diferente. La sintaxis para hacer búsquedas de datos nulos es **IS NULL**. La sintaxis para buscar datos que no son nulos es **IS NOT NULL**
 
@@ -1385,7 +1382,7 @@ WHERE usuario_id IS NOT NULL
 
 ```
 
-### Clase 35 GROUP BY
+### Clase 34 GROUP BY
 
 **GROUP BY** tiene que ver con agrupación. Indica a la base de datos qué criterios debe tener en cuenta para agrupar.
 
@@ -1425,7 +1422,7 @@ GROUP BY estatus, post_month
 ;
 ```
 
-### Clase 36 ORDER BY y HAVING
+### Clase 35 ORDER BY y HAVING
 
 La sentencia **ORDER BY** tiene que ver con el ordenamiento de los datos dependiendo de los criterios que quieras usar.
 
@@ -1491,7 +1488,7 @@ ORDER BY post_month
 ;
 ```
 
-### Clase 37 El interminable agujero de conejo (Nested queries)
+### Clase 36 El interminable agujero de conejo (Nested queries)
 
 Los **Nested queries** significan que dentro de un query podemos hacer otro query. Esto sirve para hacer join de tablas, estando una en memoria. También teniendo un query como condicional del otro.
 
@@ -1522,7 +1519,7 @@ FROM posts
 );
 ```
 
-### Clase 38 Como convertir una pregunta en un query SQL
+### Clase 37 Como convertir una pregunta en un query SQL
 
 #### De pregunta a Query
 
@@ -1535,7 +1532,7 @@ FROM posts
 
 
 
-### Clase 39 Preguntandole a la base de datos
+### Clase 38 Preguntandole a la base de datos
 
 **GROUP_CONCAT** toma el resultado del query y lo pone como campo separado por comas.
 
@@ -1580,7 +1577,7 @@ WHERE posts_etiquetas.etiqueta_id IS NULL
 ;
 ```
 
-### Clase 40 Consultando PlatziBlog
+### Clase 39 Consultando PlatziBlog
 
 Puedes usar una abreviación para evitar escribir lo mismo cada vez.
 Ejemplo:
@@ -1625,14 +1622,14 @@ Que usuarios no han escrito nada
 ```sql
 SELECT *
 FROM usuarios
-  LEFT JOIN posts ON usuarios.id = posts.usuario_id 
+  LEFT JOIN posts ON usuarios.id = posts.usuario_id
 WHERE posts.usuario_id IS NULL
 ;
 ```
 
 ## Modulo 4 Introduccion a la bases de datos NO relacionales
 
-### Clase 41 Que son y cuales son los tipos de bases de datos no relacionales
+### Clase 40 Que son y cuales son los tipos de bases de datos no relacionales
 
 Respecto a las bases de datos no relacionales, no existe un solo tipo aunque se engloben en una sola categoría.
 
@@ -1646,7 +1643,7 @@ Respecto a las bases de datos no relacionales, no existe un solo tipo aunque se 
 
 Cada base de datos de este tipo soluciona un problema en particular, pero es mala para todo lo demas dada la gran cantidad de datos.
 
-### Clase 42 Servicios administrados y jerarquía de datos
+### Clase 41 Servicios administrados y jerarquía de datos
 
 **Firebase** es un servicio de Google donde puedes tercerizar muchos elementos en la nube.
 **Jerarquía de datos**:
@@ -1659,7 +1656,7 @@ Cada base de datos de este tipo soluciona un problema en particular, pero es mal
 
 ## Modulo 5 Manejo de modelos de datos en bases de datos no relacionales
 
-### Clase 43 Top level collection con Firebase
+### Clase 42 Top level collection con Firebase
 
 El modelo de bases de datos no relacionales es un poco más cercano al mundo real en su comportamiento.
 
@@ -1690,7 +1687,7 @@ Para crear una Top level collection (las que estan a nivel de la ruta principal)
 
 ![firebase_intro_7](src/firebase_intro_7.png)
 
-### Clase 44 Creando y borrando documentos en Firestore
+### Clase 43 Creando y borrando documentos en Firestore
 
 Jugamos con la interface observamos los tipos de datos:
 
@@ -1711,7 +1708,7 @@ Ejemplos
 
 ![firebase_tipos_datos_4](src/firebase_tipos_datos_4.png)
 
-### Clase 45 Colecciones vs subcolecciones
+### Clase 44 Colecciones vs subcolecciones
 
 La particularidad de las top level collections es que existen en el primer nivel de manera intrínseca. Las subcolecciones ya no vivirán al inicio de la base de datos.
 
@@ -1731,7 +1728,7 @@ Creamos la coleccion posts
 
 ![colecciones_vs_subcolecciones_6](src/colecciones_vs_subcolecciones_6.png)
 
-### Clase 46 Recreando Platziblog
+### Clase 45 Recreando Platziblog
 
 Firestore, es una base de datos basada en documentos, pensada en lo siguiente:
 
@@ -1739,7 +1736,7 @@ Mantener el estado de tu aplicación.
 En como se verán reflejados los datos en el frontend para el usuario.
 Podemos hacer consultas sencillas en base a las top level collecttion. Ahora si queremos hacer consultas mas complejas podríamos usar big query, que es un data wharehouse.
 
-### Clase 47 Construyendo Platziblog en Firestore
+### Clase 46 Construyendo Platziblog en Firestore
 
 Construimos categorias "espectaculos","deportes" y "ciencia" como top level collection
 
@@ -1773,7 +1770,7 @@ Finalmente agregamos las subcolecciones etiquetas a los posts en agregar colecci
 
 ![Platziblog_firebase_10](src/Platziblog_firebase_10.png)
 
-### Clase 48 Proyecto final: transformando tu proyecto en una db no relacional
+### Clase 47 Proyecto final: transformando tu proyecto en una db no relacional
 
 Dentro de las bases de datos relacionales tenemos diferentes niveles de datos. En primer lugar tenemos las Bases de Datos o Esquemas como repositorios donde vivirán los datos que nos interesa guardar. Dentro del esquema existen las Tablas que provienen del concepto de entidades; y a su vez dentro de las tablas tenemos las tuplas o renglones.
 
@@ -1809,7 +1806,7 @@ Experimenta aplicando estas dos reglas a un proyecto que ya conozcas en una base
 
 ## Modulo 6 Bases de datos en la vida real
 
-### Clase 49 Bases de datos en la vida real
+### Clase 48 Bases de datos en la vida real
 
 Para datos historicos, queries complejos usar bigquery optimizado para datawherehouse
 
@@ -1817,7 +1814,7 @@ Para datos del estado de nuestra aplicacion usa colecciones con mongo o firebase
 
 Puedes usar dos bases de datos en un mismo proyecto, guardar datos de mongo, convertirlos pasarlos a bigquery y hacer analisis sobre ellos.
 
-### Clase 50 Big Data
+### Clase 49 Big Data
 
 **Big Data** es un concepto que nace de la necesidad de manejar grandes cantidades de datos. La tendencia comenzó con compañías como **YouTube** al tener la necesidad de guardar y consultar mucha información de manera rápida.
 
@@ -1825,7 +1822,7 @@ Es un gran movimiento que consiste en el uso de diferentes tipos de bases de dat
 
 Un ejemplo  es cassandra pero tiene ciertos tipos de desventaja, su ventaja manejar datos masivos a gran velocidad
 
-### Clase 51 Data warehouse
+### Clase 50 Data warehouse
 
 **Data Warehouse** trata de guardar cantidades masivas de datos para la posteridad. Allí se guarda todo lo que no está viviendo en la aplicación pero es necesario tenerlo.
 Debe servir para guardar datos por un largo periodo de tiempo y estos datos se deben poder usar para poder encontrar cuestiones interesantes para el negocio.
@@ -1839,21 +1836,21 @@ Google usa **BigTable**, usa una sola tabla, pero no sirve tanto para hacer cons
 
 BigQuery es muy utilizado
 
-### Clase 52 Data mining
+### Clase 51 Data mining
 
 El **Data Mining** se dedica a minar datos, a extraerlos de donde sea que estén (archivos muertos, base de datos actual, etc…) y hacer sentido de ellos para darles un uso.
 
-### Clase 53 ETL
+### Clase 52 ETL
 
 **ETL** son las siglas de Extract, Transform, Load (extraer, transformar y cargar). Se trata de tomar datos de archivos muertos y convertirlos en algo que sea de utilidad para el negocio.
 También ayuda a tomar los datos vivos de la aplicación, transformarlos y guardarlos en un data warehouse periódicamente.
 
-### Clase 54 Business intelligence
+### Clase 53 Business intelligence
 
 **Business Intelligence** es una parte muy importante de las carreras de datos ya que es el punto final del manejo de estos. Su razón de ser es tener la información lista, clara y que tenga todos los elementos para tomar decisiones en una empresa.
 Es necesario tener una buena sensibilidad por entender el negocio, sus necesidades y la información que puede llevar a tomar decisiones en el momento adecuado al momento de realizar business intelligence.
 
-### Clase 55 Machine Learning
+### Clase 54 Machine Learning
 
 **Machine Learning** tiene significados que varían. Es una serie de técnicas que involucran la inteligencia artificial y la detección de patrones.
 Machine learning para datos tiene un gran campo de acción y es un paso más allá del business intelligence.
@@ -1864,11 +1861,11 @@ Nos ayuda a hacer modelos que encuentran patrones fortuitos encontrando correlac
 - Clasificación
 - Predicción
 
-### Clase 56 Data Science
+### Clase 55 Data Science
 
 **Data Science** es aplicar todas las técnicas de procesamiento de datos. En su manera más pura tiene que ver con gente con un background de estadísticas y ciencias duras.
 
-### Clase 57 Por que aprender bases de datos hoy
+### Clase 56 Por que aprender bases de datos hoy
 
 ¡Has concluido el curso! Ahora tienes potentes herramientas y posibilidades para ingresar en este apasionante campo.
 
@@ -1880,7 +1877,7 @@ Recuerda practicar mucho con el proyecto. Te invito a que tomes el examen y veri
 
 ## Bonus
 
-### Clase 58 Bases de datos relacionales vs no relacionales
+### Clase 57 Bases de datos relacionales vs no relacionales
 
 Las bases de datos relacionales han estado entre nosotros durante un largo tiempo y han sido usadas por grandes como Google, Amazon, entre otros. Aún son usadas por bancos, aseguradoras, etc.
 

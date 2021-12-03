@@ -525,7 +525,11 @@ Introducción a google cloud, toma el curso para configurarlo.
 
 Ahora existe el **NOSQL** o Not Only Structured Query Language que significa que no sólo se utiliza SQLen las bases de datos no relacionales.
 
+![18_Historia_de_SQL_01.jpg](src/18_Historia_de_SQL_01.jpg)
+
 ### Clase 20 DDL create
+
+![19_DDL_create_01.png](src/19_DDL_create_01.png)
 
 SQL tiene dos grandes sublenguajes:
 

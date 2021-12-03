@@ -705,6 +705,18 @@ SELECT first_name, last_name FROM people;
 
 ![select_command_1.png](src/select_command_1.png)
 
+Nota comentario: Para evitar borrar cualquier dato sin querer por ejemplo borrar todos los datos de una tabla es importante hacer uso de BEGIN TRAN NOMBRE_DE_LA_TRANSACCION
+
+La sentencia que se utiliza para indicar el comienzo de una transacción es BEGIN TRAN. Si alguna de las operaciones de una transacción falla hay que deshacer la transacción en su totalidad para volver al estado inicial en el que estaba la base de datos antes de empezar. Esto se consigue con la sentencia ROLLBACK TRAN
+
+Si todas las operaciones de una transacción se completan con éxito hay que marcar el fin de una transacción para que la base de datos vuelva a estar en un estado consistente con la sentencia COMMIT TRAN
+
+En vez de ejecutar DELETE FROM CLIENTES que borra todos los registros de la Tabla CLIENTES puedes ejecutar BEGIN TRAN TRANCLIENTE DELETE FROM CLIENTES que hace lo mismo pero no asegura los cambios en la base de datos. Si al realizar una consulta de verificación y darte cuenta que eliminaste todos los datos de la tabla puedes deshacer la operación con ROLLBACK TRAN TRANCLIENTE o si quieres confirmar que el DELETE fue realizado correctamente usas COMMIT TRAN TRANCLIENTE para confimar los datos y asentar los cambios en la base de datos.
+
+Cerrar el motor de base de datos (en mi caso SQL SERVER) elimina las transacciones en memoria que no se hayan confirmado (lo mismo que ROLLBACK TRAN).
+
+Puedes hacer varias transacciones al tiempo, lo único que necesitas es definir nombres de transacciones diferentes.
+
 ### Clase 23 Que tan standard es SQL
 
 La utilidad más grande de SQL fue unificar la forma en la que pensamos y hacemos preguntas a un repositorio de datos. Ahora que nacen nuevas bases de datos igualmente siguen tomando elementos de SQL.

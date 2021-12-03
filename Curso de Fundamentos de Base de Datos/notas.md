@@ -108,6 +108,8 @@
 
 ### Clase 1Expert Session: resuelve tus dudas sobre las bases de datos
 
+![1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg](src/1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg)
+
 ### Clase 2 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
 
 Tu profesor será Israel Vázquez, senior web developer en San Francisco, seminarista de bases de datos y entusiasta data engineering.
@@ -234,6 +236,12 @@ Las entidades debiles pueden serlo por dos motivos:
 **Por identidad:** No se diferencian entre si mas que por la clave de su entidad fuerte (clave isbn).
 
 **Por existencia:** Usando llave asignada por nosotros (un id).
+
+![3_Entidades_y_atributos_01.jpg](src/3_Entidades_y_atributos_01.jpg)
+![3_Entidades_y_atributos_02.jpg](src/3_Entidades_y_atributos_02.jpg)
+![3_Entidades_y_atributos_03.jpg](src/3_Entidades_y_atributos_03.jpg)
+![3_Entidades_y_atributos_04.jpg](src/3_Entidades_y_atributos_04.jpg)
+![3_Entidades_y_atributos_05.jpg](src/3_Entidades_y_atributos_05.jpg)
 
 #### Clase 5 Entidades de Platzi Blog
 

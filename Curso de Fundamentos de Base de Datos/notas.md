@@ -824,6 +824,19 @@ Asignamos la llave foranea del usuario_id
 
 ![platziblog_tabla_post_fk_categorias_id_1.png](src/platziblog_tabla_post_fk_categorias_id_1.png)
 
+Las Foreing Key options son las siguientes:
+
+On update: Significa qué pasará con las relaciones cuando una de estas sea modificada en sus campos relacionados, Por ejemplo, pueden utilizarse los valores:
+cascade: Si el id de un usuario pasa de 11 a 12, entonces la relacion se actualizará y el post buscará el id nuevo en lugar de quedarse sin usuario.
+_ restrict: _Si el id de un usuario pasa de 11 a 12, no lo permitirá hasta que no sean actualizados antes todos los post relacionados.
+set null Si el id de un usuario pasa de 11 a 12, entonces los post solo no estará relacionados con nada.
+no action: Si el id de un usuario pasa de 11 a 12, no se hará nada. Solo se romperá la relación.
+On delete
+_ cascade: Si un usuario es eliminado entonces se borrarán todos los post relacionados.
+restrict: No se podrá eliminar un usuario hasta que sean eliminados todos su post relacionados.
+_ set null: Si un usuario es eliminado, entonces los post solo no estará relacionados con nada.
+no action: Si un usuario es eliminado, no se hará nada. Solo se romperá la relación.
+
 ### Clase 26 Creando Platziblog: tablas transitivas
 
 - Las tablas transitivas sirven como puente para unir dos tablas. No tienen contenido semántico.

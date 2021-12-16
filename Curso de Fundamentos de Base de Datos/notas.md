@@ -913,6 +913,8 @@ El query tiene básicamente 2 partes: SELECT y FROM y puede aparecer una tercera
 
 La estrellita o asterisco (*) quiere decir que vamos a seleccionar todo sin filtrar campos.
 
+![28_estructura_basica_query.png](src/28_estructura_basica_query.png)
+
 Antes de iniciar la clase corre este script
 
 ```sql

@@ -1150,12 +1150,13 @@ INSERT INTO posts_etiquetas (id,post_id,etiqueta_id) VALUES (53,52,19);
 #### Primer Consulta
 
 ```sql
-SELECT*
-FROM posts
-WHERE fecha_publicacion < '2024'
+SELECT * FROM posts WHERE YEAR(fecha_publicacion) > 2024;
 ```
 
 ### Clase 29 SELECT
+
+IMAGEN INTERESANTE
+![29_SELECT_SQL_01.png](src/29_SELECT_SQL_01.png)
 
 **SELECT** se encarga de proyectar o mostrar datos.
 

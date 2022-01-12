@@ -1208,7 +1208,7 @@ Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde
 
 ### Clase 31 Utilizando la sentencia FROM
 
-![31_Utilizando_la_sentencia_FROM_01] (src/31_Utilizando_la_sentencia_FROM_01.webp)
+![31_Utilizando_la_sentencia_FROM_01](src/31_Utilizando_la_sentencia_FROM_01.webp)
 
 Comandos de la clase
 

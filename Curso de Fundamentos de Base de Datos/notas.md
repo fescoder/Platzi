@@ -1156,7 +1156,7 @@ SELECT * FROM posts WHERE YEAR(fecha_publicacion) > 2024;
 ### Clase 29 SELECT
 
 IMAGEN INTERESANTE
-![29_SELECT_SQL_01.png](src/29_SELECT_SQL_01.png)
+![29_SELECT_SQL_01](src/29_SELECT_SQL_01.png)
 
 **SELECT** se encarga de proyectar o mostrar datos.
 
@@ -1207,6 +1207,8 @@ Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde
 ![teoria_conjuntos_sentencias](src/teoria_conjuntos_sentencias.jpg)
 
 ### Clase 31 Utilizando la sentencia FROM
+
+![31_Utilizando_la_sentencia_FROM_01] (src/31_Utilizando_la_sentencia_FROM_01.webp)
 
 Comandos de la clase
 

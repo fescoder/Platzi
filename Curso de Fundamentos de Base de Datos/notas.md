@@ -1411,6 +1411,11 @@ WHERE usuario_id IS NOT NULL
 ;
 
 ```
+Para los que necesiten generar datos ficticios en sus tablas
+
+https://www.generatedata.com/
+
+Generalmente a este tipo de datos se les conoce como “dummy data”
 
 ### Clase 34 GROUP BY
 
@@ -1448,9 +1453,15 @@ Ejemplo 4 Agrupando por Mes y estatus
 ```sql
 SELECT estatus, MONTHNAME(fecha_publicacion) AS post_month, COUNT(*) AS post_quantity
 FROM posts
-GROUP BY estatus, post_month 
+GROUP BY estatus, post_month
 ;
 ```
+Aparte de la función COUNT, podemos encontrar las siguientes funciones de agregado:
+AVG Calcula el promedio
+COUNT Cuenta los registros de un campo
+SUM Suma los valores de un campo
+MAX Devuelve el maximo de un campo
+MIN Devuelve el mínimo de un campo
 
 ### Clase 35 ORDER BY y HAVING
 
@@ -1559,6 +1570,7 @@ FROM posts
 **GROUP BY:** Los rubros por los que me interesa agrupar la información
 **ORDER BY:** El orden en que quiero presentar mi información
 **HAVING:** Los filtros que quiero que mis datos agrupados tengan
+**LIMIT:** La cantidad de registros que quiero traer
 
 
 
@@ -1606,6 +1618,7 @@ FROM etiquetas
 WHERE posts_etiquetas.etiqueta_id IS NULL
 ;
 ```
+![38_Funcion_CASE.png](src/38_Funcion_CASE.png)
 
 ### Clase 39 Consultando PlatziBlog
 

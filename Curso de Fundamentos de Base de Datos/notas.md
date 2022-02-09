@@ -1734,22 +1734,15 @@ Para crear una Top level collection (las que estan a nivel de la ruta principal)
 
 Jugamos con la interface observamos los tipos de datos:
 
-- **string:** (absorve text,  varchar, etc)
-- **number:** (int,float)
-- **Map:** permite hacer un arreglo dentro  de otro arreglo (inception)
-- **Timestamp:** para datos de tiempo
-- **Geopoint** latitud y longitud.
-- **Reference:**, hace referencia a otro documento o coleccion
-
-- **String:** Cualquier tipo de valor alfanumérico
-- **Number:** Soporta enteros y flotantes.
+- **string:** Cualquier tipo de valor alfanumérico (absorve text,  varchar, etc)
+- **number:** Soporta enteros y flotantes. (int,float)
 - **Boolenan:** Los clásicos valores True y False
-- **Map:** Permite agregar un documento dentro de otro.
-- **Array:** Permite agregar un conjunto de datos (soporte multi type) sin nombre e identificador.
+- **Map:** Permite agregar un documento dentro de otro. Permite hacer un arreglo dentro  de otro arreglo (inception)
+- **Array:** Permite agregar un conjunto de datos (soporte multi type) sin nombre e identificador.}
 - **Null:** Indica que no se ha definido un valor.
 - **Timestamp:** Permite almacenar fechas (guarda el año, mes, día y hora).
-- **Geopoint:** Guarda una localización geográfica (coordenadas latitud-longitud).
-- **Reference:** Permite referencia un documento (relaciona dos documentos, no importa su colección).
+- **Geopoint** Guarda una localización geográfica (coordenadas latitud-longitud).
+- **Reference:** Permite referencia un documento (relaciona dos documentos, no importa su colección). Hace referencia a otro documento o coleccion
 
 Ejemplos
 
@@ -1917,6 +1910,23 @@ Nos ayuda a hacer modelos que encuentran patrones fortuitos encontrando correlac
 ### Clase 55 Data Science
 
 **Data Science** es aplicar todas las técnicas de procesamiento de datos. En su manera más pura tiene que ver con gente con un background de estadísticas y ciencias duras.
+
+UN RESUMEN
+Saludos! Estas son mis notas tomadas durante este bloque de clases por si a alguien les son utiles.
+
+Hoy en dia no existen bases de datos ‘one size fits all’, es decir, hoy en dia en las aplicaciones modernas se utilizan distintas bases de datos ya sean relacionales, no relacionales,
+etc en una sola aplicacion. Las bases de datos relacionales servian muy bien por un tiempo para cumplir con varias demandas pero a medida que llego el Big Data estas no pudieron manejar bien toda esta carga con lo cual fueron creando otras.
+
+Big Data: Grandes cantidades de datos, el reto que empezo a cerrar las puertas fueron que se estuvieron manejando cada vez mas grandes, grandes volumenes de datos. Se refiere a que en este momento en milesimas de segundos vamos a guardar grandes cantidades de datos. Es un gran movimiento que surgio con Youtube y Facebook ya que necesitaban guardar muchoos datos rapido.
+Data Warehouse: Guardar grandes cantidades masivas de datos, la diferencia con Big Data es guardar mas datos que en Big Data pero que son datos historicos, es decir, que no se extraen muy a menudo. Ejemplo de Google que usa eso es Bigtable, otra solucion es BigQuery.
+Data Mining: Es literal picar piedra, es decir, debido a que el orden en que se guardaban estos datos no era el mas optimo o el mas eficaz nos toca como data miners intentar buscar en todos esos datos y sacar informacion util que ayude en las decisiones de negocio. En si no se refiere a una base de datos sino a un conjunto de tecnicas para extraer informacion valiosa para las empresas.
+ETL: Son las siglas de Extract, Transform, Load. Se trata de tomar datos de archivos muertos y convertirlos en algo que sea de utilidad para el negocio. Tambien ayuda a tomar los datos viveos de la aplicacion, transformarlos y guardarlos en un data warehouse periodicamente. Esta tecnica tiene dos grandes usos: Para el datamining cuando tenemos una base de datos sin orden, sacamos la info, la limpiamos y la guardamos en un data warehouse y ahora si esta ordenada y podemos sacarle provecho a ella. Otro gran caso de uso es mas o menos similar pero cuando lo tenemos que hacer en tiempo real que sirve para hacer etl, es decir, guardamos el estado en bases de datos no relacional que no son muy buenas manejando queries complejos y si tenemos muchas relaciones y con ETL podemos aprovechar la informacion aunque este asi y obtener informacion valiosa. Aunque no existen tecnologias que hagan todo el proceso existen los data pipelines para manejar todas estas fases.
+Business Intelligence: Como el nombre lo dice inteligencia para el negocio, que se refiere a tener los datos de manera oportuna y datos correctos que los ayuden a dar informacion necesaria para hacer las decisiones correctas. Con esto tratamos de hacer sentido a toda la info obtenida y nos ayuda a saber digamos que tipo de audiencia tenemos, el historico de como han ido las ventas en ciertos periodos, es decir, nos permite visualizar las relaciones que tiene nuestro sistema y aplicacion y los clientes entre si. Herramientas para esto: Tableau, QlikView, PowerBI.
+Machine Learning: Son una serie de tecnicas que involucran la inteligencia artificial y deteccion de patrones. A diferencia de Business Intelligence que queremos buscar un patron en especifico con la informacion que ya tenemos, mientras que con Machine Learning dado un conjunto de datos buscamos encontrar patrones que no esperas o no eran obvios para un ser humano, ademas que busca saber en un futuro como se comportarian nuestros usuarios. Una bd muy buena para esto es BigQuery que nos sirve como warehouse y ademas nos permite hacer queries que nos podrian ayudar con BusinessIntelligence como son Data Studio. Entre los dos casos de uso principales de ML son: clasificacion y prediccion.
+Con la clasificacion nos referimos a que si tenemos varios datos historicos y queremos conocer por ejemplo cuales temas fueron mas interesantes durante un periodo en especifico, no serviria con buscar palabras claves, para este tipo de casos se utiliza la tecnica de ML denominada Procesamiento de Lenguaje Natural lo que hace es tomar un texto o reconocimiento de voz que utiliza el lenguaje natural humano nada estructurado, lo empieza a procesar y nos devuelve los patrones que encontro. Por ejemplo con el Platziblog: Si tenemos un modelo muy bien entrenado, es decir, que le hayamos pasado una buena cantidad de articulos que si sabemos que son de politica y reconoce estos patrones. Cuando le pasamos toda la informacion de Platziblog nos devuelve articulos que no especificaban por ninguna parte que se trataban de politica pero gracias al modelo pudimos identificarlos.
+Con la prediccion nos ayuda a la toma de decisiones. Por ejemplo le damos las ventas de unos años pasados, procesa las ventas y genera un modelo, que cuando le pasemos las ventas actuales nos ayuda a identificar las relaciones y patrones que nos ayuda a visualizar a donde nos dirigimos, es decir, si le pasamos ventas proyectadas a futuro este nos dice que va a pasar, si se va a comportar igual, etc.
+BigQuery es una buena herramienta debido a que con un lenguaje similar a SQL pero con mas funcionalidades nos permite ademas de hacer consultas, almacenarla y alimentarla a un algoritmo de modelos de ML que con el mismo lenguaje SQL al ejecutarlo estamos creando modelos que nos ayudaran a predecir valores futuros.
+Data Science: Es aplicar todo lo que hemos visto, tecnicas de ETL, Data Mining, Business Intelligence. Aunque esta mas dirigida a personas con background de estadisticas, hoy en dia tambien participan personas con el perfil de Data Engineering. Al hacer Data Science estamos aplicando todo lo visto en los temas anteriores, no solo a nivel tecnico sino que desarrollamos la experiencia y conocimientos sobre las distintas tecnologias, en que parte del desarrollo de nuestro proyecto tenemos que utilizarlas, etc. Con lo cual el Data Science juega el papel de manager dentro de un equipo de profesionales de datos.
 
 ### Clase 56 Por que aprender bases de datos hoy
 

@@ -1945,3 +1945,16 @@ Recuerda practicar mucho con el proyecto. Te invito a que tomes el examen y veri
 Las bases de datos relacionales han estado entre nosotros durante un largo tiempo y han sido usadas por grandes como Google, Amazon, entre otros. Aún son usadas por bancos, aseguradoras, etc.
 
 Las bases de datos no relacionales surgen cuando las grandes empresas sintieron necesidad de guardar y extraer grandes cantidades de datos en muy cortos periodos de tiempo, como YouTube.
+
+### Clase 58 Elegir una base de datos
+
+Has aprendido todo lo necesario para comenzar a trabajar con bases de datos relacionales y no-relacionales. Ahora es probable que al momento de iniciar con un proyecto te enfrentes a la pregunta ¿qué tipo de base de datos debo elegir?.
+
+El teorema CAP te ayuda a tomar en cuenta 3 factores clave:
+
+Consistencia.
+Disponibilidad.
+Tolerancia a la partición.
+
+En este blogpost podrás conocer más detalles para tomar la mejor decisión.
+https://platzi.com/blog/que-es-el-teorema-cap-y-como-elegir-la-base-de-datos-para-tu-proyecto/

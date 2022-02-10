@@ -57,7 +57,7 @@
 
 ### Clase 1 Introduccion
 
-Introduccion por el profesor
+![01_Que_es_PostgreSQL_01](src/01_Que_es_PostgreSQL_01.jpg)
 
 ### Clase 2 Que es Postgresql
 

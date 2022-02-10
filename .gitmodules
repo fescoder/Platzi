@@ -1,0 +1,3 @@
+[submodule "Curso_PostgreSQL"]
+	path = Curso_PostgreSQL
+	url = https://github.com/rb-one/Curso_PostgreSQL.git

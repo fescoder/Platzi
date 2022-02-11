@@ -220,7 +220,8 @@ Iniciar la base de datos
 sudo -u postgres psql -> Indica que se está iniciando sesión con el usuario postgres.
 Cambiar la contraseña del usuario postgres.
 Dentro de la base de datos activa:
-alter user postgres with password ‘<contraseña>’; -> Las comillas en la contraseña son obligatorias.
+alter user postgres with password '<contraseña>'; -> Las comillas en la contraseña son obligatorias.
+Realizar la coneccion para ver las bases de datos creadas.
 
 ### Clase 4 Interacción con Postgres desde la Consola
 
@@ -238,6 +239,10 @@ Contraseña para usuario postgres:
 
 #### Comandos importantes PostgreSQL
 
+- **psql -U postgres -W**: Entrar a la consola Postgres.
+
+- **\?**: Ver los comandos de Postgres.
+
 - **\l**: lista las bases de datos del sistema (siempre va a haber por default 3 bases de datos propias de postgre + las que agreguemos).
 
 - **\dt**" muestra las tablas de la base de datos de postgresql
@@ -246,13 +251,20 @@ Contraseña para usuario postgres:
 
 - **\d + nombre tabla consultar**: describe el contenido de una tabla especifica.
 
-- **\h SELECT**: ayuda para funciones estándar SQL.
+- **\h**: Ver todos los comandos SQL.
+
+- **\h SELECT**: ayuda para funciones estándar SQL. Muestra como se ejecuta un comando.
 
 - **SELECT version();**: ver la version de PostgreSQL
 
 - **\g** permite volver a ejecutar la funcion previa ejecutada en consola (repetir lo anterior).
 
 - **\timing**: muestra el tiempo de ejecución de un comando, algo muy importante para las optimizaciones.
+
+- **Ctrl + C**: Cancelar todo lo que hay en pantalla.
+
+- **\q**: Salir psql, cerrar consola.
+
 
 ### Clase 5 PgAdmin: Interaccion con Postgres desde la Interfaz Grafica
 
@@ -297,6 +309,8 @@ La ruta de los mismos depende del sistema Operativo, para saber que que ruta est
 **SHOW config_file**;
 
 NOTA: siempre es bueno hacer una copia original de los archivos antes de modificarlos por si movemos algo que no.
+
+https://e-mc2.net/es/configuracion-basica-de-postgresql
 
 ### Clase 7 Comandos mas utilizados en PostgreSQL
 
@@ -420,27 +434,27 @@ Consultamos ahora los datos en la tabla:
 
 Vamos a modificar el valor, establecer el tren con id uno que sea modelo Honda 0726. Para ello ejecutamos la consulta tipo **UPDATE tren SET modelo = 'Honda 0726' Where id = 1**;
 
-![comandos_0](src/comandos_0.jpg)
+![comandos_10](src/comandos_10.jpg)
 
 Verificamos la modificación **SELECT * FROM tren;**
 
-![comandos_   ](src/comandos_   .jpg)
+![comandos_11](src/comandos_11.jpg)
 
 Ahora borramos la fila: **DELETE FROM tren WHERE id = ;**
 
-![comandos_2](src/comandos_2.jpg)
+![comandos_12](src/comandos_12.jpg)
 
 Verificamos el borrado **SELECT * FROM tren;**
 
-![comandos_3](src/comandos_3.jpg)
+![comandos_13](src/comandos_13.jpg)
 
 El borrado ha funcionado tenemos 0 rows, es decir, no hay filas. Ahora activemos la herramienta que nos permite medir el tiempo que tarda una consulta **\timing**
 
-![comandos_4](src/comandos_4.jpg)
+![comandos_14](src/comandos_14.jpg)
 
 Probemos cómo funciona al medición realizando la encriptación de un texto cualquiera usando el algoritmo md5:
 
-![comandos_5](src/comandos_5.jpg)
+![comandos_15](src/comandos_15.jpg)
 
 La consulta tardó 0.0mili-segundos
 

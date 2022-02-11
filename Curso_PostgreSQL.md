@@ -152,18 +152,18 @@ También vamos a buscar la consola… Tanto la consola como PgAdmin son útiles 
 
 En el menú de Windows (o donde aparecen instalados todos los programas) buscamos “PgAdmin…”
 
-![postgre_instal_0](src/postgre_instal_0.jpg)
+![postgre_instal_10](src/postgre_instal_10.jpg)
 
 Ahora buscamos “SQL Shell…”
 
-![postgre_instal_1](src/postgre_instal_1.jpg)
+![postgre_instal_11](src/postgre_instal_11.jpg)
 
 Efectivamente, ahora aparecen las herramientas que vamos a utilizar en éste curso.
 Ahora vamos a crear una base de datos de prueba usando la consola y comprobaremos si existe usando PgAdmin, la crearemos para validar que la conexión con el servicio de base de datos interno funciona correctamente.
 
 Para ello abrimos la consola, buscamos SQL Shell y lo ejecutamos. Veremos algo así:
 
-![postgre_instal_2](src/postgre_instal_2.jpg)
+![postgre_instal_12](src/postgre_instal_12.jpg)
 
 Lo que vemos en pantalla es la consola esperando que ingresemos cada parámetro para la conexión.
 
@@ -171,7 +171,7 @@ Primero está el nombre del parámetro. En éste caso es “Server” seguido de
 
 Podemos dejar todos los valores predeterminados (presionando “Enter”) hasta que la consola pregunte por la clave del usuario maestro:
 
-![postgre_instal_3](src/postgre_instal_3.jpg)
+![postgre_instal_13](src/postgre_instal_13.jpg)
 
 Debemos ingresar la clave que usamos cuando estábamos instalando Postgres, de lo contrario no podremos acceder. Presionamos Enter y veremos a continuación una pantalla que nos indica que estamos logueados en la base de datos y estamos listos para hacer modificaciones.
 
@@ -179,31 +179,31 @@ De manera predeterminada, la base de datos instalada es Postgres, la cual no deb
 
 La siguiente imagen indica que estamos conectados a la base de datos Postgres. Vamos a crear una base de datos nueva y luego saltar el cursor a ésta base de datos recién creada.
 
-![postgre_instal_4](src/postgre_instal_4.jpg)
+![postgre_instal_14](src/postgre_instal_14.jpg)
 
 Para ello escribimos el comando “**CREATE DATABASE transporte_publico;**” y presionamos “Enter”. Veremos:
 
-![postgre_instal_5](src/postgre_instal_5.jpg)
+![postgre_instal_15](src/postgre_instal_15.jpg)
 
 El mensaje **“CREATE DATABASE”** justo después de la línea que acabamos de escribir indica que la base de datos fue creada correctamente.
 
 Para saltar a la base de datos recién creada ejecutamos el comando “**\c transporte_publico**”, el cursor mostrará lo siguiente:
 
-![postgre_instal_6](src/postgre_instal_6.jpg)
+![postgre_instal_16](src/postgre_instal_16.jpg)
 
 Ahora vamos a validar desde PgAdmin que la base de datos fué creada correctamente. Abrimos PgAdmin y nos encontramos con una lista de items a la izquierda, lo que significa que de manera predeterminada PgAdmin ha creado un acceso a nuestra base de datos local, el cual llamó “PostgreSQL”:
 
-![postgre_instal_7](src/postgre_instal_7.jpg)
+![postgre_instal_17](src/postgre_instal_17.jpg)
 
 Al hacer hacer doble clic sobre éste elemento (“PostgreSQL”) nos pedirá ingresar la clave que hemos determinado para el super usuario postgres, al igual que la consola, hasta no ingresarla correctamente no nos podremos conectar:
 
-![postgre_instal_8](src/postgre_instal_8.jpg)
+![postgre_instal_18](src/postgre_instal_18.jpg)
 
 Ingresamos la clave. Te recomiendo seleccionar la opción “Save Password” o “Guardar Contraseña”. Si la máquina sobre la que estás trabajando es de confianza, que seas sólo tú o tu equipo quien tenga acceso a ella, de lo contrario, no guardes la contraseña para mantenerla segura.
 
 Veremos la lista de bases de datos disponibles, la predeterminada “postgres” y la que acabamos de crear usando la consola, lo que comprueba que la base de datos y la consola funcionan correctamente.
 
-![postgre_instal_9](src/postgre_instal_9.jpg)
+![postgre_instal_19](src/postgre_instal_19.jpg)
 
 Ahora procedemos a eliminar la base de datos recién creada para comprobar que PgAdmin está correctamente configurada y si pueda realizar cambios sobre la base de datos.
 
@@ -211,7 +211,7 @@ Para ello hacemos clic derecho sobre el elemento “transporte_publico” y sele
 
 Con ello, si el elemento “transporte_publico” desaparece del menú de la izquierda comprobamos que PgAdmin funcionan correctamente.
 
-**Instalación de postgres en ubuntu.**
+**Instalación de postgres en ubuntu.
 sudo apt-get install postgresql postgresql-contrib
 instalación de la interfaz gráfica.
 sudo apt-get install pgadmin3

@@ -456,9 +456,11 @@ Probemos cómo funciona al medición realizando la encriptación de un texto cua
 
 ![comandos_15](src/comandos_15.jpg)
 
-La consulta tardó 0.0mili-segundos
+La consulta tardó 10.011 milisegundos.
 
 Ahora que sabes como manejar algunos de los comandos más utilizados en PostgreSQL es momento de comenzar a practicar!!!
+
+![07_Comandos_mas_utilizados_en_PostgreSQL_01](src/07_Comandos_mas_utilizados_en_PostgreSQL_01.webp)
 
 ### Clase 8 Presentación del Proyecto
 

@@ -211,6 +211,17 @@ Para ello hacemos clic derecho sobre el elemento “transporte_publico” y sele
 
 Con ello, si el elemento “transporte_publico” desaparece del menú de la izquierda comprobamos que PgAdmin funcionan correctamente.
 
+**Instalación de postgres en ubuntu.**
+sudo apt-get install postgresql postgresql-contrib
+instalación de la interfaz gráfica.
+sudo apt-get install pgadmin3
+
+Iniciar la base de datos
+sudo -u postgres psql -> Indica que se está iniciando sesión con el usuario postgres.
+Cambiar la contraseña del usuario postgres.
+Dentro de la base de datos activa:
+alter user postgres with password ‘<contraseña>’; -> Las comillas en la contraseña son obligatorias.
+
 ### Clase 4 Interacción con Postgres desde la Consola
 
 Vamos a aprender los comandos mas útiles en la shell, al iniciar siempre encontramos los siguientes puntos

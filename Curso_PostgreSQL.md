@@ -495,6 +495,10 @@ Especiales propios de postgres
 XML, JSON: Postgres no permite guardar en estos formatos
 - Arreglos: Vectores y Matrices
 
+https://todopostgresql.com/postgresql-data-types-los-tipos-de-datos-mas-utilizados/
+
+https://www.postgresql.org/docs/11/datatype.html
+
 ### Clase 10 Diseñando nuestra base de datos: estructura de las tablas
 
 ![diagrama_entidad_relacion_proyecto](src/diagrama_entidad_relacion_proyecto.jpg)

@@ -216,6 +216,31 @@ sudo apt-get install postgresql postgresql-contrib
 instalación de la interfaz gráfica.
 sudo apt-get install pgadmin3
 
+Termine instalando el pgAdmin4
+
+Instalación de pgAdmin4 en Ubuntu
+pgAdmin4 no está disponible en los repositorios de Ubuntu. Necesitamos instalarlo desde el repositorio APT pgAdmin4. Empiece por configurar el repositorio. Agregue la clave pública para el repositorio y cree el archivo de configuración del repositorio.
+
+
+$ curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+$ sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+Luego instale pgAdmin4,
+
+$sudo apt install pgadmin4
+El comando anterior instalará numerosos paquetes necesarios, incluido el servidor web Apache2, para servir la aplicación pgadmin4-web en modo web.
+
+Una vez que se complete la instalación, ejecute el script de configuración web que se envía con el paquete binario pgdmin4, para configurar el sistema para que se ejecute en modo web. Se le pedirá que cree una dirección de correo electrónico y una contraseña de inicio de sesión de pgAdmin4, como se muestra en la captura de pantalla a continuación.
+
+Este script configurará Apache2 para que sirva a la aplicación web pgAdmin4, lo que implica habilitar el módulo WSGI y configurar la aplicación pgAdmin para que se monte en pgadmin4 en el servidor web para que pueda acceder a ella en:
+
+http://SERVER_IP/pgadmin4
+También reinicia el servicio Apache2 para aplicar los cambios recientes.
+
+Recuerde reemplazar [email protected] con su dirección de correo electrónico y establecer también una contraseña segura:
+
+$ sudo /usr/pgadmin4/bin/setup-web.sh
+
+
 Iniciar la base de datos
 sudo -u postgres psql -> Indica que se está iniciando sesión con el usuario postgres.
 Cambiar la contraseña del usuario postgres.
@@ -620,7 +645,7 @@ SELECT current_date;
 
 Insertamos el registro seleccionado solo el query a realizar y usamos el boten de play o F5.
 
-![create_table_0](src/create_table_0.jpg)
+![create_table_10](src/create_table_10.jpg)
 
 Podemos verificar que los datos yendo a los query tools y hacemos la consulta de la tabla.
 

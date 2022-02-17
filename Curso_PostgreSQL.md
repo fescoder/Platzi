@@ -909,6 +909,11 @@ postgres=# \dg
 postgres=#
 
 ```
+En ubuntu y sus derivados para ingresar a un usuario por consola, se debe ingresar:
+
+psql --host=localhost --dbname=postgres --username=usuario_consulta```
+o
+psql -h <host> -d <base de datos> -U <usuario> -p <port>
 
 #### Creando roles desde PGAdmin
 
@@ -940,7 +945,7 @@ Damos click en next y seleccionamos los permisos que se otorgaran en este caso i
 
 Verificamos que en las otras tablas.
 
-![create_user_0](src/create_user_0.jpg)
+![create_user_10](src/create_user_10.jpg)
 
 ### Clase 15 Llaves foraneas
 
@@ -1136,6 +1141,69 @@ WHERE viaje.id IS NULL;
 
 ![join_](src/join_1.jpg)
 
+--------------------------RESUMEN----------------------------------------
+/* Inner join: solo nos trae los datos que coinciden en ambas tablas. */
+select * from route r
+inner join train tr
+on tr.train_id = r.train_id;
+
+/* Este es un full outer join: trae todos los datos de ambas tablas. Coincidan o no. */
+select *
+from route r
+full outer join train tr
+on tr.train_id = r.train_id;
+
+
+/*Este full outer join ahora solo nos trae los datos que no coinciden de la tabla A
+ con la la tabla B, tambien nos trae los datos de la tabla B que no coiniden con la
+ tabla A. (es como el opuesto del inner join, porque en lugar de traernos los que
+ coinciden en ambas tablas, nos trae solo los que no coinciden en ambas tablas.)*/
+select *
+from route r
+full outer join train tr
+on tr.train_id = r.train_id
+where r.train_id is null
+or tr.train_id is null;
+
+
+/* left join: nos trae todos los datos de la tabla A(izquierda) y solo los datos de la
+ tabla B que coincidan en la tabla A. */
+select * from route r
+left join train tr
+on tr.train_id = r.train_id;
+
+/* left outer join: nos devuelve todos los datos de la tabla A que no coincide con la
+tabla B. */
+select * from route r
+left join train tr
+on tr.train_id = r.train_id
+where tr.train_id is null;
+
+/*right join: nos devuelve todos los datos de la tabla B, y solo los datos de la tabla
+A que coincidan con la tabla B*/
+select * from route r
+right join train tr
+on tr.train_id = r.train_id;
+
+/* right outer join: nos trae todos los datos de la tabla B que no coinciden con
+la tabla A*/
+
+select * from route r
+right join train tr
+on tr.train_id = r.train_id
+where r.train_id is null;
+
+/*NOTA: Cuando usamos left join (Tabla A a la tabla B) estamos usando la tabla A, es
+decir traemos todos los datos de la tabla A y solo los datos de la tabla B que coinciden
+con la tabla A. si queremos usar un left outer join la llave primaria null que debemos
+especificar es la de la tabla B.
+WHERE b.pkey us null;
+lo mismo pasa cuando usamos un right outer join
+como usamos la tabla B y solo los que coinciden con la tabla A entonces la llave null
+que usamos es de la tabla A.
+WHERE a.pkey us null;								*/
+
+
 ### Clase 19 Funciones Especiales Principales
 
 Postgres tiene una lista de funciones especiales que están diseñadas exclusivamente para ayudarte a desarrollar tu aplicación mucho mas rápido algunas de ellas son:
@@ -1216,10 +1284,10 @@ Funciones mas comunes en postgres:
 - **COALESCE:** permite comprar dos valores y retornar cual de los dos no es nulo
 
 - **NULLIF:** permite comparar dos valores y retorna Null si son iguales
-  
-- **GREATEST:** permite comprar un arreglo de valores y retorna el mayor
 
-- **LEAST:** permite comprar un arreglo de valores y retorna el menor
+- **GREATEST:** permite comparar un arreglo de valores y retorna el mayor
+
+- **LEAST:** permite comparar un arreglo de valores y retorna el menor
 
 - **BLOQUES ANÓNIMOS:** permite ingresar condicionales dentro de una consulta de base de datos.
 
@@ -1292,6 +1360,18 @@ CASE
 END as Mayoria_de_edad
 --termina bloque anónimo
 FROM public.pasajero;
+
+--Mi resolucion
+SELECT id, nombre, direccion_residencia, fecha_nacimiento,
+CASE
+WHEN nombre ILIKE 'o%' AND EXTRACT (YEAR FROM current_date) - EXTRACT (YEAR FROM fecha_nacimiento) >= 18 THEN
+'Aplica'
+ELSE
+'No Aplica'
+END AS aplicacion
+	FROM public.pasajero
+	ORDER BY aplicacion
+	;
 ```
 
 ### Clase 21 Vistas
@@ -1352,7 +1432,11 @@ Y observamos el error de que la vista no cuenta con datos, por lo que procedemos
 
 Si borramos algún registro de nuestra tabla de viaje (29 al inicio 28 al borrar) la vista materializada seguirá conteniendo el total original (29 registros), estas vistas las usamos cuando queremos obtener la informacion 1 vez, esta quedara guardada en memoria.
 
+En el caso de las vistas materializadas, es conveniente agregar una columna para indicar la fecha del último “refresh” de la información.
+
 ### Clase 22 PL/SQL
+
+https://www.postgresql.org/docs/9.2/plpgsql.html
 
 Las PL o procedimientos almacenados hacen parte del motor de postgres y es una de las caracteristicas mas importantes y el porque las personas empiezan a usar este motor, ella nos ayuda a desarrollar código directamente sobre la base su estructura es bastante sencilla, se asemeja a una funcion de cualquier lenguaje de programación (declaración, uso de variables y un fin) y se permite ejecutar dentro de la base de datos.
 
@@ -1413,6 +1497,8 @@ Guardamos la PL y la ejecutamos igual que la forma anterior a traves del select.
 ![pl_13](src/pl_13.jpg)
 
 ![pl_14](src/pl_14.jpg)
+
+![22_PL-SQL_01.webp](src/22_PL-SQL_01.webp)
 
 ### Clase 23 Triggers
 

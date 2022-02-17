@@ -1456,6 +1456,8 @@ Ahora contaremos los registros en la tabla incorporando un contador
 
 ![pl_4](src/pl_4.jpg)
 
+![22_PL-SQL_01.webp](src/22_PL-SQL_01.webp)
+
 Como te habrás dado cuenta no es posible llamar a este PL de esta manera, para ello es necesario encapsularlo de la siguiente forma.
 
 ![pl_5](src/pl_5.jpg)
@@ -1498,7 +1500,6 @@ Guardamos la PL y la ejecutamos igual que la forma anterior a traves del select.
 
 ![pl_14](src/pl_14.jpg)
 
-![22_PL-SQL_01.webp](src/22_PL-SQL_01.webp)
 
 ### Clase 23 Triggers
 

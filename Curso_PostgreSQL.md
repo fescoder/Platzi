@@ -1511,7 +1511,7 @@ Los Triggers son herramientas muy útiles que nos permiten ejecutar funciones de
 
 Veremos con PGAdmin como concatenar nuestra pl a una funcion de INSERT, UPDATE O DELETE de la tabla de pasajeros.
 
-Crearemos ua bitacora que nos apoye a la clase, para ello haremos una tabla de nombre "cont_pasajero" con dos columnas "total" con valor integer y "tiempo" en formato time with time zone y una pk  de nombre id (si tienes dudas revisa la primer seccion de las notas).
+Crearemos una bitacora que nos apoye a la clase, para ello haremos una tabla de nombre "cont_pasajero" con dos columnas "total" con valor integer y "tiempo" en formato time with time zone y una pk  de nombre id (si tienes dudas revisa la primer seccion de las notas).
 
 Ahora la tabla la modificaremos unicamente con la PL que acabamos de crear.
 
@@ -1748,6 +1748,8 @@ USING (id)
 
 ### Clase 25 Transacciones
 
+https://todopostgresql.com/comandos-de-transacciones-en-postgresql/
+
 Tomando el ejemplo de un cajero automático, cuando uno de sus procesos falla este debe devolver todos los cambios, postgres hace lo mismo, cuando tiene un proceso si alguna de las tareas que lo componen falla este debe poder devolver todos los cambios automáticamente (hacer un rollback)
 
 El proceso se ilustra como
@@ -1782,6 +1784,11 @@ Hasta ahora todos los datos han sido correctos y el commit se ejecuta sin proble
 Al ejecutar los inserts dentro del bloque de código **BEGIN / COMMIT** nos aseguramos que todas las operaciones sean congruentes, si hubiésemos ejecutado las sentencias con la selección  la primera se habría ejecutado y guardado, y la segunda hubiera fallado, pero al estar dentro del bloque de transacción con una consulta que sea errónea se hace el **ROLLBACK** y no se guarda ninguna informacion en la base de datos, ya que postgres siempre lo hace de manera implícita sin mostrarlo en pantalla, una forma explicita seria usándolo con las PL para limitar el numero de vip's en nuestros servicios.
 
 ![transacciones_6](src/transacciones_6.jpg)
+
+Alumno:
+Mi aporte a la clase es otra forma de usar ROLLBACK con otra función de postgresql que se llama SAVEPOINT. Básicamente se pueden crear puntos de guardado por cada consulta que uno desee y hacer que el ROLLBACK solo sea efectivo hasta ese punto, es decir, que las operaciones anteriores al SAVEPOINT sí se ejecuten.
+
+![25_transacciones_01](src/25_transacciones_01.png)
 
 ### Clase 26 Otras Extensiones para Postgres
 

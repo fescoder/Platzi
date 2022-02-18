@@ -45,8 +45,8 @@
     - [Clase 25 Transacciones](#clase-25-transacciones)
     - [Clase 26 Otras Extensiones para Postgres](#clase-26-otras-extensiones-para-postgres)
   - [Modulo 5 Implementar mejores prácticas](#modulo-5-implementar-mejores-prácticas)
-    - [Clase 26 Backups y Restauracion](#clase-26-backups-y-restauracion)
-    - [Clase 29 Mantenimiento](#clase-29-mantenimiento)
+    - [Clase 27 Backups y Restauracion](#clase-26-backups-y-restauracion)
+    - [Clase 28 Mantenimiento](#clase-29-mantenimiento)
     - [Clase 29 Introduccion a Replicas](#clase-29-introduccion-a-replicas)
     - [Clase 30 Implementacion de Replicas en Postgres](#clase-30-implementacion-de-replicas-en-postgres)
       - [Configuracion Master](#configuracion-master)
@@ -1785,7 +1785,8 @@ Al ejecutar los inserts dentro del bloque de código **BEGIN / COMMIT** nos aseg
 
 ![transacciones_6](src/transacciones_6.jpg)
 
-Alumno:
+
+**Alumno:**
 Mi aporte a la clase es otra forma de usar ROLLBACK con otra función de postgresql que se llama SAVEPOINT. Básicamente se pueden crear puntos de guardado por cada consulta que uno desee y hacer que el ROLLBACK solo sea efectivo hasta ese punto, es decir, que las operaciones anteriores al SAVEPOINT sí se ejecuten.
 
 ![25_transacciones_01](src/25_transacciones_01.png)
@@ -1814,9 +1815,13 @@ Esta funcion es utilizada junto con algoritmos de machine learning y procesamien
 
 Estas dos funciones si nuestra aplicaciones implementan análisis de texto o análisis de voz no es necesario desarrollarlas desde cero ya que postgres lo implementa al nivel de la base de datos.
 
+Puedes listar todas las extensiones disponibles en postgres y visualizar una pequeña descripción de su funcionamiento con este comando.
+SELECT * FROM pg_available_extensions;
+
+
 ## Modulo 5 Implementar mejores prácticas
 
-### Clase 26 Backups y Restauracion
+### Clase 27 Backups y Restauracion
 
 Ha llegado el momento de guardar todo nuestro trabajo hasta el momento y tener una copia de seguridad en caso de que algo catastrófico ocurra, para eso Postgres tiene los servicios de restauracion, usaremos los siguientes comandos
 
@@ -1882,7 +1887,7 @@ postgres=#\q
 ...$ psql --help
 ```
 
-### Clase 29 Mantenimiento
+### Clase 28 Mantenimiento
 
 Este es un tema importante y que postgres realiza por debajo en segundo plano, en este proceso de vacuum (vaciado) quita todas las filas, columnas e items del disco duro que no están funcionando para optimizar los servicios.
 

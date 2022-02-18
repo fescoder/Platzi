@@ -1887,7 +1887,7 @@ postgres=#\q
 ...$ psql --help
 ```
 
-### Clase 28 Mantenimiento
+### Clase 28  Mantenimiento
 
 Este es un tema importante y que postgres realiza por debajo en segundo plano, en este proceso de vacuum (vaciado) quita todas las filas, columnas e items del disco duro que no están funcionando para optimizar los servicios.
 
@@ -1901,6 +1901,8 @@ El mantenimiento en PGAdmin lo llevamos a cabo dando click derecho sobre la base
 
 ![maintenance_1](src/maintenance_1.jpg)
 
+- Vacuum: La más importante, con tres opciones, Full, Freeze y Analyze.
+
 - Full: quiere decir que la tabla que vas a limpiar (en este caso estacion) quedara limpia en su totalidad, es decir se realizara la revision de todo el espacio en memoria para que todas las filas que ya no son aplicables se eliminen y todos los indices también.
 
 - Freeze: incluye que durante ese proceso se va a congelar, pero hay que tener en cuenta que un cuando se hace un vacuum full si no es posible hacerlo en lo que llega una consulta nueva esa tabla queda congelada y tendra un lot quiere decir que ninguna tabla podrá acceder a ella hasta que termine el proceso de limpieza.
@@ -1911,7 +1913,7 @@ El mantenimiento en PGAdmin lo llevamos a cabo dando click derecho sobre la base
 
 - Reindex: aplica para tablas que tienen indices, entre ellos las llaves primarias, que los motores crean como indices porque son normalmente usados para búsquedas.
 
-- Custer: es decirle al motor de la base de datos que reorganice la el almacenamiento.
+- Cluster: es decirle al motor de la base de datos que reorganice la el almacenamiento.
 
 Estas 4 opciones no es recomendable hacerlo a mano ya que postgres tiene mas de 20 años optimizando estos procesos, aunque eventualmente si puede llegar a ser necesario hacerlo hazlo en un horario que no afecte a tus usuarios o servicios.
 

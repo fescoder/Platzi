@@ -2047,4 +2047,4 @@ Pero si nosotros intentamos escribir en replica no nos va a dejar ya que replica
 
 **solución:** renombrar tablas, decirle a sistema que ataque dos tablas, ejemplo con un **ALTER TABLE** cambia la tabla **viajes** a **viajes_temporal** y crea una tabla de **viajes "nueva"** mientras que la aplicación sigue utilizando la tabla de viajes para insertar las operaciones del dia/turno, esto permitirá a tu algoritmo de consolidación realizar el borrado y indexado mucho mas rápido, mientras la tabla viajes sigue con registrando las operaciones de la aplicación, esta operación se realiza dependiendo el flujo de informacion a consolidar.
 
-![cambiar-nombres-de-tablas-y-particiones](src/cambiar-nombres-de-tablas-y-particiones.pdf)
+[cambiar-nombres-de-tablas-y-particiones](src/cambiar-nombres-de-tablas-y-particiones.pdf)

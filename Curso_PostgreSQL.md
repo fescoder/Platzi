@@ -1931,7 +1931,7 @@ Cuando tu aplicación crece en usuarios/operaciones te vas a topar con limites e
 
 Tendremos la base de datos principal se hacen todas las modificaciones y tener una base de datos secundaria donde solamente se hacen las lecturas, separa las acciones nos permite separar todas las tareas que hace internamente postgres es decir los cambios los hace en "A" y  automáticamente se llevan a la tabla donde se leen los datos "B", este proceso lo hace postgres no tiene que hacer nada a mano, solamente es necesario configurar al menos 2 servidores de postgres (por lo menos 2, ya que puedes tener una cantidad ilimitada de replicas) uno como maestro y otro como esclavo, deberás modificar tu aplicación para que todas las modificaciones las haga sobre la base de datos principal o "master" y que todas las lecturas las haga sobre la replica (copia en caliente de la base de datos).
 
-IPS (In operation per second) es la limitante a nivel de sistemas operativos, como saber que nivel nos sirve (10,20, 40 iops)
+IOPS (In operation per second) es la limitante a nivel de sistemas operativos, como saber que nivel nos sirve (10,20, 40 iops)
 
 ### Clase 30 Implementacion de Replicas en Postgres
 
@@ -2046,3 +2046,5 @@ Pero si nosotros intentamos escribir en replica no nos va a dejar ya que replica
 **Problema:** Evitar bloqueos por inserciones y borrados en la misma tabla.
 
 **solución:** renombrar tablas, decirle a sistema que ataque dos tablas, ejemplo con un **ALTER TABLE** cambia la tabla **viajes** a **viajes_temporal** y crea una tabla de **viajes "nueva"** mientras que la aplicación sigue utilizando la tabla de viajes para insertar las operaciones del dia/turno, esto permitirá a tu algoritmo de consolidación realizar el borrado y indexado mucho mas rápido, mientras la tabla viajes sigue con registrando las operaciones de la aplicación, esta operación se realiza dependiendo el flujo de informacion a consolidar.
+
+![cambiar-nombres-de-tablas-y-particiones](src/cambiar-nombres-de-tablas-y-particiones.pdf)

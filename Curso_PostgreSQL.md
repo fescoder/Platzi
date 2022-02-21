@@ -1051,8 +1051,6 @@ Ahora veamos el efecto en la tabla de trayectos
 
 Observamos que se elimino la informacion (por la acción CASCADE) del trayecto ya que se elimino el id (llave primaria) del tren, ahora una peculiaridad es que si creamos otro tren sin definir explícitamente el valor del id tendremos un tren id 2, y el id del trayecto también cambiara.
 
-![insert_0](src/insert_0.jpg)
-
 ![insert_1](src/insert_1.jpg)
 
 ![insert_2](src/insert_2.jpg)

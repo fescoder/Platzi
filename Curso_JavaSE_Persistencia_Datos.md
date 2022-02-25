@@ -10,6 +10,7 @@ Utiliza [Draw IO](https://www.draw.io/) para hacer los diagramas del proyecto
 
 ![04_Diseñando_nuestra_BD_01](src/Curso_Java_Persistencia_Datos/04_Diseñando_nuestra_BD_01.png)
 
+## Modulo 3 Realizar operaciones CRUD y generar conexión
 
 ### Clase 8 Conección a Mysql desde Java
 

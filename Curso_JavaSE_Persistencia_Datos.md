@@ -3,6 +3,8 @@
 - [Curso de Java SE Persistencia de Datos](#Curso-de-Java-SE-Persistencia-de-Datos)
     - [Modulo 3 Realizar operaciones CRUD y generar conexión](#modulo-3-Realizar-operaciones-CRUD-y-generar-conexión)
         - [Clase 8 Conexión a MySQL desde Java](#clase-8-Conexión-a-MySQL-desde-Java)
+        - [Clase 9 Control de versiones con Git y GitLab](#clase-9-Control-de-versiones-con-Git-y-GitLab)
+        - [Clase 10 Flujo y lógica de la aplicación](#clase-10-Flujo-y-lógica-de-la-aplicación)
 
 Empieza ya desarrollando el primer proyecto del curso, que permite ver y publica mensajes, muy similar a Twitter.
 
@@ -57,3 +59,73 @@ Importamos también la clase java.sql.Connection.
 Ya tenemos la conexxxion a la BD y ahora podemos empezar a desarrollar el proyecto.
 
 ![08_Conexión_a_MySQL_desde_Java_05](src/Curso_Java_Persistencia_Datos/08_Conexión_a_MySQL_desde_Java_05.png)
+
+### Clase 9 Control de versiones con Git y GitLab
+
+Comentario
+Para los que no hayan utilizado la consola para enlazar el repo de gitlab, estas son las instrucciones:
+
+En la consola, navegar hasta la carpeta del proyecto
+Iniciar el repositorio de git local
+git init
+Ir a la página de Github y crear el repositorio con el mismo nombre del proyecto.
+
+…or create a new repository on the command line
+echo "# mensajes_app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/FesCoder/mensajes_app.git
+git push -u origin main
+
+Con SSH
+…or push an existing repository from the command line
+git remote add origin https://github.com/FesCoder/mensajes_app.git
+git branch -M main
+git push -u origin main
+
+//Seria lo de arriba.
+Enlazar el repositorio:
+git remote add origin git@gitlab.com:<tu usuario>/<el nombre de tu repo en gitlab>.git
+Agregar un archivo .gitignore (recomiendo usar este)
+https://gist.githubusercontent.com/Avinashachu007/58450a38a3a77d7c9923a55023f470f4/raw/eb564c6fc8f54d9f50e8902e4d119356b7d975cf/.gitignore
+
+Agregar los archivos a stage
+git add .
+Hacer el commit
+git commit -m “<Pon aqui el mensaje que quieras>”
+Subir los cambios
+git push -u origin main
+Claro que antes debes configurar tu llave pública y privada de gitlab.
+
+### Clase 10 Flujo y lógica de la aplicación
+
+Hora de construir el Backend de nuestra app.
+Vamos a crear una serie de capas y de clases en Java que nos van a permitir toda la comunicación entre el backend y nuestra base de datos.
+Para ello vamos a utilizar una capa, la capa DAO (Data Access) que nos permite conectar a la BD y hacer las operaciones.
+Una capa de servicios que va a recibir los datos desde un menú y que llama a la capa DAO para conectarse a la BD.
+Y en la clase Inicio  ponemos el menú que va a permitir elegir entre las opciones.
+Tambien creamos nuestra clase que contiene el modelo de Mensajes, ésta contiene la estructura basica para poder realizar las operaciones, aqui aplicamos todos los atributos
+del proyecto que vimos.
+Tenemos el primer constructor por defecto.
+Creamos un segundo constructor para enviar todos los datos a nuestra base de datos cuando estemos creando un mensaje.
+Y sus Getters and Setters.
+
+![10_Flujo_y_logica_de_la_aplicacion_01](src/Curso_Java_Persistencia_Datos/10_Flujo_y_logica_de_la_aplicacion_01.png)
+
+En la clase DAO vamos a crear 4 métodos que conectaran con la base de datos
+
+![10_Flujo_y_logica_de_la_aplicacion_02](src/Curso_Java_Persistencia_Datos/10_Flujo_y_logica_de_la_aplicacion_02.png)
+
+En la clase Service vamos a crear los métodos que va a recibir el menu y se conecta con la capa DAO para despues con la BD.
+
+![10_Flujo_y_logica_de_la_aplicacion_03](src/Curso_Java_Persistencia_Datos/10_Flujo_y_logica_de_la_aplicacion_03.png)
+
+En la clase Inicio vamos a crear el menú con el que se interectuaran las 4 operaciones.
+
+![10_Flujo_y_logica_de_la_aplicacion_04](src/Curso_Java_Persistencia_Datos/10_Flujo_y_logica_de_la_aplicacion_04.png)
+
+En este punto tenemos el menu en Inicio, que se conecta con la capa se servicios que es la que nos va a pedir los datos para poderlos almacenar en la BD o simplemente
+traernos el listado de mensajes, y esa capa Service se conecta con la capa DAO que es la que finalmente ejecuta las instrucciones SQL para poder traer datos o guardarlos,
+estas capas nos permite tener mas separada la app y tener el flujo de información.

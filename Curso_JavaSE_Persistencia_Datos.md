@@ -157,7 +157,20 @@ La capa de servicio se encargara de pedirle a la capa DAO que le solicite a la B
 la devuelve a la capa Service para que se la pase a la capa de incio y podamos ver todos estos mensajes.
 
 Clase Service
+Solo se agregó la llamada al método leerMensajeBD para que DAO ejecute la query
 ![12_CRUD_lectura_de_datos_02](src/Curso_Java_Persistencia_Datos/12_CRUD_lectura_de_datos_02.png)
 
 Clase DAO
 ![12_CRUD_lectura_de_datos_01](src/Curso_Java_Persistencia_Datos/12_CRUD_lectura_de_datos_01.png)
+
+
+### Clase 13 CRUD: eliminación de datos
+
+Ahora veremos como borrar un mensaje de nuestra BD.
+Se le pedira al usuario el ID del mensaje que quiere borrar, ese ID sera llevado a la capa DAO y la capa DAO le dira a la BD que elimine el msj de acuerdo a ese ID.
+
+Clase Service
+![13_CRUD_eliminación_de_datos_01](src/Curso_Java_Persistencia_Datos/13_CRUD_eliminación_de_datos_01.png)
+
+Clase DAO
+![13_CRUD_eliminación_de_datos_02](src/Curso_Java_Persistencia_Datos/13_CRUD_eliminación_de_datos_02.png)

@@ -5,6 +5,7 @@
         - [Clase 8 Conexión a MySQL desde Java](#clase-8-Conexión-a-MySQL-desde-Java)
         - [Clase 9 Control de versiones con Git y GitLab](#clase-9-Control-de-versiones-con-Git-y-GitLab)
         - [Clase 10 Flujo y lógica de la aplicación](#clase-10-Flujo-y-lógica-de-la-aplicación)
+        - [Clase 11 CRUD: inserción de datos](#Clase-11-CRUD:-inserción-de-datos)
 
 Empieza ya desarrollando el primer proyecto del curso, que permite ver y publica mensajes, muy similar a Twitter.
 
@@ -129,3 +130,17 @@ En la clase Inicio vamos a crear el menú con el que se interectuaran las 4 oper
 En este punto tenemos el menu en Inicio, que se conecta con la capa se servicios que es la que nos va a pedir los datos para poderlos almacenar en la BD o simplemente
 traernos el listado de mensajes, y esa capa Service se conecta con la capa DAO que es la que finalmente ejecuta las instrucciones SQL para poder traer datos o guardarlos,
 estas capas nos permite tener mas separada la app y tener el flujo de información.
+
+### Clase 11 CRUD: inserción de datos
+
+En esta clase vamos a utilizar las operaciones del CRUD “En informática, CRUD es el acrónimo de “Crear, Leer, Actualizar y Borrar” (del original en inglés: Create, Read, Update and Delete)
+que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software.”
+
+Nuestra capa Service es el encargado de pedirnos los datos de los mensajes (Mensaje, Autor) y esta enviara sus parametros a la capa DAO, la cual se encargara de conectarse a la
+BD y enviar los datos del mensaje.
+
+Clase Service
+![11_CRUD_inserción_de_datos_01](src/Curso_Java_Persistencia_Datos/11_CRUD_inserción_de_datos_01.png)
+
+Clase DAO
+![11_CRUD_inserción_de_datos_02](src/Curso_Java_Persistencia_Datos/11_CRUD_inserción_de_datos_02.png)

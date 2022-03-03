@@ -15,6 +15,7 @@ Utiliza [Draw IO](https://www.draw.io/) para hacer los diagramas del proyecto
 
 ## Modulo 3 Realizar operaciones CRUD y generar conexión
 
+
 ### Clase 8 Conección a Mysql desde Java
 
 En la clase anterior vimos como crear un proyecto basico en NetBaens.
@@ -61,6 +62,7 @@ Ya tenemos la conexxxion a la BD y ahora podemos empezar a desarrollar el proyec
 
 ![08_Conexión_a_MySQL_desde_Java_05](src/Curso_Java_Persistencia_Datos/08_Conexión_a_MySQL_desde_Java_05.png)
 
+
 ### Clase 9 Control de versiones con Git y GitLab
 
 Comentario
@@ -100,6 +102,7 @@ Subir los cambios
 git push -u origin main
 Claro que antes debes configurar tu llave pública y privada de gitlab.
 
+
 ### Clase 10 Flujo y lógica de la aplicación
 
 Hora de construir el Backend de nuestra app.
@@ -131,6 +134,7 @@ En este punto tenemos el menu en Inicio, que se conecta con la capa se servicios
 traernos el listado de mensajes, y esa capa Service se conecta con la capa DAO que es la que finalmente ejecuta las instrucciones SQL para poder traer datos o guardarlos,
 estas capas nos permite tener mas separada la app y tener el flujo de información.
 
+
 ### Clase 11 CRUD: inserción de datos
 
 En esta clase vamos a utilizar las operaciones del CRUD “En informática, CRUD es el acrónimo de “Crear, Leer, Actualizar y Borrar” (del original en inglés: Create, Read, Update and Delete)
@@ -144,3 +148,16 @@ Clase Service
 
 Clase DAO
 ![11_CRUD_inserción_de_datos_02](src/Curso_Java_Persistencia_Datos/11_CRUD_inserción_de_datos_02.png)
+
+
+### Clase 12 CRUD: lectura de datos
+
+En este caso vamos a utilizar de las operaciones del CRUD la de lectura, es decir traer los datos.
+La capa de servicio se encargara de pedirle a la capa DAO que le solicite a la BD todos los mensajes que tenemos en nuestra tabla, las cuales vuelven a la capa DAO y esta a su vez
+la devuelve a la capa Service para que se la pase a la capa de incio y podamos ver todos estos mensajes.
+
+Clase Service
+![12_CRUD_lectura_de_datos_02](src/Curso_Java_Persistencia_Datos/12_CRUD_lectura_de_datos_02.png)
+
+Clase DAO
+![12_CRUD_lectura_de_datos_01](src/Curso_Java_Persistencia_Datos/12_CRUD_lectura_de_datos_01.png)

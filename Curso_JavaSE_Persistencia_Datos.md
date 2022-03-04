@@ -5,7 +5,9 @@
         - [Clase 8 Conexión a MySQL desde Java](#clase-8-Conexión-a-MySQL-desde-Java)
         - [Clase 9 Control de versiones con Git y GitLab](#clase-9-Control-de-versiones-con-Git-y-GitLab)
         - [Clase 10 Flujo y lógica de la aplicación](#clase-10-Flujo-y-lógica-de-la-aplicación)
-        - [Clase 11 CRUD: inserción de datos](#Clase-11-CRUD:-inserción-de-datos)
+        - [Clase 11 CRUD: inserción de datos](#Clase-11-CRUD-inserción-de-datos)
+        - [Clase 12 CRUD: lectura de datos](#Clase-12-CRUD-lectura-de-datos)
+        - [Clase 13 CRUD: eliminación de datos](#Clase-13-CRUD-eliminación-de-datos)
 
 Empieza ya desarrollando el primer proyecto del curso, que permite ver y publica mensajes, muy similar a Twitter.
 

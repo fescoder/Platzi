@@ -8,6 +8,9 @@
         - [Clase 11 CRUD: inserción de datos](#Clase-11-CRUD-inserción-de-datos)
         - [Clase 12 CRUD: lectura de datos](#Clase-12-CRUD-lectura-de-datos)
         - [Clase 13 CRUD: eliminación de datos](#Clase-13-CRUD-eliminación-de-datos)
+        - [Clase 14 CRUD: actualización de datos](#Clase-14-CRUD-actualización-de-datos)
+        - [Clase 15 API REST y métodos HTTP](#Clase-15-API-REST-y-métodos-HTTP)
+
 
 Empieza ya desarrollando el primer proyecto del curso, que permite ver y publica mensajes, muy similar a Twitter.
 
@@ -192,3 +195,16 @@ Clase DAO
 ![14_CRUD_actualización_de_datos_02](src/Curso_Java_Persistencia_Datos/14_CRUD_actualización_de_datos_02.png)
 
 En este modulo aprendimos a hacer las 4 operaciones del CRUD -> Crear, Leer, Eliminar y Actualizar. Usan Java y una BD Mysql.
+
+
+### Clase 15 API REST y métodos HTTP
+
+En este módulo vamos a ver la persistencia de datos a traves de APIs o API REST (Application Programming Interfaces - Interfaz de programación de aplicaciónes) que es un conjunto
+de recursos que dispone una empresa u organización para que un tercero podamos consumir la información que ellos disponen. Las APIs son un método de comunicación que le permite a
+terceros comunicarse entre si para transferir información y realizar las 4 operaciónes básicas pero esta vez no utilizando el CRUD si no métodos HTTP.
+
+Las APIs funcionan bajo el estandar o protocolo HTTP que es el con el que funcionan los sitios web y estos utilizan unos métodos que sirven para las 4 operaciónes.
+Cuando queremos obtener información de una API utilizamos el método GET, cuando queremos guardar o enviar usamos el método POST, para actualizar info en ese recurso o API externa
+podemos usar el método PUT o PATCH y cuando queremos borrar utilizamos el método DELETE.
+
+Las APIs funcionan en diferentes formatos, tenemos el JSON, que es el estandar para las APIs REST y también tenemos el formato XML que se utilizaban en otro tipos de APIs en años ant.

@@ -176,3 +176,19 @@ Clase Service
 
 Clase DAO
 ![13_CRUD_eliminación_de_datos_02](src/Curso_Java_Persistencia_Datos/13_CRUD_eliminación_de_datos_02.png)
+
+
+### Clase 14 CRUD: actualización de datos
+
+Ahora vamos a pedirle al usuario en la actualización del mensaje que nos indique el id y el mensaje que quiere actualizar. Estos datos lo recibirá la capa DAO y
+hace la act a la BD de ese ID.
+
+Clase Service
+
+![14_CRUD_actualización_de_datos_01](src/Curso_Java_Persistencia_Datos/14_CRUD_actualizaci%C3%B3n_de_datos_01.png)
+
+Clase DAO
+
+![14_CRUD_actualización_de_datos_02](src/Curso_Java_Persistencia_Datos/14_CRUD_actualización_de_datos_02.png)
+
+En este modulo aprendimos a hacer las 4 operaciones del CRUD -> Crear, Leer, Eliminar y Actualizar. Usan Java y una BD Mysql.

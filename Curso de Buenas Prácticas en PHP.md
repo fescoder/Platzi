@@ -4,7 +4,7 @@ En este curso nuestro profesor Mauro Chojrin nos enseñará una serie de técnic
 
 **Objetivo:** Crear aplicaciones más robustas, escalables y mantenibles en el tiempo.
 
-Temas:
+**Temas:**
 - Identificación de problemas comunes en la escritura de codigo y como evitarlas.
 - Principio SOLID.
 - TDD -> Test Driven Development.
@@ -14,8 +14,7 @@ El código bien escrito beneficia a todos los involucrados en el proyecto.
 - A cualquiera: Cualquier persona que deba modificar el código después de tí.
 - A tu cliente: Aunque nunca lo sabrá, su negocio estará mejor atendido.
 
-**Código prolijo**
-
+## Código prolijo
 Los siguientes elementos dotan de calidad al código:
 - Legibilidad: qué tan fácil es interpretar lo que el código dice. Atención en la Indentación
 - Mantenibilidad: cuánto esfuerzo supondrá adaptar el código a nuevos requerimientos.
@@ -31,33 +30,31 @@ Debemos seguir un estándar de codificación, el cual nos ayuda a:
 - Respétalo: Haz un esfuerzo por adherir al estándar durante tu día a día.
 - Apóyate en algún linter: Esta sencilla herramienta te ayudará a incorporar buenas prácticas.
 
-**Identificadores**
-
-Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio.
-
+## Identificadores
+Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio.  
 Ejemplo sin un identificador mnemotécnico una función se vería así:
-
 ```
 function f( int $b, int $a ) : float {
         return ( $b * $a ) / 2;
 }
 ```
-
-Al leer este código no sabemos para qué funciona y hasta podríamos borrarlo por equivocación.
-
+Al leer este código no sabemos para qué funciona y hasta podríamos borrarlo por equivocación.  
 Ahora utilizando un identificador mnemotécnico se vería así:
+```
 function areaRectangulo( int $base, int $altura ) : float {
         return ( $base * $altura ) / 2;
 }
-
+```
 Ahora gracias a que el código es más legible sabemos para qué funciona esta función.
+
 Atención a los identificadores que estableces.
 
-**Código modular**
+## Código modular
+
 El código modular son pedazos de códigos divididos que pueden ser utilizados en cualquier lugar para evitar tener un solo archivo con un bloque de código gigante.
 
-Este se trata de hacer código que este organizado de forma en pequeños bloques que se unan mediante código.
-A mayor cantidad de código menos visible los bugs.
+Este se trata de hacer código que este organizado de forma en pequeños bloques que se unan mediante código.  
+A mayor cantidad de código menos visible los bugs.  
 El tipo de código que con frecuencia vamos a modularizar son:
 Los bloques que están dentro de un ciclo for o while
 Los bloques dentro de un condicional

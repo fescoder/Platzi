@@ -1,36 +1,37 @@
+# Curso de Buenas Practicas en PHP
+
 En este curso nuestro profesor Mauro Chojrin nos enseñará una serie de técnicas que nos ayudarán a realizar aplicaciones más robustas, escalables y mantenibles en el tiempo.
 
-**Objetivo:**:Crear aplicaciones mas robustas, escalables y mantenibles en el tiempo.
+**Objetivo:** Crear aplicaciones más robustas, escalables y mantenibles en el tiempo.
 
 Temas:
-Identificación de problemas comunes en la escritura de codigo y como evitarlas
-Principio SOLID
-TDD -> Test Driven Development
+- Identificación de problemas comunes en la escritura de codigo y como evitarlas.
+- Principio SOLID.
+- TDD -> Test Driven Development.
 
 El código bien escrito beneficia a todos los involucrados en el proyecto.
-
-A tí: Cuando retomemos un proyecto después de un largo tiempo nos beneficiará ya que sabremos cómo está ordenado y cómo está escrito todo.
-A cualquiera: Cualquier persona que deba modificar el código después de tí.
-A tu cliente: Aunque nunca lo sabrá, su negocio estará mejor atendido.
+- A tí: Cuando retomemos un proyecto después de un largo tiempo nos beneficiará ya que sabremos cómo está ordenado y cómo está escrito todo.
+- A cualquiera: Cualquier persona que deba modificar el código después de tí.
+- A tu cliente: Aunque nunca lo sabrá, su negocio estará mejor atendido.
 
 **Código prolijo**
 Los siguientes elementos dotan de calidad al código:
-Legibilidad: qué tan fácil es interpretar lo que el código dice. Atención en la Indentación
-Mantenibilidad: cuánto esfuerzo supondrá adaptar el código a nuevos requerimientos.
-Testeabilidad: cuánto esfuerzo supondrá realizar pruebas sobre este código.
+- Legibilidad: qué tan fácil es interpretar lo que el código dice. Atención en la Indentación
+- Mantenibilidad: cuánto esfuerzo supondrá adaptar el código a nuevos requerimientos.
+- Testeabilidad: cuánto esfuerzo supondrá realizar pruebas sobre este código.
 
 El código fuente lo escribimos para personas como tú y yo, para las computadoras tenemos las versiones compiladas.
 
 Debemos seguir un estándar de codificación, el cual nos ayuda a:
-Generar código claro y consistente.
-Evitar perder tiempo en decisiones triviales.
-Tips para mejorar la legibilidad de nuestro código:
-Define un estándar: Piénsalo una vez y déjalo por escrito.
-Respétalo: Haz un esfuerzo por adherir al estándar durante tu día a día.
-Apóyate en algún linter: Esta sencilla herramienta te ayudará a incorporar buenas prácticas.
+- Generar código claro y consistente.
+- Evitar perder tiempo en decisiones triviales.
+- Tips para mejorar la legibilidad de nuestro código:
+- Define un estándar: Piénsalo una vez y déjalo por escrito.
+- Respétalo: Haz un esfuerzo por adherir al estándar durante tu día a día.
+- Apóyate en algún linter: Esta sencilla herramienta te ayudará a incorporar buenas prácticas.
 
 **Identificadores**
-Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio.
+Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio. 
 Ejemplo sin un identificador mnemotécnico una función se vería así:
 
 function f( int $b, int $a ) : float {

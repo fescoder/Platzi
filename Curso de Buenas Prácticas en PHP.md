@@ -113,7 +113,7 @@ SOLID significa:
 - O: Open/Closed Principle
 - L: Liskov Substitution Principle
 - I: Interface Segregation Principle
-- D: Dependency Inversion Principle
+- D: Dependency Inversion Principle  
 La S se trata de una clase que debe tener sólo una razón para cambiar.
 
 
@@ -187,9 +187,9 @@ En otra palabras, las interfaces serán contratos que indicarán que es lo que s
 **Testings**
 
 ### Introducción al Testing Automatizado
-Existen dos tipos de testing:  
-Unit Testing: Evaluamos el funcionamiento de los componentes individualmente.  
-Integration Testing: Validar la interacción entre los componentes y el sistema completo.
+Existen dos tipos de testing:
+- Unit Testing: Evaluamos el funcionamiento de los componentes individualmente.  
+- Integration Testing: Validar la interacción entre los componentes y el sistema completo.
 
 ### Clase 21 - TDD
 Test Driven Development  

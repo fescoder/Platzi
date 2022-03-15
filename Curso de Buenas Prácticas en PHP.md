@@ -15,6 +15,7 @@ El código bien escrito beneficia a todos los involucrados en el proyecto.
 - A tu cliente: Aunque nunca lo sabrá, su negocio estará mejor atendido.
 
 **Código prolijo**
+
 Los siguientes elementos dotan de calidad al código:
 - Legibilidad: qué tan fácil es interpretar lo que el código dice. Atención en la Indentación
 - Mantenibilidad: cuánto esfuerzo supondrá adaptar el código a nuevos requerimientos.
@@ -31,12 +32,17 @@ Debemos seguir un estándar de codificación, el cual nos ayuda a:
 - Apóyate en algún linter: Esta sencilla herramienta te ayudará a incorporar buenas prácticas.
 
 **Identificadores**
-Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio. 
+
+Los identificadores son variables, funciones, clases, módulos, componentes, etc. Elementos a los que nosotros debamos crearles un nombre propio.
+
 Ejemplo sin un identificador mnemotécnico una función se vería así:
 
+```
 function f( int $b, int $a ) : float {
         return ( $b * $a ) / 2;
 }
+```
+
 Al leer este código no sabemos para qué funciona y hasta podríamos borrarlo por equivocación.
 
 Ahora utilizando un identificador mnemotécnico se vería así:

@@ -208,3 +208,176 @@ Cuando queremos obtener información de una API utilizamos el método GET, cuand
 podemos usar el método PUT o PATCH y cuando queremos borrar utilizamos el método DELETE.
 
 Las APIs funcionan en diferentes formatos, tenemos el JSON, que es el estandar para las APIs REST y también tenemos el formato XML que se utilizaban en otro tipos de APIs en años ant.
+
+
+### Curso de API REST con PHP, profundización en las APIs
+
+**API**
+La palabra API es un acrónimo que significa Interfaz de Programación de Aplicaciones (Application Programming Interface). Es un sistema que funciona como intermediario entre diferentes
+aplicaciones de software y su función es permitir que estas aplicaciones puedan comunicarse entre sí. Cada vez que usas una app como WhatsApp, Instagram o Facebook, estás usando una API
+sin saberlo.
+
+**Curl**
+es una herramienta de línea de comandos y bibliotecas con la cual es posible transferir datos a través de una URL con diversas opciones de seguridad.
+Curl es compatible con protocolos como DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, Telnet and TFTP, certificados
+SSL HTTP POST, HTTP PUT y muchos más.
+La utilidad Curl hace uso de líneas de comandos o scripts para llevar a cabo la transferencia de los datos, es por ello que es una de las herramientas más populares.
+
+**HTTP**
+HTTP (Hypertext Transfer Protocol), en español: Protocolo de Transferencia de Hipertexto, es un protocolo estándar que gestiona la conexión de los servidores web con los navegadores.
+
+Qué es HTTP
+Es un protocolo de comunicación entre aplicaciones basado en el intercambio de texto. El protocolo HTTP es el que impulsa todo internet. Los navegadores web utilizan este protocolo para
+solicitar páginas web a los servidores. El servidor devuelve todos los datos necesarios en código HTML para que puedan mostrarse en el navegador.
+
+Qué es un protocolo
+Es conjunto de reglas en las que se van a comunicar dos entidades, en este caso dos computadoras. El modelo TCP/IP nos permite esta comunicación entre computadoras.
+
+Como funciona el protocolo HTTP
+El cliente envía una petición, se transmite por internet.
+El servidor recibe la petición y genera una respuesta, la envía.
+El cliente recibe la respuesta (y si estamos en el navegador, interpreta lo recibido).
+
+**REST**
+REST es un acrónimo que significa Representational State Transfer o transferencia de estado representacional en español. Le agrega una capa muy delgada de complejidad y abstracción a HTTP.
+Mientras que HTTP es transferencia de archivos, REST se basa en la transferencia de recursos.
+
+Cómo funciona REST
+REST es un conjunto de principios que definen la forma en que se deben crear, leer, actualizar y eliminar los datos. Es una arquitectura conocida como cliente-servidor, en la que el
+servidor y el cliente actúan de forma independiente, siempre y cuando la interfaz sea la misma al procesar una solicitud y una respuesta, que son los elementos esenciales. El servidor
+expone la API REST y el cliente hace uso de ella. El servidor almacena la información y la pone a disposición del usuario, mientras que el cliente toma la información y la muestra al
+usuario o la utiliza para realizar posteriores peticiones de más información.
+
+REST es muy útil cuando:
+Las interacciones son simples.
+Los recursos de tu hardware son limitados.
+
+Qué es una API RESTful
+Una API RESTful es una interfaz que utiliza estos principios para comunicarse hacia y desde un servidor. Está diseñada con los conceptos de REST. El principio más importante en las APIs
+RESTful es el uso de los métodos HTTP:
+
+GET -> para obtener un recurso del servidor del servidor, podes obtener colecciones de recursos como recursos puntuales.
+POST - para crear un recurso del servidor
+PUT -> para actualizar un recurso del servidor. Se tiene que reemplaza toda la información, se debe enviar completa.
+PATCH -> Para hacer una modificacion especifica del elemento.
+DELETE -> Para borrar un recurso del servidor.
+Estos métodos son empleados por los clientes para crear, manipular y eliminar datos en los servidores, respectivamente.
+
+Elementos de una API RESTful
+Recurso: todo dentro de una API RESTful debe ser un recurso.
+URI: los recursos en REST siempre se manipulan a partir de la URI, identificadores universales de recursos.
+Acción: todas las peticiones a tu API RESTful deben estar asociadas a uno de los verbos de HTTP: GET para obtener un recurso, POST para escribir un recurso, PUT para modificar un recurso y
+DELETE para borrarlo.
+
+Comentarios
+Una petición REST completa se basa en:
+-URL(Dominio, protocolo)
+-verbo HTTP (GET, PUT, POST, DELETE)
+¿Cuándo conviene usar REST?
+-Interacciones simples (agregar recursos, quitarlos, modificarlos)
+-Recursos limitados
+¿Cuándo NO conviene usar REST?
+-cuando las interacciones son más complejas, ejemplo cuándo necesitamos que el servidor aporte más lógica.
+
+REST permite mandar json, xml, binarios (imágenes, documentos), text, etc. en cambio con SOAP que solo permite la transmisión de datos en formato XML, json es mucho mas liviano y rapido en
+su procesamiento dado que es interpretado de forma natural por javascript.
+REST como SOAP son bastante capaces de atender grandes volúmenes de información, yo creo hay que analizar que es más conveniente para uno, tanto en tiempo de desarrollo, tecnologías y
+sobre que dispositivos o tipos de APP se van a consumir, SOAP se utiliza mas en aplicaciones financieras.
+
+REST (Representational State Transfer)
+HTTP: HyperText Transfer Protocol
+URI: Uniform Resource Identifier
+URL: Uniform Resource Locator
+
+Levantar un servidor: php -S tudominio.local.com:8000 nombreArchivo.formato
+Para hacer consulta CURL: curl http://tudominio.local.com:8000
+Para hacer consulta CURL con más detalles: curl http://tudominio.local.com:8000 -v
+Consecuentemente, Definimos los recursos disponibles, declarando los parametros que van a pasar por el Query string, luego validamos que el recurso esté disponible, en caso de no estarlo
+podemos detener la ejecución del script, luego de esto definimos los recursos (En la vida real, los libros estarían disponibles en una DB) y finalmente validamos la respuesta asumiendo que
+el pedido es correcto.
+
+**Tipos de Autenticacion vía HTTP**
+La autenticación vía HTTP tiene dos problemas:
+Es poco segura: las credenciales se envían en cada request anteponiendo el usuario y contraseña en la url, por ejemplo: user:password@platzi.com.
+Es ineficiente: la autenticación se debe realizar en cada request.
+
+**Autenticación vía HMAC (Hash-based Message Authentication Code - Código de autenticación de mensajes basado en hash)**
+Para esta autenticación necesitamos 3 elementos:
+Función Hash: Difícil de romper, que sea conocida por el cliente y servidor.
+Clave secreta: Solamente la pueden saber el cliente y el servidor, será utilizada para corroborar el hash.
+UID: El id del usuario, será utilizado dentro de la función hash junto con la clave secreta y un timestamp.
+Es mucho más segura que la autenticación vía HTTP, por ello la información que se envía a través de este método no es muy sensible.
+
+**Autenticación vía Access Tokens**
+Está forma es la más compleja de todas, pero también es la forma más segura utilizada para información muy sensible. El servidor al que le van a hacer las consultas se va a partir en dos:
+
+Uno se va a encargar específicamente de la autenticación.
+El otro se va a encargar de desplegar los recursos de la API.
+El flujo de la petición es la siguiente:
+
+Nuestro usuario hace una petición al servidor de autenticación para pedir un token.
+El servidor le devuelve el token.
+El usuario hace una petición al servidor para pedir recursos de la API.
+El servidor con los recursos hace una petición al servidor de autenticación para verificar que el token sea válido.
+Una vez verificado el token, el servidor le devuelve los recursos al cliente.
+
+![13_Autenticación_vía_Access_Tokens_01](src/13_Autenticaci%C3%B3n_v%C3%ADa_Access_Tokens_01.png)
+
+**Manejo de errores de un servicio REST**
+De momento nuestra API no nos indica que haya ocurrido un error, solamente nos regresa un código 200 de HTTP que significa que la petición se realizó sin problemas.
+
+Para mejorar nuestra API añadiremos respuestas con los códigos HTTP más comunes:
+400 Bad Request: indica que el servidor no puede o no procesa la petición debido a algo que es percibido como un error del cliente
+404 Not Found: el servidor no encuentra el recurso solicitado.
+500 Internal Server Error: la petición no pudo procesarse por un error del servidor.
+
+Los códigos de estado en HTTP se clasifican en varios tipos:
+1xx: Respuestas informativas
+2xx: Peticiones correctas
+3xx: Redirecciones
+4xx: Errores del cliente
+5xx: Errores del servidor
+Los más comunes:
+400 Bad Request: Error en la petición.
+401 Unauthorized: Falta iniciar sesión.
+403 Forbidden: No se poseeen los permisos necesarios.
+404 Not Found: No se ha podido encontrar el recurso.
+500 Internal Server error: Usualmente fallo en la aplicación web.
+502 Bad Gateway: Error entre la comunicación del servidor web y alguno de los servidores que actúan de proxy.
+503 Service Unavailable: Servidor está caido por mantenimiento o está sobrecargado.
+504 Gateway Timeout: El servidor actúa como puerta de enlace y no puede obtener una respuesta a tiempo.
+
+**Introducción a Ajax**
+Es muy común tener comunicaciones con API REST al momento de tener una aplicación de una sola página o SPA, ya sea para obtener o guardar datos. Esta comunicación se realiza a través de
+AJAX, Asynchronous JavaScript And XML. la clave es la parte de asincronismo pues el cliente no se queda bloqueado.
+
+Un escenario muy común de comunicación vía Rest API lo constituye las single page application, en este escenario lo que sucede es que el cliente necesita comunicarse con el servidor para
+obtener más datos o hacer una actualización. Todo esto se vasa en una tecnología llamada AJAX, que significa Asynchronous Javascript XML.
+
+Cómo funciona
+El cliente hace una petición HTTP GET
+Obtiene HTML + JS y el navegador interpreta todo para mostrar la página, cuando tú haces clic en algún botón o algo parecido
+En ese momento, se dispara un nuevo pedido al servidor, este es el pedido que viaja vía AJAX y del otro lado, hay un servidor de tipo Restful que responderá con información JSON
+Una vez que llegue el JSON al navegador del cliente, JS se va a encargar de tomar estos datos y ponerlos en la estructura.
+
+Ajax es una tecnologia y una manera de realizar peticiones asincronas desde los navegadores web utilizando el objeto XMLHttpRequest.
+Actualmente lo navegadores modernos proveen una libreria llamada fetch para realizar estas llamadas sin necesidad de instalar nada.
+Lo digo por que en ocasiones la gente se confunde y cre ajax es solo la libreria de jquery. angular usa ajax, react y en la actualidad casi cualquier sitio web.
+
+https://www.youtube.com/watch?v=_ybgWmSCAu8
+
+Bootstrap, es un framework, te permite crear interfaces web con CSS y JavaScript, cuya particularidad es la de adaptar la interfaz del sitio web al tamaño del dispositivo en que se
+visualice. Es decir, el sitio web se adapta automáticamente al tamaño de una PC, una Tablet u otro dispositivo. Esta técnica de diseño y desarrollo se conoce como “responsive design” o
+diseño adaptativo.
+
+Funcion Anónima -> Es una funcion que se crea cuando se ejecuta.
+
+Recuerda seguir las buenas prácticas:
+Siempre utiliza sustantivos para nombrar tus recursos.
+Añade los nombres en plural para las urls.
+Las modificaciones a recursos deben hacerse con su verbo HTTP correspondiente: POST, PUT o DELETE.
+Para devolver recursos asociados a otro recurso utiliza url que incorporen subrecursos: /Autos/1/Choferes.
+Navegabilidad vía vínculos.
+Cuando devuelvas colecciones deben ser filtrables, ordenables y paginables.
+Versiona tu API, añade el número de versión en la url: v1/Autos.
+No olvides tomar el examen para evaluar tus conocimientos y dejar una review del curso.

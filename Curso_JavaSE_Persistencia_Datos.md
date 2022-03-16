@@ -381,3 +381,9 @@ Navegabilidad vía vínculos.
 Cuando devuelvas colecciones deben ser filtrables, ordenables y paginables.
 Versiona tu API, añade el número de versión en la url: v1/Autos.
 No olvides tomar el examen para evaluar tus conocimientos y dejar una review del curso.
+
+### Clase 16 Conociendo algunas APIs
+En esta clase se descargó Postman, que prueba el funcionamiento de las APIs, que información nos trae y su generación de código para poder implementarlo en nuestro proyecto.  
+En este caso se utilizo [Una API de Gatos](https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc) que genera una imagen aleatoria.
+
+### Clase 17 

@@ -211,17 +211,17 @@ Documentar es una de las mejores prácticas que podemos hacer cuando estamos en 
 código y por sobretodo debemos dejar comentarios en el código que ayuden a las personas a ubicarse en qué parte de la aplicación están y qué hacen esas líneas de código.
 
 ¿Qué documentar?  
-Como implementar nueva funcionalidad.  
-Como se realizan las pruebas.  
-Lo mínimo que necesita las personas que quieren colaborar o heredar tu proyecto.  
+- Como implementar nueva funcionalidad.  
+- Como se realizan las pruebas.  
+- Lo mínimo que necesita las personas que quieren colaborar o heredar tu proyecto.  
 ¿Como documentar?  
-UML como documentación.  
+- UML como documentación.  
 ¿Dónde documentar?  
-Propio código.  
-Sistema de documentación.  
-Wiki  
-Ficheros externos.  
-README  
+- Propio código.  
+- Sistema de documentación.  
+- Wiki  
+- Ficheros externos.  
+- README  
 ¿Cuándo documentar?  
-Documentar inmediatamente después de codear.  
-Cuando se resuelve un problema, documentar la solución.
+- Documentar inmediatamente después de codear.  
+- Cuando se resuelve un problema, documentar la solución.

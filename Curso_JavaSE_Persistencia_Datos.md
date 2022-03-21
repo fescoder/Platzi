@@ -255,12 +255,11 @@ Los recursos de tu hardware son limitados.
 Qué es una API RESTful
 Una API RESTful es una interfaz que utiliza estos principios para comunicarse hacia y desde un servidor. Está diseñada con los conceptos de REST. El principio más importante en las APIs
 RESTful es el uso de los métodos HTTP:
-
-GET -> para obtener un recurso del servidor del servidor, podes obtener colecciones de recursos como recursos puntuales.
-POST - para crear un recurso del servidor
-PUT -> para actualizar un recurso del servidor. Se tiene que reemplaza toda la información, se debe enviar completa.
-PATCH -> Para hacer una modificacion especifica del elemento.
-DELETE -> Para borrar un recurso del servidor.
+- GET -> para obtener un recurso del servidor del servidor, podes obtener colecciones de recursos como recursos puntuales.
+- POST - para crear un recurso del servidor
+- PUT -> para actualizar un recurso del servidor. Se tiene que reemplaza toda la información, se debe enviar completa.
+- PATCH -> Para hacer una modificacion especifica del elemento.
+- DELETE -> Para borrar un recurso del servidor.
 Estos métodos son empleados por los clientes para crear, manipular y eliminar datos en los servidores, respectivamente.
 
 Elementos de una API RESTful
@@ -271,13 +270,13 @@ DELETE para borrarlo.
 
 Comentarios
 Una petición REST completa se basa en:
--URL(Dominio, protocolo)
--verbo HTTP (GET, PUT, POST, DELETE)
+- URL(Dominio, protocolo)
+- Verbo HTTP (GET, PUT, POST, DELETE)
 ¿Cuándo conviene usar REST?
--Interacciones simples (agregar recursos, quitarlos, modificarlos)
--Recursos limitados
+- Interacciones simples (agregar recursos, quitarlos, modificarlos)
+- Recursos limitados
 ¿Cuándo NO conviene usar REST?
--cuando las interacciones son más complejas, ejemplo cuándo necesitamos que el servidor aporte más lógica.
+- Cuando las interacciones son más complejas, ejemplo cuándo necesitamos que el servidor aporte más lógica.
 
 REST permite mandar json, xml, binarios (imágenes, documentos), text, etc. en cambio con SOAP que solo permite la transmisión de datos en formato XML, json es mucho mas liviano y rapido en
 su procesamiento dado que es interpretado de forma natural por javascript.
@@ -332,20 +331,20 @@ Para mejorar nuestra API añadiremos respuestas con los códigos HTTP más comun
 500 Internal Server Error: la petición no pudo procesarse por un error del servidor.
 
 Los códigos de estado en HTTP se clasifican en varios tipos:
-1xx: Respuestas informativas
-2xx: Peticiones correctas
-3xx: Redirecciones
-4xx: Errores del cliente
-5xx: Errores del servidor
+- 1xx: Respuestas informativas
+- 2xx: Peticiones correctas
+- 3xx: Redirecciones
+- 4xx: Errores del cliente
+- 5xx: Errores del servidor
 Los más comunes:
-400 Bad Request: Error en la petición.
-401 Unauthorized: Falta iniciar sesión.
-403 Forbidden: No se poseeen los permisos necesarios.
-404 Not Found: No se ha podido encontrar el recurso.
-500 Internal Server error: Usualmente fallo en la aplicación web.
-502 Bad Gateway: Error entre la comunicación del servidor web y alguno de los servidores que actúan de proxy.
-503 Service Unavailable: Servidor está caido por mantenimiento o está sobrecargado.
-504 Gateway Timeout: El servidor actúa como puerta de enlace y no puede obtener una respuesta a tiempo.
+- 400 Bad Request: Error en la petición.
+- 401 Unauthorized: Falta iniciar sesión.
+- 403 Forbidden: No se poseeen los permisos necesarios.
+- 404 Not Found: No se ha podido encontrar el recurso.
+- 500 Internal Server error: Usualmente fallo en la aplicación web.
+- 502 Bad Gateway: Error entre la comunicación del servidor web y alguno de los servidores que actúan de proxy.
+- 503 Service Unavailable: Servidor está caido por mantenimiento o está sobrecargado.
+- 504 Gateway Timeout: El servidor actúa como puerta de enlace y no puede obtener una respuesta a tiempo.
 
 **Introducción a Ajax**
 Es muy común tener comunicaciones con API REST al momento de tener una aplicación de una sola página o SPA, ya sea para obtener o guardar datos. Esta comunicación se realiza a través de
@@ -384,7 +383,25 @@ No olvides tomar el examen para evaluar tus conocimientos y dejar una review del
 
 ### Clase 16 Conociendo algunas APIs
 En esta clase se descargó Postman, que prueba el funcionamiento de las APIs, que información nos trae y su generación de código para poder implementarlo en nuestro proyecto.  
-En este caso se utilizo [Una API de Gatos](https://thecatapi.com/) y usamos este [link](https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc) para generar una imagen
+En este caso se utilizo una [API de Gatos](https://thecatapi.com/) y usamos [este](https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc) para generar una imagen
 aleatoria.
 
-### Clase 17 
+### Clase 17 Creación del proyecto y API KEY
+Vamos a registarnos en las APIs para obtener la API KEY, que es basicamente un código llave que se usa cada vez que se realiza una petición a la API para poder autenticarnos.  
+Adicionalmente empezamos a crear la estrucura del proyecto.  
+Nos registramos en 'The Cat API', nos llega un correo con nuestra API KEY y abro Intellij IDEA para desarrollar el proyecto.  
+
+En este caso vamos a utilizar dos dependencias importantes, una es OKHTTP, que es el cliente o la dependencia que nos va a permitir conectar Java con APIs publicas y la otra
+dependencia se llama GSON, que nos permite serializar objetos, es decir que la respuesta que obtuvimos de la API la vamos a poder convertir en un array o un objeto dentro de
+Java para poder manipular los datos.
+
+![17_Creación_del_proyecto_y_API_KEY_01](src/Curso_Java_Persistencia_Datos/17_Creación_del_proyecto_y_API_KEY_01.png)
+
+Descargar dependencias en Intellij
+![17_Descargar_dependencias_de_maven_con_intellij](src/Curso_Java_Persistencia_Datos/17_Descargar_dependencias_de_maven_con_intellij.webp)
+
+Clase que creamos
+
+![17_Creación_del_proyecto_y_API_KEY_02](src/Curso_Java_Persistencia_Datos/17_Creaci%C3%B3n_del_proyecto_y_API_KEY_02.png)
+![17_Creación_del_proyecto_y_API_KEY_03](src/Curso_Java_Persistencia_Datos/17_Creaci%C3%B3n_del_proyecto_y_API_KEY_03.png)
+

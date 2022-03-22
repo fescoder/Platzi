@@ -38,14 +38,12 @@ En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su v
     - [Links o enlaces](Links_o_enlaces)
     - [Código](Código)
     - [Imágenes](Imágenes)
-
-
 - [Elementos varios](Elementos_varios)
     - [Links automáticos](Links_automáticos)
     - [Omitir Markdown](Omitir_Markdown)
 
 
-Elementos de bloque
+### Elementos de bloque
 Párrafos y saltos de línea
 Para generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (pulsando dos veces intro)
 

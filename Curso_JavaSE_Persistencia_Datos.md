@@ -9,8 +9,17 @@
         - [Clase 12 CRUD: lectura de datos](#Clase-12-CRUD-lectura-de-datos)
         - [Clase 13 CRUD: eliminación de datos](#Clase-13-CRUD-eliminación-de-datos)
         - [Clase 14 CRUD: actualización de datos](#Clase-14-CRUD-actualización-de-datos)
+    - [Módulo 4 Persistencia en API REST](#Modulo-4-Persistencia-en-API-REST)
         - [Clase 15 API REST y métodos HTTP](#Clase-15-API-REST-y-métodos-HTTP)
-
+        - [Curso de API REST con PHP, profundización en las APIs](#Curso-de-API-REST-con-PHP-profundizacion-en-las-APIs)
+        - [Clase 16 Conociendo algunas APIs](#Clase-16-Conociendo-algunas-APIs)
+        - [Clase 17 Creación del proyecto y API KEY](#Clase-17-Creacion-del-proyecto-y-API-KEY)
+        - [Clase 18 Listando datos de APIs públicas](#Clase-18-Listando-datos-de-APIs-publicas)
+        - [Clase 19 Mostrar datos de la API en la aplicación](#Clase-19-Mostrar-datos-de-la-API-en-la-aplicacion)
+        - [Clase 20 Guardando datos en APIs públicas](#Clase-20-Guardando-datos-en-APIs-publicas)
+        - [Clase 21 Listar datos guardados](#Clase-21-Listar-datos-guardados)
+        - [Clase 22 Mostrar favoritos](#Clase-22-Mostrar-favoritos)
+        - [Clase 23 Eliminar datos de la API](#Clase-23-Eliminar-datos-de-la-API)
 
 Empieza ya desarrollando el primer proyecto del curso, que permite ver y publica mensajes, muy similar a Twitter.
 

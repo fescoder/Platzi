@@ -420,12 +420,21 @@ La API te puede generar el código en Java con HTTPOK o también se puede realiz
 Los favoritos anteriores quedan guardados en la API de TheCatApi, ahora vamos a mostrarlos.
 Primero modificamos el menú
 ![21_Listar_datos_guardados_01](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_01.png)
-Y Ahora agregamos la lógica en una nueva función
+
+Y Ahora agregamos la lógica en una nueva función para mostrar el listado de gatos favoritos
 ![21_Listar_datos_guardados_02](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_02.png)
-Tambien agregamos dos clases nuevas para tratar los atributos que nos devuelve la API  
-GatosFav.java
+Tambien agregamos dos clases nuevas para tratar los atributos que nos devuelve la API
+
+GatosFav.java  
 ![21_Listar_datos_guardados_03](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_03.png)
-ImageX.java
+
+ImageX.java  
 ![21_Listar_datos_guardados_04](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_04.png)
 
-### Clase 22 
+### Clase 22 Mostrar favoritos
+Las últimas clases ya se ve mas el desorden y la falta de buenas prácticas del profesor, no hay que guiarse mucho por estas capturas pero las subo a fuerza de terminarlo.  
+Se corrigió la formula para obtener un numero aleatorio (una +1 donde habia un -1).  
+Básicamente se copio y pego desp el codigo para redimensionar la imagen, con algunas modificaciónes y el agregado de la función borrarFavorito().
+![22_Mostrar_favoritos_01](src/Curso_Java_Persistencia_Datos/22_Mostrar_favoritos_01.png)
+
+### Clase 23 

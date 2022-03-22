@@ -391,7 +391,7 @@ Vamos a registarnos en las APIs para obtener la API KEY, que es basicamente un c
 Adicionalmente empezamos a crear la estrucura del proyecto.  
 Nos registramos en 'The Cat API', nos llega un correo con nuestra API KEY y abro Intellij IDEA para desarrollar el proyecto.  
 
-En este caso vamos a utilizar dos dependencias importantes, una es OKHTTP, que es el cliente o la dependencia que nos va a permitir conectar Java con APIs publicas y la otra
+En este caso vamos a utilizar dos librerias o dependencias importantes, una es OKHTTP, que es el cliente o la dependencia que nos va a permitir conectar Java con APIs publicas y la otra
 dependencia se llama GSON, que nos permite serializar objetos, es decir que la respuesta que obtuvimos de la API la vamos a poder convertir en un array o un objeto dentro de
 Java para poder manipular los datos.
 
@@ -401,7 +401,10 @@ Descargar dependencias en Intellij
 ![17_Descargar_dependencias_de_maven_con_intellij](src/Curso_Java_Persistencia_Datos/17_Descargar_dependencias_de_maven_con_intellij.webp)
 
 Clase que creamos
-
 ![17_Creación_del_proyecto_y_API_KEY_02](src/Curso_Java_Persistencia_Datos/17_Creaci%C3%B3n_del_proyecto_y_API_KEY_02.png)
 ![17_Creación_del_proyecto_y_API_KEY_03](src/Curso_Java_Persistencia_Datos/17_Creaci%C3%B3n_del_proyecto_y_API_KEY_03.png)
 
+### Clase 18 Listando datos de APIs públicas
+![18_Listando_datos_de_APIs_publicas_01](src/Curso_Java_Persistencia_Datos/18_Listando_datos_de_APIs_publicas_01.png)
+
+### Clase 19

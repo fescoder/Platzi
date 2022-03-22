@@ -26,7 +26,7 @@ ya que siempre podrás obtener estos formatos a través de un conversor, o a tra
 ## Índice de sintaxis Markdown
 En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su vez engloban el resto de la sintaxis. Considera esto una cheat sheet con la que guiarte.
 
-- [Elementos de bloque](Elementos_de_bloque)
+- [Elementos de bloque](#Elementos_de_bloque)
     - [Párrafos y saltos de línea](Párrafos_y_saltos_de_línea)
     - [Encabezados](Encabezados)
     - [Citas](Citas)

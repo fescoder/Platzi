@@ -11,36 +11,40 @@ Este es un ejemplo de texto que da entrada a una lista genérica de elementos:
 - Elemento 1
 - Elemento 2
 - Elemento 3
+
 Este es un ejemplo de texto que da entrada a una lista numerada:
 1. Elemento 1
 2. Elemento 2
 3. Elemento 3
-Al texto en Markdown puedes añadirle formato como **negrita** o *cursiva* de una manera muy sencilla.
+
+Al texto en Markdown puedes añadirle formato como **negrita** o *cursiva* de una manera muy sencilla.  
 Como ves, se cumple perfectamente uno de los objetivos para los que Markdown fue diseñado, y es hacer las publicaciones lo más legibles posible.
 
 Otro de los objetivos de Markdown, es que puedas publicar los documentos “como están”. No importa si el resultado final que necesitas es HTML, un PDF o texto en formato enriquecido (RTF);
 ya que siempre podrás obtener estos formatos a través de un conversor, o a través de aplicaciones compatibles con Markdown.
 
-Índice de sintaxis Markdown
+## Índice de sintaxis Markdown
 En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su vez engloban el resto de la sintaxis. Considera esto una cheat sheet con la que guiarte.
 
-Elementos de bloque
-Párrafos y saltos de línea
-Encabezados
-Citas
-Listas
-Códigos de bloque
-Reglas horizontales
-Elementos de línea
-Énfasis
-Links o enlaces
-Código
-Imágenes
+- [Elementos de bloque](Elementos_de_bloque)
+    - [Párrafos y saltos de línea](Párrafos_y_saltos_de_línea)
+    - [Encabezados](Encabezados)
+    - [Citas](Citas)
+    - [Listas](Listas)
+    - [Códigos de bloque](Códigos_de_bloque)
+    - [Reglas horizontales](Reglas_horizontales)
+- [Elementos de línea](Elementos_de_línea)
+    - [Énfasis](Énfasis)
+    - [Links o enlaces](Links_o_enlaces)
+    - [Código](Código)
+    - [Imágenes](Imágenes)
 
 
-Elementos varios
-Links automáticos
-Omitir Markdown
+- [Elementos varios](Elementos_varios)
+    - [Links automáticos](Links_automáticos)
+    - [Omitir Markdown](Omitir_Markdown)
+
+
 Elementos de bloque
 Párrafos y saltos de línea
 Para generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (pulsando dos veces intro)

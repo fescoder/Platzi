@@ -408,6 +408,7 @@ Java para poder manipular los datos.
 
 Descargar dependencias en Intellij
 ![17_Descargar_dependencias_de_maven_con_intellij](src/Curso_Java_Persistencia_Datos/17_Descargar_dependencias_de_maven_con_intellij.webp)
+Maven es un asistente para tareas de compilación y generación de proyectos Java.
 
 Clase que creamos
 ![17_Creación_del_proyecto_y_API_KEY_02](src/Curso_Java_Persistencia_Datos/17_Creaci%C3%B3n_del_proyecto_y_API_KEY_02.png)

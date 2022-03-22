@@ -27,24 +27,24 @@ ya que siempre podrás obtener estos formatos a través de un conversor, o a tra
 En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su vez engloban el resto de la sintaxis. Considera esto una cheat sheet con la que guiarte.
 
 - [Elementos de bloque](#Elementos_de_bloque)
-    - [Párrafos y saltos de línea](Párrafos_y_saltos_de_línea)
-    - [Encabezados](Encabezados)
-    - [Citas](Citas)
-    - [Listas](Listas)
-    - [Códigos de bloque](Códigos_de_bloque)
-    - [Reglas horizontales](Reglas_horizontales)
-- [Elementos de línea](Elementos_de_línea)
-    - [Énfasis](Énfasis)
-    - [Links o enlaces](Links_o_enlaces)
-    - [Código](Código)
-    - [Imágenes](Imágenes)
-- [Elementos varios](Elementos_varios)
-    - [Links automáticos](Links_automáticos)
-    - [Omitir Markdown](Omitir_Markdown)
+    - [Párrafos y saltos de línea](#Párrafos_y_saltos_de_línea)
+    - [Encabezados](#Encabezados)
+    - [Citas](#Citas)
+    - [Listas](#Listas)
+    - [Códigos de bloque](#Códigos_de_bloque)
+    - [Reglas horizontales](#Reglas_horizontales)
+- [Elementos de línea](#Elementos_de_línea)
+    - [Énfasis](#Énfasis)
+    - [Links o enlaces](#Links_o_enlaces)
+    - [Código](#Código)
+    - [Imágenes](#Imágenes)
+- [Elementos varios](#Elementos_varios)
+    - [Links automáticos](#Links_automáticos)
+    - [Omitir Markdown](#Omitir_Markdown)
 
 
-### Elementos de bloque
-Párrafos y saltos de línea
+## Elementos de bloque
+### Párrafos y saltos de línea
 Para generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (pulsando dos veces intro)
 
 Al igual que sucede con HTML, Markdown no soporta dobles líneas en blanco, así que si intentas generarlas estas se convertirán en una sola al procesarse.
@@ -53,16 +53,25 @@ Para realizar un salto de línea y empezar una frase en una línea siguiente den
 
 Por ejemplo si quisieses escribir un poema Haiku quedaría tal que así:
 
-«Andando con sus patitas mojadas,
-el gorrión
+«Andando con sus patitas mojadas,  
+el gorrión  
 por la terraza de madera»
 
 Donde cada verso tiene dos espacios en blanco al final.
 
-Encabezados
+### Encabezados
 Las # almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
 
 Es decir,
+~~~
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+#### Encabezado 4
+##### Encabezado 5
+###### Encabezado 6
+~~~
+Se corresponde con
 
 # Encabezado 1
 ## Encabezado 2
@@ -70,14 +79,6 @@ Es decir,
 #### Encabezado 4
 ##### Encabezado 5
 ###### Encabezado 6
-Se corresponde con
-
-Encabezado 1
-Encabezado 2
-Encabezado 3
-Encabezado 4
-Encabezado 5
-Encabezado 6
 También puedes cerrar los encabezados con el mismo número de almohadillas, por ejemplo escribiendo ### Encabezado 3 ###. Pero la única finalidad de esto es un motivo estético.
 
 Existe otra manera de generar encabezados, aunque este método está limitado a dos niveles.

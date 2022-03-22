@@ -407,4 +407,25 @@ Clase que creamos
 ### Clase 18 Listando datos de APIs públicas
 ![18_Listando_datos_de_APIs_publicas_01](src/Curso_Java_Persistencia_Datos/18_Listando_datos_de_APIs_publicas_01.png)
 
-### Clase 19
+### Clase 19 Mostrar datos de la API en la aplicación
+En esta clase se visualizo la imagen del Gato desde un menú.
+![19_Mostrar_datos_de_la_API_en_la_aplicacion_01](src/Curso_Java_Persistencia_Datos/19_Mostrar_datos_de_la_API_en_la_aplicacion_01.png)
+
+### Clase 20 Guardando datos en APIs públicas
+En esta clase se va a mostrar como marcar como Favorito la imagen de un gato y se enviara por POST a la API.
+La API te puede generar el código en Java con HTTPOK o también se puede realizar desde Postman
+![20_Guardando_datos_en_APIs_publicas](src/Curso_Java_Persistencia_Datos/20_Guardando_datos_en_APIs_publicas.png)
+
+### Clase 21 Listar datos guardados
+Los favoritos anteriores quedan guardados en la API de TheCatApi, ahora vamos a mostrarlos.
+Primero modificamos el menú
+![21_Listar_datos_guardados_01](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_01.png)
+Y Ahora agregamos la lógica en una nueva función
+![21_Listar_datos_guardados_02](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_02.png)
+Tambien agregamos dos clases nuevas para tratar los atributos que nos devuelve la API  
+GatosFav.java
+![21_Listar_datos_guardados_03](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_03.png)
+ImageX.java
+![21_Listar_datos_guardados_04](src/Curso_Java_Persistencia_Datos/21_Listar_datos_guardados_04.png)
+
+### Clase 22 

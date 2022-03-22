@@ -433,8 +433,12 @@ ImageX.java
 
 ### Clase 22 Mostrar favoritos
 Las últimas clases ya se ve mas el desorden y la falta de buenas prácticas del profesor, no hay que guiarse mucho por estas capturas pero las subo a fuerza de terminarlo.  
-Se corrigió la formula para obtener un numero aleatorio (una +1 donde habia un -1).  
+Se corrigió la formula para obtener un numero aleatorio (un +1 donde habia un -1).  
 Básicamente se copio y pego desp el codigo para redimensionar la imagen, con algunas modificaciónes y el agregado de la función borrarFavorito().
 ![22_Mostrar_favoritos_01](src/Curso_Java_Persistencia_Datos/22_Mostrar_favoritos_01.png)
 
-### Clase 23 
+### Clase 23 Eliminar datos de la API
+Vamos a escribir el código para eliminar gatos de los favoritos, es decir ejecutaremos la operación DELETE sobre la API.
+![23_Eliminar_datos_de_la_API_01](src/Curso_Java_Persistencia_Datos/23_Eliminar_datos_de_la_API_01.png)
+
+[Link](https://github.com/santiaguf/gatos_app) del repositorio actualizado del profesor con mejores prácticas 

@@ -199,23 +199,28 @@ De esta forma, obtendrás el siguiente resultado:
 Creando códigos de bloque.
 Puedes añadir tantas líneas y párrafos como quieras.
 ~~~
+
 ## Reglas horizontales
-Las reglas horizontales se utilizan para separar secciones de una manera visual. Las estás viendo constantemente en este artículo ya que las estoy utilizando para separar los diferentes elementos de sintaxis de Markdown.
+Las reglas horizontales se utilizan para separar secciones de una manera visual. Las estás viendo constantemente en este artículo ya que las estoy utilizando para separar los diferentes
+elementos de sintaxis de Markdown.
 
 Para crearlas, en una línea en blanco deberás incluir tres de los siguientes elementos: asteriscos, guiones, o guiones bajos.
 
 Es decir
-
+~~~
 ***
 ---
 ___
+~~~
 También puedes separarlos mediante un espacio en blanco por pura estética.
-
+~~~
 * * *
 - - -
 _ _ _
-Elementos de línea
-Énfasis (negritas y cursivas)
+~~~
+
+# Elementos de línea
+## Énfasis (negritas y cursivas)
 Markdown utiliza asteriscos o guiones bajos para enfatizar.
 
 Simplemente tendrás que envolver palabras o textos en éstos símbolos para conseguir cursivas o negritas.

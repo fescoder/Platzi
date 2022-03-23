@@ -45,7 +45,7 @@ En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su v
 
 
 ## Elementos de bloque
-### Párrafos y saltos de línea
+## Párrafos y saltos de línea
 Para generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (pulsando dos veces intro)
 
 Al igual que sucede con HTML, Markdown no soporta dobles líneas en blanco, así que si intentas generarlas estas se convertirán en una sola al procesarse.
@@ -60,7 +60,7 @@ por la terraza de madera»*
 
 Donde cada verso tiene dos espacios en blanco al final.
 
-### Encabezados
+## Encabezados
 Las **#** almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
 
 Es decir,
@@ -96,7 +96,7 @@ Esto sería un encabezado 2
 ~~~
 No existe un número concreto **=** o **-** que necesites escribir para que esto funcione, ¡incluso bastaría con uno!
 
-### Citas
+## Citas
 Las citas se generar utilizando el carácter mayor que **>** al comienzo del bloque de texto.
 ~~~
 > Un país, una civilización se puede juzgar por la forma en que trata a sus animales.  — Mahatma Gandhi
@@ -112,7 +112,7 @@ Si la cita en cuestión se compone de varios párrafos, deberás añadir el mism
 
 > Es decir, que ven en él al animal irracional, al animal que ríe, al animal que llora, al animal infeliz. — Friedrich Nietzsche
 
-Incluso puedes concatenar varios ~~~ >> ~~~ para crear citas anidadas.
+Incluso puedes concatenar varios **>>** para crear citas anidadas.
 ~~~
 > Esto sería una cita como la que acabas de ver.
 > 
@@ -128,7 +128,7 @@ Incluso puedes concatenar varios ~~~ >> ~~~ para crear citas anidadas.
 
 Recuerda separar los saltos de línea con **>**, o **>>** si te encuentras dentro de la cita anidada; para crear párrafos dentro del mismo bloque de cita.
 
-### Listas
+## Listas
 A diferencia de lo que ocurre en HTML, generar listas en Markdown es tremendamente sencillo. Puedes encontrarte con dos tipos.
 
 Listas desordenadas

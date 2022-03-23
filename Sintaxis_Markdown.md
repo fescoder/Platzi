@@ -98,10 +98,10 @@ Esto sería un encabezado 2
 Quedaria
 
 Encabezado 1
-===
+=
 
 Encabezado 2
----
+-
 
 No existe un número concreto `=` o `-` que necesites escribir para que esto funcione, ¡incluso bastaría con uno!
 

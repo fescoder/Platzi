@@ -275,7 +275,7 @@ En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatiz
 [blog]: http://limni.net/blog/
 
 ### Links automáticos
-Verás esta forma dentro de elementos varios: [links automáticos](#lin)
+Verás esta forma dentro de elementos varios: [links automáticos](#links-automc3a1ticos-1)
 
 ## Código
 En según que tipo de publicaciones (sobre todo las de carácter técnico), necesitarás añadir pequeñas secciones donde mostrar código de otro lenguaje, atajos de teclado, o demás contenido que no debería ser tratado como tal.

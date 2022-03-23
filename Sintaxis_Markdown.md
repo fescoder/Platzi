@@ -54,14 +54,14 @@ Para realizar un salto de línea y empezar una frase en una línea siguiente den
 
 Por ejemplo si quisieses escribir un poema Haiku quedaría tal que así:
 
-«Andando con sus patitas mojadas,  
+*«Andando con sus patitas mojadas,  
 el gorrión  
-por la terraza de madera»
+por la terraza de madera»*
 
 Donde cada verso tiene dos espacios en blanco al final.
 
 ### Encabezados
-Las # almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
+Las    #    almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
 
     #
     ~~~#~~~

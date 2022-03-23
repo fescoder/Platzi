@@ -16,4 +16,6 @@ Este curso aprenderás:
 - TDD
 
 En el curso programaremos utilizando el editor **IntelliJ IDEA**, además, usaremos librerías como **JUnit** y **Mockito**.
+---
 
+### Clase 2 - 

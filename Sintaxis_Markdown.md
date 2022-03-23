@@ -189,10 +189,10 @@ Si quieres crear un bloque entero que contenga código. Lo único que tienes que
 Tal que así:
 
 ~~~
-~~~
+\~~~
 Creando códigos de bloque.
 Puedes añadir tantas líneas y párrafos como quieras.
-~~~
+\~~~
 ~~~
 De esta forma, obtendrás el siguiente resultado:
 ~~~

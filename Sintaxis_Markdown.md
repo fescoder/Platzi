@@ -233,7 +233,7 @@ __negrita__	negrita
 ~~~
 Por supuesto si quieres utilizar los dos tipos de énfasis no tienes más que combinar la sintaxis, envolviendo la palabra entre tres asteriscos o tres guiones bajos.
 ~~~
-MARKDOWN	RESULTADO
+        MARKDOWN	        RESULTADO
 ***cursiva y negrita***	cursiva y negrita
 ___cursiva y negrita___	cursiva y negrita
 ~~~
@@ -246,7 +246,7 @@ Son los enlaces de toda la vida. Como su nombre indica, se encuentran en línea 
 
 Se crean escribiendo la palabra o texto enlazada entre [] corchetes, y el link en cuestión entre () paréntesis.
 ~~~
-MARKDOWN	RESULTADO
+    MARKDOWN	        RESULTADO
 [enlace en línea](http://www.limni.net)	enlace en línea
 ~~~
 
@@ -270,12 +270,13 @@ La referencia [blog] puede estar incluida en cualquier parte del documento, así
 
 Además como ves a continuación, esta referencia no se incluye en el resultado final, sino que desaparece.
 
-*«Me llamo Javier Cristóbal y tengo un blog sobre productividad mac.*
+*«Me llamo Javier Cristóbal y tengo un blog sobre [productividad mac][blog]).*
 
-*En dicha web recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»*
+*En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»*
+[blog]: http://limni.net/blog/
 
 ### Links automáticos
-Verás esta forma dentro de elementos varios: links automáticos
+Verás esta forma dentro de elementos varios: [links automáticos](#linkauto)
 
 ## Código
 En según que tipo de publicaciones (sobre todo las de carácter técnico), necesitarás añadir pequeñas secciones donde mostrar código de otro lenguaje, atajos de teclado, o demás contenido que no debería ser tratado como tal.

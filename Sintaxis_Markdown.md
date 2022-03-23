@@ -274,8 +274,8 @@ Además como ves a continuación, esta referencia no se incluye en el resultado 
 En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»  
 [blog]: http://limni.net/blog/
 
-### Links automáticos
-Verás esta forma dentro de elementos varios: [links automáticos](#links-automc3a1ticos-1)
+Links automáticos
+Verás esta forma dentro de elementos varios: [links automáticos](#links-automáticos)
 
 ## Código
 En según que tipo de publicaciones (sobre todo las de carácter técnico), necesitarás añadir pequeñas secciones donde mostrar código de otro lenguaje, atajos de teclado, o demás contenido que no debería ser tratado como tal.

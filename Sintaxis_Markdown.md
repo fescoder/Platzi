@@ -166,7 +166,7 @@ Para generar listas anidadas dentro de otras, simplemente tendrás que añadir *
         - Elemento de lista 5
         - Elemento de lista 6
 
-## Listas ordenadas
+### Listas ordenadas
 Para crear listas ordenadas debes utilizar la sintaxis de tipo: «número.» 1.. Al igual que ocurre con las listas desordenadas, también podrás anidarlas o combinarlas.
 ~~~
 1. Elemento de lista 1
@@ -188,16 +188,18 @@ Si quieres crear un bloque entero que contenga código. Lo único que tienes que
 
 Tal que así:
 
-
 ~~~
-Creando códigos de bloque.
-Puedes añadir tantas líneas y párrafos como quieras.  
 ~~~
-De esta forma, obtendrás el siguiente resultado:
-
 Creando códigos de bloque.
 Puedes añadir tantas líneas y párrafos como quieras.
-Reglas horizontales
+~~~
+~~~
+De esta forma, obtendrás el siguiente resultado:
+~~~
+Creando códigos de bloque.
+Puedes añadir tantas líneas y párrafos como quieras.
+~~~
+## Reglas horizontales
 Las reglas horizontales se utilizan para separar secciones de una manera visual. Las estás viendo constantemente en este artículo ya que las estoy utilizando para separar los diferentes elementos de sintaxis de Markdown.
 
 Para crearlas, en una línea en blanco deberás incluir tres de los siguientes elementos: asteriscos, guiones, o guiones bajos.

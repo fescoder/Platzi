@@ -266,7 +266,7 @@ Me llamo Javier Cristóbal y tengo un blog sobre [productividad mac][blog].
 En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.
 [blog]: http://limni.net/blog/
 ~~~
-La referencia '[blog]' puede estar incluida en cualquier parte del documento, así puedes organizarte mejor y de una manera más limpia, recopilando todas tus referencias en un mismo lugar.
+La referencia `[blog]` puede estar incluida en cualquier parte del documento, así puedes organizarte mejor y de una manera más limpia, recopilando todas tus referencias en un mismo lugar.
 
 Además como ves a continuación, esta referencia no se incluye en el resultado final, sino que desaparece.
 

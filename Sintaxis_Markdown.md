@@ -266,7 +266,7 @@ Me llamo Javier Cristóbal y tengo un blog sobre [productividad mac][blog].
 En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.
 [blog]: http://limni.net/blog/
 ~~~
-La referencia blog puede estar incluida en cualquier parte del documento, así puedes organizarte mejor y de una manera más limpia, recopilando todas tus referencias en un mismo lugar.
+La referencia '[blog]' puede estar incluida en cualquier parte del documento, así puedes organizarte mejor y de una manera más limpia, recopilando todas tus referencias en un mismo lugar.
 
 Además como ves a continuación, esta referencia no se incluye en el resultado final, sino que desaparece.
 
@@ -283,7 +283,7 @@ En según que tipo de publicaciones (sobre todo las de carácter técnico), nece
 
 Para ello tienes disponible dos alternativas.
 
-### Código puro ''<code>''
+### Código puro '<code>'
 La forma más sencilla de escribir código en Markdown es envolver el texto entre dos comillas sencillas `. Esto se corresponde con la etiqueta HTML <code>
 
 `Esto es una línea de código`

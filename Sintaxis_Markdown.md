@@ -94,6 +94,15 @@ Esto sería un encabezado 1
 Esto sería un encabezado 2
 —-
 ~~~
+
+Quedaria
+
+Encabezado 1
+===
+
+Encabezado 2
+---
+
 No existe un número concreto `=` o `-` que necesites escribir para que esto funcione, ¡incluso bastaría con uno!
 
 ## Citas
@@ -218,14 +227,6 @@ También puedes separarlos mediante un espacio en blanco por pura estética.
 - - -
 _ _ _
 ~~~
-
-Quedaria
-
-Encabezado 1
-===
-
-Encabezado 2
----
 
 # Elementos de línea
 ## Énfasis (negritas y cursivas)

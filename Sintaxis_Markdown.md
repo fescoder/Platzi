@@ -27,21 +27,21 @@ ya que siempre podrás obtener estos formatos a través de un conversor, o a tra
 # Índice de sintaxis Markdown
 En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su vez engloban el resto de la sintaxis. Considera esto una cheat sheet con la que guiarte.
 
-- [Elementos de bloque](#bloque)
-    - [Párrafos y saltos de línea](#parrafos)
+- [Elementos de bloque](#elementos-de-bloque)
+    - [Párrafos y saltos de línea](#párrafos-y-saltos-de-línea)
     - [Encabezados](#encabezados)
     - [Citas](#citas)
     - [Listas](#listas)
-    - [Códigos de bloque](#Códigosbloque)
-    - [Reglas horizontales](#reglas)
-- [Elementos de línea](#linea)
-    - [Énfasis](#enfasis)
-    - [Links o enlaces](#links)
-    - [Código](#codigo)
-    - [Imágenes](#imagenes)
-- [Elementos varios](#varios)
-    - [Links automáticos](#linkauto)
-    - [Omitir Markdown](#omitir)
+    - [Códigos de bloque](#códigos-de-bloque)
+    - [Reglas horizontales](#reglas-horizontales)
+- [Elementos de línea](#elementos-de-línea)
+    - [Énfasis](#énfasis-negritas-y-cursivas)
+    - [Links o enlaces](#links-o-enlaces)
+    - [Código](#código)
+    - [Imágenes](#imágenes)
+- [Elementos varios](#elementos-varios)
+    - [Links automáticos](#links-automáticos)
+    - [Omitir Markdown](#omitir-markdown)
 
 
 # Elementos de bloque
@@ -246,8 +246,8 @@ Son los enlaces de toda la vida. Como su nombre indica, se encuentran en línea 
 
 Se crean escribiendo la palabra o texto enlazada entre `[]` corchetes, y el link en cuestión entre `()` paréntesis.
 ~~~
-    MARKDOWN	                                RESULTADO
-[enlace en línea](http://www.limni.net)	    \[enlace en línea](http://www.limni.net)
+                MARKDOWN                        RESULTADO
+[enlace en línea](http://www.limni.net)	    enlace en línea
 ~~~
 
 ### Links o enlaces como referencia
@@ -275,7 +275,7 @@ En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatiz
 [blog]: http://limni.net/blog/
 
 ### Links automáticos
-Verás esta forma dentro de elementos varios: [links automáticos](#linkauto)
+Verás esta forma dentro de elementos varios: [links automáticos](#lin)
 
 ## Código
 En según que tipo de publicaciones (sobre todo las de carácter técnico), necesitarás añadir pequeñas secciones donde mostrar código de otro lenguaje, atajos de teclado, o demás contenido que no debería ser tratado como tal.

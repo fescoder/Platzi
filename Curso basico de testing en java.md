@@ -35,6 +35,8 @@
     - [Módulo 7 - Conclusiones](#módulo-7---conclusiones)
         - [Clase 24 - Resumen y conclusiones](#clase-24---resumen-y-conclusiones)
 
+---
+
 ## Módulo 1 - Bienvenida e introducción
 ### Clase 1 - Paso a paso para testing básico en Java
 Este curso aprenderás:
@@ -48,9 +50,10 @@ Este curso aprenderás:
 En el curso programaremos utilizando el editor **IntelliJ IDEA**, además, usaremos librerías como **JUnit** y **Mockito**.
 
 ---
+
 ## Módulo 2 - Introducción a tests en software
 ### Clase 2 - Tipos y beneficios de los tests
-Beneficios
+**Beneficios**
 - Comprobar los requerimientos de nuestra aplicación.
 - Documentación y ejemplos de nuestras clases.
 - Mediante Test Driven Development (TDD) nos puede ayudar en el diseño de clases.
@@ -63,7 +66,7 @@ Existen test automáticos y manuales, los automáticos van a requerir tiempo de 
 - Son más fiables.
 - Son incrementales.
 
-Tipos de test
+**Tipos de test**
 - Unitario: realizan pruebas a una función o clase muy concreta de nuestro proyecto.
 - Integración: prueban cómo se conectan diferentes componentes de nuestro proyecto.
 - Funcionales: prueban una funcionalidad de nuestro proyecto, pueden involucrarse varias clases.

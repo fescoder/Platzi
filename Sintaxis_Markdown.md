@@ -219,6 +219,14 @@ También puedes separarlos mediante un espacio en blanco por pura estética.
 _ _ _
 ~~~
 
+Quedaria
+
+Encabezado 1
+===
+
+Encabezado 2
+---
+
 # Elementos de línea
 ## Énfasis (negritas y cursivas)
 Markdown utiliza asteriscos o guiones bajos para enfatizar.

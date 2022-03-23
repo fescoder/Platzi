@@ -270,9 +270,9 @@ La referencia [blog] puede estar incluida en cualquier parte del documento, así
 
 Además como ves a continuación, esta referencia no se incluye en el resultado final, sino que desaparece.
 
-*«Me llamo Javier Cristóbal y tengo un blog sobre [productividad mac][blog]).*
+«Me llamo Javier Cristóbal y tengo un blog sobre [productividad mac][blog]).
 
-*En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»*
+En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»
 [blog]: http://limni.net/blog/
 
 ### Links automáticos

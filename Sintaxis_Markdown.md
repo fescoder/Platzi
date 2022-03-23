@@ -168,20 +168,22 @@ Para generar listas anidadas dentro de otras, simplemente tendrás que añadir *
 
 ## Listas ordenadas
 Para crear listas ordenadas debes utilizar la sintaxis de tipo: «número.» 1.. Al igual que ocurre con las listas desordenadas, también podrás anidarlas o combinarlas.
-
+~~~
 1. Elemento de lista 1
 2.  Elemento de lista 2
     - Elemento de lista 3
     - Elemento de lista 4
         1. Elemento de lista 5
         2. Elemento de lista 6
-Elemento de lista 1
-Elemento de lista 2
-Elemento de lista 3
-Elemento de lista 4
-Elemento de lista 5
-Elemento de lista 6
-Códigos de bloque
+~~~
+1. Elemento de lista 1
+2.  Elemento de lista 2
+    - Elemento de lista 3
+    - Elemento de lista 4
+        1. Elemento de lista 5
+        2. Elemento de lista 6
+
+## Códigos de bloque
 Si quieres crear un bloque entero que contenga código. Lo único que tienes que hacer es encerrar dicho párrafo entre dos líneas formadas por tres ~ virgulillas.
 
 Tal que así:

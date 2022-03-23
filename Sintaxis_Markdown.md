@@ -27,21 +27,21 @@ ya que siempre podrás obtener estos formatos a través de un conversor, o a tra
 # Índice de sintaxis Markdown
 En el lenguaje Markdown encontrarás tres tipos de elementos básicos que a su vez engloban el resto de la sintaxis. Considera esto una cheat sheet con la que guiarte.
 
-- [Elementos de bloque](#Elementos_de_bloque)
-    - [Párrafos y saltos de línea](#Párrafos_y_saltos_de_línea)
-    - [Encabezados](#Encabezados)
-    - [Citas](#Citas)
-    - [Listas](#Listas)
-    - [Códigos de bloque](#Códigos_de_bloque)
-    - [Reglas horizontales](#Reglas_horizontales)
-- [Elementos de línea](#Elementos_de_línea)
-    - [Énfasis](#Énfasis)
-    - [Links o enlaces](#Links_o_enlaces)
-    - [Código](#Código)
-    - [Imágenes](#Imágenes)
-- [Elementos varios](#Elementos_varios)
-    - [Links automáticos](#Links_automáticos)
-    - [Omitir Markdown](#Omitir_Markdown)
+- [Elementos de bloque](#bloque)
+    - [Párrafos y saltos de línea](#parrafos)
+    - [Encabezados](#encabezados)
+    - [Citas](#citas)
+    - [Listas](#listas)
+    - [Códigos de bloque](#Códigosbloque)
+    - [Reglas horizontales](#reglas)
+- [Elementos de línea](#linea)
+    - [Énfasis](#enfasis)
+    - [Links o enlaces](#links)
+    - [Código](#codigo)
+    - [Imágenes](#imagenes)
+- [Elementos varios](#varios)
+    - [Links automáticos](#linkauto)
+    - [Omitir Markdown](#omitir)
 
 
 # Elementos de bloque
@@ -61,7 +61,7 @@ por la terraza de madera»*
 Donde cada verso tiene dos espacios en blanco al final.
 
 ## Encabezados
-Las # almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
+Las `#` almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
 
 Es decir,
 ~~~
@@ -81,11 +81,11 @@ Se corresponde con
 ##### Encabezado 5
 ###### Encabezado 6
 
-También puedes cerrar los encabezados con el mismo número de almohadillas, por ejemplo escribiendo ### Encabezado 3 ###. Pero la única finalidad de esto es un motivo estético.
+También puedes cerrar los encabezados con el mismo número de almohadillas, por ejemplo escribiendo `### Encabezado 3 ###`. Pero la única finalidad de esto es un motivo estético.
 
 Existe otra manera de generar encabezados, aunque este método está limitado a dos niveles.
 
-Consiste en subrayar los encabezados con el símbolo = (para el encabezado 1), o con guiones - para el encabezado 2.
+Consiste en subrayar los encabezados con el símbolo `=` (para el encabezado 1), o con guiones `-` para el encabezado 2.
 
 Es decir,
 ~~~
@@ -94,16 +94,16 @@ Esto sería un encabezado 1
 Esto sería un encabezado 2
 —-
 ~~~
-No existe un número concreto = o - que necesites escribir para que esto funcione, ¡incluso bastaría con uno!
+No existe un número concreto `=` o `-` que necesites escribir para que esto funcione, ¡incluso bastaría con uno!
 
 ## Citas
-Las citas se generar utilizando el carácter mayor que > al comienzo del bloque de texto.
+Las citas se generar utilizando el carácter mayor que `>` al comienzo del bloque de texto.
 ~~~
 > Un país, una civilización se puede juzgar por la forma en que trata a sus animales.  — Mahatma Gandhi
 ~~~
 > Un país, una civilización se puede juzgar por la forma en que trata a sus animales. — Mahatma Gandhi
 
-Si la cita en cuestión se compone de varios párrafos, deberás añadir el mismo símbolo > al comienzo de cada uno de ellos.
+Si la cita en cuestión se compone de varios párrafos, deberás añadir el mismo símbolo `>` al comienzo de cada uno de ellos.
 ~~~
 > Creo que los animales ven en el hombre un ser igual a ellos que ha perdido de forma extraordinariamente peligrosa el sano intelecto animal.
 > Es decir, que ven en él al animal irracional, al animal que ríe, al animal que llora, al animal infeliz. — Friedrich Nietzsche
@@ -112,12 +112,12 @@ Si la cita en cuestión se compone de varios párrafos, deberás añadir el mism
 
 > Es decir, que ven en él al animal irracional, al animal que ríe, al animal que llora, al animal infeliz. — Friedrich Nietzsche
 
-Incluso puedes concatenar varios >> para crear citas anidadas.
+Incluso puedes concatenar varios `>>` para crear citas anidadas.
 ~~~
 > Esto sería una cita como la que acabas de ver.
-> 
+>
 > > Dentro de ella puedes anidar otra cita.
-> 
+>
 > La cita principal llegaría hasta aquí.
 ~~~
 > Esto sería una cita como la que acabas de ver.
@@ -126,13 +126,13 @@ Incluso puedes concatenar varios >> para crear citas anidadas.
 >
 > La cita principal llegaría hasta aquí.
 
-Recuerda separar los saltos de línea con >, o >> si te encuentras dentro de la cita anidada; para crear párrafos dentro del mismo bloque de cita.
+Recuerda separar los saltos de línea con `>`, o `>>` si te encuentras dentro de la cita anidada; para crear párrafos dentro del mismo bloque de cita.
 
 ## Listas
 A diferencia de lo que ocurre en HTML, generar listas en Markdown es tremendamente sencillo. Puedes encontrarte con dos tipos.
 
 ### Listas desordenadas
-Para crear listas desordenadas utiliza * asteriscos, - guiones, o + símbolo de suma.
+Para crear listas desordenadas utiliza `*` asteriscos, `-` guiones, o `+` símbolo de suma.
 ~~~
 - Elemento de lista 1
 - Elemento de lista 2
@@ -150,7 +150,7 @@ Da igual qué elemento escojas, incluso puedes intercambiarlos. Todos se verán 
 + Elemento de lista 5
 + Elemento de lista 6
 
-Para generar listas anidadas dentro de otras, simplemente tendrás que añadir **cuatro espacios en blanco antes del siguiente *, - o +.
+Para generar listas anidadas dentro de otras, simplemente tendrás que añadir **cuatro espacios en blanco antes del siguiente `*`, `-` o `+`.
 ~~~
 - Elemento de lista 1
 - Elemento de lista 2
@@ -167,7 +167,7 @@ Para generar listas anidadas dentro de otras, simplemente tendrás que añadir *
         - Elemento de lista 6
 
 ### Listas ordenadas
-Para crear listas ordenadas debes utilizar la sintaxis de tipo: «número.» 1.. Al igual que ocurre con las listas desordenadas, también podrás anidarlas o combinarlas.
+Para crear listas ordenadas debes utilizar la sintaxis de tipo: «número.» `1.`. Al igual que ocurre con las listas desordenadas, también podrás anidarlas o combinarlas.
 ~~~
 1. Elemento de lista 1
 2.  Elemento de lista 2
@@ -184,7 +184,7 @@ Para crear listas ordenadas debes utilizar la sintaxis de tipo: «número.» 1..
         2. Elemento de lista 6
 
 ## Códigos de bloque
-Si quieres crear un bloque entero que contenga código. Lo único que tienes que hacer es encerrar dicho párrafo entre dos líneas formadas por tres ~ virgulillas.
+Si quieres crear un bloque entero que contenga código. Lo único que tienes que hacer es encerrar dicho párrafo entre dos líneas formadas por tres `~` virgulillas.
 
 Tal que así:
 
@@ -244,10 +244,10 @@ Añadir enlaces a una publicación, más que común, hoy en día es algo casi ob
 ### Links o enlaces en línea
 Son los enlaces de toda la vida. Como su nombre indica, se encuentran en línea con el texto.
 
-Se crean escribiendo la palabra o texto enlazada entre [] corchetes, y el link en cuestión entre () paréntesis.
+Se crean escribiendo la palabra o texto enlazada entre `[]` corchetes, y el link en cuestión entre `()` paréntesis.
 ~~~
-    MARKDOWN	        RESULTADO
-[enlace en línea](http://www.limni.net)	enlace en línea
+    MARKDOWN	                                RESULTADO
+[enlace en línea](http://www.limni.net)	    \[enlace en línea](http://www.limni.net)
 ~~~
 
 ### Links o enlaces como referencia

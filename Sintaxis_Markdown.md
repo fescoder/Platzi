@@ -4,7 +4,7 @@ para empezar a utilizar este lenguaje en tus escritos y publicaciones.
 
 
 La mejor manera de hacerse una idea de la sintaxis de Markdown es simplemente echar un vistazo a un escrito formateado como tal.
-
+~~~
 ## Título
 ### Subtítulo
 Este es un ejemplo de texto que da entrada a una lista genérica de elementos:
@@ -17,7 +17,8 @@ Este es un ejemplo de texto que da entrada a una lista numerada:
 2. Elemento 2
 3. Elemento 3
 
-Al texto en Markdown puedes añadirle formato como **negrita** o *cursiva* de una manera muy sencilla.  
+Al texto en Markdown puedes añadirle formato como **negrita** o *cursiva* de una manera muy sencilla.
+~~~
 Como ves, se cumple perfectamente uno de los objetivos para los que Markdown fue diseñado, y es hacer las publicaciones lo más legibles posible.
 
 Otro de los objetivos de Markdown, es que puedas publicar los documentos “como están”. No importa si el resultado final que necesitas es HTML, un PDF o texto en formato enriquecido (RTF);
@@ -61,6 +62,9 @@ Donde cada verso tiene dos espacios en blanco al final.
 
 ### Encabezados
 Las # almohadillas son uno de los métodos utilizados en Markdown para crear encabezados. Debes usarlos añadiendo uno por cada nivel.
+
+    #
+    ~~~#~~~
 
 Es decir,
 ~~~

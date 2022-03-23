@@ -112,7 +112,7 @@ Si la cita en cuestión se compone de varios párrafos, deberás añadir el mism
 
 > Es decir, que ven en él al animal irracional, al animal que ríe, al animal que llora, al animal infeliz. — Friedrich Nietzsche
 
-Incluso puedes concatenar varios ~~~>>~~~ para crear citas anidadas.
+Incluso puedes concatenar varios ~~~ >> ~~~ para crear citas anidadas.
 ~~~
 > Esto sería una cita como la que acabas de ver.
 > 

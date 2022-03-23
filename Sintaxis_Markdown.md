@@ -274,7 +274,7 @@ Además como ves a continuación, esta referencia no se incluye en el resultado 
 En dicha [web][blog] recopilo artículos sobre todo lo relacionado con automatización, gestión y eficiencia.»  
 [blog]: http://limni.net/blog/
 
-Links automáticos
+**Links automáticos**  
 Verás esta forma dentro de elementos varios: [links automáticos](#links-automáticos)
 
 ## Código

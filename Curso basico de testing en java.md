@@ -114,7 +114,7 @@ Clase StringUtilTest
 En esta clase se realiza un Test para verificar el nivel de seguridad del password.
 
 **Shortcut**  
-`Alt + Insert` -> en un espacio vacío para escribir un método de Test
+`Alt + Insert` -> en un espacio vacío para escribir un método de Test  
 ![04_Testing_en_Java_con_JUnit_para_Verificar_Contrasenas_03](src/Curso_Basico_de_Testing_en_Java/04_Testing_en_Java_con_JUnit_para_Verificar_Contrasenas_03.png)
 
 PasswordUtil

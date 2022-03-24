@@ -82,8 +82,26 @@ Vamos a descargar el editor IntelliJ IDEA y crear un proyecto en Maven. Para ind
 <properties>
     <maven.compiler.source>1.8maven.compiler.source>
     <maven.compiler.target>1.8maven.compiler.target>
-properties>
+</properties>
 ~~~
+Vamos a crear una Clase de utilidad, en Java tenemos que crear el **Package** de nuestro proyecto y el nombre del mismo se escribe de la siguiente manera:
+*groupId.artifactId.className.*. En nuestro caso sera `com.platzi.javatests.util`  
+Tener en cuenta que dentro del Package puede haber mas Packages para organizar nuestras Clases.
+
+Dentro del Package creado, creamos nuestra Java Class **StringUtil**  
+Dentro de esta Clase vamos a escribir una Function que sirve para repetir Strings. Va a ser la Clase de prueba a la que vamos a escribirle una serie de Tests.  
+Apretando `Alt + Enter` sobre el nombre de la Clase podemos ver la opción para crear Test, y se usara con la Test library **JUnit4**  
+Se crea una nueva Clase con el nombre de la Clase seleccionada agregandole la palabra *Test* al final.
+
+En Intellij tenemos algunos shortcut
+- `psvm` (Public Static Void Main) que nos crea automaticamente la función Main.
+- `sout` -> `System.out.println();`
+- `fori` -> Bucle For
+
+Clase StringUtil.java
+![03_Tests_Unitarios_01](src/Curso_Basico_de_Testing_en_Java/03_Tests_Unitarios_01.png)
+Clase StringUtilTest.java
+![03_Tests_Unitarios_02](src/Curso_Basico_de_Testing_en_Java/03_Tests_Unitarios_02.png)
 
 ---
 

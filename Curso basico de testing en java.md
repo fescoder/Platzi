@@ -159,7 +159,9 @@ La función **assertEquals** de JUnit se encarga de comprobar que dos valores se
 
 Debemos indicarle a JUnit mediante **@Test** que función va a realizar una prueba.
 
-Con `Ctrl + P` -> Podemos ver los parámetros que pide la función.
+Con `Ctrl + P` -> Podemos ver los parámetros que pide una función.
+
+![06_Test_unitario_con_JUnit_01](src/Curso_Basico_de_Testing_en_Java/06_Test_unitario_con_JUnit_01.png)
 
 ---
 

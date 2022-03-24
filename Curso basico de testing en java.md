@@ -166,6 +166,13 @@ Con `Ctrl + P` -> Podemos ver los parámetros que pide una función.
 ---
 
 ### Clase 7 - Organización de tests con JUnit
+La forma correcta de separar nuestras pruebas es realizar cada una en su propia función, además, el nombre de la función debe describir que estamos probando.
+
+Para indicarle a JUnit que esperamos una excepción lo debemos hacer de la siguiente forma:
+
+~~~
+@Test(expected = IllegalArgumentException.class)
+~~~
 
 ---
 

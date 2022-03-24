@@ -77,6 +77,13 @@ Existen test automáticos y manuales, los automáticos van a requerir tiempo de 
 
 ## Módulo 3 - Preparación del IDE, proyecto y librerías
 ### Clase 3 - Instalación de Intellij IDEA, creación del proyecto con Maven y Test Unitarios
+Vamos a descargar el editor IntelliJ IDEA y crear un proyecto en Maven. Para indicarle a Maven que usaremos Java 8 debemos añadir las siguientes líneas de código:
+~~~
+<properties>
+    <maven.compiler.source>1.8maven.compiler.source>
+    <maven.compiler.target>1.8maven.compiler.target>
+properties>
+~~~
 
 ---
 

@@ -174,9 +174,38 @@ Para indicarle a JUnit que esperamos una excepción lo debemos hacer de la sigui
 @Test(expected = IllegalArgumentException.class)
 ~~~
 
+![07_Organizacion_de_tests_con_JUnit_01](src/Curso_Basico_de_Testing_en_Java/07_Organizacion_de_tests_con_JUnit_01.png)
+![07_Organizacion_de_tests_con_JUnit_02](src/Curso_Basico_de_Testing_en_Java/07_Organizacion_de_tests_con_JUnit_02.png)
+
 ---
 
 ### Clase 8 - Test con Mockito para simular un dado
+**Mockito** nos va a servir para simular clases mientras probamos, para añadirlo a nuestro proyecto debemos copiar las siguientes líneas de código:
+~~~
+<dependency>
+  <groupId>org.mockito</groupId>
+  <artifactId>mockito-core</artifactId>
+  <version>2.23.4</version>
+  <scope>test</scope>
+</dependency>
+~~~
+Para instanciar un mock debemos utilizar la función **Mockito.mock()** e indicarle como parámetro la clase que va a simular.
+Las funciones **assertFalse** y **assertTrue** tal como su nombre lo indican, sirven para comprobar si un valor es igual a **false** o **true** respectivamente.
+
+Creamos la Clase *Player*, en un nuevo Package, con su constructor y una método que devuelve un booleano que dice si ganó o perdió.
+![08_Test_con_Mockito_para_simular_un_dado_01](src/Curso_Basico_de_Testing_en_Java/08_Test_con_Mockito_para_simular_un_dado_01.png)
+
+Creamos la Clase *Dice* que devuelve un numero random cuando se ejecuta la función *roll()*
+![08_Test_con_Mockito_para_simular_un_dado_02](src/Curso_Basico_de_Testing_en_Java/08_Test_con_Mockito_para_simular_un_dado_02.png)
+
+Creamos 2 tests (Perder y Ganar) utilizando *Mockito* para simular el dado y forzar el resultado que devuelve la clase Dice cuando se tira.
+![08_Test_con_Mockito_para_simular_un_dado_03](src/Curso_Basico_de_Testing_en_Java/08_Test_con_Mockito_para_simular_un_dado_03.png)
+
+Podriamos decir que **Mockito** se usa para simular clases con las que se interactua o depende de ellas, muchas veces una clase depende de otros módulos y al momento de ejecutar un test,
+no se sabe si el error proviene de la clase que ejecuta test o el modulo del cual depende.
+Por ejemplo, si tengo una aplicación que usa una API para pedir datos sobre la temperatura de una zona específica, y en base a eso decir si la temperatura > 30°, usar bloqueador solar.
+No puedo comprobar al momento del test si la API tendrá algún error y que mi test sea invalido. Debería usar Mockito para desacoplar la dependencia a la API y poder así testear mi clase
+sola.
 
 ---
 

@@ -129,18 +129,37 @@ PasswordUtilTest
 Vamos a utilizar una excepción con la función **throw new RuntimeException("Error")** en lugar de la función System.out.println("Error") para identificar más fácil los errores.
 Ahora, los mensajes tendrán un color diferente y pueden mostrarnos un poco más de información sobre los errores: ubicación, el resultado esperado, mensajes personalizados, entre otros.
 
-**Shoetcut**  
+**Shortcut**  
 `thr` -> throw new
 
 Algunas definiciónes de JUnit  
 ![05_JUnit_test_definitions](src/Curso_Basico_de_Testing_en_Java/05_JUnit_test_definitions.jpg)
 
-StringUtilTest
+StringUtilTest  
 ![05_Creación_de_test_unitario_01](src/Curso_Basico_de_Testing_en_Java/05_Creación_de_test_unitario_01.png)
+
+Yo ya tenia la libreria agregada por eso no me hizo falta crear desde cero esa función.
 
 ---
 
 ### Clase 6 - Test unitario con JUnit
+Vamos a añadir Junit a nuestro proyecto copiando las siguientes líneas de código:
+~~~
+<dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+     <scope>test</scope>
+  </dependency>
+</dependencies>
+~~~
+
+La función **assertEquals** de JUnit se encarga de comprobar que dos valores sean iguales, en este caso comprobar si nuestra función **repeat** retorna el valor esperado.
+
+Debemos indicarle a JUnit mediante **@Test** que función va a realizar una prueba.
+
+Con `Ctrl + P` -> Podemos ver los parámetros que pide la función.
 
 ---
 

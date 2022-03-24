@@ -92,6 +92,7 @@ Tener en cuenta que dentro del Package puede haber mas Packages para organizar n
 Dentro del Package creado, creamos nuestra Java Class **StringUtil**  
 Dentro de esta Clase vamos a escribir una Function que sirve para repetir Strings, va a ser la Clase de prueba a la que vamos a escribirle una serie de Tests.  
 Apretando `Alt + Enter` sobre el nombre de la Clase podemos ver la opción para crear Test, y se usara con la Test library **JUnit4**
+
 ![03_Tests_Unitarios_03](src/Curso_Basico_de_Testing_en_Java/03_Tests_Unitarios_03.png)
 
 Se crea una nueva Clase con el nombre de la Clase seleccionada agregandole la palabra *Test* al final.

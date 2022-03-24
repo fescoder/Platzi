@@ -111,7 +111,7 @@ Clase StringUtilTest
 ---
 
 ### Clase 4 - Testing en Java con JUnit para verificar contraseñas
-En esta clase se realiza un Test para verificar el nivel de seguridad del password.
+En esta clase se realizan Tests para verificar el nivel de seguridad del password.
 
 **Shortcut**  
 `Alt + Insert` -> en un espacio vacío para escribir un método de Test  
@@ -126,6 +126,17 @@ PasswordUtilTest
 ---
 
 ### Clase 5 - Creación de test unitario: lanzar una excepción para alertar sobre un error
+Vamos a utilizar una excepción con la función **throw new RuntimeException("Error")** en lugar de la función System.out.println("Error") para identificar más fácil los errores.
+Ahora, los mensajes tendrán un color diferente y pueden mostrarnos un poco más de información sobre los errores: ubicación, el resultado esperado, mensajes personalizados, entre otros.
+
+**Shoetcut**  
+`thr` -> throw new
+
+Algunas definiciónes de JUnit  
+![05_JUnit_test_definitions](src/Curso_Basico_de_Testing_en_Java/05_JUnit_test_definitions.jpg)
+
+StringUtilTest
+![05_Creación_de_test_unitario_01](src/Curso_Basico_de_Testing_en_Java/05_Creación_de_test_unitario_01.png)
 
 ---
 

@@ -231,6 +231,18 @@ Clases creadas
 ---
 
 ### Clase 10 - Análisis de los tests y mejoras
+Nuestros test siguen un mismo proceso:
+- Se preparan los objetos que vamos a probar.
+- Llamamos al método que estamos probando.
+- Comprobamos los resultados.
+Podemos reducir la cantidad de código moviendo las partes comunes de preparación a una función que se ejecute antes de cada prueba.
+Con **@Before** le indicamos a JUnit la función que debe ejecutar antes de cada prueba.
+
+En las imagenes vemos las separaciones de las partes de los tests  
+![10_Analisis_de_los_tests_y_mejoras_01](src/Curso_Basico_de_Testing_en_Java/10_Analisis_de_los_tests_y_mejoras_01.png)
+
+Y como a veces un código se puede repetir en varias pruebas, por eso se crea una función comun *(setup())*, en este caso para inicializar las variables.
+![10_Analisis_de_los_tests_y_mejoras_02](src/Curso_Basico_de_Testing_en_Java/10_Analisis_de_los_tests_y_mejoras_02.png)
 
 ---
 

@@ -210,6 +210,23 @@ sola.
 ---
 
 ### Clase 9 - Test con Mockito: simular el uso de una pasarela de pago
+Simular una pasarela de pagos nos ayuda a probar todas las funcionalidades de nuestra aplicación sin gastar dinero en pagos reales.
+
+Creamos un nuevo Package ***Payments*** donde alojaremos nuestras clases y la interface ***PaymentGateway***
+
+**Shorcut**  
+`get` -> Intellij crea el método get() de alguna variable creada.
+
+Clases creadas  
+![09_Test_con_Mockito_pasarela_de_pago_01](src/Curso_Basico_de_Testing_en_Java/09_Test_con_Mockito_pasarela_de_pago_01.png)
+
+![09_Test_con_Mockito_pasarela_de_pago_02](src/Curso_Basico_de_Testing_en_Java/09_Test_con_Mockito_pasarela_de_pago_02.png)
+
+![09_Test_con_Mockito_pasarela_de_pago_03](src/Curso_Basico_de_Testing_en_Java/09_Test_con_Mockito_pasarela_de_pago_03.png)
+
+![09_Test_con_Mockito_pasarela_de_pago_04](src/Curso_Basico_de_Testing_en_Java/09_Test_con_Mockito_pasarela_de_pago_04.png)
+
+![09_Test_con_Mockito_pasarela_de_pago_05](src/Curso_Basico_de_Testing_en_Java/09_Test_con_Mockito_pasarela_de_pago_05.png)
 
 ---
 

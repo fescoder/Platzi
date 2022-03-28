@@ -234,7 +234,7 @@ Clases creadas
 Nuestros test siguen un mismo proceso:
 - Se preparan los objetos que vamos a probar.
 - Llamamos al método que estamos probando.
-- Comprobamos los resultados.
+- Comprobamos los resultados.  
 Podemos reducir la cantidad de código moviendo las partes comunes de preparación a una función que se ejecute antes de cada prueba.
 Con **@Before** le indicamos a JUnit la función que debe ejecutar antes de cada prueba.
 
@@ -247,6 +247,9 @@ Y como a veces un código se puede repetir en varias pruebas, por eso se crea un
 ---
 
 ### Clase 11 - Reto 1: Crear la función isEmpty
+![11_Reto_1_crear_la_funcion_isEmpty_01](src/Curso_Basico_de_Testing_en_Java/11_Reto_1_crear_la_funcion_isEmpty_01.png)
+
+![11_Reto_1_crear_la_funcion_isEmpty_02](src/Curso_Basico_de_Testing_en_Java/11_Reto_1_crear_la_funcion_isEmpty_02.png)
 
 ---
 

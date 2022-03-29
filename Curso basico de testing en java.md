@@ -296,9 +296,22 @@ Luego creamos un test para esa clase **DateUtilShould** y vamos ejecutando cada 
 
 ![13_Calcular_el_ano_bisiesto_02](src/Curso_Basico_de_Testing_en_Java/13_Calcular_el_ano_bisiesto_02.png)
 
+[PDf](https://users.csc.calpoly.edu/~djanzen/courses/405W13/presentations/tdd.pdf) acerca de TDD
+
 ---
 
 ### Clase 14 - Ejemplos TDD: Cálculo de descuentos
+Más ejemplos de aplicación de TDD
+
+Shortcut `iter` -> Se construye un for
+
+![14_calculo_de_descuentos_01](src/Curso_Basico_de_Testing_en_Java/14_calculo_de_descuentos_01.png)
+
+![14_calculo_de_descuentos_02](src/Curso_Basico_de_Testing_en_Java/14_calculo_de_descuentos_02.png)
+
+assertThat, actualmente esta deprecated. La forma de validar valores double es con assertEqueals(double expected, double actual, double delta). La funcion assertEquals(double expected, double actual) tambien está deprecated. Para los que no estén familiarizados con el valor “delta”, seria diciéndolo de una forma sencilla, _ el margen de error que vamos a permitir a la hora de ejecutar la igualdad_.
+Por ejemplo: si comparamos 45.10 como valor esperado con un valor obtenido 45.19, si quieres un 100% de precisión, deberíamos pasar un delta con valor 0 (con esto estamos diciendo de que no vamos a permitir ningún valor por encima ni por debajo del valor esperado). Pero supongamos que estamos haciendo el test de una función que maneja grados y queremos permitir un margen de error de 0.10 grados. Este seria el valor que debemos pasar por delta, quedando nuestra assertEquals de la siguiente forma: assertEquals(45.10, 45.19, 0.10) este ejemplo pasaría el test y no nos daría error aunque el valor esperado y el valor obtenido sean distintos ya que estamos dentro del margen de error permitido.
+Espero se entienda lo que quise explicar, me pareció interesante mencionar esto para que trabajemos fuera de métodos deprecated ya que son métodos destinados a desaparecer por varias razones que podemos verificar directamente en la api de referencia.
 
 ---
 

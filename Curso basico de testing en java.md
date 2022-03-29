@@ -255,10 +255,46 @@ Y como a veces un código se puede repetir en varias pruebas, por eso se crea un
 
 ## Módulo 4 - TDD
 ### Clase 12 - TDD: Definición, beneficios, ciclos y reglas
+El Test Driven Development (TDD) o desarrollo guiado por test, creado por Kent Beck, consiste en escribir primero los test antes que las clases permitiéndote ver si el diseño de una clase es la adecuada.
+
+**El ciclo del TDD**
+- Red: escribe un test que falle.
+- Green: escribe el código necesario para que pase el test.
+- Refactor: mejora el código.
+
+Reglas
+1. Sólo escribirás código de test hasta que falle.
+2. Sólo escribirás código de producción para pasar el test.
+3. No escribirás más código de producción del necesario.
+
+Puedes combinar las reglas del TDD con su ciclo tal como hizo el profesor:
+1. Red: Escribirás el mínimo de código test que falle.
+2. Green: Escribirás el mínimo de código de producción que pase el test.
+3. Refactor: sólo cuando los tests estén pasando.
 
 ---
 
 ### Clase 13 - Ejemplos de TDD: Calcular el año bisiesto
+Descripción:
+Los años bisiestos son años con 366 días en vez de 365 y suceden cada 4 años.
+
+Para determinar si un año es bisiesto o no, debemos seguir las siguientes reglas o requerimientos:  
+- Todos los años divisibles por 400 son bisiestos (1600, 2000, 2400)
+- Todos los años divisibles por 100 pero NO por 400 NO son bisiestos (1700, 1800, 1900)
+- Todos los años divisibles por 4 son bisiestos (1996, 2004, 2012)
+- Todos los años que NO son divisibles por 4 NO son bisiestos (2017, 2018, 2019)
+
+Algunas clases de pruebas terminan con la palabra Should en lugar de Test porque podemos entenderlas como frases cuando se leen en conjunto con los nombres de los métodos.
+
+Por ejemplo, la clase ***DateUtilLeapYearShould*** con su método ***return_true_when_year_is_divisible_by_400*** pueden leerse como “Date utils leap year should return true when year is divisible by 400” o “Los utils para calcular el año bisiesto deben devuelven true cuando el año es divisible por 400”.
+
+Utilizaremos las prácticas TDD  
+Lo primero que hacemos es crear la Clase **DateUtil** con un método que que devuelve True, es el menor código que se puede escribir.  
+Luego creamos un test para esa clase **DateUtilShould** y vamos ejecutando cada caso y refactorizando el código.
+
+![13_Calcular_el_ano_bisiesto_01](src/Curso_Basico_de_Testing_en_Java/13_Calcular_el_ano_bisiesto_01.png)
+
+![13_Calcular_el_ano_bisiesto_02](src/Curso_Basico_de_Testing_en_Java/13_Calcular_el_ano_bisiesto_02.png)
 
 ---
 

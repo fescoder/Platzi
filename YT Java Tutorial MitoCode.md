@@ -2,8 +2,8 @@
 # Java Tutorial MitoCode
 Índice
 -
-- [1 - Colecciones + iterador](#1-colecciones--iterador)
-- [2 - ArrayList]
+- [1- Colecciones + iterador](#1-colecciones--iterador)
+- [2- ArrayList]
 
 
 
@@ -12,7 +12,7 @@
 
 ---
 
-## 1 - Colecciones + iterador
+## 1- Colecciones + iterador
 Una coleccion de objetos es un objeto que se puede almacenar un número variable de elementos, siendo cada elemento otro objeto. Podriamos verlo como una caja que contiene mas cajas dentro.
 Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se pueden encoger o agrandar según las nececidades.
 
@@ -42,8 +42,8 @@ mejor manera de trabajar esta coleccion es por medio de listas.
 
 ---
 
-## 2 - ArrayList
-ArrayList viene de la interfaz Lista, y ésta de Collection e Iterable (Se ve en la imagen de la clase anterior)
+## 2- ArrayList
+ArrayList viene de la interfaz Lista, y ésta de Collection e Iterable (Se ve en la imagen de la clase anterior).  
 Se explica que para mejorar el rendimiento del sistema, si se sabe la cantidad de espacio de memoria que se le puede asignar a la lista, es decir la cantidad de objetos que va a almacenar
 conviene declararlo al instanciar el ArrayList y asi nos ahorramos tiempo y procesos a la hora de la ejecución.  
 `List<Integer> lista = new ArrayList(10);`
@@ -56,6 +56,25 @@ Al utilizar listas tenemos a disposicion determinados métodos, por ejemplo el `
 - `iterator()` Recorrerlo como si fuera un iterador
 - `size` Obtener el tamaño  
 Y muchos más.
+
+---
+
+## 3- LinkedList o Listas enlazadas
+Una lista enlazada tiene la particularidad de que sus elementos tienen una referencia con su próximo.  
+![03_LinkedList_01](src/Tutorial_Java_MitoCode/03_LinkedList_01.png)
+
+Y lo podemos declarar asi:  
+`List lista = new LinkedList();`  
+Tambien podriamos poder de que tipo es esa lista, pero al no declararlo podemos agregar objetos de varios tipos.  
+`List<Integer> lista = new LinkedList();`  
+Ó apoyandonos en la clase directamente:  
+`LinkedList lista = new LinkedList();`  
+Veamos en que situaciónes es conveniente usar el LinkedList antes que un ArrayList  
+Imagen de los tiempos que tardan en ejecutar el agregado, lectura y eliminación de un elemento.  
+![03_LinkedList_02](src/Tutorial_Java_MitoCode/03_LinkedList_02.png)
+La diferencia sustancial es la obtencion del elemento de parte del ArrayList, porque? porque en linkedList tenemos referencias uno con el otro, entonces cuando quiero obtener un elemento
+en el arrayList simplemente voy directo a él, mientras que el linkedList tiene que recorrer toda la lista.  
+Y en el agregado y eliminación es más rapida el linkedList. Ahí sus diferencias y cuando conviene usar cada uno.
 
 ---
 

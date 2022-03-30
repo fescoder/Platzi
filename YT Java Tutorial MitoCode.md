@@ -65,16 +65,31 @@ Una lista enlazada tiene la particularidad de que sus elementos tienen una refer
 
 Y lo podemos declarar asi:  
 `List lista = new LinkedList();`  
-Tambien podriamos poder de que tipo es esa lista, pero al no declararlo podemos agregar objetos de varios tipos.  
+Tambien podriamos poner de que tipo es esa lista, pero al no declararlo podemos agregar objetos de varios tipos.  
 `List<Integer> lista = new LinkedList();`  
 Ó apoyandonos en la clase directamente:  
-`LinkedList lista = new LinkedList();`  
+`LinkedList lista = new LinkedList();`
+
 Veamos en que situaciónes es conveniente usar el LinkedList antes que un ArrayList  
-Imagen de los tiempos que tardan en ejecutar el agregado, lectura y eliminación de un elemento.  
-![03_LinkedList_02](src/Tutorial_Java_MitoCode/03_LinkedList_02.png)
-La diferencia sustancial es la obtencion del elemento de parte del ArrayList, porque? porque en linkedList tenemos referencias uno con el otro, entonces cuando quiero obtener un elemento
-en el arrayList simplemente voy directo a él, mientras que el linkedList tiene que recorrer toda la lista.  
-Y en el agregado y eliminación es más rapida el linkedList. Ahí sus diferencias y cuando conviene usar cada uno.
+Tiempos que tardan en ejecutar el agregado, lectura y eliminación de la lista.  
+![03_LinkedList_02](src/Tutorial_Java_MitoCode/03_LinkedList_02.png)  
+La diferencia sustancial es la obtencion del elemento de parte del ArrayList, porque? porque en LinkedList tenemos referencias uno con el otro, entonces cuando quiero obtener un elemento
+en el ArrayList simplemente voy directo a él, mientras que el LinkedList tiene que recorrer toda la lista.  
+Y en el agregado y eliminación es más rapida el LinkedList. Ahí sus diferencias y cuando conviene usar cada uno.
+
+---
+
+## 4- HashMap
+Hashmap (Diccionario)
+Básicamente este tipo de dato nos va a permitir tener varios elementos pero a cada elemento le vamos a poder asociar una KEY.
+Declaración:  
+`Map diccionario = new HashMap();`  
+Ó mediante la Clase  
+`HashMap diccionario = new HashMap();`  
+Para agregar valores a nuestro diccionario en vez de utilizar como en el ArrayList el método `add()` lo hacemos con el método `put()` al cual le pasamos 2 argumentos, el KEY y el VALOR.  
+Se pueden acceder a estos elementos usando la función `diccionario.get()` pasandole la KEY y nos devuelve el valor.  
+Tambien podemos ver si existe una KEY o un VALOR en nuestro diccionario usando el método `containsKey()` ó `containsValue()`, devuelve un booleano.  
+Y demas funciones que se pueden investigar.
 
 ---
 

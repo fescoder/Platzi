@@ -2,16 +2,16 @@
 # Java Tutorial MitoCode
 Índice
 -
-- [1. Colecciones + iterador](#1-colecciones--iterador)
+- [1 - Colecciones + iterador](#1-colecciones--iterador)
 
 
 
-- [1. Paradigma Funcional](#paradigma-funcional)
-- [2. Lambda](#lambda)
+- [- Paradigma Funcional](#paradigma-funcional)
+- [- Lambda](#lambda)
 
 ---
 
-## 1. Colecciones + iterador
+## 1 - Colecciones + iterador
 Una coleccion de objetos es un objeto que se puede almacenar un número variable de elementos, siendo cada elemento otro objeto. Podriamos verlo como una caja que contiene mas cajas dentro.
 Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se pueden encoger o agrandar según las nececidades.
 
@@ -41,7 +41,7 @@ mejor manera de trabajar esta coleccion es por medio de listas.
 
 ---
 
-## 1. Paradigma Funcional
+## Paradigma Funcional
 El paradigma funcional es un subtipo del paradigma de programación Declarativa, basada en el uso de funciones matemáticas en contraste con la programación Imperativa.
 
 Es decir, el principal fin de la programación Declarativa es tener una sintaxis de decirle al programa **que** es lo que necesitamos, sin embargo en contraste a la programación
@@ -73,5 +73,5 @@ Las Lambdas basicamente son funciones anónimas, muy escenciales para entender l
 
 ---
 
-## 2. Lambda
+## Lambda
 Una expresión Lambda es un método anónimo que no necesita de un identificador para ser invocado.

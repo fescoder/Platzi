@@ -5,6 +5,26 @@
 - [Tutorial Java SE]
     - [36- Colecciones + iterador](#36-colecciones--iterador)
     - [37- ArrayList](#37--arraylist)
+    - [38- LinkedList](#38--linkedlist-o-listas-enlazadas)
+    - [39- HashMap](#39--hashmap)
+    - [40- HashSet](#40--hashset)
+    - [41- Exceptions](#41--exceptions)
+    - [42- Jerarquía de Exceptions](#42--jerarquía-de-exceptions)
+    - [43- Lanzar Exceptions - Throw y Throws](#43--lanzar-exceptions---throw-ythrows)
+    - [44- Exceptions personalizadas]
+    - [45- File]
+    - [46 -Lectura de Archivos]
+    - [47- Escritura de Archivos]
+    - [48- try with resources]
+    - [49- Conexión a Base de Datos]
+    - [50- Insercción a BD con parámetros]
+    - [51- Listar de BD]
+    - [52- Patrón DAO]
+    - [53- Interfaces gráficas SWING]
+    - [54- JPanel Swing]
+    - [55- JButton Swing]
+    - [56- Paleta Swing]
+    - [57- Hilos]
 
 
 
@@ -127,9 +147,18 @@ Esta es la jerarquia y algunas exceptions.
 
 ---
 
+## 43- Lanzar Exceptions - Throw yThrows
+Aqui veremos como delegar una Exception a un método que está en un nivel superior.  
+Cuando desarrollamos aplicativos o sistemas se manejan las programaciones por capas, es decir que esta modularizado, y no necesariamente se manejan los errores donde se producen.  
+A veces se tratan los errores en un nivel superior mucho mas arriba y donde la capa inferior unicamente tenga que informar que ha ocurrido un error.  
 
+![43_Throw_Throws_01](src/Tutorial_Java_MitoCode/43_Throw_Throws_01.png)
 
+`throw e` o `throw new NombreException` (para lanzar una nueva excepción)  
+la **e** es la instancia de una clase que necesita throw, esta arroja la exception, el mensaje va a la capa superior (en este caso al método 2) y a su vez el método 3 tiene que
+ser implementado con `throws Exception`, que **Exception** es la espificación de la clase, con este indicamos que puede transferir una exception.
 
+Entonces asi delegamos un mensaje que esta en un nivel inferior a diferentes niveles de la aplicación.
 
 
 

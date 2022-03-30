@@ -3,6 +3,7 @@
 Índice
 -
 - [1 - Colecciones + iterador](#1-colecciones--iterador)
+- [2 - ArrayList]
 
 
 
@@ -17,12 +18,12 @@ Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se 
 
 ![01_Colecciones_e_iterador_01](src/Tutorial_Java_MitoCode/01_Colecciones_e_iterador_01.png)
 
-Entonces teniendo esta imagen podemos decir que nosotros vamos a utilizar una Clase en particular que implementa una interfaz para poder empezar la agrupación de elementos.
+Entonces teniendo esta imagen podemos decir que nosotros vamos a utilizar una Clase en particular que implementa una interfaz para poder empezar la agrupación de elementos.  
 `List<String> lista = new ArrayList();`  
 En esta linea de código podemos decir que declaramos el objeto llamado ***lista*** pertenece a la interfaz Lista de tipo String, y que a su vez estamos generando una instancia de la
 clase ArrayList.
 
-Iterator instanciado es un objeto que nos permite recorrer una lista.  
+El Iterator instanciado es un objeto que nos permite recorrer una lista.  
 `Iterator<String> iterator = lista.iterator();`  
 y con este objeto podemos hacer lo siguiente:  
 ~~~
@@ -38,6 +39,23 @@ for(String s : lista){
 ~~~
 Esto es importante porque cuando trabajemos con BD, en muchas ocaciones vamos a requerir traer una lista, lo mas recomendable es traer esa lista en base a una coleccion de objetos y la
 mejor manera de trabajar esta coleccion es por medio de listas.
+
+---
+
+## 2 - ArrayList
+ArrayList viene de la interfaz Lista, y ésta de Collection e Iterable (Se ve en la imagen de la clase anterior)
+Se explica que para mejorar el rendimiento del sistema, si se sabe la cantidad de espacio de memoria que se le puede asignar a la lista, es decir la cantidad de objetos que va a almacenar
+conviene declararlo al instanciar el ArrayList y asi nos ahorramos tiempo y procesos a la hora de la ejecución.  
+`List<Integer> lista = new ArrayList(10);`
+
+Al utilizar listas tenemos a disposicion determinados métodos, por ejemplo el `get(int index)` que se le pasa una referencia del elemento que queremos.
+- `add()` Para agregar a una coleccion
+- `clear()` Limpiar todo el arreglo
+- `contains()` Si se encuentra en el arreglo
+- `isEmpty()` Para ver si esta vacio el array
+- `iterator()` Recorrerlo como si fuera un iterador
+- `size` Obtener el tamaño  
+Y muchos más.
 
 ---
 

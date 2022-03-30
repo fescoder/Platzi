@@ -160,9 +160,21 @@ ser implementado con `throws Exception`, que **Exception** es la espificación d
 
 Entonces asi delegamos un mensaje que esta en un nivel inferior a diferentes niveles de la aplicación.
 
+---
 
+## 44- Exceptions personalizadas
+En algunos sistemas tenemos alguna lógica de negocio en particular en donde tenemos que manejar ciertas situaciones o errores, errores propios, personalizables y pueden servir para
+ordenar nuestro código.
 
+Por ejemplo vamos a verificar la edad que el usuario ingrese una edad valida y poder avisar al usuario caso que suceda una excepción. Es decir una edad muy grande 200 o 500 por ejemplo.
 
+Entonces empezamos por crear una Clase EdadException.  
+![44_Excepciones_personalizadas_01](src/Tutorial_Java_MitoCode/44_Excepciones_personalizadas_01.png)
+
+Aquí la lógica del proceso y lanzamientos de exceptions de 2 maneras diferentes  
+![44_Excepciones_personalizadas_02](src/Tutorial_Java_MitoCode/44_Excepciones_personalizadas_02.png)
+
+![44_Excepciones_personalizadas_03](src/Tutorial_Java_MitoCode/44_Excepciones_personalizadas_03.png)
 
 
 

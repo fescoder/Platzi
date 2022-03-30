@@ -86,10 +86,14 @@ Declaración:
 `Map diccionario = new HashMap();`  
 Ó mediante la Clase  
 `HashMap diccionario = new HashMap();`  
+![04_HashMap_01](src/Tutorial_Java_MitoCode/04_HashMap_01.png)
+
 Para agregar valores a nuestro diccionario en vez de utilizar como en el ArrayList el método `add()` lo hacemos con el método `put()` al cual le pasamos 2 argumentos, el KEY y el VALOR.  
 Se pueden acceder a estos elementos usando la función `diccionario.get()` pasandole la KEY y nos devuelve el valor.  
 Tambien podemos ver si existe una KEY o un VALOR en nuestro diccionario usando el método `containsKey()` ó `containsValue()`, devuelve un booleano.  
 Y demas funciones que se pueden investigar.
+
+Se usan mucho cuando se necesita pasar parametros a librerias para reportes, se usan el objeto que tenga la relación key-value.
 
 ---
 

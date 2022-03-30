@@ -1,4 +1,4 @@
-![MitoCode_logo](src/Tutorial_Java_8_MitoCode/MitoCode_logo.png)
+![MitoCode_logo](src/Tutorial_Java_MitoCode/MitoCode_logo.png)
 # Java Tutorial MitoCode
 Índice
 -
@@ -15,7 +15,7 @@
 Una coleccion de objetos es un objeto que se puede almacenar un número variable de elementos, siendo cada elemento otro objeto. Podriamos verlo como una caja que contiene mas cajas dentro.
 Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se pueden encoger o agrandar según las nececidades.
 
-![01_Colecciones_e_iterador_01](src/Tutorial_Java_8_MitoCode/01_Colecciones_e_iterador_01.png)
+![01_Colecciones_e_iterador_01](src/Tutorial_Java_MitoCode/01_Colecciones_e_iterador_01.png)
 
 Entonces teniendo esta imagen podemos decir que nosotros vamos a utilizar una Clase en particular que implementa una interfaz para poder empezar la agrupación de elementos.
 `List<String> lista = new ArrayList();`  
@@ -58,18 +58,18 @@ En contraparte, la Imperativa, si quiero lograr el mismo resultado, tendria que 
 Por ejemplo, si me pidieran el promedio tendria que colocar un número, otro, otro y otro, sumarlos todos y dividirlos entre la cantidad de números.  
 Es Imperativa porque le estoy indicando todos los pasos para lograr el objetivo.
 
-![01_paradigma_funcional_01](src/Tutorial_Java_8_MitoCode/01_paradigma_funcional_01.png)
+![01_paradigma_funcional_01](src/Tutorial_Java_MitoCode/01_paradigma_funcional_01.png)
 
 Entonces, volviendo al paradigma funcional, nos permite tener una semantica más limpia, acá entran las lambdas, y también se apoya en la recursión, porque básicamente para poder
 abstraer muchas funcionalidades es necesario apoyarse en la reutilización de los mismos métodos.
 
 Lenguajes de programación Declarativa (QUE) e Imperativa (COMO)  
-![01_paradigma_funcional_02](src/Tutorial_Java_8_MitoCode/01_paradigma_funcional_02.png)
+![01_paradigma_funcional_02](src/Tutorial_Java_MitoCode/01_paradigma_funcional_02.png)
 
 Java 8 se basa en un fuerte simbolo conocido como ***Lambdas***  
 Las Lambdas basicamente son funciones anónimas, muy escenciales para entender la programación declarativa y presente la siguiente estructura `parámetros =>(operador) expresión`
 
-![01_paradigma_funcional_03](src/Tutorial_Java_8_MitoCode/01_paradigma_funcional_03.png)
+![01_paradigma_funcional_03](src/Tutorial_Java_MitoCode/01_paradigma_funcional_03.png)
 
 ---
 

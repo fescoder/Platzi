@@ -4,7 +4,7 @@
 -
 - [Tutorial Java SE]
     - [36- Colecciones + iterador](#36-colecciones--iterador)
-    - [37- ArrayList]
+    - [37- ArrayList](#37--arraylist)
 
 
 
@@ -106,6 +106,61 @@ Se destaca por no tener un orden en la lista, siempre es aleatorio y no permite 
 
 ![40_HashSet_02](src/Tutorial_Java_MitoCode/40_HashSet_02.png)
 
+---
+
+## 41- Exceptions
+Una Exception notifica cuando hay algun error en el proceso.  
+Para poder manejarlas utilizamos el try-catch-finally  
+En este ejemplo se trata de divir un numero por cero y la exception es tratada y reportada.  
+![41_Exceptions_01](src/Tutorial_Java_MitoCode/41_Exceptions_01.png)
+
+---
+
+## 42- Jerarquía de Exceptions
+Cuando tratas de capturar una exception de nivel mayor no es necesario ni posible capturar otra de nivel inferior ya que la superior lo abarca y trata.  
+Esta es la jerarquia y algunas exceptions.  
+![42_jerarquia_exceptions_01](src/Tutorial_Java_MitoCode/42_jerarquia_exceptions_01.png)
+
+![42_jerarquia_exceptions_02](src/Tutorial_Java_MitoCode/42_jerarquia_exceptions_02.png)
+
+![42_jerarquia_exceptions_03](src/Tutorial_Java_MitoCode/42_jerarquia_exceptions_03.png)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 ---
 
 ## Paradigma Funcional

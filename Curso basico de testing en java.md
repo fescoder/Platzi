@@ -296,7 +296,7 @@ Luego creamos un test para esa clase **DateUtilShould** y vamos ejecutando cada 
 
 ![13_Calcular_el_ano_bisiesto_02](src/Curso_Basico_de_Testing_en_Java/13_Calcular_el_ano_bisiesto_02.png)
 
-[PDf](https://users.csc.calpoly.edu/~djanzen/courses/405W13/presentations/tdd.pdf) acerca de TDD
+[PDF](https://users.csc.calpoly.edu/~djanzen/courses/405W13/presentations/tdd.pdf) acerca de TDD
 
 ---
 
@@ -316,6 +316,10 @@ Espero se entienda lo que quise explicar, me pareció interesante mencionar esto
 ---
 
 ### Clase 15 - Reto 2: Práctica de TDD
+Reto FizzBuzz  
+![15_Reto_FizzBuzz_01](src/Curso_Basico_de_Testing_en_Java/15_Reto_FizzBuzz_01.png)
+
+![15_Reto_FizzBuzz_02](src/Curso_Basico_de_Testing_en_Java/15_Reto_FizzBuzz_02.png)
 
 ---
 

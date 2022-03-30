@@ -2,21 +2,22 @@
 # Java Tutorial MitoCode
 Índice
 -
-- [1- Colecciones + iterador](#1-colecciones--iterador)
-- [2- ArrayList]
+- [Tutorial Java SE]
+    - [36- Colecciones + iterador](#36-colecciones--iterador)
+    - [37- ArrayList]
 
 
 
-- [- Paradigma Funcional](#paradigma-funcional)
-- [- Lambda](#lambda)
+    - [1- Paradigma Funcional](#paradigma-funcional)
+    - [2- Lambda](#lambda)
 
 ---
 
-## 1- Colecciones + iterador
+## 36- Colecciones + iterador
 Una coleccion de objetos es un objeto que se puede almacenar un número variable de elementos, siendo cada elemento otro objeto. Podriamos verlo como una caja que contiene mas cajas dentro.
 Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se pueden encoger o agrandar según las nececidades.
 
-![01_Colecciones_e_iterador_01](src/Tutorial_Java_MitoCode/01_Colecciones_e_iterador_01.png)
+![36_Colecciones_e_iterador_01](src/Tutorial_Java_MitoCode/36_Colecciones_e_iterador_01.png)
 
 Entonces teniendo esta imagen podemos decir que nosotros vamos a utilizar una Clase en particular que implementa una interfaz para poder empezar la agrupación de elementos.  
 `List<String> lista = new ArrayList();`  
@@ -42,7 +43,7 @@ mejor manera de trabajar esta coleccion es por medio de listas.
 
 ---
 
-## 2- ArrayList
+## 37- ArrayList
 ArrayList viene de la interfaz Lista, y ésta de Collection e Iterable (Se ve en la imagen de la clase anterior).  
 Se explica que para mejorar el rendimiento del sistema, si se sabe la cantidad de espacio de memoria que se le puede asignar a la lista, es decir la cantidad de objetos que va a almacenar
 conviene declararlo al instanciar el ArrayList y asi nos ahorramos tiempo y procesos a la hora de la ejecución.  
@@ -59,9 +60,9 @@ Y muchos más.
 
 ---
 
-## 3- LinkedList o Listas enlazadas
+## 38- LinkedList o Listas enlazadas
 Una lista enlazada tiene la particularidad de que sus elementos tienen una referencia con su próximo.  
-![03_LinkedList_01](src/Tutorial_Java_MitoCode/03_LinkedList_01.png)
+![38_LinkedList_01](src/Tutorial_Java_MitoCode/38_LinkedList_01.png)
 
 Y lo podemos declarar asi:  
 `List lista = new LinkedList();`  
@@ -72,21 +73,22 @@ Tambien podriamos poner de que tipo es esa lista, pero al no declararlo podemos 
 
 Veamos en que situaciónes es conveniente usar el LinkedList antes que un ArrayList  
 Tiempos que tardan en ejecutar el agregado, lectura y eliminación de la lista.  
-![03_LinkedList_02](src/Tutorial_Java_MitoCode/03_LinkedList_02.png)  
+![38_LinkedList_02](src/Tutorial_Java_MitoCode/38_LinkedList_02.png)  
 La diferencia sustancial es la obtencion del elemento de parte del ArrayList, porque? porque en LinkedList tenemos referencias uno con el otro, entonces cuando quiero obtener un elemento
 en el ArrayList simplemente voy directo a él, mientras que el LinkedList tiene que recorrer toda la lista.  
 Y en el agregado y eliminación es más rapida el LinkedList. Ahí sus diferencias y cuando conviene usar cada uno.
 
 ---
 
-## 4- HashMap
-Hashmap (Diccionario)
-Básicamente este tipo de dato nos va a permitir tener varios elementos pero a cada elemento le vamos a poder asociar una KEY.
+## 39- HashMap
+Hashmap (Diccionario)  
+Básicamente este tipo de dato nos va a permitir tener varios elementos pero a cada elemento le vamos a poder asociar una KEY.  
 Declaración:  
 `Map diccionario = new HashMap();`  
 Ó mediante la Clase  
-`HashMap diccionario = new HashMap();`  
-![04_HashMap_01](src/Tutorial_Java_MitoCode/04_HashMap_01.png)
+`HashMap diccionario = new HashMap();`
+
+![39_HashMap_01](src/Tutorial_Java_MitoCode/39_HashMap_01.png)
 
 Para agregar valores a nuestro diccionario en vez de utilizar como en el ArrayList el método `add()` lo hacemos con el método `put()` al cual le pasamos 2 argumentos, el KEY y el VALOR.  
 Se pueden acceder a estos elementos usando la función `diccionario.get()` pasandole la KEY y nos devuelve el valor.  
@@ -94,6 +96,15 @@ Tambien podemos ver si existe una KEY o un VALOR en nuestro diccionario usando e
 Y demas funciones que se pueden investigar.
 
 Se usan mucho cuando se necesita pasar parametros a librerias para reportes, se usan el objeto que tenga la relación key-value.
+
+---
+
+## 40- HashSet
+Se destaca por no tener un orden en la lista, siempre es aleatorio y no permite valores repetidos (si guardarlos pero no los devuelve al leer los elementos).
+
+![40_HashSet_01](src/Tutorial_Java_MitoCode/40_HashSet_01.png)
+
+![40_HashSet_02](src/Tutorial_Java_MitoCode/40_HashSet_02.png)
 
 ---
 

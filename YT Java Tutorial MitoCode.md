@@ -300,7 +300,7 @@ A continuación se muestran las implementaciones de los métodos.
 **Registrar**
 ![52_Patron_DAO_03](src/Tutorial_Java_MitoCode/52_Patron_DAO_03.png)
 
-**Modificar**
+**Modificar** `"UPDATE Persona set nombre = ? where id = ?"`
 ![52_Patron_DAO_04](src/Tutorial_Java_MitoCode/52_Patron_DAO_04.png)
 
 **Eliminar**

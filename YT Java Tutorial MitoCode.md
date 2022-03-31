@@ -223,8 +223,13 @@ Pero si queremos agregar simplemente tenemos que pasarle **True** como segundo p
 ---
 
 ## 48- Try with resources
+Esto simplifica un poco mas el ejemplo anterior ya que se Java maneja el archivo internamente.
 
+![48_Try_with_resources_01.png](src/Tutorial_Java_MitoCode/48_Try_with_resources_01.png)
 
+---
+
+## 49- Conexión a Base de Datos
 
 
 

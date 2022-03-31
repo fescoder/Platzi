@@ -352,12 +352,18 @@ Agregaremos un boton con **JButton** pero este necesita un contenedor para que n
 ---
 
 ## 55- JButton Swing
+Agregar una accion al boton cuando es clickeado.  
+`ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);` es necesario para terminar el proceso y no se ejecute en segundo plano cuando se cierre la ventana.
 
+![55_JButton_Swing_01](src/Tutorial_Java_MitoCode/55_JButton_Swing_01.png)
 
+Otra manera mas dinamica es como se le asigna esa tarea al boton Salir.
 
+![55_JButton_Swing_02](src/Tutorial_Java_MitoCode/55_JButton_Swing_02.png)
 
+---
 
-
+## 56- Paleta Swing
 
 
 

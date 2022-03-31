@@ -268,9 +268,19 @@ Y el método main quedaria asi:
 ---
 
 ## 51- Listar desde DB
+Recuperar datos de DB y mostrar al usuario.  
+En este casi creamos una nueva función y cambiamos el Statement por `SELECT * FROM persona` y en vez de un executeUpdate() usaremos `executeQuery()` que nos devuelve un
+**ResultSet** (un dato de tipo particular que nos ayuda a contener toda la información que nos devuelve la query).  
+Recorremos el **rs** con next(), es decir, mientras tenga contenido el rs y lo guardamos todo en un objeto Persona con variables con los mismos nombres que tienen en la base (id y Nombre)  
+Todo esto irá guardado en una Lista para manejarlo mejor, recorrerlo en el main y mostrar los datos.
 
+![51_Listar_DB_01](src/Tutorial_Java_MitoCode/51_Listar_DB_01.png)
 
+![51_Listar_DB_02](src/Tutorial_Java_MitoCode/51_Listar_DB_02.png)
 
+---
+
+## 52- Patrón DAO
 
 
 

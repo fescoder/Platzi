@@ -230,15 +230,28 @@ Esto simplifica un poco mas el ejemplo anterior ya que se Java maneja el archivo
 ---
 
 ## 49- Conexión a Base de Datos
+Java por defecto trae un API para poder utilizar los métodos que se proporcionen y acceder a la base de datos, se trata de ***JDBC***(Java Data Base Connectivity).  
+Son los mecanismos que nos van a ayudar a poder interactuar con diferentes DB, sea SQL Server, Postgres, MySQL, o cualquier otra.  
+Necesitamos tener instalado una base de datos y descargado la libreria para esa DB, en este caso es **postgresql-9.4-1201.jdbc41.jar**
 
+![49_Conexion_DB_01.png](src/Tutorial_Java_MitoCode/49_Conexion_DB_01.png)
 
+`JDBC_DRIVER` Indica a que tipo de base de datos nos estamos conectando.  
+`DB_URL` Es la ruta en el cual estamos haciendo la conexión y tiene esta estructura -> `conector:tipo de DB://servidor: puerto/ nombre de DB`  
+`Connection` Es una clase que necesitamos para conectarnos y utiliza la Clase `DriveManager` al cual le pasamos los parametros necesarios.  
+`PreparedStatement` Es una clase que nos da Java para poder interactuar operaciones en DB, al cual le pasamos una sentencia SQL, ejecutamos y cerramos.  
+Y por ultimo siempre cerrar la conexión.  
 
+![49_Conexion_DB_02.png](src/Tutorial_Java_MitoCode/49_Conexion_DB_02.png)
 
+Ahora veremos una forma mas simple para ahorrar lineas de código, con el ***Try with resources***, agregando en el Try la sentencia correspondiente y quitariamos el Finally
+ya que estaria de manera implicita ya que el TWR lo manejaria.
 
+![49_Conexion_DB_03.png](src/Tutorial_Java_MitoCode/49_Conexion_DB_03.png)
 
+---
 
-
-
+## 50- Inserción a DB con parámetros
 
 
 

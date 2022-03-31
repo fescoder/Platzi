@@ -182,7 +182,8 @@ Manejo de archivos desde Java.
 
 Para empezar a manipular un archivo en Java es necesario hacer la referencia  
 `File archivo = new File()` y se importa la libreria.  
-Y le enviamos como parametro la ruta del archivo.  
+Y le enviamos como parametro la ruta del archivo.
+
 La clase tiene varios métodos para el manejo, `canRead()`, `canWrite()`, `canExecute()`, `delete()`, `exists()` y más.  
 Es buena práctica siempre preguntar si existe o no dicho archivo.  
 Con `mkdir()` podemos crear el directorio si no existe, con `mkdirs()` crea todos las carpetas en la ruta escrita que faltan.  
@@ -193,9 +194,22 @@ Con `renameTo(new File("Ruta de archivo"))` renombra al file con el contenido id
 ---
 
 ## 46- Lectura de archivos
+Lectura de archivos planos, sin embargo hay que tener en cuenta que cuando hablamos de lectura de archivos, debemos pensar en que tipo de archivo es.  
+Si estamos leyendo una imagen por ejemplo, es común que se encuentra guardada en una base de datos o en un repositorio en formato de Bytes.
 
+![46- Lectura_de_archivos_01](src/Tutorial_Java_MitoCode/46- Lectura_de_archivos_01.png)
 
+Y para este tipo de lectura seria mas conveniente una clase que sea de tipo `Stream`.  
+Ahora nos vamos a trabajar con texto plano, un .txt, leer el contenido y mostrarlo en consola.  
+Para esto necesito apoyarme en una clase llamada `FileReader()` que captura el archivo y en `BufferedReader()` para poder recorrer el contenido del archivo.  
 
+![46- Lectura_de_archivos_02](src/Tutorial_Java_MitoCode/46- Lectura_de_archivos_02.png)
+
+Tambien podriamos hacerlo con la clase `FileInputStream` y nos ayudamos con `Scanner` de la siguiente manera.  
+
+![46- Lectura_de_archivos_03](src/Tutorial_Java_MitoCode/46- Lectura_de_archivos_03.png)
+
+## 47- Escritura de archivos
 
 
 

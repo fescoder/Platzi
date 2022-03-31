@@ -332,6 +332,29 @@ Estructura con DAO
 ---
 
 ## 53-Interfaces gráficas SWING
+El paquete SWING comprende un conjunto de componentes como botones, labels, combox, etc.  
+Para demostrar como funciona desde la raiz del código se va a utilizar el Notepad++.  
+Una ventana en Java se lo conoce como JFrame, a este le podemos indicar algunas propiedades.  
+
+![53- Interfaces_graficas_SWING_01](src/Tutorial_Java_MitoCode/53_Interfaces_graficas_SWING_01.png)
+
+Y compilamos en la consola, primero con `javac ClaseGrafica.java`, este me genera el ***ClaseGrafica.class*** ,luego ejecutamos ese programa con `java ClaseGrafica` y la ventana aparece.
+
+![53_Interfaces_graficas_SWING_02](src/Tutorial_Java_MitoCode/53_Interfaces_graficas_SWING_02.png)
+
+---
+
+## 54- JPanel Swing
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -256,7 +256,8 @@ Ahora insertaremos los valores de forma dinámica, es decir solicitaremos datos 
 
 ![50_Inserccion_DB_parametros_01.png](src/Tutorial_Java_MitoCode/50_Inserccion_DB_parametros_01.png)
 
-En Values cada **?** representa un parámetro, y para definir el valor para ese signo lo hacemos con `setString(numParametro, valorParametro)`, si fuese un int seria `setInt()`
+En Values cada **?** representa un parámetro, y para definir el valor para ese signo lo hacemos con `setString(numParametro, valorParametro)`.  
+Si fuese un int seria `setInt()`
 
 ![50_Inserccion_DB_parametros_02](src/Tutorial_Java_MitoCode/50_Inserccion_DB_parametros_02.png)
 

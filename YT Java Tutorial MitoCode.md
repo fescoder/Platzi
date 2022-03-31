@@ -209,7 +209,36 @@ Tambien podriamos hacerlo con la clase `FileInputStream` y nos ayudamos con `Sca
 
 ![46_Lectura_de_archivos_03](src/Tutorial_Java_MitoCode/46_Lectura_de_archivos_03.png)
 
+---
+
 ## 47- Escritura de archivos
+Nos apoyaremos en dos clases para la escritura de archivos.  
+`FileWriter` y `PrintWriter` y el try-catch para el manejo de excepciones. En este caso si existe el archivo sobreescribimos lo que hay en él.
+
+![47_Escritura_de_archivos_01.png](src/Tutorial_Java_MitoCode/47_Escritura_de_archivos_01.png)
+
+Pero si queremos agregar simplemente tenemos que pasarle **True** como segundo parámetro al FileWriter.  
+`archivo = new FileWriter("D:\\ejemplo\\mitocode.txt", true);`
+
+---
+
+## 48- Try with resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

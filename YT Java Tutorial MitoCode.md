@@ -281,7 +281,7 @@ Todo esto irá guardado en una Lista para manejarlo mejor, recorrerlo en el main
 ---
 
 ## 52- Patrón DAO
-Es un patrón de diseño muy importante a la hora de manejar conexiones a base de datos, la DAO (Data Access Object).
+Es un patrón de diseño muy importante a la hora de manejar conexiones a base de datos, la DAO (Data Access Object).  
 Un patrón es un conjunto de buenas practicas que te permite ordenar tu manera de trabajo, nuestro código, de manera que sea mantenible en el tiempo y que si viene otro programador
 pueda entender el estilo de esta programación.  
 El DAO especificamente lo que hace es separar la lógica del negocio, de la aplicación, de la lógica del acceso a la DB, con el fin de tener un orden en nuestor código.  
@@ -324,6 +324,10 @@ Eliminamos una Persona.
 Listamos las Personas en nuestra DB.
 
 ![52_Patron_DAO_10](src/Tutorial_Java_MitoCode/52_Patron_DAO_10.png)
+
+Estructura con DAO
+
+![52_Patron_DAO_11](src/Tutorial_Java_MitoCode/52_Patron_DAO_11.png)
 
 ---
 

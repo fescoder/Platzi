@@ -345,10 +345,13 @@ Y compilamos en la consola, primero con `javac ClaseGrafica.java`, este me gener
 ---
 
 ## 54- JPanel Swing
+Agregaremos un boton con **JButton** pero este necesita un contenedor para que no ocupe toda la ventana, esto se hace con el **JPanel**, el botón se agrega al panel y el panel a la ventana.
 
+![54_JPanel_Swing_01](src/Tutorial_Java_MitoCode/54_JPanel_Swing_01.png)
 
+---
 
-
+## 55- JButton Swing
 
 
 

@@ -281,15 +281,53 @@ Todo esto irá guardado en una Lista para manejarlo mejor, recorrerlo en el main
 ---
 
 ## 52- Patrón DAO
+Es un patrón de diseño muy importante a la hora de manejar conexiones a base de datos, la DAO (Data Access Object).
+Un patrón es un conjunto de buenas practicas que te permite ordenar tu manera de trabajo, nuestro código, de manera que sea mantenible en el tiempo y que si viene otro programador
+pueda entender el estilo de esta programación.  
+El DAO especificamente lo que hace es separar la lógica del negocio, de la aplicación, de la lógica del acceso a la DB, con el fin de tener un orden en nuestor código.  
+Para empezar creamos un nuevo paquete **dao**, con la clase Conexion y en él indicamos todos los atributos y métodos que usamos anteriormente para conectarnos, y creamos dos métodos para
+conectar y cerrar la DB.
 
+![52_Patron_DAO_01](src/Tutorial_Java_MitoCode/52_Patron_DAO_01.png)
 
+Creamos otro paquete llamado **Interfaces**, definimos una interface llamada **DAOPersona** y definimos las operaciones que soporta la interfaz.
 
+![52_Patron_DAO_02](src/Tutorial_Java_MitoCode/52_Patron_DAO_02.png)
 
+Creamos una nueva clase en el package DAO a la que llamamos **DAOPersonaImpl** (impl viene de implementacion, por la interfaz), heradamos de conexion e implementamos la interface.  
+A continuación se muestran las implementaciones de los métodos.
 
+**Registrar**
+![52_Patron_DAO_03](src/Tutorial_Java_MitoCode/52_Patron_DAO_03.png)
 
+**Modificar**
+![52_Patron_DAO_04](src/Tutorial_Java_MitoCode/52_Patron_DAO_04.png)
 
+**Eliminar**
+![52_Patron_DAO_05](src/Tutorial_Java_MitoCode/52_Patron_DAO_05.png)
 
+**Listar**
+![52_Patron_DAO_06](src/Tutorial_Java_MitoCode/52_Patron_DAO_06.png)
 
+Ahora en el main agregamos una Persona.
+
+![52_Patron_DAO_07](src/Tutorial_Java_MitoCode/52_Patron_DAO_07.png)
+
+Modificamos una Persona.
+
+![52_Patron_DAO_08](src/Tutorial_Java_MitoCode/52_Patron_DAO_08.png)
+
+Eliminamos una Persona.
+
+![52_Patron_DAO_09](src/Tutorial_Java_MitoCode/52_Patron_DAO_09.png)
+
+Listamos las Personas en nuestra DB.
+
+![52_Patron_DAO_10](src/Tutorial_Java_MitoCode/52_Patron_DAO_10.png)
+
+---
+
+## 53-Interfaces gráficas SWING
 
 
 

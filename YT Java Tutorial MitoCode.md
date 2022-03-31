@@ -19,12 +19,7 @@
     - [49- Conexión a Base de Datos](#49--conexión-a-base-de-datos)
     - [50- Insercción a BD con parámetros](#50--inserción-a-db-con-parámetros)
     - [51- Listar desde BD](#51--listar-desde-db)
-    - [52- Patrón DAO]
-    - [53- Interfaces gráficas SWING]
-    - [54- JPanel Swing]
-    - [55- JButton Swing]
-    - [56- Paleta Swing]
-    - [57- Hilos]
+    - [52- Patrón DAO](#52--patrón-dao)
 
 
 
@@ -330,41 +325,6 @@ Estructura con DAO
 ![52_Patron_DAO_11](src/Tutorial_Java_MitoCode/52_Patron_DAO_11.png)
 
 ---
-
-## 53-Interfaces gráficas SWING
-El paquete SWING comprende un conjunto de componentes como botones, labels, combox, etc.  
-Para demostrar como funciona desde la raiz del código se va a utilizar el Notepad++.  
-Una ventana en Java se lo conoce como JFrame, a este le podemos indicar algunas propiedades.  
-
-![53- Interfaces_graficas_SWING_01](src/Tutorial_Java_MitoCode/53_Interfaces_graficas_SWING_01.png)
-
-Y compilamos en la consola, primero con `javac ClaseGrafica.java`, este me genera el ***ClaseGrafica.class*** ,luego ejecutamos ese programa con `java ClaseGrafica` y la ventana aparece.
-
-![53_Interfaces_graficas_SWING_02](src/Tutorial_Java_MitoCode/53_Interfaces_graficas_SWING_02.png)
-
----
-
-## 54- JPanel Swing
-Agregaremos un boton con **JButton** pero este necesita un contenedor para que no ocupe toda la ventana, esto se hace con el **JPanel**, el botón se agrega al panel y el panel a la ventana.
-
-![54_JPanel_Swing_01](src/Tutorial_Java_MitoCode/54_JPanel_Swing_01.png)
-
----
-
-## 55- JButton Swing
-Agregar una accion al boton cuando es clickeado.  
-`ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);` es necesario para terminar el proceso y no se ejecute en segundo plano cuando se cierre la ventana.
-
-![55_JButton_Swing_01](src/Tutorial_Java_MitoCode/55_JButton_Swing_01.png)
-
-Otra manera mas dinamica es como se le asigna esa tarea al boton Salir.
-
-![55_JButton_Swing_02](src/Tutorial_Java_MitoCode/55_JButton_Swing_02.png)
-
----
-
-## 56- Paleta Swing
-
 
 
 

@@ -14,11 +14,11 @@
     - [44- Exceptions personalizadas](#44--exceptions-personalizadas)
     - [45- Files](#45--files)
     - [46 -Lectura de Archivos](#46--lectura-de-archivos)
-    - [47- Escritura de Archivos]
-    - [48- try with resources]
-    - [49- Conexión a Base de Datos]
-    - [50- Insercción a BD con parámetros]
-    - [51- Listar de BD]
+    - [47- Escritura de Archivos](#47--escritura-de-archivos)
+    - [48- try with resources](#48--try-with-resources)
+    - [49- Conexión a Base de Datos](#49--conexión-a-base-de-datos)
+    - [50- Insercción a BD con parámetros](#50--inserción-a-db-con-parámetros)
+    - [51- Listar desde BD](#51--listar-desde-db)
     - [52- Patrón DAO]
     - [53- Interfaces gráficas SWING]
     - [54- JPanel Swing]
@@ -252,10 +252,21 @@ ya que estaria de manera implicita ya que el TWR lo manejaria.
 ---
 
 ## 50- Inserción a DB con parámetros
+Ahora insertaremos los valores de forma dinámica, es decir solicitaremos datos al usuario para poder guardarlos.
 
+![50_Inserccion_DB_parametros_01.png](src/Tutorial_Java_MitoCode/50_Inserccion_DB_parametros_01.png)
 
+En Values cada **?** representa un parámetro, y para definir el valor para ese signo lo hacemos con `setString(numParametro, valorParametro)`, si fuese un int seria `setInt()`
 
+![50_Inserccion_DB_parametros_02](src/Tutorial_Java_MitoCode/50_Inserccion_DB_parametros_02.png)
 
+Y el método main quedaria asi:
+
+![50_Inserccion_DB_parametros_03](src/Tutorial_Java_MitoCode/50_Inserccion_DB_parametros_03.png)
+
+---
+
+## 51- Listar desde DB
 
 
 

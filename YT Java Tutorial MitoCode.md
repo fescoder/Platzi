@@ -11,9 +11,9 @@
     - [41- Exceptions](#41--exceptions)
     - [42- Jerarquía de Exceptions](#42--jerarquía-de-exceptions)
     - [43- Lanzar Exceptions - Throw y Throws](#43--lanzar-exceptions---throw-ythrows)
-    - [44- Exceptions personalizadas]
-    - [45- File]
-    - [46 -Lectura de Archivos]
+    - [44- Exceptions personalizadas](#44--exceptions-personalizadas)
+    - [45- Files](#45--files)
+    - [46 -Lectura de Archivos](#46--lectura-de-archivos)
     - [47- Escritura de Archivos]
     - [48- try with resources]
     - [49- Conexión a Base de Datos]
@@ -148,7 +148,7 @@ Esta es la jerarquia y algunas exceptions.
 ---
 
 ## 43- Lanzar Exceptions - Throw yThrows
-Aqui veremos como delegar una Exception a un método que está en un nivel superior.  
+Aqui veremos como delegar una Exception a un método que está un nivel superior.  
 Cuando desarrollamos aplicativos o sistemas se manejan las programaciones por capas, es decir que esta modularizado, y no necesariamente se manejan los errores donde se producen.  
 A veces se tratan los errores en un nivel superior mucho mas arriba y donde la capa inferior unicamente tenga que informar que ha ocurrido un error.  
 
@@ -157,8 +157,6 @@ A veces se tratan los errores en un nivel superior mucho mas arriba y donde la c
 `throw e` o `throw new NombreException` (para lanzar una nueva excepción)  
 la **e** es la instancia de una clase que necesita throw, esta arroja la exception, el mensaje va a la capa superior (en este caso al método 2) y a su vez el método 3 tiene que
 ser implementado con `throws Exception`, que **Exception** es la espificación de la clase, con este indicamos que puede transferir una exception.
-
-Entonces asi delegamos un mensaje que esta en un nivel inferior a diferentes niveles de la aplicación.
 
 ---
 
@@ -176,6 +174,25 @@ Aquí la lógica del proceso y lanzamientos de exceptions de 2 maneras diferente
 
 ![44_Excepciones_personalizadas_03](src/Tutorial_Java_MitoCode/44_Excepciones_personalizadas_03.png)
 
+---
+
+## 45- Files
+Manejo de archivos desde Java.  
+![45_Files_01](src/Tutorial_Java_MitoCode/45_Files_01.png)
+
+Para empezar a manipular un archivo en Java es necesario hacer la referencia  
+`File archivo = new File()` y se importa la libreria.  
+Y le enviamos como parametro la ruta del archivo.  
+La clase tiene varios métodos para el manejo, `canRead()`, `canWrite()`, `canExecute()`, `delete()`, `exists()` y más.  
+Es buena práctica siempre preguntar si existe o no dicho archivo.  
+Con `mkdir()` podemos crear el directorio si no existe, con `mkdirs()` crea todos las carpetas en la ruta escrita que faltan.  
+Con `renameTo(new File("Ruta de archivo"))` renombra al file con el contenido identico.  
+
+![45_Files_02](src/Tutorial_Java_MitoCode/45_Files_02.png)
+
+---
+
+## 46- Lectura de archivos
 
 
 
@@ -198,10 +215,6 @@ Aquí la lógica del proceso y lanzamientos de exceptions de 2 maneras diferente
 
 
 
-
-
-
- 
 ---
 
 ## Paradigma Funcional

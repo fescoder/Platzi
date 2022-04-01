@@ -434,24 +434,25 @@ Y este vendria a ser el main creando una lista de Alumnos y mostrando los nombre
 
 ![08_Genericos_III_Wildcards_01](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_01.png)
 
-**Ahora con Wildcards**
-Lista con UpperBounded  
+Ahora con Wildcards
+
+**Lista con UpperBounded**  
 Si solo ponemos el wildcar `<?>` es lo mismo decir `<? extends Object>` -> La palabra extends, en el contexto de genéricos, hace referencia a herencia e implementaciónes.  
 Tambien es redundante esa expresion ya que estamos diciendo que el objeto pasado a la lista va a recibir cualquier objeto que herede de la clase Object, es decir todos.  
 Para limitar un poco el tipo de dato a recibir podemos hacer que las clases Alumno y Profesor hereden de Persona y en consecuencia podriamos poner `<? extends Persona>`
 
 ![08_Genericos_III_Wildcards_02](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_02.png)
 
-Lista con LowerBounded  
+**Lista con LowerBounded**  
 Esto indica que vamos a reconocer solamente a aquellas Clases que son mayores a la clase que le pasamos.  
 En vez de extends usamos SUPER, entonces decimos que vamos a reconocer solo a las superclases de Alumno por ejemplo
 
 ![08_Genericos_III_Wildcards_03](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_03.png)
 
-Listar UnBounded  
+**Listar UnBounded**  
 Es practicamente lo mismo pero sin indicar el tipo de dato.
 
-![08_Genericos_III_Wildcards_03](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_03.png)
+![08_Genericos_III_Wildcards_04](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_04.png)
 
 ---
 

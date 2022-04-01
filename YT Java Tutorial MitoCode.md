@@ -426,6 +426,37 @@ También podemos crear una Lista de Clase que a la vez tenemos que indicarle que
 ---
 
 ## 8- Genéricos III Wildcards
+Wildcards es un *Comodin*, se reprensenta con **?**, si lo llevamos al contexto de Java y en especial a los genéricos lo que nos va a permitir las Wildcards es poder
+ejecutar nuestros genéricos sin indicar el tipo de dato, es decir este tipo de dato va a indicarse en tiempo de ejecución, o sea no lo vamos a mencionar directamente en el código.  
+Para ejemplificar creamos una Clase Persona y Alumno con un atributo nombre, su constructor y métodos. De la misma manera otra Clase Profesor.
+
+Y este vendria a ser el main creando una lista de Alumnos y mostrando los nombres.
+
+![08_Genericos_III_Wildcards_01](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_01.png)
+
+**Ahora con Wildcards**
+Lista con UpperBounded  
+Si solo ponemos el wildcar `<?>` es lo mismo decir `<? extends Object>` -> La palabra extends, en el contexto de genéricos, hace referencia a herencia e implementaciónes.  
+Tambien es redundante esa expresion ya que estamos diciendo que el objeto pasado a la lista va a recibir cualquier objeto que herede de la clase Object, es decir todos.  
+Para limitar un poco el tipo de dato a recibir podemos hacer que las clases Alumno y Profesor hereden de Persona y en consecuencia podriamos poner `<? extends Persona>`
+
+![08_Genericos_III_Wildcards_02](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_02.png)
+
+Lista con LowerBounded  
+Esto indica que vamos a reconocer solamente a aquellas Clases que son mayores a la clase que le pasamos.  
+En vez de extends usamos SUPER, entonces decimos que vamos a reconocer solo a las superclases de Alumno por ejemplo
+
+![08_Genericos_III_Wildcards_03](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_03.png)
+
+Listar UnBounded  
+Es practicamente lo mismo pero sin indicar el tipo de dato.
+
+![08_Genericos_III_Wildcards_03](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_03.png)
+
+---
+
+## 9- 
+
 
 
 

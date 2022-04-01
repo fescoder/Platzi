@@ -336,8 +336,22 @@ En esta primer clase muestra como funciona el mandarle parámetros al método ma
 ---
 
 ## 2- Proyecto Maven
+[Maven](https://www.youtube.com/watch?v=3RunOD1VBco&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=2)
 
+---
 
+## 3- Instancia y Static
+Un método de instancia no puede ser sobreescrito por un método estatico ni viceversa.
+
+![03_Instancia_Static_01](src/Tutorial_Java_MitoCode/03_Instancia_Static_01.png)
+
+La clase hija siempre se ejecuta en vez de la clase padre
+
+![03_Instancia_Static_02](src/Tutorial_Java_MitoCode/03_Instancia_Static_02.png)
+
+---
+
+## 4- InstanceOf
 
 
 ---

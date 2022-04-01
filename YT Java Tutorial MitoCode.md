@@ -365,16 +365,35 @@ Ejemplo práctico con una canasta de frutas.
 
 ---
 
-## 5- 
+## 5- Singleton
+Es un patron de diseño que nos permite tener una unica instancia de una clase particular.
 
+[Patrón Singleton](https://www.youtube.com/watch?v=qiFeiYLzIH8&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=5)
 
+---
 
+## 6- Genéricos I
+Cración de una clase generica y sus estereotipos más comúnes.  
+Cuando hablamos de genéricos en Java estamos haciendo mención a que una clase va a poder implementar un determinado tipo de elemento.  
+`List lista = new ArrayList();` -> Esta lista puede almacenar cualquier tipo de elemento, pero en los sistemas reales se espicifica que tipo se almacenaran.  
+`List <Integer> lista = new ArrayList();` -> De esta forma, con el operador `<>` indicamos de que tipo se va a guardar, puede ser tmb String o uno customizable como Persona.
 
+Crearemos una clase generica, siguiente al nombre de la clase escribimos `<T>`, **T** es una letra de un estereotipo, existen varios.  
+Si consiguiente instanciamos un objeto de tipo generico no nos va a tirar error ya que entiende que se va a implementar más adelante.  
 
+![06_Genericos_I_01](src/Tutorial_Java_MitoCode/06_Genericos_I_01.png)
 
+![06_Genericos_I_02](src/Tutorial_Java_MitoCode/06_Genericos_I_02.png)
 
+![06_Genericos_I_03](src/Tutorial_Java_MitoCode/06_Genericos_I_03.png)
 
+Lista de estereotipos.
 
+![06_Genericos_I_04](src/Tutorial_Java_MitoCode/06_Genericos_I_04.png)
+
+---
+
+## 7- Genéricos II
 
 
 

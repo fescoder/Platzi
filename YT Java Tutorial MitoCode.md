@@ -2,7 +2,7 @@
 # Java Tutorial MitoCode
 Índice
 -
-- [Tutorial Java SE]
+- [Tutorial Java 7 SE](#tutorial-java-7-se)
     - [36- Colecciones + iterador](#36-colecciones--iterador)
     - [37- ArrayList](#37--arraylist)
     - [38- LinkedList](#38--linkedlist-o-listas-enlazadas)
@@ -20,14 +20,15 @@
     - [50- Insercción a BD con parámetros](#50--inserción-a-db-con-parámetros)
     - [51- Listar desde BD](#51--listar-desde-db)
     - [52- Patrón DAO](#52--patrón-dao)
-
-
-
+- [Tutorial Java 7 SE Avanzado](#tutorial-java-7-se-avanzado)
+    - [10- Ordenar colecciones](#10--ordenar-colecciones)
+- [Tutorial Java 8](#tutorial-java-8)
     - [1- Paradigma Funcional](#paradigma-funcional)
     - [2- Lambda](#lambda)
 
 ---
 
+# Tutorial Java 7 SE
 ## 36- Colecciones + iterador
 Una coleccion de objetos es un objeto que se puede almacenar un número variable de elementos, siendo cada elemento otro objeto. Podriamos verlo como una caja que contiene mas cajas dentro.
 Puede haber distintos tipos de colecciones de tamaño flexible, es decir que se pueden encoger o agrandar según las nececidades.
@@ -326,7 +327,23 @@ Estructura con DAO
 
 ---
 
+# Tutorial Java 7 SE Avanzado
+## 1- Introducción
+En esta primer clase muestra como funciona el mandarle parámetros al método main e imprime los mismos.
 
+![01_Introduccion_01](src/Tutorial_Java_MitoCode/01_Introduccion_01.png)
+
+---
+
+## 2- Proyecto Maven
+
+
+
+
+---
+
+## 10- Ordenar Colecciones
+Se definio una Lista de tipo Integer
 
 
 
@@ -334,7 +351,8 @@ Estructura con DAO
 
 ---
 
-## Paradigma Funcional
+# Tutorial Java 8
+## 1- Paradigma Funcional
 El paradigma funcional es un subtipo del paradigma de programación Declarativa, basada en el uso de funciones matemáticas en contraste con la programación Imperativa.
 
 Es decir, el principal fin de la programación Declarativa es tener una sintaxis de decirle al programa **que** es lo que necesitamos, sin embargo en contraste a la programación
@@ -366,5 +384,5 @@ Las Lambdas basicamente son funciones anónimas, muy escenciales para entender l
 
 ---
 
-## Lambda
+## 2- Lambda
 Una expresión Lambda es un método anónimo que no necesita de un identificador para ser invocado.

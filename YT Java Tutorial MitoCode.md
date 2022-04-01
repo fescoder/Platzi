@@ -336,7 +336,7 @@ En esta primer clase muestra como funciona el mandarle parámetros al método ma
 ---
 
 ## 2- Proyecto Maven
-[Maven](https://www.youtube.com/watch?v=3RunOD1VBco&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=2)
+[Construcción con Maven](https://www.youtube.com/watch?v=3RunOD1VBco&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=2)
 
 ---
 
@@ -352,6 +352,46 @@ La clase hija siempre se ejecuta en vez de la clase padre
 ---
 
 ## 4- InstanceOf
+Este operador nos permite conocer de que tipo o instancia es un determiando objeto, saber de que clase es.  
+Sabiendo que Alumno hereda de Persona también funciona.
+
+![04_InstanceOf_01](src/Tutorial_Java_MitoCode/04_InstanceOf_01.png)
+
+Ejemplo práctico con una canasta de frutas.
+
+![04_InstanceOf_02](src/Tutorial_Java_MitoCode/04_InstanceOf_02.png)
+
+![04_InstanceOf_03](src/Tutorial_Java_MitoCode/04_InstanceOf_03.png)
+
+---
+
+## 5- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---

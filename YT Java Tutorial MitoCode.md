@@ -373,8 +373,8 @@ Es un patron de diseño que nos permite tener una unica instancia de una clase p
 ---
 
 ## 6- Genéricos I
-Cración de una clase generica y sus estereotipos más comúnes.  
 Cuando hablamos de genéricos en Java estamos haciendo mención a que una clase va a poder implementar un determinado tipo de elemento.  
+Creación de una clase genérica y sus estereotipos más comúnes.  
 `List lista = new ArrayList();` -> Esta lista puede almacenar cualquier tipo de elemento, pero en los sistemas reales se espicifica que tipo se almacenaran.  
 `List <Integer> lista = new ArrayList();` -> De esta forma, con el operador `<>` indicamos de que tipo se va a guardar, puede ser tmb String o uno customizable como Persona.
 
@@ -394,19 +394,38 @@ Lista de estereotipos.
 ---
 
 ## 7- Genéricos II
+Los genéricos básicamente tienen dos propocitos:
+- Proveer seguridad en Tipos.
+- Evitar Casteos.
 
+Seguridad en Tipos, ejemplo.  
+Type safety es la proteccion que se le da a la lista para que solo reciba un tipo de elemento.
 
+![07_Genericos_II_01](src/Tutorial_Java_MitoCode/07_Genericos_II_01.png)
 
+En contraparte los arrays si brindan por defecto el Type safety
 
+![07_Genericos_II_02](src/Tutorial_Java_MitoCode/07_Genericos_II_02.png)
 
+Evita el casting
 
+![07_Genericos_II_03](src/Tutorial_Java_MitoCode/07_Genericos_II_03.png)
 
+Podemos tener *N* estereotipos en la clase y nosotros podemos optar por la definicion de cada una.
 
+![07_Genericos_II_04](src/Tutorial_Java_MitoCode/07_Genericos_II_04.png)
 
+Y en la clase principal llamamos a esa instancia e indicamos que tipo de datos son.
 
+![07_Genericos_II_05](src/Tutorial_Java_MitoCode/07_Genericos_II_05.png)
 
+También podemos crear una Lista de Clase que a la vez tenemos que indicarle que tipo son.
 
+![07_Genericos_II_06](src/Tutorial_Java_MitoCode/07_Genericos_II_06.png)
 
+---
+
+## 8- Genéricos III Wildcards
 
 
 

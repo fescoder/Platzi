@@ -640,13 +640,11 @@ Podemos sobreescribir el método toString() en la clase Persona para que en la l
 
 ![16_Map_06](src/Tutorial_Java_MitoCode/16_Map_06.png)
 
-Recordar que compara por edad a las Personas.
-
-***LinkedHashMap*** con objeto
+***LinkedHashMap*** con objeto, con este método no hay necesidad de implementar el Comparable y como compara los demás atributos de Persona salen todos los elementos.
 
 ![16_Map_07](src/Tutorial_Java_MitoCode/16_Map_07.png)
 
-Con el ***TreeMap*** vemos que nos sale un objeto ya que los compara solamente por edad.
+Con el ***TreeMap*** vemos que nos sale un objeto ya que este sí los compara solamente por edad.
 
 ![16_Map_08](src/Tutorial_Java_MitoCode/16_Map_08.png)
 

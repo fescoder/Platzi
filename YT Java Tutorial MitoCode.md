@@ -498,8 +498,9 @@ Ordenamiento con un objeto tipo Persona, en este caso no tiene un criterio con e
 
 ## 11- Comparator
 Como la clase Persona tiene atributos varios y no se sabe que criterio debe tomar el ordenamiento es necesario indicar algunos criterios adicionales, entonces implementamos la interface
-Comparator, entonces el método sort nos pide una instancia de Comparator. Creamos una nueva clase llamada **NombreComparator**, al cual le implementamos Comparator que nos trae los
-métodos a sobreescribir, que solo es la función **compare()** al cual le pasamos dos objetos como parámetro y nos devuelve un int.
+Comparator, el método sort nos pide una instancia de Comparator.  
+Creamos una nueva clase llamada **NombreComparator**, al cual le implementamos Comparator que nos trae los métodos a sobreescribir, que solo es la función **compare()** al cual le pasamos
+dos objetos como parámetro y nos devuelve un int.
 
 ![11_Comparator_01](src/Tutorial_Java_MitoCode/11_Comparator_01.png)
 
@@ -507,11 +508,11 @@ Implementamos el método para que compare los nombres en este caso.
 
 ![11_Comparator_02](src/Tutorial_Java_MitoCode/11_Comparator_02.png)
 
-Creamos una nueva instancia de la Clase creada.
+Creamos una nueva instancia de la Clase creada y recorremos la lista para imprimir su orden.
 
 ![11_Comparator_03](src/Tutorial_Java_MitoCode/11_Comparator_03.png)
 
-Ahora podemos mejorar la performance para comparar Personas y es que en vez que sea un tipo obj sea un tipo Persona.
+Ahora podemos mejorar la performance para comparar Personas y es que en vez que sea un tipo Object sea un tipo Persona.
 
 ![11_Comparator_04](src/Tutorial_Java_MitoCode/11_Comparator_04.png)
 
@@ -522,10 +523,18 @@ Si queremos otros criterios para comparar tenemos que emplearlo en el método. E
 ---
 
 ## 12- Comparable
+Mismo ejercicio para mismo resultado pero con otra interfaz.  
+Primero que nada implementamos esta interfaz en la clase Persona y como hicimos antes podemos decirle que el tipo de dato que va a recibir es de tipo Persona , también implementamos
+el método obstracto correspondiente **compareTo()** que en este caso solo recibe un parámetro.  
+Como primera medida lo que hace es restar las edades, depende del orden, el resultado es ascendente o descendente. Y tenemos el ejemplo también con los nombres.
 
+![12_Comparable_01](src/Tutorial_Java_MitoCode/12_Comparable_01.png)
 
+![12_Comparable_02](src/Tutorial_Java_MitoCode/12_Comparable_02.png)
 
+---
 
+## 13- HashSet
 
 
 

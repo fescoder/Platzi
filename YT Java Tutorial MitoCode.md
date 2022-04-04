@@ -618,8 +618,8 @@ No permite valores duplicados como llaves, el orden en el que se muestran los el
 
 ![16_Map_02](src/Tutorial_Java_MitoCode/16_Map_02.png)
 
-En la imagen anterior salio ordenado porque era de tipo integer pero si cambiamos a las KEY por Strings sale asi  
-Si agregamos un valor que contenga una misma KEY, toma el ultimo valor como referencia.
+En la imagen anterior salio ordenado porque era de tipo integer pero si cambiamos a las KEY por Strings sale sin orden y si agregamos un valor que contenga una misma KEY, toma el ultimo
+valor como referencia.
 
 ![16_Map_03](src/Tutorial_Java_MitoCode/16_Map_03.png)
 
@@ -644,7 +644,7 @@ Recordar que compara por edad a las Personas.
 
 ***LinkedHashMap*** con objeto
 
-![16_Map_07](src/Tutorial_Java_MitoCode/16_Map_06.png)
+![16_Map_07](src/Tutorial_Java_MitoCode/16_Map_07.png)
 
 Con el ***TreeMap*** vemos que nos sale un objeto ya que los compara solamente por edad.
 

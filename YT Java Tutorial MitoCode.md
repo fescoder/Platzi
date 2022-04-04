@@ -458,12 +458,12 @@ Es practicamente lo mismo pero sin indicar el tipo de dato.
 ---
 
 ## 9- Capacidad inicial
-Cuado construmos una nueva lista, en este caso, podemos pasarle al constructor un capacidad inicial, el tamaño que tendrá la lista.
+Cuado construmos una nueva lista, en este caso, podemos pasarle al constructor un capacidad inicial, el tamaño que tendrá la lista.  
 Imaginemos que tenemos una app que requiere mucho procesamiento en listas y si sabemos que un promedio de esas filas es de 5000 o 3000 quizas, pero tenemos un aproximado y si lo sabemos
 es recomendable colocarlo en la lista que estamos creando para que exista un mejor rendimiento en la operación, con esto nos evitamos que el procesador este creando un nuevo espacio
-a medida que se está creando una nueva lista.
+a medida que se está creando una nueva lista.  
 Recordemos que los arraylist, cuando incrementan, no es que se agrega un espacio al final, si no que simplemente se destruye la referencia anterior y se crea una nueva referencia
-con un espacio mas, es decir se destruye y crea un nuevo objeto y así sucesivamente mientras se va iterando en un ciclo.
+con un espacio mas, es decir se destruye y crea un nuevo objeto y así sucesivamente mientras se va iterando en un ciclo.  
 La capacidad inicial por defecto de un arrayList es de 10, esta escrito en su contructor cuando no le pasamos ningún entero.
 
 ---

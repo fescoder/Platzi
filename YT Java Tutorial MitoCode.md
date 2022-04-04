@@ -566,6 +566,57 @@ Al agregar otro criterio, por ejemplo edad, vemos que lo toma como otro elemento
 ---
 
 ## 14- TreeSet
+Otra implementación de la interfaz **Set**, el TreeSet me ofrece poder agregar elementos a la colección únicos, sin duplicados y también te los orden de forma ascendente.
+
+![14_TreeSet_01](src/Tutorial_Java_MitoCode/14_TreeSet_01.png)
+
+Ahora veremos que es lo que tenemos que hacer cuando querramos listar objetos.  
+Cuando estemos en un proyecto desarrollado, tal vez se puedan traer directamente los elementos ordenados desde una base de datos con la consulta, o podriamos ordenarlas utilzando las
+implementaciónes del API Java Collection.  
+Para poner nuevamente los criterios para comparar, la Clase Persona tiene que implementar **Comparable** y el correspondiente **compareTo()**.
+
+![14_TreeSet_02](src/Tutorial_Java_MitoCode/14_TreeSet_02.png)
+
+![14_TreeSet_03](src/Tutorial_Java_MitoCode/14_TreeSet_03.png)
+
+Aun implementando compareTo() seguimos teniendo elementos duplicados y para excluirlos es necesario también sobreescribir los métodos **equals()** y **hashset()** para ordernar.
+
+![14_TreeSet_04](src/Tutorial_Java_MitoCode/14_TreeSet_04.png)
+
+![14_TreeSet_05](src/Tutorial_Java_MitoCode/14_TreeSet_05.png)
+
+![14_TreeSet_06](src/Tutorial_Java_MitoCode/14_TreeSet_06.png)
+
+Ahora tengo 2 objetos excatamente iguales y no se muestra en el listado repetido.
+
+![14_TreeSet_07](src/Tutorial_Java_MitoCode/14_TreeSet_07.png)
+
+![14_TreeSet_08](src/Tutorial_Java_MitoCode/14_TreeSet_08.png)
+
+---
+
+## 15- LinkedHashSet
+La implementación de LinkedHashSet se preocupa de que todos los elementos sean únicos y por el orden en el que los elementos se van agregando a la colección.
+
+![15_LinkedHashSet_01](src/Tutorial_Java_MitoCode/15_LinkedHashSet_01.png)
+
+Esta interfaz no necesita implementar el Comparable, por ende el compareTo() ya que se basa por orden de agregación, pero si tiene que sobreescribir el equals() y el hashset() para
+detectar elementos identicamente a otros.
+
+![15_LinkedHashSet_02](src/Tutorial_Java_MitoCode/15_LinkedHashSet_02.png)
+
+---
+
+## 16- Map
+
+
+
+
+
+
+
+
+
 
 
 

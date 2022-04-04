@@ -524,8 +524,9 @@ Si queremos otros criterios para comparar tenemos que emplearlo en el método. E
 
 ## 12- Comparable
 Mismo ejercicio para mismo resultado pero con otra interfaz.  
-Primero que nada implementamos esta interfaz en la clase Persona y como hicimos antes podemos decirle que el tipo de dato que va a recibir es de tipo Persona , también implementamos
-el método obstracto correspondiente **compareTo()** que en este caso solo recibe un parámetro.  
+Primero que nada implementamos esta interfaz en la clase Persona y como hicimos antes podemos decirle que el tipo de dato que va a recibir es de tipo Persona,  
+`public class Persona implements Comparable<Persona>`  
+también implementamos el método obstracto correspondiente **compareTo()** que en este caso solo recibe un parámetro.  
 Como primera medida lo que hace es restar las edades, depende del orden, el resultado es ascendente o descendente. Y tenemos el ejemplo también con los nombres.
 
 ![12_Comparable_01](src/Tutorial_Java_MitoCode/12_Comparable_01.png)
@@ -535,17 +536,36 @@ Como primera medida lo que hace es restar las edades, depende del orden, el resu
 ---
 
 ## 13- HashSet
+Es una implementación de la interfaz **Set**, evitar valores duplicados y el orden es aleatorio.
 
+![13_HashSet_01](src/Tutorial_Java_MitoCode/13_HashSet_01.png)
 
+Ahora si hacemos lo mismo pero con la Clase Persona, sí nos imprime valores duplicados.
 
+![13_HashSet_02](src/Tutorial_Java_MitoCode/13_HashSet_02.png)
 
+Y la razón es que cuando creamos una nueva instancia de objetos estamos apuntando a bloques de memoria distintos, por lo tanto cada vez que adicionamos a la lista, esta list Set está
+interpretando que cada objeto pertenece a una instancia nueva por lo tanto ninguno es similar al otro.  
+Entonces como hacemos la diferencia para que en el momento de agregar los objetos con atributos repetidos solamente me acepte aquellos que son únicos?  
+Para ellos es importante sobreescribir 2 métodos para que esta función muestre los únicos.  
+Estos son el **equals()** y el **hashCode()**, los generamos y vamos a seleccionar bajo que criterio vamos a hacer la comparación (Nombre).
 
+![13_HashSet_03](src/Tutorial_Java_MitoCode/13_HashSet_03.png)
 
+Y estos métodos lo que me va a permitir es comparar ambos objetos, en este caso de toda la lista, y asociar o buscar si el valor que hemos seleccionado relativamente es igual a otros
+objetos. Entonces se basa en la comparación y se va a calcular o asociar un valor aleatorio, simplemente para tenerlo como un valor referencial.
 
+![13_HashSet_04](src/Tutorial_Java_MitoCode/13_HashSet_04.png)
 
+![13_HashSet_05](src/Tutorial_Java_MitoCode/13_HashSet_05.png)
 
+Al agregar otro criterio, por ejemplo edad, vemos que lo toma como otro elemento en la lista.
 
+![13_HashSet_06](src/Tutorial_Java_MitoCode/13_HashSet_06.png)
 
+---
+
+## 14- TreeSet
 
 
 

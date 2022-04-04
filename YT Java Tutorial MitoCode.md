@@ -469,12 +469,34 @@ La capacidad inicial por defecto de un arrayList es de 10, esta escrito en su co
 ---
 
 ## 10- Ordenar Colecciones
-Se definio una Lista de tipo Integer
+En muchas ocaciones cuando uno lleva un curso de estructura de algoritmos y base de datos, mayormente al principio se enseña a poder trabajar con una estructura simple como los arreglos,
+pero la principal desventaja de este tipo es que tenemos que indicar un tamaño fijo, y si queremos incrementarlo tendriamos que hacer un nuevo algoritmo que apunte a un nuevo arreglo y
+tambien si queremos implementar una busqueda u ordenamiento, nos tenemos que apoyar en algortimos como el método de la burbuja, quickSort entro otros, que son validos cuando tenemos
+situaciones de alto rendimiento.
 
+En contra parte Java te proporciona una API, la API Colection, para que se pueda manejar listas de una manera más dinámica, aclaración siempre por rendimiento se considera trabajar con
+arreglos de forma simple, pero si se necesita algo dinamico, práctico o inmediato que no requiera un algoritmo muy avanzado para poder aplicar esa lógica que se necesita podriamos optar
+por el API Colection.
 
+Ahora ordenaremos una lista que creamos y lo haremos con el método `sort()` que recibe como parámetro una lista, esta función no retorna nada pero nos ordena la lista de menos a mayor.
 
+![10_Ordenar_colecciones_01](src/Tutorial_Java_MitoCode/10_Ordenar_colecciones_01.png)
 
+Podemos invertir el orden original de la lista con `reverse()`
 
+![10_Ordenar_colecciones_02](src/Tutorial_Java_MitoCode/10_Ordenar_colecciones_02.png)
+
+Con una lista de Strings
+
+![10_Ordenar_colecciones_03](src/Tutorial_Java_MitoCode/10_Ordenar_colecciones_03.png)
+
+![10_Ordenar_colecciones_04](src/Tutorial_Java_MitoCode/10_Ordenar_colecciones_04.png)
+
+Ordenamiento con un objeto tipo Persona, en este caso no tiene un criterio con el cual ordenar, entonces necesita del **comparator()**.
+
+---
+
+## 11- Comparator
 
 
 

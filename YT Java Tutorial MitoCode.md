@@ -536,7 +536,8 @@ Como primera medida lo que hace es restar las edades, depende del orden, el resu
 ---
 
 ## 13- HashSet
-Es una implementación de la interfaz **Set**, evitar valores duplicados y el orden es aleatorio.
+La interfaz **SET** implementa 3 métodos importantes para las listas **HashSet**, **TreeSet** y **LinkedHashSet**.
+HashSet evita valores duplicados y el orden es aleatorio.
 
 ![13_HashSet_01](src/Tutorial_Java_MitoCode/13_HashSet_01.png)
 
@@ -579,7 +580,7 @@ Para poner nuevamente los criterios para comparar, la Clase Persona tiene que im
 
 ![14_TreeSet_03](src/Tutorial_Java_MitoCode/14_TreeSet_03.png)
 
-Aun implementando compareTo() seguimos teniendo elementos duplicados y para excluirlos es necesario también sobreescribir los métodos **equals()** y **hashset()** para ordernar.
+Aun implementando compareTo() seguimos teniendo elementos duplicados y para excluirlos es necesario también sobreescribir los métodos **equals()** y **hashCode()**.
 
 ![14_TreeSet_04](src/Tutorial_Java_MitoCode/14_TreeSet_04.png)
 
@@ -600,7 +601,7 @@ La implementación de LinkedHashSet se preocupa de que todos los elementos sean 
 
 ![15_LinkedHashSet_01](src/Tutorial_Java_MitoCode/15_LinkedHashSet_01.png)
 
-Esta interfaz no necesita implementar el Comparable, por ende el compareTo() ya que se basa por orden de agregación, pero si tiene que sobreescribir el equals() y el hashset() para
+Esta interfaz no necesita implementar el Comparable, por ende el compareTo() ya que se basa por orden de agregación, pero si tiene que sobreescribir el equals() y el hashCode() para
 detectar elementos identicamente a otros.
 
 ![15_LinkedHashSet_02](src/Tutorial_Java_MitoCode/15_LinkedHashSet_02.png)
@@ -608,6 +609,76 @@ detectar elementos identicamente a otros.
 ---
 
 ## 16- Map
+Interfaz **Map**, también tiene 3 implementaciónes importantes, es muy parecido a la interfaz SET pese a no estar en la API Collection .
+
+![16_Map_01](src/Tutorial_Java_MitoCode/16_Map_01.png)
+
+**HashMap**  
+No permite valores duplicados como llaves, el orden en el que se muestran los elementos no sigue un patron en particular.
+
+![16_Map_02](src/Tutorial_Java_MitoCode/16_Map_02.png)
+
+En la imagen anterior salio ordenado porque era de tipo integer pero si cambiamos a las KEY por Strings sale asi  
+Si agregamos un valor que contenga una misma KEY, toma el ultimo valor como referencia.
+
+![16_Map_03](src/Tutorial_Java_MitoCode/16_Map_03.png)
+
+**TreeMap**  
+Como en SET, se preocupa por el orden ascendente de los elementos. No acepta valores nulos como Key
+
+![16_Map_04](src/Tutorial_Java_MitoCode/16_Map_04.png)
+
+**LinkedHashMap**  
+Se preocupa por el orden en el que agregamos los elementos al mapa.
+
+![16_Map_05](src/Tutorial_Java_MitoCode/16_Map_05.png)
+
+Ahora si tenemos un objeto customizable, un objeto propio que hemos creado para nuestras apps, en este caso Persona va seguir el mismo enfoque que hicimos para la interfaz **SET**
+en el que necesitamos implementar un Comparable para establecer los criterios del orden, y para el tema de duplicado sobreescribir el equals() y el hashCode().
+
+Podemos sobreescribir el método toString() en la clase Persona para que en la lista nos salga algo mas legible las propiedades del objeto Persona. (Si no sale @ y un chocloHash)
+
+![16_Map_06](src/Tutorial_Java_MitoCode/16_Map_06.png)
+
+Recordar que compara por edad a las Personas.
+
+***LinkedHashMap*** con objeto
+
+![16_Map_07](src/Tutorial_Java_MitoCode/16_Map_06.png)
+
+Con el ***TreeMap*** vemos que nos sale un objeto ya que los compara solamente por edad.
+
+![16_Map_08](src/Tutorial_Java_MitoCode/16_Map_08.png)
+
+Una vez corregido lo podemos ver con su orden ascendente.
+
+![16_Map_09](src/Tutorial_Java_MitoCode/16_Map_09.png)
+
+Y en el ***HashMap*** nos salen todos los elementos ya que el criterio que utiliza para comparar son el nombre edad y id, entonces lo toma
+
+![16_Map_10](src/Tutorial_Java_MitoCode/16_Map_10.png)
+
+Si modificamos y tenemos 2 exactamente iguales ya no salen.
+
+![16_Map_11](src/Tutorial_Java_MitoCode/16_Map_11.png)
+
+Otra forma de iterar un Map es con el foreach y Entry.
+
+![16_Map_12](src/Tutorial_Java_MitoCode/16_Map_12.png)
+
+---
+
+## 17- Stack
+
+
+
+
+
+
+
+
+
+
 
 
 

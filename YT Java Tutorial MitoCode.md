@@ -440,6 +440,7 @@ Ahora con Wildcards
 Si solo ponemos el wildcar `<?>` es lo mismo decir `<? extends Object>` -> La palabra extends, en el contexto de genéricos, hace referencia a herencia e implementaciónes.  
 Tambien es redundante esa expresion ya que estamos diciendo que el objeto pasado a la lista va a recibir cualquier objeto que herede de la clase Object, es decir todos.  
 Para limitar un poco el tipo de dato a recibir podemos hacer que las clases Alumno y Profesor hereden de Persona y en consecuencia podriamos poner `<? extends Persona>`
+Esto crea una Lista UpperBounded que reconoce a la misma clase o sus clases hijas.
 
 ![08_Genericos_III_Wildcards_02](src/Tutorial_Java_MitoCode/08_Genericos_III_Wildcards_02.png)
 
@@ -456,18 +457,27 @@ Es practicamente lo mismo pero sin indicar el tipo de dato.
 
 ---
 
-## 9- 
-
-
-
-
-
-
+## 9- Capacidad inicial
+Cuado construmos una nueva lista, en este caso, podemos pasarle al constructor un capacidad inicial, el tamaño que tendrá la lista.
+Imaginemos que tenemos una app que requiere mucho procesamiento en listas y si sabemos que un promedio de esas filas es de 5000 o 3000 quizas, pero tenemos un aproximado y si lo sabemos
+es recomendable colocarlo en la lista que estamos creando para que exista un mejor rendimiento en la operación, con esto nos evitamos que el procesador este creando un nuevo espacio
+a medida que se está creando una nueva lista.
+Recordemos que los arraylist, cuando incrementan, no es que se agrega un espacio al final, si no que simplemente se destruye la referencia anterior y se crea una nueva referencia
+con un espacio mas, es decir se destruye y crea un nuevo objeto y así sucesivamente mientras se va iterando en un ciclo.
+La capacidad inicial por defecto de un arrayList es de 10, esta escrito en su contructor cuando no le pasamos ningún entero.
 
 ---
 
 ## 10- Ordenar Colecciones
 Se definio una Lista de tipo Integer
+
+
+
+
+
+
+
+
 
 
 

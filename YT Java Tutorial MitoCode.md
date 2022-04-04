@@ -497,6 +497,41 @@ Ordenamiento con un objeto tipo Persona, en este caso no tiene un criterio con e
 ---
 
 ## 11- Comparator
+Como la clase Persona tiene atributos varios y no se sabe que criterio debe tomar el ordenamiento es necesario indicar algunos criterios adicionales, entonces implementamos la interface
+Comparator, entonces el método sort nos pide una instancia de Comparator. Creamos una nueva clase llamada **NombreComparator**, al cual le implementamos Comparator que nos trae los
+métodos a sobreescribir, que solo es la función **compare()** al cual le pasamos dos objetos como parámetro y nos devuelve un int.
+
+![11_Comparator_01](src/Tutorial_Java_MitoCode/11_Comparator_01.png)
+
+Implementamos el método para que compare los nombres en este caso.
+
+![11_Comparator_02](src/Tutorial_Java_MitoCode/11_Comparator_02.png)
+
+Creamos una nueva instancia de la Clase creada.
+
+![11_Comparator_03](src/Tutorial_Java_MitoCode/11_Comparator_03.png)
+
+Ahora podemos mejorar la performance para comparar Personas y es que en vez que sea un tipo obj sea un tipo Persona.
+
+![11_Comparator_04](src/Tutorial_Java_MitoCode/11_Comparator_04.png)
+
+Si queremos otros criterios para comparar tenemos que emplearlo en el método. En este caso lo creamos en la misma clase main para mostrar que se puede y comparamos las edades.
+
+![11_Comparator_05](src/Tutorial_Java_MitoCode/11_Comparator_05.png)
+
+---
+
+## 12- Comparable
+
+
+
+
+
+
+
+
+
+
 
 
 

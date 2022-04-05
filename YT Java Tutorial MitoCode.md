@@ -704,8 +704,9 @@ Comparable, compareTo(), como en los anteriores ejemplos.
 ---
 
 ## 19- Deque
+Interfaz Deque con la implementación arrayDeque.  
 Es una mezcla entre Stack y Queue. Podemos agregar y remover elementos al inicio y al final de la colección.  
-Estos métodos son. addFirst(), addLast(), removeFirst() y removeLast().  
+Estos métodos son. addFirst(), addLast(), removeFirst() y removeLast(). Acá también se muestran los métodos para remover de Stack y Queue.
 
 ![19_Deque_01](src/Tutorial_Java_MitoCode/19_Deque_01.png)
 
@@ -714,9 +715,33 @@ Estos métodos son. addFirst(), addLast(), removeFirst() y removeLast().
 ---
 
 ## 20- StringBuilder StringBuffer
+Son dos clases para trabajar con Strings, como ya vimos, trabajar con el concatenador **+** tiene un impacto mayor en el rendimiento de nuestros procesos.  
+No conviene ya que lo que hacemos es crear un StringBuilder, creando un String y llamando al método toString().  
+Acá se explicara las diferencia de estas dos clases y cuando combiene usarlas.
 
+Instanciamos un StringBuilder y vemos que tiene unas peculiaridades, por defecto tiene una capacidad inicial de 16 chars, pero podemos indicarle la capacidad nosotros.
 
+![20_StringBuilder_StringBuffer_01](src/Tutorial_Java_MitoCode/20_StringBuilder_StringBuffer_01.png)
 
+Igual como es mutable no es necesario indicarla, pero al hacerlo tiene mejor rendimiento y se recomienda que sea múltiplo de 4.
+
+![20_StringBuilder_StringBuffer_02](src/Tutorial_Java_MitoCode/20_StringBuilder_StringBuffer_02.png)
+
+![20_StringBuilder_StringBuffer_03](src/Tutorial_Java_MitoCode/20_StringBuilder_StringBuffer_03.png)
+
+Si escribimos un String dentro del constructor se suma a esos 16, podemos setearle el tamaño también, orden inverso del contenido.
+
+![20_StringBuilder_StringBuffer_04](src/Tutorial_Java_MitoCode/20_StringBuilder_StringBuffer_04.png)
+
+Si cambiamos el StringBuilder por un StringBuffer tenemos exactamente los mismos métodos ya que extienden de la misma clase, AbstractStringBuilder, y entonces cuales son las diferencias?
+
+Es más rápido usar un StringBuilder que un StringBuffer debido a la sincronización cuando manejamos hilos, StringBuilder por defecto no tiene métodos sincronos, es decir no hace una
+seguridad cuando trabajamos con hilos, no es threadSave. En cambio Buffer si lo es, y nos damos cuenta ya que algunos de sus métodos presentan la palabra ***synchronized***. Quiere
+decir que me dá la seguridad de que ese proceso va a ser ejecutado por un único hilo al mismo tiempo, por lo tanto estoy protegiendo los recursos que puedan compartirse en una app.  
+Mientras que StringBuilder presenta los mismos métodos pero sin esta palabra, es decir varios hilos podrian ejecutar los métodos y cambiar los valores entre uno y otro.  
+
+Cuando la integridad del mensaje es importante conviene utilizar StringBuffer porque tiene métodos sincronos, es decir va a haber una proteccion frente un ambiente de hilos. Sin embargo
+si no importa eso podemos usar un StringBuffer. StringBuilder es mucho más rapido que un StringBuffer.
 
 
 

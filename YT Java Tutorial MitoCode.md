@@ -667,9 +667,23 @@ Otra forma de iterar un Map es con el foreach y Entry.
 ---
 
 ## 17- Stack
+Clase Stack, vamos a implementar el algoritmo LIFO (Last In/ First Out), el último en entrar es el primero en salir. Puede guardar elementos repetidos.  
+Algunos métodos de Stack  
+`pila.push()` se agrega un elemento a la pila.  
+`pila.pop()` remueve un elemento de la pila.  
+`Thread.sleep(1000)` Duerme al hilo por 1 segundo para que no corra tan rápido el for.  
+`pila.peek()` Me permite saber el elemento que esta a tope sin eliminarlo.  
+`pila.search()` Busca el elemento en la pila, en este caso "4-Jaime" es el primer elemento, por eso el 1, si ponemos "1-Mitocode" Sale 4.  
 
+![17_Stack_01](src/Tutorial_Java_MitoCode/17_Stack_01.png)
 
+Ahora con un objeto
 
+![17_Stack_02](src/Tutorial_Java_MitoCode/17_Stack_02.png)
+
+---
+
+## 18- Queue
 
 
 

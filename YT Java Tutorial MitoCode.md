@@ -748,7 +748,7 @@ si no importa eso podemos usar un StringBuffer. StringBuilder es mucho más rapi
 ## 21- Split
 Pertenece a la Clase String, y básicamente sirve para poder extraer elementos de una cadena de texto para poder asignarlos a un arreglo y puede utilizar un **Regex** (Expresión regular)
 
-![21_Split_01](src/platziblog_tabla_usuarios_1.png21_Split_01.png)
+![21_Split_01](src/Tutorial_Java_MitoCode/21_Split_01.png)
 
 En el caso que esten separados por el simbolo pipe (|), se hace de la siguiente manera:
 
@@ -756,28 +756,68 @@ En el caso que esten separados por el simbolo pipe (|), se hace de la siguiente 
 
 ![21_Split_03](src/Tutorial_Java_MitoCode/21_Split_03.png)
 
-También puedo indicarle, como segundo argumento, el limite, en cuantas partes me divide a la cadena.  
+También puedo indicarle, como segundo argumento, el limite, en cuantas partes me divide a la cadena.
 
 ![21_Split_04](src/Tutorial_Java_MitoCode/21_Split_04.png)
 
 ---
 
 ## 22- Pattern Regex
+Definición wikipedia
 
+![22_Pattern_regex_01](src/Tutorial_Java_MitoCode/22_Pattern_regex_01.png)
 
+Da a entender que una expresión regular es una cadena de texto que tiene un formato en particular, que respeta algunas caracteristicas, que nos va a permitir facilitar la busqueda
+en otras cadenas de textos de acuerdo a ese patron que hemos definido anteriormente.  
+Hay dos clases importantes de expresiones regualres en Java una es **Pattern** y la otra **Matcher**.
 
+Cuando instanciamos Pattern no lo hace como siempre, con la palabra *new* ya que .compile() es un método de la clase (Static).  
+Acá también nos apoyamos enla Clase Matchers, muy por arriba, para crear la secuencia que evaluaremos.  
+`m.matches()` Lo usamos para ver si hay coincidencia entre el patrón que indicamos y el matcher, devuelve un booleano.  
+`.compile(".")` El punto básicamente indica que se evalua cualquier caracter en particular, si pongo mas letras en el matcher sale false.
 
+![22_Pattern_regex_02](src/Tutorial_Java_MitoCode/22_Pattern_regex_02.png)
 
+![22_Pattern_regex_03](src/Tutorial_Java_MitoCode/22_Pattern_regex_03.png)
 
+Más ejemplos de uso.
 
+![22_Pattern_regex_04](src/Tutorial_Java_MitoCode/22_Pattern_regex_04.png)
 
+![22_Pattern_regex_05](src/Tutorial_Java_MitoCode/22_Pattern_regex_05.png)
 
+![22_Pattern_regex_06](src/Tutorial_Java_MitoCode/22_Pattern_regex_06.png)
 
+Hay Regexs preparadas para que copiemos y peguemos en nuestro patron para que se evaluen sin la necesidad de construirlos desde cero. Claro que si hay una necesidad en particular habria
+que analizar simplemente como se construyen estas.
 
+![22_Pattern_regex_07](src/Tutorial_Java_MitoCode/22_Pattern_regex_07.png)
 
+Por ejemplo, si yo evaluo `[abc]` me va a evaluar que mi texto contenga una de estas letras.
 
+![22_Pattern_regex_08](src/Tutorial_Java_MitoCode/22_Pattern_regex_08.png)
 
+Con **^** va a ser true siempre que lo indicado NO este en nuestro texto, es un negador.
 
+![22_Pattern_regex_09](src/Tutorial_Java_MitoCode/22_Pattern_regex_09.png)
+
+![22_Pattern_regex_10](src/Tutorial_Java_MitoCode/22_Pattern_regex_10.png)
+
+Diferencias usando split() con Pattern y directamente en la cadena.  
+Siempre es aconsejable usar Pattern cuando tenemos un procesamiento masivo de una cadena de texto, especialmente cuando utilizamos los métodos de la clase String que necesitan de una
+expresión regular, como split(), matches(), replaceAll().
+
+![22_Pattern_regex_12](src/Tutorial_Java_MitoCode/22_Pattern_regex_12.png)
+
+![22_Pattern_regex_11](src/Tutorial_Java_MitoCode/22_Pattern_regex_11.png)
+
+Cuando tiene un patron mas complejo se nota cuanto conviene usar Pattern.
+
+![22_Pattern_regex_13](src/Tutorial_Java_MitoCode/22_Pattern_regex_13.png)
+
+---
+
+## 
 
 ---
 

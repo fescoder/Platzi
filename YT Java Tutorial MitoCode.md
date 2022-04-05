@@ -670,7 +670,7 @@ Otra forma de iterar un Map es con el foreach y Entry.
 Clase Stack, vamos a implementar el algoritmo LIFO (Last In/ First Out), el último en entrar es el primero en salir. Puede guardar elementos repetidos.  
 Algunos métodos de Stack  
 `pila.push()` se agrega un elemento a la pila.  
-`pila.pop()` remueve un elemento de la pila.  
+`pila.pop()` remueve un elemento de la pila, devuelve un entero.  
 `Thread.sleep(1000)` Duerme al hilo por 1 segundo para que no corra tan rápido el for.  
 `pila.peek()` Me permite saber el elemento que esta a tope sin eliminarlo.  
 `pila.search()` Busca el elemento en la pila, en este caso "4-Jaime" es el primer elemento, por eso el 1, si ponemos "1-Mitocode" Sale 4.  
@@ -684,8 +684,25 @@ Ahora con un objeto
 ---
 
 ## 18- Queue
+Colas, en contra parte al anterior nos toca ver FIFO (First In/ First Out), en este caso trabajaremos con **PriorityQueue** quien trabaja con esta prioridad.
 
+![18_Queue_01](src/Tutorial_Java_MitoCode/18_Queue_01.png)
 
+Algunos métodos:  
+`cola.offer()` Agrega un elemento a cola.  
+`cola.poll()` Elimina un elemento de cola, devuelve un String.  
+No se puede eliminar un elemento recorriendo un for, por lo cual utilizamos un while().  
+`cola.peek()` Se ve con que elemento estamos trabajando.  
+
+![18_Queue_02](src/Tutorial_Java_MitoCode/18_Queue_02.png)
+
+Cuando queremos trabajar con un objeto debemos indicar la prioridad que debemos considerar ya que no esta definido de por si, en este caso se prioriza la edad.
+
+![18_Queue_03](src/Tutorial_Java_MitoCode/18_Queue_03.png)
+
+---
+
+## 19- Deque
 
 
 

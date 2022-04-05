@@ -743,13 +743,26 @@ Mientras que StringBuilder presenta los mismos métodos pero sin esta palabra, e
 Cuando la integridad del mensaje es importante conviene utilizar StringBuffer porque tiene métodos sincronos, es decir va a haber una proteccion frente un ambiente de hilos. Sin embargo
 si no importa eso podemos usar un StringBuffer. StringBuilder es mucho más rapido que un StringBuffer.
 
+---
 
+## 21- Split
+Pertenece a la Clase String, y básicamente sirve para poder extraer elementos de una cadena de texto para poder asignarlos a un arreglo y puede utilizar un **Regex** (Expresión regular)
 
+![21_Split_01](src/platziblog_tabla_usuarios_1.png21_Split_01.png)
 
+En el caso que esten separados por el simbolo pipe (|), se hace de la siguiente manera:
 
+![21_Split_02](src/Tutorial_Java_MitoCode/21_Split_02.png)
 
+![21_Split_03](src/Tutorial_Java_MitoCode/21_Split_03.png)
 
+También puedo indicarle, como segundo argumento, el limite, en cuantas partes me divide a la cadena.  
 
+![21_Split_04](src/Tutorial_Java_MitoCode/21_Split_04.png)
+
+---
+
+## 22- Pattern Regex
 
 
 

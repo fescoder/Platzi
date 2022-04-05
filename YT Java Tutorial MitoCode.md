@@ -854,9 +854,47 @@ Si queremos indicar que vamos a capturar diferentes tipos de exceptions, en vez 
 ---
 
 ## 25- Inyección SQL
+Definición Wikipedia
 
+![25_Inyeccion_SQL_01](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_01.png)
 
+Clase Statement y las consideraciónes a tener en cuenta cuando nos conectamos a BD y hacemos consultas o insercciones, para evitar vulnerabilidades que sean atacadas.  
+La inyección sql es una vulnerabilidad que es común encontrar en aplicativos que utilizan Statements para interactuar con la base de datos, es decir se vale de un hueco en el sistema,
+que el usuario va a poder ingresar datos de manera manual o automática (Scripts), y estos datos son enviados a nuestra BD pudiendo ejecutar operaciónes que nosotros no deseamos.  
+Hasta ahora usamos Statements para conectarnos a la BD, es rudimentario hacer este tipo de conexiones para pedir o registrar datos.  
+Básicamente es la infiltración de código que nosotros podemos tener en nuestra aplicación y veremos aqui como se infiltra.  
+Principalmente por los atributos a llenar, en este caso nombre y pass.
 
+Este es el codigo con la conexión Statement de ejemplo
+
+![25_Inyeccion_SQL_02](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_02.png)
+
+Y al ejecutar la consulta vemos que es exitosa.
+
+![25_Inyeccion_SQL_03](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_03.png)
+
+Ahora podemos romperlo con la inyección SQL, aquí modificaremos el pass para escribir código e indicaremos **OR y algo que sea verdad**.
+
+![25_Inyeccion_SQL_04](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_04.png)
+
+![25_Inyeccion_SQL_05](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_05.png)
+
+Vemos que la verificación me marca que es exitosa a pesar de que ese usuario no existe, entonces se burla la consulta, es decir nuestro mecanismo de verificación, y nos permite seguir
+avanzando en el sistema.
+
+![25_Inyeccion_SQL_06](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_06.png)
+
+![25_Inyeccion_SQL_07](src/Tutorial_Java_MitoCode/25_Inyeccion_SQL_07.png)
+
+En conclusión no es recomendable usar conexiones rudimentarias con Statement y armar toda la app simplemente usando la concatenación de los valores de acuerdo a los parámetros que uno
+va indicando, para ellos existen otros mecanismos un poco mas protectores conocidos como los **PreparedStatement** o los **CallableStatement** que nos proporciona el API jdbc de Java.  
+Ahora si nos queremos apoyar en mecanismos más avanzados, podemos utilizar frameworks que engloben la persistencia de datos como **Hibernate** o trabajar en base a lo que nos proporciona
+el estandar en Java como JPA.  
+El consejo es evitar el uso de Statement para pedir datos al usuario y asi protegernos de esa vulnerabilidad.
+
+---
+
+## 26- ExcecuteBatch PreparedStatement
 
 
 

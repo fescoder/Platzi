@@ -696,13 +696,34 @@ No se puede eliminar un elemento recorriendo un for, por lo cual utilizamos un w
 
 ![18_Queue_02](src/Tutorial_Java_MitoCode/18_Queue_02.png)
 
-Cuando queremos trabajar con un objeto debemos indicar la prioridad que debemos considerar ya que no esta definido de por si, en este caso se prioriza la edad.
+Cuando queremos trabajar con un objeto debemos indicar la prioridad que debemos considerar ya que no esta definido de por si, en este caso se prioriza la edad implementando
+Comparable, compareTo(), como en los anteriores ejemplos.
 
 ![18_Queue_03](src/Tutorial_Java_MitoCode/18_Queue_03.png)
 
 ---
 
 ## 19- Deque
+Es una mezcla entre Stack y Queue. Podemos agregar y remover elementos al inicio y al final de la colección.  
+Estos métodos son. addFirst(), addLast(), removeFirst() y removeLast().  
+
+![19_Deque_01](src/Tutorial_Java_MitoCode/19_Deque_01.png)
+
+![19_Deque_02](src/Tutorial_Java_MitoCode/19_Deque_02.png)
+
+---
+
+## 20- StringBuilder StringBuffer
+
+
+
+
+
+
+
+
+
+
 
 
 

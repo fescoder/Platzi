@@ -830,23 +830,31 @@ Y si quisieramos resumir a una linea de código podriamos hacer lo siguiente
 
 ![23_Matcher_regex_02](src/Tutorial_Java_MitoCode/23_Matcher_regex_02.png)
 
-En la Clase Matcher vamos a prender el método ***.lookingAt()***, básicamente busca si la cadena de texto inicia con la que le pasamos, pero tmb podemos indicarle con Regex si hay algo
+En la Clase Matcher vamos a prender el método ***.lookingAt()***, básicamente busca si la cadena de texto inicia con la que le pasamos, pero también podemos indicarle con Regex si hay algo
 más al inicio.
 
 ![23_Matcher_regex_03](src/Tutorial_Java_MitoCode/23_Matcher_regex_03.png)
 
-Si le quitamos los .*
+Si le quitamos los .* vemos que matches() busca si *suscribete* es toda la cadena mientras que lookingAt() solo si comienza con ella.
 
 ![23_Matcher_regex_04](src/Tutorial_Java_MitoCode/23_Matcher_regex_04.png)
 
-`find()` Va a ejecutarse siempre y cuando se encuentre una coincidencia o más.  
-Para saber indicies o posicion en la que se encuentra la/las coincidencias tenemos `m.start()` y `m.end()`
+`.find()` Va a ejecutarse siempre y cuando se encuentre una coincidencia o más.  
+Para saber indicies o posicion en la que se encuentra la/s coincidencias tenemos `m.start()` y `m.end()`
 
 ![23_Matcher_regex_05](src/Tutorial_Java_MitoCode/23_Matcher_regex_05.png)
 
 ---
 
-## 24- 
+## 24- Catch lineal
+Si queremos indicar que vamos a capturar diferentes tipos de exceptions, en vez de hacer varios catches podemos expresarlo en uno agregando el operador pipe **|**
+
+![24_Catch_lineal_01](src/Tutorial_Java_MitoCode/24_Catch_lineal_01.png)
+
+---
+
+## 25- Inyección SQL
+
 
 
 

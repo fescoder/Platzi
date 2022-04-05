@@ -768,7 +768,8 @@ Definición wikipedia
 ![22_Pattern_regex_01](src/Tutorial_Java_MitoCode/22_Pattern_regex_01.png)
 
 Da a entender que una expresión regular es una cadena de texto que tiene un formato en particular, que respeta algunas caracteristicas, que nos va a permitir facilitar la busqueda
-en otras cadenas de textos de acuerdo a ese patron que hemos definido anteriormente.  
+en otras cadenas de textos de acuerdo a ese patron que hemos definido anteriormente.
+
 Hay dos clases importantes de expresiones regualres en Java una es **Pattern** y la otra **Matcher**.
 
 Cuando instanciamos Pattern no lo hace como siempre, con la palabra *new* ya que .compile() es un método de la clase (Static).  
@@ -788,7 +789,7 @@ Más ejemplos de uso.
 
 ![22_Pattern_regex_06](src/Tutorial_Java_MitoCode/22_Pattern_regex_06.png)
 
-Hay Regexs preparadas para que copiemos y peguemos en nuestro patron para que se evaluen sin la necesidad de construirlos desde cero. Claro que si hay una necesidad en particular habria
+Hay Regexs preparadas para que copiemos y peguemos en nuestro patron para que se evaluen sin tener que construirlos desde cero. Claro que si hay una necesidad en particular habria
 que analizar simplemente como se construyen estas.
 
 ![22_Pattern_regex_07](src/Tutorial_Java_MitoCode/22_Pattern_regex_07.png)
@@ -809,6 +810,8 @@ expresión regular, como split(), matches(), replaceAll().
 
 ![22_Pattern_regex_12](src/Tutorial_Java_MitoCode/22_Pattern_regex_12.png)
 
+Con expresión simple
+
 ![22_Pattern_regex_11](src/Tutorial_Java_MitoCode/22_Pattern_regex_11.png)
 
 Cuando tiene un patron mas complejo se nota cuanto conviene usar Pattern.
@@ -817,7 +820,62 @@ Cuando tiene un patron mas complejo se nota cuanto conviene usar Pattern.
 
 ---
 
-## 
+## 23- Matcher Regex
+Otra anotación de la clase Pattern es que el `.compile()` puede recibir 2 parámetros, la primera el string a buscar y el segundo es un flag, en este caso que la busqueda no es sensible
+a mayusculas o minusculas. Con `*.` y `.*` digo que no importa lo que haya adelante o atras de *mitocode*.
+
+![23_Matcher_regex_01](src/Tutorial_Java_MitoCode/23_Matcher_regex_01.png)
+
+Y si quisieramos resumir a una linea de código podriamos hacer lo siguiente
+
+![23_Matcher_regex_02](src/Tutorial_Java_MitoCode/23_Matcher_regex_02.png)
+
+En la Clase Matcher vamos a prender el método ***.lookingAt()***, básicamente busca si la cadena de texto inicia con la que le pasamos, pero tmb podemos indicarle con Regex si hay algo
+más al inicio.
+
+![23_Matcher_regex_03](src/Tutorial_Java_MitoCode/23_Matcher_regex_03.png)
+
+Si le quitamos los .*
+
+![23_Matcher_regex_04](src/Tutorial_Java_MitoCode/23_Matcher_regex_04.png)
+
+`find()` Va a ejecutarse siempre y cuando se encuentre una coincidencia o más.  
+Para saber indicies o posicion en la que se encuentra la/las coincidencias tenemos `m.start()` y `m.end()`
+
+![23_Matcher_regex_05](src/Tutorial_Java_MitoCode/23_Matcher_regex_05.png)
+
+---
+
+## 24- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 

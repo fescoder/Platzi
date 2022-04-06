@@ -21,10 +21,35 @@
     - [51- Listar desde BD](#51--listar-desde-db)
     - [52- Patrón DAO](#52--patrón-dao)
 - [Tutorial Java 7 SE Avanzado](#tutorial-java-7-se-avanzado)
+    - [01- Introducción](#01--introducción)
+    - [02- Proyecto Maven](#02--proyecto-maven)
+    - [03- Instancia y Static](#03--instancia-y-static)
+    - [04- Instanceof](#04--instanceof)
+    - [05- Singleton](#05--singleton)
+    - [06- Genéricos I](#06--genéricos-i)
+    - [07- Genéricos II](#07--genéricos-ii)
+    - [08- Genéricos III](#08--genéricos-iii-wildcards)
+    - [09- Capacidad inicial](#09--capacidad-inicial)
     - [10- Ordenar colecciones](#10--ordenar-colecciones)
+    - [11- Comparator](#11--comparator)
+    - [12- Comparable](#12--comparable)
+    - [13- HashSet](#13--hashset)
+    - [14- TreeSet](#14--treeset)
+    - [15- LinkedHashSet](#15--linkedhashset)
+    - [16- Map](#16--map)
+    - [17- Stack](#17--stack)
+    - [18- Queue](#18--queue)
+    - [19- Deque](#19--deque)
+    - [20- StringBuilder StringBuffer](#20--stringbuilder-stringbuffer)
+    - [21- Split](#21--split)
+    - [22- Pattern regex](#22--pattern-regex)
+    - [23- Matcher regex](#23--matcher-regex)
+    - [24- Catch lineal](#24--catch-lineal)
+    - [25- Inyección SQL](#25--inyección-sql)
+    - [26- ExecuteBatch preparedStatement](#26--executebatch-preparedstatement)
 - [Tutorial Java 8](#tutorial-java-8)
-    - [1- Paradigma Funcional](#paradigma-funcional)
-    - [2- Lambda](#lambda)
+    - [01- Paradigma Funcional](#paradigma-funcional)
+    - [02- Lambda](#lambda)
 
 ---
 
@@ -328,19 +353,21 @@ Estructura con DAO
 ---
 
 # Tutorial Java 7 SE Avanzado
-## 1- Introducción
+[Videos](https://www.youtube.com/watch?v=jq9DyzOxFzs&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=38)
+
+## 01- Introducción
 En esta primer clase muestra como funciona el mandarle parámetros al método main e imprime los mismos.
 
 ![01_Introduccion_01](src/Tutorial_Java_MitoCode/01_Introduccion_01.png)
 
 ---
 
-## 2- Proyecto Maven
+## 02- Proyecto Maven
 [Construcción con Maven](https://www.youtube.com/watch?v=3RunOD1VBco&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=2)
 
 ---
 
-## 3- Instancia y Static
+## 03- Instancia y Static
 Un método de instancia no puede ser sobreescrito por un método estatico ni viceversa.
 
 ![03_Instancia_Static_01](src/Tutorial_Java_MitoCode/03_Instancia_Static_01.png)
@@ -351,7 +378,7 @@ La clase hija siempre se ejecuta en vez de la clase padre
 
 ---
 
-## 4- InstanceOf
+## 04- InstanceOf
 Este operador nos permite conocer de que tipo o instancia es un determiando objeto, saber de que clase es.  
 Sabiendo que Alumno hereda de Persona también funciona.
 
@@ -365,14 +392,14 @@ Ejemplo práctico con una canasta de frutas.
 
 ---
 
-## 5- Singleton
+## 05- Singleton
 Es un patron de diseño que nos permite tener una unica instancia de una clase particular.
 
 [Patrón Singleton](https://www.youtube.com/watch?v=qiFeiYLzIH8&list=PLvimn1Ins-43qPXR3gBcxwe7tydxZtsON&index=5)
 
 ---
 
-## 6- Genéricos I
+## 06- Genéricos I
 Cuando hablamos de genéricos en Java estamos haciendo mención a que una clase va a poder implementar un determinado tipo de elemento.  
 Creación de una clase genérica y sus estereotipos más comúnes.  
 `List lista = new ArrayList();` -> Esta lista puede almacenar cualquier tipo de elemento, pero en los sistemas reales se espicifica que tipo se almacenaran.  
@@ -393,7 +420,7 @@ Lista de estereotipos.
 
 ---
 
-## 7- Genéricos II
+## 07- Genéricos II
 Los genéricos básicamente tienen dos propocitos:
 - Proveer seguridad en Tipos.
 - Evitar Casteos.
@@ -425,7 +452,7 @@ También podemos crear una Lista de Clase que a la vez tenemos que indicarle que
 
 ---
 
-## 8- Genéricos III Wildcards
+## 08- Genéricos III Wildcards
 Wildcards es un *Comodin*, se reprensenta con **?**, si lo llevamos al contexto de Java y en especial a los genéricos lo que nos va a permitir las Wildcards es poder
 ejecutar nuestros genéricos sin indicar el tipo de dato, es decir este tipo de dato va a indicarse en tiempo de ejecución, o sea no lo vamos a mencionar directamente en el código.  
 Para ejemplificar creamos una Clase Persona y Alumno con un atributo nombre, su constructor y métodos. De la misma manera otra Clase Profesor.
@@ -457,7 +484,7 @@ Es practicamente lo mismo pero sin indicar el tipo de dato.
 
 ---
 
-## 9- Capacidad inicial
+## 09- Capacidad inicial
 Cuado construmos una nueva lista, en este caso, podemos pasarle al constructor un capacidad inicial, el tamaño que tendrá la lista.  
 Imaginemos que tenemos una app que requiere mucho procesamiento en listas y si sabemos que un promedio de esas filas es de 5000 o 3000 quizas, pero tenemos un aproximado y si lo sabemos
 es recomendable colocarlo en la lista que estamos creando para que exista un mejor rendimiento en la operación, con esto nos evitamos que el procesador este creando un nuevo espacio
@@ -894,38 +921,14 @@ El consejo es evitar el uso de Statement para pedir datos al usuario y asi prote
 
 ---
 
-## 26- ExcecuteBatch PreparedStatement
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 26- ExecuteBatch PreparedStatement
+De momento llegue hasta acá.
 
 ---
 
 # Tutorial Java 8
+[Videos](https://www.youtube.com/watch?v=4WEOzOndA68&list=PLvimn1Ins-419yVe5iPfiXrg4mZJl5kLS)
+
 ## 1- Paradigma Funcional
 El paradigma funcional es un subtipo del paradigma de programación Declarativa, basada en el uso de funciones matemáticas en contraste con la programación Imperativa.
 

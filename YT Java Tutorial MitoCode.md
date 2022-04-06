@@ -1039,6 +1039,71 @@ La recomendación es tener las Lambdas lo más legibles posibles y acordarse que
 ---
 
 ## 04- Ámbitos Lambda (Lambda Scopes)
+Vamos a ver como se comportan las expresiones Lambdas con variables locales, globales, estaticas y no estaticas.  
+Scope hace referencia al ámbito o alcance, en este caso de las variables en conjunto con la Lambda.  
+Como una interfaz no puede instanciarse es necesario implementar los métodos, en este caso *calcular()*, aquí haremos que la variable ya definida **n3** se le asigne la suma de **n1**
+y **n2**.
+
+**Variable local**
+
+![04_Ambitos_Lambda_01](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_01.png)
+
+Pero vemos que esta clase anónima, que es la implementación de una interfaz, nos marca un error ya que la variable **n3** debe tener un scope final, porque cuando trabajamos
+con una clase anónima y necesitamos hacer referencia a una variable local, es necesario que esta varibale local tenga final en su declaración.
+
+![04_Ambitos_Lambda_02](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_02.png)
+
+Al hacer esto claramente no podemos cambiar el valor de **n3** por ende tenemos que cambiar el código de nuestra función.
+
+![04_Ambitos_Lambda_03](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_03.png)
+
+Pero estamos en un contexto de lambdas asique lo cambiaremos a la siguiente manera
+
+![04_Ambitos_Lambda_04](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_04.png)
+
+La variable local se comporta igual tanto en clases anónimas como la Lambdas, la variable debe ser final y no se le puede asignar un valor, entonces el concepto de una variable local
+en un scope lamda permanece tan igual para una clase anónima como una lamda. Por lo tanto yo puedo usar las variables pero no alterar su valor.
+
+En conclusión, cuando estamos en una expresión Lambda y usamos una veriable local es opcional colocarl el identificador *final*, si no lo colocas, se va a comportar como uno y tener en
+cuenta que podemos usar el valor pero no asignarle uno nuevo.
+
+**Variable static**
+Acá vamos a probar como se comportan cuando definimos variables globales static y no static.
+
+![04_Ambitos_Lambda_05](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_05.png)
+
+Cuando estoy en una expresión Lambda y quiero hacer referencia a un atributo de clase, uno estatico o uno no estatico, podemos tener la capacidad de lectura y escritura de esos atributos
+en nuestra expresión. Es decir que tienen el mismo comportamiento que en un objeto anónimo que se instancia a traves de una interfaz donde tenemos que implementar los métodos.  
+Y el comportamiento que podiamos acceder es el mismo tanto en estos objetos anónimos como en nuestras expresiones Lambdas.  
+Recordar que cuando estamos en ámbito local es importante tener en consideración el atributo final cuando estamos haciendo un objeto anónimo era opcional pero el comportamiento es como un
+final.  
+Por ejemplo:  
+Atributo 1 Static, de clase - atributo 2 global y no static
+
+![04_Ambitos_Lambda_06](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_06.png)
+
+---
+
+## 05- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

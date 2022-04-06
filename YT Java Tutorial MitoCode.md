@@ -48,8 +48,8 @@
     - [25- Inyección SQL](#25--inyección-sql)
     - [26- ExecuteBatch preparedStatement](#26--executebatch-preparedstatement)
 - [Tutorial Java 8](#tutorial-java-8)
-    - [01- Paradigma Funcional](#paradigma-funcional)
-    - [02- Lambda](#lambda)
+    - [01- Paradigma Funcional](#01--paradigma-funcional)
+    - [02- Lambda](#02--lambda)
 
 ---
 
@@ -929,7 +929,7 @@ De momento llegue hasta acá.
 # Tutorial Java 8
 [Videos](https://www.youtube.com/watch?v=4WEOzOndA68&list=PLvimn1Ins-419yVe5iPfiXrg4mZJl5kLS)
 
-## 1- Paradigma Funcional
+## 01- Paradigma Funcional
 El paradigma funcional es un subtipo del paradigma de programación Declarativa, basada en el uso de funciones matemáticas en contraste con la programación Imperativa.
 
 Es decir, el principal fin de la programación Declarativa es tener una sintaxis de decirle al programa **que** es lo que necesitamos, sin embargo en contraste a la programación
@@ -955,11 +955,49 @@ Lenguajes de programación Declarativa (QUE) e Imperativa (COMO)
 ![01_paradigma_funcional_02](src/Tutorial_Java_MitoCode/01_paradigma_funcional_02.png)
 
 Java 8 se basa en un fuerte simbolo conocido como ***Lambdas***  
-Las Lambdas basicamente son funciones anónimas, muy escenciales para entender la programación declarativa y presente la siguiente estructura `parámetros =>(operador) expresión`
+Las Lambdas basicamente son funciones anónimas, muy escenciales para entender la programación declarativa y presente la siguiente estructura `parámetros =>(operador) expresión`.  
+Una función anónima es una definición de función que no está vinculada a un identificador, no tiene ningun nombre asociado.
 
 ![01_paradigma_funcional_03](src/Tutorial_Java_MitoCode/01_paradigma_funcional_03.png)
 
 ---
 
-## 2- Lambda
+## 02- Lambda
 Una expresión Lambda es un método anónimo que no necesita de un identificador para ser invocado.
+
+Para ejemplificar ordenamos una pequeña lista de la siguiente manera  
+
+![02_Lambda_01](src/Tutorial_Java_MitoCode/02_Lambda_01.png)
+
+Pero estamos empleando varias lineas de código para lograrlo, con un enfoque imperativo, indicando linea por linea que es lo que necesitamos.  
+Entonces en JDK 1.8 existe este concepto de Lambdas, que cambia de paradigma, recordemos que tenemos que cambiar un poco la forma de pensar y hay que centrarse básicamente en que es lo
+que necesito y no tanto en como lo necesito. Entonces para apoyarnos en Lambdas vamos a hacer lo siguiente:
+
+![02_Lambda_02](src/Tutorial_Java_MitoCode/02_Lambda_02.png)
+
+Entonces invocando al método .sort() de la Clase Collections, le pasamos la lista y nuestro Lambda, que se compone de los parámetros, el operador y la expresión a evaluar, en este caso que
+el parámetro 1 se compare con el parámetro 2, con el método compareTo(), que nos devuelve en orden alfabetico y se ordena la lista.
+
+Otro ejemplo, ahroa con una interfaz, calculando un promedio:
+
+![02_Lambda_06](src/Tutorial_Java_MitoCode/02_Lambda_06.png)
+
+Forma imperativa:  
+Recordemos que no podemos instanciar una interfaz, puedo implementarla, lo que estamos haciendo es creando una clase anónima para implementar los métodos de esa interfaz.
+
+![02_Lambda_03](src/Tutorial_Java_MitoCode/02_Lambda_03.png)
+
+Esto mismo puedo hacerlo con Lambda, todo aquel concepto que pueda hacer una implementación a traves de una Clase anónima, puede usar Lambda.  
+Entonces debo escribir una clase anónima para implementarla con Lambda
+
+![02_Lambda_04](src/Tutorial_Java_MitoCode/02_Lambda_04.png)
+
+Con sintaxis sin declarar el Tipo de dato
+
+![02_Lambda_05](src/Tutorial_Java_MitoCode/02_Lambda_05.png)
+
+Vemos como nos ahorramos muchas líneas de código.
+
+---
+
+## 03- 

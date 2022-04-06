@@ -978,12 +978,12 @@ que necesito y no tanto en como lo necesito. Entonces para apoyarnos en Lambdas 
 Entonces invocando al método .sort() de la Clase Collections, le pasamos la lista y nuestro Lambda, que se compone de los parámetros, el operador y la expresión a evaluar, en este caso que
 el parámetro 1 se compare con el parámetro 2, con el método compareTo(), que nos devuelve en orden alfabetico y se ordena la lista.
 
-Otro ejemplo, ahroa con una interfaz, calculando un promedio:
+Otro ejemplo, ahora con una interfaz, calculando un promedio:
 
 ![02_Lambda_06](src/Tutorial_Java_MitoCode/02_Lambda_06.png)
 
 Forma imperativa:  
-Recordemos que no podemos instanciar una interfaz, puedo implementarla, lo que estamos haciendo es creando una clase anónima para implementar los métodos de esa interfaz.
+Recordemos que no podemos instanciar una interfaz, pero puedo implementarla, lo que estamos haciendo es creando una clase anónima para implementar los métodos de esa interfaz.
 
 ![02_Lambda_03](src/Tutorial_Java_MitoCode/02_Lambda_03.png)
 
@@ -992,7 +992,7 @@ Entonces debo escribir una clase anónima para implementarla con Lambda
 
 ![02_Lambda_04](src/Tutorial_Java_MitoCode/02_Lambda_04.png)
 
-Con sintaxis sin declarar el Tipo de dato
+Otra sintaxis sin declarar el Tipo de dato, también funcióna
 
 ![02_Lambda_05](src/Tutorial_Java_MitoCode/02_Lambda_05.png)
 
@@ -1000,4 +1000,54 @@ Vemos como nos ahorramos muchas líneas de código.
 
 ---
 
-## 03- 
+## 03- Sintaxis Lambda
+Hay muchas formas de escribir sintaxis Lambda, vimos una pero ahora analizaremos otras expresiones que Java permite.  
+Seguimos usando la interfaz de la clase pasada y con ésta veremos sus variaciones posibles.  
+
+![03_Sintaxis_Lambda_01](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_01.png)
+
+*Una idea de lectura propia, creo una variable de la interfaz Operacion, en el cual le asigno diciendo, voy a pasar 2 variables (X e Y) y lo que vas a hacer (->) es sumarlos y dividirlo*
+*en dos. Y la forma de ejecutar esta función sin nombre es usando la instancia operacion y .calcularPromedio() que es quien recibe estas 2 variables y hace lo que le expresamos. Es decir*
+*definimos lo que va a hacer calcularPromedio() en Lambda y despues ejecutamos.(Borrador)*
+
+Otra forma de escribir es encerrando entre llaves ({}) el lado donde vamos a evaluar el método.
+
+![03_Sintaxis_Lambda_02](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_02.png)
+
+Ahora nos preguntamos que sentido tiene colocar las llaves para una linea de código?.  
+Lo mostraremos con un ejemplo y vemos que es posible tener una sintaxis Lambda de esta manera, cuando necesito definir más de una linea, es mejor abrir y cerrar llaves y definir el
+código en ese bloque, pero si nos ponemos a pensar que el fin de una Lambda es tener un código más legible, entonces no es recomendable hacerlo de esta forma. Solo lo vemos con fines
+demostrativos.
+
+![03_Sintaxis_Lambda_03](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_03.png)
+
+También podemos pasarle los parámetros sin tener que definir el tipo de dato, Java implicitamente va a suponer que tipo es el parámetro dado y trabajará de manera normal.
+
+![03_Sintaxis_Lambda_04](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_04.png)
+
+Ahora, que pasaria si nosotros no deseamos tener parámetros? Simplemente lo indicamos con parentesis vacios (()) y a la mano derecha lo que queremos hacer, tener en cuenta que si el
+método pide argumentos para ejecutarse, sí vamos a tener que pasarle algo, si no lo requiere, solo vacio. En este caso la salida es **2.0**.
+
+![03_Sintaxis_Lambda_05](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_05.png)
+
+Colocamos llaves en un Lambda sin parámetros y podemos tener más valores. Salida es **5.0** ya que el método devuelve un double.
+
+![03_Sintaxis_Lambda_06](src/Tutorial_Java_MitoCode/03_Sintaxis_Lambda_06.png)
+
+La recomendación es tener las Lambdas lo más legibles posibles y acordarse que la definición de tipo de los parámetros es opcional.
+
+---
+
+## 04- Ámbitos Lambda (Lambda Scopes)
+
+
+
+
+
+
+
+
+
+
+
+

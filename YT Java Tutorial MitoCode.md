@@ -1124,6 +1124,40 @@ Podriamos directamente escribir el código dentro del método sobreescrito.
 ---
 
 ## 06- Interfaces funcionales
+Es un concepto que vimos implicitamente, ahora lo veremos mas formal.
+
+![06_Interfaces_funcionales_01](src/Tutorial_Java_MitoCode/06_Interfaces_funcionales_01.png)
+
+Defino un método operar, que recibe dos parámetros (X e Y), invocamos a la interfaz **Operacion** (que tiene la declaracion de *calcular()*, que recibe dos parámetros también) y le
+pasamos una expresión Lambda. Por último utilizo el método *calcular()* definido en la interfaz conjuntamente con la expresión Lambda y le paso los parámetros X e Y. Y en el main
+instanciamos un objeto de la clase y ejecuto el método pasandole 2 y 3 e imprimimos la respuesta.
+
+Como nos ayuda una interfaz funcional al momento de definir expresiones lambda? Principalmente no se puede tener dos métodos en la interfaz. Si lo hacemos nos marca un error
+que dice que la expresión no apunta a una interfaz funcional.
+
+![06_Interfaces_funcionales_02](src/Tutorial_Java_MitoCode/06_Interfaces_funcionales_02.png)
+
+![06_Interfaces_funcionales_03](src/Tutorial_Java_MitoCode/06_Interfaces_funcionales_03.png)
+
+Entonces por definicion diremos que una interfaz funcional es aquella que solo define una unica operación, un método.  
+Pero en Java 1.8 lo quiso formalizar de una maner práctica y es por eso que usaremos la siguiente anotación `@FunctionalInterface`, básicamente lo que dice es que la interfaz que
+está debajo de la anotación debe ser una interfaz funcional y si quiero agregar un nuevo método me tira un error.
+
+![06_Interfaces_funcionales_04](src/Tutorial_Java_MitoCode/06_Interfaces_funcionales_04.png)
+
+Un ejemplo de una interfaz funcional es **Comparable** que usamos *compareTo*, por eso pudimos pasarle una expresión lambda.
+
+---
+
+## 07- Referencias de métodos
+
+
+
+
+
+
+
+
 
 
 

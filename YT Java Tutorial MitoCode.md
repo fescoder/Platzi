@@ -1149,28 +1149,83 @@ Un ejemplo de una interfaz funcional es **Comparable** que usamos *compareTo*, p
 
 ---
 
-## 07- Referencias de métodos
+## 07- Referencias de métodos (Method References)
+La referencias a métodos es una funcionalidad muy peculiar de la JDK 1.8 y lo que nos permite es tener el código mucho más legible, y hay 4 maneras de implementarlas.
 
+Tengo un método *operar()* que simplemente utiliza una interfaz llamada **Operacion**, que ésta tiene un único método *saludar()* y es una interfaz funcional para que podamos usar
+a través de una expresión lambda el método saludar().
 
+![07_Referencias_de_metodos_02](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_02.png)
 
+![07_Referencias_de_metodos_01](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_01.png)
 
+Si nosotros conocemos el uso de las expresiones lambda, vemos que considerablemente a mejorado la sintaxis de escribir nuestro código, las referencias de métodos viene a aportar más
+legibilidad y obviamente menos lineas.
 
+**Primer caso:** Referencia a un método static  
+Como estaba escrito el código nos imprime a la salida "Método Referido Static", ahora haremos lo mismo pero con referencia a ese método.  
+En op2 -> Indicamos el nombre de la Clase y acá es donde sustituimos la expresión lambda por una referencia a un método, para esto usamos el operador **::**, y hacemos la llamada a ese
+método estático. Por el momento vamos a decir que los métodos referenciados no pueden llevar parámetros.
 
+![07_Referencias_de_metodos_03](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_03.png)
 
+**Segundo caso:** Referencia a un método de instancia de un objeto de una clase en particular, un objeto arbitrario.  
+Cuerpo del método:
 
+![07_Referencias_de_metodos_04](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_04.png)
 
+Pero si pensamos todo es es muy verboso de indicar, que pasaría si queremos reducir eso a una expresión lambda y por medio de ésta luego reducirlo a una referencia de método, quedaría de
+la siguiente manera:  
+Lambda:
 
+![07_Referencias_de_metodos_05](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_05.png)
 
+Y podemos reducirlo más con la referencia a métodos:
 
+![07_Referencias_de_metodos_06](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_06.png)
 
+En este caso, le pasamos la lista, array Nombres, la Clase **String** que vamos a comparar, en este caso Nombres es un array de tipos de texto e invoco al método *compareToIgnoreCase*.  
+Porque es un método de instancia y no estático? Porque estoy llamando al método que es de la instancia de la variable que viene en el array, es decir en el array internamente se va a
+recorrer y cuando llegue elemento por elemento eso ya es una instancia y de ese elemento se va a utilizar el método *compareToIgnoreCase*.
 
+**Tercer caso:** Referencia a un método de instancia de un objeto en particular.  
+Para esto solo estamos indicando un mensaje.  
 
+![07_Referencias_de_metodos_07](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_07.png)
 
+Entonces como invocamos al método?
 
+![07_Referencias_de_metodos_08](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_08.png)
 
+Esto de los métodos a referencia se apoyan mucho en lo que son las interfaces funcionales y lo que hacemos acá es que esta interfaz **Operacion** que tiene un único método *saludar()*,
+la implementamos con la expresion de la derecha, es por eso que éste es un método de instancia de este objeto en particular *app*, me apoyo en el operador y le indico el método que va
+a implementar el método *saludar()* de la interfaz **Operacion**.  
+Es prácticamente una función que se la estoy mandando como implementación a mi método *saludar()*, es por eso que implicitamente Java usa los métodos como si fueran parámetros para poder
+implementar otros métodos.
 
+**Cuarto caso:** Referencia a un Constructor.  
+Aqui vemos otra interfaz llamada IPersona, que tiene un método crear que lleva un *id* y *nombre*, una vez lo indicamos, obtenemos el objeto Persona.
 
+![07_Referencias_de_metodos_10](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_10.png)
 
+![07_Referencias_de_metodos_09](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_09.png)
+
+Hacemos la llamada a la interfaz funcional **IPersona** e *iper*, y de la manera tradicional con una clase anónima hago new IPersona() y sobreescribimos el método *crear()*. Finalmente
+uso esa implementación de interfaz que creamos, su método crear y le paso los parámetros.  
+Nuevamente es excesivo el código que tenemos, vamos a simplificarlo.
+
+Lambda
+
+![07_Referencias_de_metodos_11](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_11.png)
+
+Método de referencia  
+Recordar que los métodos de referencia siempre se apoyan en interfaces funcionales.
+
+![07_Referencias_de_metodos_12](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_12.png)
+
+---
+
+## 
 
 
 

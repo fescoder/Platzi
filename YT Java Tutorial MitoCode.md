@@ -956,7 +956,11 @@ Lenguajes de programación Declarativa (QUE) e Imperativa (COMO)
 
 Java 8 se basa en un fuerte simbolo conocido como ***Lambdas***  
 Las Lambdas basicamente son funciones anónimas, muy escenciales para entender la programación declarativa y presente la siguiente estructura `parámetros =>(operador) expresión`.  
-Una función anónima es una definición de función que no está vinculada a un identificador, no tiene ningun nombre asociado.
+Una función anónima es una definición de función que no está vinculada a un identificador, no tiene ningun nombre asociado.  
+Una clase anónima se crea al vuelo a la hora de instanciar un objeto que necesitamos y no encaja exactamente con ningún tipo.  
+Se definie llamando al constructor de un tipo conocido y añadíendole un cuerpo con el comportamiento personalizado.  
+Es una clase interna sin nombre y para la que solo se crea un objeto. Una clase interna anónima puede ser útil cuando se crea una instancia de un objeto con ciertos "extras" como los
+métodos de sobrecarga de una clase o interfaz, sin tener que subclasificar una clase.
 
 ![01_paradigma_funcional_03](src/Tutorial_Java_MitoCode/01_paradigma_funcional_03.png)
 
@@ -1062,39 +1066,64 @@ Pero estamos en un contexto de lambdas asique lo cambiaremos a la siguiente mane
 ![04_Ambitos_Lambda_04](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_04.png)
 
 La variable local se comporta igual tanto en clases anónimas como la Lambdas, la variable debe ser final y no se le puede asignar un valor, entonces el concepto de una variable local
-en un scope lamda permanece tan igual para una clase anónima como una lamda. Por lo tanto yo puedo usar las variables pero no alterar su valor.
+en un scope lamda permanece tan igual para una clase anónima como una lambda. Por lo tanto yo puedo usar las variables pero no alterar su valor.
 
-En conclusión, cuando estamos en una expresión Lambda y usamos una veriable local es opcional colocarl el identificador *final*, si no lo colocas, se va a comportar como uno y tener en
+En conclusión, cuando estamos en una expresión Lambda y usamos una veriable local es opcional colocar el identificador *final*, si no lo colocas, se va a comportar como uno y tener en
 cuenta que podemos usar el valor pero no asignarle uno nuevo.
 
-**Variable static**
+**Variable static**  
 Acá vamos a probar como se comportan cuando definimos variables globales static y no static.
 
 ![04_Ambitos_Lambda_05](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_05.png)
 
 Cuando estoy en una expresión Lambda y quiero hacer referencia a un atributo de clase, uno estatico o uno no estatico, podemos tener la capacidad de lectura y escritura de esos atributos
 en nuestra expresión. Es decir que tienen el mismo comportamiento que en un objeto anónimo que se instancia a traves de una interfaz donde tenemos que implementar los métodos.  
-Y el comportamiento que podiamos acceder es el mismo tanto en estos objetos anónimos como en nuestras expresiones Lambdas.  
+Y el comportamiento que podriamos acceder es el mismo tanto en estos objetos anónimos como en nuestras expresiones Lambdas.  
 Recordar que cuando estamos en ámbito local es importante tener en consideración el atributo final cuando estamos haciendo un objeto anónimo era opcional pero el comportamiento es como un
 final.  
-Por ejemplo:  
+Ejemplo:  
 Atributo 1 Static, de clase - atributo 2 global y no static
 
 ![04_Ambitos_Lambda_06](src/Tutorial_Java_MitoCode/04_Ambitos_Lambda_06.png)
 
 ---
 
-## 05- 
+## 05- Default Methods (Métodos por defecto)
+Es una funcionalidad para con las interfaces. Básicamente es escribir la funcionalidad del método en la interfaz, ya definirla, para cuando las clases implementen esa interfaz tengan
+estos métodos en común funcionamiento.  
+Un método default es un método que está implementado en una interfaz para que cualquier clase que implemente esta interfaz ya tenga acceso al método definido.  
+Y se hace de la siguiente manera:  
+Interfaz
 
+![05_Default_methods_01](src/Tutorial_Java_MitoCode/05_Default_methods_01.png)
 
+Main
 
+![05_Default_methods_02](src/Tutorial_Java_MitoCode/05_Default_methods_02.png)
 
+El IDE muestra con una 'D' el método a implementar.  
+En que momentos nos serian utiles estos métodos? En un ambiente real de producción a veces tenemos que implementar nuevas funcionalidades y en muchas ocaciones se trabaja orientado
+a interfaces para tener un código desacoplado, entonces imaginemos que se nos pida como requerimiento todas las clases que implementen una determinada interfaz, necesiten tener un
+comportamiento por defecto. Entonces tenemos dos opciones:  
+La primera es crear de forma tradicional, simplemente haciendo mencion al método y sobreescribiendo en cada clase.  
+O la otra que es utilizar un método por defecto, implementar la funcionalidad y que todas las clases que implementen esa interfaz tengan acceso al método con toda la lógica implementada.
 
+Ahora vemos que pasaria si tengo otra interfaz **PersonaB** con el mismo método. Java internamente no va a saber cual método voy a implementar porque ambos tienen el mismo nombre,
+entonces para poder invocar a un determinado proceso de una interfaz. Entonces lo que hacemos es apoyarnos en el IDE y sobreescribir uno de los métodos y se nos aparece de la siguiente
+manera:
 
+![05_Default_methods_03](src/Tutorial_Java_MitoCode/05_Default_methods_03.png)
 
+En la sobreescritura vemos como al invocar al método se hace mención a la interfaz de la que proviene, en este caso **PersonaA**. Si cambio A por B, se ejecutaria el otro método.
 
+Ahora que pasaria si necesariamente tengo que implementar esta interfaz pero hay una clase que como exepción necesita sobreescribir su propia lógica.  
+Podriamos directamente escribir el código dentro del método sobreescrito.
 
+![05_Default_methods_04](src/Tutorial_Java_MitoCode/05_Default_methods_04.png)
 
+---
+
+## 06- Interfaces funcionales
 
 
 

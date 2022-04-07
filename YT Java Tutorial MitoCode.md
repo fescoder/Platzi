@@ -1229,11 +1229,11 @@ Recordar que los métodos de referencia siempre se apoyan en interfaces funciona
 
 ## 08- Foreach, RemoveIf, Sort
 Mejoras de las Colecciones respecto a JDK 1.7.  
-Tenemos este código, básicamente tenemos una lista privada a la cual la llenamos con un método y veremos estas 3 formas de implementar las novedades.
+Básicamente tenemos una lista privada a la cual la llenamos con un método y veremos estas 3 formas de implementar las novedades.
 
 ![08_ForEach_RemoveIf_Sort_01](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_01.png)
 
-![08_ForEach_RemoveIf_Sort_02](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_01.png)
+![08_ForEach_RemoveIf_Sort_02](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_02.png)
 
 **usarForEach()**  
 Forma clásica
@@ -1284,13 +1284,72 @@ manera:
 
 ---
 
-## 
+## 09- Stream
+En más de una ocasión cuando trabajamos con Colecciones nos hemos apoyado en la programación imperativa, definimos algoritmos para filtrar, limitar, contar, ordenar bajo ciertos criterios.
+Pero esto demanda a veces muchas lineas de código, Java 8 gracias al Stream API, se va a poder realizar mas sencillamente, usando el paradigma declarativo.  
+El API Stream va a darle un plus al desarrollador, nos permite programar de una manera más legible si se apoya conjuntamente con las expresiónes lambdas, podremos realizar operaciónes
+como filtros, contar, ordenamientos, etc. De una forma muy declarativa, es decir evitando mucho la implementación línea por línea.
 
+Veremos algunos ejemplos de implementaciones. Básicamente tengo una clase con dos listas privadas, con sus constructores que las llenan y en el main instancio la clase y vamos a ir
+llamando a estos métodos veremos.
 
+![09_Stream_01](src/Tutorial_Java_MitoCode/09_Stream_01.png)
 
+**filtrar()**  
+En muchas ocasiones hemos tenido la posibilidad o necesidad de filtrar en una lista determinada algunos elementos que respeten algun criterio, por ejemplo en este caso vamos a filtrar
+de la lista todos aquellos elementos que empiecen con "M".  
+Si pensamos en un enfoque imperativo, deberiamos de recorrer la lista, preguntar si el 1er elemento empieza con "M", si es así podemos almacenar o imprimir ese elemento.  
+Pero bajo el enfoque declarativo podemos hacerlo de una forma muy sencilla.  
+Indicamos lista, que es de la clase Collections, usamos el método *stream()* y tenemos muchos métodos, uno de ellos es *filter()* que necesita un *Predicate* que básicamente es una
+expresión lambda que vamos a evaluar, se leeria: *Quiero de la lista todos aquellos que empiezan con "M"*, y como quiero imprimirlos también, nos apoyamos en el método *forEach()*
+y usamos el método de referencia para invocar el println.
 
+![09_Stream_02](src/Tutorial_Java_MitoCode/09_Stream_02.png)
 
+Este método de referencia la podemos reemplazar con una expresión lambda, pero es preferible el anterior.
 
+![09_Stream_03](src/Tutorial_Java_MitoCode/09_Stream_03.png)
+
+**ordenar()**  
+Es muy parecido a lo anterior.
+
+![09_Stream_04](src/Tutorial_Java_MitoCode/09_Stream_04.png)
+
+Nos ordena la lista de forma ascendente, pero si lo queremos de forma descendente debemos pasarle a *sort()* una expresión lambda.
+
+![09_Stream_05](src/Tutorial_Java_MitoCode/09_Stream_05.png)
+
+**trasnformar()**  
+Acá usaremos la función *.map()*, esta función es de transformación, es decir que lo que vas a colocar acá (), el elemento de cada lista va a ser transformado con la expresión que
+indiquemos.  
+Por ejemplo, que pasaría si todos los elementos quiero pasarlos a mayusculas? Podríamos hacer lo siguiente:  
+Nos apoyamos en un método de referencia y le indicamos *toUpperCase*
+
+![09_Stream_06](src/Tutorial_Java_MitoCode/09_Stream_06.png)
+
+La función map es para transformar los elementos de esta colección uno a uno a traves de la expresión que estemos indicando como parámetro, y acá entra la lista de numeros.  
+Queremos convertir cada elemento a entero (Son de tipo String) y sumarle un número adicional.  
+Forma tradicional:
+
+![09_Stream_07](src/Tutorial_Java_MitoCode/09_Stream_07.png)
+
+Ahora apoyandonos en la API Stream y el método map, le decimos que a cada elemento le vas a hacer un Integer.parseInt del mismo elemento y le sumas 1 e imprimimos la colección.
+
+![09_Stream_08](src/Tutorial_Java_MitoCode/09_Stream_08.png)
+
+**limitar()**  
+Lo que hacemos acá es usar el método *limit()*, al que se le pasa un entero e imprimimos
+
+![09_Stream_09](src/Tutorial_Java_MitoCode/09_Stream_09.png)
+
+**contar()**  
+Usamos *count()* que nos devuelve un long, entonces guardamos ese valor e imprimimos la cantidad de elementos de la lista.
+
+![09_Stream_10](src/Tutorial_Java_MitoCode/09_Stream_10.png)
+
+---
+
+## 10- Optional
 
 
 

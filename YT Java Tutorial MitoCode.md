@@ -1,5 +1,7 @@
 ![MitoCode_logo](src/Tutorial_Java_MitoCode/MitoCode_logo.png)
 # Java Tutorial MitoCode
+[Github MitoCode](https://github.com/mitocode21)
+
 Índice
 -
 - [Tutorial Java 7 SE](#tutorial-java-7-se)
@@ -1164,7 +1166,7 @@ legibilidad y obviamente menos lineas.
 
 **Primer caso:** Referencia a un método static  
 Como estaba escrito el código nos imprime a la salida "Método Referido Static", ahora haremos lo mismo pero con referencia a ese método.  
-En op2 -> Indicamos el nombre de la Clase y acá es donde sustituimos la expresión lambda por una referencia a un método, para esto usamos el operador **::**, y hacemos la llamada a ese
+En op2 -> Indicamos el nombre de la Clase y acá es donde sustituimos la expresión lambda por una referencia a un método, para esto usamos el operador `::`, y hacemos la llamada a ese
 método estático. Por el momento vamos a decir que los métodos referenciados no pueden llevar parámetros.
 
 ![07_Referencias_de_metodos_03](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_03.png)
@@ -1174,7 +1176,7 @@ Cuerpo del método:
 
 ![07_Referencias_de_metodos_04](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_04.png)
 
-Pero si pensamos todo es es muy verboso de indicar, que pasaría si queremos reducir eso a una expresión lambda y por medio de ésta luego reducirlo a una referencia de método, quedaría de
+Pero si pensamos todo es muy verboso de indicar, que pasaría si queremos reducir eso a una expresión lambda y por medio de ésta luego reducirlo a una referencia de método, quedaría de
 la siguiente manera:  
 Lambda:
 
@@ -1184,9 +1186,9 @@ Y podemos reducirlo más con la referencia a métodos:
 
 ![07_Referencias_de_metodos_06](src/Tutorial_Java_MitoCode/07_Referencias_de_metodos_06.png)
 
-En este caso, le pasamos la lista, array Nombres, la Clase **String** que vamos a comparar, en este caso Nombres es un array de tipos de texto e invoco al método *compareToIgnoreCase*.  
+En este caso, le pasamos la lista, array Nombres, la Clase **String** que vamos a comparar, en este caso Nombres es un array de tipos de texto e invoco al método *compareToIgnoreCase()*.  
 Porque es un método de instancia y no estático? Porque estoy llamando al método que es de la instancia de la variable que viene en el array, es decir en el array internamente se va a
-recorrer y cuando llegue elemento por elemento eso ya es una instancia y de ese elemento se va a utilizar el método *compareToIgnoreCase*.
+recorrer y cuando llegue elemento por elemento eso ya es una instancia y de ese elemento se va a utilizar el método *compareToIgnoreCase()*.
 
 **Tercer caso:** Referencia a un método de instancia de un objeto en particular.  
 Para esto solo estamos indicando un mensaje.  
@@ -1225,7 +1227,72 @@ Recordar que los métodos de referencia siempre se apoyan en interfaces funciona
 
 ---
 
+## 08- Foreach, RemoveIf, Sort
+Mejoras de las Colecciones respecto a JDK 1.7.  
+Tenemos este código, básicamente tenemos una lista privada a la cual la llenamos con un método y veremos estas 3 formas de implementar las novedades.
+
+![08_ForEach_RemoveIf_Sort_01](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_01.png)
+
+![08_ForEach_RemoveIf_Sort_02](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_01.png)
+
+**usarForEach()**  
+Forma clásica
+
+![08_ForEach_RemoveIf_Sort_03](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_03.png)
+
+Aplicando las lambdas y los métodos de referencia. Escribimos `lista.forEach()` y nos dice que necesita un *Consumer* que practicamente es una interfaz funcional que tiene un único método
+llamado **accept()**, y este método va a poder recibir una lógica que nosotros implementemos en una expresión lambda o un método de referencia.  
+Revisando la documentación vemos que se encuentra *accept()* y tiene también un método default que esta implementado, no hay problema con ello mientras tenga un método nombrado, no
+implementado, se respeta el término de las interfaces funcionales.
+
+![08_ForEach_RemoveIf_Sort_04](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_04.png)
+
+Volviendo, este *forEach()* necesita implementar este Consumer, lo hacemos creando una expresión lambda y le indicamos que para cada elemento vamos a imprimirlo.
+
+![08_ForEach_RemoveIf_Sort_05](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_05.png)
+
+Empleando la referencia a métodos:
+
+![08_ForEach_RemoveIf_Sort_06](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_06.png)
+
+**usarRemoveIf()**  
+Como su nombre lo indica, vamos a poder remover un elemento dependiendo de la lógica.  
+Antes:
+
+![08_ForEach_RemoveIf_Sort_07](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_07.png)
+
+Aunque no se puede eliminar asi en un for dinamico, nos salta un ConcurrentException.
+
+![08_ForEach_RemoveIf_Sort_08](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_08.png)
+
+Y para resolver esto usabamos un **Iterator** con un while
+
+![08_ForEach_RemoveIf_Sort_09](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_09.png)
+
+Se elimina el elemento "Code", pero seguimos con varias lineas de código. Entonces usemos el paradigma funcional
+
+![08_ForEach_RemoveIf_Sort_10](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_10.png)
+
+**Predicate** es una clase muy importante para poder armar "Predicados", intrucciónes que representan una lógica como eliminación, agregación, condicionales, que nos permite ahorrar
+mucho código.
+
+**usarSort()**  
+Si queremos ordenar esta lista haciamos esto `Collections.sort(lista);` pero podemos apoyarnos exclusivamente en el método *.sort()* de la propia lista y podemos indicar de la siguiente
+manera:
+
+![08_ForEach_RemoveIf_Sort_11](src/Tutorial_Java_MitoCode/08_ForEach_RemoveIf_Sort_11.png)
+
+---
+
 ## 
+
+
+
+
+
+
+
+
 
 
 

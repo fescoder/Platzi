@@ -1296,7 +1296,7 @@ llamando a estos métodos veremos.
 ![09_Stream_01](src/Tutorial_Java_MitoCode/09_Stream_01.png)
 
 **filtrar()**  
-En muchas ocasiones hemos tenido la posibilidad o necesidad de filtrar en una lista determinada algunos elementos que respeten algun criterio, por ejemplo en este caso vamos a filtrar
+En muchas ocasiones hemos tenido la posibilidad o necesidad de filtrar en una lista determinada algunos elementos que respeten algún criterio, por ejemplo en este caso vamos a filtrar
 de la lista todos aquellos elementos que empiecen con "M".  
 Si pensamos en un enfoque imperativo, deberiamos de recorrer la lista, preguntar si el 1er elemento empieza con "M", si es así podemos almacenar o imprimir ese elemento.  
 Pero bajo el enfoque declarativo podemos hacerlo de una forma muy sencilla.  
@@ -1319,7 +1319,7 @@ Nos ordena la lista de forma ascendente, pero si lo queremos de forma descendent
 
 ![09_Stream_05](src/Tutorial_Java_MitoCode/09_Stream_05.png)
 
-**trasnformar()**  
+**transformar()**  
 Acá usaremos la función *.map()*, esta función es de transformación, es decir que lo que vas a colocar acá (), el elemento de cada lista va a ser transformado con la expresión que
 indiquemos.  
 Por ejemplo, que pasaría si todos los elementos quiero pasarlos a mayusculas? Podríamos hacer lo siguiente:  
@@ -1338,7 +1338,7 @@ Ahora apoyandonos en la API Stream y el método map, le decimos que a cada eleme
 ![09_Stream_08](src/Tutorial_Java_MitoCode/09_Stream_08.png)
 
 **limitar()**  
-Lo que hacemos acá es usar el método *limit()*, al que se le pasa un entero e imprimimos
+Lo que hacemos acá es usar el método *limit()*, al que se le pasa un entero e imprimimos esa cantidad de elementos.
 
 ![09_Stream_09](src/Tutorial_Java_MitoCode/09_Stream_09.png)
 
@@ -1350,6 +1350,57 @@ Usamos *count()* que nos devuelve un long, entonces guardamos ese valor e imprim
 ---
 
 ## 10- Optional
+Nos permite gestionar de una manera adecuada los errores para poder evitar los **NullPointerException**.
+
+![10_Optional_01](src/Tutorial_Java_MitoCode/10_Optional_01.png)
+
+Muestra instanciar Optional vacío
+
+![10_Optional_02](src/Tutorial_Java_MitoCode/10_Optional_02.png)
+
+Este **Optional** es básicamente como un envoltorio, un wrapper, que hay que indicarle el tipo de dato y si queremos obtener el contenido de este envoltorio nos apoyamos en el
+método *get()*, devuelve del mismo tipo de dato indicado.  
+Si nos sale un error de tipo *NoSuchElementException* es porque el contenido de ese optional no fue inicializado.
+
+![10_Optional_03](src/Tutorial_Java_MitoCode/10_Optional_03.png)
+
+**orElse()**  
+Se le indica un valor por defecto cuando el valor es *null* y evitamos el NullException.  
+Ya no lo vamos a inicializar en un valor vacío, si no en el valor que se nos pasa en el método. Despues obtengo el valor para imprimirlo. Si es nulo se imprime "Predeterminado" si no
+simplemente el valor.
+
+![10_Optional_04](src/Tutorial_Java_MitoCode/10_Optional_04.png)
+
+**orElseThrow**  
+Es muy similar al anterior pero en esta ocasión si el valor es nulo podremos arrojar una exception.  
+Indicamos de ejemplo el *NumberFormatException* e invocamos al contructor a través del método de referencia , de modo que si tiene un valor nulo arrojara la exception que indicamos si no
+simplemente no hará nada.
+
+![10_Optional_05](src/Tutorial_Java_MitoCode/10_Optional_05.png)
+
+**isPresent()**  
+Es básicamente para verificar si el valor ha sido inicializado o no. Devuelve un booleano, si le pasamos nulo es false.
+
+![10_Optional_06](src/Tutorial_Java_MitoCode/10_Optional_06.png)
+
+En algunas ocasiones no es muy recomendable usar esto, especialmente si queremos tener apps criticas en rendimiento puesto que usar esta clase es un poco costoso.
+
+---
+
+## 11- Stream paralelo
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

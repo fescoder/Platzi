@@ -49,9 +49,40 @@
     - [24- Catch lineal](#24--catch-lineal)
     - [25- Inyección SQL](#25--inyección-sql)
     - [26- ExecuteBatch preparedStatement](#26--executebatch-preparedstatement)
+    - [27- CallableStatement](#27--callablestatement)
+    - [28- File (Constructores)](#28--file-constructores)
+    - [29- FilInputStream](#29--fileinputstream)
+    - [30- BufferedInputStream](#30--bufferedinputstream)
+    - [31- FileInputStream (Copiar archivos)](#31--fileinputstream-copiar-archivos)
+    - [32- BufferedOutputStream](#32--bufferedoutputstream)
+    - [33- Readers y Writers](#33--readers-y-writers)
+    - [34- NIO2 Path y files](#34--nio2-path-y-files)
+    - [35- NIO2 Read y write](#35--nio2-read-y-write)
+    - [36- NIO2 Channel y buffer](#36--nio2-channel-y-buffer)
+    - [37- NIO2 WatchService](#37--nio2-watchservise)
+    - [38- Thread y runnable](#38--thread-y-runnable)
+    - [39- Sleep y join](#39--sleep-y-join)
+    - [40- Synchronized](#40--synchronized)
+    - [41- Callable Future y ExcecutorService](#41--callable-future-y-excecutorservise)
+    - [42- CompletionService](#42--completionservice)
 - [Tutorial Java 8](#tutorial-java-8)
     - [01- Paradigma Funcional](#01--paradigma-funcional)
     - [02- Lambda](#02--lambda)
+    - [03- Sintaxis lambda](#03--sintaxis-lambda)
+    - [04- Ámbitos lambda (Lambda scopes)](#04--ámbitos-lambda-lambda-scopes)
+    - [05- Default methods](#05--default-methods-métodos-por-defecto)
+    - [06- Interfaces funcionales](#06--interfaces-funcionales)
+    - [07- Referencias de métodos](#07--referencias-de-métodos-method-references)
+    - [08- Foreach RemoveIf Sort](#08--foreach-removeif-sort)
+    - [09- Stream](#09--stream)
+    - [10- Optional](#10--optional)
+    - [11- Stream paralelo](#11--stream-paralelo)
+    - [12- Map](#12--map)
+    - [13- Anotaciones de repetición](#13--anotaciónes-de-repetición)
+    - [14- Date API](#14--date-api)
+    - [15- Funciones de alto orden](#15--funciones-de-alto-orden)
+    - [16- RxJava](#16--rxjava)
+    - [17- Nashorm](#17--nashorm)
 
 ---
 
@@ -924,7 +955,22 @@ El consejo es evitar el uso de Statement para pedir datos al usuario y asi prote
 ---
 
 ## 26- ExecuteBatch PreparedStatement
-De momento llegue hasta acá.
+## 27- CallableStatement
+## 28- File (Constructores)
+## 29- FileInputStream
+## 30- BufferedInputStream
+## 31- FileInputStream (Copiar archivos)
+## 32- BufferedOutputStream
+## 33- Readers y Writers
+## 34- NIO2 Path y Files
+## 35- NIO2 Read y Write
+## 36- NIO2 Channel y Buffer
+## 37- NIO2 WatchServise
+## 38- Thread y Runnable
+## 39- Sleep y Join
+## 40- Synchronized
+## 41- Callable, Future y ExcecutorServise
+## 42- CompletionService
 
 ---
 
@@ -1455,9 +1501,9 @@ Con la función *getOrDefault()*, básicamente lo que hace es que si no existe e
 
 **recolectar()**  
 Es algo que se utiliza en operaciones con listas o mapas, imaginemos tener un conjunto de elementos en un mapa y queremos filtrar esos elementos bajo un criterio a otra lista o mapa.  
-Vamos a evaluar el mapa, filtrar y crear un mapa nuevo.
-Entonces creamos un nuevo mapa, nos apoyamos en *entreySet().stream().filter()* y acá indicamos el predicado que necesitamos para el filtrado *e-getValue().contains("Sus"))* entonces le
-indicamos que se filtre si algun elemento empieza con "Sus". Y nos apoyamos en el método *collect()*. Especificamente en la clase *Collectors.toMap()* y este toMap() va a necesitar evaluar
+Vamos a evaluar el mapa, filtrar y crear un mapa nuevo.  
+Entonces creamos un nuevo mapa, nos apoyamos en `entreySet().stream().filter()` y acá indicamos el predicado que necesitamos para el filtrado `e-getValue().contains("Sus"))` entonces le
+indicamos que se filtre si algun elemento empieza con "Sus". Y nos apoyamos en el método `collect()`. Especificamente en la clase `Collectors.toMap()` y este toMap() va a necesitar evaluar
 como armar este nuevo mapa en base a la colección filtrada, para ellos vamos a indicar lo siguiente `p-> p.getKey(), p-> p.getValue()` estamos armando llave y valor del nuevo elemento.
 E imprimimos en Java 8
 
@@ -1465,4 +1511,8 @@ E imprimimos en Java 8
 
 ---
 
-## 13- 
+## 13- Anotaciónes de repetición
+## 14- Date API
+## 15- Funciones de alto orden
+## 16- RxJava
+## 17- Nashorm

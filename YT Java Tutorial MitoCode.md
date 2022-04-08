@@ -1398,7 +1398,8 @@ Pero si vemos el resultado al usar un *parallelStream()* veremos que el orden ca
 
 ![11_Stream_paralelo_02](src/Tutorial_Java_MitoCode/11_Stream_paralelo_02.png)
 
-Esto cambia la aplicación y de manera implicita va a utilizar el Framework **Fork/Join**, va a emplearse en un pool de este tipo y va a crear un procesamiento con hilos, asíncrono.  
+Esto cambia la aplicación y de manera implicita va a utilizar el Framework **Fork/Join**, va a emplearse en un pool de este tipo y va a crear un procesamiento con hilos, asíncrono.
+
 El **Fork/Join** es una implementación de la interfaz *ExecutorService* que lo ayuda a aprovechar múltiples procesadores. Está diseñado para trabajos que se pueden dividir en piezas más
 pequeñas de forma recursiva. El objetivo es utilizar toda la potencia de procesamiento disponible para mejorar el rendimiento de su aplicación.  
 En Java, el framework fork/join brinda soporte para la programación paralela al dividir una tarea en tareas más pequeñas para procesarlas utilizando los núcleos de CPU disponibles. De
@@ -1406,7 +1407,8 @@ hecho, los flujos paralelos de Java 8 y el método Arrays#parallelSort utilizan 
 
 Entonces esto puede aliviar o mejorar nuestras apps pero hay documentación, casos de estudio donde indican que abusar de este tipo de parallelStream no es recomendable, especialmente
 si trabajamos con Java EE Containers, imaginense tener un ambiente donde ya de por si usamos muchas peticiones, requests, en un ambiente asincrono, podríamos saturarlo un poco más.  
-Por ejemplo servidores de en aplicaciónes que tengan interacción con JPA y JB, todo lo que tiene el container propio de Java Enterprise.  
+Por ejemplo servidores de en aplicaciónes que tengan interacción con JPA y JB, todo lo que tiene el container propio de Java Enterprise.
+
 Entonces podemos usarlo pero con moderación, no abusen toda su app con streams paralelos y de preferencia en procesos de tipo bach o aplicaciones de escritorio, midamos bien nuestro
 tiempo, saquemos provecho a esta forma declarativa de poder usar los hilos de una manera un poco más sencilla y no apoyarnos en lo que son Callable, Future, ExecutorServide, cosa que se
 ven en Java 7 SE avanzado.
@@ -1414,17 +1416,53 @@ ven en Java 7 SE avanzado.
 Algunas páginas para leer un poco más de esto:  
 [Caso de estudio](https://www.overops.com/blog/benchmark-how-java-8-lambdas-and-streams-can-make-your-code-5-times-slower/) [DZone](https://dzone.com/articles/whats-wrong-java-8-part-iii)
 
+---
 
+## 12- Map
+Compararemos como se implementa y las mejoras de la clase Map en Java 8.  
+Cuando queremos recorrer el contenido de un mapa, siempre tenemos que apoyarnos en el *entrySet()*, que viene a ser la lista de valores que tiene nuestro mapa.
 
+![12_Map_01](src/Tutorial_Java_MitoCode/12_Map_01.png)
 
+**imprimir_v8()**  
+Pero en Java 8, en esta forma declarativa lo podemos hacer asi:
 
+![12_Map_02](src/Tutorial_Java_MitoCode/12_Map_02.png)
 
+map. e indicamos un *forEach()* que nos pide un *BIConsumer* que practicamente es una expresión lambda que acepta dos parámetros.
 
+Ahora, podemos apoyarnos también en *entrySet()* que nos habilita a poder usar el framework *stream()* para seguir usando esos métodos que vimos antes.  
+Entre ellos el forEach() y podemos usar nuestros métodos a referencia.
 
+![12_Map_03](src/Tutorial_Java_MitoCode/12_Map_03.png)
 
+Otros métodos importantes en la clase map:  
+**insertarSiAusente()**  
+Usamos el método *putIfAbsent()*, este lo que nos provee es poder agregar un valor que le indiquemos si no se encuentra. (con *put()* sí lo agrega, lo sobreescribe en la lista)
 
+![12_Map_04](src/Tutorial_Java_MitoCode/12_Map_04.png)
 
+**operarSiPresente()**  
+Es muy parecido al anterior, usamos el método *computerIfPresent()* y si encuentra la llave que le indicamos va a hacer lo que le pasemos como segundo parámetro. En este caso sumar la KEY
+con el VALUE.
 
+![12_Map_05](src/Tutorial_Java_MitoCode/12_Map_05.png)
 
+**obtenerOrPredeterminado()**  
+Con la función *getOrDefault()*, básicamente lo que hace es que si no existe el valor para esa KEY le asignaremos un valor por defecto, si existe no hace nada.
 
+![12_Map_06](src/Tutorial_Java_MitoCode/12_Map_06.png)
 
+**recolectar()**  
+Es algo que se utiliza en operaciones con listas o mapas, imaginemos tener un conjunto de elementos en un mapa y queremos filtrar esos elementos bajo un criterio a otra lista o mapa.  
+Vamos a evaluar el mapa, filtrar y crear un mapa nuevo.
+Entonces creamos un nuevo mapa, nos apoyamos en *entreySet().stream().filter()* y acá indicamos el predicado que necesitamos para el filtrado *e-getValue().contains("Sus"))* entonces le
+indicamos que se filtre si algun elemento empieza con "Sus". Y nos apoyamos en el método *collect()*. Especificamente en la clase *Collectors.toMap()* y este toMap() va a necesitar evaluar
+como armar este nuevo mapa en base a la colección filtrada, para ellos vamos a indicar lo siguiente `p-> p.getKey(), p-> p.getValue()` estamos armando llave y valor del nuevo elemento.
+E imprimimos en Java 8
+
+![12_Map_07](src/Tutorial_Java_MitoCode/12_Map_07.png)
+
+---
+
+## 13- 

@@ -1388,14 +1388,31 @@ En algunas ocasiones no es muy recomendable usar esto, especialmente si queremos
 ---
 
 ## 11- Stream paralelo
+Sirve para mejorar el rendimiento pero con cuidado ya que es manejo con hilos.  
+Tenemos una lista de números que nos va a servir para comprobar el funcionamiento del Stream en paralelo, el stream normal si lo ejecutamos para llenar la lista nos lo hace desde el 0
+al 9, en ese orden.
 
+![11_Stream_paralelo_01](src/Tutorial_Java_MitoCode/11_Stream_paralelo_01.png)
 
+Pero si vemos el resultado al usar un *parallelStream()* veremos que el orden cambia cada vez que lo ejecutemos y esto es porque se ejecuta en diferentes hilos.
 
+![11_Stream_paralelo_02](src/Tutorial_Java_MitoCode/11_Stream_paralelo_02.png)
 
+Esto cambia la aplicación y de manera implicita va a utilizar el Framework **Fork/Join**, va a emplearse en un pool de este tipo y va a crear un procesamiento con hilos, asíncrono.  
+El **Fork/Join** es una implementación de la interfaz *ExecutorService* que lo ayuda a aprovechar múltiples procesadores. Está diseñado para trabajos que se pueden dividir en piezas más
+pequeñas de forma recursiva. El objetivo es utilizar toda la potencia de procesamiento disponible para mejorar el rendimiento de su aplicación.  
+En Java, el framework fork/join brinda soporte para la programación paralela al dividir una tarea en tareas más pequeñas para procesarlas utilizando los núcleos de CPU disponibles. De
+hecho, los flujos paralelos de Java 8 y el método Arrays#parallelSort utilizan bajo el capó el marco de trabajo fork/join para ejecutar tareas paralelas.
 
+Entonces esto puede aliviar o mejorar nuestras apps pero hay documentación, casos de estudio donde indican que abusar de este tipo de parallelStream no es recomendable, especialmente
+si trabajamos con Java EE Containers, imaginense tener un ambiente donde ya de por si usamos muchas peticiones, requests, en un ambiente asincrono, podríamos saturarlo un poco más.  
+Por ejemplo servidores de en aplicaciónes que tengan interacción con JPA y JB, todo lo que tiene el container propio de Java Enterprise.  
+Entonces podemos usarlo pero con moderación, no abusen toda su app con streams paralelos y de preferencia en procesos de tipo bach o aplicaciones de escritorio, midamos bien nuestro
+tiempo, saquemos provecho a esta forma declarativa de poder usar los hilos de una manera un poco más sencilla y no apoyarnos en lo que son Callable, Future, ExecutorServide, cosa que se
+ven en Java 7 SE avanzado.
 
-
-
+Algunas páginas para leer un poco más de esto:  
+[Caso de estudio](https://www.overops.com/blog/benchmark-how-java-8-lambdas-and-streams-can-make-your-code-5-times-slower/) [DZone](https://dzone.com/articles/whats-wrong-java-8-part-iii)
 
 
 

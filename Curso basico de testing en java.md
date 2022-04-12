@@ -356,6 +356,19 @@ Acá creamos las siguientes clases y la interfaz para simular el repositorio de 
 ---
 
 ### Clase 18 - App de películas: Test de búsqueda de películas por su duración
+Haciendo `Alt + Enter` (en mi caso `Fn + Alt + insert`) podemos crear el **SetUp Method** con la notacion de *@Before* para que para todos los tests me carguen las películas.
+
+![18_App_peliculas_filtro_duracion_01](src/Curso_Basico_de_Testing_en_Java/18_App_peliculas_filtro_duracion_01.png)
+
+**Haciendo REFACTOR**  
+Una forma de generar un método con Intellij IDEA es, seleccionando el trozo de código, que en ese caso se repite y queremos meter en una función, hacemos **refactor** -> Extract ->
+Method. El reemplazo es en cada trozo de código que se repite.
+
+![18_App_peliculas_filtro_duracion_02](src/Curso_Basico_de_Testing_en_Java/18_App_peliculas_filtro_duracion_02.png)
+
+Cuando tenemos variables que se repiten, podemos hacer un *Inline* (Refactor -> Inline) para simplificar el código. Hay que hacerlo para cada variable.
+
+![18_App_peliculas_filtro_duracion_03](src/Curso_Basico_de_Testing_en_Java/18_App_peliculas_filtro_duracion_03.png)
 
 ---
 

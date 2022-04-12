@@ -338,19 +338,19 @@ Cada capa se puede comunicar con otra, pero no conoce los detalles de implementa
 ### Clase 17 - App de películas: Test de negocio
 Acá creamos las siguientes clases y la interfaz para simular el repositorio de películas y en este caso filtrar por género.
 
-**Movie**
+**Movie**  
 ![17_App_peliculas_genero_01](src/Curso_Basico_de_Testing_en_Java/17_App_peliculas_genero_01.png)
 
-**Genre**
+**Genre**  
 ![17_App_peliculas_genero_02](src/Curso_Basico_de_Testing_en_Java/17_App_peliculas_genero_02.png)
 
-**MovieRepository**
+**MovieRepository**  
 ![17_App_peliculas_genero_03](src/Curso_Basico_de_Testing_en_Java/17_App_peliculas_genero_03.png)
 
-**MovieService**
+**MovieService**  
 ![17_App_peliculas_genero_04](src/Curso_Basico_de_Testing_en_Java/17_App_peliculas_genero_04.png)
 
-**MovieServiceShould**
+**MovieServiceShould**  
 ![17_App_peliculas_genero_05](src/Curso_Basico_de_Testing_en_Java/17_App_peliculas_genero_05.png)
 
 ---

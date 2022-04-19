@@ -377,6 +377,47 @@ El método que agregamos a **MovieService**
 ---
 
 ### Clase 19 - Creación de la base de datos y tests de integración con bases de datos
+Realizaremos la implementación de la interface *MovieRepository*, para guardar y traer información de las películas.  
+Para realizar un test de integración a la base de datos utilizaremos Spring y H2, asegúrate de copiar el siguiente código a tus dependencias:  
+
+~~~
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.3.18</version>
+</dependency>
+
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.1.210</version>
+</dependency>
+~~~
+
+`Alt + Enter` -> Implement interface. Para crear una clase que implemente la interface.  
+Seleccionamos un nombre, en este caso termina con *Jdbc* porque vamos a usar *jdbc* que es la interfaz de Java para conexiones a base de datos e implementamos los 3 métodos de la interfaz.
+
+La primera es una libreria de Spring-jdbc que nos proporciona una clase muy util para la conexión con BD, llamada **JdbcTemplate**.
+
+![19_Creacion_DB_test_integracion_01](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_01.png)
+
+**RowMapper**  
+Obtención de registros por Spring JdbcTemplate.  
+Al igual que *ResultSetExtractor*, podemos usar la interfaz RowMapper para obtener los registros de la base de datos usando el método *query()* de la clase JdbcTemplate . En la ejecución
+necesitamos pasar la instancia de RowMapper. La interfaz RowMapper permite mapear una fila de las relaciones con la instancia de la clase definida por el usuario. Itera el ResultSet
+internamente y lo agrega a la colección. ([Fuente](https://www.javatpoint.com/RowMapper-example))
+
+Cargar Script de SQL para que cree la DB y las películas y lo podemos hacer con *ScriptUtils*, de Spring Jdbc, el método *executeSqlScript()* y le pasamos la conexión desde *DataSource*
+y *.getConection()*, también necesita un ClassPathResource, que es básicamente indicarle la ruta donde tengo el archivo .sql, entonces carga el ese archivo script y me va a crear la DB.
+
+![19_Creacion_DB_test_integracion_02](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_02.png)
+
+![19_Creacion_DB_test_integracion_03](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_03.png)
+
+Java necesita el método equals para poder comparar objetos correctamente, por ello debemos añadirlos a nuestra clase.
+
+![19_Creacion_DB_test_integracion_04](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_04.png)
+
 
 ---
 

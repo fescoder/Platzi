@@ -447,6 +447,16 @@ También se probó insertar una película en la DB.
 ---
 
 ### Clase 21 - Reto 3: Nuevas opciones de búsqueda
+Se creo el método *findMoviesByName()* que busca a las películas por nombre, en este caso si ponemos "super", sea en mayusculas o minusculas, trae las movies de "Super 8" y "Superman".
+
+**MovieService**
+![21_Reto_3_01](src/Curso_Basico_de_Testing_en_Java/21_Reto_3_01.png)
+
+Se hizo lo mismo pero agregando el atributo *director* a Movies y los cambios que implica, e implementando *findMoviesByDirect()* con su test.
+
+![21_Reto_3_02](src/Curso_Basico_de_Testing_en_Java/21_Reto_3_02.png)
+
+![21_Reto_3_03](src/Curso_Basico_de_Testing_en_Java/21_Reto_3_03.png)
 
 ---
 

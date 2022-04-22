@@ -397,18 +397,20 @@ Para realizar un test de integración a la base de datos utilizaremos Spring y H
 `Alt + Enter` -> Implement interface. Para crear una clase que implemente la interface.  
 Seleccionamos un nombre, en este caso termina con *Jdbc* porque vamos a usar *jdbc* que es la interfaz de Java para conexiones a base de datos e implementamos los 3 métodos de la interfaz.
 
-La primera es una libreria de Spring-jdbc que nos proporciona una clase muy util para la conexión con BD, llamada **JdbcTemplate**.
+La libreria de Spring-jdbc nos proporciona una clase muy util para la conexión con BD, llamada **JdbcTemplate**.
 
 ![19_Creacion_DB_test_integracion_01](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_01.png)
 
 **RowMapper**  
 Obtención de registros por Spring JdbcTemplate.  
 Al igual que *ResultSetExtractor*, podemos usar la interfaz RowMapper para obtener los registros de la base de datos usando el método *query()* de la clase JdbcTemplate . En la ejecución
-necesitamos pasar la instancia de RowMapper. La interfaz RowMapper permite mapear una fila de las relaciones con la instancia de la clase definida por el usuario. Itera el ResultSet
-internamente y lo agrega a la colección. ([Fuente](https://www.javatpoint.com/RowMapper-example))
+necesitamos pasar la instancia de RowMapper.  
+La interfaz RowMapper permite mapear una fila de las relaciones con la instancia de la clase definida por el usuario. Itera el ResultSet internamente y lo agrega a la colección.  
+[Fuente](https://www.javatpoint.com/RowMapper-example)
 
-Cargar Script de SQL para que cree la DB y las películas y lo podemos hacer con *ScriptUtils*, de Spring Jdbc, el método *executeSqlScript()* y le pasamos la conexión desde *DataSource*
-y *.getConection()*, también necesita un ClassPathResource, que es básicamente indicarle la ruta donde tengo el archivo .sql, entonces carga el ese archivo script y me va a crear la DB.
+Cargar Script de SQL para que cree la DB y las películas.  
+Lo podemos hacer con *ScriptUtils*, de Spring Jdbc, el método *executeSqlScript()* y le pasamos la conexión desde *DataSource* y *.getConection()*, también necesita un ClassPathResource,
+que es básicamente indicarle la ruta donde tengo el archivo .sql, entonces carga el ese archivo script y me va a crear la DB.
 
 ![19_Creacion_DB_test_integracion_02](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_02.png)
 
@@ -418,10 +420,29 @@ Java necesita el método equals para poder comparar objetos correctamente, por e
 
 ![19_Creacion_DB_test_integracion_04](src/Curso_Basico_de_Testing_en_Java/19_Creacion_DB_test_integracion_04.png)
 
-
 ---
 
 ### Clase 20 - Test de integración con bas de datos: Guardar películas y búsqueda de películas individuales
+Por el momento, nuestras pruebas están cargando varias veces la información de la base de datos y vamos a solucionar este problema creando una función que borre la información. Para esto,
+debemos usar la instrucción @After para que JUnit ejecute la función cada vez que termina de hacer un test.
+
+Buscaremos películas por ID, y para empezar moveremos la carga de DB, inicialización y creación de repository. Creamos un *setUp()* que se ejecuta antes de cada test.
+
+![20_Test_integracion_insertar_guardar_01](src/Curso_Basico_de_Testing_en_Java/20_Test_integracion_insertar_guardar_01.png)
+
+`queryForObject()` -> Devuelve solo un objeto y no una Colección como con solo **query()**, le pasamos la query para filtrar la DB y le pasamos como parámetro el id, que tiene que ser un
+array de Object. También necesitamos indicar el Rowmapper, que es el que transformará los datos de la DB en un objeto Java.
+
+**Implementación de métodos**  
+![20_Test_integracion_insertar_guardar_03](src/Curso_Basico_de_Testing_en_Java/20_Test_integracion_insertar_guardar_03.png)
+
+Al momento de probar los test, salta que *findAll()* devuelve muchas películas, para evitar esta acumulación tenemos que limpiar la DB cuando finalicen los test, similar a *@Before* pero
+con la notación **@After**, hay un shortCut `Fn + Alt + insert` -> TearDown Method.
+
+**Tests**  
+![20_Test_integracion_insertar_guardar_02](src/Curso_Basico_de_Testing_en_Java/20_Test_integracion_insertar_guardar_02.png)
+
+También se probó insertar una película en la DB.
 
 ---
 

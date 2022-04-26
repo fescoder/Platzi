@@ -468,7 +468,7 @@ concretarlos. No importa cuál sea el caso, solo podemos empezar a escribir los 
 Existen diferentes escenarios:
 - Típicos (Happy path) - El camino común y esperado.
 - Extremos - Los datos son muy grandes, pequeños o negativos.
-- Incorrectos - Nuestro método tiene que lanzar una exeption, devolver un error o algo por el estilo.
+- Incorrectos - Nuestro método tiene que lanzar una exception, devolver un error o algo por el estilo.
 - No previstos... bug! - Se escribirá un test para corregir nuestro código y pase la prueba.
 
 ---
@@ -488,5 +488,6 @@ Se implementa una busqueda por varios atributos de las películas con sus respec
 
 ## Módulo 7 - Conclusiones
 ### Clase 24 - Resumen y conclusiones
+[PDF de Testing en Java](https://static.platzi.com/media/public/uploads/slides-testing-en-java_92e8577a-091f-4d39-956c-c23bb24b9f6d.pdf)
 
 ---

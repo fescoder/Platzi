@@ -452,7 +452,7 @@ Se creo el método *findMoviesByName()* que busca a las películas por nombre, e
 **MovieService**
 ![21_Reto_3_01](src/Curso_Basico_de_Testing_en_Java/21_Reto_3_01.png)
 
-Se hizo lo mismo pero agregando el atributo *director* a Movies y los cambios que implica, e implementando *findMoviesByDirect()* con su test.
+Se hizo lo mismo pero agregando el atributo *director* a Movies y los cambios que implica, e implementando *findMoviesByDirector()* con su test.
 
 ![21_Reto_3_02](src/Curso_Basico_de_Testing_en_Java/21_Reto_3_02.png)
 
@@ -462,10 +462,27 @@ Se hizo lo mismo pero agregando el atributo *director* a Movies y los cambios qu
 
 ## Módulo 6 - Requerimientos y tests
 ### Clase 22 - Test a partir de requerimiento
+Normalmente, el desarrollo de los proyectos comienza a partir de requerimientos muy bien especificados. Sin embargo, habrá veces donde el programador debe definirlos o acabar de
+concretarlos. No importa cuál sea el caso, solo podemos empezar a escribir los tests una vez tenemos los requerimientos.
+
+Existen diferentes escenarios:
+- Típicos (Happy path) - El camino común y esperado.
+- Extremos - Los datos son muy grandes, pequeños o negativos.
+- Incorrectos - Nuestro método tiene que lanzar una exeption, devolver un error o algo por el estilo.
+- No previstos... bug! - Se escribirá un test para corregir nuestro código y pase la prueba.
 
 ---
 
 ### Clase 23 - Reto 4: Búsqueda por varios atributos
+Se implementa una busqueda por varios atributos de las películas con sus respectivos Tests.
+
+**MovieService**  
+![23_Reto_4_01](src/Curso_Basico_de_Testing_en_Java/23_Reto_4_01.png)
+
+**MovieServiceShould**  
+![23_Reto_4_02](src/Curso_Basico_de_Testing_en_Java/23_Reto_4_02.png)
+
+![23_Reto_4_03](src/Curso_Basico_de_Testing_en_Java/23_Reto_4_03.png)
 
 ---
 

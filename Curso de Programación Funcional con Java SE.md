@@ -100,17 +100,23 @@ o variable se elimina completamente.
 
 ## Módulo 2 - Entendiendo las partes de la programación funcional
 ### Clase 2 - ¿Qué es una función en Java?
-En la programación funcional una función es un tipo de dato, un tipo de dato que puede operar sobre un dato **X** y generar un dato **Y**, como la matemática de la facultad, tenemos una
+En la programación funcional una función es un tipo de dato, un tipo de dato que puede operar sobre un dato **X** y generar un dato **Y**, como la matemática de la escuela, tenemos una
 función que recibe una X y genera una Y, incluso podemos generar una tabla de resultados con ellos, idealmente siempre una X va a generar la misma Y.
 
 - Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello, las funciones pueden generar o no un resultado, la ausencia de un
 resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
 - Las funciones se definen, almacenan o declaran bajo demanda como cualquier otro tipo de dato.
 - Pueden definirse funciones con respecto a otras funciones
-    esPar(x) = !esNon(x).
+`esPar(x) = !esNon(x)`
 - Pueden definirse funciones con respecto a sí mismas (Recursividad), es decir una función que se invoque a si misma dentro de su cuerpo.
+~~~
+factorial(x) = if x <= 2 :
+x
+else : x *
+factorial(x-1)
+~~~
 - Pueden existir funciones que toman a otras funciones como parámetros:
-    f(x, g(x)) = x2 * (gx)
+`f(x, g(x)) = x2 * (gx)`
 
 ---
 

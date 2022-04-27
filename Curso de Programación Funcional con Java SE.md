@@ -4,9 +4,9 @@
 -
 - [Curso de Programación Funcional con Java SE](#curso-de-programación-funcional-con-java-se)
     - [Módulo 1 - Introducción a la Programación Funcional](#módulo-1---introducción-a-la-programación-funcional)
-        - [Clase 1 - ¿Qué es la Programación Funcional?](#clase-1---¿qué-es-la-programación-funcional)
+        - [Clase 1 - ¿Qué es la Programación Funcional?](#clase-1---¿qué-es-la-programación-funcional?)
     - [Módulo 2 - Entendiendo las partes de la Programación Funcional](#módulo-2---entendiendo-las-partes-de-la-programación-funcional)
-        - [Clase 2 - ¿Qué es una función en Java](#clase-2---¿qué-es-una-función-en-java)
+        - [Clase 2 - ¿Qué es una función en Java](#clase-2---¿qué-es-una-función-en-java?)
         - [Clase 3 - Funciones como ciudadanos de primera clase](#clase-3---funciones-como-ciudadanos-de-primera-clase)
         - [Clase 4 - Funciones puras](#clase-4---funciones-puras)
         - [Clase 5 - Entendiendo los efectos secundarios](#clase-5---entendiendo-los-efectos-secundarios)

@@ -323,6 +323,11 @@ Reto FizzBuzz
 
 ![15_Reto_FizzBuzz_02](src/Curso_Basico_de_Testing_en_Java/15_Reto_FizzBuzz_02.png)
 
+Reto Conversión numero entero a número romano.  
+![15_Reto_2_01](src/Curso_Basico_de_Testing_en_Java/15_Reto_2_01.png)
+
+![15_Reto_2_02](src/Curso_Basico_de_Testing_en_Java/15_Reto_2_02.png)
+
 ---
 
 ## Módulo 5 - Tests en una aplicación

@@ -1,4 +1,4 @@
-![Logo_Curso_profesional_de_Git_y_GitHub](src/Curso_profesional_de_Git_y_GitHub/Logo_Curso_profesional_de_Git_y_GitHub.webp)
+![00_Logo_Curso_profesional_de_Git_y_GitHub](src/Curso_profesional_de_Git_y_GitHub/00_Logo_Curso_profesional_de_Git_y_GitHub.webp)
 # Curso profesional de Git y GitHub
 Índice
 -
@@ -171,21 +171,29 @@ que tener la última versión remota, cosa muy útil en grandes desarrollos trab
 - Pull: Consiste en la unión del fetch y del merge, esto es, recoge la información del repositorio remoto y luego mezcla el trabajo en local con esta.
 - Diff: Se utiliza para mostrar los cambios entre dos versiones del mismo archivo.
 
-**Notas mias anteriores de Git**
+**Notas mias anteriores de Git**  
 Ciclo de vida o estados de los archivos en Git:
 
-Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos con repositorios remotos pueden ser más estados, pero lo estudiaremos más adelante):
+Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos con repositorios remotos pueden ser más estados, pero lo estudiaremos más
+adelante):
 
-Archivos Tracked: son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
-Archivos Staged: son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
-Archivos Unstaged: entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
+Archivos Tracked: son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y
+git commit.
+Archivos Staged: son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la
+existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
+Archivos Unstaged: entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit.
+Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
 Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
-Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: staged y untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con el comando git add), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo sigue funcionando igual pero es un poco divertido).
+Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: staged y untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con
+el comando git add), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo
+sigue funcionando igual pero es un poco divertido).
 Comandos para mover archivos entre los estados de Git:
 
-git add: nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
+git add: nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para
+mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
 
-git commit: nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
+git commit: nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repositorio. Git nos pedirá que dejemos un
+mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
 
 Esto significa que debes aprender algunos nuevos comandos:
 
@@ -203,9 +211,8 @@ Hasta los mejores cometen errores, pero todo tiene solución.
 Freddy se olvidó de guardar el archivo .html, y lo malo es que commiteó ese archivo todavia con el merge conflict.
 Con los:
 
-<<<<<<< HEAD
-=======
->>>>>>> cabecera
+![00_Mis_notas](src/Curso_profesional_de_Git_y_GitHub/00_Mis_notas.png)
+
 Si les pasa esto, no entren en pánico, mientras el commit siga en nuestro repositorio local. Tienen dos formas al menos de solucionarlo, uds eligen la que mas les convenga:
 
 Reemplazar el commit fallido
@@ -260,10 +267,9 @@ git stash branch nombre_de_rama stash@{num_stash} : Crea una rama y aplica el st
 Consideraciones:
 
 El cambio más reciente (al crear un stash) SIEMPRE recibe el valor 0 y los que estaban antes aumentan su valor.
-Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u.
+Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la
+intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u.
 Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
-
-
 
 Algunas extensiones recomendadas por Platzi
 -gitlens

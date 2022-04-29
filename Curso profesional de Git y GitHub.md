@@ -381,10 +381,10 @@ Si quieres ver los archivos ocultos de una carpeta puedes habilitar la opción d
 - git rm --cached nombre_del_archivo.txt: para eliminar el archivo del staged(ram)
 - git rm nombre_del_archivo.txt: para eliminar del repositorio
 
-Si por algún motivo te equivocaste en el nombre o email que configuraste al principio, lo puedes modificar de la siguiente manera:
-`git config --global --replace-all user.name “Aquí va tu nombre modificado”`
-O si lo deseas eliminar y añadir uno nuevo
-`git config --global --unset-all user.name :Elimina el nombre del usuario`
+Si por algún motivo te equivocaste en el nombre o email que configuraste al principio, lo puedes modificar de la siguiente manera:  
+`git config --global --replace-all user.name “Aquí va tu nombre modificado”`  
+O si lo deseas eliminar y añadir uno nuevo  
+`git config --global --unset-all user.name :Elimina el nombre del usuario`  
 `git config --global --add user.name “Aquí va tu nombre”`
 
 ![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01.webp)

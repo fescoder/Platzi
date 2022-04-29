@@ -446,7 +446,7 @@ add` y `git commit`.
 existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando `git commit`.
 - Archivos Unstaged: entiéndelos como archivos *“Tracked pero Unstaged”*. Son archivos que viven dentro de Git pero no han sido afectados por el comando `git add` ni mucho menos por `git
 commit`. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
-- Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por `git add`, así que Git no tiene registros de su existencia.
+- Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por `git add`, así que Git no tiene registros de su existencia.  
 Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: staged y untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con
 el comando `git add`), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo
 sigue funcionando igual pero es un poco divertido).
@@ -475,4 +475,56 @@ un mensaje para recordar los cambios que hicimos y podemos usar el argumento `-m
 
 ---
 
-### Clase 11 - 
+### Clase 11 - ¿Qué es un Branch (rama) y cómo funciona un Merge en Git?
+En GIT, una rama o branch es una versión del código del proyecto sobre el que estás trabajando. Estas ramas ayudan a mantener el orden en el control de versiones y manipular el código de
+forma segura.
+Por defecto, el proyecto se crea en una rama llamada Main (anteriormente conocida como Master). Cada vez que añades código y guardas los cambios, estás haciendo un commit, que es añadir el
+nuevo código a una rama. Esto genera nuevas versiones de esta rama o branch, hasta llegar a la versión actual de la rama Main.
+
+Cuando decides hacer experimentos, puedes generar ramas experimentales (usualmente llamadas development), que están basadas en alguna rama main, pero sobre las cuales puedes hacer cambios
+a tu gusto sin necesidad de afectar directamente al código principal.
+
+En otros casos, si encuentras un bug o error de código en la rama Main (que afecta al proyecto en producción), tendrás que crear una nueva rama (que usualmente se llaman bug fixing o hot
+fix) para hacer los arreglos necesarios. Cuando los cambios estén listos, los tendrás que fusionar con la rama Main para que los cambios sean aplicados. Para esto, se usa un comando
+llamado Merge, que mezcla los cambios de la rama que originaste a la rama Main.
+
+Todos los commits se aplican sobre una rama. Por defecto, siempre empezamos en la rama Main (pero puedes cambiarle el nombre si no te gusta) y generamos nuevas ramas, a partir de esta,
+para crear flujos de trabajo independientes.
+
+**Checkout y merge**
+Producir una nueva rama se conoce como Checkout. Unir dos ramas lo conocemos como Merge.
+
+Cuando haces merge de estas ramas con el código principal, su código se fusiona, originando una nueva versión de la rama Master (o main) que ya tiene todos los cambios que aplicaste en tus
+experimentos o arreglos de errores.
+
+Podemos generar todas las ramas y commits que queramos. De hecho, podemos aprovechar el registro de cambios de Git para producir ramas, traer versiones viejas del código, arreglarlas y
+combinarlas de nuevo para mejorar el proyecto.
+
+Solo ten en cuenta que combinar estas ramas (hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir
+estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos a mano.
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01.webp)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02.webp)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03.svg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04.svg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05.svg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06.svg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07.jpg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08.webp)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09.png)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10.jpg)
+
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11.webp)
+
+---
+
+### CLase 12 - 

@@ -9,7 +9,7 @@
 ---
 
 ## Módulo 1 - Introducción a Git
-[PDF primeras clases del curso](https://static.platzi.com/media/public/uploads/git-github-1-16_a229ee25-b2b6-4c1d-969a-c791eabace83.pdf)
+[PDF primeras clases del curso](https://static.platzi.com/media/public/uploads/git-github-1-16_a229ee25-b2b6-4c1d-969a-c791eabace83.pdf)  
 [mismo PDF](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_01.pdf)
 ### Clase 1 - ¿Por qué usar un sistema de control de versiones como Git?
 Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
@@ -311,4 +311,87 @@ Algunas extensiones recomendadas por Platzi
 -intellisense
 -snippets
 
-### Clase 7 - 
+### Clase 7 - Introducción a la terminal y línea de comandos
+La línea de comandos nos permite interactuar con nuestro computador sin necesidad de utilizar una interfaz gráfica. Sin embargo, los computadores emplean distintos sistemas de archivos y
+manejan diferentes comandos, dependiendo del sistema operativo que utilicen.
+
+**Diferencias entre la estructura de archivos de Windows, Mac o Linux.**
+- La ruta principal en Windows es `C:\`, en UNIX es solo `/`.
+- Windows no hace diferencia entre mayúsculas y minúsculas pero UNIX sí.
+Recuerda que GitBash usa la ruta `/c` para dirigirse a `C:\` (o `/d` para dirigirse a `D:\`) en Windows. Por lo tanto, la ruta del usuario con el que estás trabajando es
+`/c/Users/Nombre_de_tu_usuario`
+
+**Comandos básicos en la terminal:**
+- pwd: Nos muestra la ruta de carpetas en la que te encuentras ahora mismo.
+- mkdir: Nos permite crear carpetas (por ejemplo, `mkdir Carpeta-Importante`).
+- touch: Nos permite crear archivos (por ejemplo, `touch archivo.txt`).
+- rm: Nos permite borrar un archivo o carpeta (por ejemplo, `rm archivo.txt`). Mucho cuidado con este comando, puedes borrar todo tu disco duro.
+- cat: Ver el contenido de un archivo (por ejemplo, `cat nombre-archivo.txt`).
+- ls: Nos permite cambiar ver los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden
+ser `--` + el nombre del argumento o `-` + una sola letra o shortcut por cada argumento).
+    - `ls -a`: Mostrar todos los archivos, incluso los ocultos.
+    - `ls -l`: Ver todos los archivos como una lista.
+- cd: Nos permite navegar entre carpetas.
+    - `cd /`: Ir a la ruta principal:
+    - `cd` o `cd ~`: Ir a la ruta de tu usuario
+    - `cd carpeta/subcarpeta`: Navegar a una ruta dentro de la carpeta donde estamos ahora mismo.
+    - `cd ..` (`cd` + dos puntos): Regresar una carpeta hacia atrás.
+    - Si quieres referirte al directorio en el que te encuentras ahora mismo puedes usar `cd .` (`cd` + un punto).
+- history: Ver los últimos comandos que ejecutamos y un número especial con el que podemos repetir su ejecución.
+- ! + número: Ejecutar algún comando con el número que nos muestra el comando `history` (por ejemplo, `!72`).
+- clear: Para limpiar la terminal. También podemos usar los atajos de teclado `Ctrl + L` o `Command + L`.
+Todos estos comandos tiene una función de autocompletado, o sea, puedes escribir la primera parte y presionar la tecla `Tab` para que la terminal nos muestre todas las posibles carpetas o
+comandos que podemos ejecutar. Si presionas la tecla `Arriba` puedes ver el último comando que ejecutamos.
+
+Recuerda que podemos descubrir todos los argumentos de un comando con el argumento `--help` (por ejemplo, `cat --help`).
+
+**Más comandos**
+
+![07_Introduccion_a_la_terminal_y_linea_de_comandos_01](src/Curso_profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_01.webp)
+
+![07_Introduccion_a_la_terminal_y_linea_de_comandos_02](src/Curso_profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_02.jpg)
+
+---
+
+### Clase 8 - Crea un repositorio de Git y haz tu primer commit
+Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su sistema de control de versiones. Solo debemos posicionarnos en la carpeta raíz de nuestro proyecto y ejecutar
+el comando: `git init
+
+Recuerda que al ejecutar este comando (y de aquí en adelante) vamos a tener una nueva carpeta oculta llamada `.git` con toda la base de datos con cambios atómicos en nuestro proyecto.
+
+Recuerda que Git está optimizado para trabajar en equipo, por lo tanto, debemos darle un poco de información sobre nosotros. No debemos hacerlo todas las veces que ejecutamos un comando,
+basta con ejecutar solo una sola vez los siguientes comandos con tu información:
+
+~~~
+git config --global user.email "tu@email.com"
+git config --global user.name "Tu Nombre"
+~~~
+
+Existen muchas otras configuraciones de Git que puedes encontrar ejecutando el comando `git config --list` (o solo `git config` para ver una explicación más detallada).
+
+Si quieres ver los archivos ocultos de una carpeta puedes habilitar la opción de Vista > Mostrar u ocultar > Elementos ocultos (en Windows) o ejecutar el comando `ls -a`.
+
+**Comandos para iniciar tu repositorio con Git**
+- git init: para inicializar el repositorio git y el staged
+- git add nombre_del_archivo.txt: enviar el archivo al staged
+- git status: ver el estado, si se requiere agregar al starget o si se requiere commit
+- git conf: para ver las posibles configuraciones
+- git conf --list: para ver la lista de configuraciones hechas
+- git conf --list --show-origin: para mostrar las configuraciones y sus rutas
+- git rm --cached nombre_del_archivo.txt: para eliminar el archivo del staged(ram)
+- git rm nombre_del_archivo.txt: para eliminar del repositorio
+
+Si por algún motivo te equivocaste en el nombre o email que configuraste al principio, lo puedes modificar de la siguiente manera:
+`git config --global --replace-all user.name “Aquí va tu nombre modificado”`
+O si lo deseas eliminar y añadir uno nuevo
+`git config --global --unset-all user.name :Elimina el nombre del usuario`
+`git config --global --add user.name “Aquí va tu nombre”`
+
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01.webp)
+
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02.webp)
+
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03.webp)
+
+---
+

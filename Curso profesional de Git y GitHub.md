@@ -10,6 +10,7 @@
 
 ## Módulo 1 - Introducción a Git
 [PDF primeras clases del curso](https://static.platzi.com/media/public/uploads/git-github-1-16_a229ee25-b2b6-4c1d-969a-c791eabace83.pdf)
+[mismo PDF](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_01.pdf)
 ### Clase 1 - ¿Por qué usar un sistema de control de versiones como Git?
 Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
 
@@ -91,6 +92,10 @@ git log – index.html- Busca los commits en un archivo en específico.
 git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.
 git log > log.txt - guardar los logs en un archivo txt
 
+![01_Que_es_Git_02](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_02.webp)
+
+[Otro PDF](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_03.pdf)
+
 ---
 
 ### Clase 2 - ¿Qué es Git?
@@ -116,10 +121,27 @@ programas de computadora.
 Github puede considerarse como la red social de código para los programadores y en muchos casos es visto como tu curriculum vitae, pues aquí guardas tu portafolio de proyectos de
 programación.
 
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01.webp)
+
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02.png)
+
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03.png)
+
+---
+
+### Clase 3 - Instalando Git y GitBash en Windows
+
+![03_Instalando_Git_y_GitBash_en_Windows_01](src/Curso_profesional_de_Git_y_GitHub/03_Instalando_Git_y_GitBash_en_Windows_01.webp)
+
+---
+
+### Clase 4 - Instalando Git en OSX
+
+![04_Instalando_Git_en_OSX_01](src/Curso_profesional_de_Git_y_GitHub/04_Instalando_Git_en_OSX_01.webp)
+
 ---
 
 ### Clase 5 - Instalando Git en Linux
-Las clases 3 y 4 son sobre la instalación en Windows y OSX.
 
 Cada distribución de Linux tiene un comando especial para instalar herramientas y actualizar el sistema. Aquí veremos un ejemplo de los comandos para instalar Git en Linux
 ~~~
@@ -137,6 +159,8 @@ Antes de hacer la instalación, debemos hacer una actualización del sistema. En
 Con el sistema actualizado, ahora sí podemos instalar Git y, en este caso, el comando para hacerlo es `sudo apt-get install git`. También puedes verificar que Git fue instalado
 correctamente con el comando `git --version`.
 
+![05_Instalando_Git_en_Linux_01](src/Curso_profesional_de_Git_y_GitHub/05_Instalando_Git_en_Linux_01.webp)
+
 ---
 
 ### Clase 6 - Editores de código, archivos binarios y de texto plano
@@ -152,6 +176,8 @@ estamos acostumbrados.
 de entender y muy diferente al texto al que estamos acostumbrados. Esto es porque Word está optimizado para entender este código especial y representarlo gráficamente.
 Recuerda que debes habilitar la opción de ver la extensión de los archivos, de lo contrario, solo podrás ver su nombre. La forma de hacerlo en Windows es Vista > Mostrar u ocultar >
 Extensiones de nombre de archivo.
+
+![06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01](src/Curso_profesional_de_Git_y_GitHub/06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01.webp)
 
 **Conceptos importantes de Git**
 - Bug: Error en el código
@@ -284,3 +310,5 @@ Algunas extensiones recomendadas por Platzi
 -github copilot
 -intellisense
 -snippets
+
+### Clase 7 - 

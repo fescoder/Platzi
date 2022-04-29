@@ -170,3 +170,111 @@ que tener la última versión remota, cosa muy útil en grandes desarrollos trab
 - Merge: La acción de merge es la continuación natural del fetch. El merge permite unir la copia del repositorio remoto con tu repositorio local, mezclando los diferentes códigos.
 - Pull: Consiste en la unión del fetch y del merge, esto es, recoge la información del repositorio remoto y luego mezcla el trabajo en local con esta.
 - Diff: Se utiliza para mostrar los cambios entre dos versiones del mismo archivo.
+
+**Notas mias anteriores de Git**
+Ciclo de vida o estados de los archivos en Git:
+
+Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos con repositorios remotos pueden ser más estados, pero lo estudiaremos más adelante):
+
+Archivos Tracked: son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
+Archivos Staged: son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
+Archivos Unstaged: entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
+Archivos Untracked: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
+Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: staged y untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con el comando git add), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo sigue funcionando igual pero es un poco divertido).
+Comandos para mover archivos entre los estados de Git:
+
+git add: nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
+
+git commit: nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
+
+Esto significa que debes aprender algunos nuevos comandos:
+
+git clone url_del_servidor_remoto: Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
+git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+git pull: Básicamente, git fetch y git merge al mismo tiempo.
+
+
+
+ERROR AL HACER Commit
+Hasta los mejores cometen errores, pero todo tiene solución.
+
+Freddy se olvidó de guardar el archivo .html, y lo malo es que commiteó ese archivo todavia con el merge conflict.
+Con los:
+
+<<<<<<< HEAD
+=======
+>>>>>>> cabecera
+Si les pasa esto, no entren en pánico, mientras el commit siga en nuestro repositorio local. Tienen dos formas al menos de solucionarlo, uds eligen la que mas les convenga:
+
+Reemplazar el commit fallido
+Pueden corregir el archivo (en este caso hubiera bastado con guardarlo) y luego usar
+git add .
+git commit --amend
+El --amend “suma” al commit anterior el nuevo contenido en el staging area. Asi que no se está creando un nuevo commit, si no reemplazando el último.
+
+Borrar el commit, sin perder los cambios, arreglar y commitear de nuevo.
+Bastaria con devolver el commit a la staging area, usando:
+git reset HEAD~1 --soft
+y luego guardar el archivo y volver a hacer el commit (ya que esta vez con el reset si borraron el commit con el fallo).
+
+Practiquenlo!, creanme que commit --amend resulta bastante útil, más de una vez habré commiteado algo, y luego me doy cuenta que me faltó algo, o algo está mal, y en vez de armar otro
+commit arreglando el error, podemos reemplazarlo con amend.
+
+
+
+Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos de nuestro proyecto.
+
+Comandos para trabajar con etiquetas:
+
+Crear un nuevo tag y asignarlo a un commit: git tag -a nombre-del-tag id-del-commit.
+Borrar un tag en el repositorio local: git tag -d nombre-del-tag.
+Listar los tags de nuestro repositorio local: git tag o git show-ref --tags.
+Publicar un tag en el repositorio remoto: git push origin --tags.
+Borrar un tag del repositorio remoto: git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag.
+
+Crear una rama en el repositorio local: git branch nombre-de-la-rama o git checkout -b nombre-de-la-rama.
+Publicar una rama local al repositorio remoto: git push origin nombre-de-la-rama.
+Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando gitk
+
+Me muestra mas graficamente los cambios en los branch.
+alias arbolito="git log --all --graph --decorate --oneline"
+con unalias se borra el alias
+
+
+git stash : Guarda el trabajo actual de manera temporal. (Archivos modificados o eliminados)
+git stash -u : Crea un stash con todos los archivos. (Añadiendo los creados Untracked)
+git stash save “mensaje” : Crea un stash con el mensaje especificado.
+git stash list : Permite visualizar todos los stash existentes.
+git stash clear : Elimina todos los stash existentes.
+git stash drop : Elimina el stash más reciente. El que tiene num_stash=0.
+git stash drop stash@{num_stash} : Elimina un stash específico.
+git stash apply : Aplica el stash más reciente. El que tiene num_stash=0.
+git stash apply stash@{num_stash} : Aplica los cambios de un stash específico.
+git stash pop : Aplica el stash más reciente y lo elimina. El que tiene num_stash=0.
+git stash pop stash@{num_stash} : Aplica los cambios de un stash específico y elimina lo stash.
+git stash branch nombre_de_rama : Crea una rama y aplica el stash mas reciente.
+git stash branch nombre_de_rama stash@{num_stash} : Crea una rama y aplica el stash especificado.
+
+Consideraciones:
+
+El cambio más reciente (al crear un stash) SIEMPRE recibe el valor 0 y los que estaban antes aumentan su valor.
+Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u.
+Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
+
+
+
+Algunas extensiones recomendadas por Platzi
+-gitlens
+-settings sync
+-themes
+-icons
+-wakatime
+-prettier
+-live server
+-markdown all in one
+-code spell checker
+-github copilot
+-intellisense
+-snippets

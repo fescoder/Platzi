@@ -654,8 +654,30 @@ Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos
 
 ![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04.webp)
 
-![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05.pdf)
+[PDF de la Clase](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05.pdf)
 
 ---
 
-### Clase 15 - 
+### Clase 15 - Introducción a las ramas o branches de Git
+Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
+
+La cabecera o `HEAD` representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. Pero podemos cambiarlo al crear una rama (`git branch rama`, `git checkout -b rama`) o movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos (`git reset id-commit`, `git checkout rama-o-id-commit`).
+
+**Cómo funcionan las ramas en GIT** 
+Las ramas son la manera de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
+
+- `git branch -nombre de la rama-`: Con este comando se genera una nueva rama.
+- `git checkout -nombre de la rama-`: Con este comando puedes saltar de una rama a otra.
+- `git checkout -b rama`: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
+- `git reset id-commit`: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
+- `git checkout rama-o-id-commit`: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
+
+![15_Introduccion_a_las_ramas_o_branches_de_Git_01](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_01.jpg)
+
+![15_Introduccion_a_las_ramas_o_branches_de_Git_02](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_02.webp)
+
+![15_Introduccion_a_las_ramas_o_branches_de_Git_03](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_03.webp)
+
+---
+
+### Clase 16 - 

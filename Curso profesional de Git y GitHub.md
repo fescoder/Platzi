@@ -840,15 +840,14 @@ Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
 En este ejemplo, aprenderemos cómo configurar nuestras llaves SSH en local.
 
 **Cómo generar tus llaves SSH**  
-1. Generar tus llaves SSH**
+1. Generar tus llaves SSH**  
 Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
 ~~~
 ssh-keygen -t rsa -b 4096 -C "tu@email.com"
 ~~~
 
-2. Terminar de configurar nuestro sistema.
+2. Terminar de configurar nuestro sistema.  
 **En Windows y Linux:**
-
 - Encender el “servidor” de llaves SSH de tu computadora:
 ~~~
 eval $(ssh-agent -s)
@@ -875,7 +874,7 @@ IdentityFile ruta-donde-guardaste-tu-llave-privada
 
 - Añadir tu llave SSH al “servidor” de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
 ~~~
-Añadir tu llave SSH al “servidor” de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
+ssh-add -K ruta-donde-guardaste-tu-llave-privada
 ~~~
 
 [PDF](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_01.pdf)

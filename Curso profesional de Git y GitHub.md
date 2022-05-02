@@ -919,6 +919,8 @@ cat ~/.ssh/id_rsa.pub
 
 ![22_Conexion_a_GitHub_con_SSH_02](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_02.webp)
 
+`git config remote.origin.push HEAD` -> Soluciona a "fatal: The current branch main has multiple upstream branches, refusing to push."
+
 ---
 
 ### Clase 23 - Tags y versiones en Git y GitHub

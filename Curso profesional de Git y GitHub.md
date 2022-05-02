@@ -754,7 +754,7 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 ---
 
 ### Clase 18 - Cambios en GitHub: de master a main
-El escritor Argentino Julio Cortázar afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
+El escritor Argentino **Julio Cortázar** afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
 
 Por lo anterior podemos afirmar que los sinónimos no expresan lo mismo, no tienen el mismo “color” ni el mismo “peso”.
 
@@ -770,7 +770,7 @@ Y sí, las palabras importan.
 
 Por lo que de aquí en adelante cada vez que escuches a Freddy mencionar “master” debes saber que hace referencia a “main”
 
-Puedes leer un poco más aquí:[Cambios en GitHub: de master a main](https://platzi.com/blog/cambios-en-github-master-main/)
+Puedes leer un poco más aquí: [Cambios en GitHub: de master a main](https://platzi.com/blog/cambios-en-github-master-main/)
 
 Para que todos los nuevos repositorios sean por default llamadas "main" es con el siguiente comando: `git config --global init.defaultBranch main` y para cambiar el nombre de la rama en si: `git branch -M main`
 
@@ -790,7 +790,7 @@ Sin embargo, esto solo funciona para las personas que quieren empezar a contribu
 **Cómo conectar un repositorio de Github a nuestro documento local**  
 Si queremos conectar el repositorio de GitHub con nuestro repositorio local, que creamos usando el comando `git init`, debemos ejecutar las siguientes instrucciones:
 
-- 1. PGuardar la URL del repositorio de GitHub con el nombre de origin:
+- 1. Guardar la URL del repositorio de GitHub con el nombre de origin:
 ~~~
 git remote add origin URL
 ~~~
@@ -815,4 +815,25 @@ git push origin master
 
 ---
 
-### Clase 20 - 
+### Clase 20 - Cómo funcionan las llaves públicas y privadas
+Las llaves públicas y privadas, conocidas también como cifrado asimétrico de un solo camino, sirven para mandar mensajes privados entre varios nodos con la lógica de que firmas tu mensaje con una llave pública vinculada con una llave privada que puede leer el mensaje.
+
+Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.
+
+**Cómo funciona un mensaje cifrado con llaves públicas y privadas**
+- 1. Ambas personas deben crear su llave pública y privada.
+- 2. Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).
+- 3. La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
+- 4. El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.
+- 5. La persona a la que enviamos el mensaje cifrado puede emplear su llave privada para descifrar el mensaje y ver los archivos.
+Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
+
+![20_Como_funcionan_las_llaves_publicas_y_privadas_01](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_01.png)
+
+![20_Como_funcionan_las_llaves_publicas_y_privadas_02](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_02.png)
+
+![20_Como_funcionan_las_llaves_publicas_y_privadas_03](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_03.png)
+
+---
+
+### Clase 21 - 

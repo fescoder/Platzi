@@ -247,7 +247,6 @@ Practiquenlo!, creanme que commit --amend resulta bastante útil, más de una ve
 commit arreglando el error, podemos reemplazarlo con amend.
 
 
-
 Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos de nuestro proyecto.
 
 Comandos para trabajar con etiquetas:
@@ -301,6 +300,8 @@ Algunas extensiones recomendadas por Platzi
 -github copilot
 -intellisense
 -snippets
+
+`git config remote.origin.push HEAD` -> Soluciona a "fatal: The current branch main has multiple upstream branches, refusing to push."
 
 ### Clase 7 - Introducción a la terminal y línea de comandos
 La línea de comandos nos permite interactuar con nuestro computador sin necesidad de utilizar una interfaz gráfica. Sin embargo, los computadores emplean distintos sistemas de archivos y
@@ -918,8 +919,6 @@ cat ~/.ssh/id_rsa.pub
 ![22_Conexion_a_GitHub_con_SSH_01](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_01.webp)
 
 ![22_Conexion_a_GitHub_con_SSH_02](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_02.webp)
-
-`git config remote.origin.push HEAD` -> Soluciona a "fatal: The current branch main has multiple upstream branches, refusing to push."
 
 ---
 

@@ -221,15 +221,6 @@ mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
 git commit: nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repositorio. Git nos pedirá que dejemos un
 mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
 
-Esto significa que debes aprender algunos nuevos comandos:
-
-git clone url_del_servidor_remoto: Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
-git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
-git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
-git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
-git pull: Básicamente, git fetch y git merge al mismo tiempo.
-
-
 
 ERROR AL HACER Commit
 Hasta los mejores cometen errores, pero todo tiene solución.
@@ -739,12 +730,12 @@ Esto lo conocemos como conflicto y lo podemos resolver manualmente. Solo debemos
 
 Recuerda que siempre debemos crear un nuevo commit para aplicar los cambios del merge. Si Git puede resolver el conflicto, hará commit automáticamente. Pero, en caso de no pueda resolverlo, debemos solucionarlo y hacer el commit.
 
-Los archivos con conflictos por el comando `git merge` entran en un nuevo estado que conocemos como *Unmerged*. Funcionan muy parecido a los archivos en estado Unstaged, algo así como un estado intermedio entre Untracked y Unstaged. Solo debemos ejecutar `git add` para pasarlos al área de staging y `git commit` para aplicar los cambios en el repositorio.
+Los archivos con conflictos por el comando `git merge` entran en un nuevo estado que conocemos como *Unmerged*. Funcionan muy parecido a los archivos en estado *Unstaged*, algo así como un estado intermedio entre *Untracked* y *Unstaged*. Solo debemos ejecutar `git add` para pasarlos al área de staging y `git commit` para aplicar los cambios en el repositorio.
 
 **Cómo revertir un merge**  
 Si nos hemos equivocado y queremos cancelar el merge, debemos usar el siguiente comando:`git merge --abort`
 
-**Conflictos en repositorios remotos**
+**Conflictos en repositorios remotos**  
 Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 ­
 - Para copiar el repositorio remoto al directorio de trabajo local, se utiliza el comando `git clone <url>`, y para enviar cambios al repositorio remoto se utiliza `git push`.
@@ -762,4 +753,66 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 
 ---
 
-### Clase 18 - 
+### Clase 18 - Cambios en GitHub: de master a main
+El escritor Argentino Julio Cortázar afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
+
+Por lo anterior podemos afirmar que los sinónimos no expresan lo mismo, no tienen el mismo “color” ni el mismo “peso”.
+
+Sí, esta lectura es parte del curso profesional de Git & GitHub. Quédate conmigo.
+
+Desde el 1 de octubre de 2020 GitHub cambió el nombre de la rama principal: ya no es “master” -como aprenderás en el curso- sino main.
+
+Este derivado de una profunda reflexión ocasionada por el movimiento #BlackLivesMatter.
+
+La industria de la tecnología lleva muchos años usando términos como master, slave, blacklist o whitelist y esperamos pronto puedan ir desapareciendo.
+
+Y sí, las palabras importan.
+
+Por lo que de aquí en adelante cada vez que escuches a Freddy mencionar “master” debes saber que hace referencia a “main”
+
+Puedes leer un poco más aquí:[Cambios en GitHub: de master a main](https://platzi.com/blog/cambios-en-github-master-main/)
+
+Para que todos los nuevos repositorios sean por default llamadas "main" es con el siguiente comando: `git config --global init.defaultBranch main` y para cambiar el nombre de la rama en si: `git branch -M main`
+
+---
+
+### Clase 19 - Uso de GitHub
+GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
+
+Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas.
+
+El `README.md` es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.
+
+Para clonar un repositorio desde GitHub (o cualquier otro servidor remoto) debemos copiar la URL (por ahora, usando `HTTPS`) y ejecutar el comando `git clone` + la URL que acabamos de copiar. Esto descargará la versión de nuestro proyecto que se encuentra en GitHub.
+
+Sin embargo, esto solo funciona para las personas que quieren empezar a contribuir en el proyecto.
+
+**Cómo conectar un repositorio de Github a nuestro documento local**  
+Si queremos conectar el repositorio de GitHub con nuestro repositorio local, que creamos usando el comando `git init`, debemos ejecutar las siguientes instrucciones:
+
+- 1. PGuardar la URL del repositorio de GitHub con el nombre de origin:
+~~~
+git remote add origin URL
+~~~
+
+- 2. Verificar que la URL se haya guardado correctamente:
+~~~
+git remote
+git remote -v
+~~~
+
+- 3. Traer la versión del repositorio remoto y hacer merge para crear un *commit* con los archivos de ambas partes. Podemos usar `git fetch` y `git merge` o solo `git pull` con el *flag* `--allow-unrelated-histories`:
+~~~
+git pull origin master --allow-unrelated-histories
+~~~
+
+- 4. Por último, ahora sí podemos hacer `git push` para guardar los cambios de nuestro repositorio local en GitHub:
+~~~
+git push origin master
+~~~
+
+![19_Uso_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/19_Uso_de_GitHub_01.webp)
+
+---
+
+### Clase 20 - 

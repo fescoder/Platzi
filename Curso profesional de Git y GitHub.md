@@ -887,4 +887,39 @@ ssh-add -K ruta-donde-guardaste-tu-llave-privada
 
 ---
 
-### Clase 22
+### Clase 22 - Conexión a GitHub con SSH
+La creación de las SSH es necesario solo una vez por cada computadora. Aquí conocerás cómo conectar a GitHub usando SSH.
+
+Luego de crear nuestras llaves SSH podemos entregarle la llave pública a GitHub para comunicarnos de forma segura y sin necesidad de escribir nuestro usuario y contraseña todo el tiempo.
+
+Para esto debes entrar a la [Configuración de Llaves SSH en GitHub](https://github.com/settings/keys), crear una nueva llave con el nombre que le quieras dar y el contenido de la llave pública de tu computadora.
+
+Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
+~~~
+ssh
+git remote set-url origin url-ssh-del-repositorio-en-github
+~~~
+
+**Comandos para copiar la llave SSH:**  
+- Mac:
+~~~
+pbcopy < ~/.ssh/id_rsa.pub
+~~~
+
+- Windows (Git Bash):
+~~~
+clip < ~/.ssh/id_rsa.pub
+~~~
+
+- Linux (Ubuntu):
+~~~
+cat ~/.ssh/id_rsa.pub
+~~~
+
+![22_Conexion_a_GitHub_con_SSH_01](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_01.webp)
+
+![22_Conexion_a_GitHub_con_SSH_02](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_02.webp)
+
+---
+
+### Clase 23 - 

@@ -952,6 +952,12 @@ git arbolito
 
 ![23_Tags_y_versiones_en_Git_y_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/23_Tags_y_versiones_en_Git_y_GitHub_01.webp)
 
+**Guardar alias**
+Ejecutan este comando en la terminal y queda guardado en los alias pero de git. con esto se puede ejecutar cada que se escribe git superlog
+~~~
+git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+~~~
+
 ---
 
 ### Clase 24 - 

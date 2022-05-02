@@ -836,4 +836,56 @@ Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
 
 ---
 
-### Clase 21 - 
+### Clase 21 - Configura tus llaves SSH en local
+En este ejemplo, aprenderemos cómo configurar nuestras llaves SSH en local.
+
+**Cómo generar tus llaves SSH**  
+1. Generar tus llaves SSH**
+Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+~~~
+ssh-keygen -t rsa -b 4096 -C "tu@email.com"
+~~~
+
+2. Terminar de configurar nuestro sistema.
+**En Windows y Linux:**
+
+- Encender el “servidor” de llaves SSH de tu computadora:
+~~~
+eval $(ssh-agent -s)
+~~~
+
+- Añadir tu llave SSH a este “servidor”:
+~~~
+ssh-add ruta-donde-guardaste-tu-llave-privada
+~~~
+
+**En Mac:**
+- Encender el “servidor” de llaves SSH de tu computadora:
+~~~
+eval "$(ssh-agent -s)"
+~~~
+
+Si usas una versión de OSX superior a Mac Sierra (v10.12), debes crear o modificar un archivo “config” en la carpeta de tu usuario con el siguiente contenido (ten cuidado con las mayúsculas):
+Host *
+~~~
+AddKeysToAgent yes
+UseKeychain yes
+IdentityFile ruta-donde-guardaste-tu-llave-privada
+~~~
+
+- Añadir tu llave SSH al “servidor” de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
+~~~
+Añadir tu llave SSH al “servidor” de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
+~~~
+
+[PDF](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_01.pdf)
+
+![21_Configura_tus_llaves_SSH_en_local_02](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_02.webp)
+
+![21_Configura_tus_llaves_SSH_en_local_03](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_03.webp)
+
+![21_Configura_tus_llaves_SSH_en_local_04](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_04.webp)
+
+---
+
+### Clase 22

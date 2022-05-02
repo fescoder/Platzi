@@ -67,7 +67,7 @@ Así podemos aplicar las últimas actualizaciones a un nuevo commit.
 cambia de opinión se los puede incluir nuevamente con git add.
 
 **Ramas o Branches en git**
-Al crear una nueva rama se copia el último commit en esta nueva rama. Todos los cambios hechos en esta rama no se reflejarán en la rama master hasta que hagamos un merge.
+Al crear una nueva rama se copia el último commit en esta nueva rama. Todos los cambios hechos en esta rama no se reflejarán en la rama main hasta que hagamos un merge.
 - git branch <new branch>: crea una nueva rama.
 - git checkout <branch name>: se mueve a la rama especificada.
 - git merge <branch name>: fusiona la rama actual con la rama especificada y produce un nuevo commit de esta fusión.
@@ -186,7 +186,7 @@ cada versión con la anterior para que pueda hacerse el árbol de versiones con 
 - Fork: Si en algún momento queremos contribuir al proyecto de otra persona, o si queremos utilizar el proyecto de otro como el punto de partida del nuestro. Esto se conoce como “fork”.
 - Clone: Una vez se decide hacer un fork , hasta ese momento sólo existe en GitHub. Para poder trabajar en el proyecto, toca clonar el repositorio elegido al computador personal.
 - Branch: Es una bifurcación del proyecto que se está realizando para anexar una nueva funcionalidad o corregir un bug.
-- Master: Rama donde se almacena la última versión estable del proyecto que se está realizando. La rama master es la que está en producción en cada momento (o casi) y debería estar libre de
+- Main: Rama donde se almacena la última versión estable del proyecto que se está realizando. La rama main es la que está en producción en cada momento (o casi) y debería estar libre de
 bugs. Así, si esta rama está en producción, sirve como referente para hacer nuevas funcionalidades y/o arreglar bugs de última hora.
 - Commit: consiste en subir cosas a la versión local del repositorio. De esta manera se puede trabajar en la rama de forma local sin tener que modificar ninguna versión en remoto ni tener
 que tener la última versión remota, cosa muy útil en grandes desarrollos trabajados por varias personas.
@@ -672,9 +672,9 @@ El comando `git merge` nos permite crear un nuevo *commit* con la combinación d
 comando).
 
 **Cómo usar Git merge**  
-En este ejemplo, vamos a crear un nuevo *commit* en la rama *master* combinando los cambios de una rama llamada *cabecera*:
+En este ejemplo, vamos a crear un nuevo *commit* en la rama *main* combinando los cambios de una rama llamada *cabecera*:
 ~~~
-git checkout master
+git checkout main
 git merge cabecera
 ~~~
 
@@ -803,12 +803,12 @@ git remote -v
 
 - 3. Traer la versión del repositorio remoto y hacer merge para crear un *commit* con los archivos de ambas partes. Podemos usar `git fetch` y `git merge` o solo `git pull` con el *flag* `--allow-unrelated-histories`:
 ~~~
-git pull origin master --allow-unrelated-histories
+git pull origin main --allow-unrelated-histories
 ~~~
 
 - 4. Por último, ahora sí podemos hacer `git push` para guardar los cambios de nuestro repositorio local en GitHub:
 ~~~
-git push origin master
+git push origin main
 ~~~
 
 ![19_Uso_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/19_Uso_de_GitHub_01.webp)
@@ -896,7 +896,6 @@ Para esto debes entrar a la [Configuración de Llaves SSH en GitHub](https://git
 
 Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
 ~~~
-ssh
 git remote set-url origin url-ssh-del-repositorio-en-github
 ~~~
 
@@ -961,4 +960,4 @@ git config --global alias.superlog "log --graph --abbrev-commit --decorate --dat
 
 ---
 
-### Clase 24 - prueba
+### Clase 24 - 

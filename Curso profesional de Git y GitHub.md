@@ -922,4 +922,36 @@ cat ~/.ssh/id_rsa.pub
 
 ---
 
-### Clase 23 - 
+### Clase 23 - Tags y versiones en Git y GitHub
+Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos de nuestro proyecto.
+
+**Comandos para trabajar con etiquetas:**
+- Crear un nuevo tag y asignarlo a un commit: `git tag -a nombre-del-tag id-del-commit`.
+- Borrar un tag en el repositorio local: `git tag -d nombre-del-tag`.
+- Listar los tags de nuestro repositorio local: `git tag` o `git show-ref --tags`.
+- Publicar un tag en el repositorio remoto: `git push origin --tags`.
+- Borrar un tag del repositorio remoto: `git tag -d nombre-del-tag` y `git push origin :refs/tags/nombre-del-tag`.
+
+Para generar un comando complejo con varios comandos de una forma optimizada, utilizamos conjuntos de sentencias conocidas como alias.
+
+**Cómo aregar un alias solo para git**
+- Para un proyecto:
+~~~
+git config alias.arbolito "log --all --graph --decorate --oneline"
+~~~
+
+- Global:
+~~~
+git config --global alias.arbolito "log --all --graph --decorate --oneline"
+~~~
+
+- Para correrlo:
+~~~
+git arbolito
+~~~
+
+![23_Tags_y_versiones_en_Git_y_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/23_Tags_y_versiones_en_Git_y_GitHub_01.webp)
+
+---
+
+### Clase 24 - 

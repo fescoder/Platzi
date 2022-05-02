@@ -555,7 +555,7 @@ Donde el SHA-1 es el identificador del commit
 ### Clase 13 - Git reset vs. Git rm
 Git reset y git rm son comandos con utilidades muy diferentes, pero se pueden confundir muy fácilmente.
 
-**git rm**
+**git rm**  
 Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el
 tiempo” y recuperar el último commit antes de borrar el archivo en cuestión.
 
@@ -565,7 +565,7 @@ historial de cambios de estos archivos, por lo que pasaran a un estado untracked
 - `git rm --force`: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos
 recuperarlos si es necesario (pero debemos usar comandos más avanzados).
 
-**git reset**
+**git reset**  
 Este comando nos ayuda a volver en el tiempo. Pero no como git checkout que nos deja ir, mirar, pasear y volver. Con git reset volvemos al pasado sin la posibilidad de volver al futuro.
 Borramos la historia y la debemos sobreescribir. No hay vuelta atrás.
 
@@ -581,9 +581,9 @@ commit.
 **¡Pero todavía falta algo!**
 
 `git reset HEAD`: Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último
-commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con `git add`, por supuesto.
 
-**¿Por qué esto es importante?**
+**¿Por qué esto es importante?**  
 Imagina el siguiente caso:  
 Hacemos cambios en los archivos de un proyecto para una nueva actualización. Todos los archivos con cambios se mueven al área de staging con el comando `git add`. Pero te das cuenta de que
 uno de esos archivos no está listo todavía. Actualizaste el archivo, pero ese cambio no debe ir en el próximo commit por ahora.
@@ -608,4 +608,54 @@ Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendi
 
 ---
 
-### Clase 14 - 
+### Clase 14 - Flujo de trabajo básico con un repositorio remoto
+Cuando empiezas a trabajar en un entorno local, el proyecto vive únicamente en tu computadora. Esto significa que no hay forma de que otros miembros del equipo trabajen en él.
+
+Para solucionar esto, utilizamos los **servidores remotos**: un nuevo estado que deben seguir nuestros archivos para conectarse y trabajar con equipos de cualquier parte del mundo.
+
+Estos servidores remotos pueden estar alojados en GitHub, GitLab, BitBucket, entre otros. Lo que van a hacer es guardar el mismo repositorio que tienes en tu computadora y darnos una URL
+con la que todos podremos acceder a los archivos del proyecto. Así, el equipo podrá descargarlos, hacer cambios y volverlos a enviar al servidor remoto para que otras personas vean los
+cambios, comparen sus versiones y creen nuevas propuestas para el proyecto.
+
+Esto significa que debes aprender algunos nuevos comandos
+
+**Comandos para trabajo remoto con GIT**  
+- `git clone url_del_servidor_remoto`: Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta `.git`.
+- `git push`: Luego de hacer `git add` y `git commit` debemos ejecutar este comando para mandar los cambios al servidor remoto.
+- `git fetch`: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+- `git merge`: También usamos el comando `git merge` con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+- `git pull`: Básicamente, `git fetch` y `git merge` al mismo tiempo.
+
+Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:
+
+- `git log --oneline`:Te muestra el id commit y el título del commit.
+- `git log --decorate`: Te muestra donde se encuentra el head point en el log.
+- `git log --stat`: Explica el número de líneas que se cambiaron brevemente.
+- `git log -p`: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+- `git shortlog`: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
+- `git log --graph` `--oneline` `--decorate` y
+- `git log --pretty=format:"%cn hizo un commit %h el dia %cd"`: Muestra mensajes personalizados de los commits.
+- `git log -3`: Limitamos el número de commits.
+- `git log --after=“2018-1-2”`
+- `git log --after=“today”` y
+- `git log --after=“2018-1-2” --before“today”`: Commits para localizar por fechas.
+- `git log --author=“Name Author”`: Commits hechos por autor que cumplan exactamente con el nombre.
+- `git log --grep=“INVIE”`: Busca los commits que cumplan tal cual está escrito entre las comillas.
+- `git log --grep=“INVIE” –i`: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+- `git log – index.html`: Busca los commits en un archivo en específico.
+- `git log -S “Por contenido”`: Buscar los commits con el contenido dentro del archivo.
+- `git log > log.txt`: guardar los logs en un archivo txt
+
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01.webp)
+
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02.webp)
+
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03.webp)
+
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04.webp)
+
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05.pdf)
+
+---
+
+### Clase 15 - 

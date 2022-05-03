@@ -980,11 +980,12 @@ Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local 
 
 ![24_Manejo_de_ramas_en_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/24_Manejo_de_ramas_en_GitHub_01.webp)
 
-Enviar al repositorio varias ramas a la vez en el push `git push origin header footer`
+Enviar al repositorio varias ramas a la vez en el push `git push origin header footer`  
 Comando para crear una rama y moverse a la vez `git checkout-b <nombre de la rama>`
-Grafico de la historia de los branches
-instalar gitk en ubuntu `sudo apt-get install gitk`
-y si te sale error `sudo dpkg --configure -a`
+
+Grafico de la historia de los branches  
+instalar gitk en ubuntu `sudo apt-get install gitk`  
+y si te sale error `sudo dpkg --configure -a`  
 y luego `sudo apt-get install gitk`
 
 ---

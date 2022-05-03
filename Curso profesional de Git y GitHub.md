@@ -1088,7 +1088,7 @@ Al hacer un fork de un poryecto en GitHub, te conviertes en dueñ@ del repositor
 
 Los forks son importantes porque es la manera en la que funciona el open source, ya que, una persona puede no ser colaborador de un proyecto, pero puede contribuír al mismo, haciendo mejor software que pueda ser utilizado por cualquiera.
 
-**Cómo se hace un fork remoto desde consola en GitHub**
+**Cómo se hace un fork remoto desde consola en GitHub**  
 Al hacer un fork, GitHub sabe que se hizo el fork del proyecto, por lo que se le permite al colaborador hacer pull request desde su repositorio propio.
 
 Cuando trabajas en un proyecto que existe en diferentes repositorios remotos (normalmente a causa de un fork), es muy probable que desees poder trabajar con ambos repositorios. Para esto, puedes generar un remoto adicional desde consola.
@@ -1115,4 +1115,30 @@ git push origin master
 
 ---
 
-### Clase 30 - 
+### Clase 30 - Haciendo deployment a un servidor
+Deploy es el proceso que permite enviar al servidor uno o varios archivos. Este servidor puede ser de prueba, desarrollo o producción.
+
+En el siguiente ejemplo veremos cómo se realiza el deployment de un documento en un servidor web básico.
+
+**Pasos para hacer deployment en un servidor web:**
+- Entrar a la capeta de los archivos del servidor.
+- Copiar link en clone, elegir entre HTTPS o SSH del repositorio a contribuir.
+    - En la carpeta deseada se clona el repositorio:
+~~~
+git clone url
+Deploy:
+~~~
+
+- Realizar cambios y *commit* en GitHub.
+- Traer al Repositorio local las actualizacion para el servidor en la capeta de los archivos del servidor.
+~~~
+git pull ramaRemota main
+~~~
+
+Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el servidor web, existen diferentes maneras. La conexión entre GitHub y el servidor se puede realizar mediante: Travis (pago) o Jenkis (Open source).
+
+![30_Haciendo_deployment_a_un_servidor_01](src/Curso_Programacion_Funcional_Java_SE/30_Haciendo_deployment_a_un_servidor_01.webp)
+
+---
+
+### Clase 31 - 

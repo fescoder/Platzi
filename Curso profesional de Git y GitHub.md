@@ -1191,6 +1191,10 @@ Los [README.md](http://readme.md/) pueden estar en todas las carpetas, pero el m
 
 ![33_Readme.md_es_una_excelente_practica_01](src/Curso_profesional_de_Git_y_GitHub/33_Readme.md_es_una_excelente_practica_01.webp)
 
+Emojis para los Readme.md, admite HTML el Readme 🤓
+- [https://getemoji.com/](https://getemoji.com/)
+- [https://emojipedia.org/](https://emojipedia.org/)
+
 ---
 
 ### Clase 34 - 

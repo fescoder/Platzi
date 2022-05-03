@@ -1141,4 +1141,36 @@ Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el
 
 ---
 
-### Clase 31 - 
+### Clase 31 - Hazme un pull request
+Aviso importante del Team Platzi
+
+¡Muchas gracias por tu participación en este reto! Hasta agosto de 2020 hemos procesado 1.269 pull requests en el repositorio del curso. Ahora hemos decidido cerrar este experimento, por lo que no seguiremos aprobando nuevos PRs. ¡Pero no te desanimes! Aún así te animamos a completar y enviar tu solución a este desafío para poner en práctica todo lo que has aprendido.
+
+Queremos que uses las habilidades ya aprendidas para aplicarlas en esta clase. Haz un fork de el repositorio de GitHub y realiza las tareas que te indicaremos en esta clase. Ojo, debes seguir las reglas e instrucciones que se dieron en el video.
+
+Regla a seguir:
+
+Dentro del ID “post” luego de “suscribete y dale like” agrega otra línea o párrafo con tu nombre o tu nombre de usuario en Platzi.
+¡Suerte! Y #NuncaParesDeAprender
+
+---
+
+### Clase 32 - Ignorar archivos en el repositorio con .gitignore
+No todos los archivos que agregas a un proyecto deberían ir a un repositorio. Por ejemplo, cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión `.env` o cuando te estás conectando a una base de datos; son archivos que nadie debe ver.
+
+Por diversas razones, no todos los archivos que agregas a un proyecto deberían guardarse en un repositorio. Esto es porque hay archivos que no todo el mundo debería de ver, y hay archivos que al estar en el repositorio ralentizan el proceso de desarrollo (por ejemplo: los binary large objects, blob, que tardan en descargarse).
+
+Para que no se suban estos archivos no deseados se puede crear un archivo con el nombre .gitignore en la raíz del repositorio con las reglas para los archivos que no se deberían subir: Aquí puedes ver la [sintaxis de los .gitignore.](https://git-scm.com/docs/gitignore)
+
+Las razones principales para tomar la decisión de no agregar un archivo a un repositorio son:
+- Es un archivo con contraseñas (normalmente con la extensión .env)
+- Es un blob (binary large object, objeto binario grande), mismos que son difíciles de gestionar en git.
+- Son archivos que se generan corriendo comandos, por ejemplo la carpeta node_modules, que genera npm al correr el comando npm install
+
+![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01](src/Curso_profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01.webp)
+
+![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02](src/Curso_profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02.webp)
+
+---
+
+### Clase 33 - 

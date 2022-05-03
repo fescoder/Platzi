@@ -1011,6 +1011,23 @@ Si, como colaborador, agregaste erróneamente el mensaje del *commit*, lo puedes
 
 ![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01.webp)
 
+Ahora en GitHub no se muestra Collaborators, se cambio a `Manage acces`
+
 ---
 
-### Clase 26 - 
+### Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores. Una buena práctica de flujo de trabajo sería la siguiente:
+
+1. Crear ramas
+2. Asignar una rama a cada programador
+3. El programador baja el repositorio con `git pull origin master`
+4. El programador cambia de rama
+5. El programador trabaja en esa rama y hace *commits*
+6. El programador sube su trabajo con `git push origin #nombre_rama`
+7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
+
+![26_Flujo_de_trabajo_profesional - _merge _ramas _desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional - _merge _ramas _desarrollo_a_master_01.webp)
+
+---
+
+### Clase 27 - 

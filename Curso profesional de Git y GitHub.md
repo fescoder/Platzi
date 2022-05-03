@@ -1137,7 +1137,7 @@ git pull ramaRemota main
 
 Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el servidor web, existen diferentes maneras. La conexión entre GitHub y el servidor se puede realizar mediante: Travis (pago) o Jenkis (Open source).
 
-![30_Haciendo_deployment_a_un_servidor_01](src/Curso_Programacion_Funcional_Java_SE/30_Haciendo_deployment_a_un_servidor_01.webp)
+![30_Haciendo_deployment_a_un_servidor_01](src/Curso_profesional_de_Git_y_GitHub/30_Haciendo_deployment_a_un_servidor_01.webp)
 
 ---
 

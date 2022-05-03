@@ -1126,9 +1126,9 @@ En el siguiente ejemplo veremos cómo se realiza el deployment de un documento e
     - En la carpeta deseada se clona el repositorio:
 ~~~
 git clone url
-Deploy:
 ~~~
 
+**Deploy:**
 - Realizar cambios y *commit* en GitHub.
 - Traer al Repositorio local las actualizacion para el servidor en la capeta de los archivos del servidor.
 ~~~

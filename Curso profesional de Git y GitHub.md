@@ -1171,6 +1171,13 @@ Las razones principales para tomar la decisión de no agregar un archivo a un re
 
 ![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02](src/Curso_profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02.webp)
 
+Utilice google Drive como repositorio de imagen de esta manera , cuando de di para compartir me dejo un link como este:
+`https://drive.google.com/file/d/1TzRsYiyHNo-bSxrzf2ZCLJC1jaK1Qe05/view?usp=sharing`
+
+Bien investigue y llegue a que esta parte del link es un id `1TzRsYiyHNo-bSxrzf2ZCLJC1jaK1Qe05` y que si esta compartido en publico le puedes pedir de otra manera al drive la imagen agregándole el prefijo `https://drive.google.com/uc?id=AQUI_VA_TU_ID` quedaría así
+`https://drive.google.com/uc?id=1TzRsYiyHNo-bSxrzf2ZCLJC1jaK1Qe05`
+y de esta forma si pues utilizarlo en el scr de tu pagina web
+
 ---
 
 ### Clase 33 - 

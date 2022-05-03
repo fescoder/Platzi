@@ -1026,7 +1026,7 @@ Para poder desarrollar software de manera óptima y ordenada, necesitamos tener 
 6. El programador sube su trabajo con `git push origin #nombre_rama`
 7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
 
-![26_Flujo_de_trabajo_profesional - _merge _ramas _desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional - _merge _ramas _desarrollo_a_master_01.webp)
+![26_Flujo_de_trabajo_profesional_merge _ramas _desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge _ramas _desarrollo_a_master_01.webp)
 
 ---
 

@@ -1026,8 +1026,29 @@ Para poder desarrollar software de manera óptima y ordenada, necesitamos tener 
 6. El programador sube su trabajo con `git push origin #nombre_rama`
 7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
 
-![26_Flujo_de_trabajo_profesional_merge _ramas _desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge _ramas _desarrollo_a_master_01.webp)
+![26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_master_01.webp)
 
 ---
 
-### Clase 27 - 
+### Clase 27 - Flujo de trabajo profesional con Pull requests
+En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados *merge request*.
+
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos *staging develop* (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan al servidor de producción con el ya antes mencionado *merge request*.
+
+Los PR (pull requests) son la base de la colaboración a proyectos Open Source, si tienen pensando colaborar en alguno es muy importante entender esto y ver cómo se hace en las próximas clases. Por lo general es forkear el proyecto, implementar el cambio en una nueva rama, hacer el PR y esperar que los administradores del proyecto hagan el merge o pidan algún cambio en el código o commits que hiciste.
+
+**Proceso de un pull request para trabajo en producción:**
+- Un pull request es un estado intermedio antes de enviar el merge.
+- El pull request permite que otros miembros del equipo revisen el código y así aprobar el merge a la rama.
+- Permite a las personas que no forman el equipo, trabajar y colaborar con una rama.
+- La persona que tiene la responsabilidad de aceptar los pull request y hacer los merge tienen un perfil especial y son llamados DevOps
+
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_01](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_01.png)
+
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_02](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_02.png)
+
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_03](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_03.png)
+
+---
+
+### Clase 28 - 

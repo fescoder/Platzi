@@ -1178,6 +1178,8 @@ Bien investigue y llegue a que esta parte del link es un id `1TzRsYiyHNo-bSxrzf2
 `https://drive.google.com/uc?id=1TzRsYiyHNo-bSxrzf2ZCLJC1jaK1Qe05`
 y de esta forma si pues utilizarlo en el scr de tu pagina web
 
+[Imgur.com](https://imgur.com/) Se pueden subir imgs para referenciarlos
+
 ---
 
 ### Clase 33 - 

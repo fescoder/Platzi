@@ -980,6 +980,36 @@ Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local 
 
 ![24_Manejo_de_ramas_en_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/24_Manejo_de_ramas_en_GitHub_01.webp)
 
+Enviar al repositorio varias ramas a la vez en el push `git push origin header footer`
+Comando para crear una rama y moverse a la vez `git checkout-b <nombre de la rama>`
+Grafico de la historia de los branches
+instalar gitk en ubuntu `sudo apt-get install gitk`
+y si te sale error `sudo dpkg --configure -a`
+y luego `sudo apt-get install gitk`
+
 ---
 
-### Clase 25 - 
+### Clase 25 - Configurar múltiples colaboradores en un repositorio de GitHub
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas. Esto quiere decir que pueden copiar tu proyecto pero no colaborar con él. Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+
+**Cómo agregar colaboradores en Github**
+- Solo debemos entrar a la configuración de colaboradores de nuestro proyecto. Se encuentra en:  
+`Repositorio > Settings > Collaborators`  
+Ahí, debemos añadir el email o username de los nuevos colaboradores.
+
+![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02.webp)
+
+Si, como colaborador, agregaste erróneamente el mensaje del *commit*, lo puedes cambiar de la siguiente manera:
+- Hacer un commit con el nuevo mensaje que queremos, esto nos abre el editor de texto de la terminal:
+`git commit —amend`
+- Corregimos el mensaje
+- Traer el repositorio remoto
+`git pull origin master`
+- Ejecutar el cambio
+`git push --set-upstream origin master`
+
+![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01.webp)
+
+---
+
+### Clase 26 - 

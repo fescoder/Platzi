@@ -123,25 +123,25 @@ factorial(x-1)
 ---
 
 ### Clase 3 - Funciones como ciudadanos de primera clase
-Una vez que definimos que es una función, tenemos que entender que ahora se vuelve en ciudadanos de
+Una vez que definimos que es una función, tenemos que entender que ahora se vuelven ciudadanos de
 primera clase y ¿que representa que sean ciudadanos de primera clase? Esto representa que ahora las
 funciones son algo reconocido por el lenguaje como algo que podemos definir y utilizar.
 
-Veamos algunos ejemplos, generalmente de que a las variables de tipo String o de tipo
+Generalmente declaras variables de tipo String o de tipo
 entero. Ahora puedes declarar variables de tipo función e incluso puedes asignarles un valor.
 Y también es importante declarar que ahora puedes tomar las como parámetros de otras funciones o
-retornar las como resultado de una ejecución.
+retornarlas como resultado de una ejecución.
 
 Entonces, el tenerlas como ciudadanos de primera clase
 implica que ya son tipos reconocidos por el lenguaje que podemos almacenar en alguna parte.
-Podemos tenerlos en variables podemos tenemos en parámetros o podemos tenerlos en retornos.
+Podemos tenerlos en variables, en parámetros o en retornos.
 
 ![03_Funciones_como_ciudadanos_de_primera_clase_01](src/Curso_Programacion_Funcional_Java_SE/03_Funciones_como_ciudadanos_de_primera_clase_01.png)
 
 Incluso podemos empezar a definir los bajo demanda.
-Así como tú definirías un string que *hi*, hay también podrías definir una función.
+Así como tú definirías un string *hi*, hay también podrías definir una función.
 Por ahora quedémonos con esta sintaxis. Esta sintaxis nos dice que es una función definida al
-aire. Es una función que no está asignada, una variable y que simplemente estamos pasando la como
+aire. Es una función que no está asignada, una variable y que simplemente estamos pasandola como
 parámetro hacia otra función no se obtienen de ningún otro lado.
 Son valores constantes, por así decirlo.
 
@@ -150,7 +150,7 @@ Son valores constantes, por así decirlo.
 Algunos usos que puede llegar a tener el pasar este tipo
 de funciones declaradas en el aire puede ser, por ejemplo, obtener una configuración de conexión o
 simplemente hacer un procesamiento de un dato específico para un caso muy específico, como una petición
-web o recibir un dato y manipularlo de una base de datos.
+web o recibir un dato y manipularlo de una base de datos.  
 Declarar este tipo de lógica en el aire es porque probablemente en otros lugares no se necesita, así
 como el String se necesita exclusivamente en esta parte de nuestro código, tal vez este tipo de lógica
 se necesita exclusivamente en esta parte del programa, y nos da el beneficio de poder tener aisladas las las partes de nuestro código, donde
@@ -160,9 +160,25 @@ de un dato.
 En otra parte del curso explicaremos qué tipos de funciones pueden generar datos que se pueden
 utilizar, consumir posteriormente.
 
+Cuando decimos que algo es ciudadano de primera clase en un lenguaje, quiere decir que el lenguaje reconoce que se pueden usar estos elementos como un componente mas del lenguaje. Sabe que tienen su propia sintaxis o que cumple al menos con estas caracteristicas:
+
+Un ciudadano de primera clase puede:
+- Ser pasado como argumento
+- Ser el retorno de una funcion
+- Ser definido y modificado
+- Ser asignado a variables
+
+Por ejemplo, otros ciudadanos de primera clase en java son:
+- Clases
+- Interfaces
+- Datos primitivos
+- Anotaciones
+- Generics
+
 ---
 
 ### Clase 4 - Funciones puras
+
 
 ---
 

@@ -1486,4 +1486,23 @@ Para buscar, empleamos el comando `git grep color` y nos buscará en todo el pro
 
 ---
 
-### Clase 42 - 
+### Clase 42 - Comandos y recursos colaborativos en Git y GitHub
+A continuación veremos una lista de comandos colaborativos para facilitar el trabajo remoto en GitHub:
+- `git shortlog -sn`: muestra cuantos commit han hecho cada miembro del equipo.
+- `git shortlog -sn --all`: muestra cuantos commit han hecho cada miembro del equipo, hasta los que han sido eliminados.
+- `git shortlog -sn --all --no-merge`: muestra cuantos commit ha hecho cada miembro, quitando los eliminados sin los merges.
+- `git blame ARCHIVO`: muestra quien hizo cada cosa línea por línea.
+- `git COMANDO --help`:muestra como funciona el comando.
+- `git blame ARCHIVO -Llinea_inicial,linea_final`: muestra quien hizo cada cosa línea por línea, indicándole desde qué línea ver. Ejemplo -L35,50.
+- `git branch -r`: se muestran todas las ramas remotas.
+- `git branch -a`: se muestran todas las ramas, tanto locales como remotas.
+
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01.webp)
+
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02.jpg)
+
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03.jpg)
+
+---
+
+### Clase 43 - 

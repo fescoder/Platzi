@@ -1504,5 +1504,3 @@ A continuación veremos una lista de comandos colaborativos para facilitar el tr
 ![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03.jpg)
 
 ---
-
-### Clase 43 - 

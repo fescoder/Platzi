@@ -24,7 +24,7 @@
     - [Clase 11 Jerarquia de Bases de Datos](#clase-11-jerarquia-de-bases-de-datos)
   - [Modulo 2 Gestión de la información en bases de datos](#modulo-2-gestión-de-la-información-en-bases-de-datos)
     - [Clase 12 Creación de Tablas](#clase-12-creación-de-tablas)
-    - [clase 13 Particiones](#clase-13-particiones)
+    - [Clase 13 Particiones](#clase-13-particiones)
     - [Clase 14 Creacion de Roles](#clase-14-creacion-de-roles)
       - [Creando roles desde SQL Shell](#creando-roles-desde-sql-shell)
       - [Creando roles desde PGAdmin](#creando-roles-desde-pgadmin)

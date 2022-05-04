@@ -793,6 +793,8 @@ Creamos el schema `platziblog` y seleccionamos como default y creamos las siguie
 
 ![platziblog_tabla_etiquetas_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_caracteristicas_1.png)
 
+![platziblog_tabla_caracteristicas_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_caracteristicas_1.png)
+
 ![platziblog_tabla_caracteristicas_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_caracteristicas_2.png)
 
 Creamos de igual forma la tabla Etiquetas

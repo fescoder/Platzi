@@ -329,7 +329,7 @@ El usuario hace una petición al servidor para pedir recursos de la API.
 El servidor con los recursos hace una petición al servidor de autenticación para verificar que el token sea válido.
 Una vez verificado el token, el servidor le devuelve los recursos al cliente.
 
-![13_Autenticación_vía_Access_Tokens_01](src/13_Autenticaci%C3%B3n_v%C3%ADa_Access_Tokens_01.png)
+![13_Autenticación_vía_Access_Tokens_01](src/Curso_Java_Persistencia_Datos/13_Autenticaci%C3%B3n_v%C3%ADa_Access_Tokens_01.png)
 
 **Manejo de errores de un servicio REST**
 De momento nuestra API no nos indica que haya ocurrido un error, solamente nos regresa un código 200 de HTTP que significa que la petición se realizó sin problemas.

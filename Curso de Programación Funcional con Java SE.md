@@ -233,48 +233,49 @@ qué categorías tenemos para ellas.
 ---
 
 ### Clase 5 - Entendiendo los efectos secundarios
-Ya definimos que es una función pura y definimos que existen las funciones impuras y
+Ya definimos que es una función pura y definimos que existen las funciones impuras, y
 las funciones impuras generan efectos secundarios.  
-¿Pero Que tiene esto de malo que tiene esto de bueno, que es un efecto secundario?  
+¿Pero Que tiene esto de malo, que tiene esto de bueno, que es un efecto secundario?  
 Vamos a hablar un poco más de ello y entender que son para poder identificar dentro
 de nuestro código, que es un efecto secundario que no es un efecto secundario, y entonces poder separar las funciones que los generan de las que no, para poder entender nuestro proyecto
 mejor.
 
-Un efecto secundario es *todo cambio observable desde fuera del sistema es un efecto secundario*.  
+Un efecto secundario es ***todo cambio observable desde fuera del sistema es un efecto secundario***.  
 Es decir, si nosotros hacemos una operación y el resultado de esa operación es
-observable desde fuera del sistema. Es un efecto secundario.  
+observable desde fuera del sistema, es un efecto secundario.  
 Por ejemplo, tenemos una función que, una vez invocada, cambia el color de algo.
-A esto se le considera un efecto secundario y es observable desde fuera del sistema tal
+A esto se le considera un efecto secundario y es observable desde fuera del sistema, tal
 cual alguien que vaya y vea cómo va la ejecución del sistema podrá observar este cambio.
-Es por ello que se le considera un efecto secundario.  
+Es por ello que se le considera un efecto secundario.
+
 Todos estos efectos secundarios no son evitables y los hemos tenido en nuestro código
 toda la vida. Al final de cuentas son parte de poder interactuar en el sistema como por ejemplo:
 
 ![05_Entendiendo_los_efectos_secundarios_01](src/Curso_Programacion_Funcional_Java_SE/05_Entendiendo_los_efectos_secundarios_01.png)
 
 Son necesarios, no podemos evitarlos.
-Sin embargo, podemos reducir las ocurrencias de los efectos secundarios.  
+Sin embargo, podemos reducir las ocurrencias de los efectos secundarios.
+
 **¿Por qué querríamos reducir o evitar los efectos secundarios?**  
-Porque esto nos ayuda a tener una mejor estructura de nuestro código
-Nos ayuda a generar más funciones puras y nos ayuda también a tener mejor separadas las
-definiciones y responsabilidades de nuestro código.  
-**Hay que entender esto los efectos secundarios son inevitables.**
-No podemos tener código sin efectos secundarios, pero podemos reducirlos.  
+Porque esto nos ayuda a tener una mejor estructura de nuestro código, nos ayuda a generar más funciones puras y nos ayuda también a tener mejor separadas las
+definiciones y responsabilidades de nuestro código.
+
+Hay que entender esto, **los efectos secundarios son inevitables**, no podemos tener código sin efectos secundarios, pero podemos reducirlos.  
 La principal idea es tener código bien estructurado, código bien separado donde las responsabilidades están
 aisladas, es decir, tener una arquitectura o tener un sistema en el cual todas
 nuestras funciones impuras sean solamente puntos de entrada para información.
 Pero una vez que la información está dentro del sistema, mantener toda esa información entre
 funciones puras.
 
-Por ejemplo, una conexión de red recibió una petición va genera un efecto secundario
-Pero una vez el dato este dentro del sistema, podemos transformarlo, manipularlo o hacer operaciones
-con él sin necesidad de generar un nuevo efecto secundario.  
+Por ejemplo, una conexión de red recibió una petición va genera un efecto secundario, pero una vez el dato este dentro del sistema, podemos transformarlo, manipularlo o hacer operaciones
+con él sin necesidad de generar un nuevo efecto secundario.
+
 La intención es tener la mayor cantidad de funciones puras dentro de nuestro sistema,
-con esto vamos a reducir la cantidad de errores y vamos a mejorar el la estructura de nuestro sistema
+con esto vamos a reducir la cantidad de errores y vamos a mejorar la estructura de nuestro sistema
 y aumentar la **testeabilidad** de nuestro sistema.
 
 Recuerda que la **testeabilidad** de nuestro sistema
-es que tantas pruebas podemos escribir sobre nuestro propio código.
+es que tantas pruebas podemos escribir sobre nuestro propio código.  
 Escribir pruebas nos da como beneficio evitar errores posibles o errores conocidos dentro de nuestro código nos va a permitir tener un código más
 robusto y que sea más fácil de escalar a largo plazo.
 Teniendo muchas pruebas de nuestro código, podemos reducir casos inesperados que puedan llegar a pasar

@@ -1,5 +1,5 @@
 
-![badge](src/badge.webp)
+![badge](src/Curso_de_Fundamentos_de_Bases_de_Datos/badge.webp)
 
 # Fundamentos de Bases de Datos
 
@@ -102,9 +102,9 @@
     - [Clase 56 Por que aprender bases de datos hoy](#clase-56-por-que-aprender-bases-de-datos-hoy)
   - [Bonus](#bonus)
     - [Clase 57 Bases de datos relacionales vs no relacionales](#clase-57-bases-de-datos-relacionales-vs-no-relacionales)
+---
 
 ## Modulo 1. Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
-
 ### Clase 1 Bienvenida conceptos básicos y contexto histórico de las Bases de Datos
 
 Tu profesor será Israel Vázquez, senior web developer en San Francisco, seminarista de bases de datos y entusiasta data engineering.
@@ -112,7 +112,7 @@ El almacenamiento en la nube tiene un gran pro comparada con los otros métodos 
 
 Las bases de datos entran cuando hacemos la transición a medios digitales.
 
-![1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg](src/1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg)
+![1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/1_Bienvenida_conceptos_basicos_y_contexto_historico_de_las_Bases_de_Datos_01.jpg)
 
 #### Tipos de bases de datos
 
@@ -213,7 +213,7 @@ Los **atributos llave** son aquellos que identifican a la entidad y no pueden se
 - Naturales: Son inherentes al objeto como el número de serie
 - Clave artificial: No es inherente al objeto y se asigna de manera arbitraria
 
-![src/Atributos-rdb.png](src/Atributos-rdb.png)
+![src/Atributos-rdb.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/Atributos-rdb.png)
 
 #### Entidades
 
@@ -224,9 +224,9 @@ Los **atributos llave** son aquellos que identifican a la entidad y no pueden se
 - Identidades débiles por identidad: No se diferencian entre sí más que por la clave de su identidad fuerte.
 - Identidades débiles por existencia: Se les asigna una clave propia.
 
-![src/entidades_debiles.png](src/entidades_debiles.png)
+![src/entidades_debiles.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/entidades_debiles.png)
 
-![src/entidades_debiles_2.png](src/entidades_debiles_2.png)
+![src/entidades_debiles_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/entidades_debiles_2.png)
 
 Las entidades debiles pueden serlo por dos motivos:
 
@@ -234,11 +234,11 @@ Las entidades debiles pueden serlo por dos motivos:
 
 **Por existencia:** Usando llave asignada por nosotros (un id).
 
-![3_Entidades_y_atributos_01.jpg](src/3_Entidades_y_atributos_01.jpg)
-![3_Entidades_y_atributos_02.jpg](src/3_Entidades_y_atributos_02.jpg)
-![3_Entidades_y_atributos_03.jpg](src/3_Entidades_y_atributos_03.jpg)
-![3_Entidades_y_atributos_04.png](src/3_Entidades_y_atributos_04.png)
-![3_Entidades_y_atributos_05.jpg](src/3_Entidades_y_atributos_05.jpg)
+![3_Entidades_y_atributos_01.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/3_Entidades_y_atributos_01.jpg)
+![3_Entidades_y_atributos_02.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/3_Entidades_y_atributos_02.jpg)
+![3_Entidades_y_atributos_03.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/3_Entidades_y_atributos_03.jpg)
+![3_Entidades_y_atributos_04.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/3_Entidades_y_atributos_04.png)
+![3_Entidades_y_atributos_05.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/3_Entidades_y_atributos_05.jpg)
 
 #### Clase 4 Entidades de Platzi Blog
 
@@ -246,19 +246,19 @@ Nuestro proyecto será un manejador de Blogpost. Es un contexto familiar y nos r
 
 - Primer paso: Identificar las entidades (abstracciones del mundo real).
 
-![src/entidades_platziblog.png](src/entidades_platziblog.png)
+![src/entidades_platziblog.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/entidades_platziblog.png)
 
 - Segundo paso: Pensar en los atributos.
 
-![src/entidades_platziblog_2.png](src/entidades_platziblog_2.png)
+![src/entidades_platziblog_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/entidades_platziblog_2.png)
 
-![src/entidades_platziblog_3.png](src/entidades_platziblog_3.png)
+![src/entidades_platziblog_3.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/entidades_platziblog_3.png)
 
 ### Clase 5 Relaciones
 
 Las **relaciones** nos permiten ligar o unir nuestras diferentes entidades y se representan con rombos. Por convención se definen a través de verbos.
 
-![src/relaciones.png](src/relaciones.png)
+![src/relaciones.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/relaciones.png)
 
 Las relaciones tienen una propiedad llamada **cardinalidad** y tiene que ver con números. Cuántos de un lado pertenecen a cuántos del otro lado:
 
@@ -269,7 +269,7 @@ Cardinalidad: 0 a N
 
 #### Cardinalidad: 1 a 1
 
-![src/cardinalidad_1_1.png](src/cardinalidad_1_1.png)
+![src/cardinalidad_1_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/cardinalidad_1_1.png)
 
 1 persona - tiene - 1 dato_contacto
 1 dato_contacto - tiene - 1 persona.
@@ -279,17 +279,17 @@ Cardinalidad: 0 a N
 Algunos autores la denominan 1 a 1 opcional.
 En el ejemplo una sesión tiene un usuario, pero no necesariamente esta loggeado todo  el tiempo
 
-![src/cardinalidad_0_1.png](src/cardinalidad_0_1.png)
+![src/cardinalidad_0_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/cardinalidad_0_1.png)
 
 #### Cardinalidad: 1 a N (1 a muchos)
 
 Un automóvil tiene N automóviles, pero 1 automóvil solo tiene 1 dueño.
 
-![src/cardinalidad_1_N.png](src/cardinalidad_1_N.png)
+![src/cardinalidad_1_N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/cardinalidad_1_N.png)
 
 #### Cardinalidad: 0 a N
 
-![src/33333333333333333333333333333333333333333333333333333333333333333333.png](src/cardinalidad_0_N.png)
+![src/33333333333333333333333333333333333333333333333333333333333333333333.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/cardinalidad_0_N.png)
 
 ### Clase 6 Multiples muchos
 
@@ -297,11 +297,13 @@ Este tipo de cardinalidad es muy interesante por ello su clase aparte,se vera cu
 
 Cardinalidad: N a N
 
+![src/cardinalidad_N_N](src/Curso_de_Fundamentos_de_Bases_de_Datos/cardinalidad_N_N.png)
+
 ### Clase 7 Diagrama ER
 
 Un diagrama es como un mapa y nos ayuda a entender cuáles son las entidades con las que vamos a trabajar, cuáles son sus relaciones y qué papel van a jugar en las aplicaciones de la base de datos.
 
-![src/diagrama_ER.png](src/diagrama_ER.png)
+![src/diagrama_ER.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_ER.png)
 
 ### Clase 8 Diagrama Físico: tipos de datos y constraints
 
@@ -341,45 +343,45 @@ La normalización como su nombre lo indica nos ayuda a dejar todo de una forma n
 
 **Primera forma normal (1FN):** Atributos atómicos (Sin campos repetidos)
 
-![src/diagrama_fisico_1N.png](src/diagrama_fisico_1N.png)
+![src/diagrama_fisico_1N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_1N.png)
 
 **Segunda forma normal (2FN):** Cumple 1FN y cada campo de la tabla debe depender de una clave única.
 
-![src/diagrama_fisico_2N.png](src/diagrama_fisico_2N.png)
+![src/diagrama_fisico_2N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_2N.png)
 
 **Tercera forma normal (3FN):** Cumple 1FN y 2FN y los campos que NO son clave, NO deben tener dependencias.
 
-![src/diagrama_fisico_3N.png](src/diagrama_fisico_3N.png)
+![src/diagrama_fisico_3N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_3N.png)
 
 **Cuarta forma normal (4FN):** Cumple 1FN, 2FN, 3FN y los campos multivaluados se identifican por una clave única.
 
-![src/diagrama_fisico_4N.png](src/diagrama_fisico_4N.png)
+![src/diagrama_fisico_4N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_4N.png)
 
 ### Clase 10 Diagrama Físico: normalizando Platziblog
 
 #### Diagram Entidad Relacion
 
-![src/diagrama_ER.png](src/diagrama_ER.png)
+![src/diagrama_ER.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_ER.png)
 
 #### Diagrama fisico Paso 1
 
 Generar los campos básicos de cada entidad
 
-![src/diagrama_fisico_paso_1.png](src/diagrama_fisico_paso_1.png)
+![src/diagrama_fisico_paso_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_1.png)
 
 #### Diagrama fisico Paso 2
 
 Genera las relaciones entre cada entidad y asigna PK y FK.
 
-![src/diagrama_fisico_paso_2.png](src/diagrama_fisico_paso_2.png)
+![src/diagrama_fisico_paso_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_2.png)
 
 #### Diagrama fisico Paso 3
 
-![src/diagrama_fisico_paso_2_N_N.png](src/diagrama_fisico_paso_2_N_N.png)
+![src/diagrama_fisico_paso_2_N_N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_2_N_N.png)
 
 Para manejar las relaciones muchos a muchos, es necesario generar una tabla intermedia de esta manera.
 
-![src/diagrama_fisico_paso_3_N_N.png](src/diagrama_fisico_paso_3_N_N.png)
+![src/diagrama_fisico_paso_3_N_N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_3_N_N.png)
 
 Observa que post_id y etiqueta_id usan llaves compuestas para hacer combinaciones únicas, o podemos generar también la forma anterior con un id
 
@@ -416,11 +418,11 @@ Formalmente, una tabla está en segunda forma normal si:
 
 Lo anterior quiere decir que sí tenemos datos que pertenecen a diversas entidades, cada entidad debe tener un campo clave separado. Por ejemplo:
 
-![diagrama_fisico_1N.png](src/diagrama_fisico_1N.png)
+![diagrama_fisico_1N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_1N.png)
 
 En la tabla anterior tenemos por lo menos dos entidades que debemos separar para que cada uno dependa de manera única de su campo llave o ID. En este caso las entidades son alumnos por un lado y materias por el otro, ya que una materia. En el ejemplo anterior, quedaría de la siguiente manera:
 
-![diagrama_fisico_2N.png](src/diagrama_fisico_2N.png)
+![diagrama_fisico_2N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_2N.png)
 
 #### Tercera Forma Normal (3FN)
 
@@ -433,7 +435,7 @@ No existe ninguna dependencia funcional transitiva en los atributos que no son c
 
 Esta FN se traduce en que aquellos datos que no pertenecen a la entidad deben tener una independencia de las demás y debe tener un campo clave propio. Continuando con el ejemplo anterior, al aplicar la 3FN separamos la tabla alumnos ya que contiene datos de los cursos en ella quedando de la siguiente manera.
 
-![diagrama_fisico_3N.png](src/diagrama_fisico_3N.png)
+![diagrama_fisico_3N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_3N.png)
 
 #### Cuarta Forma Normal (4FN)
 
@@ -448,7 +450,7 @@ Esta FN trata de eliminar registros duplicados en una entidad, es decir que cada
 
 Aplicado al ejemplo anterior la tabla materia se independiza y se relaciona con el alumno a través de una tabla transitiva o pivote, de tal manera que si cambiamos el nombre de la materia solamente hay que cambiarla una vez y se propagara a cualquier referencia que haya de ella.
 
-![diagrama_fisico_4N](src/diagrama_fisico_4N.png)
+![diagrama_fisico_4N](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_4N.png)
 
 De esta manera, aunque parezca que la información se multiplicó, en realidad la descompusimos o normalizamos de manera que a un sistema le sea fácil de reconocer y mantener la consistencia de los datos.
 
@@ -481,9 +483,9 @@ Procedimiento:
 - Instalamos MySQL Server la version 64bts
 - Instalamos MySQL Workbench (ignoramos lo demás)
 
-![Instalador_mysql_1](src/Instalador_mysql_1.png)
-![Instalador_mysql_2](src/Instalador_mysql_2.png)
-![Instalador_mysql_3](src/Instalador_mysql_3.png)
+![Instalador_mysql_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/Instalador_mysql_1.png)
+![Instalador_mysql_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/Instalador_mysql_2.png)
+![Instalador_mysql_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/Instalador_mysql_3.png)
 
 ### Clase 14  Instalación local de un RDBMS (Mac)
 
@@ -510,11 +512,13 @@ sudo apt-get install mysql-server
 
 Observamos el preview y pasos para crear un schema en Mysql workbench
 
-![worckbench_1](src/worckbench_1.png)
+![worckbench_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_1.png)
 
-![worckbench_2](src/worckbench_2.png)
+![worckbench_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_2.png)
 
-![worckbench_3](src/worckbench_3.png)
+![worckbench_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_3.png)
+
+![worckbench_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_4.png)
 
 ### Clase 17 Servicios administrados
 
@@ -530,11 +534,11 @@ Introducción a google cloud, toma el curso para configurarlo.
 
 Ahora existe el **NOSQL** o Not Only Structured Query Language que significa que no sólo se utiliza SQLen las bases de datos no relacionales.
 
-![18_Historia_de_SQL_01.jpg](src/18_Historia_de_SQL_01.jpg)
+![18_Historia_de_SQL_01.jpg](src/Curso_de_Fundamentos_de_Bases_de_Datos/18_Historia_de_SQL_01.jpg)
 
 ### Clase 19 DDL create
 
-![19_DDL_create_01.png](src/19_DDL_create_01.png)
+![19_DDL_create_01.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/19_DDL_create_01.png)
 
 SQL tiene dos grandes sublenguajes:
 
@@ -552,31 +556,31 @@ SQL tiene dos grandes sublenguajes:
 - Table o tablas. Son la traducción a SQL de las entidades
 - View o vistas: Se ofrece la proyección de los datos de la base de datos de forma entendible.
 
-![SQL_create_database](src/SQL_create.png)
+![SQL_create_database](src/Curso_de_Fundamentos_de_Bases_de_Datos/SQL_create.png)
 
-![SQL_create](src/SQL_create_database.png)
+![SQL_create](src/Curso_de_Fundamentos_de_Bases_de_Datos/SQL_create_database.png)
 
 Seleccionamos el schema  como default, de forma gráfica aunque con la terminal seria el use database.
 
-![worckbench_default_schema.png](src/worckbench_default_schema.png)
+![worckbench_default_schema.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_default_schema.png)
 
 El comando Create Table
 
-![create_table_slide](src/create_table_slide.png)
+![create_table_slide](src/Curso_de_Fundamentos_de_Bases_de_Datos/create_table_slide.png)
 
 El creamos con workbench la tabla anterior, definimos  cada uno de los campos de manera sencilla posterior damos apply
 
-![worckbench_new_table_1.png](src/worckbench_new_table_1.png)
+![worckbench_new_table_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_new_table_1.png)
 
-![worckbench_new_table_2_apply.png](src/worckbench_new_table_2_apply.png)
+![worckbench_new_table_2_apply.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_new_table_2_apply.png)
 
-![worckbench_new_table_3.png](src/worckbench_new_table_3.png)
+![worckbench_new_table_3.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/worckbench_new_table_3.png)
 
 ### Clase 20 CREATE VIEW y DDL ALTER
 
 #### Create view
 
-![workbench_create_view.png](src/workbench_create_view.png)
+![workbench_create_view.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/workbench_create_view.png)
 
 Para iniciar el ejercicio insertamos datos en la BD,  copiamos la sentencia
 `SELECT * FROM platziblog.people;`, nos movemos a views y damos click derecho y create view.
@@ -588,35 +592,33 @@ CREATE VIEW 'new_view' AS
 SELECT * FROM platziblog.people;
 ```
 
-![create_view1](src/create_view1.png)
+![create_view1](src/Curso_de_Fundamentos_de_Bases_de_Datos/create_view1.png)
 
-![create_view2](src/create_view2.png)
+![create_view2](src/Curso_de_Fundamentos_de_Bases_de_Datos/create_view2.png)
 
-![create_view3](src/create_view3.png)
+![create_view3](src/Curso_de_Fundamentos_de_Bases_de_Datos/create_view3.png)
 
-![create_view4](src/create_view4.png)
+![create_view4](src/Curso_de_Fundamentos_de_Bases_de_Datos/create_view4.png)
 
 Parece redundante la información, pero podemos estructurar las consultas junto con otras tablas, y estas vistas mantendrán la consulta sin necesidad de acer la de nuevo incrementando los  datos de forma automática.
 
 #### Alter Table
 
-!![alter_table_1](src/alter_table_1.png)
+![alter_table_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/alter_table_1.png)
 
-!![alter_table_2](src/alter_table_2.png)
+![alter_table_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/alter_table_2.png)
 
-!![alter_table_3](src/alter_table_3.png)
+![alter_table_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/alter_table_3.png)
 
-!![alter_table_4](src/alter_table_4.png)
-
-!![alter_table_1](src/alter_table_1.png)
+![alter_table_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/alter_table_4.png)
 
 #### Drop Column Borrando una columna
 
 Click derecho y deled selected
 
-!![drop_column_1](src/drop_column_1.png)
+![drop_column_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_column_1.png)
 
-!![drop_column_1](src/drop_column_2.png)
+![drop_column_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_column_2.png)
 
 ### Clase 21 DDL drop
 
@@ -624,23 +626,23 @@ Está puede ser la sentencia ¡más peligrosa! (????), sobre todo cuando somos p
 
 Pasos para borrar una tabla
 
-![drop_table](src/drop_table.png)
+![drop_table](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_table.png)
 
-![drop_table_1](src/drop_table_1.png)
+![drop_table_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_table_1.png)
 
-![drop_table_2](src/drop_table_2.png)
+![drop_table_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_table_2.png)
 
-![drop_table_3](src/drop_table_3.png)
+![drop_table_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_table_3.png)
 
 Pasos para borrar la base de datos o schema
 
-![drop_schema_1](src/drop_schema_1.png)
+![drop_schema_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_schema_1.png)
 
-![drop_schema_2](src/drop_schema_2.png)
+![drop_schema_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_schema_2.png)
 
-![drop_schema_3](src/drop_schema_3.png)
+![drop_schema_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_schema_3.png)
 
-![drop_schema_4](src/drop_schema_4.png)
+![drop_schema_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/drop_schema_4.png)
 
 Nota: las herramientas del DDL se utilizan mayormente en la fase de construcción y mantenimiento de las bases de datos, la manipulación u operación se hace con DML.
 
@@ -657,7 +659,7 @@ Nota: las herramientas del DDL se utilizan mayormente en la fase de construcció
 
 Crearemos este comando en una BD nueva llamada platzi_test con la con la estructura del ejercicio anterior
 
-![insert_command.png](src/insert_command.png)
+![insert_command.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/insert_command.png)
 
 En la seccion de query realizamos el comando
 
@@ -668,13 +670,13 @@ VALUES ('Hernandez', 'Laura', 'Calle 21', 'Monterrey');
 
 Insertamos los valores con el símbolo de rayo o con ctrl + enter
 
-![insert_command_1.png](src/insert_command_1.png)
+![insert_command_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/insert_command_1.png)
 
-![insert_command_2.png](src/insert_command_2.png)
+![insert_command_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/insert_command_2.png)
 
 #### Update
 
-![update_command.png](src/update_command.png)
+![update_command.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/update_command.png)
 
 comandos
 
@@ -683,9 +685,9 @@ UPDATE people SET last_name = 'Chavez', city = 'Merida'
 WHERE person_id = 1;
 ```
 
-![update_command_1.png](src/update_command_1.png)
+![update_command_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/update_command_1.png)
 
-![update_command_2.png](src/update_command_2.png)
+![update_command_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/update_command_2.png)
 
 #### Delete
 
@@ -693,17 +695,17 @@ WHERE person_id = 1;
 DELETE FROM people WHERE person_id = 1;
 ```
 
-![delete__command_1.png](src/delete__command_1.png)
+![delete__command_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/delete__command_1.png)
 
 #### Select
 
-![select_command.png](src/select_command.png)
+![select_command.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/select_command.png)
 
 ```sql
 SELECT first_name, last_name FROM people;
 ```
 
-![select_command_1.png](src/select_command_1.png)
+![select_command_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/select_command_1.png)
 
 Nota comentario: Para evitar borrar cualquier dato sin querer por ejemplo borrar todos los datos de una tabla es importante hacer uso de BEGIN TRAN NOMBRE_DE_LA_TRANSACCION
 
@@ -783,46 +785,46 @@ El DDL y DML en ambos  motores de bases de datos es estandar, cambian solo funci
 - Una buena práctica es comenzar creando las entidades que no tienen una llave foránea.
 - Generalmente en los nombres de bases de datos se evita usar eñes o acentos para evitar problemas en los manejadores de las bases de datos.
 
-![diagrama_fisico_paso_2](src/diagrama_fisico_paso_2.png)
+![diagrama_fisico_paso_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_2.png)
 
 Creamos el schema `platziblog` y seleccionamos como default y creamos las siguientes tablas
 
 - categorías
 
-![platziblog_tabla_etiquetas_1](src/platziblog_tabla_caracteristicas_1.png)
+![platziblog_tabla_etiquetas_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_caracteristicas_1.png)
 
-![platziblog_tabla_caracteristicas_2](src/platziblog_tabla_caracteristicas_2.png)
+![platziblog_tabla_caracteristicas_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_caracteristicas_2.png)
 
 Creamos de igual forma la tabla Etiquetas
 
-![platziblog_tabla_etiquetas_1](src/platziblog_tabla_etiquetas_1.png)
+![platziblog_tabla_etiquetas_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_etiquetas_1.png)
 
-![platziblog_tabla_etiquetas_2](src/platziblog_tabla_etiquetas_2.png)
+![platziblog_tabla_etiquetas_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_etiquetas_2.png)
 
 Tabla Usuarios
 
-![platziblog_tabla_usuarios_1.png](src/platziblog_tabla_usuarios_1.png)
+![platziblog_tabla_usuarios_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_usuarios_1.png)
 
-![platziblog_tabla_usuarios_2.png](src/platziblog_tabla_usuarios_2.png)
+![platziblog_tabla_usuarios_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_usuarios_2.png)
 
 ### Clase 25 Creando Platziblog: tablas transitivas
 
 Creando Platziblog: tablas dependientes
 El comando **“cascade”** sirve para que cada que se haga un update en la tabla principal, se refleje también en la tabla en la que estamos creando la relación.
 
-![platziblog_tabla_post_1.png](src/platziblog_tabla_post_1.png)
+![platziblog_tabla_post_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_1.png)
 
-![platziblog_tabla_post_2.png](src/platziblog_tabla_post_2.png)
+![platziblog_tabla_post_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_2.png)
 
 Vamos a la pestaña Foreign Key y asignamos las relaciones.
 
 Asignamos la llave foranea del usuario_id
 
-![platziblog_tabla_post_fk_usuario_id.png](src/platziblog_tabla_post_fk_usuario_id.png)
+![platziblog_tabla_post_fk_usuario_id.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_fk_usuario_id.png)
 
-![platziblog_tabla_post_fk_categorias_id.png](src/platziblog_tabla_post_fk_categorias_id.png)
+![platziblog_tabla_post_fk_categorias_id.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_fk_categorias_id.png)
 
-![platziblog_tabla_post_fk_categorias_id_1.png](src/platziblog_tabla_post_fk_categorias_id_1.png)
+![platziblog_tabla_post_fk_categorias_id_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_fk_categorias_id_1.png)
 
 Las Foreing Key options son las siguientes:
 
@@ -845,60 +847,60 @@ no action: Si un usuario es eliminado, no se hará nada. Solo se romperá la rel
 
 Creamos la tabla comentarios.
 
-![platziblog_tabla_comentarios.png](src/platziblog_tabla_comentarios.png)
+![platziblog_tabla_comentarios.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios.png)
 
-![platziblog_tabla_comentarios_1.png](src/platziblog_tabla_comentarios_1.png)
+![platziblog_tabla_comentarios_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios_1.png)
 
 Creamos las llaves foráneas para los comentarios de los usuarios
 
-![platziblog_tabla_comentarios_usuarios_fk_1.png](src/platziblog_tabla_comentarios_usuarios_fk_1.png)
+![platziblog_tabla_comentarios_usuarios_fk_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios_usuarios_fk_1.png)
 
-![platziblog_tabla_comentarios_usuarios_fk_2.png](src/platziblog_tabla_comentarios_usuarios_fk_2.png)
+![platziblog_tabla_comentarios_usuarios_fk_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios_usuarios_fk_2.png)
 
 Creamos las llaves foráneas para los comentarios de los posts
 
-![platziblog_tabla_comentarios_usuarios_fk_1.png](src/platziblog_tabla_comentarios_usuarios_fk_1.png)
+![platziblog_tabla_comentarios_usuarios_fk_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios_usuarios_fk_1.png)
 
-![platziblog_tabla_comentarios_usuarios_fk_2.png](src/platziblog_tabla_comentarios_usuarios_fk_2.png)
+![platziblog_tabla_comentarios_usuarios_fk_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_comentarios_usuarios_fk_2.png)
 
 Ahora solo nos queda crear la tabla intermedia para romper la relacion muchos a muchos.
 
-![diagrama_fisico_paso_3_N_N.png](src/diagrama_fisico_paso_3_N_N.png)
+![diagrama_fisico_paso_3_N_N.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/diagrama_fisico_paso_3_N_N.png)
 
 Para ello creamos la tabla intermedia post_etiquetas
 
-![platziblog_tabla_post_etiquetas.png](src/platziblog_tabla_post_etiquetas.png)
+![platziblog_tabla_post_etiquetas.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas.png)
 
-![platziblog_tabla_post_etiquetas_1.png](src/platziblog_tabla_post_etiquetas_1.png)
+![platziblog_tabla_post_etiquetas_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas_1.png)
 
 Ligamos las llaves foráneas para post_id
 
-![platziblog_tabla_post_etiquetas_fk_1.png](src/platziblog_tabla_post_etiquetas_fk_1.png)
+![platziblog_tabla_post_etiquetas_fk_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas_fk_1.png)
 
-![platziblog_tabla_post_etiquetas_fk_2.png](src/platziblog_tabla_post_etiquetas_fk_2.png)
+![platziblog_tabla_post_etiquetas_fk_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas_fk_2.png)
 
 Ligamos las llaves foráneas para etiquetas_id
 
-![platziblog_tabla_post_etiquetas_etiquetas_fk_1.png](src/platziblog_tabla_post_etiquetas_etiquetas_fk_1.png)
+![platziblog_tabla_post_etiquetas_etiquetas_fk_1.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas_etiquetas_fk_1.png)
 
-![platziblog_tabla_post_etiquetas_etiquetas_fk_2.png](src/platziblog_tabla_post_etiquetas_etiquetas_fk_2.png)
+![platziblog_tabla_post_etiquetas_etiquetas_fk_2.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/platziblog_tabla_post_etiquetas_etiquetas_fk_2.png)
 
 #### Reverse Engineer
 
 Seleccionamos la opción Database para acceder a reverse engineer
-![reverse_engineer_1](src/reverse_engineer_1.png)
+![reverse_engineer_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_1.png)
 
-![reverse_engineer_2](src/reverse_engineer_2.png)
+![reverse_engineer_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_2.png)
 
-![reverse_engineer_3](src/reverse_engineer_3.png)
+![reverse_engineer_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_3.png)
 
-![reverse_engineer_4](src/reverse_engineer_4.png)
+![reverse_engineer_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_4.png)
 
-![reverse_engineer_5](src/reverse_engineer_5.png)
+![reverse_engineer_5](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_5.png)
 
-![reverse_engineer_6](src/reverse_engineer_6.png)
+![reverse_engineer_6](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_6.png)
 
-![reverse_engineer_7](src/reverse_engineer_7.png)
+![reverse_engineer_7](src/Curso_de_Fundamentos_de_Bases_de_Datos/reverse_engineer_7.png)
 
 ### Clase 27 Por qué las consultas son tan importantes
 
@@ -913,7 +915,7 @@ El query tiene básicamente 2 partes: SELECT y FROM y puede aparecer una tercera
 
 La estrellita o asterisco (*) quiere decir que vamos a seleccionar todo sin filtrar campos.
 
-![28_estructura_basica_query.png](src/28_estructura_basica_query.png)
+![28_estructura_basica_query.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/28_estructura_basica_query.png)
 
 Antes de iniciar la clase corre este script
 
@@ -1156,7 +1158,7 @@ SELECT * FROM posts WHERE YEAR(fecha_publicacion) > 2024;
 ### Clase 29 SELECT
 
 IMAGEN INTERESANTE
-![29_SELECT_SQL_01](src/29_SELECT_SQL_01.png)
+![29_SELECT_SQL_01](src/Curso_de_Fundamentos_de_Bases_de_Datos/29_SELECT_SQL_01.png)
 
 **SELECT** se encarga de proyectar o mostrar datos.
 
@@ -1202,13 +1204,13 @@ FROM posts;
 
 Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde está la intersección de conjuntos. Ayudan mucho para poder formular la sentencia **JOIN** de la manera adecuada dependiendo del query que se quiere hacer.
 
-![teoria_conjuntos](src/Teoria_conjuntos.jpg)
+![teoria_conjuntos](src/Curso_de_Fundamentos_de_Bases_de_Datos/Teoria_conjuntos.jpg)
 
-![teoria_conjuntos_sentencias](src/teoria_conjuntos_sentencias.jpg)
+![teoria_conjuntos_sentencias](src/Curso_de_Fundamentos_de_Bases_de_Datos/teoria_conjuntos_sentencias.jpg)
 
 ### Clase 31 Utilizando la sentencia FROM
 
-![31_Utilizando_la_sentencia_FROM_01.webp](src/31_Utilizando_la_sentencia_FROM_01.webp)
+![31_Utilizando_la_sentencia_FROM_01.webp](src/Curso_de_Fundamentos_de_Bases_de_Datos/31_Utilizando_la_sentencia_FROM_01.webp)
 
 Comandos de la clase
 
@@ -1607,7 +1609,7 @@ GROUP BY posts.id
 ;
 ```
 
-![GROUP_CONCAT](src/GROUP_CONCAT.png)
+![GROUP_CONCAT](src/Curso_de_Fundamentos_de_Bases_de_Datos/GROUP_CONCAT.png)
 
 Saber que posts no tienen etiquetas
 
@@ -1618,7 +1620,7 @@ FROM etiquetas
 WHERE posts_etiquetas.etiqueta_id IS NULL
 ;
 ```
-![38_Funcion_CASE.png](src/38_Funcion_CASE.png)
+![38_Funcion_CASE.png](src/Curso_de_Fundamentos_de_Bases_de_Datos/38_Funcion_CASE.png)
 
 ### Clase 39 Consultando PlatziBlog
 
@@ -1695,7 +1697,7 @@ Cada base de datos de este tipo soluciona un problema en particular, pero es mal
 **2. Colección:** Es igual a las tablas en las bases de datos relacionales. Son objetos que agrupan (Documentos) la información que se desea guardar.
 **3. Documento:** Es la información que se quiere guardar. Se guarda en un formato muy parecido al formato JSON (es un lenguaje que se utiliza para comunicarse con diferentes lenguajes o aplicaciones). Los documentos dentro de ellos contienen datos.
 
-![jerarquia_firestore](src/jerarquia_firestore.png)
+![jerarquia_firestore](src/Curso_de_Fundamentos_de_Bases_de_Datos/jerarquia_firestore.png)
 
 ## Modulo 5 Manejo de modelos de datos en bases de datos no relacionales
 
@@ -1712,23 +1714,23 @@ Seguimos  los pasos sencillos de la pagina para crear nuestra base de datos "pla
 
 Creamos proyecto
 
-![firebase_intro_1](src/firebase_intro_1.png)
+![firebase_intro_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_1.png)
 
-![firebase_intro_2](src/firebase_intro_2.png)
+![firebase_intro_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_2.png)
 
-![firebase_intro_3](src/firebase_intro_3.png)
+![firebase_intro_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_3.png)
 
 Panel Inicial
 
-![firebase_intro_4](src/firebase_intro_4.png)
+![firebase_intro_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_4.png)
 
 Para crear una Top level collection (las que estan a nivel de la ruta principal) damos en simbolo plus, y creamos /people
 
-![firebase_intro_5](src/firebase_intro_5.png)
+![firebase_intro_5](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_5.png)
 
-![firebase_intro_6](src/firebase_intro_6.png)
+![firebase_intro_6](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_6.png)
 
-![firebase_intro_7](src/firebase_intro_7.png)
+![firebase_intro_7](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_intro_7.png)
 
 ### Clase 43 Creando y borrando documentos en Firestore
 
@@ -1746,13 +1748,13 @@ Jugamos con la interface observamos los tipos de datos:
 
 Ejemplos
 
-![firebase_tipos_datos_1](src/firebase_tipos_datos_1.png)
+![firebase_tipos_datos_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_tipos_datos_1.png)
 
-![firebase_tipos_datos_2](src/firebase_tipos_datos_2.png)
+![firebase_tipos_datos_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_tipos_datos_2.png)
 
-![firebase_tipos_datos_3](src/firebase_tipos_datos_3.png)
+![firebase_tipos_datos_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_tipos_datos_3.png)
 
-![firebase_tipos_datos_4](src/firebase_tipos_datos_4.png)
+![firebase_tipos_datos_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/firebase_tipos_datos_4.png)
 
 ### Clase 44 Colecciones vs subcolecciones
 
@@ -1762,17 +1764,17 @@ Si tienes una entidad separada que vas a referenciar desde muchos lugares es rec
 
 Creamos la coleccion posts
 
-![colecciones_vs_subcolecciones_1](src/colecciones_vs_subcolecciones_1.png)
+![colecciones_vs_subcolecciones_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_1.png)
 
-![colecciones_vs_subcolecciones_2](src/colecciones_vs_subcolecciones_2.png)
+![colecciones_vs_subcolecciones_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_2.png)
 
-![colecciones_vs_subcolecciones_3](src/colecciones_vs_subcolecciones_3.png)
+![colecciones_vs_subcolecciones_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_3.png)
 
-![colecciones_vs_subcolecciones_4](src/colecciones_vs_subcolecciones_4.png)
+![colecciones_vs_subcolecciones_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_4.png)
 
-![colecciones_vs_subcolecciones_5](src/colecciones_vs_subcolecciones_5.png)
+![colecciones_vs_subcolecciones_5](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_5.png)
 
-![colecciones_vs_subcolecciones_6](src/colecciones_vs_subcolecciones_6.png)
+![colecciones_vs_subcolecciones_6](src/Curso_de_Fundamentos_de_Bases_de_Datos/colecciones_vs_subcolecciones_6.png)
 
 ### Clase 45 Recreando Platziblog
 
@@ -1786,35 +1788,35 @@ Podemos hacer consultas sencillas en base a las top level collecttion. Ahora si 
 
 Construimos categorias "espectaculos","deportes" y "ciencia" como top level collection
 
-![Platziblog_firebase_1](src/Platziblog_firebase_1.png)
+![Platziblog_firebase_1](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_1.png)
 
-![Platziblog_firebase_2](src/Platziblog_firebase_2.png)
+![Platziblog_firebase_2](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_2.png)
 
 Creamosen top level la coleccion usuarios
 
-![Platziblog_firebase_3](src/Platziblog_firebase_3.png)
+![Platziblog_firebase_3](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_3.png)
 
 Creamos la top level posts con dos articulos
 
-![Platziblog_firebase_4](src/Platziblog_firebase_4.png)
+![Platziblog_firebase_4](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_4.png)
 
-![Platziblog_firebase_5](src/Platziblog_firebase_5.png)
+![Platziblog_firebase_5](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_5.png)
 
 Ahora hacemos la relacion del top level collection del usuario /usuarios/qK7F62sQY8bKI8o9w5RY agregando un campo en un documento posts usando el campo reference agregando el usuario
 
-![Platziblog_firebase_6](src/Platziblog_firebase_6.png)
+![Platziblog_firebase_6](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_6.png)
 
-![Platziblog_firebase_7](src/Platziblog_firebase_7.png)
+![Platziblog_firebase_7](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_7.png)
 
 Agregamos las referencias para las categorias
 
-![Platziblog_firebase_8](src/Platziblog_firebase_8.png)
+![Platziblog_firebase_8](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_8.png)
 
-![Platziblog_firebase_9](src/Platziblog_firebase_9.png)
+![Platziblog_firebase_9](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_9.png)
 
 Finalmente agregamos las subcolecciones etiquetas a los posts en agregar coleccion
 
-![Platziblog_firebase_10](src/Platziblog_firebase_10.png)
+![Platziblog_firebase_10](src/Curso_de_Fundamentos_de_Bases_de_Datos/Platziblog_firebase_10.png)
 
 ### Clase 47 Proyecto final: transformando tu proyecto en una db no relacional
 

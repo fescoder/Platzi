@@ -153,7 +153,7 @@ Las abstracciones no deben depender de los detalles, los detalles deben depender
 
 ## Modulo 6
 Patrones de diseño  
-![Patrones_de_diseño](src/Patrones_de_diseño.jpg)
+![Patrones_de_diseño](src/Curso_de_Buenas_Practicas_en_PHP/Patrones_de_diseño.jpg)
 
 ### Singleton
 Los patrones de diseño son soluciones de arquitectura de software aplicables a diferentes problemas.  

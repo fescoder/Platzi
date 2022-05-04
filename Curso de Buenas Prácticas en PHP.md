@@ -1,6 +1,7 @@
+![Logo_Curso_de_Buenas_Prácticas_en_PHP](src/Curso_de_Buenas_Practicas_en_PHP/Logo_Curso_de_Buenas_Prácticas_en_PHP.webp)
 # Curso de Buenas Prácticas en PHP
 
-En este curso nuestro profesor Mauro Chojrin nos enseñará una serie de técnicas que nos ayudarán a realizar aplicaciones más robustas, escalables y mantenibles en el tiempo.
+En este curso nuestro profesor Mauro Chojrin nos enseñará una serie de técnicas que nos ayudarán a realizar aplicaciones más robustas, escalables y mantenibles en el tiempo.  
 **Objetivo:** Crear aplicaciones más robustas, escalables y mantenibles en el tiempo.
 
 **Temas:**

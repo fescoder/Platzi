@@ -1472,4 +1472,18 @@ Usar `amend` es una **mala práctica**, sobre todo cuando ya se ha hecho push o 
 
 ---
 
-### Clase 41 - 
+### Clase 41 - Buscar en archivos y commits de Git con Grep y log
+A medida que nuestro proyecto en Git se hace más grande, vamos a querer buscar ciertas cosas.
+
+Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la palabra *color*?
+
+Para buscar, empleamos el comando `git grep color` y nos buscará en todo el proyecto los archivos en donde está la palabra color.
+- Con `git grep -n color` nos saldrá un output el cual nos dirá en qué línea está lo que estamos buscando.
+- Con `git grep -c color` nos saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
+- Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con `git grep -c "<p>"`.
+
+![41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01](src/Curso_profesional_de_Git_y_GitHub/41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01.png)
+
+---
+
+### Clase 42 - 

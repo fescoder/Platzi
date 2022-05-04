@@ -59,7 +59,7 @@
 
 ### Clase 1 Introduccion
 
-![01_Que_es_PostgreSQL_01](src/01_Que_es_PostgreSQL_01.jpg)
+![01_Que_es_PostgreSQL_01](src/Curso_de_PostgreSQL/01_Que_es_PostgreSQL_01.jpg)
 
 ### Clase 2 Que es Postgresql
 
@@ -108,43 +108,43 @@ Vamos a descargar la versión.5. Hacemos clic en Download y guardamos el archivo
 
 Ahora vamos a la carpeta donde descargamos el archivo .exe, debe ser de aproximadamente 90 MB, lo ejecutamos.
 
-![postgre_instal_](src/postgre_instal_1.jpg)
+![postgre_instal_](src/Curso_de_PostgreSQL/postgre_instal_1.jpg)
 
 Hacemos clic en siguiente. Si deseas cambiar la carpeta de destino, ahora es el momento:
 
-![postgre_instal_2](src/postgre_instal_2.jpg)
+![postgre_instal_2](src/Curso_de_PostgreSQL/postgre_instal_2.jpg)
 
 Seleccionamos los servicios que queremos instalar. En este caso dejamos seleccionados todos menos “Stack Builder”, pues ofrece la instalación de servicios adicionales que no necesitamos hasta ahora. Luego hacemos clic en siguiente:
 
-![postgre_instal_3](src/postgre_instal_3.jpg)
+![postgre_instal_3](src/Curso_de_PostgreSQL/postgre_instal_3.jpg)
 
 Ahora indicamos la carpeta donde iran guardados los datos de la base de datos, es diferente a la ruta de instalación del Motor de PostgreSQL, pero normalmente será una carpeta de nuestra carpeta de instalación. Puedes cambiar la ruta si quieres tener los datos en otra carpeta. Hacemos clic en siguiente.
 
-![postgre_instal_4](src/postgre_instal_4.jpg)
+![postgre_instal_4](src/Curso_de_PostgreSQL/postgre_instal_4.jpg)
 
 Ingresamos la contraseña del usuario administrador. De manera predeterminada, Postgres crea un usuario super administrador llamado **postgres** que tiene todos los permisos y acceso a toda la base de datos, tanto para consultarla como para modificarla. En éste paso indicamos la clave de ese usuario super administrador.
 
 Debes ingresar una clave muy segura y guardarla porque la vas a necesitar después. Luego hacemos clic en siguiente.
 
-![postgre_instal_5](src/postgre_instal_5.jpg)
+![postgre_instal_5](src/Curso_de_PostgreSQL/postgre_instal_5.jpg)
 
 Ahora si queremos cambiar el puerto por donde el servicio de Postgresql estará escuchando peticiones, podemos hacerlo en la siguiente pantalla, si queremos dejar el predeterminado simplemente hacemos clic en siguiente.
 
-![postgre_instal_6](src/postgre_instal_6.jpg)
+![postgre_instal_6](src/Curso_de_PostgreSQL/postgre_instal_6.jpg)
 
 La configuración regional puede ser la predeterminada, no es necesario cambiarla, incluso si vamos a usarla en español, ya que las tildes y las eñes estarán soportadas si dejas la configuración regional predeterminada. Es útil cambiarla cuando quieras dejar de soportar otras funciones de idiomas y lenguajes diferentes a uno específico. Luego hacemos clic en siguiente:
 
-![postgre_instal_7](src/postgre_instal_7.jpg)
+![postgre_instal_7](src/Curso_de_PostgreSQL/postgre_instal_7.jpg)
 
 En pantalla aparecerá el resumen de lo que se va a instalar:
 
-![postgre_instal_8](src/postgre_instal_8.jpg)
+![postgre_instal_8](src/Curso_de_PostgreSQL/postgre_instal_8.jpg)
 
 Al hacer clic en siguiente se muestra una pantalla que indica que PostgreSQL está listo para instalar, al hacer clic de nuevo en siguiente iniciará la instalación, espera un par de minutos hasta que la aplicación termine.
 
 Una vez terminada la instalación, aparecerá en pantalla un mensaje mostrando que PostgreSQL ha sido instalado correctamente.
 
-![postgre_instal_9](src/postgre_instal_9.jpg)
+![postgre_instal_9](src/Curso_de_PostgreSQL/postgre_instal_9.jpg)
 
 Podemos cerrar ésta pantalla y proceder a comprobar que todo quedó instalado correctamente.
 
@@ -154,18 +154,18 @@ También vamos a buscar la consola… Tanto la consola como PgAdmin son útiles 
 
 En el menú de Windows (o donde aparecen instalados todos los programas) buscamos “PgAdmin…”
 
-![postgre_instal_10](src/postgre_instal_10.jpg)
+![postgre_instal_10](src/Curso_de_PostgreSQL/postgre_instal_10.jpg)
 
 Ahora buscamos “SQL Shell…”
 
-![postgre_instal_11](src/postgre_instal_11.jpg)
+![postgre_instal_11](src/Curso_de_PostgreSQL/postgre_instal_11.jpg)
 
 Efectivamente, ahora aparecen las herramientas que vamos a utilizar en éste curso.
 Ahora vamos a crear una base de datos de prueba usando la consola y comprobaremos si existe usando PgAdmin, la crearemos para validar que la conexión con el servicio de base de datos interno funciona correctamente.
 
 Para ello abrimos la consola, buscamos SQL Shell y lo ejecutamos. Veremos algo así:
 
-![postgre_instal_12](src/postgre_instal_12.jpg)
+![postgre_instal_12](src/Curso_de_PostgreSQL/postgre_instal_12.jpg)
 
 Lo que vemos en pantalla es la consola esperando que ingresemos cada parámetro para la conexión.
 
@@ -173,7 +173,7 @@ Primero está el nombre del parámetro. En éste caso es “Server” seguido de
 
 Podemos dejar todos los valores predeterminados (presionando “Enter”) hasta que la consola pregunte por la clave del usuario maestro:
 
-![postgre_instal_13](src/postgre_instal_13.jpg)
+![postgre_instal_13](src/Curso_de_PostgreSQL/postgre_instal_13.jpg)
 
 Debemos ingresar la clave que usamos cuando estábamos instalando Postgres, de lo contrario no podremos acceder. Presionamos Enter y veremos a continuación una pantalla que nos indica que estamos logueados en la base de datos y estamos listos para hacer modificaciones.
 
@@ -181,31 +181,31 @@ De manera predeterminada, la base de datos instalada es Postgres, la cual no deb
 
 La siguiente imagen indica que estamos conectados a la base de datos Postgres. Vamos a crear una base de datos nueva y luego saltar el cursor a ésta base de datos recién creada.
 
-![postgre_instal_14](src/postgre_instal_14.jpg)
+![postgre_instal_14](src/Curso_de_PostgreSQL/postgre_instal_14.jpg)
 
 Para ello escribimos el comando “**CREATE DATABASE transporte_publico;**” y presionamos “Enter”. Veremos:
 
-![postgre_instal_15](src/postgre_instal_15.jpg)
+![postgre_instal_15](src/Curso_de_PostgreSQL/postgre_instal_15.jpg)
 
 El mensaje **“CREATE DATABASE”** justo después de la línea que acabamos de escribir indica que la base de datos fue creada correctamente.
 
 Para saltar a la base de datos recién creada ejecutamos el comando “**\c transporte_publico**”, el cursor mostrará lo siguiente:
 
-![postgre_instal_16](src/postgre_instal_16.jpg)
+![postgre_instal_16](src/Curso_de_PostgreSQL/postgre_instal_16.jpg)
 
 Ahora vamos a validar desde PgAdmin que la base de datos fué creada correctamente. Abrimos PgAdmin y nos encontramos con una lista de items a la izquierda, lo que significa que de manera predeterminada PgAdmin ha creado un acceso a nuestra base de datos local, el cual llamó “PostgreSQL”:
 
-![postgre_instal_17](src/postgre_instal_17.jpg)
+![postgre_instal_17](src/Curso_de_PostgreSQL/postgre_instal_17.jpg)
 
 Al hacer hacer doble clic sobre éste elemento (“PostgreSQL”) nos pedirá ingresar la clave que hemos determinado para el super usuario postgres, al igual que la consola, hasta no ingresarla correctamente no nos podremos conectar:
 
-![postgre_instal_18](src/postgre_instal_18.jpg)
+![postgre_instal_18](src/Curso_de_PostgreSQL/postgre_instal_18.jpg)
 
 Ingresamos la clave. Te recomiendo seleccionar la opción “Save Password” o “Guardar Contraseña”. Si la máquina sobre la que estás trabajando es de confianza, que seas sólo tú o tu equipo quien tenga acceso a ella, de lo contrario, no guardes la contraseña para mantenerla segura.
 
 Veremos la lista de bases de datos disponibles, la predeterminada “postgres” y la que acabamos de crear usando la consola, lo que comprueba que la base de datos y la consola funcionan correctamente.
 
-![postgre_instal_19](src/postgre_instal_19.jpg)
+![postgre_instal_19](src/Curso_de_PostgreSQL/postgre_instal_19.jpg)
 
 Ahora procedemos a eliminar la base de datos recién creada para comprobar que PgAdmin está correctamente configurada y si pueda realizar cambios sobre la base de datos.
 
@@ -305,19 +305,19 @@ En el dashboard podemos observar como Postgres usa el mismo motor de forma redun
 
 En la parte del Admin en Server podemos crear una base de datos  desde cero a partir del servidor y conectarla al localhost o a una base de datos alojada en un server local o remoto.
 
-![pgadmin_](src/pgadmin_1.jpg)
+![pgadmin_](src/Curso_de_PostgreSQL/pgadmin_1.jpg)
 
-![pgadmin_2](src/pgadmin_2.jpg)
+![pgadmin_2](src/Curso_de_PostgreSQL/pgadmin_2.jpg)
 
-![pgadmin_3](src/pgadmin_3.jpg)
+![pgadmin_3](src/Curso_de_PostgreSQL/pgadmin_3.jpg)
 
-![pgadmin_4](src/pgadmin_4.jpg)
+![pgadmin_4](src/Curso_de_PostgreSQL/pgadmin_4.jpg)
 
 Podemos usar en el menu de  tools el Query tools
 
-![pgadmin_5](src/pgadmin_5.jpg)
+![pgadmin_5](src/Curso_de_PostgreSQL/pgadmin_5.jpg)
 
-![pgadmin_6](src/pgadmin_6.jpg)
+![pgadmin_6](src/Curso_de_PostgreSQL/pgadmin_6.jpg)
 
 ### Clase 6 Archivos de Configuracion
 
@@ -358,13 +358,13 @@ En consola los dos principales comandos con los que podemos revisar el todos los
 
 **\?** Con el cual podemos ver la lista de todos los comandos disponibles en consola, comandos que empiezan con backslash()
 
-![comandos_](src/comandos_1.jpg)
+![comandos_](src/Curso_de_PostgreSQL/comandos_1.jpg)
 
 **\h** Con este comando veremos la información de todas las consultas SQL disponibles en consola. Sirve también para buscar ayuda sobre una consulta específica, para buscar información sobre una consulta específica basta con escribir \h seguido del inicio de la consulta de la que se requiera ayuda, así: \h ALTER
 
 De esta forma podemos ver toda la ayuda con respecto a la consulta ALTER
 
-![comandos_2](src/comandos_2.jpg)
+![comandos_2](src/Curso_de_PostgreSQL/comandos_2.jpg)
 
 #### Comandos de navegacion y consulta de informacion
 
@@ -418,11 +418,11 @@ Vamos ahora por un ligero ejemplo desde la creación de una base de datos, la cr
 
 Primero crea la base de datos, **“CREATE DATABASE transporte;”** sería el primer paso.
 
-![comandos_3](src/comandos_3.jpg)
+![comandos_3](src/Curso_de_PostgreSQL/comandos_3.jpg)
 
 Ahora saltar de la base de datos **postgres** que ha sido seleccionada de manera predeterminada a la base de datos transporte recién creada utilizando el comando \c transporte.
 
-![comandos_4](src/comandos_4.jpg)
+![comandos_4](src/Curso_de_PostgreSQL/comandos_4.jpg)
 
 Ahora vamos a crear la tabla tren, el SQL correspondiente sería:
 
@@ -432,15 +432,15 @@ CREATE TABLE tren ( id serial NOT NULL, modelo character varying, capacidad inte
 
 La columna id será un número autoincremental (cada vez que se inserta un registro se aumenta en uno), modelo se refiere a una referencia al tren, capacidad sería la cantidad de pasajeros que puede transportar y al final agregamos la llave primaria que será id.
 
-![comandos_5](src/comandos_5.jpg)
+![comandos_5](src/Curso_de_PostgreSQL/comandos_5.jpg)
 
 Ahora que la tabla ha sido creada, podemos ver su definición utilizando el comando `\d tren`
 
-![comandos_6](src/comandos_6.jpg)
+![comandos_6](src/Curso_de_PostgreSQL/comandos_6.jpg)
 
 PostgreSQL ha creado el campo id automáticamente cómo integer con una asociación predeterminada a una secuencia llamada ‘tren_id_seq’. De manera que cada vez que se inserte un valor, id tomará el siguiente valor de la secuencia, vamos a ver la definición de la secuencia. Para ello, \d `tren_id_seq` es suficiente:
 
-![comandos_7](src/comandos_7.jpg)
+![comandos_7](src/Curso_de_PostgreSQL/comandos_7.jpg)
 
 Vemos que la secuencia inicia en uno, así que nuestra primera inserción de datos dejará a la
 columna id con valor uno.
@@ -449,7 +449,7 @@ columna id con valor uno.
 INSERT INTO tren( modelo, capacidad ) VALUES (‘Volvo ’, 00);
 ```
 
-![comandos_8](src/comandos_8.jpg)
+![comandos_8](src/Curso_de_PostgreSQL/comandos_8.jpg)
 
 ```sql
 SELECT * FROM tren;
@@ -457,37 +457,37 @@ SELECT * FROM tren;
 
 Consultamos ahora los datos en la tabla:
 
-![comandos_9](src/comandos_9.jpg)
+![comandos_9](src/Curso_de_PostgreSQL/comandos_9.jpg)
 
 Vamos a modificar el valor, establecer el tren con id uno que sea modelo Honda 0726. Para ello ejecutamos la consulta tipo **UPDATE tren SET modelo = 'Honda 0726' Where id = 1**;
 
-![comandos_10](src/comandos_10.jpg)
+![comandos_10](src/Curso_de_PostgreSQL/comandos_10.jpg)
 
 Verificamos la modificación **SELECT * FROM tren;**
 
-![comandos_11](src/comandos_11.jpg)
+![comandos_11](src/Curso_de_PostgreSQL/comandos_11.jpg)
 
 Ahora borramos la fila: **DELETE FROM tren WHERE id = ;**
 
-![comandos_12](src/comandos_12.jpg)
+![comandos_12](src/Curso_de_PostgreSQL/comandos_12.jpg)
 
 Verificamos el borrado **SELECT * FROM tren;**
 
-![comandos_13](src/comandos_13.jpg)
+![comandos_13](src/Curso_de_PostgreSQL/comandos_13.jpg)
 
 El borrado ha funcionado tenemos 0 rows, es decir, no hay filas. Ahora activemos la herramienta que nos permite medir el tiempo que tarda una consulta **\timing**
 
-![comandos_14](src/comandos_14.jpg)
+![comandos_14](src/Curso_de_PostgreSQL/comandos_14.jpg)
 
 Probemos cómo funciona al medición realizando la encriptación de un texto cualquiera usando el algoritmo md5:
 
-![comandos_15](src/comandos_15.jpg)
+![comandos_15](src/Curso_de_PostgreSQL/comandos_15.jpg)
 
 La consulta tardó 10.011 milisegundos.
 
 Ahora que sabes como manejar algunos de los comandos más utilizados en PostgreSQL es momento de comenzar a practicar!!!
 
-![07_Comandos_mas_utilizados_en_PostgreSQL_01](src/07_Comandos_mas_utilizados_en_PostgreSQL_01.webp)
+![07_Comandos_mas_utilizados_en_PostgreSQL_01](src/Curso_de_PostgreSQL/07_Comandos_mas_utilizados_en_PostgreSQL_01.webp)
 
 ### Clase 8 Presentación del Proyecto
 
@@ -528,7 +528,7 @@ https://www.postgresql.org/docs/11/datatype.html
 
 ### Clase 10 Diseñando nuestra base de datos: estructura de las tablas
 
-![diagrama_entidad_relacion_proyecto](src/diagrama_entidad_relacion_proyecto.jpg)
+![diagrama_entidad_relacion_proyecto](src/Curso_de_PostgreSQL/diagrama_entidad_relacion_proyecto.jpg)
 
 ### Clase 11 Jerarquia de Bases de Datos
 
@@ -549,7 +549,7 @@ Toda jerarquía de base de datos se basa en los siguientes elementos:
 La estructura de la base de datos diseñada para el reto corresponde a los siguientes
 elementos:
 
-![bd_proyecto](src/bd_proyecto.jpg)
+![bd_proyecto](src/Curso_de_PostgreSQL/bd_proyecto.jpg)
 
 La base de datos se llama transporte, usaremos su esquema predeterminado public.
 
@@ -566,7 +566,7 @@ Y las tablas de relaciones entre cada uno de los elementos anteriores son:
 
 El esquema relacional entre las tablas corresponde al siguiente diagrama:
 
-![diagrama_entidad_relacion_proyecto_styled](src/diagrama_entidad_relacion_proyecto_styled.jpg)
+![diagrama_entidad_relacion_proyecto_styled](src/Curso_de_PostgreSQL/diagrama_entidad_relacion_proyecto_styled.jpg)
 
 **Estación**
 Contiene la información de las estaciones de nuestro sistema, incluye datos de nombre con tipo de dato texto y dirección con tipo de dato texto, junto con un número de identificación único por estación.
@@ -597,23 +597,23 @@ Las tablas en PostgreSQL siguen el estándar SQL para las tablas
 
 En el arbol del server damos click derecho en nuestra BD_PRUEBAS/databases en la opcion CREATE y asignamos un nombre.
 
-![create_table_](src/create_table_1.jpg)
+![create_table_](src/Curso_de_PostgreSQL/create_table_1.jpg)
 
 PGAdmin también nos muestra la sentencia que ejecutara por debajo en consola.
 
-![create_table_2](src/create_table_2.jpg)
+![create_table_2](src/Curso_de_PostgreSQL/create_table_2.jpg)
 
 Se crea todo el arbol relacionado a la base de datos, dentro de este se encuentran los Schemas, de manera predeterminada se crea el Schema public en el vamos a crear nuestra primera tabla
 
-![create_table_3](src/create_table_3.jpg)
+![create_table_3](src/Curso_de_PostgreSQL/create_table_3.jpg)
 
 Le asignamos el nombre de pasajero (aunque como practica común las tablas se nombren en plural)
 
-![create_table_4](src/create_table_4.jpg)
+![create_table_4](src/Curso_de_PostgreSQL/create_table_4.jpg)
 
 Y creamos las columnas definidas en nuestro diagrama entidad-relacion
 
-![create_table_5](src/create_table_5.jpg)
+![create_table_5](src/Curso_de_PostgreSQL/create_table_5.jpg)
 
 Nota:
 
@@ -625,17 +625,17 @@ Nota:
 
 Ahora definimos los constraints para definir nuestra llave primaria, el **estándar de postgres** es **nombre_de_la_tabla_pkey**
 
-![create_table_6](src/create_table_6.jpg)
+![create_table_6](src/Curso_de_PostgreSQL/create_table_6.jpg)
 
 Al final podemos ver la sentencia SQL y guardamos nuestra tabla.
 
-![create_table_7](src/create_table_7.jpg)
+![create_table_7](src/Curso_de_PostgreSQL/create_table_7.jpg)
 
 Con ello creamos la tabla pasajero, ahora usaremos PGAdmin para crear el script de inserción dando click derecho a la tabla y seleccionando insert, esto crear el script automáticamente para (INSERT INTO de SQL) agregar los datos.
 
-![create_table_8](src/create_table_8.jpg)
+![create_table_8](src/Curso_de_PostgreSQL/create_table_8.jpg)
 
-![create_table_9](src/create_table_9.jpg)
+![create_table_9](src/Curso_de_PostgreSQL/create_table_9.jpg)
 
 Borramos **id** por ser autoincremental
 
@@ -647,7 +647,7 @@ SELECT current_date;
 
 Insertamos el registro seleccionado solo el query a realizar y usamos el boten de play o F5.
 
-![create_table_10](src/create_table_10.jpg)
+![create_table_10](src/Curso_de_PostgreSQL/create_table_10.jpg)
 
 Podemos verificar que los datos yendo a los query tools y hacemos la consulta de la tabla.
 
@@ -738,7 +738,7 @@ En esta clase vamos a crear una tabla, asignarle particiones y después hacer un
 
 Creamos la tabla bitacora_viaje con toda la informacion de los viajes tendra los campos id, id_viaje, fecha, fecha sera el campo por el cual vamos a particionar la tabla.
 
-![particiones_1](src/particiones_1.jpg)
+![particiones_1](src/Curso_de_PostgreSQL/particiones_1.jpg)
 
 **Como lo hacemos?**
 
@@ -746,17 +746,17 @@ Primero indicamos a la tabla que haremos la partición y luego por cual campo se
 
 Dejamos constraints vacío, y en General indicamos que es una tabla particionada.
 
-![particiones_2](src/particiones_2.jpg)
+![particiones_2](src/Curso_de_PostgreSQL/particiones_2.jpg)
 
 Con ello nos pide una llave para hacer la partición, la asignamos en la tabla partitions
 
-![particiones_3](src/particiones_3.jpg)
+![particiones_3](src/Curso_de_PostgreSQL/particiones_3.jpg)
 
-![particiones_4](src/particiones_4.jpg)
+![particiones_4](src/Curso_de_PostgreSQL/particiones_4.jpg)
 
 Creamos un **INSERT**  para dicha tabla.
 
-![particiones_5](src/particiones_5.jpg)
+![particiones_5](src/Curso_de_PostgreSQL/particiones_5.jpg)
 
 Observamos el error al no existir ninguna partición, ahora hay que crearla, esto lo hacemos creando una nueva tabla
 
@@ -767,17 +767,17 @@ FOR VALUES FROM ('200-0-0') TO ('209-0-3')
 
 Creamos la tabla de partición para 200 del mes de enero ahora todos los **INSERT** correspondientes a ese rango de tiempo se guardaran en esa tabla.
 
-![particiones_6](src/particiones_6.jpg)
+![particiones_6](src/Curso_de_PostgreSQL/particiones_6.jpg)
 
 Ejecutamos el INSERT con un rango de la partición.
 
-![particiones_7](src/particiones_7.jpg)
+![particiones_7](src/Curso_de_PostgreSQL/particiones_7.jpg)
 
  Pero en contraste de que si queremos insertar datos fuera de ese rango de tiempo la operación nos arrojara un error como al principio, por lo tanto tendremos que crear una nueva partición.
 
 Observa que las particiones si existen físicamente.
 
-![particiones_8](src/particiones_8.jpg)
+![particiones_8](src/Curso_de_PostgreSQL/particiones_8.jpg)
 
 Nota final, no es posible crear llaves primarias en tablas particionadas ya que la informacion esta toda dividas, no te preocupes estas tablas se utilizan para guardar informacion en masa como bitácoras y hacen referencia a tablas que si tienen estas llaves primarias (miralo como un pivot table)
 
@@ -919,35 +919,35 @@ psql -h <host> -d <base de datos> -U <usuario> -p <port>
 
 #### Creando roles desde PGAdmin
 
-![create_user_](src/create_user_1.jpg)
+![create_user_](src/Curso_de_PostgreSQL/create_user_1.jpg)
 
-![create_user_2](src/create_user_2.jpg)
+![create_user_2](src/Curso_de_PostgreSQL/create_user_2.jpg)
 
 Asignamos un password
 
-![create_user_3](src/create_user_3.jpg)
+![create_user_3](src/Curso_de_PostgreSQL/create_user_3.jpg)
 
 Asignamos permisos para solo lectura
 
-![create_user_4](src/create_user_4.jpg)
+![create_user_4](src/Curso_de_PostgreSQL/create_user_4.jpg)
 
-![create_user_5](src/create_user_5.jpg)
+![create_user_5](src/Curso_de_PostgreSQL/create_user_5.jpg)
 
 Ahora vamos a darle permisos a nuestras tablas para que el usuario_consulta pueda tener acceso a interactuar informacion y consultarla, este no podrá acceder a la estructura de la misma ni borrar informacion
 
-![create_user_6](src/create_user_6.jpg)
+![create_user_6](src/Curso_de_PostgreSQL/create_user_6.jpg)
 
-![create_user_7](src/create_user_7.jpg)
+![create_user_7](src/Curso_de_PostgreSQL/create_user_7.jpg)
 
 Damos click en next y seleccionamos los permisos que se otorgaran en este caso insert, select y update
 
-![create_user_8](src/create_user_8.jpg)
+![create_user_8](src/Curso_de_PostgreSQL/create_user_8.jpg)
 
-![create_user_9](src/create_user_9.jpg)
+![create_user_9](src/Curso_de_PostgreSQL/create_user_9.jpg)
 
 Verificamos que en las otras tablas.
 
-![create_user_10](src/create_user_10.jpg)
+![create_user_10](src/Curso_de_PostgreSQL/create_user_10.jpg)
 
 ### Clase 15 Llaves foraneas
 
@@ -961,13 +961,13 @@ Para ello tenemos que entender que las llaves foraneas siguen una estructura muy
 
 Vamos a definir la primer relacion con el trayecto y sus relaciones con las otras tablas, vemos en los constraints donde nos indica cual valor es una llave primaria y asegura que ese valor sea único, y a continuación damos click en Foreign Key para definir las relaciones con las otras tablas.
 
-![foreign_key_](src/foreign_key_1.jpg)
+![foreign_key_](src/Curso_de_PostgreSQL/foreign_key_1.jpg)
 
 Damos click en el símbolo de + para que acepte los cambios, la pestaña de Action es la mas importante ya que se indica que acciones se llevaran a cabo cuando ocurra un cambio en la tabla principal.
 
-![foreign_key_2](src/foreign_key_2.jpg)
+![foreign_key_2](src/Curso_de_PostgreSQL/foreign_key_2.jpg)
 
-![foreign_key_3](src/foreign_key_3.jpg)
+![foreign_key_3](src/Curso_de_PostgreSQL/foreign_key_3.jpg)
 
 A continuación creamos la relacion de trayecto con tren usando el Query Tool
 
@@ -978,15 +978,15 @@ ON UPDATE CASCADE
 ON DELETE CASCADE
 ```
 
-![foreign_key_4](src/foreign_key_4.jpg)
+![foreign_key_4](src/Curso_de_PostgreSQL/foreign_key_4.jpg)
 
 Aplicaremos lo mismo con la tabla de viaje
 
-![foreign_key_5](src/foreign_key_5.jpg)
+![foreign_key_5](src/Curso_de_PostgreSQL/foreign_key_5.jpg)
 
-![foreign_key_6](src/foreign_key_6.jpg)
+![foreign_key_6](src/Curso_de_PostgreSQL/foreign_key_6.jpg)
 
-![foreign_key_7](src/foreign_key_7.jpg)
+![foreign_key_7](src/Curso_de_PostgreSQL/foreign_key_7.jpg)
 
 ```sql
 ALTER TABLE public.viaje
@@ -997,23 +997,23 @@ ON DELETE CASCADE
 
 ```
 
-![foreign_key_8](src/foreign_key_8.jpg)
+![foreign_key_8](src/Curso_de_PostgreSQL/foreign_key_8.jpg)
 
 Comprobamos que los cambios se hayan realizado en la tabla.
 
-![foreign_key_9](src/foreign_key_9.jpg)
+![foreign_key_9](src/Curso_de_PostgreSQL/foreign_key_9.jpg)
 
 ### Clase 16 Insercion y consulta de datos
 
 Vamos a insertar datos en la tabla estacion, para ello damos de nuevo click derecho en la tabla deseada, vamos al menu Scripts y después al apartado INSERT Script
 
-![insert_](src/insert_1.jpg)
+![insert_1](src/Curso_de_PostgreSQL/insert_1.jpg)
 
 Creamos dos INSERT
 
-![insert_2](src/insert_2.jpg)
+![insert_2](src/Curso_de_PostgreSQL/insert_2.jpg)
 
-![insert_3](src/insert_3.jpg)
+![insert_3](src/Curso_de_PostgreSQL/insert_3.jpg)
 
 ```sql
 INSERT INTO public.estacion(
@@ -1029,41 +1029,43 @@ VALUES ('Estacion Norte', 'St 00#2');
 
 Y verificamos que se hayan insertado los datos
 
-![insert_4](src/insert_4.jpg)
+![insert_4](src/Curso_de_PostgreSQL/insert_4.jpg)
 
 Insertamos la informacion de la tabla de trenes
 
-![insert_5](src/insert_5.jpg)
+![insert_5](src/Curso_de_PostgreSQL/insert_5.jpg)
 
 A continuación viene la parte interesante que es relacionar la informacion de las tablas tren y estacion en la tabla trayecto.
 
-![insert_6](src/insert_6.jpg)
+![insert_6](src/Curso_de_PostgreSQL/insert_6.jpg)
 
 En caso de querer agregar un tren o una estacion que no existe PGAdmin/la consola no informara acerca del tipo de error
 
-![insert_7](src/insert_7.jpg)
+![insert_7](src/Curso_de_PostgreSQL/insert_7.jpg)
 
 Finalmente borramos la informacion de la tabla tren para el primer id
 
-![insert_8](src/insert_8.jpg)
+![insert_8](src/Curso_de_PostgreSQL/insert_8.jpg)
 
 Ahora veamos el efecto en la tabla de trayectos
 
-![insert_9](src/insert_9.jpg)
+![insert_9](src/Curso_de_PostgreSQL/insert_9.jpg)
 
 Observamos que se elimino la informacion (por la acción CASCADE) del trayecto ya que se elimino el id (llave primaria) del tren, ahora una peculiaridad es que si creamos otro tren sin definir explícitamente el valor del id tendremos un tren id 2, y el id del trayecto también cambiara.
 
-![insert_1](src/insert_1.jpg)
+![insert_10](src/Curso_de_PostgreSQL/insert_10.jpg)
 
-![insert_2](src/insert_2.jpg)
+![insert_11](src/Curso_de_PostgreSQL/insert_11.jpg)
 
-![insert_3](src/insert_3.jpg)
+![insert_12](src/Curso_de_PostgreSQL/insert_12.jpg)
 
 Ahora que pasa si cambiamos el ID del tren? Eso lo logramos con el comando UPDATE o UPDATE Script de PGAdmin
 
-![insert_4](src/insert_4.jpg)
+![insert_13](src/Curso_de_PostgreSQL/insert_13.jpg)
 
-![insert_5](src/insert_5.jpg)
+![insert_14](src/Curso_de_PostgreSQL/insert_14.jpg)
+
+![insert_15](src/Curso_de_PostgreSQL/insert_15.jpg)
 
 ### Clase 17 Insercion masiva de datos
 
@@ -1071,7 +1073,7 @@ Para esta clase usaremos el servicios <https://mockaroo.com/> para generar datos
 
 El servicio es intuitivo, por lo que deben quedar los campos de la siguiente manera.
 
-![insersion_masiva_1](src/insersion_masiva_1.jpg)
+![insersion_masiva_1](src/Curso_de_PostgreSQL/insersion_masiva_1.jpg)
 
 Hacemos click en el botón download y descargamos el script SQL, lo abrimos en nuestro editor de texto, copiamos y pegamos en el Script insert de estacion.
 
@@ -1091,23 +1093,27 @@ y reiniciamos el serial el serial de las tablas
 TRUNCATE TABLE tren, trayecto, viaje, estacion, pasajero RESTART IDENTITY;
 ```
 
-![insersion_masiva_2](src/insersion_masiva_2.jpg)
+![insersion_masiva_2](src/Curso_de_PostgreSQL/insersion_masiva_2.jpg)
 
 Ahora hacemos lo mismo para la tabla de trenes.
 
-![insersion_masiva_3](src/insersion_masiva_3.jpg)
+![insersion_masiva_3](src/Curso_de_PostgreSQL/insersion_masiva_3.jpg)
 
-![insersion_masiva_4](src/insersion_masiva_4.jpg)
+![insersion_masiva_4](src/Curso_de_PostgreSQL/insersion_masiva_4.jpg)
 
-![insersion_masiva_5](src/insersion_masiva_5.jpg)
+![insersion_masiva_5](src/Curso_de_PostgreSQL/insersion_masiva_5.jpg)
 
-![insersion_masiva_6](src/insersion_masiva_6.jpg)
+![insersion_masiva_6](src/Curso_de_PostgreSQL/insersion_masiva_6.jpg)
 
 Creamos la data para trayecto y para viaje
 
-![insersion_masiva_7](src/insersion_masiva_7.jpg)
+![insersion_masiva_7](src/Curso_de_PostgreSQL/insersion_masiva_7.jpg)
 
-![insersion_masiva_8](src/insersion_masiva_8.jpg)
+![insersion_masiva_8](src/Curso_de_PostgreSQL/insersion_masiva_8.jpg)
+
+![insersion_masiva_9](src/Curso_de_PostgreSQL/insersion_masiva_9.jpg)
+
+![insersion_masiva_10](src/Curso_de_PostgreSQL/insersion_masiva_10.jpg)
 
 ## Modulo 3 Generar consultas avanzadas
 
@@ -1122,7 +1128,7 @@ Los siguientes son los tipos de joins
 - RIGHT(OUTER)
 - FULL OUTER
 
-![tipos_join](src/tipos_join.jpg)
+![tipos_join](src/Curso_de_PostgreSQL/tipos_join.jpg)
 
 lectura recomendada  <https://www.postgresqltutorial.com/postgresql-joins/>
 
@@ -1139,7 +1145,7 @@ LEFT JOIN viaje on (viaje.id_pasajero = pasajero.id)
 WHERE viaje.id IS NULL;
 ```
 
-![join_](src/join_1.jpg)
+![join_](src/Curso_de_PostgreSQL/join_1.jpg)
 
 --------------------------RESUMEN----------------------------------------
 /* Inner join: solo nos trae los datos que coinciden en ambas tablas. */
@@ -1222,7 +1228,7 @@ Primer Ejemplo: Insertar un dato en la tabla estacion con id = .
 
 **ON CONFLICT DO NOTHING**.
 
-![funciones_especiales_1](src/funciones_especiales_1.jpg)
+![funciones_especiales_1](src/Curso_de_PostgreSQL/funciones_especiales_1.jpg)
 
 ```SQL
 INSERT INTO public.estacion(
@@ -1233,7 +1239,7 @@ ON CONFLICT DO NOTHING;
 
 **ON CONFLICT (COLUMNA) DO UPDATE SET**.
 
-![funciones_especiales_2](src/funciones_especiales_2.jpg)
+![funciones_especiales_2](src/Curso_de_PostgreSQL/funciones_especiales_2.jpg)
 
 ```SQL
 INSERT INTO public.estacion(
@@ -1244,7 +1250,7 @@ ON CONFLICT(ID) DO UPDATE SET nombre = 'Nombre', direccion = 'Dire';
 
 **RETURNING**.
 
-![funciones_especiales_3](src/funciones_especiales_3.jpg)
+![funciones_especiales_3](src/Curso_de_PostgreSQL/funciones_especiales_3.jpg)
 
 ```SQL
 INSERT INTO public.estacion(
@@ -1255,7 +1261,7 @@ RETURNING *;
 
 **LIKE**.
 
-![funciones_especiales_4](src/funciones_especiales_4.jpg)
+![funciones_especiales_4](src/Curso_de_PostgreSQL/funciones_especiales_4.jpg)
 
 ```SQL
 SELECT nombre
@@ -1269,7 +1275,7 @@ WHERE nombre ILIKE 'o%';
 
 ****IS/IS NOT:****.
 
-![funciones_especiales_5](src/funciones_especiales_5.jpg)
+![funciones_especiales_5](src/Curso_de_PostgreSQL/funciones_especiales_5.jpg)
 
 ```SQL
 SELECT *
@@ -1295,7 +1301,7 @@ Funciones mas comunes en postgres:
 
 Primero modificar tabla pasajero para tener un dato como nulo.
 
-![funciones_especiales_6](src/funciones_especiales_6.jpg)
+![funciones_especiales_6](src/Curso_de_PostgreSQL/funciones_especiales_6.jpg)
 
 ```sql
 SELECT id, COALESCE(nombre, 'No Aplica') nombre, direccion_residencia, fecha_nacimiento
@@ -1304,7 +1310,7 @@ FROM public.pasajero WHERE id = 1;
 
 **Ejemplo NULLIF**.
 
-![funciones_especiales_7](src/funciones_especiales_7.jpg)
+![funciones_especiales_7](src/Curso_de_PostgreSQL/funciones_especiales_7.jpg)
 
 ```sql
 SELECT NULLIF (0,0);
@@ -1312,7 +1318,7 @@ SELECT NULLIF (0,0);
 
 **Ejemplo GREATEST**.
 
-![funciones_especiales_8](src/funciones_especiales_8.jpg)
+![funciones_especiales_8](src/Curso_de_PostgreSQL/funciones_especiales_8.jpg)
 
 ```sql
 SELECT GREATEST (0, 1,2,3,4,5,6);;
@@ -1320,7 +1326,7 @@ SELECT GREATEST (0, 1,2,3,4,5,6);;
 
 **Ejemplo LEAST**.
 
-![funciones_especiales_9](src/funciones_especiales_9.jpg)
+![funciones_especiales_9](src/Curso_de_PostgreSQL/funciones_especiales_9.jpg)
 
 ```sql
 SELECT LEAST (0, 1,2,3,4,5,6);;
@@ -1328,7 +1334,7 @@ SELECT LEAST (0, 1,2,3,4,5,6);;
 
 **Ejemplo BLOQUES ANÓNIMOS**.
 
-![funciones_especiales_10](src/funciones_especiales_10.jpg)
+![funciones_especiales_10](src/Curso_de_PostgreSQL/funciones_especiales_10.jpg)
 
 ```sql
 SELECT id, nombre, direccion_residencia, fecha_nacimiento,
@@ -1388,9 +1394,9 @@ Cuando la construimos usaremos la sintaxis SELECT vista
 
 Creamos la vista en PGAdmin dando click derecho en views y luego en create
 
-![views_1](src/views_1.jpg)
+![views_1](src/Curso_de_PostgreSQL/views_1.jpg)
 
-![views_2](src/views_2.jpg)
+![views_2](src/Curso_de_PostgreSQL/views_2.jpg)
 
 ```sql
 SELECT *,
@@ -1404,11 +1410,11 @@ FROM public.pasajero
 ORDER BY tipo;
 ```
 
-![views_3](src/views_3.jpg)
+![views_3](src/Curso_de_PostgreSQL/views_3.jpg)
 
 Guardamos la vista y ahora hacemos la consulta
 
-![views_4](src/views_4.jpg)
+![views_4](src/Curso_de_PostgreSQL/views_4.jpg)
 
 Estas vistas volatiles son muy útiles ya que podemos pasar la consulta raw (haciendo referencia a django) a nuestro backend para entregar el estado actual de los datos de nuestra aplicación.
 
@@ -1424,11 +1430,11 @@ Nota: El ejemplo del curso utiliza horas, en mi caso particular utilice fechas.
 
 Hacemos la consulta
 
-![views_5](src/views_5.jpg)
+![views_5](src/Curso_de_PostgreSQL/views_5.jpg)
 
 Y observamos el error de que la vista no cuenta con datos, por lo que procedemos a aplicar la sentencia recomendada.
 
-![views_6](src/views_6.jpg)
+![views_6](src/Curso_de_PostgreSQL/views_6.jpg)
 
 Si borramos algún registro de nuestra tabla de viaje (29 al inicio 28 al borrar) la vista materializada seguirá conteniendo el total original (29 registros), estas vistas las usamos cuando queremos obtener la informacion 1 vez, esta quedara guardada en memoria.
 
@@ -1440,27 +1446,27 @@ https://www.postgresql.org/docs/9.2/plpgsql.html
 
 Las PL o procedimientos almacenados hacen parte del motor de postgres y es una de las caracteristicas mas importantes y el porque las personas empiezan a usar este motor, ella nos ayuda a desarrollar código directamente sobre la base su estructura es bastante sencilla, se asemeja a una funcion de cualquier lenguaje de programación (declaración, uso de variables y un fin) y se permite ejecutar dentro de la base de datos.
 
-![pl_1](src/pl_1.jpg)
+![pl_1](src/Curso_de_PostgreSQL/pl_1.jpg)
 
 #### Creando funciones con PL
 
 El primer ejemplo declara una PL nota que todas las PL inician con DO $$ y terminan con $$, este ejemplo levanta un mensaje solamente en la consola, esto con el keyword  **RAISE NOTICE**
 
-![pl_2](src/pl_2.jpg)
+![pl_2](src/Curso_de_PostgreSQL/pl_2.jpg)
 
 Segundo ejemplo usando variables y tipos de datos, esto se hace con la seccion **DECLARE**, **record** nos permite almacenar el tipo de dato de una fila, y si queremos un valor de inicio lo hacemos con ":=" en el lenguaje de postgres y "=" solo esta reservado para las consultas.
 
-![pl_3](src/pl_3.jpg)
+![pl_3](src/Curso_de_PostgreSQL/pl_3.jpg)
 
 Ahora contaremos los registros en la tabla incorporando un contador
 
-![pl_4](src/pl_4.jpg)
+![pl_4](src/Curso_de_PostgreSQL/pl_4.jpg)
 
-![22_PL-SQL_01.webp](src/22_PL-SQL_01.webp)
+![22_PL-SQL_01.webp](src/Curso_de_PostgreSQL/22_PL-SQL_01.webp)
 
 Como te habrás dado cuenta no es posible llamar a este PL de esta manera, para ello es necesario encapsularlo de la siguiente forma.
 
-![pl_5](src/pl_5.jpg)
+![pl_5](src/Curso_de_PostgreSQL/pl_5.jpg)
 
 Void indica que no retorna valores, para ejecutar nuestra funcion basta con usar lo siguiente
 
@@ -1468,15 +1474,15 @@ Void indica que no retorna valores, para ejecutar nuestra funcion basta con usar
 SELECT importantePL();
 ```
 
-![pl_6](src/pl_6.jpg)
+![pl_6](src/Curso_de_PostgreSQL/pl_6.jpg)
 
 No retorna ningun dato, pero si los mensajes de lo que ejecutamos.
 
-![pl_7](src/pl_7.jpg)
+![pl_7](src/Curso_de_PostgreSQL/pl_7.jpg)
 
 Si queremos retornar algún dato lo podemos declarar después de **RETURNS** y muy importante como nuestra funcion ya existe debemos hacer uno de la expresión **CREATE OR REPLACE FUNCTION** para nuestra funcion importantePL()
 
-![pl_8](src/pl_8.jpg)
+![pl_8](src/Curso_de_PostgreSQL/pl_8.jpg)
 
 **tip: La mayoria de las PL tienen que ver con consultas**.
 
@@ -1486,19 +1492,19 @@ Al igual que los demás ejercicios en el arbol del menu damos click derecho en f
 
 Nombramos a nuestra funcion
 
-![pl_9](src/pl_9.jpg)
+![pl_9](src/Curso_de_PostgreSQL/pl_9.jpg)
 
-![pl_10](src/pl_10.jpg)
+![pl_10](src/Curso_de_PostgreSQL/pl_10.jpg)
 
-![pl_11](src/pl_11.jpg)
+![pl_11](src/Curso_de_PostgreSQL/pl_11.jpg)
 
-![pl_12](src/pl_12.jpg)
+![pl_12](src/Curso_de_PostgreSQL/pl_12.jpg)
 
 Guardamos la PL y la ejecutamos igual que la forma anterior a traves del select.
 
-![pl_13](src/pl_13.jpg)
+![pl_13](src/Curso_de_PostgreSQL/pl_13.jpg)
 
-![pl_14](src/pl_14.jpg)
+![pl_14](src/Curso_de_PostgreSQL/pl_14.jpg)
 
 
 ### Clase 23 Triggers
@@ -1535,25 +1541,25 @@ END
 
 Ejecutamos nuestra PL y traemos los datos de la ultima tabla creada
 
-![trigger_1](src/trigger_1.jpg)
+![trigger_1](src/Curso_de_PostgreSQL/trigger_1.jpg)
 
 Borramos un registro de la tabla de pasajeros, volvemos a ejecutar nuestro trigger y consultamos de nuevo los datos.
 
-![trigger_2](src/trigger_2.jpg)
+![trigger_2](src/Curso_de_PostgreSQL/trigger_2.jpg)
 
 Ahora  vamos a hacer que esa funcion sea de tipo Trigger y la adjuntamos al insert de la tabla de pasajeros.
 
 Para ello modificamos la funcion, donde ahora deberá detornar un trigger, para ello borramos la funcion que teníamos y la volvemos a escribir.
 
-![trigger_3](src/trigger_3.jpg)
+![trigger_3](src/Curso_de_PostgreSQL/trigger_3.jpg)
 
 Ese trigger de cierta forma lo podemos adjuntar a las acciones sobre una tabla, las acciones compatibles son INSERT, UPDATE, DELETE Y TRUNCATE, para este ejemplo vamos a hacerlo sobre el nivel de INSERT para ello creamos la funcion CREATE TRIGGER
 
-![trigger_4](src/trigger_4.jpg)
+![trigger_4](src/Curso_de_PostgreSQL/trigger_4.jpg)
 
 Intentamos hacer un insert a pasajeros.
 
-![trigger_5](src/trigger_5.jpg)
+![trigger_5](src/Curso_de_PostgreSQL/trigger_5.jpg)
 
 Observamos en el error que el trigger no esta retornando nada, por lo que hay que modificarlo en el apartado del arbol triggers lo buscamos y damos click en CREATE y modificamos el trigger.
 
@@ -1573,7 +1579,7 @@ DROP  FUNCTION public.importante_pl2() CASCADE ;
 
 3.- Creamos el trigger
 
-![trigger_6](src/trigger_6.jpg)
+![trigger_6](src/Curso_de_PostgreSQL/trigger_6.jpg)
 
 ```sql
 
@@ -1599,15 +1605,15 @@ $BODY$;
 
 4.- Creamos el Trigger
 
-![trigger_7](src/trigger_7.jpg)
+![trigger_7](src/Curso_de_PostgreSQL/trigger_7.jpg)
 
 Ahora procedemos de nuevo a insertar un valor nuevo en la tabla pasajero
 
-![trigger_8](src/trigger_8.jpg)
+![trigger_8](src/Curso_de_PostgreSQL/trigger_8.jpg)
 
 Consultamos la tabla cont_pasajeros para confirmar
 
-![trigger_9](src/trigger_9.jpg)
+![trigger_9](src/Curso_de_PostgreSQL/trigger_9.jpg)
 
 **Reto:** Crear un trigger similar al anterior donde se registre cuando se eliminan los pasajeros
 
@@ -1647,7 +1653,7 @@ CREATE TRIGGER mitrigger_2
 
 Verificamos haciendo el DELETE de cualquier usuario y observamos el resultado.
 
-![trigger_10](src/trigger_10.jpg)
+![trigger_10](src/Curso_de_PostgreSQL/trigger_10.jpg)
 
 ## Modulo 4 Integrar bases de datos con servicios externos
 
@@ -1687,7 +1693,7 @@ CREATE EXTENSION dblink;
 
 Volvemos a  intentar la conexion.
 
-![datos_remotos_1](src/datos_remotos_1.jpg)
+![datos_remotos_1](src/Curso_de_PostgreSQL/datos_remotos_1.jpg)
 
 Ya obtuvimos acceso remoto a una base de datos, ahora hagamos un join de nuestros datos locales para saber quien es el usuario VIP
 
@@ -1720,7 +1726,7 @@ dblink ('dbname=remota
 USING (id);
 ```
 
-![datos_remotos_2](src/datos_remotos_2.jpg)
+![datos_remotos_2](src/Curso_de_PostgreSQL/datos_remotos_2.jpg)
 
 **Reto** Haz la conexion de forma inversa.
 
@@ -1744,7 +1750,7 @@ USING (id)
 ;
 ```
 
-![datos_remotos_3](src/datos_remotos_3.jpg)
+![datos_remotos_3](src/Curso_de_PostgreSQL/datos_remotos_3.jpg)
 
 ### Clase 25 Transacciones
 
@@ -1763,33 +1769,33 @@ COMMIT (si todo salio bien) | ROLLBACK (si algo salio mal)
 
 En PGAdmin primero desactivamos el auto commit, este viene activo por default, y ejecutamos las siguientes consultas iniciando con **BEGIN**
 
-![transacciones_1](src/transacciones_1.jpg)
+![transacciones_1](src/Curso_de_PostgreSQL/transacciones_1.jpg)
 
 Como puedes observar (y marcado con un recuadro naranja) en la interfaz de PGAdmin aparecieron 2 botones "commit" y "rollback" si damos commit deben guardarse los datos, y en el caso opuesto deshacer la transacción, pero como esta es una consulta esto no afecta a la base de datos.
 
 Ahora probemos que pasa con un insert creando una nueva estacion.
 
-![transacciones_2](src/transacciones_2.jpg)
+![transacciones_2](src/Curso_de_PostgreSQL/transacciones_2.jpg)
 
 En este punto la informacion esta almacenada en memoria, si quitamos el comentario de algunas de las opciones (no es necesario ejecutar los inserts ya que los datos están en staging) y ejecutamos esa linea se confirmaran o devolverán los cambios, también lo puedes hacer en forma manual con los botones de la interface, aceptamos los cambios y comprobamos la informacion insertada.
 
-![transacciones_3](src/transacciones_3.jpg)
+![transacciones_3](src/Curso_de_PostgreSQL/transacciones_3.jpg)
 
-![transacciones_4](src/transacciones_4.jpg)
+![transacciones_4](src/Curso_de_PostgreSQL/transacciones_4.jpg)
 
 Hasta ahora todos los datos han sido correctos y el commit se ejecuta sin problemas, ahora haremos un ejemplo usando un id que se encuentra repetido usando un INSERT.
 
-![transacciones_5](src/transacciones_5.jpg)
+![transacciones_5](src/Curso_de_PostgreSQL/transacciones_5.jpg)
 
 Al ejecutar los inserts dentro del bloque de código **BEGIN / COMMIT** nos aseguramos que todas las operaciones sean congruentes, si hubiésemos ejecutado las sentencias con la selección  la primera se habría ejecutado y guardado, y la segunda hubiera fallado, pero al estar dentro del bloque de transacción con una consulta que sea errónea se hace el **ROLLBACK** y no se guarda ninguna informacion en la base de datos, ya que postgres siempre lo hace de manera implícita sin mostrarlo en pantalla, una forma explicita seria usándolo con las PL para limitar el numero de vip's en nuestros servicios.
 
-![transacciones_6](src/transacciones_6.jpg)
+![transacciones_6](src/Curso_de_PostgreSQL/transacciones_6.jpg)
 
 
 **Alumno:**
 Mi aporte a la clase es otra forma de usar ROLLBACK con otra función de postgresql que se llama SAVEPOINT. Básicamente se pueden crear puntos de guardado por cada consulta que uno desee y hacer que el ROLLBACK solo sea efectivo hasta ese punto, es decir, que las operaciones anteriores al SAVEPOINT sí se ejecuten.
 
-![25_transacciones_01](src/25_transacciones_01.png)
+![25_transacciones_01](src/Curso_de_PostgreSQL/25_transacciones_01.png)
 
 ### Clase 26 Otras Extensiones para Postgres
 
@@ -1803,7 +1809,7 @@ Vamos a PGAdmin para instalar leveshtein (la funcion matemática para medir la d
 
 **Levenshtein**.
 
-![extensiones_1](src/extensiones_1.jpg)
+![extensiones_1](src/Curso_de_PostgreSQL/extensiones_1.jpg)
 
 Vemos el resultado es 1, es decir el numero de caracteres que es necesario cambiar para que ambas palabras sean iguales.
 
@@ -1811,7 +1817,7 @@ Vemos el resultado es 1, es decir el numero de caracteres que es necesario cambi
 
 Esta funcion es utilizada junto con algoritmos de machine learning y procesamiento de lenguaje natural el cual sabe que palabra quisiste decir, nos entrega un valor entre 0 y 4 donde 0 diferencia amplia.
 
-![extensiones_2](src/extensiones_2.jpg)
+![extensiones_2](src/Curso_de_PostgreSQL/extensiones_2.jpg)
 
 Estas dos funciones si nuestra aplicaciones implementan análisis de texto o análisis de voz no es necesario desarrollarlas desde cero ya que postgres lo implementa al nivel de la base de datos.
 
@@ -1830,7 +1836,7 @@ Ha llegado el momento de guardar todo nuestro trabajo hasta el momento y tener u
 
 Tenemos nuestra base de datos con mucha informacion delicada, y vamos a crear una copia de seguridad, para ello vamos en PGAdmin a nuestra base de datos **"transporte"** haciendo click derecho y seleccionamos la opcion Backup... y se abrirá un formulario para preguntarnos que es lo que queremos hacer.
 
-![backup_1](src/backup_1.jpg)
+![backup_1](src/Curso_de_PostgreSQL/backup_1.jpg)
 
 Tenemos los siguientes campos:
 
@@ -1852,13 +1858,13 @@ Tenemos los siguientes campos:
 
 En la pantalla de opciones podemos solicitar la data y el schema, o solo uno de ellos, los blobs se refiere a los datos de tipos binarios (imagen o archivo de texto), haz click en el símbolo ? para ver a detalle cada una de las opciones.
 
-![backup_2](src/backup_2.jpg)
+![backup_2](src/Curso_de_PostgreSQL/backup_2.jpg)
 
-![backup_3](src/backup_3.jpg)
+![backup_3](src/Curso_de_PostgreSQL/backup_3.jpg)
 
 Ahora para realizar el paso de Restauracion creamos una base de datos nueva (simulando que ya no existe la base transporte), damos click derecho y seleccionamos la opcion de Restore.
 
-![backup_4](src/backup_4.jpg)
+![backup_4](src/Curso_de_PostgreSQL/backup_4.jpg)
 
 Con ello recuperamos nuestras tablas y la informacion que estas contenían.
 
@@ -1899,7 +1905,7 @@ Postgres tiene dos niveles de limpieza.
 
 El mantenimiento en PGAdmin lo llevamos a cabo dando click derecho sobre la base de datos o sobre una de las tablas, pero es muy diferente ya que solo afectamos una tabla, mientras a nivel de base de datos podemos llegar a bloquear todas las tablas hasta que la tarea de mantenimiento termine, este es su menu con sus caracteristicas, la mas importante es vacuum.
 
-![maintenance_1](src/maintenance_1.jpg)
+![maintenance_1](src/Curso_de_PostgreSQL/maintenance_1.jpg)
 
 - Vacuum: La más importante, con tres opciones, Full, Freeze y Analyze.
 
@@ -1923,7 +1929,7 @@ Las replicas son mecanismos que nos permiten evitar problemas  de entrada y sali
 
 Ten en cuenta esta frase.
 
-![replicas_1](src/replicas_1.jpg)
+![replicas_1](src/Curso_de_PostgreSQL/replicas_1.jpg)
 
 Cuando tu aplicación crece en usuarios/operaciones te vas a topar con limites en términos de física y electronica, es decir los recursos de tu servidor (disco, ram, cpu) tienen limites, ellos no pueden ser sobrepasados en sus procesos de lectura y escritura que no pueden llevarse al mismo tiempo, por este motivo postgres bloquea la tabla para escritura mientras la lees y viceversa, esto para conservar la consistencia de datos, aquí entran las replicas a solucionar este problema.
 
@@ -1939,29 +1945,29 @@ Usaremos la plataforma <https://jelastic.com/>  para crear dos servidores 1 de p
 
 Primero nos registramos aquí <https://app.cloudjiffy.co/>, nos registramos y creamos dos bases de datos hacemos lo mismo para master1 y replica1.
 
-![replicas_2](src/replicas_2.jpg)
+![replicas_2](src/Curso_de_PostgreSQL/replicas_2.jpg)
 
 Esperamos a que termine su proceso y recibiremos por email los datos de conexion para usar en PAAdmin donde crearemos un servidor como los locales, lo nombramos master, pero en los datos de host y password utilizaremos los datos que recibimos por correo ya que IPV4 ya no esta disponible en la version trial, para la parte del nodo debemos ir al servicio de jelastic y dar click en el engrane amarillo a la altura de la base de datos y configurar un endpoint y reemplazar ese dato en el puerto.
 
 Datos del correo
 
-![replicas_3](src/replicas_3.jpg)
+![replicas_3](src/Curso_de_PostgreSQL/replicas_3.jpg)
 
 Configurar endpoint
 
-![replicas_4](src/replicas_4.jpg)
+![replicas_4](src/Curso_de_PostgreSQL/replicas_4.jpg)
 
 **Aquí ATENTO es muy importante que selecciones el nodo de tu base de datos** (tuve el error de seleccionar el nodo del server y nunca me conecte) la imagen es solo referencia, el nodo lo encuentras en el apartado con el icono de Postgres.
 
-![replicas_5](src/replicas_5.jpg)
+![replicas_5](src/Curso_de_PostgreSQL/replicas_5.jpg)
 
-Después de hacer clic en ADD nos asigna el Port que Podemos usar para accede a la BD usando el host en forma de nombre de dominio y no IP, en éste caso fué 11031. 
+Después de hacer clic en ADD nos asigna el Port que Podemos usar para accede a la BD usando el host en forma de nombre de dominio y no IP, en éste caso fué 11031.
 
-![replicas_6](src/replicas_6.jpg)
+![replicas_6](src/Curso_de_PostgreSQL/replicas_6.jpg)
 
 Este proceso lo realizamos también para la base replica, bien ahora contamos con dos bases de datos independientes.
 
-![replicas_7](src/replicas_7.jpg)
+![replicas_7](src/Curso_de_PostgreSQL/replicas_7.jpg)
 
 #### Configuracion Master
 
@@ -1973,23 +1979,25 @@ Buscamos los siguientes campos
 
 - **wal_level**(wall ahead log) que es como la bitacora de la base de datos, lo establecemos en para que se comporte en modo **hot_standby**, es decir una base de datos que mantiene sus archivos hasta que sus replicas se las lleven y los ejecuten.**Básicamente las replicas funcionan leyendo estos archivos de bitacora y copiando la informacion para no bloquear la base de datos maestra;**
 
-![replicas_8](src/replicas_8.jpg)
+![replicas_8](src/Curso_de_PostgreSQL/replicas_8.jpg)
 
 Buscamos el parámetro **max_wal_senders** que corresponde a la cantidad de replicas que vamos a tener, lo dejamos como 2 a futuro.
 
-![replicas_9](src/replicas_9.jpg)
+![replicas_9](src/Curso_de_PostgreSQL/replicas_9.jpg)
 
 Siguiente parámetro es **archive_mode** y refiere a como vamos a guardar los archivos de esa bitacora, indica que no los vamos a eliminar sino simplemente a archivar, lo dejamos en **on** para que als copias de replica las puedan leer desde ahi.
 
-![replicas_10](src/replicas_10.jpg)
+![replicas_10](src/Curso_de_PostgreSQL/replicas_10.jpg)
 
 Por ultimo para master tenemos **archive_command**, le indicamos con un comando de linux que es para copiar archivos y dejarlos en una carpeta temporal **'cp %p /tmp/%f'**
 
-![replicas_11](src/replicas_11.jpg)
+![replicas_11](src/Curso_de_PostgreSQL/replicas_11.jpg)
 
 Con esto tenemos la configuracion principal en nuestra base de datos maestra, ahora reiniciamos el servicio, pero antes recuerdas que existe en un archivo para permitir la conexion remota entre servicios **pg_hba.cong**, agregaremos la siguiente configuracion para un host con intenciones de replicacion con todas las bases de datos se va a conectar desde una Ip y confiarle lo que haga sin contraseña (solo para estos efectos de practica, y usaremos la IP interna de la replica) y le ponemos la mascara 32 para que sepa que no es un rango de ips sino una sola ip
 
-![replicas_13](src/replicas_13.jpg)
+![replicas_12](src/Curso_de_PostgreSQL/replicas_12.jpg)
+
+![replicas_13](src/Curso_de_PostgreSQL/replicas_13.jpg)
 
 Ahora reiniciamos el nodo de postgres.
 
@@ -1997,7 +2005,7 @@ Ahora reiniciamos el nodo de postgres.
 
 Procedemos a los cambios para ello haremos un par de ajustes en el archivo.conf lo primero es copiar todo lo que esta en master, nos conectamos con shh en el icono de terminal
 
-![replicas_14](src/replicas_14.jpg)
+![replicas_14](src/Curso_de_PostgreSQL/replicas_14.jpg)
 
 Ejecutamos el siguiente comando para detener el servicio de replica y hacer la copia de seguridad de los archivos directamente de la master hacia la esclava, con esto tendremos a las dos en un estado idéntico y posterior la reiniciamos en modo replica
 
@@ -2021,7 +2029,7 @@ pg_basebackup -U webadmin -R -D /var/lib/pgsql/data/ --host=192.168.6.255 --port
 
 Ahora hacemos un cambio en la en el archivo **postgresql.conf** de la base de datos replica al parámetro **hot_standby**  lo indicamos en **on**
 
-![replicas_15](src/replicas_15.jpg)
+![replicas_15](src/Curso_de_PostgreSQL/replicas_15.jpg)
 
 Ahora reiniciamos el servicio
 
@@ -2033,11 +2041,11 @@ Ahora lo interesante, comprobamos la configuracion maestro/replica, pero primero
 
 Creamos una base de datos en master
 
-![replicas_16](src/replicas_16.jpg)
+![replicas_16](src/Curso_de_PostgreSQL/replicas_16.jpg)
 
 Unos segundos después y de manera automática, ya la tengo en replica
 
-![replicas_17](src/replicas_17.jpg)
+![replicas_17](src/Curso_de_PostgreSQL/replicas_17.jpg)
 
 Pero si nosotros intentamos escribir en replica no nos va a dejar ya que replica es solo de lectura.
 
@@ -2047,4 +2055,4 @@ Pero si nosotros intentamos escribir en replica no nos va a dejar ya que replica
 
 **solución:** renombrar tablas, decirle a sistema que ataque dos tablas, ejemplo con un **ALTER TABLE** cambia la tabla **viajes** a **viajes_temporal** y crea una tabla de **viajes "nueva"** mientras que la aplicación sigue utilizando la tabla de viajes para insertar las operaciones del dia/turno, esto permitirá a tu algoritmo de consolidación realizar el borrado y indexado mucho mas rápido, mientras la tabla viajes sigue con registrando las operaciones de la aplicación, esta operación se realiza dependiendo el flujo de informacion a consolidar.
 
-[Cambiar nombres de tablas y particiones](src/cambiar-nombres-de-tablas-y-particiones.pdf)
+[Cambiar nombres de tablas y particiones](src/Curso_de_PostgreSQL/cambiar-nombres-de-tablas-y-particiones.pdf)

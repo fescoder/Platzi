@@ -178,7 +178,56 @@ Por ejemplo, otros ciudadanos de primera clase en java son:
 ---
 
 ### Clase 4 - Funciones puras
+Cómo definimos las funciones pueden ser categorizado as al ser ciudadanos de primera clase.
+Y el primer tipo sobre el que vamos a hablar son las **funciones puras** o conocidas como **Pure functions**.
 
+**¿Que es una función pura?** Una función pura no es más que una función que
+siempre genera el mismo resultado para el mismo parámetro.  
+Es decir, no importa cuántas veces mandemos a invocar esta función siempre que los parámetros sean los mismos
+va a generar el mismo resultado.
+
+Las funciones puras también funcionan en aislamiento.
+Eso quiere decir que no dependen del estado del sistema No dependen sobre si el sistema está corriendo en una computadora o está corriendo en un servidor remoto, y son deterministas.
+Quiere decir que nosotros podemos predecir el resultado de la ejecución de una función pura.
+Si nosotros sabemos que pasamos cinco y tres a sum, podemos predecir que el resultado será ocho. (5+3) del ejemplo.  
+Esto nos va a dar una ventaja gigante. Y es que al estar escribiendo pruebas de nuestro código va a ser muchísimo más fácil hacer casos de prueba donde nosotros digamos. al pasar estos parámetros deberíamos obtener este resultado.
+
+Ejemplos de funciones puras.
+Tenemos `f(x) = x^3`. Esta es una función pura porque no genera valores aleatorios.
+
+![04_Funciones_puras_01](src/Curso_Programacion_Funcional_Java_SE/04_Funciones_puras_01.png)
+
+A su vez, no cambia el valor de X, Es decir, para cada X genera
+un Y sin alterar el valor de X. Tres siempre va a seguir siendo tres y el resultado de la invocación
+siempre será veintisiete.
+
+No genera efectos secundarios Los efectos secundarios.  
+Ahora tenemos que entender que un efecto secundario
+es que no cambia en la base de datos, no crea un archivo y no modifica el sistema.
+Invocar a f(x) no apaga el Internet o borra un archivo en el sistema.
+Es por esto que esta es una función pura.
+
+Un ejemplo de función pura en Java es la función `hasAvialableFound()`
+
+![04_Funciones_puras_02](src/Curso_Programacion_Funcional_Java_SE/04_Funciones_puras_02.png)
+
+Que recibe un double que representa el balance de un usuario
+y nos dice si tiene o no disponible un balance para poder operar dentro del sistema.
+Es un ejemplo muy básico que lo único que hace es decirnos sin número, es mayor o
+no a cero, pero es una función pura.  
+Piensa en esto, el dato del usuario no se ve modificado.
+El sistema no se ve alterado por ello. Es una función pura.
+
+A las funciones que son, que no son puras, se les conoce como impuras.
+Y las reglas nos dictan algo. Lo primero que nos dictan es que una función pura puede
+invocar a otra función pura. ¿Por qué? Porque podemos pronosticar cuál va a ser el resultado de esta
+ejecución. Al fin Sabemos que una función pura es determinista, es decir, podemos pronosticar
+el resultado.
+
+Sin embargo no podemos invocar una función impura desde una función pura porque rompería la estructura. Es decir, si desde una función pura tratáramos de invocar a una función impura, no podríamos pronosticar o predecir cuál va a ser el resultado.
+Y al no poder pronosticar o predecir el resultado no tendríamos una función pura así
+de simple. Entendemos que hay una regla entre cómo podemos invocar mutuamente las funciones y
+qué categorías tenemos para ellas.
 
 ---
 

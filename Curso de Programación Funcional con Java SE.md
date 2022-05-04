@@ -1,4 +1,4 @@
-![00_Curso_Programaciokn_funcional_Java_SE](src/Curso_Programacion_Funcional_Java_SE/00_Curso_Programaciokn_funcional_Java_SE.webp)
+![00_Curso_Programaciokn_funcional_Java_SE](src/Curso_Programacion_Funcional_Java_SE/00_Curso_Programacion_funcional_Java_SE.webp)
 # Curso de Programación Funcional con Java SE
 Índice
 -

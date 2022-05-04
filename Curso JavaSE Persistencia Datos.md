@@ -1,5 +1,7 @@
+![Logo_Curso_de_Java_SE_Persistencia_de_Datos](src/Curso_Java_Persistencia_Datos/Logo_Curso_de_Java_SE_Persistencia_de_Datos.webp)
 # Curso de Java SE Persistencia de Datos
-
+Índice
+-
 - [Curso de Java SE Persistencia de Datos](#Curso-de-Java-SE-Persistencia-de-Datos)
     - [Modulo 3 Realizar operaciones CRUD y generar conexión](#modulo-3-Realizar-operaciones-CRUD-y-generar-conexión)
         - [Clase 8 Conexión a MySQL desde Java](#clase-8-Conexión-a-MySQL-desde-Java)

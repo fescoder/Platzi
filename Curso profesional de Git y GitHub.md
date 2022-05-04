@@ -1447,10 +1447,29 @@ git merge eff544f # Fusionará en un nuevo commit la historia de master con el m
 **Atención**  
 `git reset` es una mala práctica, no deberías usarlo en ningún momento. Debe ser nuestro último recurso.
 
-![39_Reconstruir_commits_en_Git_con_amend_01](src/Curso_profesional_de_Git_y_GitHub/39_Reconstruir_commits_en_Git_con_amend_01.webp)
+![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01](src/Curso_profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01.webp)
 
-![39_Reconstruir_commits_en_Git_con_amend_02](src/Curso_profesional_de_Git_y_GitHub/39_Reconstruir_commits_en_Git_con_amend_02.jpg)
+![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02](src/Curso_profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02.webp)
 
 ---
 
-### Clase 40 - 
+### Clase 40 - Reconstruir commits en Git con amend
+*Remendar* un commit con `amend` puede modificar el commit más reciente (enmendar) en la misma rama. Lo ejecutamos así:
+~~~
+git add -A # Para hacer uso de amend los archivos deben de estar en staging
+
+git commit --amend # Remendar último commit
+~~~
+
+Este comando sirve para agregar archivos nuevos o actualizar el commit anterior y no generar commits innecesarios. También es una forma sencilla de **editar o agregar comentarios al commit anterior** porque abrirá la consola para editar este commit anterior.
+
+**Atención**  
+Usar `amend` es una **mala práctica**, sobre todo cuando ya se ha hecho push o pull al repositorio remoto. Al momento de hacer amend con algún `commit` que esté en remoto, va a generar un conflicto que se va a arreglar haciendo un `commit adicional` y se **perderá el beneficio** del amend.
+
+![40_Reconstruir_commits_en_Git_con_amend_01](src/Curso_profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_01.webp)
+
+![40_Reconstruir_commits_en_Git_con_amend_02](src/Curso_profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_02.jpg)
+
+---
+
+### Clase 41 - 

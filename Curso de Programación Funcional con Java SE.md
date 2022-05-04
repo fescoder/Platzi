@@ -103,8 +103,7 @@ o variable se elimina completamente.
 En la programación funcional una función es un tipo de dato, un tipo de dato que puede operar sobre un dato **X** y generar un dato **Y**, como la matemática de la escuela, tenemos una
 función que recibe una X y genera una Y, incluso podemos generar una tabla de resultados con ellos, idealmente siempre una X va a generar la misma Y.
 
-- Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello, las funciones pueden generar o no un resultado, la ausencia de un
-resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
+- Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello, las funciones pueden generar o no un resultado, la ausencia de un resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
 - Las funciones se definen, almacenan o declaran bajo demanda como cualquier otro tipo de dato.
 - Pueden definirse funciones con respecto a otras funciones
 `esPar(x) = !esNon(x)`
@@ -121,6 +120,40 @@ factorial(x-1)
 ---
 
 ### Clase 3 - Funciones como ciudadanos de primera clase
+Una vez que definimos que es una función, tenemos que entender que ahora se vuelve en ciudadanos de
+primera clase y ¿que representa que sean ciudadanos de primera clase? Esto representa que ahora las
+funciones son algo reconocido por el lenguaje como algo que podemos definir y utilizar.
+
+Veamos algunos ejemplos, generalmente de que a las variables de tipo String o de tipo
+entero. Ahora puedes declarar variables de tipo función e incluso puedes asignarles un valor.
+Y también es importante declarar que ahora puedes tomar las como parámetros de otras funciones o
+retornar las como resultado de una ejecución.
+
+Entonces, el tenerlas como ciudadanos de primera clase
+implica que ya son tipos reconocidos por el lenguaje que podemos almacenar en alguna parte.
+Podemos tenerlos en variables podemos tenemos en parámetros o podemos tenerlos en retornos.
+Incluso podemos empezar a definir los bajo demanda.
+Así como tú definirías un string que sea, hay también podrías definir una función.
+Por ahora quedémonos con esta sintaxis. Esta sintaxis nos dice que es una función de f- Init Add al
+aire. Es una función que no está asignada, una variable y que simplemente estamos pasando la como
+parámetro hacia otra función no se obtienen de ningún otro lado.
+Son valores constantes, por así decirlo, algunos usos que puede llegar a tener el pasar este tipo
+de funciones declaradas en el aire puede ser, por ejemplo, obtener una configuración de conexión o
+simplemente hacer un procesamiento de un dato específico para un caso muy específico, como una petición
+web o recibir un dato y manipularlo de una base de datos.
+Declarar este tipo de lógica en el aire es porque probablemente en otros lugares no se necesita, así
+como el String se necesita exclusivamente en esta parte de nuestro código, tal vez este tipo de lógica
+se necesita exclusivamente en esta parte de los de.
+El programa, eh nos da el beneficio de poder tener aisladas las las partes de nuestro código, donde
+vamos a necesitar lógica para hacer transformaciones, creaciones o simplemente alguien que nos provea
+de un dato En otra parte del curso explicaremos qué tipos de funciones pueden generar datos que se pueden
+utilizado consumir posteriormente, ya que definimos que es un ciudadano de primera clase.
+Podemos empezar a platicar los tipos de funciones que vamos a tener y cómo se les puede identificar
+en qué casos y te invito a que me platique. Es que otras partes son ciudadanos de primera clase en
+nuestro código enrollaban que mas es un ciudadano de primera clase.
+Hay una sección de comentarios home. Pues dejarme tus comentarios acerca de que consideras tu que es
+o no es un ciudadano de primera clase. Llava y continuamos con el curso.
+Va ahora veremos los tipos de funciones que tenemos.
 
 ---
 

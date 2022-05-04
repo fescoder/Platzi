@@ -5,6 +5,54 @@
 - [Curso profesional de Git y GitHub](#curso-profesional-de-git-y-github)
     - [Módulo 1 - Introducción a Git](#módulo-1---introducción-a-git)
         - [Clase 1 - ¿Por qué usar un sistema de control de versiones como Git?](#clase-1---¿por-qué-usar-un-sistema-de-control-de-versiones-como-git)
+        - [Clase 2 - ¿Qué es Git?](#clase-2---¿qué-es-git)
+        - [Clase 3 - Instalando Git y GitBash en Windows](#clase-3---instalando-git-y-gitbash-en-windows)
+        - [Clase 4 - Instalando Git en OSX](#clase-4---instalando-git-en-osx)
+        - [Clase 5 - Instalando Git en Linux](#clase-5---instalando-git-en-linux)
+        - [Clase 6 - Editores de código, archivos binarios y de texto plano](#clase-6---editores-de-código-archivos-binarios-y-de-texto-plano)
+        - [Clase 7 - Introducción a la terminal y línea de comandos](#clase-7---introducción-a-la-terminal-y-línea-de-comandos)
+    - [Módulo 2 - Comandos básicos en Git](#módulo-2---comandos-básicos-en-git)
+        - [Clase 8 - Crea un repositorio de Git y haz tu primer commit](#clase-8---crea-un-repositorio-de-git-y-haz-tu-primer-commit)
+        - [Clase 9 - Analizar cambios en los archivos de tu proyecto con Git](#clase-9---analizar-cambios-en-los-archivos-de-tu-proyecto-con-git)
+        - [Clase 10 - ¿Qué es el staging y los repositorios? Ciclo básico de trabajo en Git](#clase-10---¿qué-es-el-staging-y-los-repositorios-ciclo-básico-de-trabajo-en-git)
+        - [Clase 11 - ¿Qué es un Branch (rama) y cómo funciona un Merge en Git?](#clase-11---¿qué-es-un-branch-rama-y-cómo-funciona-un-merge-en-git)
+        - [Clase 12 - Volver en el tiempo en nuestro repositorio utilizando reset y checkout](#clase-12---volver-en-el-tiempo-en-nuestro-repositorio-utilizando-reset-y-checkout)
+        - [Clase 13 - Git reset vs. Git rm](#clase-13---git-reset-vs-git-rm)
+    - [Módulo 3 - Flujo de trabajo básico en Git](#módulo-3---flujo-de-trabajo-básico-en-git)
+        - [Clase 14 - Flujo de trabajo básico con un repositorio remoto](#clase-14---flujo-de-trabajo-básico-con-un-repositorio-remoto)
+        - [Clase 15 - Introducción a las ramas o branches de Git](#clase-15---introducción-a-las-ramas-o-branches-de-git)
+        - [Clase 16 - Fusión de ramas con Git merge](#clase-16---fusión-de-ramas-con-git-merge)
+        - [Clase 17 - Resolución de conflictos al hacer un merge](#clase-17---resolución-de-conflictos-al-hacer-un-merge)
+    - [Módulo 4 - Trabajando con repositorios remotos en GitHub](#módulo-4---trabajando-con-repositorios-remotos-en-github)
+        - [Clase 18 - Cambios en GitHub: de master a main](#clase-18---cambios-en-github-de-master-a-main)
+        - [Clase 19 - Uso de GitHub](#clase-19---uso-de-github)
+        - [Clase 20 - Cómo funcionan las llaves públicas y privadas](#clase-20---cómo-funcionan-las-llaves-públicas-y-privadas)
+        - [Clase 21 - Configura tus llaves SSH en local](#clase-21---configura-tus-llaves-ssh-en-local)
+        - [Clase 22 - Conexión a GitHub con SSH](#clase-22---conexión-a-github-con-ssh)
+        - [Clase 23 - Tags y versiones en Git y GitHub](#clase-23---tags-y-versiones-en-git-y-github)
+        - [Clase 24 - Manejo de ramas en GitHub](#clase-24---manejo-de-ramas-en-github)
+        - [Clase 25 - Configurar múltiples colaboradores en un repositorio de GitHub](#clase-25---configurar-múltiples-colaboradores-en-un-repositorio-de-github)
+    - [Módulo 5 - Flujos de trabajo profesionales](#módulo-5---flujos-de-trabajo-profesionales)
+        - [Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master](#clase-26---flujo-de-trabajo-profesional-haciendo-merge-de-ramas-de-desarrollo-a-master)
+        - [Clase 27 - Flujo de trabajo profesional con Pull requests](#clase-27---flujo-de-trabajo-profesional-con-pull-requests)
+        - [Clase 28 - Utilizando Pull Requests en GitHub](#clase-28---utilizando-pull-requests-en-github)
+        - [Clase 29 - Creando un Fork, contribuyendo a un repositorio](#clase-29---creando-un-fork-contribuyendo-a-un-repositorio)
+        - [Clase 30 - Haciendo deployment a un servidor](#clase-30---haciendo-deployment-a-un-servidor)
+        - [Clase 31 - Hazme un pull request](#clase-31---hazme-un-pull-request)
+        - [Clase 32 - Ignorar archivos en el repositorio con .gitignore](#clase-32---ignorar-archivos-en-el-repositorio-con-gitignore)
+        - [Clase 33 - Readme.md es una excelente práctica](#clase-33---readmemd-es-una-excelente-práctica)
+        - [Clase 34 - Tu sitio web público con GitHub Pages](#clase-34---tu-sitio-web-público-con-github-pages)
+    - [Módulo 6 - Multiples entornos de trabajo en Git](#módulo-6---multiples-entornos-de-trabajo-en-git)
+        - [Clase 35 - Git Rebase: reorganizando el trabajo realizado](#clase-35---git-rebase-reorganizando-el-trabajo-realizado)
+        - [Clase 36 - Git Stash: Guardar cambios en memoria y recuperarlos después](#clase-36---git-stash-guardar-cambios-en-memoria-y-recuperarlos-después)
+        - [Clase 37 - Git Clean: limpiar tu proyecto de archivos no deseados](#clase-37---git-clean-limpiar-tu-proyecto-de-archivos-no-deseados)
+        - [Clase 38 - Git cherry-pick: traer commits viejos al head de un branch](#clase-38---git-cherry-pick-traer-commits-viejos-al-head-de-un-branch)
+    - [Módulo 7 - Comandos de Git para casos de emergencia](#módulo-7---comandos-de-git-para-casos-de-emergencia)
+        - [Clase 39 - Git Reset y Reflog: úsese en caso de emergencia](#clase-39---git-reset-y-reflog-úsese-en-caso-de-emergencia)
+        - [Clase 40 - Reconstruir commits en Git con amend](#clase-40---reconstruir-commits-en-git-con-amend)
+        - [Clase 41 - Buscar en archivos y commits de Git con Grep y log](#clase-41---buscar-en-archivos-y-commits-de-git-con-grep-y-log)
+    - [Módulo 8 - Bonus sobre Git y Github](#módulo-8---bonus-sobre-git-y-github)
+        - [Clase 42 - Comandos y recursos colaborativos en Git y GitHub](#clase-42---comandos-y-recursos-colaborativos-en-git-y-github)
 
 ---
 
@@ -323,7 +371,7 @@ Recuerda que podemos descubrir todos los argumentos de un comando con el argumen
 ![07_Introduccion_a_la_terminal_y_linea_de_comandos_02](src/Curso_profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_02.jpg)
 
 ---
-
+## Módulo 2 - Comandos básicos en Git
 ### Clase 8 - Crea un repositorio de Git y haz tu primer commit
 Le indicaremos a Git que queremos crear un nuevo repositorio para utilizar su sistema de control de versiones. Solo debemos posicionarnos en la carpeta raíz de nuestro proyecto y ejecutar
 el comando: `git init
@@ -498,7 +546,7 @@ estos cambios automáticamente, pero no siempre funciona. En algunos casos, somo
 
 ---
 
-### CLase 12 - Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+### Clase 12 - Volver en el tiempo en nuestro repositorio utilizando reset y checkout
 El comando `git checkout` + `ID del commit` nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta
 también es la forma de crear ramas y movernos entre ellas.
 
@@ -579,6 +627,7 @@ Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendi
 
 ---
 
+## Módulo 3 - Flujo de trabajo básico en Git
 ### Clase 14 - Flujo de trabajo básico con un repositorio remoto
 Cuando empiezas a trabajar en un entorno local, el proyecto vive únicamente en tu computadora. Esto significa que no hay forma de que otros miembros del equipo trabajen en él.
 
@@ -733,6 +782,7 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 
 ---
 
+## Módulo 4 - Trabajando con repositorios remotos en GitHub
 ### Clase 18 - Cambios en GitHub: de master a main
 El escritor Argentino **Julio Cortázar** afirma que las palabras tienen color y peso. Por otro lado, los sinónimos existen por definición, pero no expresan lo mismo. Feo no es lo mismo que desagradable, ni aromático es lo mismo que oloroso.
 
@@ -994,6 +1044,7 @@ Ahora en GitHub no se muestra Collaborators, se cambio a `Manage acces`
 
 ---
 
+## Módulo 5 - Flujos de trabajo profesionales
 ### Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master
 Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores. Una buena práctica de flujo de trabajo sería la siguiente:
 
@@ -1197,6 +1248,7 @@ La dirección y el nombre de repositorio se compone de `nombreUsuario.github.io`
 
 ---
 
+## Módulo 6 - Multiples entornos de trabajo en Git
 ### Clase 35 - Git Rebase: reorganizando el trabajo realizado
 Rebase es el proceso de mover o combinar una secuencia de confirmaciones en una nueva confirmación base. La reorganización es muy útil y se visualiza fácilmente en el contexto de un flujo de trabajo de ramas de funciones. El proceso general se puede visualizar de la siguiente manera.
 
@@ -1412,6 +1464,7 @@ Cherry-pick **es una mala práctica** porque significa que estamos reconstruyend
 
 ---
 
+## Módulo 7 - Comandos de Git para casos de emergencia
 ### Clase 39 - Git Reset y Reflog: úsese en caso de emergencia
 Git guarda todos los cambios aunque decidas borrarlos, al borrar un cambio lo que estás haciendo sólo es actualizar la punta del branch, para gestionar éstas puntas existe un mecanismo llamado registros de referencia o `reflogs`… La gestión de estos cambios es mediante los hash’es de referencia (o `ref`) que son apuntadores a los commits…Los recoges registran cuándo se actualizaron las referencias de Git en el repositorio local (sólo en el local), por lo que si deseas ver cómo has modificado la historia puedes utilizar el comando:
 ~~~
@@ -1486,6 +1539,7 @@ Para buscar, empleamos el comando `git grep color` y nos buscará en todo el pro
 
 ---
 
+## Módulo 8 - Bonus sobre Git y Github
 ### Clase 42 - Comandos y recursos colaborativos en Git y GitHub
 A continuación veremos una lista de comandos colaborativos para facilitar el trabajo remoto en GitHub:
 - `git shortlog -sn`: muestra cuantos commit han hecho cada miembro del equipo.

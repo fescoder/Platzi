@@ -258,9 +258,9 @@ Sin embargo, podemos reducir las ocurrencias de los efectos secundarios.
 
 **¿Por qué querríamos reducir o evitar los efectos secundarios?**  
 Porque esto nos ayuda a tener una mejor estructura de nuestro código, nos ayuda a generar más funciones puras y nos ayuda también a tener mejor separadas las
-definiciones y responsabilidades de nuestro código.
+definiciones y responsabilidades de nuestro código.  
+Hay que entender esto, **los efectos secundarios son inevitables**, no podemos tener código sin efectos secundarios, pero podemos reducirlos.
 
-Hay que entender esto, **los efectos secundarios son inevitables**, no podemos tener código sin efectos secundarios, pero podemos reducirlos.  
 La principal idea es tener código bien estructurado, código bien separado donde las responsabilidades están
 aisladas, es decir, tener una arquitectura o tener un sistema en el cual todas
 nuestras funciones impuras sean solamente puntos de entrada para información.

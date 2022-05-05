@@ -977,7 +977,11 @@ inmutables, como es el caso de las listas de Java, pero protegernos utilizando c
 ### Clase 9 - Repositorio del curso
 ¡Vamos a comenzar con el código!  
 Para que tengas todos los archivos descargados de antemano, te comparto el repositorio del curso:  
-[Repositorio del curso](https://github.com/sierisimo/JavaSE-Functional-platzi)
+[Repositorio del curso](https://github.com/sierisimo/JavaSE-Functional-platzi)  
+Lo hice con:
+~~~
+git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repositorios_del_Curso_Programacion_Funcional
+~~~
 
 ---
 

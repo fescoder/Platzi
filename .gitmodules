@@ -1,3 +1,6 @@
 [submodule "src/Curso_Programacion_Funcional_Java_SE/Platzi"]
 	path = src/Curso_Programacion_Funcional_Java_SE/Platzi
 	url = https://github.com/sierisimo/JavaSE-Functional-platzi.git
+[submodule "src/Curso_Programacion_Funcional_Java_SE/Repositorios_del_Curso/src/Curso_Programacion_Funcional_Java_SE/Repositorios_del_Curso/JavaSE-Functional-platzi"]
+	path = src/Curso_Programacion_Funcional_Java_SE/Repositorios_del_Curso/src/Curso_Programacion_Funcional_Java_SE/Repositorios_del_Curso/JavaSE-Functional-platzi
+	url = https://github.com/sierisimo/JavaSE-Functional-platzi.git

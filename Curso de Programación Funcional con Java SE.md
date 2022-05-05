@@ -295,7 +295,7 @@ Eso define que es una función de orden mayor, veamos ejemplos.
 int foo (Function param)
 ~~~
 En este caso, la función ***foo*** toma una función ***param*** y la utiliza para generar un valor entero.  
-¿Que puede ser esto? por ejemplo, podríamos tener la función para Ploteo o una función a
+¿Que puede ser esto? Por ejemplo, podríamos tener la función para Ploteo o una función a
 partir de la cual generar todos los resultados de los salarios o algo por el estilo.
 
 O tenemos este otro caso.
@@ -339,6 +339,57 @@ VENTAJAS
 ---
 
 ### Clase 7 - Funciones lambda
+Definimos entonces que tenemos funciones puras, funciones impuras, funciones de orden mayor y seguramente hasta este punto te has encontrado mucho con esto.  
+Cuando se habla de Programación funcional en Java se
+habla de las **Lambdas**, las famosas lambdas y a veces estamos asustados porque muchos incluso refieren al lambda
+cálculos.
+
+**¿Pero que son las Landas realmente? ¿Que representan las lambdas en el proyecto? ¿Que representan las lambdas a nivel Java?**
+
+![07_Funciones_lambda_01](src/Curso_Programacion_Funcional_Java_SE/07_Funciones_lambda_01.png)
+
+- Las lambdas provienen del cálculo Lambda. El cálculo Lambda es un concepto que se creó en los años 30 por el matemático **Alonzo Church**.  
+Pero lo único que proponía era que se podía obtener resultados de una operación a partir de funciones
+anónimas. Eso es el cálculo Lambda.  
+- Aqui hablaremos de que es la lambda y una lambda es una función anónima, así de simple.  
+Cuando tienes una función que no tiene un nombre, es una función anónima, y eso es una lambda. 
+- No hay más, tan simple como eso.
+
+Veamos una comparativa.
+
+![07_Funciones_lambda_02](src/Curso_Programacion_Funcional_Java_SE/07_Funciones_lambda_02.png)
+
+Tienes una función que se llama ***baz***, lo sabemos porque está definida como una variable baz y tenemos la función ***foo***, sigue siendo una función, recibe parámetros y generó un entero.  
+Tienen nombre, no son anónimas.  
+En cambio debajo tenemos la función sin nombre, no tiene un hombre, es una función anónima. Al no tener nombre, se le considera una lambda, es una forma de llamar le estas funciones sin nombre, pero siguen siendo funciones.
+
+**¿Porque querría yo utilizar algo sin nombre?, ¿Porque no querría yo tener el dato almacenado en algún lado?, ¿Porque no querría yo tener una referencia así a esta?**
+
+![07_Funciones_lambda_03](src/Curso_Programacion_Funcional_Java_SE/07_Funciones_lambda_03.png)
+
+- Y la solución es simple, en muchas ocasiones necesitamos un comportamiento de uso único.  
+Por ejemplo, una manera de filtrar archivos bajo extensión y solamente lo necesitamos en un momento del
+sistema. Generar una lamda para este tipo de caso es algo muy sencillo.
+- O es una regla que se requiere de un solo lugar.  
+Por ejemplo, dime cómo filtrar a los empleados basado en su edad o
+dime cómo filtrar alumnos de mi base de datos que aprobaron o no aprobar una materia. Es
+una regla específica que se utiliza en un solo lugar e incluso puede que también se reutiliza otros
+lados.Pero serán Landas diferentes o en ese caso, crearás una función con nombre a la cual referenciaras.
+- La lambda tiene que ser algo extremadamente simple.
+Una lambda idealmente es una función de una sola línea, o menos incluso que pueda ser legible de primera instancia, y ese es un gran beneficio porque hace que el código sea más fácil de entender.
+
+Y tener siempre en cuenta que una lambda sigue siendo una función, por más que la llamemos lambda.
+
+![07_Funciones_lambda_04](src/Curso_Programacion_Funcional_Java_SE/07_Funciones_lambda_04.png)
+
+**Resumen**  
+Función = Tiene un nombre.  
+Lambda = Función que no tiene un nombre.
+
+¿Por qué usar lambdas?  
+Es un comportamiento único.  
+Es una regla que solo se requiere en un lugar.  
+Es una función muy simple (1 línea).
 
 ---
 

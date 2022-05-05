@@ -339,7 +339,8 @@ VENTAJAS
 ---
 
 ### Clase 7 - Funciones lambda
-Definimos entonces que tenemos funciones puras, funciones impuras, funciones de orden mayor y seguramente hasta este punto te has encontrado mucho con esto.  
+Definimos entonces que tenemos funciones puras, funciones impuras, funciones de orden mayor y seguramente hasta este punto te has encontrado mucho con esto.
+
 Cuando se habla de Programación funcional en Java se
 habla de las **Lambdas**, las famosas lambdas y a veces estamos asustados porque muchos incluso refieren al lambda
 cálculos.
@@ -359,9 +360,9 @@ Veamos una comparativa.
 
 ![07_Funciones_lambda_02](src/Curso_Programacion_Funcional_Java_SE/07_Funciones_lambda_02.png)
 
-Tienes una función que se llama ***baz***, lo sabemos porque está definida como una variable baz y tenemos la función ***foo***, sigue siendo una función, recibe parámetros y generó un entero.  
-Tienen nombre, no son anónimas.  
-En cambio debajo tenemos la función sin nombre, no tiene un hombre, es una función anónima. Al no tener nombre, se le considera una lambda, es una forma de llamar le estas funciones sin nombre, pero siguen siendo funciones.
+Tienes una función que se llama ***baz***, lo sabemos porque está definida como una variable baz y tenemos la función ***foo***, sigue siendo una función, recibe parámetros y generó un entero. Tienen nombre, no son anónimas.  
+En cambio debajo tenemos la función sin nombre, no tiene un hombre, es una función anónima.  
+Al no tener nombre, se le considera una lambda, es una forma de llamar le estas funciones sin nombre, pero siguen siendo funciones.
 
 **¿Porque querría yo utilizar algo sin nombre?, ¿Porque no querría yo tener el dato almacenado en algún lado?, ¿Porque no querría yo tener una referencia así a esta?**
 
@@ -375,7 +376,7 @@ Por ejemplo, dime cómo filtrar a los empleados basado en su edad o
 dime cómo filtrar alumnos de mi base de datos que aprobaron o no aprobar una materia. Es
 una regla específica que se utiliza en un solo lugar e incluso puede que también se reutiliza otros
 lados.Pero serán Landas diferentes o en ese caso, crearás una función con nombre a la cual referenciaras.
-- La lambda tiene que ser algo extremadamente simple.
+- La lambda tiene que ser algo extremadamente simple.  
 Una lambda idealmente es una función de una sola línea, o menos incluso que pueda ser legible de primera instancia, y ese es un gran beneficio porque hace que el código sea más fácil de entender.
 
 Y tener siempre en cuenta que una lambda sigue siendo una función, por más que la llamemos lambda.

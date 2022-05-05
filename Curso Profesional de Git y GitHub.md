@@ -1,8 +1,8 @@
-![00_Logo_Curso_profesional_de_Git_y_GitHub](src/Curso_profesional_de_Git_y_GitHub/00_Logo_Curso_profesional_de_Git_y_GitHub.webp)
+![00_Logo_Curso_Profesional_de_Git_y_GitHub](src/Curso_Profesional_de_Git_y_GitHub/00_Logo_Curso_Profesional_de_Git_y_GitHub.webp)
 # Curso profesional de Git y GitHub
 Índice
 -
-- [Curso profesional de Git y GitHub](#curso-profesional-de-git-y-github)
+- [Curso Profesional de Git y GitHub](#curso-profesional-de-git-y-github)
     - [Módulo 1 - Introducción a Git](#módulo-1---introducción-a-git)
         - [Clase 1 - ¿Por qué usar un sistema de control de versiones como Git?](#clase-1---¿por-qué-usar-un-sistema-de-control-de-versiones-como-git)
         - [Clase 2 - ¿Qué es Git?](#clase-2---¿qué-es-git)
@@ -58,7 +58,7 @@
 
 ## Módulo 1 - Introducción a Git
 [PDF primeras clases del curso](https://static.platzi.com/media/public/uploads/git-github-1-16_a229ee25-b2b6-4c1d-969a-c791eabace83.pdf)  
-[mismo PDF](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_01.pdf)
+[mismo PDF](src/Curso_Profesional_de_Git_y_GitHub/01_Que_es_Git_01.pdf)
 ### Clase 1 - ¿Por qué usar un sistema de control de versiones como Git?
 Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
 
@@ -140,9 +140,9 @@ git log – index.html- Busca los commits en un archivo en específico.
 git log -S “Por contenido”- Buscar los commits con el contenido dentro del archivo.
 git log > log.txt - guardar los logs en un archivo txt
 
-![01_Que_es_Git_02](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_02.webp)
+![01_Que_es_Git_02](src/Curso_Profesional_de_Git_y_GitHub/01_Que_es_Git_02.webp)
 
-[Otro PDF](src/Curso_profesional_de_Git_y_GitHub/01_Que_es_Git_03.pdf)
+[Otro PDF](src/Curso_Profesional_de_Git_y_GitHub/01_Que_es_Git_03.pdf)
 
 ---
 
@@ -169,23 +169,23 @@ programas de computadora.
 Github puede considerarse como la red social de código para los programadores y en muchos casos es visto como tu curriculum vitae, pues aquí guardas tu portafolio de proyectos de
 programación.
 
-![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01.webp)
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01](src/Curso_Profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_01.webp)
 
-![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02.png)
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02](src/Curso_Profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_02.png)
 
-![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03](src/Curso_profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03.png)
+![02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03](src/Curso_Profesional_de_Git_y_GitHub/02_Por_que_usar_un_sistema_de_control_de_versiones_como_Git_03.png)
 
 ---
 
 ### Clase 3 - Instalando Git y GitBash en Windows
 
-![03_Instalando_Git_y_GitBash_en_Windows_01](src/Curso_profesional_de_Git_y_GitHub/03_Instalando_Git_y_GitBash_en_Windows_01.webp)
+![03_Instalando_Git_y_GitBash_en_Windows_01](src/Curso_Profesional_de_Git_y_GitHub/03_Instalando_Git_y_GitBash_en_Windows_01.webp)
 
 ---
 
 ### Clase 4 - Instalando Git en OSX
 
-![04_Instalando_Git_en_OSX_01](src/Curso_profesional_de_Git_y_GitHub/04_Instalando_Git_en_OSX_01.webp)
+![04_Instalando_Git_en_OSX_01](src/Curso_Profesional_de_Git_y_GitHub/04_Instalando_Git_en_OSX_01.webp)
 
 ---
 
@@ -207,7 +207,7 @@ Antes de hacer la instalación, debemos hacer una actualización del sistema. En
 Con el sistema actualizado, ahora sí podemos instalar Git y, en este caso, el comando para hacerlo es `sudo apt-get install git`. También puedes verificar que Git fue instalado
 correctamente con el comando `git --version`.
 
-![05_Instalando_Git_en_Linux_01](src/Curso_profesional_de_Git_y_GitHub/05_Instalando_Git_en_Linux_01.webp)
+![05_Instalando_Git_en_Linux_01](src/Curso_Profesional_de_Git_y_GitHub/05_Instalando_Git_en_Linux_01.webp)
 
 ---
 
@@ -225,7 +225,7 @@ de entender y muy diferente al texto al que estamos acostumbrados. Esto es porqu
 Recuerda que debes habilitar la opción de ver la extensión de los archivos, de lo contrario, solo podrás ver su nombre. La forma de hacerlo en Windows es Vista > Mostrar u ocultar >
 Extensiones de nombre de archivo.
 
-![06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01](src/Curso_profesional_de_Git_y_GitHub/06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01.webp)
+![06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01](src/Curso_Profesional_de_Git_y_GitHub/06_Editores_de_codigo,_archivos_binarios_y_de_texto_plano_01.webp)
 
 **Conceptos importantes de Git**
 - Bug: Error en el código
@@ -276,7 +276,7 @@ Hasta los mejores cometen errores, pero todo tiene solución.
 Freddy se olvidó de guardar el archivo .html, y lo malo es que commiteó ese archivo todavia con el merge conflict.
 Con los:
 
-![00_Mis_notas](src/Curso_profesional_de_Git_y_GitHub/00_Mis_notas.png)
+![00_Mis_notas](src/Curso_Profesional_de_Git_y_GitHub/00_Mis_notas.png)
 
 Si les pasa esto, no entren en pánico, mientras el commit siga en nuestro repositorio local. Tienen dos formas al menos de solucionarlo, uds eligen la que mas les convenga:
 
@@ -366,9 +366,9 @@ Recuerda que podemos descubrir todos los argumentos de un comando con el argumen
 
 **Más comandos**
 
-![07_Introduccion_a_la_terminal_y_linea_de_comandos_01](src/Curso_profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_01.webp)
+![07_Introduccion_a_la_terminal_y_linea_de_comandos_01](src/Curso_Profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_01.webp)
 
-![07_Introduccion_a_la_terminal_y_linea_de_comandos_02](src/Curso_profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_02.jpg)
+![07_Introduccion_a_la_terminal_y_linea_de_comandos_02](src/Curso_Profesional_de_Git_y_GitHub/07_Introduccion_a_la_terminal_y_linea_de_comandos_02.jpg)
 
 ---
 ## Módulo 2 - Comandos básicos en Git
@@ -406,11 +406,11 @@ O si lo deseas eliminar y añadir uno nuevo
 `git config --global --unset-all user.name :Elimina el nombre del usuario`  
 `git config --global --add user.name “Aquí va tu nombre”`
 
-![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01.webp)
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01](src/Curso_Profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_01.webp)
 
-![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02.webp)
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02](src/Curso_Profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_02.webp)
 
-![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03](src/Curso_profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03.webp)
+![08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03](src/Curso_Profesional_de_Git_y_GitHub/08_Crea_un_repositorio_de_Git_y_haz_tu_primer_commit_03.webp)
 
 ---
 
@@ -445,7 +445,7 @@ Recuerda que puedes obtener el ID de tus commits con el comando `git log`.
 - git config --list --show-origin: rutas de acceso a la configuración de git
 - git log archivo.extensión: muestra la historia del archivo
 
-![09_Analizar_cambios_en_los_archivos_de_tu_proyecto_con_Git_01](src/Curso_profesional_de_Git_y_GitHub/09_Analizar_cambios_en_los_archivos_de_tu_proyecto_con_Git_01.webp)
+![09_Analizar_cambios_en_los_archivos_de_tu_proyecto_con_Git_01](src/Curso_Profesional_de_Git_y_GitHub/09_Analizar_cambios_en_los_archivos_de_tu_proyecto_con_Git_01.webp)
 
 ---
 
@@ -482,15 +482,15 @@ un mensaje para recordar los cambios que hicimos y podemos usar el argumento `-m
     - `git rm --force`: Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero
     debemos usar comandos más avanzados).
 
-![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_01](src/Curso_profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_01.png)
+![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_01](src/Curso_Profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_01.png)
 
-![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_02](src/Curso_profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_02.webp)
+![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_02](src/Curso_Profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_02.webp)
 
-![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_03](src/Curso_profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_03.webp)
+![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_03](src/Curso_Profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_03.webp)
 
-![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_04](src/Curso_profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_04.webp)
+![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_04](src/Curso_Profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_04.webp)
 
-![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_05](src/Curso_profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_05.webp)
+![10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_05](src/Curso_Profesional_de_Git_y_GitHub/10_Que_es_el_staging_y_los_repositorios_Ciclo_basico_de_trabajo_en_Git_05.webp)
 
 ---
 
@@ -522,27 +522,27 @@ combinarlas de nuevo para mejorar el proyecto.
 Solo ten en cuenta que combinar estas ramas (hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir
 estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos a mano.
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01.webp)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_01.webp)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02.webp)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_02.webp)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03.svg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_03.svg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04.svg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_04.svg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05.svg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_05.svg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06.svg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_06.svg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07.jpg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_07.jpg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08.webp)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_08.webp)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09.png)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_09.png)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10.jpg)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_10.jpg)
 
-![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11](src/Curso_profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11.webp)
+![11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11](src/Curso_Profesional_de_Git_y_GitHub/11_Que_es_un_Branch_rama_y_como_funciona_un_Merge_en_Git_11.webp)
 
 ---
 
@@ -563,11 +563,11 @@ Para volver a commits previos, borrando los cambios realizados desde ese commit,
 - git reset --hard [SHA 1]: regresa hasta el commit del [SHA-1]  
 Donde el SHA-1 es el identificador del commit
 
-![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_01](src/Curso_profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_01.webp)
+![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_01](src/Curso_Profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_01.webp)
 
-![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_02](src/Curso_profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_02.png)
+![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_02](src/Curso_Profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_02.png)
 
-![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_03](src/Curso_profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_03.webp)
+![12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_03](src/Curso_Profesional_de_Git_y_GitHub/12_Volver_en_el_tiempo_en_nuestro_repositorio_utilizando_reset_y_checkout_03.webp)
 
 ---
 
@@ -619,11 +619,11 @@ archivo (no con sus últimos cambios, pero sí con los últimos en los que hicim
 
 Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de todos los comandos de Git.
 
-![13_Git_reset_vs._Git_rm_01](src/Curso_profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_01.webp)
+![13_Git_reset_vs._Git_rm_01](src/Curso_Profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_01.webp)
 
-![13_Git_reset_vs._Git_rm_02](src/Curso_profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_02.png)
+![13_Git_reset_vs._Git_rm_02](src/Curso_Profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_02.png)
 
-![13_Git_reset_vs._Git_rm_03](src/Curso_profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_03.png)
+![13_Git_reset_vs._Git_rm_03](src/Curso_Profesional_de_Git_y_GitHub/13_Git_reset_vs._Git_rm_03.png)
 
 ---
 
@@ -666,15 +666,15 @@ Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos
 - `git log -S “Por contenido”`: Buscar los commits con el contenido dentro del archivo.
 - `git log > log.txt`: guardar los logs en un archivo txt
 
-![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01.webp)
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01](src/Curso_Profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_01.webp)
 
-![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02.webp)
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02](src/Curso_Profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_02.webp)
 
-![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03.webp)
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03](src/Curso_Profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_03.webp)
 
-![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04.webp)
+![14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04](src/Curso_Profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_04.webp)
 
-[PDF de la Clase](src/Curso_profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05.pdf)
+[PDF de la Clase](src/Curso_Profesional_de_Git_y_GitHub/14_Flujo_de_trabajo_basico_con_un_repositorio_remoto_05.pdf)
 
 ---
 
@@ -688,11 +688,11 @@ Las ramas son la manera de hacer cambios en nuestro proyecto sin afectar el fluj
 - `git reset id-commit`: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
 - `git checkout rama-o-id-commit`: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
 
-![15_Introduccion_a_las_ramas_o_branches_de_Git_01](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_01.jpg)
+![15_Introduccion_a_las_ramas_o_branches_de_Git_01](src/Curso_Profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_01.jpg)
 
-![15_Introduccion_a_las_ramas_o_branches_de_Git_02](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_02.webp)
+![15_Introduccion_a_las_ramas_o_branches_de_Git_02](src/Curso_Profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_02.webp)
 
-![15_Introduccion_a_las_ramas_o_branches_de_Git_03](src/Curso_profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_03.webp)
+![15_Introduccion_a_las_ramas_o_branches_de_Git_03](src/Curso_Profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_03.webp)
 
 ---
 
@@ -746,7 +746,7 @@ Recuerda que al ejecutar el comando `git checkout` para cambiar de rama o commit
 - `git diff “codigo de version 1” “codigo de version 2”`: comparar cambios entre versiones.
 - `git diff`: comparar directorio con staging.
 
-![16_Fusion_de_ramas_con_Git_merge_01](src/Curso_profesional_de_Git_y_GitHub/16_Fusion_de_ramas_con_Git_merge_01.webp)
+![16_Fusion_de_ramas_con_Git_merge_01](src/Curso_Profesional_de_Git_y_GitHub/16_Fusion_de_ramas_con_Git_merge_01.webp)
 
 ---
 
@@ -778,7 +778,7 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
     - Los merges también son commits.
     - Los merges pueden generar conflictos, esto aborta la acción y pide que soluciones el problema manualmente, aceptando o rechazando los cambios que vienen.
 
-![17_Resolucion_de_conflictos_al_hacer_un_merge_01](src/Curso_profesional_de_Git_y_GitHub/17_Resolucion_de_conflictos_al_hacer_un_merge_01.webp)
+![17_Resolucion_de_conflictos_al_hacer_un_merge_01](src/Curso_Profesional_de_Git_y_GitHub/17_Resolucion_de_conflictos_al_hacer_un_merge_01.webp)
 
 ---
 
@@ -841,7 +841,7 @@ git pull origin main --allow-unrelated-histories
 git push origin main
 ~~~
 
-![19_Uso_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/19_Uso_de_GitHub_01.webp)
+![19_Uso_de_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/19_Uso_de_GitHub_01.webp)
 
 Para cambiar la dirección o URL del repositorio remoto:  
 `git remote set-url origin <direccion https o SSH>`
@@ -861,11 +861,11 @@ Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivo
 - 5. La persona a la que enviamos el mensaje cifrado puede emplear su llave privada para descifrar el mensaje y ver los archivos.
 Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
 
-![20_Como_funcionan_las_llaves_publicas_y_privadas_01](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_01.png)
+![20_Como_funcionan_las_llaves_publicas_y_privadas_01](src/Curso_Profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_01.png)
 
-![20_Como_funcionan_las_llaves_publicas_y_privadas_02](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_02.png)
+![20_Como_funcionan_las_llaves_publicas_y_privadas_02](src/Curso_Profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_02.png)
 
-![20_Como_funcionan_las_llaves_publicas_y_privadas_03](src/Curso_profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_03.png)
+![20_Como_funcionan_las_llaves_publicas_y_privadas_03](src/Curso_Profesional_de_Git_y_GitHub/20_Como_funcionan_las_llaves_publicas_y_privadas_03.png)
 
 ---
 
@@ -910,13 +910,13 @@ IdentityFile ruta-donde-guardaste-tu-llave-privada
 ssh-add -K ruta-donde-guardaste-tu-llave-privada
 ~~~
 
-[PDF](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_01.pdf)
+[PDF](src/Curso_Profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_01.pdf)
 
-![21_Configura_tus_llaves_SSH_en_local_02](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_02.webp)
+![21_Configura_tus_llaves_SSH_en_local_02](src/Curso_Profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_02.webp)
 
-![21_Configura_tus_llaves_SSH_en_local_03](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_03.webp)
+![21_Configura_tus_llaves_SSH_en_local_03](src/Curso_Profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_03.webp)
 
-![21_Configura_tus_llaves_SSH_en_local_04](src/Curso_profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_04.webp)
+![21_Configura_tus_llaves_SSH_en_local_04](src/Curso_Profesional_de_Git_y_GitHub/21_Configura_tus_llaves_SSH_en_local_04.webp)
 
 ---
 
@@ -948,9 +948,9 @@ clip < ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_rsa.pub
 ~~~
 
-![22_Conexion_a_GitHub_con_SSH_01](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_01.webp)
+![22_Conexion_a_GitHub_con_SSH_01](src/Curso_Profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_01.webp)
 
-![22_Conexion_a_GitHub_con_SSH_02](src/Curso_profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_02.webp)
+![22_Conexion_a_GitHub_con_SSH_02](src/Curso_Profesional_de_Git_y_GitHub/22_Conexion_a_GitHub_con_SSH_02.webp)
 
 ---
 
@@ -982,7 +982,7 @@ git config --global alias.arbolito "log --all --graph --decorate --oneline"
 git arbolito
 ~~~
 
-![23_Tags_y_versiones_en_Git_y_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/23_Tags_y_versiones_en_Git_y_GitHub_01.webp)
+![23_Tags_y_versiones_en_Git_y_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/23_Tags_y_versiones_en_Git_y_GitHub_01.webp)
 
 **Guardar alias**  
 Ejecutan este comando en la terminal y queda guardado en la computadora en los alias pero de git. con esto se puede ejecutar cada que se escribe git
@@ -1010,7 +1010,7 @@ Si, estando en otra rama, modificamos los archivos y hacemos commit, tanto el hi
 
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando `gitk`. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
 
-![24_Manejo_de_ramas_en_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/24_Manejo_de_ramas_en_GitHub_01.webp)
+![24_Manejo_de_ramas_en_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/24_Manejo_de_ramas_en_GitHub_01.webp)
 
 Enviar al repositorio varias ramas a la vez en el push `git push origin header footer`  
 Comando para crear una rama y moverse a la vez `git checkout-b <nombre de la rama>`
@@ -1030,7 +1030,7 @@ Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub
 `Repositorio > Settings > Collaborators`  
 Ahí, debemos añadir el email o username de los nuevos colaboradores.
 
-![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02.webp)
+![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02](src/Curso_Profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_02.webp)
 
 Si, como colaborador, agregaste erróneamente el mensaje del *commit*, lo puedes cambiar de la siguiente manera:
 - Hacer un commit con el nuevo mensaje que queremos, esto nos abre el editor de texto de la terminal:
@@ -1041,7 +1041,7 @@ Si, como colaborador, agregaste erróneamente el mensaje del *commit*, lo puedes
 - Ejecutar el cambio
 `git push --set-upstream origin main`
 
-![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01.webp)
+![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01.webp)
 
 Ahora en GitHub no se muestra Collaborators, se cambio a `Manage acces`
 
@@ -1059,7 +1059,7 @@ Para poder desarrollar software de manera óptima y ordenada, necesitamos tener 
 6. El programador sube su trabajo con `git push origin #nombre_rama`
 7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
 
-![26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01.webp)
+![26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01](src/Curso_Profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01.webp)
 
 ---
 
@@ -1076,11 +1076,11 @@ Los PR (pull requests) son la base de la colaboración a proyectos Open Source, 
 - Permite a las personas que no forman el equipo, trabajar y colaborar con una rama.
 - La persona que tiene la responsabilidad de aceptar los pull request y hacer los merge tienen un perfil especial y son llamados DevOps
 
-![27_Flujo_de_trabajo_profesional_con_Pull_requests_01](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_01.png)
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_01](src/Curso_Profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_01.png)
 
-![27_Flujo_de_trabajo_profesional_con_Pull_requests_02](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_02.png)
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_02](src/Curso_Profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_02.png)
 
-![27_Flujo_de_trabajo_profesional_con_Pull_requests_03](src/Curso_profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_03.png)
+![27_Flujo_de_trabajo_profesional_con_Pull_requests_03](src/Curso_Profesional_de_Git_y_GitHub/27_Flujo_de_trabajo_profesional_con_Pull_requests_03.png)
 
 ---
 
@@ -1100,15 +1100,15 @@ Al hacer un pull request, se genera una conversación que pueden seguir los dem�
 - Se hace merge a main desde GitHub.
 **Importante:** Cuando se modifica una rama, también se modifica el pull request.
 
-![28_Utilizando_Pull_Requests_en_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_01.webp)
+![28_Utilizando_Pull_Requests_en_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_01.webp)
 
-![28_Utilizando_Pull_Requests_en_GitHub_02](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_02.webp)
+![28_Utilizando_Pull_Requests_en_GitHub_02](src/Curso_Profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_02.webp)
 
-![28_Utilizando_Pull_Requests_en_GitHub_03](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_03.jpg)
+![28_Utilizando_Pull_Requests_en_GitHub_03](src/Curso_Profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_03.jpg)
 
-![28_Utilizando_Pull_Requests_en_GitHub_04](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_04.webp)
+![28_Utilizando_Pull_Requests_en_GitHub_04](src/Curso_Profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_04.webp)
 
-![28_Utilizando_Pull_Requests_en_GitHub_05](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_05.webp)
+![28_Utilizando_Pull_Requests_en_GitHub_05](src/Curso_Profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_05.webp)
 
 ---
 
@@ -1142,9 +1142,9 @@ git pull upstream main
 git push origin main
 ~~~
 
-![29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01](src/Curso_profesional_de_Git_y_GitHub/29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01.webp)
+![29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01](src/Curso_Profesional_de_Git_y_GitHub/29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01.webp)
 
-![29_Creando_un_Fork,_contribuyendo_a_un_repositorio_02](src/Curso_profesional_de_Git_y_GitHub/29_Creando_un_Fork%2C_contribuyendo_a_un_repositorio_02.png)
+![29_Creando_un_Fork,_contribuyendo_a_un_repositorio_02](src/Curso_Profesional_de_Git_y_GitHub/29_Creando_un_Fork%2C_contribuyendo_a_un_repositorio_02.png)
 
 ---
 
@@ -1170,7 +1170,7 @@ git pull ramaRemota main
 
 Nota: Siempre se debe proteger el archivo .git. Dependiendo del software para el servidor web, existen diferentes maneras. La conexión entre GitHub y el servidor se puede realizar mediante: Travis (pago) o Jenkis (Open source).
 
-![30_Haciendo_deployment_a_un_servidor_01](src/Curso_profesional_de_Git_y_GitHub/30_Haciendo_deployment_a_un_servidor_01.webp)
+![30_Haciendo_deployment_a_un_servidor_01](src/Curso_Profesional_de_Git_y_GitHub/30_Haciendo_deployment_a_un_servidor_01.webp)
 
 ---
 
@@ -1200,9 +1200,9 @@ Las razones principales para tomar la decisión de no agregar un archivo a un re
 - Es un blob (binary large object, objeto binario grande), mismos que son difíciles de gestionar en git.
 - Son archivos que se generan corriendo comandos, por ejemplo la carpeta node_modules, que genera npm al correr el comando npm install
 
-![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01](src/Curso_profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01.webp)
+![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01](src/Curso_Profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_01.webp)
 
-![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02](src/Curso_profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02.webp)
+![32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02](src/Curso_Profesional_de_Git_y_GitHub/32_Ignorar_archivos_en_el_repositorio_con_.gitignore_02.webp)
 
 Utilice google Drive como repositorio de imagen de esta manera , cuando de di para compartir me dejo un link como este:
 `https://drive.google.com/file/d/1TzRsYiyHNo-bSxrzf2ZCLJC1jaK1Qe05/view?usp=sharing`
@@ -1222,7 +1222,7 @@ Los archivos README son escritos en un lenguaje llamado markdown, por eso la ext
 
 Los [README.md](http://readme.md/) pueden estar en todas las carpetas, pero el más importante es el que se encuentra en la raíz. Este documento ayuda a que los colaboradores sepan información relevante del proyecto, módulo o sección. Puedes crear cualquier archivo con la extensión .md pero solo los README.md los mostrará por defecto GitHub.
 
-![33_Readme.md_es_una_excelente_practica_01](src/Curso_profesional_de_Git_y_GitHub/33_Readme.md_es_una_excelente_practica_01.webp)
+![33_Readme.md_es_una_excelente_practica_01](src/Curso_Profesional_de_Git_y_GitHub/33_Readme.md_es_una_excelente_practica_01.webp)
 
 Emojis para los Readme.md, admite HTML el Readme 🤓
 - [https://getemoji.com/](https://getemoji.com/)
@@ -1247,7 +1247,7 @@ Después de esto, podremos ver nuestro trabajo en la web como si tuviéramos nue
 La dirección y el nombre de repositorio se compone de `nombreUsuario.github.io` ->
 [FesCoder](https://fescoder.github.io/)
 
-![34_Tu_sitio_web_publico_con_GitHub_Pages_01](src/Curso_profesional_de_Git_y_GitHub/34_Tu_sitio_web_publico_con_GitHub_Pages_01.webp)
+![34_Tu_sitio_web_publico_con_GitHub_Pages_01](src/Curso_Profesional_de_Git_y_GitHub/34_Tu_sitio_web_publico_con_GitHub_Pages_01.webp)
 
 ---
 
@@ -1255,7 +1255,7 @@ La dirección y el nombre de repositorio se compone de `nombreUsuario.github.io`
 ### Clase 35 - Git Rebase: reorganizando el trabajo realizado
 Rebase es el proceso de mover o combinar una secuencia de confirmaciones en una nueva confirmación base. La reorganización es muy útil y se visualiza fácilmente en el contexto de un flujo de trabajo de ramas de funciones. El proceso general se puede visualizar de la siguiente manera.
 
-![35_Git_Rebase_reorganizando_el_trabajo_realizado_04](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_04.webp)
+![35_Git_Rebase_reorganizando_el_trabajo_realizado_04](src/Curso_Profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_04.webp)
 
 Para hacer un rebase en la rama feature de la rama main, correrías los siguientes comandos:
 ~~~
@@ -1265,7 +1265,7 @@ git rebase main
 
 Esto *trasplanta* la rama feature desde su locación actual hacia la punta de la rama main:
 
-![35_Git_Rebase_reorganizando_el_trabajo_realizado_05](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_05.png)
+![35_Git_Rebase_reorganizando_el_trabajo_realizado_05](src/Curso_Profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_05.png)
 
 Ahora, falta fusionar la rama feature con la rama main
 ~~~
@@ -1286,11 +1286,11 @@ git rebase main
 
 Se hace primero el rebase a la rama que se va a borrar y después el rebase a la rama final main que queda.
 
-![35_Git_Rebase_reorganizando_el_trabajo_realizado_01](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_01.webp)
+![35_Git_Rebase_reorganizando_el_trabajo_realizado_01](src/Curso_Profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_01.webp)
 
-![35_Git_Rebase_reorganizando_el_trabajo_realizado_02](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_02.webp)
+![35_Git_Rebase_reorganizando_el_trabajo_realizado_02](src/Curso_Profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_02.webp)
 
-![35_Git_Rebase_reorganizando_el_trabajo_realizado_03](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_03.webp)
+![35_Git_Rebase_reorganizando_el_trabajo_realizado_03](src/Curso_Profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_03.webp)
 
 ---
 
@@ -1380,11 +1380,11 @@ git stash clear
 - Al crear un stash tomará los archivos que han sido modificados y eliminados. Para que tome un archivo creado es necesario agregarlo al Staging Area con git add [nombre_archivo] con la intención de que git tenga un seguimiento de ese archivo, o también utilizando el comando git stash -u (que guardará en el stash los archivos que no estén en el staging).
 - Al aplicar un stash este no se elimina, es buena práctica eliminarlo.
 
-![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_01](src/Curso_profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_01.webp)
+![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_01](src/Curso_Profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_01.webp)
 
-![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_02](src/Curso_profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_02.webp)
+![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_02](src/Curso_Profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_02.webp)
 
-![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_03](src/Curso_profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_03.webp)
+![36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_03](src/Curso_Profesional_de_Git_y_GitHub/36_Git_Stash_Guardar_cambios_en_memoria_y_recuperarlos_despues_03.webp)
 
 **Algunos comandos stash**  
 - `git stash` : Guarda el trabajo actual de manera temporal. (Archivos modificados o eliminados)
@@ -1425,7 +1425,7 @@ git clean -f
 
 Git clean tiene muchísimas opciones adicionales, que puedes explorar al ver su [documentación oficial.](https://git-scm.com/docs/git-clean)
 
-![37_Git_Clean__limpiar_tu_proyecto_de_archivos_no_deseados_01](src/Curso_profesional_de_Git_y_GitHub/37_Git_Clean__limpiar_tu_proyecto_de_archivos_no_deseados_01.webp)
+![37_Git_Clean__limpiar_tu_proyecto_de_archivos_no_deseados_01](src/Curso_Profesional_de_Git_y_GitHub/37_Git_Clean__limpiar_tu_proyecto_de_archivos_no_deseados_01.webp)
 
 ---
 
@@ -1461,9 +1461,9 @@ La confirmación f se ha sido introducido con éxito en la rama de funcionalidad
 **Atención**
 Cherry-pick **es una mala práctica** porque significa que estamos reconstruyendo la historia, **usa cherry-pick con sabiduría**. Si no sabes lo que estás haciendo, mejor evita emplear este comando.
 
-![38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_01](src/Curso_profesional_de_Git_y_GitHub/38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_01.webp)
+![38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_01](src/Curso_Profesional_de_Git_y_GitHub/38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_01.webp)
 
-![38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_02](src/Curso_profesional_de_Git_y_GitHub/38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_02.webp)
+![38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_02](src/Curso_Profesional_de_Git_y_GitHub/38_Git_cherry_pick_traer_commits_viejos_al_head_de_un_branch_02.webp)
 
 ---
 
@@ -1503,9 +1503,9 @@ git merge eff544f # Fusionará en un nuevo commit la historia de main con el mom
 **Atención**  
 `git reset` es una mala práctica, no deberías usarlo en ningún momento. Debe ser nuestro último recurso.
 
-![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01](src/Curso_profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01.webp)
+![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01](src/Curso_Profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_01.webp)
 
-![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02](src/Curso_profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02.webp)
+![39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02](src/Curso_Profesional_de_Git_y_GitHub/39_Git_Reset_y_Reflog_usese_en_caso_de_emergencia_02.webp)
 
 ---
 
@@ -1522,9 +1522,9 @@ Este comando sirve para agregar archivos nuevos o actualizar el commit anterior 
 **Atención**  
 Usar `amend` es una **mala práctica**, sobre todo cuando ya se ha hecho push o pull al repositorio remoto. Al momento de hacer amend con algún `commit` que esté en remoto, va a generar un conflicto que se va a arreglar haciendo un `commit adicional` y se **perderá el beneficio** del amend.
 
-![40_Reconstruir_commits_en_Git_con_amend_01](src/Curso_profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_01.webp)
+![40_Reconstruir_commits_en_Git_con_amend_01](src/Curso_Profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_01.webp)
 
-![40_Reconstruir_commits_en_Git_con_amend_02](src/Curso_profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_02.jpg)
+![40_Reconstruir_commits_en_Git_con_amend_02](src/Curso_Profesional_de_Git_y_GitHub/40_Reconstruir_commits_en_Git_con_amend_02.jpg)
 
 ---
 
@@ -1538,7 +1538,7 @@ Para buscar, empleamos el comando `git grep color` y nos buscará en todo el pro
 - Con `git grep -c color` nos saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
 - Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con `git grep -c "<p>"`.
 
-![41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01](src/Curso_profesional_de_Git_y_GitHub/41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01.png)
+![41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01](src/Curso_Profesional_de_Git_y_GitHub/41_Buscar_en_archivos_y_commits_de_Git_con_Grep_y_log_01.png)
 
 ---
 
@@ -1554,10 +1554,10 @@ A continuación veremos una lista de comandos colaborativos para facilitar el tr
 - `git branch -r`: se muestran todas las ramas remotas.
 - `git branch -a`: se muestran todas las ramas, tanto locales como remotas.
 
-![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01.webp)
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01](src/Curso_Profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_01.webp)
 
-![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02.jpg)
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02](src/Curso_Profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_02.jpg)
 
-![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03](src/Curso_profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03.jpg)
+![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03](src/Curso_Profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03.jpg)
 
 ---

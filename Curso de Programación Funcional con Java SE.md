@@ -797,7 +797,7 @@ public class Outsider {
 
         MutablePerson sier = new MutablePerson();
         sier.setEmails(sierEmail);
-        sier.setFirstName("Israel");
+        sier.setLastName("Israel");
         sier.setFirstName("Sergio");
 
 
@@ -960,6 +960,12 @@ public class Outsider {
     }
 }
 ~~~
+
+Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es inmutable,
+pero es importante, a nivel código, porque con esto podemos asegurar que nadie llegue y cambie un password, que nadie llegue y cambie un salario, que nadie llegue y cambie correos o me agregue correos spam.
+
+En muchas ocasiones va a ver objetos fuera de nuestro control que nosotros no podemos evitar que sean
+inmutables, como es el caso de las listas de Java, pero protegernos utilizando copias nuevas es una manera de generar inmutabilidad, incluso cuando no tenemos control sobre ellos.
 
 ---
 

@@ -33,7 +33,7 @@
         - [Clase 24 - Manejo de ramas en GitHub](#clase-24---manejo-de-ramas-en-github)
         - [Clase 25 - Configurar múltiples colaboradores en un repositorio de GitHub](#clase-25---configurar-múltiples-colaboradores-en-un-repositorio-de-github)
     - [Módulo 5 - Flujos de trabajo profesionales](#módulo-5---flujos-de-trabajo-profesionales)
-        - [Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master](#clase-26---flujo-de-trabajo-profesional-haciendo-merge-de-ramas-de-desarrollo-a-master)
+        - [Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a main](#clase-26---flujo-de-trabajo-profesional-haciendo-merge-de-ramas-de-desarrollo-a-main)
         - [Clase 27 - Flujo de trabajo profesional con Pull requests](#clase-27---flujo-de-trabajo-profesional-con-pull-requests)
         - [Clase 28 - Utilizando Pull Requests en GitHub](#clase-28---utilizando-pull-requests-en-github)
         - [Clase 29 - Creando un Fork, contribuyendo a un repositorio](#clase-29---creando-un-fork-contribuyendo-a-un-repositorio)
@@ -843,6 +843,9 @@ git push origin main
 
 ![19_Uso_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/19_Uso_de_GitHub_01.webp)
 
+Para cambiar la dirección o URL del repositorio remoto:  
+`git remote set-url origin <direccion https o SSH>`
+
 ---
 
 ### Clase 20 - Cómo funcionan las llaves públicas y privadas
@@ -1034,9 +1037,9 @@ Si, como colaborador, agregaste erróneamente el mensaje del *commit*, lo puedes
 `git commit —amend`
 - Corregimos el mensaje
 - Traer el repositorio remoto
-`git pull origin master`
+`git pull origin main`
 - Ejecutar el cambio
-`git push --set-upstream origin master`
+`git push --set-upstream origin main`
 
 ![25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/25_Configurar_multiples_colaboradores_en_un_repositorio_de_GitHub_01.webp)
 
@@ -1045,23 +1048,23 @@ Ahora en GitHub no se muestra Collaborators, se cambio a `Manage acces`
 ---
 
 ## Módulo 5 - Flujos de trabajo profesionales
-### Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master
+### Clase 26 - Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a main
 Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores. Una buena práctica de flujo de trabajo sería la siguiente:
 
 1. Crear ramas
 2. Asignar una rama a cada programador
-3. El programador baja el repositorio con `git pull origin master`
+3. El programador baja el repositorio con `git pull origin main`
 4. El programador cambia de rama
 5. El programador trabaja en esa rama y hace *commits*
 6. El programador sube su trabajo con `git push origin #nombre_rama`
 7. El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
 
-![26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_master_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_master_01.webp)
+![26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01](src/Curso_profesional_de_Git_y_GitHub/26_Flujo_de_trabajo_profesional_merge_ramas_desarrollo_a_main_01.webp)
 
 ---
 
 ### Clase 27 - Flujo de trabajo profesional con Pull requests
-En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados *merge request*.
+En un entorno profesional normalmente se bloquea la rama main, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados *merge request*.
 
 Para realizar pruebas enviamos el código a servidores que normalmente los llamamos *staging develop* (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan al servidor de producción con el ya antes mencionado *merge request*.
 
@@ -1090,11 +1093,11 @@ Al hacer un pull request, se genera una conversación que pueden seguir los dem�
 - Se trabaja en una rama paralela los cambios que se desean `git checkout -b <rama>`.
 - Se hace un commit a la rama `git commit -am '<Comentario>'`.
 - Se suben al remoto los cambios `git push origin <rama>`.
-- En GitHub se hace el pull request comparando la rama master con la rama del fix.
+- En GitHub se hace el pull request comparando la rama main con la rama del fix.
 - Uno, o varios colaboradores revisan que el código sea correcto y dan feedback (en el chat del pull request).
 - El colaborador hace los cambios que desea en la rama y lo vuelve a subir al remoto (automáticamente jala la historia de los cambios que se hagan en la rama, en remoto).
 - Se aceptan los cambios en GitHub.
-- Se hace merge a master desde GitHub.
+- Se hace merge a main desde GitHub.
 **Importante:** Cuando se modifica una rama, también se modifica el pull request.
 
 ![28_Utilizando_Pull_Requests_en_GitHub_01](src/Curso_profesional_de_Git_y_GitHub/28_Utilizando_Pull_Requests_en_GitHub_01.webp)
@@ -1130,13 +1133,13 @@ git remote upstream https://github.com/freddier/hyperblog
 Al crear un remoto adicional, podremos hacer pull desde el nuevo origen. En caso de tener permisos, podremos hacer fetch y push.
 ~~~
 git pull <remoto> <rama>
-git pull upstream master
+git pull upstream main
 ~~~
 
 Este pull nos traerá los cambios del remoto, por lo que se estará al día en el proyecto. El flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
 ~~~
-git pull upstream master
-git push origin master
+git pull upstream main
+git push origin main
 ~~~
 
 ![29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01](src/Curso_profesional_de_Git_y_GitHub/29_Creando_un_Fork,_contribuyendo_a_un_repositorio_01.webp)
@@ -1254,19 +1257,19 @@ Rebase es el proceso de mover o combinar una secuencia de confirmaciones en una 
 
 ![35_Git_Rebase_reorganizando_el_trabajo_realizado_04](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_04.webp)
 
-Para hacer un rebase en la rama feature de la rama master, correrías los siguientes comandos:
+Para hacer un rebase en la rama feature de la rama main, correrías los siguientes comandos:
 ~~~
 git checkout feature
-git rebase master
+git rebase main
 ~~~
 
 Esto *trasplanta* la rama feature desde su locación actual hacia la punta de la rama main:
 
 ![35_Git_Rebase_reorganizando_el_trabajo_realizado_05](src/Curso_profesional_de_Git_y_GitHub/35_Git_Rebase_reorganizando_el_trabajo_realizado_05.png)
 
-Ahora, falta fusionar la rama feature con la rama master
+Ahora, falta fusionar la rama feature con la rama main
 ~~~
-git checkout master
+git checkout main
 git rebase feature
 # No reorganices el historial público
 ~~~
@@ -1277,8 +1280,8 @@ El comando *rebase* es **_una mala práctica, sobre todo en repositorios remotos
 ~~~
 # Cambiamos a la rama que queremos traer los cambios
 git checkout experiment
-# Aplicamos rebase para traer los cambios de la rama que queremos 
-git rebase master
+# Aplicamos rebase para traer los cambios de la rama que queremos
+git rebase main
 ~~~
 
 Se hace primero el rebase a la rama que se va a borrar y después el rebase a la rama final main que queda.
@@ -1427,28 +1430,28 @@ Git clean tiene muchísimas opciones adicionales, que puedes explorar al ver su 
 ---
 
 ### Clase 38 - Git cherry-pick: traer commits viejos al head de un branch
-**Git Cherry-pick** es un comando que permite tomar uno o varios commits de otra rama sin tener que hacer un merge completo. Así, gracias a cherry-pick, podríamos aplicar los commits relacionados con nuestra funcionalidad en la rama master sin necesidad de hacer un merge.
+**Git Cherry-pick** es un comando que permite tomar uno o varios commits de otra rama sin tener que hacer un merge completo. Así, gracias a cherry-pick, podríamos aplicar los commits relacionados con nuestra funcionalidad en la rama main sin necesidad de hacer un merge.
 
 Para demostrar cómo utilizar git cherry-pick, supongamos que tenemos un repositorio con el siguiente estado de rama:
 ~~~
-a -b - c - d   Master
+a -b - c - d   Main
          \
            e - f - g Feature
 ~~~
 
 El uso de git cherry-pick es sencillo y se puede ejecutar de la siguiente manera:
 ~~~
-git checkoutmaster
+git checkout main
 ~~~
 
-En este ejemplo, commitSha es una referencia de confirmación. Puedes encontrar una referencia de confirmación utilizando el comando git log. En este caso, imaginemos que queremos utilizar la confirmación ‘f’ en la rama master. Para ello, primero debemos asegurarnos de que estamos trabajando con esa rama master.
+En este ejemplo, commitSha es una referencia de confirmación. Puedes encontrar una referencia de confirmación utilizando el comando git log. En este caso, imaginemos que queremos utilizar la confirmación ‘f’ en la rama main. Para ello, primero debemos asegurarnos de que estamos trabajando con esa rama main.
 ~~~
 git cherry-pick f
 ~~~
 
 Una vez ejecutado, el historial de Git se verá así:
 ~~~
-a -b - c - d - f   Master
+a -b - c - d - f   Main
          \
            e - f - g Feature
 ~~~
@@ -1487,9 +1490,9 @@ git reset --soft eff544f # Te recuperará todos los cambios que tengas diferente
 
 - `git merge`: Puedes hacer merge de un commit en específico, funciona igual que con una branch, pero te hace el merge del estado específico del commit mandado
 ~~~
-git checkout master
+git checkout main
 
-git merge eff544f # Fusionará en un nuevo commit la historia de master con el momento específico en el que vive
+git merge eff544f # Fusionará en un nuevo commit la historia de main con el momento específico en el que vive
 ~~~
 
 ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando? Con `git reset HashDelHEAD` nos devolveremos al estado en que el proyecto funcionaba.

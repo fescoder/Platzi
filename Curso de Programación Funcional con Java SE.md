@@ -64,6 +64,9 @@ que eso. Hay lenguajes que te obligan a programar funcionalmente y estos lenguaj
 de hacerlo, lenguajes que no son 100% funcionales pero que buscan apoyarte en que puedas hacer este tipo de estilo de programación sin necesidad de que entiendas conceptos complejos
 matemáticos.  
 Y después tenemos a Java, el rey del POO, que a partir de Java 8 te da la posibilidad de hacer programación funcional. Veremos lo nuevo en esta versión pero nos reduciremos a dos cosas:
+
+![01_Que_es_la_Programacion_Funcional_01](src/Curso_Programacion_Funcional_Java_SE/01_Que_es_la_Programacion_Funcional_01.png)
+
 - Funciones
 - Datos
 
@@ -75,7 +78,10 @@ poder dar diferentes tipos de funciones, según los datos que tengamos.
 Es importante recalcar que esto ya existe en Java en versiones anteriores, solo que ahora haremos un mayor énfasis en como obtenerlo en el lenguaje para que nuestras funciones puedan ser
 más simples.
 
-La prog funcional entonces nos va a dar ciertos beneficios:
+**La prog funcional entonces nos va a dar ciertos beneficios:**
+
+![01_Que_es_la_Programacion_Funcional_02](src/Curso_Programacion_Funcional_Java_SE/01_Que_es_la_Programacion_Funcional_02.png)
+
 - **Legibilidad:** Uno de ellos es la legibilidad, vamos a estar muy enfocados en que resolver, es decir, nuestras funciones van a ser más explicitas en cuanto a que es lo que hacen, no en
 como lo hacen, no nos vamos a preocupar en como construir objetos, o tener mil procesos para obtener una solución, nos vamos a preocupar por resolver un problema.
 - **Testing:** Va a ser mas fácil hacer pruebas, tener testings de nuestras funciones, porque al tener nuestro código separado en funciones resolviendo pequeños problemas, es más facil
@@ -103,10 +109,12 @@ o variable se elimina completamente.
 En la programación funcional una función es un tipo de dato, un tipo de dato que puede operar sobre un dato **X** y generar un dato **Y**, como la matemática de la escuela, tenemos una
 función que recibe una X y genera una Y, incluso podemos generar una tabla de resultados con ellos, idealmente siempre una X va a generar la misma Y.
 
+![02_Que_es_una_funcion_en_Java_01](src/Curso_Programacion_Funcional_Java_SE/02_Que_es_una_funcion_en_Java_01.png)
+
 - Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello, las funciones pueden generar o no un resultado, la ausencia de un resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
 - Las funciones se definen, almacenan o declaran bajo demanda como cualquier otro tipo de dato.
 
-![02_Que_es_una_funcion_en_Java_01](src/Curso_Programacion_Funcional_Java_SE/02_Que_es_una_funcion_en_Java_01.png)
+![02_Que_es_una_funcion_en_Java_02](src/Curso_Programacion_Funcional_Java_SE/02_Que_es_una_funcion_en_Java_02.png)
 
 - Pueden definirse funciones con respecto a otras funciones
 `esPar(x) = !esNon(x)`
@@ -395,6 +403,131 @@ Es una función muy simple (1 línea).
 ---
 
 ### Clase 8 - Inmutabilidad
+Hasta este punto hemos hablado de funciones, funciones, funciones y más funciones, diferentes tipos
+de funciones, diferentes utilidades pero No. Hemos hablado de una parte importante de la programación
+funcional, que es la inmutabilidad de los datos, los datos en sí, con los que vamos a operar nuestras
+funciones. Hablemos entonces de la diferencia con respecto a lo que usualmente hacemos en otros
+lenguajes de programación. Y como la programación funcional es per a manejar los datos.
+Y esto es principalmente a través de datos de dos tipos mudables e inmutables, En la mayoría de casos
+vas a preferir tener datos inmutables y a continuación te voy a explicar por qué Las
+principales ventajas de tener datos inmutables es que una vez creado un dato ya
+no puede alterarse. Es decir, Vas creas una instancia de un cierto objeto Y, ese objeto ya
+no cambia. Y por qué querrías eso? Porque ciertamente, al crear a un ciudadano, por ejemplo, su
+identificador único no va a cambiar o sus nombres no van a cambiar.
+O a lo mejor quieres establecer un identificador para un libro o de alguna manera necesitas una lista
+de asistentes que ya no va a cambiar y esa es una ventaja que, una vez creado un dato ya
+no cambia. Esto nos facilita crear funciones puras al tener datos que no cambian Tenemos
+funciones que no generan efectos secundarios, lo cual hace que nuestras funciones se vuelvan puras
+casi automático. Y por otro lado, si son puras, hace más fácil el tener tres.
+Es decir, una función que no genera efectos secundarios es más fácil de meter en diferentes procesadores
+Puedes tomar esa función Ejecutar le en un procesador de ocho núcleos en ocho diferentes ocasiones y
+a final de cuentas no va a haber problema entre tratar de sincronizar los datos que la función uno y
+la función ocho están tratando de generar. Es una ventaja enorme al momento de hacer programación concurrente
+pero también tiene sus desventajas. No todo lo que brilla es oro y una de ellas es que por cada modificación
+necesite sobre los datos. Vas a tener que crear una nueva instancia de Eldad.
+Es decir, si tu quisieras alterar el apellido de una persona que es inmutable, vas a tener que generar
+una nueva persona y se van a tener que identificar diferente.
+Esto puede llegar a ser bastante molesto a nivel código, pero puede tener también sus ventajas.
+Otra desventaja es que requiere especial atención al diseño en unos minutos.
+Demostrar es un ejemplo concreto de cómo tenemos que diseñar nuestros objetos para que se vuelvan inmutables
+Y por otro lado, pues los objetos mutable es que no tenemos nosotros Control + L sobre ello.
+Es decir, esa es una desventaja enorme. Existen objetos de librerías, existen objetos dentro del
+lenguaje o incluso datos que nos llegan de algún otro lado, que son mudables por sí mismos.
+Nosotros no tenemos control de cómo funcionan esos objetos.
+Entonces tenemos que generar alguna manera de que esos objetos no multen aún cuando su naturaleza se
+los permite. Entonces veamos un ejemplo de mutabilidad e inmutabilidad en Ya empezamos
+con algo simple tenemos una persona, le hemos llamado multa.
+Good person Ya, imaginarás porque y bueno que representa representa algo que ya haba.
+Conocemos como un poco o pollo, un pleito llava objecte.
+Es decir, es un objeto que tiene un constructor y tiene propiedades y por cada propiedad tiene un deterioro
+Z. Entonces es algo con lo que debes estar familiarizado.
+Tiene UN Finish Next tiene un la acné y tiene una lista de Vim es que corresponden con esta persona
+cierto? Nada fuera de lo común y bueno, al pequeño Método tres trenes sólo para poder devolviera.
+Gusta. Entonces tenemos esta clase y tenemos una clase fuera que se encarga de generar objetos de este
+tipo. Es cierto. Tenemos los correos de esta persona.
+Generamos la persona, le asignamos sus datos y posterior a ello, mandamos a imprimir por pantalla
+La parte interesante es que mandamos a llamar a una función impura que toma este dato.
+Es una función que nosotros no sabemos Qué hace? Tal vez es de una librería.
+Tal vez es de un Fray Mork. O tal vez es una función que hizo alguien más.
+Y despues volvemos a imprimir este dato. Veamos.
+Qué es lo que pasa? Al ejecutar esto. Esperaríamos ver los mismos resultados.
+Cierto? Por pantalla deberíamos ver Tanto los No, el filón.
+Enmiendas Next sin modificarse como el correo. Pero el resultado es sorprendente.
+Resulta que aunque yo sé, le José ti. Yo puse los valores para un correo.
+Esa función hizo modificaciones sobre mi objeto. Esas modificaciones son resultado de que mi clase
+sea mutable. Tener una clase multable genera este tipo de problemas.
+y veamos otro ejemplo. Nos damos cuenta que probablemente el error estaba en tener
+acceso a los correos. Entonces modificamos con otro tipo de objeto, generamos una nueva clase que
+sabemos que ya no va a ser mutable y que ya no se va a ver perjudicada por este hacker
+que nos cambia el correo. Sí, vamos a ver esta clase que hicimos.
+Pues quitamos la parte en la cual agregamos nosotros un CD Ter para los correos.
+Ya no van a poder invocar a este setter para los correos.
+Y no sólo eso, modificamos el constructor Ahora al crear este objeto nos van a tener que proveer de
+los datos. Esto debería arreglar lo cierto. Veamos el código, creamos otro objeto con
+el listado de correos que ya teníamos antes y lo imprimimos entonces muy volvemos a mandar a llamar
+a esta función. Y al ver esta función en ejecución nos damos cuenta que no siguen saqueando
+nuestros datos. Resulta que los datos multable siguen siendo perjudiciales.
+Entonces no basta con sólo configurar El constructor para recibir los datos y esconder los heteros tenemos
+que hacer algo más, que es lo que están haciendo.
+Estas funciones están alterando nuestros datos porque son mudables Y seguramente tú tienes experiencia
+Villava y pensaras Bueno, es fácil Al modificar estos datos sólo tenemos que agregar algunos caracteres
+especiales, algunas palabras clave y hacemos que la clásica no se mutable.
+Hacemos que la lista de correos sea final al hacer la lista de correos final.
+Ya no puede cambiar la referencia. Eso debería arreglar el problema que estamos teniendo, Cierto?
+Bueno, asi ejecutamos este código de nuevo. Resulta que no incluso no se están agregando correos de
+Spam. Entonces no está siendo efectivo el agregar la palabra Faina y Por Qué?
+Qué es lo que está mal con nuestro código Aunque Pere?
+Pensábamos que la palabra final permite limitar la mutabilidad de la clase.
+En realidad, hay más cosas que pueden estar pasando de fondo con respecto al objeto porque
+nosotros no tenemos control sobre su mutabilidad.
+Tenemos que ser todavía más astutos que eso. Entonces decidimos hacer una última clase una
+clase a través de la cual ya no puedan Anja quedarnos.
+Y en esta clase ya decidimos que ya no nos van a Jack header.
+Pero resulta que alguien tomó nuestra clase y extendió de ella.
+Y al extender de ella nos hace creer que se está comportando como nuestra clase originalmente Tenemos
+Motta Volver son tres en la que nosotros creemos que arreglamos la mutabilidad y
+que ya no nos va a afectar realmente. Pero alguien genera una nueva clase a partir de la nuestra y
+resulta que esa clase hace cosas maliciosos por dentro que hace simplemente evita
+que tuve ha reflejado el IMEI correcto, sino que te devuelve nuevos y mails.
+Entonces realmente nuestra clase es mutable por donde le busquemos.
+Cómo podemos arreglar esto? Veamos simplemente un casos y mucha voz Person, generaremos una
+nueva clase. Inmuta muy personal Esta nueva clase va a tener las características que ya teníamos antes
+Tenemos la palabra Fain al para prevenir que la clase mute.
+Y no sólo lo tenemos a nivel clase para evitar que extiendan de nuestra clase sino que lo ponemos en
+las propiedades para evitar que estas muten a largo plazo.
+Pero vamos a hacer algo adicional. Vamos a generar que el gay de Terra de nuestro Symes de
+Dorna una nueva copia. Recuerdas que dijimos que estará una desventaja?
+Bueno, lo que estamos haciendo aquí es evitar que alguien pueda modificar el comportamiento de mi clase
+A partir de nosotros. Proteger nuestros datos al proteger nuestros datos es generar nuevas
+copias sin modificar el dato que ya tenemos. Con esto estamos garantizando la inmutabilidad
+de nuestra clase. Si vemos ahora la ejecución de esta clase, Por más que tratemos de invocar a funciones
+en las cuales desconocemos cómo se comportan, como es el caso de este método que se llama va de intención
+Es una clase de alguna librería o Fray Moore. No sabemos qué hace por dentro, pero no es al
+ser nuestros datos inmutables No vamos a ver el resultado de esta invocación afectado
+Nuestro Geta. Bueno, te preguntarás en este punto bueno, y a lo mejor que hacían internamente
+él ve todo va de intensión. Lo que trataba de hacer es tomar los correos de esta persona, limpiarlos
+y agregar su propio correo. Pero como nosotros generamos una clase inmutable, esta nueva clase se
+protege devolviendo siempre una nueva copia de la lista.
+Con eso prevenimos que la lista que ya tenemos se vea afectada cuando alguien trate de acceder a ella
+Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es inmutable
+pero es importante a nivel código porque con esto podemos asegurar que nadie llegue y cambio en paz
+por que nadie llegue. Cambió en salario Que nadie llegue cambio Correos home agrede correos para enviar
+España Si queremos ver como se comportaban las otras funciones que Hacienda alteraciones
+a nuestro código era básicamente el acceso a las listas El acceso a la vista simplemente
+me permitía generar nuevos y mails y agregarlos a la persona o tomar los que ya tenía la persona y limpiar
+los Qué está pasando aquí? La realidad es que es algo que mencionábamos antes.
+En muchas ocasiones va a ver objetos fuera de nuestro control que nosotros no podemos evitar que se
+inmutables, como es el caso de las listas de Llava Pero.
+Protegernos utilizando copias nuevas es una manera de generar inmutabilidad, incluso cuando no tenemos
+control sobre ellos. Y bueno, ya vimos que es una función funciones puras, funciones impuras, efectos
+secundarios, funciones de orden mayor, datos notables, datos inmutables e incluso vimos como
+él llava Los datos son mudables por default, pero todavía faltan muchos ejemplos.
+No hemos visto funciones todavía en llava. Todavía nos falta entender más estas conceptos aplicados
+en un lenguaje que por su naturaleza es orientado objetos.
+Entonces te invito a que me dejes komentarios me dejes preguntas hasta este punto para
+que podamos seguir con los siguientes partes en donde veremos aplicación directa de cada uno de estos
+conciertos ya conllevaba ocho y ya con los elementos que hacen que ya haba, puede hacer un lenguaje
+para programar funcionalmente.
 
 ---
 

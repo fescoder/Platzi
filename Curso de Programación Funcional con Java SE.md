@@ -284,6 +284,57 @@ teniendo funciones puras. Podemos tener mayor cantidad de pruebas.
 ---
 
 ### Clase 6 - Funciones de orden mayor
+Definimos que ahora las funciones son ciudadanos de primera clase, definimos que tenemos funciones puras e impuras, pero la parte importante aquí es definir las funciones de orden mayor.
+
+Una función de orden mayor es una función que cumpla al menos con alguna de estas dos características:
+- Toma otra función o funciones como parámetro.
+- Retornar una función como resultado de su ejecución.
+
+Eso define que es una función de orden mayor, veamos ejemplos.
+~~~
+int foo (Function param)
+~~~
+En este caso, la función ***foo*** toma una función ***param*** y la utiliza para generar un valor entero.  
+¿Que puede ser esto? por ejemplo, podríamos tener la función para Ploteo o una función a
+partir de la cual generar todos los resultados de los salarios o algo por el estilo.
+
+O tenemos este otro caso.
+~~~
+Function bar (int x)
+~~~
+La función ***bar*** que reciben un entero y genera de nueva función.  
+Y este es un caso en el cual podríamos, por ejemplo, tener una función que genere accesos a una base
+de datos basado en un ***ID*** o basado en una contraseña, un password.
+
+Podemos generar funciones de manera dinámica, basado en parámetros o incluso ambos casos.
+~~~
+Function baz (Function f)
+~~~
+Podemos tener una función que tome como primer parámetro una función y que ejecute sus datos
+y resulte en otra función.  
+Por ejemplo, o transformaciones de datos, es decir, tenemos una función que va a tomar un Json, va a aplicar los la función F
+sobre ese JSON y generar una nueva función que va a estar generando dinámicamente datos
+a partir de JSON.  
+
+Ventajas de tener high order function:
+- Podemos pasar comportamientos.  
+Como filtrar elementos de una base de datos, es pasar una función como una manera de filtrar los datos.
+- Compartir un medio de comunicación (Callbacks).  
+Sí sabemos que algo va a ir generando resultados y necesitamos un medio de comunicación, pásame los datos a través de esta función. Es un caso muy común en el caso de JS el generar este tipo de callbacks, es simplemente cuando tengas algún dato, pásamelo por esta función es
+un medio de comunicación.
+- Incluso compartir lógica o reglas.  
+Por ejemplo, el filtrado de una base de datos, o el cómo detectar un
+password seguro o inseguro y que ese tipo de lógica se repite a lo largo del proyecto. Entonces podemos mantener una sola función con esta lógica y compartirla entre diferentes invocaciones.
+
+**En resumen:**  
+FUNCIONES DE ORDEN MAYOR  
+- Toma otra funciona como parámetro.
+- Retorna una función después de su ejecución.
+
+VENTAJAS  
+- Pasar comportamientos.
+- Compartir un medio de comunicación.
+- Compartir logica/reglas.
 
 ---
 

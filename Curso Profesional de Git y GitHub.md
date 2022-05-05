@@ -1560,4 +1560,11 @@ A continuación veremos una lista de comandos colaborativos para facilitar el tr
 
 ![42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03](src/Curso_Profesional_de_Git_y_GitHub/42_Comandos_y_recursos_colaborativos_en_Git_y_GitHub_03.jpg)
 
+**Hacer un Submodulo de repositorio**  
+Al tener que clonar un repo de un curso, lo hice dentro de mi carpeta **SRC** que contiene los recursos de MI Github, entonces quedó el repo indicado, un submodulo, dentro de mi repo con el siguiente comando:  
+~~~
+git submodule add <URL_repo> <Nombre_carpeta_donde_se_alojara>
+
+git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repositorios_del_Curso_Programacion_Funcional
+~~~
 ---

@@ -451,9 +451,6 @@ Nosotros no tenemos control de cómo funcionan esos objetos.
 Entonces tenemos que generar alguna manera de que esos objetos no muten aún cuando su naturaleza se
 los permite.
 
-**POJO** Plain Old Java Object  
-Utilizada por programadores Java para enfatizar el uso de clases simples y que no dependen de un framework en especial.
-
 Una manera de generar inmutabilidad es haciendo copias nuevas, protegiendo nuestros datos.
 
 Ejemplos de mutabilidad e inmutabilidad.
@@ -466,14 +463,14 @@ public class PureFunctions {
     /**
      * Aunque hoy dia conocemos a los metodos estaticos como metodos de clase o simplemente metodos estaticos,
      * en realidad un metodo puede ser considerado o visto como una funcion.
-     * <p>
+     *
      * Basandonos en nuestra definicion de funcion, sabemos que para cada X genera una Y. En este caso,
      * nuestra "x" es en realidad el par (x, y) y nuestra "y" sera el resultado de sumarlas.
-     * <p>
+     *
      * Habra algun cambio en el resultado si yo ejecuto 90 veces sum(3,5)?
-     * <p>
+     *
      * La respuesta es: NO.
-     * <p>
+     *
      * Una funcion pura no depende de estados exteriores (propiedades, objetos, variables
      * externas a su definicion, etc.) ni ve afectado su resultado por agentes externos.
      */
@@ -512,14 +509,14 @@ public class PureFunctions {
 
     /**
      * La respuesta es: Si!
-     * <p>
+     *
      * porque la funcion revisa unicamente si un numero es mayor a 0, no importa la referencia de donde vengan
      * los fondos, mientras esos fondos sean menores o iguales a 0, la respuesta siempre sera false.
-     * <p>
+     *
      * Por otro lado, cuando una persona consigue fondos en su cuenta, la funcion en realidad no ve ese cambio.
      * Para la funcion la respuesta cambiara hasta que le den un nuevo valor a evaluar. La funcion no depende
      * de la presencia de los datos en ningun lugar o de un contexto.
-     * <p>
+     *
      * Mira el ejemplo abajo:
      */
     public static void main(String[] args) {
@@ -595,92 +592,8 @@ public class SideEffects {
 }
 ~~~
 
-Outsider.java
-~~~
-package com.platzi.functional._03_immutable.immutable;
-
-import java.util.LinkedList;
-import java.util.List;
-
-public class Outsider {
-    public static void main(String[] args) {
-        String firstName = "Sinuhe";
-        String lastName = "Jaime";
-
-        List<String> emails = new LinkedList<>();
-        emails.add("sier@sier.com");
-
-        ImmutablePerson sier = new ImmutablePerson(firstName, lastName, emails);
-
-        System.out.println(sier);
-        badIntentionedMethod(sier);
-        System.out.println(sier);
-    }
-
-    /**
-     * No importa que el metodo intente modificar a la persona, la persona esta diseñada
-     * para no recibir modificaciones.
-     */
-    static void badIntentionedMethod(ImmutablePerson person) {
-        List<String> emails = person.getEmails();
-        emails.clear();
-        emails.add("imnotthebadguy@mail.com");
-    }
-}
-~~~
-
-ImmutablePerson.java
-~~~
-package com.platzi.functional._03_immutable.immutable;
-
-import java.util.LinkedList;
-import java.util.List;
-
-/**
- * Clase final de nuestro diseño.
- *
- * Cuenta con mas de una mejora:
- *
- * 1. Es final, asi nadie puede extender de ella. No mas suplantaciones
- * 2. Las propiedades son finales, una vez creado un objeto no puede mutar
- * 3. El constructor exige todas las propiedades para generar un objeto
- *    (podria incluso generarse un builder derivado de este constructor)
- * 4. Cuando se accede a los emails, se quenera una copia! no se envia la lista mutable!
- */
-public final class ImmutablePerson {
-    private final String firstName;
-    private final String lastName;
-
-    private final List<String> emails;
-
-    public ImmutablePerson(String firstName, String lastName, List<String> emails) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emails = emails;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public final List<String> getEmails() {
-        return new LinkedList<>(emails);
-    }
-
-    @Override
-    public String toString() {
-        return "ImmutablePerson{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", emails=" + emails +
-                '}';
-    }
-}
-~~~
+**POJO** Plain Old Java Object  
+Utilizada por programadores Java para enfatizar el uso de clases simples y que no dependen de un framework en especial.
 
 MutablePerson.java
 ~~~
@@ -731,6 +644,141 @@ public class MutablePerson {
                 ", lastName='" + lastName + '\'' +
                 ", emails=" + emails +
                 '}';
+    }
+}
+~~~
+
+MutablePerson_2.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.List;
+
+/**
+ * Clase mejorada.
+ * Ahora obligamos a quien use esta clase a crear instancias usando el constructor.
+ * Quitamos el setter para evitar que hagan modificaciones peligrosas…
+ */
+public class MutablePerson_2 {
+    private String firstName;
+    private String lastName;
+
+    private List<String> emails;
+
+    public MutablePerson_2(List<String> emails) {
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    @Override
+    public String toString() {
+        return "MutablePerson_2{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+MutablePerson_3.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.List;
+
+/**
+ * Mas mejoras. Ahora nuestra lista de emails es final. Eso nos garantiza que nadie sobre escribe
+ * el valor de la propiedad y una vez creado siempre sera la misma lista.
+ *
+ * Eso deberia resolver el problema… cierto?
+ */
+public class MutablePerson_3 {
+    private String firstName;
+    private String lastName;
+
+    private final List<String> emails;
+
+    public MutablePerson_3(List<String> emails) {
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    @Override
+    public String toString() {
+        return "MutablePerson_3{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+MutablePerson_4.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Alguien decide que puede extender de nuestra clase y cambiar solo algunos
+ * elementos… ¡nos hackea!
+ *
+ * De nada sirvieron las modificaciones en la clase MutablePerson_3, esta clase nos
+ * esta suplantando!
+ */
+public class MutablePerson_4 extends MutablePerson_3 {
+    public MutablePerson_4(List<String> emails) {
+        super(emails);
+    }
+
+    @Override
+    public List<String> getEmails() {
+        List<String> spammyEmails = new LinkedList<>();
+        spammyEmails.add("tubanco@mibanco.banco.com");
+        spammyEmails.add("cheapfoods@blackmarket.com");
+
+        return spammyEmails;
     }
 }
 ~~~
@@ -826,137 +874,89 @@ public class Outsider {
 }
 ~~~
 
-MutablePerson2.java
+ImmutablePerson.java
 ~~~
-package com.platzi.functional._03_immutable.mutable;
-
-import java.util.List;
-
-/**
- * Clase mejorada.
- * Ahora obligamos a quien use esta clase a crear instancias usando el constructor.
- * Quitamos el setter para evitar que hagan modificaciones peligrosas…
- */
-public class MutablePerson_2 {
-    private String firstName;
-    private String lastName;
-
-    private List<String> emails;
-
-    public MutablePerson_2(List<String> emails) {
-        this.emails = emails;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public List<String> getEmails() {
-        return emails;
-    }
-
-    @Override
-    public String toString() {
-        return "MutablePerson_2{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", emails=" + emails +
-                '}';
-    }
-}
-~~~
-
-MutablePerson3.java
-~~~
-package com.platzi.functional._03_immutable.mutable;
-
-import java.util.List;
-
-/**
- * Mas mejoras. Ahora nuestra lista de emails es final. Eso nos garantiza que nadie sobre escribe
- * el valor de la propiedad y una vez creado siempre sera la misma lista.
- *
- * Eso deberia resolver el problema… cierto?
- */
-public class MutablePerson_3 {
-    private String firstName;
-    private String lastName;
-
-    private final List<String> emails;
-
-    public MutablePerson_3(List<String> emails) {
-        this.emails = emails;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public List<String> getEmails() {
-        return emails;
-    }
-
-    @Override
-    public String toString() {
-        return "MutablePerson_3{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", emails=" + emails +
-                '}';
-    }
-}
-~~~
-
-MutablePerson4.java
-~~~
-package com.platzi.functional._03_immutable.mutable;
+package com.platzi.functional._03_immutable.immutable;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Alguien decide que puede extender de nuestra clase y cambiar solo algunos
- * elementos… ¡nos hackea!
+ * Clase final de nuestro diseño.
  *
- * De nada sirvieron las modificaciones en la clase MutablePerson_3, esta clase nos
- * esta suplantando!
+ * Cuenta con mas de una mejora:
+ *
+ * 1. Es final, asi nadie puede extender de ella. No mas suplantaciones
+ * 2. Las propiedades son finales, una vez creado un objeto no puede mutar
+ * 3. El constructor exige todas las propiedades para generar un objeto
+ *    (podria incluso generarse un builder derivado de este constructor)
+ * 4. Cuando se accede a los emails, se genera una copia! no se envia la lista mutable!
  */
-public class MutablePerson_4 extends MutablePerson_3 {
-    public MutablePerson_4(List<String> emails) {
-        super(emails);
+public final class ImmutablePerson {
+    private final String firstName;
+    private final String lastName;
+
+    private final List<String> emails;
+
+    public ImmutablePerson(String firstName, String lastName, List<String> emails) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public final List<String> getEmails() {
+        return new LinkedList<>(emails);
     }
 
     @Override
-    public List<String> getEmails() {
-        List<String> spammyEmails = new LinkedList<>();
-        spammyEmails.add("tubanco@mibanco.banco.com");
-        spammyEmails.add("cheapfoods@blackmarket.com");
+    public String toString() {
+        return "ImmutablePerson{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
 
-        return spammyEmails;
+Outsider.java
+~~~
+package com.platzi.functional._03_immutable.immutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Outsider {
+    public static void main(String[] args) {
+        String firstName = "Sinuhe";
+        String lastName = "Jaime";
+
+        List<String> emails = new LinkedList<>();
+        emails.add("sier@sier.com");
+
+        ImmutablePerson sier = new ImmutablePerson(firstName, lastName, emails);
+
+        System.out.println(sier);
+        badIntentionedMethod(sier);
+        System.out.println(sier);
+    }
+
+    /**
+     * No importa que el metodo intente modificar a la persona, la persona esta diseñada
+     * para no recibir modificaciones.
+     */
+    static void badIntentionedMethod(ImmutablePerson person) {
+        List<String> emails = person.getEmails();
+        emails.clear();
+        emails.add("imnotthebadguy@mail.com");
     }
 }
 ~~~

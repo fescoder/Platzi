@@ -406,6 +406,8 @@ Es una función muy simple (1 línea).
 ---
 
 ### Clase 8 - Inmutabilidad
+[Video de la clase](https://platzi.com/clases/1826-java-funcional/26226-inmutabilidad/)
+
 Hasta este punto no hemos hablado de una parte importante de la programación
 funcional, que es la inmutabilidad de los datos, los datos en sí, con los que vamos a operar nuestras
 funciones.  
@@ -961,6 +963,8 @@ public class Outsider {
 }
 ~~~
 
+Entonces a la clase que se creó para generar objetos inmutables se utilizó la palabra **final** tanto en la clase como los atributos o propiedades para evitar la modificación, el método que exige todas las propiedades y por ultimo permitió que se generara una copia de la lista de correos.
+
 Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es inmutable,
 pero es importante, a nivel código, porque con esto podemos asegurar que nadie llegue y cambie un password, que nadie llegue y cambie un salario, que nadie llegue y cambie correos o me agregue correos spam.
 
@@ -971,6 +975,9 @@ inmutables, como es el caso de las listas de Java, pero protegernos utilizando c
 
 ## Módulo 3 - Functional Programming en Java
 ### Clase 9 - Repositorio del curso
+¡Vamos a comenzar con el código!  
+Para que tengas todos los archivos descargados de antemano, te comparto el repositorio del curso:  
+[Repositorio del curso](https://github.com/sierisimo/JavaSE-Functional-platzi)
 
 ---
 

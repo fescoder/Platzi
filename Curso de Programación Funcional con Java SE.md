@@ -111,7 +111,8 @@ función que recibe una X y genera una Y, incluso podemos generar una tabla de r
 
 ![02_Que_es_una_funcion_en_Java_01](src/Curso_Programacion_Funcional_Java_SE/02_Que_es_una_funcion_en_Java_01.png)
 
-- Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello, las funciones pueden generar o no un resultado, la ausencia de un resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
+- Una función es una serie de pasos parametrizados. Por ejemplo, inicia con esto, sigue con esto y termina con aquello.
+- Las funciones pueden generar o no un resultado, la ausencia de un resultado no quiere decir que no haya un resultado como tal si no que el tipo de dato que se regresa es un tipo de dato vacio.
 - Las funciones se definen, almacenan o declaran bajo demanda como cualquier otro tipo de dato.
 
 ![02_Que_es_una_funcion_en_Java_02](src/Curso_Programacion_Funcional_Java_SE/02_Que_es_una_funcion_en_Java_02.png)
@@ -232,6 +233,8 @@ Y las reglas nos dictan algo. Lo primero que nos dictan es que una función pura
 invocar a otra función pura. ¿Por qué? Porque podemos pronosticar cuál va a ser el resultado de esta
 ejecución. Al fin Sabemos que una función pura es determinista, es decir, podemos pronosticar
 el resultado.
+
+![04_Funciones_puras_03](src/Curso_Programacion_Funcional_Java_SE/04_Funciones_puras_03.png)
 
 Sin embargo no podemos invocar una función impura desde una función pura porque rompería la estructura. Es decir, si desde una función pura tratáramos de invocar a una función impura, no podríamos pronosticar o predecir cuál va a ser el resultado.
 Y al no poder pronosticar o predecir el resultado no tendríamos una función pura así
@@ -403,131 +406,560 @@ Es una función muy simple (1 línea).
 ---
 
 ### Clase 8 - Inmutabilidad
-Hasta este punto hemos hablado de funciones, funciones, funciones y más funciones, diferentes tipos
-de funciones, diferentes utilidades pero No. Hemos hablado de una parte importante de la programación
+Hasta este punto no hemos hablado de una parte importante de la programación
 funcional, que es la inmutabilidad de los datos, los datos en sí, con los que vamos a operar nuestras
-funciones. Hablemos entonces de la diferencia con respecto a lo que usualmente hacemos en otros
-lenguajes de programación. Y como la programación funcional es per a manejar los datos.
-Y esto es principalmente a través de datos de dos tipos mudables e inmutables, En la mayoría de casos
-vas a preferir tener datos inmutables y a continuación te voy a explicar por qué Las
-principales ventajas de tener datos inmutables es que una vez creado un dato ya
-no puede alterarse. Es decir, Vas creas una instancia de un cierto objeto Y, ese objeto ya
-no cambia. Y por qué querrías eso? Porque ciertamente, al crear a un ciudadano, por ejemplo, su
-identificador único no va a cambiar o sus nombres no van a cambiar.
+funciones.  
+Hablemos entonces de la diferencia con respecto a lo que usualmente hacemos en otros
+lenguajes de programación, y como la programación funcional espera manejar los datos.  
+Y esto es principalmente a través de datos de dos tipos **mudables** e **inmutables**, en la mayoría de casos
+vas a preferir tener datos inmutables y a continuación te voy a explicar por qué:
+
+![08_Inmutabilidad_01](src/Curso_Programacion_Funcional_Java_SE/08_Inmutabilidad_01.png)
+
+- Las principales ventajas de tener datos inmutables es que una vez creado un dato ya
+no puede alterarse.  
+Es decir, creas una instancia de un cierto objeto y ese objeto ya
+no cambia.  
+Y ¿Por qué querrías eso? Porque ciertamente, al crear a un ciudadano, por ejemplo, su
+identificador único no va a cambiar o sus nombres no van a cambiar.  
 O a lo mejor quieres establecer un identificador para un libro o de alguna manera necesitas una lista
 de asistentes que ya no va a cambiar y esa es una ventaja que, una vez creado un dato ya
-no cambia. Esto nos facilita crear funciones puras al tener datos que no cambian Tenemos
+no cambia.
+- Esto nos facilita crear funciones puras.  
+Al tener datos que no cambian, tenemos
 funciones que no generan efectos secundarios, lo cual hace que nuestras funciones se vuelvan puras
-casi automático. Y por otro lado, si son puras, hace más fácil el tener tres.
-Es decir, una función que no genera efectos secundarios es más fácil de meter en diferentes procesadores
-Puedes tomar esa función Ejecutar le en un procesador de ocho núcleos en ocho diferentes ocasiones y
+casi en automático.  
+- Por otro lado, si son puras, hace más fácil el tener **threads**.  
+Es decir, una función que no genera efectos secundarios es más fácil de meter en diferentes procesadores,
+puedes tomar esa función, ejecutarla en un procesador de ocho núcleos en ocho diferentes ocasiones y
 a final de cuentas no va a haber problema entre tratar de sincronizar los datos que la función uno y
-la función ocho están tratando de generar. Es una ventaja enorme al momento de hacer programación concurrente
-pero también tiene sus desventajas. No todo lo que brilla es oro y una de ellas es que por cada modificación
-necesite sobre los datos. Vas a tener que crear una nueva instancia de Eldad.
+la función ocho están tratando de generar.  
+Es una ventaja enorme al momento de hacer programación concurrente.
+
+![08_Inmutabilidad_02](src/Curso_Programacion_Funcional_Java_SE/08_Inmutabilidad_02.png)
+
+Pero también tiene sus desventajas.  
+- Por cada modificación que necesite sobre los datos, vas a tener que crear una nueva instancia del dato.  
 Es decir, si tu quisieras alterar el apellido de una persona que es inmutable, vas a tener que generar
-una nueva persona y se van a tener que identificar diferente.
+una nueva persona y se van a tener que identificar diferente.  
 Esto puede llegar a ser bastante molesto a nivel código, pero puede tener también sus ventajas.
-Otra desventaja es que requiere especial atención al diseño en unos minutos.
-Demostrar es un ejemplo concreto de cómo tenemos que diseñar nuestros objetos para que se vuelvan inmutables
-Y por otro lado, pues los objetos mutable es que no tenemos nosotros Control + L sobre ello.
-Es decir, esa es una desventaja enorme. Existen objetos de librerías, existen objetos dentro del
-lenguaje o incluso datos que nos llegan de algún otro lado, que son mudables por sí mismos.
+- Requiere especial atención al diseño.
+- Objetos mutables que no tenemos nosotros control sobre ello.  
+Esa es una desventaja enorme. Existen objetos de librerías, existen objetos dentro del
+lenguaje o incluso datos que nos llegan de algún otro lado, que son mutables por sí mismos.
 Nosotros no tenemos control de cómo funcionan esos objetos.
-Entonces tenemos que generar alguna manera de que esos objetos no multen aún cuando su naturaleza se
-los permite. Entonces veamos un ejemplo de mutabilidad e inmutabilidad en Ya empezamos
-con algo simple tenemos una persona, le hemos llamado multa.
-Good person Ya, imaginarás porque y bueno que representa representa algo que ya haba.
-Conocemos como un poco o pollo, un pleito llava objecte.
-Es decir, es un objeto que tiene un constructor y tiene propiedades y por cada propiedad tiene un deterioro
-Z. Entonces es algo con lo que debes estar familiarizado.
-Tiene UN Finish Next tiene un la acné y tiene una lista de Vim es que corresponden con esta persona
-cierto? Nada fuera de lo común y bueno, al pequeño Método tres trenes sólo para poder devolviera.
-Gusta. Entonces tenemos esta clase y tenemos una clase fuera que se encarga de generar objetos de este
-tipo. Es cierto. Tenemos los correos de esta persona.
-Generamos la persona, le asignamos sus datos y posterior a ello, mandamos a imprimir por pantalla
-La parte interesante es que mandamos a llamar a una función impura que toma este dato.
-Es una función que nosotros no sabemos Qué hace? Tal vez es de una librería.
-Tal vez es de un Fray Mork. O tal vez es una función que hizo alguien más.
-Y despues volvemos a imprimir este dato. Veamos.
-Qué es lo que pasa? Al ejecutar esto. Esperaríamos ver los mismos resultados.
-Cierto? Por pantalla deberíamos ver Tanto los No, el filón.
-Enmiendas Next sin modificarse como el correo. Pero el resultado es sorprendente.
-Resulta que aunque yo sé, le José ti. Yo puse los valores para un correo.
-Esa función hizo modificaciones sobre mi objeto. Esas modificaciones son resultado de que mi clase
-sea mutable. Tener una clase multable genera este tipo de problemas.
-y veamos otro ejemplo. Nos damos cuenta que probablemente el error estaba en tener
-acceso a los correos. Entonces modificamos con otro tipo de objeto, generamos una nueva clase que
-sabemos que ya no va a ser mutable y que ya no se va a ver perjudicada por este hacker
-que nos cambia el correo. Sí, vamos a ver esta clase que hicimos.
-Pues quitamos la parte en la cual agregamos nosotros un CD Ter para los correos.
-Ya no van a poder invocar a este setter para los correos.
-Y no sólo eso, modificamos el constructor Ahora al crear este objeto nos van a tener que proveer de
-los datos. Esto debería arreglar lo cierto. Veamos el código, creamos otro objeto con
-el listado de correos que ya teníamos antes y lo imprimimos entonces muy volvemos a mandar a llamar
-a esta función. Y al ver esta función en ejecución nos damos cuenta que no siguen saqueando
-nuestros datos. Resulta que los datos multable siguen siendo perjudiciales.
-Entonces no basta con sólo configurar El constructor para recibir los datos y esconder los heteros tenemos
-que hacer algo más, que es lo que están haciendo.
-Estas funciones están alterando nuestros datos porque son mudables Y seguramente tú tienes experiencia
-Villava y pensaras Bueno, es fácil Al modificar estos datos sólo tenemos que agregar algunos caracteres
-especiales, algunas palabras clave y hacemos que la clásica no se mutable.
-Hacemos que la lista de correos sea final al hacer la lista de correos final.
-Ya no puede cambiar la referencia. Eso debería arreglar el problema que estamos teniendo, Cierto?
-Bueno, asi ejecutamos este código de nuevo. Resulta que no incluso no se están agregando correos de
-Spam. Entonces no está siendo efectivo el agregar la palabra Faina y Por Qué?
-Qué es lo que está mal con nuestro código Aunque Pere?
-Pensábamos que la palabra final permite limitar la mutabilidad de la clase.
-En realidad, hay más cosas que pueden estar pasando de fondo con respecto al objeto porque
-nosotros no tenemos control sobre su mutabilidad.
-Tenemos que ser todavía más astutos que eso. Entonces decidimos hacer una última clase una
-clase a través de la cual ya no puedan Anja quedarnos.
-Y en esta clase ya decidimos que ya no nos van a Jack header.
-Pero resulta que alguien tomó nuestra clase y extendió de ella.
-Y al extender de ella nos hace creer que se está comportando como nuestra clase originalmente Tenemos
-Motta Volver son tres en la que nosotros creemos que arreglamos la mutabilidad y
-que ya no nos va a afectar realmente. Pero alguien genera una nueva clase a partir de la nuestra y
-resulta que esa clase hace cosas maliciosos por dentro que hace simplemente evita
-que tuve ha reflejado el IMEI correcto, sino que te devuelve nuevos y mails.
-Entonces realmente nuestra clase es mutable por donde le busquemos.
-Cómo podemos arreglar esto? Veamos simplemente un casos y mucha voz Person, generaremos una
-nueva clase. Inmuta muy personal Esta nueva clase va a tener las características que ya teníamos antes
-Tenemos la palabra Fain al para prevenir que la clase mute.
-Y no sólo lo tenemos a nivel clase para evitar que extiendan de nuestra clase sino que lo ponemos en
-las propiedades para evitar que estas muten a largo plazo.
-Pero vamos a hacer algo adicional. Vamos a generar que el gay de Terra de nuestro Symes de
-Dorna una nueva copia. Recuerdas que dijimos que estará una desventaja?
-Bueno, lo que estamos haciendo aquí es evitar que alguien pueda modificar el comportamiento de mi clase
-A partir de nosotros. Proteger nuestros datos al proteger nuestros datos es generar nuevas
-copias sin modificar el dato que ya tenemos. Con esto estamos garantizando la inmutabilidad
-de nuestra clase. Si vemos ahora la ejecución de esta clase, Por más que tratemos de invocar a funciones
-en las cuales desconocemos cómo se comportan, como es el caso de este método que se llama va de intención
-Es una clase de alguna librería o Fray Moore. No sabemos qué hace por dentro, pero no es al
-ser nuestros datos inmutables No vamos a ver el resultado de esta invocación afectado
-Nuestro Geta. Bueno, te preguntarás en este punto bueno, y a lo mejor que hacían internamente
-él ve todo va de intensión. Lo que trataba de hacer es tomar los correos de esta persona, limpiarlos
-y agregar su propio correo. Pero como nosotros generamos una clase inmutable, esta nueva clase se
-protege devolviendo siempre una nueva copia de la lista.
-Con eso prevenimos que la lista que ya tenemos se vea afectada cuando alguien trate de acceder a ella
-Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es inmutable
-pero es importante a nivel código porque con esto podemos asegurar que nadie llegue y cambio en paz
-por que nadie llegue. Cambió en salario Que nadie llegue cambio Correos home agrede correos para enviar
-España Si queremos ver como se comportaban las otras funciones que Hacienda alteraciones
-a nuestro código era básicamente el acceso a las listas El acceso a la vista simplemente
-me permitía generar nuevos y mails y agregarlos a la persona o tomar los que ya tenía la persona y limpiar
-los Qué está pasando aquí? La realidad es que es algo que mencionábamos antes.
-En muchas ocasiones va a ver objetos fuera de nuestro control que nosotros no podemos evitar que se
-inmutables, como es el caso de las listas de Llava Pero.
-Protegernos utilizando copias nuevas es una manera de generar inmutabilidad, incluso cuando no tenemos
-control sobre ellos. Y bueno, ya vimos que es una función funciones puras, funciones impuras, efectos
-secundarios, funciones de orden mayor, datos notables, datos inmutables e incluso vimos como
-él llava Los datos son mudables por default, pero todavía faltan muchos ejemplos.
-No hemos visto funciones todavía en llava. Todavía nos falta entender más estas conceptos aplicados
-en un lenguaje que por su naturaleza es orientado objetos.
-Entonces te invito a que me dejes komentarios me dejes preguntas hasta este punto para
-que podamos seguir con los siguientes partes en donde veremos aplicación directa de cada uno de estos
-conciertos ya conllevaba ocho y ya con los elementos que hacen que ya haba, puede hacer un lenguaje
-para programar funcionalmente.
+Entonces tenemos que generar alguna manera de que esos objetos no muten aún cuando su naturaleza se
+los permite.
+
+**POJO** Plain Old Java Object  
+Utilizada por programadores Java para enfatizar el uso de clases simples y que no dependen de un framework en especial.
+
+Una manera de generar inmutabilidad es haciendo copias nuevas, protegiendo nuestros datos.
+
+Ejemplos de mutabilidad e inmutabilidad.
+
+PureFunctions.java
+~~~
+package com.platzi.functional._01_pure;
+
+public class PureFunctions {
+    /**
+     * Aunque hoy dia conocemos a los metodos estaticos como metodos de clase o simplemente metodos estaticos,
+     * en realidad un metodo puede ser considerado o visto como una funcion.
+     * <p>
+     * Basandonos en nuestra definicion de funcion, sabemos que para cada X genera una Y. En este caso,
+     * nuestra "x" es en realidad el par (x, y) y nuestra "y" sera el resultado de sumarlas.
+     * <p>
+     * Habra algun cambio en el resultado si yo ejecuto 90 veces sum(3,5)?
+     * <p>
+     * La respuesta es: NO.
+     * <p>
+     * Una funcion pura no depende de estados exteriores (propiedades, objetos, variables
+     * externas a su definicion, etc.) ni ve afectado su resultado por agentes externos.
+     */
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+
+
+    /**
+     * Imagina que la siguiente clase es parte de un sistema financiero
+     */
+    static class Person {
+        //Nos enfocaremos solo en esta propiedad por ahora…
+        private double balance;
+
+        public Person(double balance) {
+            this.balance = balance;
+        }
+
+        public double getBalance() {
+            return balance;
+        }
+
+        public void setBalance(double balance) {
+            this.balance = balance;
+        }
+    }
+
+    /**
+     * Teniendo esta funcion, se le puede considerar pura?
+     */
+    public static boolean hasAvailableFunds(double funds) {
+        return funds > 0.0;
+    }
+
+
+    /**
+     * La respuesta es: Si!
+     * <p>
+     * porque la funcion revisa unicamente si un numero es mayor a 0, no importa la referencia de donde vengan
+     * los fondos, mientras esos fondos sean menores o iguales a 0, la respuesta siempre sera false.
+     * <p>
+     * Por otro lado, cuando una persona consigue fondos en su cuenta, la funcion en realidad no ve ese cambio.
+     * Para la funcion la respuesta cambiara hasta que le den un nuevo valor a evaluar. La funcion no depende
+     * de la presencia de los datos en ningun lugar o de un contexto.
+     * <p>
+     * Mira el ejemplo abajo:
+     */
+    public static void main(String[] args) {
+        Person sinuhe = new Person(-20.00);
+        //False, Sinuhe esta endeudado hasta los dientes
+        System.out.println(hasAvailableFunds(sinuhe.getBalance()));
+
+        Person ricardo = new Person(1300.00);
+        //True, Ricardo tiene dinero disponible!
+        System.out.println(hasAvailableFunds(ricardo.getBalance()));
+
+        //La funcion es evaluada al momento y no depende de que objeto es quien la manda a invocar,
+        //es por ello que se considera pura.
+    }
+}
+~~~
+
+SideEffects.java
+~~~
+package com.platzi.functional._02_sideeffects;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class SideEffects {
+    /**
+     * Funcion impura, el resultado de ejecutarla puede ser observado desde fuera
+     * del codigo. Por ejemplo en una consola.
+     */
+    static void helloWorld() {
+        System.out.println("Hello World!");
+    }
+
+
+    /**
+     * Funcion impura, depende de la existencia y el estado de un archivo,
+     * eso provoca que sea no determinista
+     * Que sucede si esta funcion se ejecuta en mi computadora y en tu computadora?
+     * - Podemos determinar la salida en ambos casos?
+     * - Como nos aseguramos que nadie mas este modificando el archivo?
+     */
+    static boolean containsMexico(File file) {
+        try (BufferedReader bfReader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = bfReader.readLine()) != null) {
+                if (line.contains("Mexico")) {
+                    return true;
+                }
+            }
+        } catch (IOException ignored) {
+            return false;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Funcion impura. Aunque el codigo no esta implementado, con entender lo que hace
+     * sabemos que es no determinista y que no podemos garantizar los resultados para
+     * un cierto parametro
+     */
+    static String getLastNameForGivenName(String name) {
+        //Obtener una conexion a la Base de datos
+        //Ejecutar un query en la base de datos
+        //Revisar los resultados del query…
+        //retornar el valor del lastName o un valor por default en caso de ausencia
+        //...
+        return "";
+    }
+}
+~~~
+
+Outsider.java
+~~~
+package com.platzi.functional._03_immutable.immutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Outsider {
+    public static void main(String[] args) {
+        String firstName = "Sinuhe";
+        String lastName = "Jaime";
+
+        List<String> emails = new LinkedList<>();
+        emails.add("sier@sier.com");
+
+        ImmutablePerson sier = new ImmutablePerson(firstName, lastName, emails);
+
+        System.out.println(sier);
+        badIntentionedMethod(sier);
+        System.out.println(sier);
+    }
+
+    /**
+     * No importa que el metodo intente modificar a la persona, la persona esta diseñada
+     * para no recibir modificaciones.
+     */
+    static void badIntentionedMethod(ImmutablePerson person) {
+        List<String> emails = person.getEmails();
+        emails.clear();
+        emails.add("imnotthebadguy@mail.com");
+    }
+}
+~~~
+
+ImmutablePerson.java
+~~~
+package com.platzi.functional._03_immutable.immutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Clase final de nuestro diseño.
+ *
+ * Cuenta con mas de una mejora:
+ *
+ * 1. Es final, asi nadie puede extender de ella. No mas suplantaciones
+ * 2. Las propiedades son finales, una vez creado un objeto no puede mutar
+ * 3. El constructor exige todas las propiedades para generar un objeto
+ *    (podria incluso generarse un builder derivado de este constructor)
+ * 4. Cuando se accede a los emails, se quenera una copia! no se envia la lista mutable!
+ */
+public final class ImmutablePerson {
+    private final String firstName;
+    private final String lastName;
+
+    private final List<String> emails;
+
+    public ImmutablePerson(String firstName, String lastName, List<String> emails) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public final List<String> getEmails() {
+        return new LinkedList<>(emails);
+    }
+
+    @Override
+    public String toString() {
+        return "ImmutablePerson{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+MutablePerson.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.List;
+
+/**
+ * POJO comun. Incluye propiedades y metodos para acceder y modificar dichas propiedades
+ */
+public class MutablePerson {
+    private String firstName;
+    private String lastName;
+
+    private List<String> emails;
+
+    public MutablePerson() {
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<String> emails) {
+        this.emails = emails;
+    }
+
+    @Override
+    public String toString() {
+        return "MutablePerson{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+Outsider.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Outsider {
+    public static void main(String[] args) {
+        List<String> sierEmail = new LinkedList<>();
+        sierEmail.add("sier@sier.com");
+
+        MutablePerson sier = new MutablePerson();
+        sier.setEmails(sierEmail);
+        sier.setFirstName("Israel");
+        sier.setFirstName("Sergio");
+
+
+        //Veamos un poco los peligros de una clase mutable
+        System.out.println(sier);
+        badFunction(sier);
+        System.out.println(sier);
+
+
+        System.out.println("///////////////////////////////");
+
+
+        MutablePerson_2 sinuhe = new MutablePerson_2(sierEmail);
+        System.out.println(sinuhe);
+        otherBadFunction(sinuhe);
+        System.out.println(sinuhe);
+
+
+        System.out.println("///////////////////////////////");
+
+
+        MutablePerson_3 sinuhe_3 = new MutablePerson_3(sierEmail);
+        System.out.println(sinuhe_3);
+        otherBadFunctionPart3(sinuhe_3);
+        System.out.println(sinuhe_3);
+
+
+
+
+
+        System.out.println("///////////////////////////////");
+
+
+
+
+
+        MutablePerson_3 sinuhe_4 = new MutablePerson_4(sierEmail);
+        System.out.println(sinuhe_4);
+    }
+
+    /**
+     * Este metodo modifica la lista mediante un setter.
+     * Tener el setter es peligroso…
+     */
+    static void badFunction(MutablePerson person) {
+        List<String> emails = new LinkedList<>();
+        emails.add("imnotevil@mail.com");
+
+        person.setEmails(emails);
+    }
+
+    /**
+     * Este metodo toma el objeto devuelto por el getter… pero el
+     * objeto es mutable, asi que podemos modificarlo sin restricciones…
+     */
+    static void otherBadFunction(MutablePerson_2 person) {
+        List<String> emails = person.getEmails();
+        emails.clear();
+
+        emails.add("imnotevil@mail.com");
+    }
+
+    static void otherBadFunctionPart3(MutablePerson_3 person) {
+        List<String> spammyEmails = new LinkedList<>();
+        spammyEmails.add("tubanco@mibanco.banco.com");
+        spammyEmails.add("cheapfoods@blackmarket.com");
+
+        List<String> emails = person.getEmails();
+        emails.clear();
+
+        emails.add("imnotevil@mail.com");
+        emails.addAll(spammyEmails);
+    }
+}
+~~~
+
+MutablePerson2.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.List;
+
+/**
+ * Clase mejorada.
+ * Ahora obligamos a quien use esta clase a crear instancias usando el constructor.
+ * Quitamos el setter para evitar que hagan modificaciones peligrosas…
+ */
+public class MutablePerson_2 {
+    private String firstName;
+    private String lastName;
+
+    private List<String> emails;
+
+    public MutablePerson_2(List<String> emails) {
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    @Override
+    public String toString() {
+        return "MutablePerson_2{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+MutablePerson3.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.List;
+
+/**
+ * Mas mejoras. Ahora nuestra lista de emails es final. Eso nos garantiza que nadie sobre escribe
+ * el valor de la propiedad y una vez creado siempre sera la misma lista.
+ *
+ * Eso deberia resolver el problema… cierto?
+ */
+public class MutablePerson_3 {
+    private String firstName;
+    private String lastName;
+
+    private final List<String> emails;
+
+    public MutablePerson_3(List<String> emails) {
+        this.emails = emails;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<String> getEmails() {
+        return emails;
+    }
+
+    @Override
+    public String toString() {
+        return "MutablePerson_3{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emails=" + emails +
+                '}';
+    }
+}
+~~~
+
+MutablePerson4.java
+~~~
+package com.platzi.functional._03_immutable.mutable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Alguien decide que puede extender de nuestra clase y cambiar solo algunos
+ * elementos… ¡nos hackea!
+ *
+ * De nada sirvieron las modificaciones en la clase MutablePerson_3, esta clase nos
+ * esta suplantando!
+ */
+public class MutablePerson_4 extends MutablePerson_3 {
+    public MutablePerson_4(List<String> emails) {
+        super(emails);
+    }
+
+    @Override
+    public List<String> getEmails() {
+        List<String> spammyEmails = new LinkedList<>();
+        spammyEmails.add("tubanco@mibanco.banco.com");
+        spammyEmails.add("cheapfoods@blackmarket.com");
+
+        return spammyEmails;
+    }
+}
+~~~
 
 ---
 

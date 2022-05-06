@@ -1028,7 +1028,8 @@ Function<Integer, Boolean> isOdd = x -> x % 2 == 1;
 
 Si revisamos las dos sintaxis vemos una clara diferencia y una es mucho más corta y legible que la anterior.
 
-La interfaz **Predicate**, que está dentro del package *Function*, no es más que una especia de función que trabaja sobre un tipo pero genera un boolean, lo que hace es testear si algo es válido.  
+La interfaz **Predicate**, que está dentro del package *Function*, no es más que una especie de función que trabaja sobre un tipo pero genera un boolean, lo que hace es testear si algo es válido.
+
 Crearemos un *Predicate* llamado **isEven** que recibe un entero y dice si es par o no, y para probar los predicados solo tenemos que invocarlas con **.test()**, estamos revisando si un predicado es verdad.
 
 Otro ejemplo práctico de predicate.
@@ -1039,7 +1040,18 @@ Con los predicados entonces podemos hacer validaciónes rápidas, sobre los mism
 
 ---
 
+**Activar el estilo de fuentes con ligaduras**
+
+![12_Revisando_el_paquete_Function_Predicate_02](src/Curso_Programacion_Funcional_Java_SE/12_Revisando_el_paquete_Function_Predicate_02.jpg)
+
+- Settings → Editor → Font Seleccionar la fuente fira code (Yo deje JetBrains Mono) y activarlo.
+- Enable in Settings → Editor → Font → Enable Font Ligatures
+
+---
+
 ### Clase 13 - Revisando el paquete java.util.function: Consumer y Supplier
+
+
 
 ---
 

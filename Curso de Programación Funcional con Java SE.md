@@ -1020,9 +1020,12 @@ Un método también puede ser una función, la diferencia es que las funciones t
 
 ### Clase 12 - Revisando el paquete java.util.function: Predicate
 Ésta es la forma tradicional de crear una función pero esta sintaxis no aporta mucho porque hace que el código sea menos legible, podemos hacer algo que Java nos permite con esta nueva  sintaxis, que nos deja definir de una manera más simple y más legible.  
-Las famosas lambdas.  
-Entonces podemos hacer la siguiente función **isOdd**, que reciba un entero y devuelva un boolean  
-`Function<Integer, Boolean> isOdd = x -> x % 2 == 1;`  
+
+Entonces podemos hacer la siguiente función **isOdd**, que reciba un entero y devuelva un booleano.
+~~~
+Function<Integer, Boolean> isOdd = x -> x % 2 == 1;
+~~~
+
 Si revisamos las dos sintaxis vemos una clara diferencia y una es mucho más corta y legible que la anterior.
 
 La interfaz **Predicate**, que está dentro del package *Function*, no es más que una especia de función que trabaja sobre un tipo pero genera un boolean, lo que hace es testear si algo es válido.  

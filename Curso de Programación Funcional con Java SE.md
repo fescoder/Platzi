@@ -1001,15 +1001,15 @@ Acá esta la [Documentación](https://www.jetbrains.com/help/idea/rename-dialogs
 
 Empecemos experimentando con funciones, creamos una clase para ello, llamada **MathFunctions**.
 
-Para crear una función solamente tenemos que utilizar el tipo ***Function*** que ya se encuentra disponible en Java, basta con escribir y presionar enter para que te lo importe. Si revisamos la definicion de Function encontramos lo siguiente:
+Para crear una función solamente tenemos que utilizar el tipo, la interfaz ***Function*** que se encuentra disponible en Java, basta con escribir y presionar enter para que te lo importe. Si revisamos la definicion de Function encontramos lo siguiente:
 
-![11_Revisando_el_paquete_Function_01](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_01.png)
+![11_Revisando_el_paquete_Function_01](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_Function_01.png)
 
 La funcion recibe como parametro un tipo y genera un resultado, puede recibir una función y devolver una función.
 
 Crearemos la funcion **square** que recibe un entero y devuele el cuadrado del mismo.
 
-![11_Revisando_el_paquete_Function_02](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_02.png)
+![11_Revisando_el_paquete_Function_02](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_Function_02.png)
 
 Un método también puede ser una función, la diferencia es que las funciones también son tipos y al ser tipos se puede realizar operaciones con ellas:
 - Involucrarse como variables
@@ -1019,6 +1019,20 @@ Un método también puede ser una función, la diferencia es que las funciones t
 ---
 
 ### Clase 12 - Revisando el paquete java.util.function: Predicate
+Ésta es la forma tradicional de crear una función pero esta sintaxis no aporta mucho porque hace que el código sea menos legible, podemos hacer algo que Java nos permite con esta nueva  sintaxis, que nos deja definir de una manera más simple y más legible.  
+Las famosas lambdas.  
+Entonces podemos hacer la siguiente función **isOdd**, que reciba un entero y devuelva un boolean  
+`Function<Integer, Boolean> isOdd = x -> x % 2 == 1;`  
+Si revisamos las dos sintaxis vemos una clara diferencia y una es mucho más corta y legible que la anterior.
+
+La interfaz **Predicate**, que está dentro del package *Function*, no es más que una especia de función que trabaja sobre un tipo pero genera un boolean, lo que hace es testear si algo es válido.  
+Crearemos un *Predicate* llamado **isEven** que recibe un entero y dice si es par o no, y para probar los predicados solo tenemos que invocarlas con **.test()**, estamos revisando si un predicado es verdad.
+
+Otro ejemplo práctico de predicate.
+
+![12_Revisando_el_paquete_Function_Predicate_01](src/Curso_Programacion_Funcional_Java_SE/12_Revisando_el_paquete_Function_Predicate_01.png)
+
+Con los predicados entonces podemos hacer validaciónes rápidas, sobre los mismos métodos o funciones que ya tengamos, nos puede beneficiar mucho al momento de estar filtrando elementos o corroborando que tenga datos.
 
 ---
 

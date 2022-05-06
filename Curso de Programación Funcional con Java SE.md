@@ -986,10 +986,35 @@ git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repo
 ---
 
 ### Clase 10 - Configuración del entorno de trabajo
+Tengo clonado todo los repos con todas las ramas, pero en el branch `job-search` tiene todas las pruebas que vamos a usar en estos módulos, lo que hice fue situarme en la rama y abrir desde el Intellij IDEA la carpeta del proyecto(Repositorios_del_curso_programacion_funcional).
 
 ---
 
 ### Clase 11 - Revisando el paquete java.util.function: Function
+**Atajos y Plugins**  
+`psvm` o `main` -> public static void main.  
+`sout` -> system.out.println.  
+Plugin Intellij para tener las llaves de apertura y cierre en colores -> [Plugin](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets/).  
+Se puede bajar desde la pág o instalar desde las preferencias del IDE (File -> Settings -> Plugins).  
+`Shift + F6` -> Para reemplazar el nombre de una función, en este caso, y que donde se utiliza también cambie.  
+Acá esta la [Documentación](https://www.jetbrains.com/help/idea/rename-dialogs.html?keymap=secondary_macos) de shorcuts de Intellij.
+
+Empecemos experimentando con funciones, creamos una clase para ello, llamada **MathFunctions**.
+
+Para crear una función solamente tenemos que utilizar el tipo ***Function*** que ya se encuentra disponible en Java, basta con escribir y presionar enter para que te lo importe. Si revisamos la definicion de Function encontramos lo siguiente:
+
+![11_Revisando_el_paquete_Function_01](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_01.png)
+
+La funcion recibe como parametro un tipo y genera un resultado, puede recibir una función y devolver una función.
+
+Crearemos la funcion **square** que recibe un entero y devuele el cuadrado del mismo.
+
+![11_Revisando_el_paquete_Function_02](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_02.png)
+
+Un método también puede ser una función, la diferencia es que las funciones también son tipos y al ser tipos se puede realizar operaciones con ellas:
+- Involucrarse como variables
+- Pasarlas como parámetros
+- Recibirlas como retorno de ejecución
 
 ---
 

@@ -1019,7 +1019,7 @@ Un método también puede ser una función, la diferencia es que las funciones t
 ---
 
 ### Clase 12 - Revisando el paquete java.util.function: Predicate
-Ésta es la forma tradicional de crear una función pero esta sintaxis no aporta mucho porque hace que el código sea menos legible, podemos hacer algo que Java nos permite con esta nueva  sintaxis, que nos deja definir de una manera más simple y más legible.  
+Ésta es la forma tradicional de crear una función pero esta sintaxis no aporta mucho porque hace que el código sea menos legible, podemos hacer algo que Java nos permite con esta nueva  sintaxis, que nos deja definir de una manera más simple y más legible.
 
 Entonces podemos hacer la siguiente función **isOdd**, que reciba un entero y devuelva un booleano.
 ~~~
@@ -1050,7 +1050,50 @@ Con los predicados entonces podemos hacer validaciónes rápidas, sobre los mism
 ---
 
 ### Clase 13 - Revisando el paquete java.util.function: Consumer y Supplier
+Adicional a las funciones y a los predicados que tenemos dentro de Java funcional.
+También tenemos otros dos elementos que están diseñados para consumir o para proveer de datos: **Consumer** y **Supplier**.
 
+Veamos con un ejemplo cómo podemos consumir un objeto o cómo podemos
+proveer de un objeto, para eso crearemos una pequeña clase que se llama **CLIArguments**.  
+Y esta clase lo único que hace es contener los elementos que se le pasarán por terminal a
+nuestro programa.  
+Vamos a agregar primero que nada, algo muy común en una terminal es pedir
+el manual de usuario. Entonces crearemos una propiedad que se llame **isHelp**.  
+Esta propiedades un booleano que simplemente cuando esté presente lanzaremos el
+manual de la terminal, o si no está presente, continuaremos operando normalmente. Y
+lo que haremos será crear un pequeño getter para esta propiedad.
+
+![13_Revisando_el_paquete_Function_Consumer_Supplier_01](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_01.png)
+
+Hagamos unas utilidades para esta, llamaremos **CLIArgumentsUtils**, y aquí lo que haremos será crear una función que
+nos muestre el manual únicamente cuando la propiedad *isHelp* está presente.
+Entonces llamaremos a **showHelp** que recibe un *CLIArguments* y lo que haremos internamente es definir un **Consumer**.  
+Un Consumer es una interfaz genérica que trabaja sobre un tipo de dato (T).  
+Trabajaremos sobre nuestra clase creada y le llamaremos **ConsumerHelper**, recibirá un *CLIArguments* e
+internamente diremos: si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.
+
+Para invocar a nuestro nuevo consumer recién creado simplemente tenemos que llamar a ConsumerHelper.accept() y le pasamos el dato.
+
+![13_Revisando_el_paquete_Function_Consumer_Supplier_02](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_02.png)
+
+Un uso práctico que puede llegar a tener el Consumer es
+realizar operaciones sobre un tipo de dato.  
+Tenemos un listado de datos y por cada dato en esa lista
+vamos consumiendo y operando sobre ese dato en específico.  
+Por ejemplo, borrar archivos. Recibes una lista de archivos y vas borrando cada archivo que va recibiendo
+el Consumer.
+
+Lo segundo que haremos será crear una función rápida que nos provea de **CLIArguments**, que es la clase que estamos creando y para esto le llamaremos **generateCLI** y lo que haremos será simplemente crear un **Supplier**.  
+Un *Supplier* es otra Interfaz genérica que
+va a generar datos de un cierto tipo, es un tipo de función que se encarga de generar datos, de proveer datos.
+
+Crearemos también un generator que lo que hacemos es generar un nuevo *CLIArgument* retornaremos el *generator.get()*.
+
+Utilidades que puede tener esto es, por ejemplo, generar configuraciones bajo demanda o tener alguna manera de crear archivos
+bajo demanda. Ya no tienes que proveer una configuración completa.
+Sólo creas una forma de obtener el siguiente resultado.
+Eso lo podemos ver más adelante en el módulo de Strings, donde generaremos muchos
+datos de manera infinita a partir de un Supplier.
 
 
 ---

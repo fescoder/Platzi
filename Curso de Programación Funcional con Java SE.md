@@ -1496,6 +1496,10 @@ Con esto vemos que al recibir una función podemos generar nuevas funciones que 
 
 Con esto podemos asegurarnos de crear un archivo, o que un equipo tenga internet, o revisar que haya una conexión, o generar incluso la conexión antes de hacer una consulta de nuestro lado.
 
+**Resumen**  
+Ejecutar antes de una función -> **compose**
+Ejecutar despues de una función -> **andThen**
+
 ---
 
 ## Módulo 4 - Optional y Streams: Datos mas interesantes

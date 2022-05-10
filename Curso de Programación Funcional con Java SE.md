@@ -1237,6 +1237,23 @@ Para poder usarlo a partir de nuestro operador de referencia, el método tiene q
 ---
 
 ### Clase 17 - Analizando la interferencia de tipos
+Hasta ahora vimos que las funciones reciben un Tipo y devuelven un Resultado, hay otras funciones que trabajan sobre diferentes tipos, pero al momento de definir las funciones no estamos definiendo explicitamente los tipos, que hace Java por dentro.
+
+¿Como sabe Java que el dato que enviamos es un entero? A esto se lo conoce como inferencia de tipos. En tiempo de compilación, Java se encarga de validar que los datos que estan pasando a traves de nuestra función sea del tipo que corresponde, Java "adivina" basado en la definición que es el tipo de dato, tanto el que genera como el que emite de vuelta.
+
+Cuando nosotros mandamos a llamar al método forEach, no tenemos que definir un Tipo, si lo quisieramos hacer seria -> `alumnos.forEach((String name) -> System.out.println(name))`, pero gracias a la inferencia de tipos no hace falta y podemos usar directamente *name* -> `alumnos.forEach(name -> System.out.println(name))` y es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`. Acá estamos invocando una función que ya sabe de que tipo es.
+
+El entender que para poder utilizar la referencia de otro método, necesitamos
+que ese método también reciba el mismo parámetro y generar el mismo resultado.  
+Java en tiempo de compilación
+va a inferir estos datos de manera que no tengamos que ponerlos explícitamente
+como lo estamos haciendo en el código.  
+Ya No tenemos que definir el tipo estrictamente cuando
+estamos trabajando con funciones, Java se va a encargar de en tiempo de compilación corroborar
+que los tipos correspondan. Así no tendremos el problema que al mandar nosotros una petición de un
+archivo recibamos una conexión a Internet
+
+![17_Inferencia_de_Tipos_01](src/Curso_Programacion_Funcional_Java_SE/17_Inferencia_de_Tipos_01.png)
 
 ---
 

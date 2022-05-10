@@ -1352,13 +1352,16 @@ y siempre y cuando nosotros tengamos una Lambda definida para el tipo tal cual.
 ---
 
 ### Clase 19 - Usando métodos default en nuestras interfaces
-A partir de Java 8 se pueden agregar métodos default. Para poder hacer funciones definidas por nosotros tenemos que tener una interfaz que tenga un solo método sin definición. Pero podemos agregar muchos métodos que tengan una definición de como comportarse y estos son los métodos default, empiezan con la palabra **default**.
+A partir de Java 8 se pueden agregar métodos default.  
+Para poder hacer funciones definidas por nosotros tenemos que tener una interfaz que tenga un solo método sin definición. Pero podemos agregar muchos métodos que tengan una definición de como comportarse y estos son los métodos default, empiezan con la palabra **default**.
 
 ![19_Metodos_Default_01](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_01.png)
 
+**Otro ejemplo**
+
 ![19_Metodos_Default_02](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_02.png)
 
-La particularidad de esto es que puedo tener una definición a través de la cual ultilice mi método abstacto, esto me da la versatilidad de que podria generar una interfaz que haga querys a una base de datos y simplemente tener un método default que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de los que se va a hacer con la conexión abierta o operar sobre un archivo o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
+La particularidad de esto es que puedo tener una definición a través de la cual ultilice mi método abstacto, esto me da la versatilidad de que podria generar una interfaz que haga queries a una base de datos y simplemente tener un método default que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de los que se va a hacer con la conexión abierta o operar sobre un archivo o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
 
 ---
 

@@ -1490,7 +1490,7 @@ De fondo cuando invoco a *add1MultiplyBy3* estoy generando una función intermed
 Entonces tenemos una manera de agregar pasos antes de la ejecución de una función pero si lo queremos hacer después usaremos el *andThen*.  
 Una vez que termine de ejecutar las funciones que ya tiene, le decimos que ejecute esta otra función, le decimos *andThen* y le pasamos una lamda.
 
-![21_Composicion_de_funciones_02](src/Curso_Programacion_Funcional_Java_SE/21_Composicion_de_funciones_01.png)
+![21_Composicion_de_funciones_02](src/Curso_Programacion_Funcional_Java_SE/21_Composicion_de_funciones_02.png)
 
 Con esto vemos que al recibir una función podemos generar nuevas funciones que tengan un orden de precedencia o que puedan ejecutar otros pasos adicionales antes de ejecutarse a si mismas. Es una manera en la que podemos crear funciones más complejas a partir de lógica o comportamiento de alguien más.
 

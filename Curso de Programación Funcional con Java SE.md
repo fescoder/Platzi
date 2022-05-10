@@ -1355,17 +1355,35 @@ y siempre y cuando nosotros tengamos una Lambda definida para el tipo tal cual.
 A partir de Java 8 se pueden agregar métodos default.  
 Para poder hacer funciones definidas por nosotros tenemos que tener una interfaz que tenga un solo método sin definición. Pero podemos agregar muchos métodos que tengan una definición de como comportarse y estos son los métodos default, empiezan con la palabra **default**.
 
+Escencialmente una interfaz con la anotación `@FunctionalInterface` solo puede tener 1 método abstracto. Como los métodos default tienen una implementación no son abstractos y por lo tanto no rompen el contrato de @FunctionalInterface.
+
 ![19_Metodos_Default_01](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_01.png)
 
 **Otro ejemplo**
 
 ![19_Metodos_Default_02](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_02.png)
 
-La particularidad de esto es que puedo tener una definición a través de la cual ultilice mi método abstacto, esto me da la versatilidad de que podria generar una interfaz que haga queries a una base de datos y simplemente tener un método default que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de los que se va a hacer con la conexión abierta o operar sobre un archivo o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
+La particularidad de esto es que puedo tener una definición a través de la cual ultilice mi método abstacto, esto me da la versatilidad de que podria generar una interfaz que haga queries a una base de datos y simplemente tener un método default que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de lo que se va a hacer con la conexión abierta. O operar sobre un archivo, o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
 
 ---
 
 ### Clase 20 - Dándole nombre a un viejo amigo: Chaining
+Chaning es sencillamente *encadenar* el resultado de una ejecucion con respecto a otra ejecución.
+
+**StringBuilder** es una clase con la cual podemos crear un String.
+
+![20_Chaining_01](src/Curso_Programacion_Funcional_Java_SE/20_Chaining_01.png)
+
+La ejecución de una función nos devuelve un resultado y ese resultado lo usamos para pasarselo a otra función.
+
+Hagamos una clase que haga chaining, que lo único que hace es devolver una instancia de *Chainer* en cada ocasión o iteración.
+
+![20_Chaining_02](src/Curso_Programacion_Funcional_Java_SE/20_Chaining_02.png)
+
+Internamente c/u de los métodos está mandando a llamar y después devuelve el mismo objeto. Esto se ve mucho cuando estamos haciendo composición de funciones.  
+Entonces el chaning nos da la ventaja de no tener que almacenar los resultados.
+
+Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo tipo de dato y le vayamos diciendo que haga un filtrado o alguna conversión de datos y podamos ir agregando funciones sin necesidad de almacenar el resultado en diferentes variables.
 
 ---
 

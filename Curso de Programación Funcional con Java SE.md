@@ -1102,11 +1102,10 @@ datos de manera infinita a partir de un Supplier.
 
 ### Clase 14 - Revisando el paquete java.util.function: Operators y BiFunction
 Hasta este punto hemos visto que tenemos funciones que nos permiten validar, los **Predicate**.  
-Tenemos funciones que nos permiten recibir de un tipo y generar otro tipo como resultado
-Y vimos que tenemos funciones que nos permiten consumir o que nos permiten generar
+Tenemos funciones que nos permiten recibir de un tipo y generar otro tipo como resultado, y vimos que tenemos funciones que nos permiten consumir o que nos permiten generar
 objetos o generar datos de alguna manera.
 
-Existen otros tipos de operadores y otros tipos de funciones que nos permiten trabajar sobre un cierto tipo de tipo indefinido sin
+Existen otros tipos de operadores y otros tipos de funciones que nos permiten trabajar sobre un cierto tipo de tipo indefinido, sin
 necesidad o problema para tener que definir qué tipos vamos a estar recibiendo y generando.
 Y esas funciones se les conoce como **Operators**.
 
@@ -1126,11 +1125,7 @@ definición de ese texto con comillas.
 
 La manera de utilizar un *UnaryOperator* es exactamente la misma que la que tenemos
 para una función, simplemente tenemos que mandar a llamar al método *apply* y
-le pasaremos cualquier texto.  
-Para corroborar el resultado.
-Vamos a meter todo esto directamente en un print para verlo por pantalla.  
-Y lo que veremos es que internamente le pone comillas.
-
+le pasaremos cualquier texto, y lo que veremos es que internamente le pone comillas.  
 Podemos hacer esto también para agregar un énfasis.
 
 ![14_Revisando_el_paquete_Function_Operators_BiFunction_01](src/Curso_Programacion_Funcional_Java_SE/14_Revisando_el_paquete_Function_Operators_BiFunction_01.png)
@@ -1138,19 +1133,16 @@ Podemos hacer esto también para agregar un énfasis.
 La segunda interfaz que veremos
 ahora será **BiFunction**.
 
-Ya tenemos definidas funciones.
-El problema que tenemos con funciones es que si recordamos cómo están definidas, reciben un elemento
-de un cierto tipo de generar un elemento de un cierto tipo. Eso quiere decir que
+El problema que tenemos con funciones es que cómo están definidas, reciben un elemento
+de un cierto tipo y generan un elemento de un cierto tipo. Eso quiere decir que
 nada más recibimos un parámetro. El problema está en que muchas de las operaciones generalmente requieren
 más de un parámetro.
 
-BiFunction una función que va a tomar
+BiFunction es una función que va a tomar
 dos tipos de dato y va a generar otro tercer tipo de dato.
 
-Volviendo este ejemplo rápido de multiplicación
-Tomaríamos un entero, tomaríamos otro entero y generariamos otro entero.
-Y entonces la función de multiplicación sería una función que toma un dato X, uno Y y como resultado nos va a generar simplemente X multiplicado Y.
-
+Volviendo este ejemplo rápido de multiplicación tomaríamos un entero, tomaríamos otro entero y generariamos otro entero.
+Y entonces la función de multiplicación sería una función que toma un dato X, uno Y y como resultado nos va a generar simplemente X multiplicado Y.  
 Es relativamente sencillo de entender y la parte curiosa es que tiene el mismo método *apply* que
 función. Entonces podríamos invocarla directamente con multiplicación.apply, pasandole los argumentos, por ejemplo, cinco por cuatro nos daría como resultado veinte.
 
@@ -1166,14 +1158,12 @@ Esto es una función famosa conocida como **leftPad**.
 Tomaremos un String sobre el cual vamos a agregar espacios, un entero, que será la cantidad de espacios
 que nos gustaría agregar y como resultado, generaremos un nuevo String.  
 A este le llamaremos **leftPad** y recibiremos entonces un texto, el número de espacios y
-utilizaremos una función que existe dentro de Java, ya que se llama *String.format**.  
+utilizaremos una función que existe dentro de Java, ya que se llama **String.format**.  
 Este va a tratar de generar un nuevo String formateado con los parámetros que le demos.
 En nuestro caso, queremos generar un nuevo String que tome la cantidad de espacios que le estamos diciendo
-y esto está definido por la letra **S**, al agregar la letra estamos diciendo que forma te con espacios
-y le tenemos que decir que texto tiene que formatear con espacios, utilizaremos el texto que nos están pasando como parámetro. Es importante mencionar que
-si nuestro texto es más grande que la cantidad de espacios, no va a añadir
-ningún espacio adicional. Es decir, nos va a devolver el texto que ya tenemos.
-
+y esto está definido por la letra **S**, al agregar la letra estamos diciendo que formatee con espacios
+y le tenemos que decir que texto tiene que formatear con espacios, utilizaremos el texto que nos están pasando como parámetro. Es importante mencionar que si nuestro texto es más grande que la cantidad de espacios, no va a añadir
+ningún espacio adicional. Es decir, nos va a devolver el texto que ya tenemos.  
 Diremos directamente que queremos, que a la palabra Java la
 convierta en una palabra que tenga al menos un total de diez elementos agregando
 espacios a la izquierda. Y entonces, al ejecutar, vemos que agregan los seis espacios faltantes para
@@ -1195,13 +1185,35 @@ necesidad de tener esta lógica regado, definida en múltiples clases o en múlt
 Estas funciones extienden de Function. Quiere decir que tienen el método apply.
 - **UnaryOPerator** --> Solo se especifica un solo tipo de dato. Se entiende que tendrá como resultado el mismo tipo.
 - **BinaryOperator** --> Solo se especifica un tipo de dato. Se entiende que tendrá 2 parámetros de entrada y el de retorno del mismo tipo de dato.
-- **Bifunction** --> 2 parámetros de entrada, se tiene que especificar el tipo de dato. Puede tener diferentes tipos de entradas como también diferente tipo de salida.
+- **BiFunction** --> 2 parámetros de entrada, se tiene que especificar el tipo de dato. Puede tener diferentes tipos de entradas como también diferente tipo de salida.
 
 [Más información](https://www.baeldung.com/java-bifunction-interface)
 
 ---
 
 ### Clase 15 - Entendiendo dos jugadores clave: SAM y FunctionalInterface
+Hasta ahora vimos que Java nos proporciona del paquete *Functional* interfaces con la que podemos escribir nuestras propias funciones.  
+Podemos hacer evaluaciones con **Predicate**, funcion con **Function**, funciones de 2 parámetros con **BiFuncion**, y si todos los datos son del mismo tipo podemos usar **UnaryOperator** o **BinaryOperator**, si vamos a consumir algún dato tenemos a **Consumer** y si necesitamos proveer algun datos tenemos a **Supplier**.
+
+Esto no es todo, Java introduce una manera en la que nosotros podemos definir nuestras funciones o nuestra propia estructura de funciones.
+Primero definamos que es una interfaz de tipo **SAM**(Single Abstract Method), es una interfaz que tiene un solo método sin definir, es decir, si creo
+una interfaz tengo que definir un solo método, en este caso **accept** y asi solo ya es una SAM.
+
+Con la notacion `@FunctionalInterface` puedo decir que ese método se va a utilizar como una función. Con esto, el lenguaje sabe que puedo usar esta sintaxis en la que tengo la flecha en la que voy a poder hacer definiciones concretas. Sin embargo si agregaramos otro método Java no va a permitir que compile el método, porque no es un SAM.
+
+![15_SAM_y_FunctionalInterface_01](src/Curso_Programacion_Funcional_Java_SE/15_SAM_y_FunctionalInterface_01.png)
+
+Definiendo nuestras propias funciones.  
+La primera llamada **TriFunction** recibe como parámetros tres tipos de datos *T, U, V* y devuelve un *R*, son genéricos, no sabemos con que tipos de datos va a trabajar pero alguien me lo va a definir después.  
+También vamos a generar un método **Apply**, para tener consistencia con las demás funciones, este retorna un *R* y usa como parámetros *T, U, V*.  
+Tenemos también una función que recibe 3 Integer y devuelve un **LocalDate** para transformar a fecha los valores dados.  
+Entonces si le pasamos los valores a la función **calculateAge** usamos **Period** que es un periodo de tiempo en Java, y calculamos cuanto hay entre hoy y la fecha que hemos gerado antes, y devolvemos los años que hay entre ellos.
+
+Para asegurarnos de que la fecha este bien escrita, es decir que los dias o meses tengan un 0 delante si son menores que 10, hacemos una función **addCeros** que toma un Integer y devuelve un String.
+
+![15_SAM_y_FunctionalInterface_02](src/Curso_Programacion_Funcional_Java_SE/15_SAM_y_FunctionalInterface_02.png)
+
+Entonces pudimos crear una nueva función que recibe 3 parámetros que en Java no existe. Podemos hacer esto para casos específicos que trabajen con tipos especificos o que requiramos de algún tipo de nombre de método o necesitemos algún tipo de estructura en específico.
 
 ---
 

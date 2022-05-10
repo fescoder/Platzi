@@ -983,6 +983,8 @@ Lo hice con:
 git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repositorios_del_Curso_Programacion_Funcional
 ~~~
 
+**TENER EN CUENTA QUE CONTIENE ARCHIVOS CON EXPLICACIÓN DE LOS TEMAS QUE SE IRAN VIENDO.**
+
 ---
 
 ### Clase 10 - Configuración del entorno de trabajo
@@ -1237,9 +1239,9 @@ Para poder usarlo a partir de nuestro operador de referencia, el método tiene q
 ---
 
 ### Clase 17 - Analizando la interferencia de tipos
-Hasta ahora vimos que las funciones reciben un Tipo y devuelven un Resultado, hay otras funciones que trabajan sobre diferentes tipos, pero al momento de definir las funciones no estamos definiendo explicitamente los tipos, que hace Java por dentro.
+Hasta ahora vimos que las funciones reciben un Tipo y devuelven un Resultado, hay otras funciones que trabajan sobre diferentes tipos, pero al momento de definir las funciones no estamos definiendo explicitamente los tipos.
 
-¿Como sabe Java que el dato que enviamos es un entero? A esto se lo conoce como inferencia de tipos. En tiempo de compilación, Java se encarga de validar que los datos que estan pasando a traves de nuestra función sea del tipo que corresponde, Java "adivina" basado en la definición que es el tipo de dato, tanto el que genera como el que emite de vuelta.
+**¿Como sabe Java que el dato que enviamos es un entero?** A esto se lo conoce como inferencia de tipos. En tiempo de compilación, Java se encarga de validar que los datos que estan pasando a traves de nuestra función sea del tipo que corresponde, Java "adivina" basado en la definición que es el tipo de dato, tanto el que genera como el que emite de vuelta.
 
 Cuando nosotros mandamos a llamar al método forEach, no tenemos que definir un Tipo, si lo quisieramos hacer seria -> `alumnos.forEach((String name) -> System.out.println(name))`, pero gracias a la inferencia de tipos no hace falta y podemos usar directamente *name* -> `alumnos.forEach(name -> System.out.println(name))` y es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`. Acá estamos invocando una función que ya sabe de que tipo es.
 
@@ -1258,6 +1260,94 @@ archivo recibamos una conexión a Internet
 ---
 
 ### Clase 18 - Comprendiendo la sintaxis de las funciones lambda
+Las lambdas son funciones anónimas y hasta ahora hemos almacenado todas nuestras funciones en un nombre en algún lugar.  
+Las lamdas sabemos que no se guardan en ninguna parte del código, esta unica y exculsivamente utilizada en ese fragmento de código, las lambdas son para casos únicos, para pequeños ejemplos, para partes muy pequeñas del código que requieren lógica muy simple.
+
+**Estructura Funciones Lambda**  
+Lambda que recibe un parámetro y realiza una operación simple:
+~~~
+text -> System.out.println(text)
+~~~
+
+Lambda que no recibe parámetros y realiza una operación de retorno simple:
+~~~
+() -> "Hello world"
+~~~
+
+Lambda que recibe un solo parámetro y realiza una operación de retorno simple:
+~~~
+x -> x % 2 == 0
+~~~
+
+Lambda que recibe varios parámetros:
+~~~
+(x, y) -> x * y
+~~~
+
+Cuando dentro de mi función necesito hacer varias cosas. Cabe la posibilidad que podamos agregar llaves o braces para tener un body o cuerpo más grande. Al hacer esto Java necesita explicitamente que le digamos donde retornamos.
+Lambda que realiza varias operaciones:
+~~~
+(x, y) -> {
+  System.out.println("Suma de x: " + x + ", y: " + y);
+  System.out.println(x + y);
+}
+~~~
+
+Lambda que realiza varias operaciones y retorno:
+~~~
+(x, y) -> {
+  System.out.println("Suma de x: " + x + ", y: " + y);
+  return x + y;
+}
+~~~
+
+Lambda con tipado de parámetros:
+~~~
+(String text) -> System.out.println(text);
+~~~
+
+Lambda que retorna un dato que ocupa varias lineas:
+~~~
+() -> (
+  "<div class='movieSearch'>" +
+  " <div class='movie-close'>" +
+  "   <button class='movie-close-button'>" +
+  "     <figure>" +
+  "       <img src='src/images/close.png'>" +
+  "     </figure>" +
+  "   </button>" +
+  " </div>" +
+  "</div>"
+)
+~~~
+
+Lambda que no recibe por parámetros nada y tampoco retorna nada:
+~~~
+() -> {}
+
+() -> System.out.println("No recibo nada")
+
+() -> {
+  System.out.println("No recibo nada");
+  System.out.println("No retorno nada");
+}
+~~~
+
+![18_Sintaxis_Funciones_Lambda_01](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_01.png)
+
+![18_Sintaxis_Funciones_Lambda_02](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_02.png)
+
+A veces para hacer nuestro código más legible podemos poner el tipo de dato que recibe.  
+`usarBiFunction((int x, int y) -> x*y)` -> Esto nos marca un error sobre los argumentos ya que las funciones al ser intefaces trabajan directamente sobre objetos, no trabajan sobre tipos de datos primitivos, quiere decir que tendremos que usar clases y objetos y no podemos usar los tipos de datos primitivos (int, char, boolean, byte, etc.). En este ejemplo se reemplaza el int por **Integer**.
+
+Puede ser que en algunos casos estes trabajando sobre una clase que es de un subtipo de algún otra clase
+y esto lo vas a encontrar mucho al estar operando, por ejemplo, con las listas.  
+Cuando nosotros queremos utilizar el método forEach directamente Intellij nos sugiere que
+necesitamos utilizar un Consumer de un tipo de dato que extienda de String.
+Por eso dice super la sugerencia, va a pasar mucho que podamos generar funciones que trabajen con subtipos
+y siempre y cuando nosotros tengamos una Lambda definida para el tipo tal cual.
+
+![18_Sintaxis_Funciones_Lambda_03](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_03.png)
 
 ---
 

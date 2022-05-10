@@ -1387,6 +1387,96 @@ Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo t
 
 ---
 
+Cuando hablamos de chaining o en español encadenamiento es hacer consecutivas las llamadas a diferentes metodos de diferentes resultados.
+
+Por ejemplo si yo tengo una clase con un metodo que me retorna una lista:
+~~~
+classExample{
+    public List<String> getList(){ … }
+}
+~~~
+
+Se que puedo hacer algo como:
+~~~
+Example example = new Example();
+List<String> myList = example.getList();
+String firstString = myList.get(0);
+String largeString = firstString.concat("…");
+~~~
+
+Porque cada metodo devuelve un dato, pero tambien esto es valido:
+~~~
+new Example().getList().get(0).concat("…");
+~~~
+
+Porque los resultados intermedios no son de mi interes. Estoy aplicando unicamente el concepto de chaining entre los resultados de cada metodo.
+
+Cuando hablamos de el patron de diseño **Builder** estamos hablando de una clase en concreto que esta encargada de generar otra clase. Lo utilizas comunmente porque la clase que necesitas es “compleja” de construir y porque podria ser que durante la creacion puedas tener accidentes no contemplados, por ejemplo:
+~~~
+classPanBuilder{
+    public PanBuilder conHuevos(int cantidadDeHuevos){…}
+
+    public PanBuilder conHarina(float gramosHarina){…}
+
+    public PanBuilder conSal(short sal){…}
+
+    public PanBuilder conLeche(float mililitrosLeche){…}
+
+    public PanBuilder conLevadura(float gramosLevadura){…}
+
+    public PanBuilder conAgua(float mililitrosAgua){…}
+
+    public Pan build(){…}
+}
+~~~
+
+La clase PanBuilder se encarga del proceso de mezclar ingredientes para cuando tu decidas crear un Pan.
+
+Existe otro patron de diseño que se llama *Chain of Responsability* cuya función es totalmente diferente a lo que buscamos.
+
+**Chain of Responsability** hace que un grupo de objetos de un cierto tipo se deleguen una operación hasta que todos los objetos que puedan estar involucrados en la operación han sido llamados, por ejemplo:
+
+En un cajero automatico, tienes un grupo de Repartidores de billetes que se encargan de entregar los billetes que corresponda y pasar el sobrante al siguiente Repartidor de billetes.
+
+Algo asi:
+~~~
+abstractclassRepartidorBilletes{
+    private RepartidorBilletes siguienteEnCadena;
+
+    abstractvoidagregarBilletes(int cantidadPendiente);
+
+    public RepartidorBilletes siguienteEnCadena(RepartidorBilletes repartidorBilletes){
+        this.siguienteEnCadena = repartidorBilletes;
+        return repartidorBilletes;
+    }
+
+    protectedvoidrepartirSiguiente(int cantidadPendiente){
+        if(siguienteEnCadena != null){
+            siguienteEnCadena.agregarBilletes(cantidadPendiente);
+        }
+    }
+}
+
+classRepartidorBilletes20extendsRepartidorBilletes{
+    @Override
+    voidagregarBilletes(int cantidadPendiente){
+        int cantidadDeBilletes = …;
+        int totalADescontar = …;
+        int nuevaCantidadPendiente = cantidadPendiente - totalADescontar;
+
+        getCajeroATM().entregarBilletes(cantidadDeBilletes, 20);
+
+        repartirSiguiente(nuevaCantidadPendiente);
+    }
+}
+~~~
+
+Podrias despues hacer una clase que sea tambien `RepartidorBilletes50` que se encargue de repartir billetes de 50… etc. El chiste es que en un Chain of Responsability cada objeto se encarga de mandar a llamar al siguiente objeto en la cadena y pasarle datos para operar. Puedes leer mas [aca](https://refactoring.guru/design-patterns/chain-of-responsibility).  
+
+NOTA: Hay mejores estrategias y patrones de diseño para la tarea de administrar la entrega de billetes de un cajero automatico.
+
+---
+
 ### Clase 21 - Entendiendo la composición de funciones
 
 ---

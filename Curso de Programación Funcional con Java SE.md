@@ -1748,6 +1748,53 @@ Como en este ejemplo, de un flujo de datos filtramos los valores que **son peces
 ---
 
 ### Clase 24 - ¿Qué son los Stream listeners?
+Entonces los Streams no son tan útiles si en cada nueva operación tenemos que almacenar un nuevo tipo de variable, hace que el código sea feo, pero con **chaining** podemos solucionarlo!.
+
+Teniendo esta lista
+~~~
+List<String> courseLsit = NombresUtils.getList("Java", "FrontEnd", "BackEnd", "FullStack");
+~~~
+
+Podemos generar un Stream a partir de ella.
+~~~
+Stream<String> coursesStream2 = courseLsit.stream();
+~~~
+
+En Java agregaron la posibilidad directamente de tomar Colecciones y poder generar un Stream sin necesidad de hacer nada adicional. Entonces toda aquella clase que implemente la interfaz `Collection` puede generar un Stream de sus elementos, y con esto agregar operaciones dentro de él.
+
+Entonces con un Stream de los cursos, agregaremos las mismas operaciones que la clase anterior, solo que ahora seran hechas con chaining.
+~~~
+coursesStream2.map(course -> course + "!!").filter(course -> course.contains("Java")).forEach(System.out::println);
+~~~
+
+Escencialmente es la misma forma de programar que almacenar en variables pero le agrega un nivel de legibilidad, hace que el código sea más fluido. Esto permite que podamos hacer todo el conjunto de operaciones que necesitemos sobre un Stream e ir leyendo unicamente sobre los elementos los que tengamos que hacer.
+
+En este punto nos preguntamos si forEach nos devuelve algún dato, y es relevante. Los Streams tiene dos tipos de operaciones (Operaciones Intermedias y Operaciones Terminales).  
+La diferencia entre estas está en que la operación intermedia genera un nuevo Stream, el tipo de Stream depende de la operación, una operación final genera un dato final despues de operar todo, es decir, cuando la iteras una Lista generalmente lo haces para generar una nueva Lista o concatenar los elementos o buscar un elemento especifico dentro de la Lista, en los Streams es relativamente lo mismo, estás permitiendo que el Stream haga operaciones para tratar de encontrar un elemento o tratar de obtener un resultado final.  
+**¿Como identificar una operación final de una intermedia?**  
+Simple, si devuelve un Stream es intermedia, si devuelvo cualquier otro tipo de dato, o incluso no te devuelve uno, es una operación final.
+
+En nuestro ejemplo `forEach()` es una operación final, porque la estructura de forEach dice que va a devolver void, void es un dato final, no va a generar un nuevo Stream.
+
+Los Streams son ventajosos con respecto a las Listas  
+Algunas de las operaciones de los Streams nos devuelven Optionals, tenemos el ejemplo de cuando buscamos el máximo en el código, con esto podemos generar código un poco más funcional, que solo se ejecute cuando datos estén presentes.  
+Cabe mencionar que muchas veces vamos a terminar escribiendo funciones del tipo Static o Method, no importa realmente, que van a devolver un nuevo Stream de algún tipo y que lo que hace internamente es agregar operadores a un Stream que reciben como parámetro.
+~~~
+static <T> Stream<T> addOperator(Stream<T> stream){}
+~~~
+
+Esto es muy común porque lo que realizamos es algo similar al **High Order Function**, que toma un Stream, agrega sus funciones y devuelve un Stream que ya tiene esas funciones.  
+Esto lo podemos ver, por ejemplo, en un Stream que va a estar generado a partir de una BD, vas a agregar operaciones con respecto a los datos para transformarlos de un query a un resultado, después filtrar esos datos y finalmente pasarselos a alguien más para que transforme de esos datos tal vez a JSON para poder responder una peticion web.  
+El hacer este tipo de operaciones permite que el código sea más funcional y sea más seguro, porque ya no vamos a tener que lidiar con la presencia o ausencia de datos, internamente Stream va a encargarse de hacer la iteración y Optional nos va ayudar para poder hacer operaciones cuando no existan algunos datos.
+
+Agregaremos un operador para poder ver que tipo de elementos están pasando a través de nuestro Stream, algo simple, pero nos va a ayudar para hacer un debug más práctico de como está funcionando un Stream.
+
+Lo que haremos es retornar el Stream que recibamos usando `peek()`, que es una función que toma un Consumer pero que no modifica los datos, es muy similar a `map()` pero recibe un dato y devuelve el mismo dato, entonces en realidad nos permite hacer una iteración sobre los datos y verlos, una especia de microscopio dentro del Stream, sin modificarlo.
+
+![24_Stream_Listeners_01](src/Curso_Programacion_Funcional_Java_SE/24_Stream_Listeners_01.png)
+
+Entonces en nuestra vieja *coursesStream2* podemos agregarlo a nuestra función. Tomamos el Stream resultante del filtro, mandarlo a nuestra nueva función y como sabemos que nosotros estamos mandando un Stream y vamos a recibir otro de vuelta, podemos agregar nuestro `forEach()`.  
+Esto nos confirma que tenemos la versatilidad de que podemos usar funciones que reciban Streams y generen Streams, con esto podemos ir cambiando los datos.
 
 ---
 

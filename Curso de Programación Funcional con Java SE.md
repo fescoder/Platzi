@@ -1592,9 +1592,10 @@ Diferencia entre `map()` y `flatMap()`
 ---
 
 ### Clase 23 - Entendiendo los Streams
-Entendiendo que la clase Optional es una manera en la cual podemos funcionar o podemos generar datos y cuidar un poco que los datos, cuando empecemos a procesarlos, sean seguros.  
+Entendiendo que la clase Optional es una manera en la cual podemos generar datos y cuidar un poco que los datos, cuando empecemos a procesarlos, sean seguros.
+
 **¿Pero que pasa cuando queremos operar sobre multiples datos?**  
-Java 8 agregó la clase **Streams** y tal vez cuando escuches esto se te venga a la cabeza la transmisión de un vídeo, que es un stream de datos, es un flujo de datos a través del cual van apareciendo datos y se van consumiendo. Lo mismo es la clase Stream.
+Java 8 agregó la clase **Streams** y tal vez cuando escuches esto se te venga a la cabeza la transmisión de un vídeo, que es un stream de datos, es un flujo de datos a través del cual van apareciendo datos y se van consumiendo. **Lo mismo es la clase Stream.**
 
 Es una especie de lista, que tiene elementos y se pueden iterar. La diferencia escencial entre Listas, Collections y Streams es que un Stream es **autoiterable**, es decir, cuando creamos una Lista, tenemos que decidir como hacer las operaciónes con cada uno de los elementos, como por ejemplo:
 
@@ -1608,8 +1609,8 @@ Nosotros vamos a generar un Stream de cierto tipo y le decimos `Stream.of();` qu
 Stream<String> coursesStream = Stream.of("Java", "FrontEnd", "BackEnd", "FullStack");
 ~~~
 
-Usaremos `map()` recibe una función que trabaja sobre un String y genera un nuevo dato, las funciones sabemos que empiezan con **T** y generan un **R**.
-Este caso es interesante porque si vemos como funciona *map()*, map nos va a devolver un nuevo String del resultado de ejecutar la función. Eso quiere decir que yo puedo generar un String de la longitud de caracteres en el curso. Podriamos guardarlo en nuevo Stream de tipo Integer.
+Usaremos `map()` que recibe una función que trabaja sobre un String y genera un nuevo dato, las funciones sabemos que empiezan con **T** (Tipo) y generan un **R** (Resultado).  
+Este caso es interesante porque si vemos como funciona *map()*, nos va a devolver un nuevo Stream del resultado de ejecutar la función. Eso quiere decir que yo puedo generar un Stream de la longitud de caracteres en el curso. Podriamos guardarlo en nuevo Stream de tipo Integer.
 ~~~
 Stream<Integer> courseLengthStream = coursesStream.map(course -> course.length());
 ~~~
@@ -1642,14 +1643,15 @@ Stream<String> justJavaCourses = coursesStream.filter(course -> course.contains(
 ~~~
 En *justJavaCourses* vamos a tener solamente los cursos que contengan la palabra "Java", entonces usamos el `filter()` y le pasamos un Predicate que nos sirve como la lógica para poder determinar cuando si y cuando no seleccionar un curso.
 
-Ahora si ejecutamos este código no va a funcionar y la razón principal es por el tipo de operaciones que se pueden hacer sobre un Stream, va a generar una pequeña Exception (IllegalStateException) y esto hay que tenerlo mucho en mente.  
-Cuando generamos un Stream, el Stream solo puede ser consumido una vez.
+Ahora si ejecutamos este código no va a funcionar y la razón principal es por el tipo de operaciones que se pueden hacer sobre un Stream, va a generar una pequeña Exception (IllegalStateException) y esto hay que tenerlo mucho en mente.
+
+**Cuando generamos un Stream, el Stream solo puede ser consumido una vez.**
 
 ![23_Streams_02](src/Curso_Programacion_Funcional_Java_SE/23_Streams_02.png)
 
 La Exception quiere decir que estoy tratando de consumir **emphasisStream** despues de haber consumido a **coursesStream**, coursesStream se consume en la linea con `map()` y se vuelve inutil, después de haber sido consumido, ya no podemos agregar más operaciones, porque ya se están trabajando los elementos dentro del Stream, entonces cuando yo trato de hacer el filtrado ya no lo puedo hacer.
 
-**Entonces vamos a tratar de mantener la secuencia de los consumos dentos del Stream.**
+**Entonces vamos a tratar de mantener la secuencia de los consumos dentro del Stream.**  
 **Entonces cuando un Stream recibe una operación, genera un nuevo Stream y este debe ser el Stream que debe consumirse.**
 
 Solución al Exception anterior
@@ -1659,6 +1661,8 @@ Solución al Exception anterior
 ---
 
 ![23_Streams_04](src/Curso_Programacion_Funcional_Java_SE/23_Streams_04.png)
+
+---
 
 **¿Cuales son los contras y los pros de usar For o Stream?**
 Algunos **pros** de usar `for`:
@@ -1732,6 +1736,8 @@ public Stream<String> getUserNamesByActiveStatus(Stream<String> users){
 Siendo realistas, habra ocasiones que sera mas simple usar un `for` para iterar una coleccion (`List`, `Set`, `Map`, `Vector`, etc.) y habra ocasiones que operar un `Stream` o generar un `Stream` demostrara un mejor performance o agregara mucha legbilidad.
 
 **Asi que la respuesta corta es: Depende de cada caso**
+
+---
 
 Imaginemos cuando trabajemos con la clase stream o un stream que es un flujo de datos. SÍ un flujo como si estos vinieran de una tubería o una corriente de la cual nosotros tenemos el control de esta (abrir y cerrarla a nuestro antojo). Este flujo tiene un recorrido que nosotros decidimos cómo trabajar con este.
 

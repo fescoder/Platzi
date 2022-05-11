@@ -1748,16 +1748,16 @@ Como en este ejemplo, de un flujo de datos filtramos los valores que **son peces
 ---
 
 ### Clase 24 - ¿Qué son los Stream listeners?
-Entonces los Streams no son tan útiles si en cada nueva operación tenemos que almacenar un nuevo tipo de variable, hace que el código sea feo, pero con **chaining** podemos solucionarlo!.
+Entonces los Streams no son tan útiles si en cada nueva operación tenemos que almacenar un nuevo tipo de variable, hace que el código sea feo, pero con **chaining** podemos solucionarlo.
 
 Teniendo esta lista
 ~~~
-List<String> courseLsit = NombresUtils.getList("Java", "FrontEnd", "BackEnd", "FullStack");
+List<String> courseList = NombresUtils.getList("Java", "FrontEnd", "BackEnd", "FullStack");
 ~~~
 
 Podemos generar un Stream a partir de ella.
 ~~~
-Stream<String> coursesStream2 = courseLsit.stream();
+Stream<String> coursesStream2 = courseList.stream();
 ~~~
 
 En Java agregaron la posibilidad directamente de tomar Colecciones y poder generar un Stream sin necesidad de hacer nada adicional. Entonces toda aquella clase que implemente la interfaz `Collection` puede generar un Stream de sus elementos, y con esto agregar operaciones dentro de él.
@@ -1767,38 +1767,146 @@ Entonces con un Stream de los cursos, agregaremos las mismas operaciones que la 
 coursesStream2.map(course -> course + "!!").filter(course -> course.contains("Java")).forEach(System.out::println);
 ~~~
 
-Escencialmente es la misma forma de programar que almacenar en variables pero le agrega un nivel de legibilidad, hace que el código sea más fluido. Esto permite que podamos hacer todo el conjunto de operaciones que necesitemos sobre un Stream e ir leyendo unicamente sobre los elementos los que tengamos que hacer.
+Escencialmente es la misma forma de programar que almacenar en variables, pero le agrega un nivel de legibilidad, hace que el código sea más fluido. Esto permite que podamos hacer todo el conjunto de operaciones que necesitemos sobre un Stream e ir leyendo unicamente sobre los elementos los que tengamos que hacer.
 
 En este punto nos preguntamos si forEach nos devuelve algún dato, y es relevante. Los Streams tiene dos tipos de operaciones (Operaciones Intermedias y Operaciones Terminales).  
-La diferencia entre estas está en que la operación intermedia genera un nuevo Stream, el tipo de Stream depende de la operación, una operación final genera un dato final despues de operar todo, es decir, cuando la iteras una Lista generalmente lo haces para generar una nueva Lista o concatenar los elementos o buscar un elemento especifico dentro de la Lista, en los Streams es relativamente lo mismo, estás permitiendo que el Stream haga operaciones para tratar de encontrar un elemento o tratar de obtener un resultado final.  
+La diferencia entre estas está en que la operación intermedia genera un nuevo Stream, el tipo de Stream depende de la operación, una operación final genera un dato final despues de operar todo, es decir, cuando iteras una Lista generalmente lo haces para generar una nueva Lista o concatenar los elementos o buscar un elemento especifico dentro de la Lista, en los Streams es relativamente lo mismo, estás permitiendo que el Stream haga operaciones para tratar de encontrar un elemento o tratar de obtener un resultado final.
+
 **¿Como identificar una operación final de una intermedia?**  
 Simple, si devuelve un Stream es intermedia, si devuelvo cualquier otro tipo de dato, o incluso no te devuelve uno, es una operación final.
 
 En nuestro ejemplo `forEach()` es una operación final, porque la estructura de forEach dice que va a devolver void, void es un dato final, no va a generar un nuevo Stream.
 
-Los Streams son ventajosos con respecto a las Listas  
-Algunas de las operaciones de los Streams nos devuelven Optionals, tenemos el ejemplo de cuando buscamos el máximo en el código, con esto podemos generar código un poco más funcional, que solo se ejecute cuando datos estén presentes.  
+**Los Streams son ventajosos con respecto a las Listas.**  
+Algunas de las operaciones de los Streams nos devuelven Optionals, tenemos el ejemplo de cuando buscamos el máximo en el código, con esto podemos generar código un poco más funcional, que solo se ejecute cuando haya datos presentes.
+
 Cabe mencionar que muchas veces vamos a terminar escribiendo funciones del tipo Static o Method, no importa realmente, que van a devolver un nuevo Stream de algún tipo y que lo que hace internamente es agregar operadores a un Stream que reciben como parámetro.
 ~~~
 static <T> Stream<T> addOperator(Stream<T> stream){}
 ~~~
 
 Esto es muy común porque lo que realizamos es algo similar al **High Order Function**, que toma un Stream, agrega sus funciones y devuelve un Stream que ya tiene esas funciones.  
-Esto lo podemos ver, por ejemplo, en un Stream que va a estar generado a partir de una BD, vas a agregar operaciones con respecto a los datos para transformarlos de un query a un resultado, después filtrar esos datos y finalmente pasarselos a alguien más para que transforme de esos datos tal vez a JSON para poder responder una peticion web.  
+Esto lo podemos ver, por ejemplo, en un Stream que va a estar generado a partir de una BD, vas a agregar operaciones con respecto a los datos para transformarlos de un query a un resultado, después filtrar esos datos y finalmente pasarselos a alguien más para que transforme de esos datos, tal vez a JSON, para poder responder una peticion web.  
 El hacer este tipo de operaciones permite que el código sea más funcional y sea más seguro, porque ya no vamos a tener que lidiar con la presencia o ausencia de datos, internamente Stream va a encargarse de hacer la iteración y Optional nos va ayudar para poder hacer operaciones cuando no existan algunos datos.
 
 Agregaremos un operador para poder ver que tipo de elementos están pasando a través de nuestro Stream, algo simple, pero nos va a ayudar para hacer un debug más práctico de como está funcionando un Stream.
 
-Lo que haremos es retornar el Stream que recibamos usando `peek()`, que es una función que toma un Consumer pero que no modifica los datos, es muy similar a `map()` pero recibe un dato y devuelve el mismo dato, entonces en realidad nos permite hacer una iteración sobre los datos y verlos, una especia de microscopio dentro del Stream, sin modificarlo.
+Lo que haremos es retornar el Stream que recibamos usando `peek()`, que es una función que toma un Consumer pero que no modifica los datos, es muy similar a `map()` pero recibe un dato y devuelve el mismo dato, entonces en realidad nos permite hacer una iteración sobre los datos y verlos, una especie de microscopio dentro del Stream, sin modificarlo.
 
 ![24_Stream_Listeners_01](src/Curso_Programacion_Funcional_Java_SE/24_Stream_Listeners_01.png)
 
-Entonces en nuestra vieja *coursesStream2* podemos agregarlo a nuestra función. Tomamos el Stream resultante del filtro, mandarlo a nuestra nueva función y como sabemos que nosotros estamos mandando un Stream y vamos a recibir otro de vuelta, podemos agregar nuestro `forEach()`.  
+Entonces en nuestra vieja *coursesStream2* podemos agregarlo a nuestra función `addOperator()`.  
+Tomamos el Stream resultante del filtro, mandarlo a nuestra nueva función y como sabemos que nosotros estamos mandando un Stream y vamos a recibir otro de vuelta, podemos agregar nuestro `forEach()`.  
 Esto nos confirma que tenemos la versatilidad de que podemos usar funciones que reciban Streams y generen Streams, con esto podemos ir cambiando los datos.
 
 ---
 
 ### Clase 25 - Operaciones y Collectors
+**Lambdas, operaciones y retornos**  
+Usando `Stream` nos podemos simplificar algunas operaciones, como es el filtrado, el mapeo, conversiones y más. Sin embargo, no es del todo claro cuándo una operación nos devuelve otro Stream para trabajar y cuándo nos da un resultado final…
+
+¡O al menos no era claro hasta ahora!
+
+Cuando hablamos de pasar lambdas a una operación de `Stream`, en realidad, estamos delegando a Java la creación de un objecto basado en una interfaz.
+
+Por ejemplo:
+~~~
+Stream<String> coursesStream = Utils.getListOf("Java", "Node.js", "Kotlin").stream();
+
+Stream<String> javaCoursesStream = coursesStream.filter(course -> course.contains("Java"));
+
+
+// En realidad, es lo mismo que:
+
+Stream<String> explicitOperationStream = coursesStream.filter(new Predicate<String>() {
+    public boolean test(String st) {
+        return st.contains("Java");
+    }
+});
+~~~
+
+Estas interfaces las mencionamos en clases anteriores. Solo como repaso, listo algunas a continuación:
+
+- `Consumer<T>`: recibe un dato de tipo T y no genera ningún resultado
+- `Function<T,R>`: toma un dato de tipo T y genera un resultado de tipo R
+- `Predicate<T>`: toma un dato de tipo T y evalúa si el dato cumple una condición
+- `Supplier<T>`: no recibe ningún dato, pero genera un dato de tipo T cada vez que es invocado
+- `UnaryOperator<T>` recibe un dato de tipo T y genera un resultado de tipo T
+
+Estas interfaces (y otras más) sirven como la base de donde generar los objetos con las lambdas que pasamos a los diferentes métodos de `Stream`. Cada una de ellas cumple esencialmente con recibir el tipo de dato de el `Stream` y generar el tipo de retorno que el método espera.
+
+Si tuvieras tu propia implementación de `Stream`, se vería similar al siguiente ejemplo:
+~~~
+public class PlatziStream<T> implements Stream {
+    private List<T> data;
+
+    public Stream<T> filter(Predicate<T> predicate) {
+        List<T> filteredData = new LinkedList<>();
+        for(T t : data){
+            if(predicate.test(t)){
+                filteredData.add(t);
+            }
+        }
+
+        return filteredData.stream();
+    }
+}
+~~~
+
+Probablemente, tendría otros métodos y estructuras de datos, pero la parte que importa es justamente cómo se usa el `Predicate`. Lo que hace `Stream` internamente es pasar cada dato por este objeto que nosotros proveemos como una lambda y, según el resultado de la operación, decidir si debe incluirse o no en el Stream resultante.
+
+Como puedes notar, esto no tiene mucha complejidad, puesto que es algo que pudimos fácilmente replicar. Pero `Stream` no solo incluye estas operaciones “triviales”, también incluye un montón de utilidades para que la máquina virtual de Java pueda operar los elementos de un Stream de manera más rápida y distribuida.
+
+**Operaciones**  
+A estas funciones que reciben lambdas y se encargan de trabajar (operar) sobre los datos de un `Stream` generalmente se les conoce como Operaciones.
+
+Existen dos tipos de operaciones: **intermedias** y **finales**.
+
+Cada operación aplicada a un `Stream` hace que el `Stream` original ya no sea usable para más operaciones. Es importante recordar esto, pues tratar de agregar operaciones a un `Stream` que ya esta siendo procesado es un error muy común.
+
+En este punto seguramente te parezcan familiares todas estas operaciones, pues vienen en forma de métodos de la interfaz `Stream`. Y es cierto. Aunque son métodos, se les considera operaciones, puesto que su intención es operar el `Stream` y, posterior a su trabajo, el `Stream` no puede volver a ser operado.
+
+En clases posteriores hablaremos más a detalle sobre cómo identificar una operación terminal de una operación intermedia.
+
+**Collectors**  
+Una vez que has agregado operaciones a tu `Stream` de datos, lo más usual es que llegues a un punto donde ya no puedas trabajar con un `Stream` y necesites enviar tus datos en otro formato, por ejemplo, `JSON` o una `List` a base de datos.
+
+Existe una interfaz única que combina todas las interfaces antes mencionadas y que tiene como única utilidad proveer de una operación para obtener todos los elementos de un `Stream: Collector`.
+
+`Collector<T, A, R>` es una interfaz que tomará datos de tipo T del `Stream`, un tipo de dato mutable A, donde se iran agregando los elementos (mutable implica que podemos cambiar su contenido, como un `LinkedList`), y generara un resultado de tipo R.
+
+Suena complicado… y lo es. Por eso mismo, Java 8 incluye una serie de `Collectors` ya definidos para no rompernos las cabeza con cómo convertir nuestros datos.
+
+Veamos un ejemplo:
+~~~
+public List<String> getJavaCourses(Stream<String> coursesStream) {
+    List<String> javaCourses =
+        coursesStream.filter(course -> course.contains("Java"))
+            .collect(Collectors.toList());
+
+    return javaCourses;
+}
+~~~
+
+Usando `java.util.stream.Collectors` podemos convertir muy sencillamente un `Stream` en un `Set`, `Map`, `List`, `Collection`, etc. La clase `Collectors` ya cuenta con métodos para generar un `Collector` que corresponda con el tipo de dato que tu `Stream` está usando. Incluso vale la pena resaltar que `Collectors` puede generar un `ConcurrentMap` que puede ser de utilidad si requieres de multiples threads.
+
+Usar `Collectors.toXXX` es el proceso inverso de usar `Collection.stream()`. Esto hace que sea fácil generar APIs publicas que trabajen con estructuras/colecciones comunes e internamente utilizar `Stream` para agilizar las operaciones de nuestro lado.
+
+**Tipos de retorno**  
+Hasta este punto, la única manera de obtener un dato que ya no sea un `Stream` es usando `Collectors`, pues la mayoría de operaciones de `Stream` se enfocan en operar los datos del `Stream` y generar un nuevo `Stream` con los resultados de la operación.
+
+Sin embargo, algunas operaciones no cuentan con un retorno. Por ejemplo, `forEach`, que es una operación que no genera ningún dato. Para poder entender qué hace cada operación basta con plantear qué hace la operación para poder entender qué puede o no retornar.
+
+Por ejemplo:
+
+La operación de `findAny` trata de encontrar cualquier elemento que cumpla con la condición del `Predicate` que le pasamos como parámetro. Sin embargo, la operación dice que se devuelve un `Optional`. ¿Qué pasa cuando no encuentra ningún elemento? ¡Claro, por eso devuelve un `Optional`! Porque podría haber casos en que ningún elemento del `Stream` cumpla la condición.
+
+En las clases posteriores haremos un listado más a detalle y con explicaciones de qué tipos de retorno tiene cada operación. Y entenderemos por qué se categorizan como operaciones finales e intermedias.
+
+**Conclusiones**  
+Por ahora, hemos entendido que cada operación en un `Stream` consume hasta agotar el `Stream`. Y lo hace en un objeto no reusable. Esto implica que tenemos que decidir en nuestro código cuándo un `Stream` es un elemento temporal para una función o cuándo realmente una función sera la última en tocar los datos del `Stream`.
+
+Las siguientes clases y lecturas cubrirán mas a detalle las múltiples operaciones y cómo afectan a los datos del `Stream`.
 
 ---
 

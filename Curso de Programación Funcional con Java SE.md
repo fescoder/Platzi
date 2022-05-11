@@ -1496,14 +1496,88 @@ Con esto vemos que al recibir una función podemos generar nuevas funciones que 
 
 Con esto podemos asegurarnos de crear un archivo, o que un equipo tenga internet, o revisar que haya una conexión, o generar incluso la conexión antes de hacer una consulta de nuestro lado.
 
+---
+
 **Resumen**  
-Ejecutar antes de una función -> **compose**  
-Ejecutar despues de una función -> **andThen**
+Ejecutar una función antes de una función -> **compose**  
+Ejecutar una función despues de una función -> **andThen**
 
 ---
 
 ## Módulo 4 - Optional y Streams: Datos mas interesantes
 ### Clase 22 - La clase Optional
+Lo que hace la clase Optional es evitar problemas con valores inexistentes, NullPointerExceptions, y la intención de Optional es que a partir de los Predicate, funciones, diferentes tipos de instancias que podamos crear de funciones, no tengas que preocuparte por el valor de retorno directamente.
+
+En el código generalemente podemos escribir accesos a archivos, a una base de datos, un servicio web, o incluso podemos procesar un conjunto de datos y transformarlos solamente en nombres completos de usuarios, de personas, de archivos o algo parecido.  
+La cuestion está en qué vamos a retornar, lo ideal es que si vamos a devolver una lista, en el código la creariamos, la iriamos llenando y lo retornamos, de esta manera evitamos el null. Pero en muchas ocaciones no tiene elementos y es preferible retornar un `Collections.emptyList()` por ejemplo (Una lista sin elementos). Es una práctica común y valida.
+
+Pero que pasa en casos donde se tenga que retornar un **String**, o **int**, es valido devolver un string vacio?, un cero? o un null?. Depende muchos de las reglas, que varian mucho, y condiciones en la que nos encontramos para resolver el problema. El verdadero problema empieza cuando por cada retorno de null, por cada ejecución, tenemos que hacer una validación de los datos que recibimos, es decir, corroborar que un dato este o no presente `if(getNames != null){}`. Tal vez tengamos casos, como el de Strings que no se cumple, porque no es nulo si no vacio `("")`.
+
+Tendriamos que empezar a agregar condiciones tras condiciones, no tenemos la manera concreta de decir cuando si y cuando no hay un dato. Acá es donde entra **Optional** y nos ayuda a meter un dato y operar sobre ese dato cuando esté presente o cuando no, con esto podemos generar valores por default según nuestras necesidades en cada iteración.
+
+Lo que haremos es tratar de obtener los nombres y en caso de no encontrarlos, buscaremos la manera de operar sobre ellos. Tenemos el siguiente código en el que obtenemos una lista Optional de nombres:
+~~~
+static Optional<List<String>> getOptionalNames() {}
+~~~
+
+Y en el main obtendremos ese optional y podemos hacer lo siguiente:
+~~~
+Optional<List<String>> optionalNames = getOptionalNames();
+if (optionalNames.isPresent()){}
+~~~
+
+Podemos mejorarlo, hacerlo un poco más funcional, podemos hacer `optionalNames.ifPresent()` e Intellij nos sugiere usar un Consumer.
+
+![22_Optional_01](src/Curso_Programacion_Funcional_Java_SE/22_Optional_01.png)
+
+Este Consumer es un tipo de función que ya tenemos definido desde antes, es una función que va a tomar un dato y no devuelve ningún resultado, podemos usar una lamda en este caso.
+~~~
+optionalNames.ifPresent(namesValues -> namesValues.forEach(System.out::println));
+~~~
+
+Entonces vamos a iterar con *namesValue* toda la lista de optional y directamente sabemos que *namesValues* solo va a existir cuando el valor dentro del Optional este presente. Si no lo está, la lamda no se ejecuta.
+
+Hay otras cosas que podemos hacer con Optional, por ejemplo si sabemos que nos va a devolver una lista podemos generar un iterador a partir de los elementos de la lista.
+~~~
+optionalNames.flatMap();
+~~~
+
+`FlatMap()` consume una función y un Optional, en esa función vamos a recibir el elemento y vamos a generar un nuevo valor que se va a usar y el Optional es por si no llegamos a encontrar ese dato.
+
+También podemos usar `map()`, que es una función a partir de la cual vamos a operar el dato cuando este presente para convertirlo en otro dato, nos va a generar un Optional de un nuevo tipo, es decir podemos tomar un dato que este o no presente y generar un resultado que este o no presente, dependiendo del caso de cuando un Optional contenga un dato o no.
+
+En programación funcional esto es lo equivalente a lo que se conoce como ***Mona***. No es más que esto, una caja que nos ayuda a prevenir encontrarnos con datos vacíos.
+
+**¿Y como podemos hacer para devolver, en algunos casos, un dato cuando no está presente?**  
+Podemos hacer que retorne un `Optional.of(new LinkedList<>());`, generamos una nueva lista y listo, va a haber un dato presente.
+
+Pero cuando yo no tengo un dato y haya un null, tenemos la posibilidad de generar un `Optional.ofNullable()`, es decir le estamos diciendo a Optional que tenemos un dato del cual desconocemos si es null o no, Optional se va a encargar de hacer que esto este escondido dentro de un objeto de tipo Optional para no tener una *NullPointerException*.
+
+Pero tal vez no querramos lidiar con nulls, y podriamos hacer un `try`, acceder a la BD o archivos, si algo sale mal lanzar una exception con `catch()` y por último retornar, si no encontramos nada, un `Optional.empty()`.  
+Con esto evitamos lidiar con nulls, con estos datos y podemos generar una manera en la que podemos devolver un dato, que existe, y la podamos usar de alguna otra manera.
+
+Por ejemplo, podemos tener:
+~~~
+Optional<String> valuablePlayer = optionalValuablePlayer();
+
+valuablePlayer.orElseGet();
+~~~
+
+![22_Optional_02](src/Curso_Programacion_Funcional_Java_SE/22_Optional_02.png)
+
+Recordando a **Supplier** que es una función que nos va a generar un nuevo dato, esto nos da la oportunidad de almacenar:
+~~~
+String valueblePlayerName = valuablePlayer.orElseGet(() -> "No Player");
+~~~
+
+Y aqui definimos una función a través de la cual, si no encontramos un *mustValuablePlayer*, podamos darle un valor por default, de esta manera o tenemos un dato o tenemos un dato, no tenemos que lidiar con nulls o vacíos y tenemos la lógica reservada en la parte en la que necesitamos, sin tener que preocuparnos por lo que el método va a hacer para los 80 casos que podríamos tener en nuestro proyecto.
+
+De esta manera podemos usar el Optional para muchas cosas, es una forma sencilla de generar datos sin tener que preocuparnos por la presencia real de datos o sin tener que preocuparnos por como hacer accesos o generar diferentes "tipos de defaults" para cubrir todos los casos posibles, en la mayoria solo terminariamos usando un `Optional.empty()` cuando no encontremos casos, y si desconocemos el valor de una variable podemos usar `Optional.ofNullable()`.
+
+En conclusión la clase Optional es una manera de almacenar un dato del cual no tenemos certeza cual es el valor, si está o no presente, y poder acceder a ese dato medianto operadores (Funciones, Consumers, Suppliers), que cuando esté presente el dato, Optional va a invocar esas funciones pasandoles el dato, en el caso de que Optional no tenga el dato, caso null, Optional no va a invocar dichas funciones y nos protege de tener que lidiar con la presencia o ausencia de un dato. Optional se encargará de hacer internamente la lógica para cuando sí y cuando no ejecutar un fragmento de código.
+
+
+
 
 ---
 

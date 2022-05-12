@@ -1912,7 +1912,7 @@ Las siguientes clases y lecturas cubrirán mas a detalle las múltiples operacio
 
 ### Clase 26 - Stream de tipo específico y Paralelismo
 A veces necesitamos de un Stream especifico, es posible que nosotros extendamos o implementamos de la clase `Stream` pero tambień podemos usar algunos que ya esten predefinidos.
-- `IntStream`: `Stream` que emite Integers y puede hacerlo infinitamente, con `iterate()` indicamos que inicie con 0 y le pasamos un `IntUnaryOperator`, quiere decir que recibe un entero y devuelve un entero.
+- `IntStream`: `Stream` que emite Integers y puede hacerlo infinitamente. Con `iterate()` indicamos que inicie con 0 y le pasamos un `IntUnaryOperator`, quiere decir que recibe un entero y devuelve un entero.
 ~~~
 IntStream infiniteStream = IntStream.iterate(0, x -> x + 1);
 ~~~
@@ -1927,12 +1927,12 @@ Después podemos decirle que filtre por los números pares y verifique los núme
 infiniteStream.limit(1000).filter(x -> x % 2 == 0).allMatch(x -> ...)
 ~~~
 
-`allMatch()` es una función que toma un `Predicate` que trabaja sobre enteros, es importante porque una vez que creamos un `Stream` de un tipo especifico, todas las funciones, operadores, Consumers, etc. dentro de ese `Stream` van a seguir trabajando sobre ese tipo, eso nos facilita mucho a agregar funciones sin tener que estar validando el tipo de dato o las propiedades de un objeto.  
+- `allMatch()` es una función que toma un `Predicate` que trabaja sobre enteros, es importante porque una vez que creamos un `Stream` de un tipo especifico, todas las funciones, operadores, Consumers, etc. dentro de ese `Stream` van a seguir trabajando sobre ese tipo, eso nos facilita mucho a agregar funciones sin tener que estar validando el tipo de dato o las propiedades de un objeto.  
 `allMatch()` en este código es redundante pero demostramos que devuleve un `boolean`, es decir veremos si todos los elementos del `Stream` cumplieron o no con la condición. Es una forma de validar que todos los empleados tengan un ID por ejemplo, o si están afiliadas a cierto programa, para campos de formularios, etc.
 
 Es probable que este tipo de operaciones sean pesadas, haya muchos datos para procesar, y Java es famoso por el manejo de concurrencia, multiplicidad de hilos, threads, procesadores y el soporte que tiene para ello, `Stream` no podia quedarse afuera y para hacer esto agregaron un método pequeño que nos ayuda a que nuestro `Stream` y las funciones que operen sobre él puedan ejecutarse de manera concurrente, es decir, si nuestro procesador tiene 4 núcleos, se ejecutarán 4 operaciones a la vez. Al final `Stream` va a recolectar los datos en un solo elemento.
 
-Para esto usaremos el método `parallel()`. Cuando lo usamos, `Stream` se va a encargar de distribuir los datos en todos los procesadores sin que tengamos que hacer nada adicional. Sin crear hilos, ni la referencia a diferentes procesos, etc.
+- Para esto usaremos el método `parallel()`. Cuando lo usamos, `Stream` se va a encargar de distribuir los datos en todos los procesadores sin que tengamos que hacer nada adicional. Sin crear hilos, ni la referencia a diferentes procesos, etc.
 ~~~
 infiniteStream.limit(1000).parallel().filter(x -> x % 2 == 0).forEach(System.out::println);
 ~~~

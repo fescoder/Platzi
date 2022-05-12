@@ -2383,8 +2383,9 @@ Por ejemplo si tenemos un `IntStream` nos lo transforma en un `Stream<Integer>` 
 
 ## Módulo 5 - Todo junto: Proyecto Job-search
 ### Clase 30 - job-search: Un proyecto para encontrar trabajo
-**LA API DE TRABAJOS DE GITHUB ESTA DEPRECADA**  
-Con lo visto hasta este punto, podemos comenzar a construir un proyecto que nos ayude a encontrar trabajo usando la `API de trabajos de GitHub`, es una `API Restful`. A la cual le podremos hacer peticiones para que nos devuelva un listado de trabajos.  
+**LA API DE TRABAJOS DE GITHUB ESTA DEPRECADA**
+
+Con lo visto hasta este punto, podemos comenzar a construir un proyecto que nos ayude a encontrar trabajo usando la `API de trabajos de GitHub`, es una `API RESTful`. A la cual le podremos hacer peticiones para que nos devuelva un listado de trabajos.  
 Esta API no es complicada, tiene el consumo a través de `GETs` para poder encontrar trabajo basado en palabras claves (`KeyWords`) e internamente la conoce como `Descriptions`. Lo que haremos será enviar un `JSON` de petición o una `URL` de petición y nos devolvera por resultados un listado de trabajos con esa `KeyWord`. Podemos también enviar ubicaciones, si el trabajo va a ser de tiempo completo, medio tiempo, o temporal.
 
 Recomendaron usar [Dummy API](https://dummyapi.io/) en reemplazo, es una PI que provee datos falsos.
@@ -2393,7 +2394,7 @@ Recomendaron usar [Dummy API](https://dummyapi.io/) en reemplazo, es una PI que 
 
 ### Clase 31 - Vista rápida a un proyecto de Gradle
 **Entendiendo la configuración del proyecto.**  
-`Gradle` -> La herramienta `Gradle` nos va a permitir ejecutar tareas que son frecuentes en un proyecto de desarrollo, como compilar el proyecto, o generar un archivo `ZIP` para compartir el proyecto, o simplemente correr o ejecutar alguna aplicación. Cuando descargamos la herramienta vemos que tenemos algunos archivos de `Gradle`, estos son los archivos de configuración.
+La herramienta `Gradle` nos va a permitir ejecutar tareas que son frecuentes en un proyecto de desarrollo, como compilar el proyecto, o generar un archivo `ZIP` para compartir el proyecto, o simplemente correr o ejecutar alguna aplicación. Cuando descargamos la herramienta vemos que tenemos algunos archivos de `Gradle`, estos son los archivos de configuración.
 
 ![31_Gradle_01](src/Curso_Programacion_Funcional_Java_SE/31_Gradle_01.png)
 
@@ -2417,6 +2418,18 @@ Recordemos que `Gradle` es unicamente una herramienta que nos va a facilitar el 
 ---
 
 ### Clase 32 - Revisando las opciones para nuestro CLI
+Antes de escribir código hay que entender qué es lo qué queremos lograr. Y como lo que queremos lograr es una herramiente de terminal (CLI), veamos como podemos usarlo.
+
+![32_Opciones_CLI_01](src/Curso_Programacion_Funcional_Java_SE/32_Opciones_CLI_01.png)
+
+Nuestra herramienta de terminal se va a llamar `job-search` y lo que queremos es buscar trabajo basado en una palabra clave `Java`, entonces generaremos una herramienta que acepte estas palabras y nos devuelva los resultados con `Java`.
+
+O que le podamos pasar una `--location`, también con posibilidades cortas como `-l`.  
+O paginación, la API de GitHub devuelve 50 resultados, entonces para ver los siguientes 50, debemos agreagar una página, es decir, pedir la siguiente página de resultados. Entonces lo pedimos con `--page` o `-p`.
+La API también nos permite buscar trabajos parciales, freelancing, o por horas, o nos permite también pedir que sean explicitamente tiempo completo, para esto usaremos la bandera `--full-time`.  
+Y la API nos puede devolver el resultado de dos maneras, `HTML` o `Markdown`, si pasamos `--markdown` los resultados van a ser generados como markdown.
+
+Estas son las opciones que vamos a habilitar para nuestro proyecto.
 
 ---
 

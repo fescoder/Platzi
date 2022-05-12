@@ -2207,7 +2207,7 @@ La operación `map` puede parecer complicada en un principio e incluso confusa s
 Stream map(Functionsuper T, ? extends R> mapper)
 ~~~
 
-Los detalles a resaltar son muy similares a los de `filter`, pero la diferencia clave está en `T` y `R`. Estos generics nos dicen que map va a tomar un tipo de dato `T`, cualquiera que sea, le aplicara la función `mapper` y generara un `R`.
+Los detalles a resaltar son muy similares a los de `filter`, pero la diferencia clave está en `T` y `R`. Estos `generics` nos dicen que map va a tomar un tipo de dato `T`, cualquiera que sea, le aplicara la función `mapper` y generara un `R`.
 
 Es algo similar a lo que hacías en la secundaria al convertir en una tabla datos, para cada x aplicabas una operación y obtenías una y (algunos llaman a esto tabular). `map` operará sobre cada elemento en el `Stream` inicial aplicando la `Function` que le pases como `lambda` para generar un nuevo elemento y hacerlo parte del `Stream` resultante:
 ~~~
@@ -2225,7 +2225,7 @@ Esto resulta bastante practico cuando queremos hacer alguna conversión de datos
 
 Si quisiéramos replicar qué hace internamente `map` sería relativamente sencillo:
 ~~~
-public  Stream filter(Function mapper) {
+public Stream filter(Function mapper) {
     List mappedData = new LinkedList<>();
     for(T t : this.data){
         R r = mapper.apply(t);
@@ -2238,16 +2238,16 @@ public  Stream filter(Function mapper) {
 
 La operación `map` parece simple ya vista de esta manera. Sin embargo, por dentro de las diferentes implementaciones de `Stream` hace varias validaciones y optimizaciones para que la operación pueda ser invocada en paralelo, para prevenir algunos errores de conversión de tipos y hacer que sea mas rápida que nuestra versión con un `for`.
 
-**flatMap**  
+**flatMap**(Mapa plano, sencillo, resumido, filtrado)  
 En ocasiones no podremos evitar encontrarnos con `streams` del tipo `Stream`, donde tenemos datos con muchos datos…
 
-Este tipo de `streams` es bastante común y puede pasarte por multiples motivos. Se puede tornar difícil operar el `Stream` inicial si queremos aplicar alguna operación a cada uno de los elementos en cada una de las listas.
+Este tipo de `streams` es bastante común y puede pasarte por multiples motivos. Se puede tornar difícil operar el `Stream` inicial si queremos aplicar alguna operación a cada uno de los elementos en cada una de las `listas`.
 
 Si mantener la estructura de las `listas` (o `colecciones`) no es importante para el procesamiento de los datos que contengan, entonces podemos usar `flatMap` para simplificar la estructura del `Stream`, pasándolo de `Stream` a `Stream`.
 
 Visto en un ejemplo más “visual”:
 ~~~
-Stream> coursesLists; // Stream{List["Java", "Java 8 Functional", "Spring"], List["React", "Angular", "Vue.js"], List["Big Data", "Pandas"]}
+Stream coursesLists; // Stream{List["Java", "Java 8 Functional", "Spring"], List["React", "Angular", "Vue.js"], List["Big Data", "Pandas"]}
 Stream allCourses; // Stream{ ["Java", "Java 8 Functional", "Spring", "React", "Angular", "Vue.js", "Big Data", "Pandas"]}
 ~~~
 
@@ -2346,6 +2346,37 @@ Aunque existen otras operaciones intermedias en diferentes implementaciones de `
 ---
 
 ### Clase 29 - Collectors
+`Streams`, iteradores automáticos, lo que hacen es agregar operaciones e invocar a cada una de estas funciones mientras estamos pasando el `Stream` a cada uno de los elementos. Hasta ahora lo que hemos hecho solo es imprimir por pantalla, pero en el mundo real tenemos servidores web, peticiones web, bases de datos, archivos, procesamiento de datos, entonces necesitamos generar un resultado de operar sobre un `Stream` y muchas veces quien consuma nuestros servicios en `Java`, puede no estar trabajando con `Java`, puede ser un programa en `Python`, una petición en `JS`o un servicio escrito en `C`.  
+Entonces necesitamos y debemos transformar nuestro `Stream` en algo que se pueda operar, por ejemplo si trabajas con web harás una conversión a `XML` o `JSON`, y si estás trabajando con sistemas de escritorio,una app de escritorio, harás una conversion a `Bytes`.
+
+Convirtamos nuestro `Stream` de enteros (*infiniteStream*) a una `Lista` de enteros, los números se pueden procesar facilmente.
+~~~
+List<Integer> numberList = infiniteStream.limit(1000).filter(x -> x % 2 == 0).boxed().collect(Collectors.toList());
+~~~
+
+Lo primero que hacemos es quitar el `parallel` porque son pocos números, segundo despues del filtro lo convertiremos a algo `boxed`, quiere decir que nuestro `Stream` que en ese momento está trabajando sobre enteros pero de tipo `Stream`, va a convertirse en un `Stream` de `Integers`.  
+Con `boxed` lo convertimos a otro tipo de `Stream` que trabaja sobre datos específicos, ya no es un `IntStream` si no un `Stream` de datos.
+
+Una operación muy común de los `Stream` es `collect`, que recopila datos del `Stream` en una sola estructura de datos.  
+Con `collect` podemos darle una manera de convertir un `Stream` de datos en una estructura física, que ya no tiene operadores, con los datos concretos que son el resultado de aplicar multiples operaciones a un `Stream`.
+
+En `Java` tenemos `Collectors` definidos, tenemos para convertir a `Lista`, a `Mapa`, o a `Arreglo`. Simplemente tenemos que elegir o podemos crear el nuestro. Y este método `collect` nos va a devolver ese tipo que elegimos.
+
+Con esto pasamos de un `Stream` de datos que hace operaciones a una `Lista` estática, fija que tiene un número definido de elementos. Ya no vamos a poder agregar operaciones después esto, ya que se consumio el `Stream`, no tenemos uno nuevo, y se está realizando una operación que genera un resultado final, es una **operación terminal**. Y lo que nos quedaría es transformar estos números al tipo de dato que devolveremos a nuestro servicio.
+
+El caso más común es tomar un `Stream` y transformarlo en una `Lista`, pero podemos hacer otras cosas, a algo más complejo o algo que podamos operar de diferente manera. `collect` tiene diferentes formas, por ahora nos quedamos con la cual podemos hacer conversión, pero cabe mencionar que podemos tener una invocación a una `Function` en la cual usas un `Supplier`, en el cual se va a crear una `Collections` a través de la cual se van a agregar los elementos, tenes un `BiConsumer` que lo que hará será estar recibiendo dos elementos y generando un resultado final, a esto se lo conoce como un `Acumulator` y tendrás un `BiConsumer` en el caso de que el `Stream` esté corriendo en paralelo. Para esto `Stream` tratará de recopilar todos los datos en uno solo.
+
+Pero solo nos quedaremos con la version que convertiremos a una estructura de datos, veamos cuales existen:
+- `toCollection`: Nos permite tomar un `Stream` de datos y generar una `Collection` de datos sin tener un tipo específico.
+- `toConcurrentMap`: Lo podemos usar para paralelismo o concurrencia.
+- `toList`: Lo que hicimos. Convertir a una `Lista`.
+- `toMap`: Donde tenemos una llave y un valor partiendo de los datos y necesitamos proveerle una `Function` con la cual se va a generar la llave para un cierto dato.
+- `toSet`: La ventaja de este, es que podemos tener una estructura en la cual todos los elementos sean únicos, es decir, si tenemos a una persona 2 veces en el resultado al buscar en una `DB`, solo aparecerá una vez en el resultado final. La ventaja del `toSet` es que es una estrucura que tiene, una vez dentro de todos los elementos, a los elementos que son únicos, a una persona por un *ID* o por *nombre* por ejemplo.
+
+---
+
+Con `boxed` hacemos un “boxing” de los elementos del `Stream`.  
+Por ejemplo si tenemos un `IntStream` nos lo transforma en un `Stream<Integer>` o si tenemos un `DoubleStream` nos lo transforma en un `Stream<Double>`.
 
 ---
 

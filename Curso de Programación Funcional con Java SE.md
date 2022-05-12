@@ -2433,6 +2433,26 @@ Estas son las opciones que vamos a habilitar para nuestro proyecto.
 ---
 
 ### Clase 33 - Librerías adicionales para nuestro proyecto
+Empecemos creando un punto de entrada para el proyecto. Significa tener una `Clase` que va a ser el punto de arranque y esta `Clase` tendrá un método `main`. Entonces creamos un `Package` como lo definimos en `Gradle`, que será el `Package` que estaremos usando a lo largo de nuestro proyecto.
+
+![33_Librerias_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/33_Librerias_proyecto_01.png)
+
+Creamos entonces el `Package` `com.platzi.jobsearch`, con esto tenemos un `Package` a nuestra disposición que será donde estarán almacenadas nuestras `Clases`. Creamos la `Clase` `JobSearch` dentro del `Package`, con esto creamos la primer `Clase` por donde podremos empezar, le agregamos el método `main` y este es el primer punto para nuestro proyecto.
+
+Para ejecutar este proyecto necesitamos indicarle a `Gradle` que ésta es la `Clase` que tiene que usar, entonces abrimos el archivo `build.gradle` e iniciamos el `application` que va a contener el nombre la `Clase` principal, usaremos `mainClassName = "com.platzi.jobsearch.JobSearch`.
+
+![33_Librerias_proyecto_02](src/Curso_Programacion_Funcional_Java_SE/33_Librerias_proyecto_02.png)
+
+Una vez definido bastara con ir al navegador y abrir la opción de `Gradle`, que es donde tenemos la diferentes tareas que `Gradle` puede hacer por nosotros, basta con ejecutar `application`-> `run`, `Gradle` compilará el proyecto y ejecutará el método `main`.  
+Con esto hemos automatizado el compilado del proyecto, el ejecutar el `main` y crear la instancia de la clase incluso.
+
+Ahora para no reinventar la rueda, utilizaremos `Librerias`, en este caso las `Librerias` que usaremos nos ayudaran a resolver lo que sea pasado a nuestro programa por terminal, hacer llamadas web y transformar datos.
+
+- `jcommander`: Toma los argumentos de la terminal  y genera objetos de `Java`.
+- `feign-core`: Es el responsable de hacer peticiones web a las APIs.
+- `feign-gson`: Convierte de `JSON` a objetos de `Java`.
+
+Estas `Librerias` se encontraron en [MVNRepository](https://mvnrepository.com/) y para incluirlas debemos buscar el nombre de la `Libreria`, entrar, elegir la versión y dentro de ella está el enlace para copiar/pegar en nuestro `Gradle` para incluirlo en nuestro proyecto. Lo agregamos en nuestra sección de `dependencies` y **Intellij** nos ofrece importar los cambios.
 
 ---
 

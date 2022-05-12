@@ -2037,7 +2037,7 @@ int sumOfFirstTen = firstTenNumbersStream.reduce(0, Integer::sum); //45 -> 0 + 1
 Y el caso mas interesante…
 
 **reduce(valorInicial, BinaryFunction, BinaryOperator)**  
-Genera un valor de tipo V después de aplicar `BinaryFunction` sobre cada elemento de tipo `T` en el `Stream` y obtener un resultado `V`.
+Genera un valor de tipo `V` después de aplicar `BinaryFunction` sobre cada elemento de tipo `T` en el `Stream` y obtener un resultado `V`.
 
 Esta version de reduce usa el `BinaryFunction` como `map + reduce`. Es decir, por cada elemento en el `Stream` se genera un valor `V` basado en el valorInicial y el resultado anterior de la `BinaryFunction`. `BinaryOperator` se utiliza en streams paralelos (`stream.parallel()`) para determinar el valor que se debe mantener en cada iteración.
 ~~~
@@ -2091,6 +2091,17 @@ List numbersList = infiniteStream.limit(1000)
 ~~~
 
 Por ultimo, recuerda que una vez que has agregado una operación a un `Stream`, el `Stream` original ya no puede ser utilizado. Y más aun al agregar una operación terminal, pues esta ya no crea un nuevo `Stream`. Internamente, al recibir una operación, el `Stream` en algún punto llama a su método close, que se encarga de liberar los datos y la memoria del `Stream`.
+
+---
+
+`flatMap()` -> Supon que tienes un `Stream` de un tipo de dato `T`, quieres hacer un `map` que ejecute un metodo x en cada instancia de `T` que contiene el `Stream`, si ese metodo x retorna un `Stream` de un tipo de dato `U` entonces usando `map` normal tendrias como resultado un `Stream` de Streams que probablemente no es lo que quieres. `Flatmap` se encarga de que si el metodo x retorna un `Stream`, agregar los valores de ese `Stream` (las instancias de `U`) al `Stream` original y entonces usando `flatmap` en lugar de obter un `Stream<Stram<U>>` obtendrias un `Stream<U>`.
+
+[Ejemplo de reduce](https://www.arquitecturajava.com/java-stream-reduce-eliminando-bucles/)
+
+`reduce(valorInicial, BinaryFunction, BinaryOperator)`  
+- Eso se puede interpretar como lo dice en el ejemplo, primero lo que se hace es aplicar la `BinaryFunction` a cada elemento del `Stream`. Esto quiere decir que se recibe un valor de un tipo y se puede retornar un valor de otro tipo, en el ejemplo presentado se recibe un `String` y se retorna un `Integer`… Una vez realizado lo anterior, se toman esos valores generados y se les aplica el `BinaryOperator`, que es el que finalmente si termina haciendo la reducción a un único valor. Es un `MAP + REDUCE`, inclusive, podrías agregar estas dos operaciones por separado y obtendrías el mismo resultado.
+
+- Es lo mismo que hacer `stream.map(BinaryFunction).reduce(0, BinaryOperator)`, pero todo en una sola intrucción, es cosa de gustos o de simplificar código, el primer argumento es el valor iniciar del reduce, el segundo argumento es lo que le pasarias a un `map` y el tercer agumento es lo que le pasarias al reduce como segundo argumento.
 
 ---
 

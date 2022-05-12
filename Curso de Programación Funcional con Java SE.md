@@ -2346,7 +2346,7 @@ Aunque existen otras operaciones intermedias en diferentes implementaciones de `
 ---
 
 ### Clase 29 - Collectors
-`Streams`, iteradores automáticos, lo que hacen es agregar operaciones e invocar a cada una de estas funciones mientras estamos pasando el `Stream` a cada uno de los elementos. Hasta ahora lo que hemos hecho solo es imprimir por pantalla, pero en el mundo real tenemos servidores web, peticiones web, bases de datos, archivos, procesamiento de datos, entonces necesitamos generar un resultado de operar sobre un `Stream` y muchas veces quien consuma nuestros servicios en `Java`, puede no estar trabajando con `Java`, puede ser un programa en `Python`, una petición en `JS`o un servicio escrito en `C`.  
+`Streams`, iteradores automáticos, lo que hacen es agregar operaciones e invocar a cada una de estas funciones mientras estamos pasando el `Stream` a cada uno de los elementos. Hasta ahora lo que hemos hecho solo es imprimir por pantalla, pero en el mundo real tenemos servidores web, peticiones web, bases de datos, archivos, procesamiento de datos, entonces necesitamos generar un resultado de operar sobre un `Stream` y muchas veces quien consuma nuestros servicios en `Java`, puede no estar trabajando con `Java`, puede ser un programa en `Python`, una petición en `JS` o un servicio escrito en `C`.  
 Entonces necesitamos y debemos transformar nuestro `Stream` en algo que se pueda operar, por ejemplo si trabajas con web harás una conversión a `XML` o `JSON`, y si estás trabajando con sistemas de escritorio,una app de escritorio, harás una conversion a `Bytes`.
 
 Convirtamos nuestro `Stream` de enteros (*infiniteStream*) a una `Lista` de enteros, los números se pueden procesar facilmente.
@@ -2354,7 +2354,7 @@ Convirtamos nuestro `Stream` de enteros (*infiniteStream*) a una `Lista` de ente
 List<Integer> numberList = infiniteStream.limit(1000).filter(x -> x % 2 == 0).boxed().collect(Collectors.toList());
 ~~~
 
-Lo primero que hacemos es quitar el `parallel` porque son pocos números, segundo despues del filtro lo convertiremos a algo `boxed`, quiere decir que nuestro `Stream` que en ese momento está trabajando sobre enteros pero de tipo `Stream`, va a convertirse en un `Stream` de `Integers`.  
+Lo primero que hacemos es quitar el `parallel` porque son pocos números, segundo despues del filtro lo convertiremos a `boxed`, quiere decir que nuestro `Stream` que en ese momento está trabajando sobre enteros, pero de tipo `Stream`, va a convertirse en un `Stream` de `Integers`.  
 Con `boxed` lo convertimos a otro tipo de `Stream` que trabaja sobre datos específicos, ya no es un `IntStream` si no un `Stream` de datos.
 
 Una operación muy común de los `Stream` es `collect`, que recopila datos del `Stream` en una sola estructura de datos.  
@@ -2362,9 +2362,10 @@ Con `collect` podemos darle una manera de convertir un `Stream` de datos en una 
 
 En `Java` tenemos `Collectors` definidos, tenemos para convertir a `Lista`, a `Mapa`, o a `Arreglo`. Simplemente tenemos que elegir o podemos crear el nuestro. Y este método `collect` nos va a devolver ese tipo que elegimos.
 
-Con esto pasamos de un `Stream` de datos que hace operaciones a una `Lista` estática, fija que tiene un número definido de elementos. Ya no vamos a poder agregar operaciones después esto, ya que se consumio el `Stream`, no tenemos uno nuevo, y se está realizando una operación que genera un resultado final, es una **operación terminal**. Y lo que nos quedaría es transformar estos números al tipo de dato que devolveremos a nuestro servicio.
+Con esto pasamos de un `Stream` de datos que hace operaciones, a una `Lista` estática, fija, que tiene un número definido de elementos. Ya no vamos a poder agregar operaciones después esto, ya que se consumio el `Stream`, no tenemos uno nuevo, y se está realizando una operación que genera un resultado final, es una **operación terminal**. Y lo que nos quedaría es transformar estos números al tipo de dato que devolveremos a nuestro servicio.
 
-El caso más común es tomar un `Stream` y transformarlo en una `Lista`, pero podemos hacer otras cosas, a algo más complejo o algo que podamos operar de diferente manera. `collect` tiene diferentes formas, por ahora nos quedamos con la cual podemos hacer conversión, pero cabe mencionar que podemos tener una invocación a una `Function` en la cual usas un `Supplier`, en el cual se va a crear una `Collections` a través de la cual se van a agregar los elementos, tenes un `BiConsumer` que lo que hará será estar recibiendo dos elementos y generando un resultado final, a esto se lo conoce como un `Acumulator` y tendrás un `BiConsumer` en el caso de que el `Stream` esté corriendo en paralelo. Para esto `Stream` tratará de recopilar todos los datos en uno solo.
+El caso más común es tomar un `Stream` y transformarlo en una `Lista`, pero podemos hacer otras cosas, a algo más complejo, o algo que podamos operar de diferente manera.  
+`collect` tiene diferentes formas, por ahora nos quedamos con la cual podemos hacer conversión, pero cabe mencionar que podemos tener una invocación a una `Function` en la cual usas un `Supplier`, en el cual se va a crear una `Collections` a través de la cual se van a agregar los elementos, tenes un `BiConsumer` que lo que hará será estar recibiendo dos elementos y generando un resultado final, a esto se lo conoce como un `Acumulator` y tendrás un `BiConsumer` en el caso de que el `Stream` esté corriendo en paralelo. Para esto `Stream` tratará de recopilar todos los datos en uno solo.
 
 Pero solo nos quedaremos con la version que convertiremos a una estructura de datos, veamos cuales existen:
 - `toCollection`: Nos permite tomar un `Stream` de datos y generar una `Collection` de datos sin tener un tipo específico.
@@ -2382,10 +2383,36 @@ Por ejemplo si tenemos un `IntStream` nos lo transforma en un `Stream<Integer>` 
 
 ## Módulo 5 - Todo junto: Proyecto Job-search
 ### Clase 30 - job-search: Un proyecto para encontrar trabajo
+**LA API DE TRABAJOS DE GITHUB ESTA DEPRECADA**  
+Con lo visto hasta este punto, podemos comenzar a construir un proyecto que nos ayude a encontrar trabajo usando la `API de trabajos de GitHub`, es una `API Restful`. A la cual le podremos hacer peticiones para que nos devuelva un listado de trabajos.  
+Esta API no es complicada, tiene el consumo a través de `GETs` para poder encontrar trabajo basado en palabras claves (`KeyWords`) e internamente la conoce como `Descriptions`. Lo que haremos será enviar un `JSON` de petición o una `URL` de petición y nos devolvera por resultados un listado de trabajos con esa `KeyWord`. Podemos también enviar ubicaciones, si el trabajo va a ser de tiempo completo, medio tiempo, o temporal.
+
+Recomendaron usar [Dummy API](https://dummyapi.io/) en reemplazo, es una PI que provee datos falsos.
 
 ---
 
 ### Clase 31 - Vista rápida a un proyecto de Gradle
+**Entendiendo la configuración del proyecto.**  
+`Gradle` -> La herramienta `Gradle` nos va a permitir ejecutar tareas que son frecuentes en un proyecto de desarrollo, como compilar el proyecto, o generar un archivo `ZIP` para compartir el proyecto, o simplemente correr o ejecutar alguna aplicación. Cuando descargamos la herramienta vemos que tenemos algunos archivos de `Gradle`, estos son los archivos de configuración.
+
+![31_Gradle_01](src/Curso_Programacion_Funcional_Java_SE/31_Gradle_01.png)
+
+`settings.gradle`: Es un archivo que se encarga de tener las configuraciones globales de nuestro proyecto, este caso tiene el nombre del proyecto.  
+Cada vez que hagas cambios a un archivo de `Gradle`, **Intellij** te va a sugerir una importación de cambios, quiere decir que la configuración cambió y es necesario ver esas nuevas configuraciones.
+
+![31_Gradle_02](src/Curso_Programacion_Funcional_Java_SE/31_Gradle_02.png)
+
+`build.gradle`: Es un archivo que trae la configuración de como se hará la construcción del proyecto.  
+En ella ya tenemos algunas configuraciones, por ejemplo los `plugins` que se usarán dentro de `Gradle` para hacer la compilación o para generar el proyecto final. Ahora solo tiene el de `Java`, agregaremos el `plugin` de `application`, con esto decimos que nuestro proyecto, es un proyecto que funciona o se ejecuta como una aplicación completa, es decir, tiene un método `main` y a través de este hace la inicialización de todo el proyecto.  
+Se puede editar el `group`, la `version`.  
+La instrucción `sourceCompatibility` unicamente nos permite tener que versión de `Java` vamos a usar.  
+Y los otros dos elementos `repositories` y `dependencies` es para poder resolver dependencias.
+
+Recordemos que `Gradle` es unicamente una herramienta que nos va a facilitar el ejecutar tareas continuas del proyecto como puede ser crear un `ZIP` con el proyecto, o compilar el proyecto.
+
+---
+
+`Maven` y `Gradle` -> Cada una de las dos herramientas tiene diferentes usos y alcances. Cumplen con una misma idea inicial: **resolver dependencias**. Pero a largo plazo `Maven` busca cubrir los diferentes momentos de un proyecto de desarrollo, mientras que `Gradle` busca ser una herramienta para ejecutar tareas.
 
 ---
 

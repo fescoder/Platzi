@@ -1911,7 +1911,7 @@ Las siguientes clases y lecturas cubrirán mas a detalle las múltiples operacio
 ---
 
 ### Clase 26 - Stream de tipo específico y Paralelismo
-`Stream` por si misma es una interfaz, clases como `AbstractStream`, o `AbstractImplementationStream`, clases que Java genera para poder proveernos de estos `Streams`. Pero a veces necesitamos de un Stream especifico, es posible que nosotros extendamos o implementamos de la clase `Stream` pero tambień podemos usar algunos que ya esten predefinidos.
+A veces necesitamos de un Stream especifico, es posible que nosotros extendamos o implementamos de la clase `Stream` pero tambień podemos usar algunos que ya esten predefinidos.
 - `IntStream`: `Stream` que emite Integers y puede hacerlo infinitamente, con `iterate()` indicamos que inicie con 0 y le pasamos un `IntUnaryOperator`, quiere decir que recibe un entero y devuelve un entero.
 ~~~
 IntStream infiniteStream = IntStream.iterate(0, x -> x + 1);

@@ -2422,12 +2422,11 @@ Antes de escribir código hay que entender qué es lo qué queremos lograr. Y co
 
 ![32_Opciones_CLI_01](src/Curso_Programacion_Funcional_Java_SE/32_Opciones_CLI_01.png)
 
-Nuestra herramienta de terminal se va a llamar `job-search` y lo que queremos es buscar trabajo basado en una palabra clave `Java`, entonces generaremos una herramienta que acepte estas palabras y nos devuelva los resultados con `Java`.
-
-O que le podamos pasar una `--location`, también con posibilidades cortas como `-l`.  
-O paginación, la API de GitHub devuelve 50 resultados, entonces para ver los siguientes 50, debemos agreagar una página, es decir, pedir la siguiente página de resultados. Entonces lo pedimos con `--page` o `-p`.
-La API también nos permite buscar trabajos parciales, freelancing, o por horas, o nos permite también pedir que sean explicitamente tiempo completo, para esto usaremos la bandera `--full-time`.  
-Y la API nos puede devolver el resultado de dos maneras, `HTML` o `Markdown`, si pasamos `--markdown` los resultados van a ser generados como markdown.
+- Nuestra herramienta de terminal se va a llamar `job-search` y lo que queremos es buscar trabajo basado en una palabra clave `Java`, entonces generaremos una herramienta que acepte estas palabras y nos devuelva los resultados con `Java`.
+- O que le podamos pasar una `--location`, también con posibilidades cortas como `-l`.  
+- O paginación, la API de GitHub devuelve 50 resultados, entonces para ver los siguientes 50, debemos agreagar una página, es decir, pedir la siguiente página de resultados. Entonces lo pedimos con `--page` o `-p`.
+- La API también nos permite buscar trabajos parciales, freelancing, o por horas, o nos permite también pedir que sean explicitamente tiempo completo, para esto usaremos la bandera `--full-time`.  
+- Y la API nos puede devolver el resultado de dos maneras, `HTML` o `Markdown`, si pasamos `--markdown` los resultados van a ser generados como markdown.
 
 Estas son las opciones que vamos a habilitar para nuestro proyecto.
 

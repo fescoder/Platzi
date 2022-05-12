@@ -1969,10 +1969,11 @@ Es por ello que quisiéramos proveer de algo mas simple: listas, primitivos o in
 - toArray()
 - collect()
 - forEach()
+
 Revisaremos qué hacen y qué utilidad tienen durante esta lectura.
 
 **Operaciones terminales de coincidencia**  
-`anyMatch`, `allMatch`, `noneMatch`
+`anyMatch`, `allMatch`, `noneMatch`  
 Las operaciones `anyMatch`, `allMatch` y `noneMatch` sirven para determinar si en un `Stream` hay elementos que cumplan con un cierto `Predicate`. Esto puede ser una forma simple de validar los datos de un `Stream`. Son terminales pues las tres retornan un `boolean`:
 ~~~
 //Nos indica si un stream contiene un elemento según el Predicate que le pasemos:
@@ -1991,7 +1992,7 @@ boolean allAreOdd = oddNumbers.noneMatch(i -> i % 2 == 0);
 ~~~
 
 **Operaciones terminales de búsqueda**  
-`findAny`, `findFirst`
+`findAny`, `findFirst`  
 Estas operaciones retornan un `Optional` como resultado de buscar un elemento dentro del `Stream`.
 
 La diferencia entre ambas es que `findFirst` retornara un `Optional` conteniendo el primer elemento en el `Stream` si el `Stream` tiene definida previamente una operación de ordenamiento o para encontrar elementos. De lo contrario, funcionará igual que `findAny`, tratando de devolver cualquier elemento presente en el `Stream` de forma no determinista (random)
@@ -2001,7 +2002,7 @@ Si el elemento encontrado es `null`, tendrás que lidiar con una molesta `NullPo
 La principal razón para usar estas operaciones es poder usar los elementos de un `Stream` después haber filtrado y convertido tipos de datos. Con `Optional` nos aseguramos que, aún si no hubiera resultados, podremos seguir trabajando sin excepciones o escribiendo condicionales para validar los datos.
 
 **Operaciones terminales de reducción**  
-`min`, `max`
+`min`, `max`  
 Son dos operaciones cuya finalidad es obtener el elemento más pequeño (`min`) o el elemento más grande (`max`) de un `Stream` usando un `Comparator`. Puede haber casos de `Stream` vacíos, es por ello que las dos operaciones retornan un `Optional` para en esos casos poder usar `Optional.empty`.
 
 La interfaz `Comparator` es una `@FunctionalInterface`, por lo que es sencillo usar `min` y `max` con `lambdas`:
@@ -2015,6 +2016,7 @@ Esta operación existe en tres formas:
 - reduce(valorInicial, BinaryOperator)
 - reduce(BinaryAccumulator)
 - reduce(valorInicial, BinaryFunction, BinaryOperator)
+
 La diferencia entre los 3 tipos de invocación:
 
 **reduce(BinaryAccumulator)**  
@@ -2071,7 +2073,7 @@ public List getJavaCourses(Stream coursesStream) {
 ~~~
 
 **Operaciones terminales de iteración**  
-`forEach`
+`forEach`  
 Tan simple y tan lindo como un clásico `for`. `forEach` es una operación que recibe un `Consumer` y no tiene un valor de retorno (`void`). La principal utilidad de esta operación es dar un uso final a los elementos del `Stream`.
 ~~~
 Stream> courses = getCourses();

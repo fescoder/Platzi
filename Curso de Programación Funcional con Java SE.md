@@ -2514,13 +2514,13 @@ Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que r
 
 ![35_Funciones_constructoras_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_01.png)
 
-`JCommander` también funciona a través de notaciones, que son para poder trabajar con el CLI.
-- `Parameter` Indicamos que esta propiedad es un parámetro que se puede recibir por terminal.
-    - `required` Porque sin `keyword` no hay petición.
-    - `descriptionKey` Es lo que se mostrará en la ayuda.
-    - `description` Para mostrar una descripción.
-    - `names` Contiene los nombres con los cuales podemos recibir el parámetro, es un `arreglo`, y tiene las opciones larga y corta.
-    - `help` Lo pasamos a `true` cuando es solicitada la ayuda.
+`JCommander` también funciona a través de notaciones, que son para poder trabajar con el CLI.  
+`Parameter` Indicamos que esta propiedad es un parámetro que se puede recibir por terminal.
+- `required` Porque sin `keyword` no hay petición.
+- `descriptionKey` Es lo que se mostrará en la ayuda.
+- `description` Para mostrar una descripción.
+- `names` Contiene los nombres con los cuales podemos recibir el parámetro, es un `arreglo`, y tiene las opciones larga y corta.
+- `help` Lo pasamos a `true` cuando es solicitada la ayuda.
 
 ![35_Funciones_constructoras_proyecto_02](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_02.png)
 

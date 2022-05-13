@@ -2508,10 +2508,9 @@ Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que r
     - `isFullTime` Un `boolean` por dafault false.
     - `isMarkdown` Otra `boolean` en false para saber si la `API` nos devuelve en formato Markdown.
     - `isHelp` Otro `boolean` para poder mostrar al usuario las opciones disponibles amigablemente.
-
-Como queremos que los valores una vez seteados no cambien vamos a crear solo los `getters` para que sean relativamente inmutables.  
-Para hacer un poco de debug, generamos el método `toString`.  
-Creamos una `función` que haga de `Supplier` para esta `clase` llamada `newInstance`, ésta se encargará de que si necesitamos modificar la manera en que se crean nuestros argumentos de terminal, cambie, de esta manera no tendremos que depender de un `constructor`.
+- Como queremos que los valores una vez seteados no cambien vamos a crear solo los `getters` para que sean relativamente inmutables.
+- Para hacer un poco de debug, generamos el método `toString`.
+- Creamos una `función` que haga de `Supplier` para esta `clase` llamada `newInstance`, ésta se encargará de que si necesitamos modificar la manera en que se crean nuestros argumentos de terminal, cambie, de esta manera no tendremos que depender de un `constructor`.
 
 ![35_Funciones_constructoras_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_01.png)
 

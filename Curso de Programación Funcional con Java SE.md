@@ -46,8 +46,6 @@
         - [Clase 36 - Agregando validaciones de datos](#clase-36---agregando-validaciones-de-datos)
         - [Clase 37 - Diseñando las funciones de transformación de datos](#clase-37---diseñando-las-funciones-de-transformación-de-datos)
         - [Clase 38 - Creando flujos extras de transformación de datos](#clase-38---creando-flujos-extras-de-transformación-de-datos)
-    - [Módulo 6 - Conclusiones](#módulo-6---conclusiones)
-        - [Clase 39 - Un repaso a lo aprendido](#clase-39---un-repaso-a-lo-aprendido)
 
 ---
 
@@ -2629,7 +2627,7 @@ Con la `API` ya construida hacemos el `return` de un `Stream.of` con las opcione
 Con esto vamos a transformar de la `lista` que nos devuelve la `función` `APIJobs` a un `Stream` de `JobPosition`, este es el resultado.
 
 Crearemos ahora la `clase` que nos falta, el `CLIFunctions` y necesitamos la `función` estática que nos devuelve un `map` de `String` a `Object` porque asi definimos que `APIJobs` trabajaría, la `function` se llamara `toMap` y recibe un `CLIArguments`.  
-Dentro crearemos un `mapa` de `String` a `Object`, `params`, usaremos un `HashMap` que es una estructura base de `Java`, una `Collection`.  
+Dentro crearemos un `mapa` de `String` a `Object` llamado `params`, usaremos un `HashMap` que es una estructura base de `Java`, una `Collection`.  
 Y tomamos el nuevo `map` y vamos agregando los elementos que tenemos dentro de `CLIArguments`.  
 Y si el usuario quiere los resultados en `markdown` lo agregamos en la petición y retornamos este nuevo `objeto`.
 
@@ -2640,7 +2638,7 @@ Dentro de la seccion de `Gradle` en `Intellij` vamos a la carpeta `distribution`
 
 ![38_Creando_flujos_extras_03](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_03.png)
 
-Esto se guarda en las carpetas de la izquierda `Build -> distributions`.
+Esto se guarda en las carpetas de la izquierda `build -> distributions`.
 
 ![38_Creando_flujos_extras_04](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_04.png)
 
@@ -2654,11 +2652,6 @@ Si ejecutamos sin la opcion de la `keyword` nos muestra la ayuda.
 
 ![38_Creando_flujos_extras_07](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_07.png)
 
-Entonces tenemos nuestro código funcionando, nuestro CLI que ahora hace peticiones a GitHub para poder mostrarnos trabajos y todo gracias a la `programación funcional`, la estructura de `Streams`, `Optionals`.
-
----
-
-## Módulo 6 - Conclusiones
-### Clase 39 - Un repaso a lo aprendido
+Entonces tenemos nuestro código funcionando, nuestro CLI que ahora hace peticiones a GitHub para poder mostrarnos trabajos y todo gracias a la `programación funcional`, la estructura de `Streams` y `Optionals`.
 
 ---

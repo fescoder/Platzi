@@ -2433,7 +2433,8 @@ Estas son las opciones que vamos a habilitar para nuestro proyecto.
 ---
 
 ### Clase 33 - Librerías adicionales para nuestro proyecto
-Empecemos creando un punto de entrada para el proyecto. Significa tener una `Clase` que va a ser el punto de arranque y esta `Clase` tendrá un método `main`. Entonces creamos un `Package` como lo definimos en `Gradle`, que será el `Package` que estaremos usando a lo largo de nuestro proyecto.
+Empecemos creando un punto de entrada para el proyecto.  
+Significa tener una `Clase` que va a ser el punto de arranque y esta `Clase` tendrá un método `main`. Entonces creamos un `Package` como lo definimos en `Gradle`, que será el `Package` que estaremos usando a lo largo de nuestro proyecto.
 
 ![33_Librerias_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/33_Librerias_proyecto_01.png)
 
@@ -2446,17 +2447,48 @@ Para ejecutar este proyecto necesitamos indicarle a `Gradle` que ésta es la `Cl
 Una vez definido bastara con ir al navegador y abrir la opción de `Gradle`, que es donde tenemos la diferentes tareas que `Gradle` puede hacer por nosotros, basta con ejecutar `application`-> `run`, `Gradle` compilará el proyecto y ejecutará el método `main`.  
 Con esto hemos automatizado el compilado del proyecto, el ejecutar el `main` y crear la instancia de la clase incluso.
 
-Ahora para no reinventar la rueda, utilizaremos `Librerias`, en este caso las `Librerias` que usaremos nos ayudaran a resolver lo que sea pasado a nuestro programa por terminal, hacer llamadas web y transformar datos.
+Ahora para no reinventar la rueda, utilizaremos `Librerías`, en este caso las `Librerías` que usaremos nos ayudaran a resolver lo que sea pasado a nuestro programa por terminal, hacer llamadas web y transformar datos.
 
 - `jcommander`: Toma los argumentos de la terminal  y genera objetos de `Java`.
 - `feign-core`: Es el responsable de hacer peticiones web a las APIs.
 - `feign-gson`: Convierte de `JSON` a objetos de `Java`.
 
-Estas `Librerias` se encontraron en [MVNRepository](https://mvnrepository.com/) y para incluirlas debemos buscar el nombre de la `Libreria`, entrar, elegir la versión y dentro de ella está el enlace para copiar/pegar en nuestro `Gradle` para incluirlo en nuestro proyecto. Lo agregamos en nuestra sección de `dependencies` y **Intellij** nos ofrece importar los cambios.
+Estas `Librerías` se encontraron en [MVNRepository](https://mvnrepository.com/) y para incluirlas debemos buscar el nombre de la `Librería`, seleccionar, elegir la versión y dentro de ella está el enlace para copiar/pegar en nuestro `Gradle` para incluirlo en nuestro proyecto. Lo agregamos en nuestra sección de `dependencies` y **Intellij** nos ofrece importar los cambios.
 
 ---
 
 ### Clase 34 - Entendiendo la API de jobs
+La `API` de **GitHub** va a funcionar a través de peticiones web, éstas están parametrizadas, es decir, reciben diferentes valores, esos valores vamos a pasarlos por `URL`. En la documentación de la `API` menciona que opciones tenemos para enviarle.  
+Apoyemonos de `Feign` para hacer esto.
+
+Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` a través de la cual `Feign` va a crear la descripción de esta `api`, simplemente crearemos una `interfaz` llamada `APIJobs`. Este `interfaz` nos va a servir como la base de las peticiones que hagamos con `Feign`.
+
+Entonces creamos un método que nos devuelva un listado de trabajos disponibles, `JobPosition` llamado `jobs`.  
+Con `Feign` empezaremos por definir que esta es un consumo de un servicio web, entonces le agregaremos una notación llamada `@Headers`.  
+`@Headers` es una notación dentro de `Feign` con la cual podemos indicar las cabeceras que se enviarán a través de nuestra petición. Le pondremos que acepta application/json (`@Headers("Accept: application/json")`).  
+Despues anotaremos nuestro método con una notación específica de `Feign` llamada `@RequestLine`, con esto estamos diciendo a `Feign` como tiene que hacer la petición web, sabemos que esta petición es un `GET` que apunta a `/positions.json`, esta está en la `API` de **GitHub**.
+
+![]
+
+Y por último como estaremos construyendo los parámetros en la `URL` necesitamos generar un `query`, entonces usaremos la notación de `@QueryMap Map<String, Object> queryMap` que será de tipo `String` a `Objeto`. Este será un mapa de los elementos que irán dentro de nuestra petición.
+
+Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la API de GitHub tiene registradas con esos datos.
+
+`JobPosition` es una clase sencilla en la que contendremos los datos que la API nos devuelve, se lo conoce como `POJO`(Plain Old Java Object) y acorde a lo que la documentación nos muestra, nuestros atributos serán:
+
+![] web
+
+Con la notación `@SerializedName("Nombre_objeto_JSON")` le decimos que del objeto `JSON` la propiedad con ese nombre, pasara a otro nombre en `Java`, los demás, como se trabajan con el mismo nombre, se deja tal cual.
+
+![]
+
+Ya definido con `Feign` como se va a comportar nuestra API, ahora vamos a hacer una `Function` que pueda generar objetos de tipo API. Creamos la `Interfaz` llamada `APIFunctions`. Generamos un método estático generico `buildAPI` que se encargará de generar un objeto de API, que será consumido como una API, para ello le indicamos que clase vamos a generar y la `URL` a la cual se va a generar esta API, usamos `Feign` acá.
+
+![]
+
+Obtenemos algunas ventajas al tener la `Function` por separado, si queremos cambiar la `Librería` es muy sencillo, basta con reemplazar a `Feign`, y los demás ni se enteran. Explicando un poco el código, construimos el cliente web (`builder`), decodificamos los resultados usando `GsonDecoder` (`decoder`) y apunta hacia una API que está en una `URL` (`target`).  
+Con esto tenemos todo aislado de manera que no importa con que datos mandemos a llamar esta `API`, siempre nos va a devolver una `API` distinta, es una `Function` pura de alguna manera porque si le mandamos 3 veces la misma `API` con la misma `URL` nos va a devolver el mismo tipo de objeto
+
 
 ---
 

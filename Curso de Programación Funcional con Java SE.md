@@ -2554,7 +2554,7 @@ Entonces si tenemos un valor actual, lanzaremos una `Exception`, tiene sentido c
 
 Para utilizarlo volvemos a la `clase` `CLIArguments` y en el `@Parameter` de `isHelp` agregaremos un validator `validateWith`, con esto `JCommander` sabe que cuando reciba este parámetro tiene que revisar que hace el validador.
 
-![36_Validaciones_02](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_01.png)
+![36_Validaciones_02](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_02.png)
 
 Crearemos otro para poder validar que la palabra clave tenga un contenido, porque si no estaremos recibiendo espacios, números o algo por el estilo, se llamara `CLIKeywordValidator`.
 

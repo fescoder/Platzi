@@ -2494,19 +2494,20 @@ Con esto tenemos todo aislado de manera que no importa con que datos mandemos a 
 ---
 
 ### Clase 35 - Diseñando las Funciones Constructoras de nuestro Proyecto
-Ya tenemos nuestra `librería` integrada con una `function` para poder hacer peticiones web, ahora tenemos que empezar a estructurar el `CLI`.  
-Mostrar por pantalla estos objetos nuevos que vamos a estar recibiendo y enviando.
+Ya tenemos nuestra `librería` integrada con una `function` para poder hacer peticiones web, ahora tenemos que empezar a estructurar el `CLI`, mostrar por pantalla estos objetos nuevos que vamos a estar recibiendo y enviando.
 
-Lo primero que hacemos es agregar a `JobPosition` los métodos `equals` y `hashCode`. Como tenemos una `lista` de datos, buscamos la manera de diferenciar los objetos de si mismos. También agregaremos el `toString`, que nos sirve para ver por pantalla los valores de nuestros objetos.
+Lo primero que hacemos es agregar a `JobPosition` los métodos `equals` y `hashCode`. Como tenemos una `lista` de datos, buscamos la manera de diferenciar los objetos de si mismos.  
+También agregaremos el `toString`, que nos sirve para ver por pantalla los valores de nuestros objetos.
 
 Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que representa los argumentos que tomará `JCommander`.  
 - Creamos un constructor que no recibe nada, este constructor solo existe a nivel `package` y así prevenimos que alguien más cree objetos de esta `clase`.
-- `keyword` Que estaremos buscando.
-- `location` Ubicación de para donde vamos a estar buscando.
-- `page` Un entero para ver la página que busca (default 0).
-- `isFullTime` Un `boolean` por dafault false.
-- `isMarkdown` Otra `boolean` en false para saber si la `API` nos devuelve en formato Markdown.
-- `isHelp` Otro `boolean` para poder mostrar al usuario las opciones disponibles amigablemente.
+- Atributos:
+    - `keyword` Que estaremos buscando.
+    - `location` Ubicación de para donde vamos a estar buscando.
+    - `page` Un entero para ver la página que busca (default 0).
+    - `isFullTime` Un `boolean` por dafault false.
+    - `isMarkdown` Otra `boolean` en false para saber si la `API` nos devuelve en formato Markdown.
+    - `isHelp` Otro `boolean` para poder mostrar al usuario las opciones disponibles amigablemente.
 
 Como queremos que los valores una vez seteados no cambien vamos a crear solo los `getters` para que sean relativamente inmutables.  
 Para hacer un poco de debug, generamos el método `toString`.  

@@ -2461,7 +2461,9 @@ Estas `Librerías` se encontraron en [MVNRepository](https://mvnrepository.com/)
 La `API` de **GitHub** va a funcionar a través de peticiones web, éstas están parametrizadas, es decir, reciben diferentes valores, esos valores vamos a pasarlos por `URL`. En la documentación de la `API` menciona que opciones tenemos para enviarle.  
 Apoyemonos de `Feign` para hacer esto.
 
-Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` a través de la cual `Feign` va a crear la descripción de esta `api`, simplemente crearemos una `interfaz` llamada `APIJobs`. Este `interfaz` nos va a servir como la base de las peticiones que hagamos con `Feign`.
+Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` a través de la cual `Feign` va a crear la descripción de esta `api`, simplemente crearemos una `interfaz` llamada `APIJobs`. Esta `interfaz` nos va a servir como la base de las peticiones que hagamos con `Feign`.
+
+![34_API_Jobs_02](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_02.png)
 
 Entonces creamos un método que nos devuelva un listado de trabajos disponibles, `JobPosition` llamado `jobs`.  
 Con `Feign` empezaremos por definir que esta es un consumo de un servicio web, entonces le agregaremos una notación llamada `@Headers`.  
@@ -2471,8 +2473,6 @@ Despues anotaremos nuestro método con una notación específica de `Feign` llam
 ![34_API_Jobs_01](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_01.png)
 
 Y por último como estaremos construyendo los parámetros en la `URL` necesitamos generar un `query`, entonces usaremos la notación de `@QueryMap Map<String, Object> queryMap` que será de tipo `String` a `Objeto`. Este será un mapa de los elementos que irán dentro de nuestra petición.
-
-![34_API_Jobs_02](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_02.png)
 
 Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la `API` de GitHub tiene registradas con esos datos.  
 `JobPosition` es una clase sencilla en la que contendremos los datos que la `API` nos devuelve, se lo conoce como `POJO`(Plain Old Java Object) y acorde a lo que la documentación nos muestra, nuestros atributos serán:

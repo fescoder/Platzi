@@ -2424,7 +2424,7 @@ Antes de escribir código hay que entender qué es lo qué queremos lograr. Y co
 
 - Nuestra herramienta de terminal se va a llamar `job-search` y lo que queremos es buscar trabajo basado en una palabra clave `Java`, entonces generaremos una herramienta que acepte estas palabras y nos devuelva los resultados con `Java`.
 - O que le podamos pasar una `--location`, también con posibilidades cortas como `-l`.  
-- O paginación, la API de GitHub devuelve 50 resultados, entonces para ver los siguientes 50, debemos agreagar una página, es decir, pedir la siguiente página de resultados. Entonces lo pedimos con `--page` o `-p`.
+- O paginación, la `API de GitHub` devuelve 50 resultados, entonces para ver los siguientes 50, debemos agreagar una página, es decir, pedir la siguiente página de resultados. Entonces lo pedimos con `--page` o `-p`.
 - La API también nos permite buscar trabajos parciales, freelancing, o por horas, o nos permite también pedir que sean explicitamente tiempo completo, para esto usaremos la bandera `--full-time`.  
 - Y la API nos puede devolver el resultado de dos maneras, `HTML` o `Markdown`, si pasamos `--markdown` los resultados van a ser generados como markdown.
 
@@ -2458,7 +2458,7 @@ Estas `Librerías` se encontraron en [MVNRepository](https://mvnrepository.com/)
 ---
 
 ### Clase 34 - Entendiendo la API de jobs
-La `API` de **GitHub** va a funcionar a través de peticiones web, éstas están parametrizadas, es decir, reciben diferentes valores, esos valores vamos a pasarlos por `URL`. En la documentación de la `API` menciona que opciones tenemos para enviarle.  
+La `API de GitHub` va a funcionar a través de peticiones web, éstas están parametrizadas, es decir, reciben diferentes valores, esos valores vamos a pasarlos por `URL`. En la documentación de la `API` menciona que opciones tenemos para enviarle.  
 Apoyemonos de `Feign` para hacer esto.
 
 Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` a través de la cual `Feign` va a crear la descripción de esta `api`, simplemente crearemos una `interfaz` llamada `APIJobs`. Esta `interfaz` nos va a servir como la base de las peticiones que hagamos con `Feign`.
@@ -2468,13 +2468,13 @@ Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` 
 Entonces creamos un método que nos devuelva un listado de trabajos disponibles, `JobPosition` llamado `jobs`.
 
 Con `Feign` empezaremos por definir que ésta es un consumo de un servicio web, entonces le agregaremos una notación llamada `@Headers`, que es una notación dentro de `Feign` con la cual podemos indicar las cabeceras que se enviarán a través de nuestra petición. Le pondremos que acepta application/json (`@Headers("Accept: application/json")`).  
-Despues anotaremos nuestro método con una notación específica de `Feign` llamada `@RequestLine`, con esto estamos diciendo a `Feign` como tiene que hacer la petición web, sabemos que esta petición es un `GET` que apunta a `/positions.json`, esta está en la `API` de **GitHub**.
+Despues anotaremos nuestro método con una notación específica de `Feign` llamada `@RequestLine`, con esto estamos diciendo a `Feign` como tiene que hacer la petición web, sabemos que esta petición es un `GET` que apunta a `/positions.json`, esta está en la `API de GitHub`.
 
 ![34_API_Jobs_01](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_01.png)
 
 Y por último como estaremos construyendo los parámetros en la `URL` necesitamos generar un `query`, entonces usaremos la notación de `@QueryMap Map<String, Object> queryMap` que será de tipo `String` a `Objeto`. Este será un mapa de los elementos que irán dentro de nuestra petición.
 
-Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la `API` de GitHub tiene registradas con esos datos.
+Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la `API de GitHub` tiene registradas con esos datos.
 
 `JobPosition` es una clase sencilla en la que contendremos los datos que la `API` nos devuelve, se lo conoce como `POJO`(Plain Old Java Object) y acorde a lo que la documentación nos muestra, nuestros atributos serán:
 
@@ -2545,7 +2545,7 @@ Esta imagen está más actualizada.
 Ya tenemos la `función` que puede leer los argumentos de la terminal, ahora hay que validarlos y lo haremos directamente con `clases`.  
 Validaremos que cuando el usuario nos pida ayuda se considere la ayuda y no se esté lanzando directamente como si fuera una opción más.
 
-Creamos la `Clase` `CLIHelpValidator` que implementa una interfaz de `JCommander`, usaremos `IParameterValidator`. Este tiene un solo método que debemos implementar (`validate`). Lo único que hacemos es revisar que si tomamos un `boolean` (`actualValue`) y diremos cual fue el valor actual de la petición.
+Creamos la `Clase` `CLIHelpValidator` que implementa una interfaz de `JCommander`, usaremos `IParameterValidator`. Este tiene un solo método que debemos implementar (`validate`). Lo único que hacemos es revisar si tomamos un `boolean` (`actualValue`) y diremos cual fue el valor actual de la petición.
 El método `validate` nos entrega el valor que se pasó por terminal y el nombre de la opción.
 
 ![36_Validaciones_01](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_01.png)
@@ -2568,10 +2568,54 @@ Y lo agregamos al `CLIArguments`.
 ---
 
 ### Clase 37 - Diseñando las funciones de transformación de datos
+Hasta este punto recibimos y tenemos los datos y argumentos que se nos va a pasar por terminal con los cuales haremos una busqueda en la `API de GitHub`, los siguente entonces es pasar de esos argumentos a algo que podemos usar para comunicar con la `API`, convertir a los datos que vinieron en la `URL`, después recibir la respuesta y transformarla en algo que podamos mostrar al usuario. Para esto escribiremos idealmente como nos gustaría trabajar y posteriormente implementaremos un poco de la lógica.
+
+En el `main` escribiremos un poco el código que nos gustaría recibir.  
+Vamos a trabajar sobre un `Stream` de `CLIArguments`, `streamOfCLI`, en el que recibimos los argumentos de `JCommander`. Internamente diremos que queremos parsear los argumentos (Transformar de la terminal a objetos de `Java`), entonces le pasamos el `jCommander`, los argumentos que se pasaron por la terminal `args`, y en caso de que algo salga mal nos gustaría mostrar la ayuda, si alguien paso un argumento u opción no valida, usaremos `JCommander::usage`, con esto internamente `JCommander` sabrá que vamos a mostrár la ayuda.
+~~~
+Stream<CLIArguments> streamOfCLI = parseArguments(jCommander, args, JCommander::usage); //Por ahora hasta acá.
+~~~
+
+Ya con esto buscaremos los argumentos y procesarlos. Para esto crearemos una nueva `función` (`parseArguments`) estática en `CommanderFunctions`.
+
+![37_Funciones_transformacion_de_datos_02](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_02.png)
+
+Nos va a ayudar a tranformar los argumentos, pero puede que haya un error o no haya argumentos, entonces devolvera un `Optional` de una `Lista` de `objetos`, esto es porque `JCommander` te devuelve esto como primer acercamiento a tus argumentos.  
+`parseArguments` trabajara sobre un `JCommander`, un arreglo de `Strings` (los argumentos) y un `Consumer` (`onError`) de `JCommander`, que será la `función` en la cual haremos el consumo de la `función`.
+
+Como pusimos que `parseArguments` debe devolver un `Optional` pero lo guardamos en un `Stream`, tendremos que modificarlo para que trabaje sobre un `Stream`, entonces diremos que si no regresa argumentos (`orElse`) simplemente nos devuelva una `Collections.emptyList`, una lista vacia. Esa lista la pasamos a `Stream` para poder tener diversos argumentos.  
+Lo último será `mapear` el `objeto`, como sabemos que `JCommander` nos devuelve un `objeto` pero que corresponde a `CLIArguments`, vamos a tomarlo y lo convertimos en un `CLIArguments` con `map`.
+
+![37_Funciones_transformacion_de_datos_01](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_01.png)
+
+Con esto ya tenemos un `Stream` de los argumentos que se nos dieron por terminal.
+
+Lo que sigue es obtener los argumentos que no sean el caso de ayuda y si se haya indicado una palabra clave para la búsqueda. Entonces puede que no haya argumentos en este punto, que nuestro `Stream` esté vacío. Trabajaremos con otro `Optional`.
+
+![37_Funciones_transformacion_de_datos_03](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_03.png)
+
+Haremos un `Optional` de `CLIArguments`, tiene que ser `Optional` porque puede que no se hayan pasado de manera correcta los argumentos, solo haya invocado a nuestra herramienta de terminal, en ese caso nuestro `Stream` estará vacio, entonces tomaremos nuestro `streamOfCLI` y lo filtraremos con `filter` basados en revisar que el `cli` no sea el caso de ayuda, porque no queremos los argumentos en el caso de ayuda (cuando sea de ayuda debemos mostrar el `usage`), luego haremos un `filter` para saber si el `cli` trae una `keyword` para saber si podemos hacer una búsqueda y por último buscaremos la primer cantidad de argumentos que correspondan con estas dos características, es decir, "No es ayuda y tiene un keyword". Con esto podemos empezar a trabajar.
+
+Volviendo al `parseArguments` lo que hacemos es tomar nuestros argumentos y retornar un `Optional` con `of` de lo que `JCommander` nos de como argumentos.  
+Como lanzamos una `exception` cuando haya un caracter inválido o algo salga mal en `CLIArguments` tenemos que hacer un `try-catch` para mostrar la ayuda.
+En caso de que algo salga mal en el `catch` ponemos que use el `onError` con el `JCommander` pasado. Y para cubrir el retorno del dato al final ponemos el `Optional.empty`.
+
+![37_Funciones_transformacion_de_datos_05](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_05.png)
+
+Con esto nos aseguramos que dentro de nuestro código `main`, cuando el pase de argumentos no encuentre los argumentos adecuados o algo salga mal pueda mostrar la ayuda, de lo contrario generamos una `lista` vacia y no va a haber nada para `mapear`.  
+Para la siguiente instrucción tanto los argumentos no son ayuda como no habrá una `keyword`, entonces `findFirst` va a devolver otro `Optional` vacío, esta manera nos aseguramos que aún cuando algo salga mal no tengamos que operar con datos nulos.
+
+Después convertiremos este `cliArgumentsOptional`,`Optional` de argumentos, a algo que pueda procesarse en la `URL`.  
+Lo primero que hacemos es `mapearlo` con una `función`, que no tenemos definida todavia, que se llamara `CLIFunctions` que lo que hace es pasar de `CLI` a `mapa`, es decir pasarlo a una estructura de `llave-valor`. Lo necesitamos asi porque en la `función` que usamos para consumir la `API de GitHub` necesita un `map` (de `String` a `Object`). Una vez que tenemos el `map` hacemos nuestra petición con `JobSearch` y definimos otro método para esto, `executeRequest`, pero si no tenemos datos, no pudimos hacer ninguna ejecución por algún motivo, le agregamos el `orElse` para generar un `Stream` vacío para poder procesar los datos y por cada resultado solo lo mostramos por terminal.
+
+![37_Funciones_transformacion_de_datos_04](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_04.png)
 
 ---
 
 ### Clase 38 - Creando flujos extras de transformación de datos
+Creamos una `función` interna, `executeRequest` que genera un `Stream` de `JobPosition` que recibe como parámetro el `map` que genere la `función` `toMap` de `CLIFunctions`. Y lo que hacemos a continuación es construir nuestra `API`.
+
+![]
 
 ---
 

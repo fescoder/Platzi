@@ -2449,9 +2449,9 @@ Con esto hemos automatizado el compilado del proyecto, el ejecutar el `main` y c
 
 Ahora para no reinventar la rueda, utilizaremos `Librerías`, en este caso las `Librerías` que usaremos nos ayudaran a resolver lo que sea pasado a nuestro programa por terminal, hacer llamadas web y transformar datos.
 
-- `jcommander`: Toma los argumentos de la terminal  y genera objetos de `Java`.
-- `feign-core`: Es el responsable de hacer peticiones web a las APIs.
-- `feign-gson`: Convierte de `JSON` a objetos de `Java`.
+- `JCommander`: Toma los argumentos de la terminal  y genera objetos de `Java`.
+- `Feign-core`: Es el responsable de hacer peticiones web a las APIs.
+- `Feign-gson`: Convierte de `JSON` a objetos de `Java`.
 
 Estas `Librerías` se encontraron en [MVNRepository](https://mvnrepository.com/) y para incluirlas debemos buscar el nombre de la `Librería`, seleccionar, elegir la versión y dentro de ella está el enlace para copiar/pegar en nuestro `Gradle` para incluirlo en nuestro proyecto. Lo agregamos en nuestra sección de `dependencies` y **Intellij** nos ofrece importar los cambios.
 
@@ -2465,16 +2465,17 @@ Primero crearemos un `Package` llamado `api`, en éste crearemos una `interfaz` 
 
 ![34_API_Jobs_02](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_02.png)
 
-Entonces creamos un método que nos devuelva un listado de trabajos disponibles, `JobPosition` llamado `jobs`.  
-Con `Feign` empezaremos por definir que esta es un consumo de un servicio web, entonces le agregaremos una notación llamada `@Headers`.  
-`@Headers` es una notación dentro de `Feign` con la cual podemos indicar las cabeceras que se enviarán a través de nuestra petición. Le pondremos que acepta application/json (`@Headers("Accept: application/json")`).  
+Entonces creamos un método que nos devuelva un listado de trabajos disponibles, `JobPosition` llamado `jobs`.
+
+Con `Feign` empezaremos por definir que ésta es un consumo de un servicio web, entonces le agregaremos una notación llamada `@Headers`, que es una notación dentro de `Feign` con la cual podemos indicar las cabeceras que se enviarán a través de nuestra petición. Le pondremos que acepta application/json (`@Headers("Accept: application/json")`).  
 Despues anotaremos nuestro método con una notación específica de `Feign` llamada `@RequestLine`, con esto estamos diciendo a `Feign` como tiene que hacer la petición web, sabemos que esta petición es un `GET` que apunta a `/positions.json`, esta está en la `API` de **GitHub**.
 
 ![34_API_Jobs_01](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_01.png)
 
 Y por último como estaremos construyendo los parámetros en la `URL` necesitamos generar un `query`, entonces usaremos la notación de `@QueryMap Map<String, Object> queryMap` que será de tipo `String` a `Objeto`. Este será un mapa de los elementos que irán dentro de nuestra petición.
 
-Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la `API` de GitHub tiene registradas con esos datos.  
+Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la `API` de GitHub tiene registradas con esos datos.
+
 `JobPosition` es una clase sencilla en la que contendremos los datos que la `API` nos devuelve, se lo conoce como `POJO`(Plain Old Java Object) y acorde a lo que la documentación nos muestra, nuestros atributos serán:
 
 ![34_API_Jobs_03](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_03.png)
@@ -2488,12 +2489,54 @@ Ya definido con `Feign` como se va a comportar nuestra `API`, ahora vamos a hace
 ![34_API_Jobs_05](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_05.png)
 
 Obtenemos algunas ventajas al tener la `Function` por separado, si queremos cambiar la `Librería` es muy sencillo, basta con reemplazar a `Feign`, y los demás ni se enteran. Explicando un poco el código, construimos el cliente web (`builder`), decodificamos los resultados usando `GsonDecoder` (`decoder`) y apunta hacia una `API` que está en una `URL` (`target`).  
-Con esto tenemos todo aislado de manera que no importa con que datos mandemos a llamar esta `API`, siempre nos va a devolver una `API` distinta, es una `Function` pura de alguna manera porque si le mandamos 3 veces la misma `API` con la misma `URL` nos va a devolver el mismo tipo de objeto
-
+Con esto tenemos todo aislado de manera que no importa con que datos mandemos a llamar esta `API`, siempre nos va a devolver una `API` distinta, es una `Function` pura de alguna manera porque si le mandamos 3 veces la misma `API` con la misma `URL` nos va a devolver el mismo tipo de objeto.
 
 ---
 
 ### Clase 35 - Diseñando las Funciones Constructoras de nuestro Proyecto
+Ya tenemos nuestra `librería` integrada con una `function` para poder hacer peticiones web, ahora tenemos que empezar a estructurar el `CLI`.  
+Mostrar por pantalla estos objetos nuevos que vamos a estar recibiendo y enviando.
+
+Lo primero que hacemos es agregar a `JobPosition` los métodos `equals` y `hashCode`. Como tenemos una `lista` de datos, buscamos la manera de diferenciar los objetos de si mismos. También agregaremos el `toString`, que nos sirve para ver por pantalla los valores de nuestros objetos.
+
+Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que representa los argumentos que tomará `JCommander`.  
+- Creamos un constructor que no recibe nada, este constructor solo existe a nivel `package` y así prevenimos que alguien más cree objetos de esta `clase`.
+- `keyword` Que estaremos buscando.
+- `location` Ubicación de para donde vamos a estar buscando.
+- `page` Un entero para ver la página que busca (default 0).
+- `isFullTime` Un `boolean` por dafault false.
+- `isMarkdown` Otra `boolean` en false para saber si la `API` nos devuelve en formato Markdown.
+- `isHelp` Otro `boolean` para poder mostrar al usuario las opciones disponibles amigablemente.
+
+Como queremos que los valores una vez seteados no cambien vamos a crear solo los `getters` para que sean relativamente inmutables.  
+Para hacer un poco de debug, generamos el método `toString`.  
+Creamos una `función` que haga de `Supplier` para esta `clase` llamada `newInstance`, ésta se encargará de que si necesitamos modificar la manera en que se crean nuestros argumentos de terminal, cambie, de esta manera no tendremos que depender de un `constructor`.
+
+![35_Funciones_constructoras_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_01.png)
+
+`JCommander` también funciona a través de notaciones, que son para poder trabajar con el CLI.
+- `Parameter` Indicamos que esta propiedad es un parámetro que se puede recibir por terminal.
+    - `required` Porque sin `keyword` no hay petición.
+    - `descriptionKey` Es lo que se mostrará en la ayuda.
+    - `description` Para mostrar una descripción.
+    - `names` Contiene los nombres con los cuales podemos recibir el parámetro, es un `arreglo`, y tiene las opciones larga y corta.
+    - `help` Lo pasamos a `true` cuando es solicitada la ayuda.
+
+![35_Funciones_constructoras_proyecto_02](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_02.png)
+
+![35_Funciones_constructoras_proyecto_03](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_03.png)
+
+Con esto creamos los parámetros que `JCommander` va a usar, ahora hay que empezar a utilizarlo, podemos crear un objeto de tipo `JCommander` y decirle parsee las opciones. Esto lo hacemos en el `main`.
+
+Entonces sobre la marcha escribimos el nombre de la `función`, `buildCommanderWithName`, el nombre de la herramienta de la terminal será `job-search` y necesita que le pasemos de donde generar los argumentos, usando el método con el cual construimos los argumentos `CLIArguments` y la referencia hacia `newInstance`.
+
+![35_Funciones_constructoras_proyecto_04](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_04.png)
+
+Para crear esta `función` crearemos una nueva `clase` llamada `CommanderFunctions`. Que recibe el `cliName` y un `object`, aunque sepamos que es un `CLIArguments`, `JCommander` trabaja directamente sobre objetos porque puede pasar que tengamos diferentes opciones para la terminal. Pero como definimos que en realidad es una referencia hacia alguien que crea objetos, lo cambiamos por un `Supplier` de `Object`, hacemos que la `función` sea generica (`<T>`).  
+Y lo que hacemos es crear una variable `JCommander` donde tomamos directamente un nuevo constructor y usaremos el `Supplier` para darle los comandos con los que puede trabajar, hacemos el `build` y lo guardamos para darle un nombre.
+Para agregarle el nombre simplemente hacemos `JCommander.SetProgramName` y le pasamos el `cliName` y luego retornamos la instacia.
+
+![35_Funciones_constructoras_proyecto_05](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_05.png)
 
 ---
 

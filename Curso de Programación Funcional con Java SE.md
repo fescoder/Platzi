@@ -2568,7 +2568,7 @@ Y lo agregamos al `CLIArguments`.
 ---
 
 ### Clase 37 - Diseñando las funciones de transformación de datos
-Hasta este punto recibimos y tenemos los datos y argumentos que se nos va a pasar por terminal con los cuales haremos una busqueda en la `API de GitHub`, los siguente entonces es pasar de esos argumentos a algo que podemos usar para comunicar con la `API`, convertir a los datos que vinieron en la `URL`, después recibir la respuesta y transformarla en algo que podamos mostrar al usuario. Para esto escribiremos idealmente como nos gustaría trabajar y posteriormente implementaremos un poco de la lógica.
+Hasta este punto recibimos y tenemos los datos y argumentos que se nos va a pasar por terminal con los cuales haremos una busqueda en la `API de GitHub`, lo siguente entonces es pasar de esos argumentos a algo que podemos usar para comunicar con la `API`, convertir a los datos que vinieron en la `URL`, después recibir la respuesta y transformarla en algo que podamos mostrar al usuario. Para esto escribiremos idealmente como nos gustaría trabajar y posteriormente implementaremos un poco de la lógica.
 
 En el `main` escribiremos un poco el código que nos gustaría recibir.  
 Vamos a trabajar sobre un `Stream` de `CLIArguments`, `streamOfCLI`, en el que recibimos los argumentos de `JCommander`. Internamente diremos que queremos parsear los argumentos (Transformar de la terminal a objetos de `Java`), entonces le pasamos el `jCommander`, los argumentos que se pasaron por la terminal `args`, y en caso de que algo salga mal nos gustaría mostrar la ayuda, si alguien paso un argumento u opción no valida, usaremos `JCommander::usage`, con esto internamente `JCommander` sabrá que vamos a mostrár la ayuda.
@@ -2576,21 +2576,21 @@ Vamos a trabajar sobre un `Stream` de `CLIArguments`, `streamOfCLI`, en el que r
 Stream<CLIArguments> streamOfCLI = parseArguments(jCommander, args, JCommander::usage); //Por ahora hasta acá.
 ~~~
 
-Ya con esto buscaremos los argumentos y procesarlos. Para esto crearemos una nueva `función` (`parseArguments`) estática en `CommanderFunctions`.
+Ya con esto buscaremos los argumentos y procesarlos. Para esto crearemos la nueva `función` (`parseArguments`) estática en `CommanderFunctions`.
 
 ![37_Funciones_transformacion_de_datos_02](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_02.png)
 
 Nos va a ayudar a tranformar los argumentos, pero puede que haya un error o no haya argumentos, entonces devolvera un `Optional` de una `Lista` de `objetos`, esto es porque `JCommander` te devuelve esto como primer acercamiento a tus argumentos.  
 `parseArguments` trabajara sobre un `JCommander`, un arreglo de `Strings` (los argumentos) y un `Consumer` (`onError`) de `JCommander`, que será la `función` en la cual haremos el consumo de la `función`.
 
-Como pusimos que `parseArguments` debe devolver un `Optional` pero lo guardamos en un `Stream`, tendremos que modificarlo para que trabaje sobre un `Stream`, entonces diremos que si no regresa argumentos (`orElse`) simplemente nos devuelva una `Collections.emptyList`, una lista vacia. Esa lista la pasamos a `Stream` para poder tener diversos argumentos.  
+Volviendo al `parseArguments`. Como pusimos que `parseArguments` debe devolver un `Optional` pero lo guardamos en un `Stream`, tendremos que modificarlo para que trabaje sobre un `Stream`, entonces diremos que si no regresa argumentos (`orElse`) simplemente nos devuelva una `Collections.emptyList`, una lista vacia. Esa lista la pasamos a `Stream` para poder tener diversos argumentos.  
 Lo último será `mapear` el `objeto`, como sabemos que `JCommander` nos devuelve un `objeto` pero que corresponde a `CLIArguments`, vamos a tomarlo y lo convertimos en un `CLIArguments` con `map`.
 
 ![37_Funciones_transformacion_de_datos_01](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_01.png)
 
 Con esto ya tenemos un `Stream` de los argumentos que se nos dieron por terminal.
 
-Lo que sigue es obtener los argumentos que no sean el caso de ayuda y si se haya indicado una palabra clave para la búsqueda. Entonces puede que no haya argumentos en este punto, que nuestro `Stream` esté vacío. Trabajaremos con otro `Optional`.
+Lo que sigue en el `main` es obtener los argumentos que no sean el caso de ayuda y si se haya indicado una palabra clave para la búsqueda. Entonces puede que no haya argumentos en este punto, que nuestro `Stream` esté vacío. Trabajaremos con otro `Optional`.
 
 ![37_Funciones_transformacion_de_datos_03](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_03.png)
 
@@ -2602,20 +2602,59 @@ En caso de que algo salga mal en el `catch` ponemos que use el `onError` con el 
 
 ![37_Funciones_transformacion_de_datos_05](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_05.png)
 
-Con esto nos aseguramos que dentro de nuestro código `main`, cuando el pase de argumentos no encuentre los argumentos adecuados o algo salga mal pueda mostrar la ayuda, de lo contrario generamos una `lista` vacia y no va a haber nada para `mapear`.  
+Con esto nos aseguramos que dentro de nuestro código `main`, cuando el pase de argumentos no encuentre los argumentos adecuados o algo salga mal pueda mostrar la ayuda, de lo contrario generamos una `lista` vacia y no va a haber nada para `mapear`.
+
 Para la siguiente instrucción tanto los argumentos no son ayuda como no habrá una `keyword`, entonces `findFirst` va a devolver otro `Optional` vacío, esta manera nos aseguramos que aún cuando algo salga mal no tengamos que operar con datos nulos.
 
 Después convertiremos este `cliArgumentsOptional`,`Optional` de argumentos, a algo que pueda procesarse en la `URL`.  
-Lo primero que hacemos es `mapearlo` con una `función`, que no tenemos definida todavia, que se llamara `CLIFunctions` que lo que hace es pasar de `CLI` a `mapa`, es decir pasarlo a una estructura de `llave-valor`. Lo necesitamos asi porque en la `función` que usamos para consumir la `API de GitHub` necesita un `map` (de `String` a `Object`). Una vez que tenemos el `map` hacemos nuestra petición con `JobSearch` y definimos otro método para esto, `executeRequest`, pero si no tenemos datos, no pudimos hacer ninguna ejecución por algún motivo, le agregamos el `orElse` para generar un `Stream` vacío para poder procesar los datos y por cada resultado solo lo mostramos por terminal.
+Lo primero que hacemos es `mapearlo` con una `función`, que no tenemos definida todavia, que se llamara `CLIFunctions` que lo que hace es pasar de `CLI` a `mapa`, es decir pasarlo a una estructura de `llave-valor`. Lo necesitamos asi porque en la `función` que usamos para consumir la `API de GitHub` necesita un `map` (de `String` a `Object`).  
+Una vez que tenemos el `map` hacemos nuestra petición con `JobSearch` y definimos otro método para esto, `executeRequest`, pero si no tenemos datos, no pudimos hacer ninguna ejecución por algún motivo, le agregamos el `orElse` para generar un `Stream` vacío para poder procesar los datos y por cada resultado solo lo mostramos por terminal.
 
 ![37_Funciones_transformacion_de_datos_04](src/Curso_Programacion_Funcional_Java_SE/37_Funciones_transformacion_de_datos_04.png)
 
 ---
 
 ### Clase 38 - Creando flujos extras de transformación de datos
-Creamos una `función` interna, `executeRequest` que genera un `Stream` de `JobPosition` que recibe como parámetro el `map` que genere la `función` `toMap` de `CLIFunctions`. Y lo que hacemos a continuación es construir nuestra `API`.
+Creamos una `función` interna, `executeRequest` que genera un `Stream` de `JobPosition` que recibe como parámetro el `map` que genera la `función` `toMap` de `CLIFunctions`.  
+Y lo que hacemos a continuación es **construir nuestra `API`**.
 
-![]
+Con esto tenemos ya la `función` que toma los parámetros y hacen parte del `request`.  
+Necesitamos transformar el objeto de `A` a `B` y completar el `request`.
+
+Tenemos una `API` que se llama `APIJobs`, hacemos `api` a partir de la `función` que creamos, `buildAPI`, que nos pide una `clase` y una `URL`, en este caso es la `URL` de la `API de GitHub`.
+
+![38_Creando_flujos_extras_01](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_01.png)
+
+Con la `API` ya construida hacemos el `return` de un `Stream.of` con las opciones que se nos pasaron, en este caso los `params` (u `options` en el **Intellij** en el que descargamos el proyectode GitHub). `Mapeamos`, tomando la `función` que ya definimos, `api::jobs` y usamos `flatMap`, que va a tomar una `Collection` y la va a transformar en elementos individuales.  
+Con esto vamos a transformar de la `lista` que nos devuelve la `función` `APIJobs` a un `Stream` de `JobPosition`, este es el resultado.
+
+Crearemos ahora la `clase` que nos falta, el `CLIFunctions` y necesitamos la `función` estática que nos devuelve un `map` de `String` a `Object` porque asi definimos que `APIJobs` trabajaría, la `function` se llamara `toMap` y recibe un `CLIArguments`.  
+Dentro crearemos un `mapa` de `String` a `Object`, `params`, usaremos un `HashMap` que es una estructura base de `Java`, una `Collection`.  
+Y tomamos el nuevo `map` y vamos agregando los elementos que tenemos dentro de `CLIArguments`.  
+Y si el usuario quiere los resultados en `markdown` lo agregamos en la petición y retornamos este nuevo `objeto`.
+
+![38_Creando_flujos_extras_02](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_02.png)
+
+**Exportar el archivo ejecutable**  
+Dentro de la seccion de `Gradle` en `Intellij` vamos a la carpeta `distribution` tenemos la opción de `distZip`, que nos permite hacer un `ZIP` de nuestra herramienta de terminal.
+
+![38_Creando_flujos_extras_03](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_03.png)
+
+Esto se guarda en las carpetas de la izquierda `Build -> distributions`.
+
+![38_Creando_flujos_extras_04](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_04.png)
+
+En la terminal de `Intellij` podemos ir a la carpeta de `build` -> `distributions`, hace un `unzip` al ejecutable, extraemos y vemos que nos genera todos los archivos necesarios para poder tener mi archivo `binario` que se considera una herramienta de terminal, me muevo a la carpeta que se genera, luego al archivo de `binarios` y dentro de éste con `./` puedo ejecutar mi archivo `job_search`.
+
+![38_Creando_flujos_extras_05](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_05.png)
+
+![38_Creando_flujos_extras_06](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_06.png)
+
+Si ejecutamos sin la opcion de la `keyword` nos muestra la ayuda.
+
+![38_Creando_flujos_extras_07](src/Curso_Programacion_Funcional_Java_SE/38_Creando_flujos_extras_07.png)
+
+Entonces tenemos nuestro código funcionando, nuestro CLI que ahora hace peticiones a GitHub para poder mostrarnos trabajos y todo gracias a la `programación funcional`, la estructura de `Streams`, `Optionals`.
 
 ---
 

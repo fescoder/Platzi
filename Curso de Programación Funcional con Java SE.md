@@ -2515,7 +2515,7 @@ Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que r
 ![35_Funciones_constructoras_proyecto_01](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_01.png)
 
 `JCommander` también funciona a través de notaciones, que son para poder trabajar con el CLI.  
-`Parameter` Indicamos que esta propiedad es un parámetro que se puede recibir por terminal.
+Con la notación `Parameter` indicamos que esta propiedad es un parámetro que se puede recibir por terminal.
 - `required` Porque sin `keyword` no hay petición.
 - `descriptionKey` Es lo que se mostrará en la ayuda.
 - `description` Para mostrar una descripción.
@@ -2528,19 +2528,42 @@ Creando el `CLI`, primero creamos un `package` y una clase `CLIArguments`, que r
 
 Con esto creamos los parámetros que `JCommander` va a usar, ahora hay que empezar a utilizarlo, podemos crear un objeto de tipo `JCommander` y decirle parsee las opciones. Esto lo hacemos en el `main`.
 
-Entonces sobre la marcha escribimos el nombre de la `función`, `buildCommanderWithName`, el nombre de la herramienta de la terminal será `job-search` y necesita que le pasemos de donde generar los argumentos, usando el método con el cual construimos los argumentos `CLIArguments` y la referencia hacia `newInstance`.
+Entonces sobre la marcha escribimos el nombre de la `función`, `buildCommanderWithName`, le pasamos el nombre de la herramienta de la terminal que será `job-search` y necesita que le pasemos de donde generar los argumentos, usando el método con el cual construimos los argumentos `CLIArguments` y la referencia hacia `newInstance`.
 
 ![35_Funciones_constructoras_proyecto_04](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_04.png)
 
 Para crear esta `función` crearemos una nueva `clase` llamada `CommanderFunctions`. Que recibe el `cliName` y un `object`, aunque sepamos que es un `CLIArguments`, `JCommander` trabaja directamente sobre objetos porque puede pasar que tengamos diferentes opciones para la terminal. Pero como definimos que en realidad es una referencia hacia alguien que crea objetos, lo cambiamos por un `Supplier` de `Object`, hacemos que la `función` sea generica (`<T>`).  
 Y lo que hacemos es crear una variable `JCommander` donde tomamos directamente un nuevo constructor y usaremos el `Supplier` para darle los comandos con los que puede trabajar, hacemos el `build` y lo guardamos para darle un nombre.
-Para agregarle el nombre simplemente hacemos `JCommander.SetProgramName` y le pasamos el `cliName` y luego retornamos la instacia.
+Para agregarle el nombre simplemente hacemos `JCommander.SetProgramName` y le pasamos el `cliName` y luego retornamos la instacia.  
+Esta imagen está más actualizada.
 
 ![35_Funciones_constructoras_proyecto_05](src/Curso_Programacion_Funcional_Java_SE/35_Funciones_constructoras_proyecto_05.png)
 
 ---
 
 ### Clase 36 - Agregando validaciones de datos
+Ya tenemos la `función` que puede leer los argumentos de la terminal, ahora hay que validarlos y lo haremos directamente con `clases`.  
+Validaremos que cuando el usuario nos pida ayuda se considere la ayuda y no se esté lanzando directamente como si fuera una opción más.
+
+Creamos la `Clase` `CLIHelpValidator` que implementa una interfaz de `JCommander`, usaremos `IParameterValidator`. Este tiene un solo método que debemos implementar (`validate`). Lo único que hacemos es revisar que si tomamos un `boolean` (`actualValue`) y diremos cual fue el valor actual de la petición.
+El método `validate` nos entrega el valor que se pasó por terminal y el nombre de la opción.
+
+![36_Validaciones_01](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_01.png)
+
+Entonces si tenemos un valor actual, lanzaremos una `Exception`, tiene sentido cuando se trata de debugear o mostrar algo por pantalla, ya que interferiremos el proceso de nuestras `funciones` a partir de `excepciones`.
+
+Para utilizarlo volvemos a la `clase` `CLIArguments` y en el `@Parameter` de `isHelp` agregaremos un validator `validateWith`, con esto `JCommander` sabe que cuando reciba este parámetro tiene que revisar que hace el validador.
+
+![36_Validaciones_02](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_01.png)
+
+Crearemos otro para poder validar que la palabra clave tenga un contenido, porque si no estaremos recibiendo espacios, números o algo por el estilo, se llamara `CLIKeywordValidator`.
+
+![36_Validaciones_03](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_03.png)
+
+En este caso corroboramos con una `regex` que el dato tenga un valor y que sean únicamente letras y números.  
+Y lo agregamos al `CLIArguments`.
+
+![36_Validaciones_04](src/Curso_Programacion_Funcional_Java_SE/36_Validaciones_04.png)
 
 ---
 

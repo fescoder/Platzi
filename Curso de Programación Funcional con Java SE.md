@@ -2468,23 +2468,24 @@ Con `Feign` empezaremos por definir que esta es un consumo de un servicio web, e
 `@Headers` es una notación dentro de `Feign` con la cual podemos indicar las cabeceras que se enviarán a través de nuestra petición. Le pondremos que acepta application/json (`@Headers("Accept: application/json")`).  
 Despues anotaremos nuestro método con una notación específica de `Feign` llamada `@RequestLine`, con esto estamos diciendo a `Feign` como tiene que hacer la petición web, sabemos que esta petición es un `GET` que apunta a `/positions.json`, esta está en la `API` de **GitHub**.
 
-![]
+![34_API_Jobs_01](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_01.png)
 
 Y por último como estaremos construyendo los parámetros en la `URL` necesitamos generar un `query`, entonces usaremos la notación de `@QueryMap Map<String, Object> queryMap` que será de tipo `String` a `Objeto`. Este será un mapa de los elementos que irán dentro de nuestra petición.
 
-Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la API de GitHub tiene registradas con esos datos.
+![34_API_Jobs_02](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_02.png)
 
+Con esto definimos como se va a comportar la petición web, nos va a devolver una `Lista` de `JobPosition` en la que veremos cada uno de los elementos que la API de GitHub tiene registradas con esos datos.  
 `JobPosition` es una clase sencilla en la que contendremos los datos que la API nos devuelve, se lo conoce como `POJO`(Plain Old Java Object) y acorde a lo que la documentación nos muestra, nuestros atributos serán:
 
-![] web
+![34_API_Jobs_03](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_03.png)
 
 Con la notación `@SerializedName("Nombre_objeto_JSON")` le decimos que del objeto `JSON` la propiedad con ese nombre, pasara a otro nombre en `Java`, los demás, como se trabajan con el mismo nombre, se deja tal cual.
 
-![]
+![34_API_Jobs_04](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_04.png)
 
 Ya definido con `Feign` como se va a comportar nuestra API, ahora vamos a hacer una `Function` que pueda generar objetos de tipo API. Creamos la `Interfaz` llamada `APIFunctions`. Generamos un método estático generico `buildAPI` que se encargará de generar un objeto de API, que será consumido como una API, para ello le indicamos que clase vamos a generar y la `URL` a la cual se va a generar esta API, usamos `Feign` acá.
 
-![]
+![34_API_Jobs_05](src/Curso_Programacion_Funcional_Java_SE/34_API_Jobs_05.png)
 
 Obtenemos algunas ventajas al tener la `Function` por separado, si queremos cambiar la `Librería` es muy sencillo, basta con reemplazar a `Feign`, y los demás ni se enteran. Explicando un poco el código, construimos el cliente web (`builder`), decodificamos los resultados usando `GsonDecoder` (`decoder`) y apunta hacia una API que está en una `URL` (`target`).  
 Con esto tenemos todo aislado de manera que no importa con que datos mandemos a llamar esta `API`, siempre nos va a devolver una `API` distinta, es una `Function` pura de alguna manera porque si le mandamos 3 veces la misma `API` con la misma `URL` nos va a devolver el mismo tipo de objeto

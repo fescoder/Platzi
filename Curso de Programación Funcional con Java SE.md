@@ -49,8 +49,6 @@
 
 ---
 
-[PDF de las primeras clases](https://static.platzi.com/media/public/uploads/javase-functional_6a4212af-2764-4614-97ea-fb0faa854628.pdf)
-
 ## Módulo 1 - Introducción a la Programación Funcional
 ### Clase 1 - ¿Qué es la Programación Funcional?
 La programación funcional no es mas que un paradigma, una forma de programar, un estilo de programación, hay gente que le gusta programar orientado a objetos y hay lenguajes que te ayudan

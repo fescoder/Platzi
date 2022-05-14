@@ -923,7 +923,7 @@ Acá esta la [Documentación](https://www.jetbrains.com/help/idea/rename-dialogs
 ---
 
 ### Clase 12 - Revisando el paquete java.util.function: Predicate
-Podemos hacer más legible y simple la sintaxis.
+Podemos hacer más legible y simple la sintaxis anterior.
 
 Podemos hacer la `función` **isOdd**, que recibe un `entero` y devuelva un `booleano`.
 ~~~
@@ -933,7 +933,7 @@ Function<Integer, Boolean> isOdd = x -> x % 2 == 1;
 La `interfaz` `Predicate` es una especie de `función` que trabaja sobre un `tipo` y genera un `boolean`, lo que hace es testear si algo es válido.
 
 Crearemos un `Predicate` llamado `isEven` que recibe un `entero` y dice si es par o no.  
-Para probar los `predicados` solo tenemos que invocarlas con `test()`, y tenemos otro ejemplos más.
+Para probar los `predicados` solo tenemos que invocarlas con `test()`.
 
 ![12_Revisando_el_paquete_Function_Predicate_01](src/Curso_Programacion_Funcional_Java_SE/12_Revisando_el_paquete_Function_Predicate_01.png)
 
@@ -953,51 +953,40 @@ Un Predicate es: Una función que evalua si su parámetro cumple con una condici
 ---
 
 ### Clase 13 - Revisando el paquete java.util.function: Consumer y Supplier
-Adicional a las funciones y a los predicados que tenemos dentro de Java funcional.
-También tenemos otros dos elementos que están diseñados para consumir o para proveer de datos: **Consumer** y **Supplier**.
+Dos elementos que están diseñados para consumir o proveer de `datos`.
 
-Veamos con un ejemplo cómo podemos consumir un objeto o cómo podemos
-proveer de un objeto, para eso crearemos una pequeña clase que se llama **CLIArguments**.  
-Y esta clase lo único que hace es contener los elementos que se le pasarán por terminal a
-nuestro programa.  
-Vamos a agregar primero que nada, algo muy común en una terminal que es pedir
-el manual de usuario. Entonces crearemos una propiedad que se llame **isHelp**.  
-Esta propiedades un booleano que simplemente cuando esté presente lanzaremos el
-manual de la terminal, o si no está presente, continuaremos operando normalmente. Y
-lo que haremos será crear un pequeño getter para esta propiedad.
+Crearemos una `clase` llamada `CLIArguments`, lo único que hace es contener los `elementos` que se le pasarán por terminal a nuestro programa.  
+Algo muy común en una terminal es pedir el manual de usuario, entonces crearemos una propiedad que se llame `isHelp`.  
+Es un `booleano` que cuando esta presente lanzaremos el manual de la terminal, o si no, continuaremos operando normalmente.  
+Creamos un `getter` para esta `propiedad`.
 
 ![13_Revisando_el_paquete_Function_Consumer_Supplier_01](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_01.png)
 
-Hagamos unas utilidades para esta, llamaremos **CLIArgumentsUtils**, y aquí lo que haremos será crear una función que
-nos muestre el manual únicamente cuando la propiedad *isHelp* está presente.
-Entonces llamaremos a **showHelp** que recibe un *CLIArguments* y lo que haremos internamente es definir un **Consumer**.  
-Un Consumer es una interfaz genérica que trabaja sobre un tipo de dato (T).  
-Trabajaremos sobre nuestra clase creada y le llamaremos **ConsumerHelper**, recibirá un *CLIArguments* e
-internamente diremos: si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.
+Hagamos unas utilidades para ésta.  
+`CLIArgumentsUtils` es una `clase` que contiene una `función` que nos muestra el manual únicamente cuando la `propiedad` `isHelp` está presente.
 
-Para invocar a nuestro nuevo consumer recién creado simplemente tenemos que llamar a *ConsumerHelper.accept()* y le pasamos el dato.
+Llamaremos a `showHelp`, que recibe un `CLIArguments`, y lo que haremos internamente es definir un `Consumer`.  
+Un `Consumer` es una `interfaz genérica` que trabaja sobre un `tipo de dato` (`T`).  
+Lo llamaremos `ConsumerHelper`, evaluará el `CLIArguments` y si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.
+
+Para invocar a nuestro nuevo `consumer` tenemos que llamar a `ConsumerHelper.accept()` y le pasamos el `dato`.
 
 ![13_Revisando_el_paquete_Function_Consumer_Supplier_02](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_02.png)
 
-Un uso práctico que puede llegar a tener el Consumer es
-realizar operaciones sobre un tipo de dato.  
-Tenemos un listado de datos y por cada dato en esa lista
-vamos consumiendo y operando sobre ese dato en específico.  
-Por ejemplo, borrar archivos. Recibes una lista de archivos y vas borrando cada archivo que va recibiendo
-el Consumer.
+Un uso práctico del `Consumer` es realizar operaciones sobre un `tipo de dato`.  
+Tenemos un `listado de datos` y por cada `dato` en esa `lista` vamos consumiendo y operando sobre ese dato en específico.  
+Como borrar archivos, recibes una `lista` de archivos y vas borrando cada archivo que va recibiendo el `Consumer`.
 
-Lo segundo que haremos será crear una función rápida que nos provea de **CLIArguments**, que es la clase que estamos creando y para esto le llamaremos **generateCLI** y lo que haremos será simplemente crear un **Supplier**.
+Lo segundo será crear una `función` rápida que nos provea de `CLIArguments`, lo llamaremos `generateCLI` y lo que haremos será crear un `Supplier`.
 
-Un *Supplier* es otra Interfaz genérica que
-va a generar datos de un cierto tipo, es un tipo de función que se encarga de generar datos, de proveer datos.
+Un `Supplier` es otra `Interfaz` genérica que va a generar `datos` de un cierto `tipo`, es un tipo de `función` que se encarga de generar, proveer `datos`.
 
-Crearemos también un generator que lo que hacemos es generar un nuevo *CLIArguments* y retornaremos el *generator.get()*.
+Crearemos entonces un `generator` que lo que hacemos es generar un nuevo `CLIArguments` y retornaremos con el `generator.get()`.
 
-Utilidades que puede tener esto es, por ejemplo, generar configuraciones bajo demanda o tener alguna manera de crear archivos
-bajo demanda. Ya no tienes que proveer una configuración completa.
-Sólo creas una forma de obtener el siguiente resultado.
-Eso lo podemos ver más adelante en el módulo de Strings, donde generaremos muchos
-datos de manera infinita a partir de un Supplier.
+Utilidades: Generar configuraciones bajo demanda, o tener alguna manera de crear archivos bajo demanda.  
+Ya no tienes que proveer una configuración completa, sólo creas una forma de obtener el siguiente resultado.
+
+---
 
 [Página donde explican mejor algunos conceptos](https://medium.com/swlh/understanding-java-8s-consumer-supplier-predicate-and-function-c1889b9423d)
 

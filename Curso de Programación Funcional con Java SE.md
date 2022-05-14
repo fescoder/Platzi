@@ -969,19 +969,18 @@ Creamos un `getter` para esta `propiedad`.
 
 Llamaremos a `showHelp`, que recibe un `CLIArguments`, y lo que haremos internamente es definir un `Consumer`.  
 Un `Consumer` es una `interfaz genérica` que trabaja sobre un `tipo de dato` (`T`).  
-Lo llamaremos `ConsumerHelper`, evaluará el `CLIArguments` y si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.
-
+Lo llamaremos `ConsumerHelper`, evaluará el `CLIArguments` y si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.  
 Para invocar a nuestro nuevo `consumer` tenemos que llamar a `ConsumerHelper.accept()` y le pasamos el `dato`.
 
 Un uso práctico del `Consumer` es realizar operaciones sobre un `tipo de dato`.  
-Tenemos un `listado de datos` y por cada `dato` en esa `lista` vamos consumiendo y operando sobre ese dato en específico.  
+Tenemos un `listado de datos` y por cada `dato` en esa `lista` vamos consumiendo y operando sobre ese `dato` en específico.  
 Como borrar archivos, recibes una `lista` de archivos y vas borrando cada archivo que va recibiendo el `Consumer`.
 
 Lo segundo será crear una `función` rápida que nos provea de `CLIArguments`, lo llamaremos `generateCLI` y lo que haremos será crear un `Supplier`.
 
-Un `Supplier` es otra `Interfaz` genérica que va a generar `datos` de un cierto `tipo`, es un tipo de `función` que se encarga de generar, proveer `datos`.
+Un `Supplier` es otra `Interfaz genérica` que va a generar `datos` de un cierto `tipo`, es un tipo de `función` que se encarga de generar/proveer `datos`.
 
-Crearemos entonces un `generator` que lo que hacemos es generar un nuevo `CLIArguments` y retornaremos con el `generator.get()`.
+Crearemos entonces un `generator` que lo que hacemos es generar un nuevo `CLIArguments` y lo retornaremos con el `generator.get()`.
 
 Utilidades: Generar configuraciones bajo demanda, o tener alguna manera de crear archivos bajo demanda.  
 Ya no tienes que proveer una configuración completa, sólo creas una forma de obtener el siguiente resultado.
@@ -990,8 +989,8 @@ Ya no tienes que proveer una configuración completa, sólo creas una forma de o
 
 [Página donde explican mejor algunos conceptos](https://medium.com/swlh/understanding-java-8s-consumer-supplier-predicate-and-function-c1889b9423d)
 
-Consumer es un tipo de funcion que a) _____, mientras que Supplier b) _____.  
-a) Recibe un parámetro y genera un resultado vacio. b) No recibe parámetros y genera un dato de un tipo especifico.
+`Consumer` es un tipo de `funcion` que recibe un `parámetro` y genera un `resultado` `vacio`.  
+`Supplier` no recibe `parámetros` y genera un `dato` de un `tipo especifico`.
 
 ---
 

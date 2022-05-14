@@ -100,6 +100,10 @@ o variable se elimina completamente.
 - En la programación funcional no existen los bucles “for” y “while”. En su lugar, para la iteración se depende de la recursividad.
 - Funciones como tipos de datos primitivos: expresiones lambda y funciones de orden superior.
 
+Dos ventajas de la programación funcional es que facilita la concurrencia y escribir pruebas.  
+Una función usualmente Recibe cero, uno o más datos y puede devolver un resultado.  
+Una función también es: Almacenable en una variable, pues es un tipo.
+
 ---
 
 ## Módulo 2 - Entendiendo las partes de la programación funcional
@@ -182,6 +186,9 @@ Por ejemplo, otros ciudadanos de primera clase en java son:
 - Anotaciones
 - Generics
 
+¿Qué beneficios tiene ser ciudadano de primera clase?  
+Que pueden ser almacenados en variables y podemos tomarlos como parámetros o valores de retorno. También la definición bajo demanda.
+
 ---
 
 ### Clase 4 - Funciones puras
@@ -239,6 +246,8 @@ Y al no poder pronosticar o predecir el resultado no tendríamos una función pu
 de simple. Entendemos que hay una regla entre cómo podemos invocar mutuamente las funciones y
 qué categorías tenemos para ellas.
 
+¿Qué puede hacer una función pura con sus parámetros? Usarlos para generar un resultado.
+
 ---
 
 ### Clase 5 - Entendiendo los efectos secundarios
@@ -249,7 +258,8 @@ Vamos a hablar un poco más de ello y entender que son para poder identificar de
 de nuestro código, que es un efecto secundario que no es un efecto secundario, y entonces poder separar las funciones que los generan de las que no, para poder entender nuestro proyecto
 mejor.
 
-Un efecto secundario es ***todo cambio observable desde fuera del sistema es un efecto secundario***.  
+Un efecto secundario es ***todo cambio observable desde fuera del sistema es un efecto secundario***.
+
 Es decir, si nosotros hacemos una operación y el resultado de esa operación es
 observable desde fuera del sistema, es un efecto secundario.  
 Por ejemplo, tenemos una función que, una vez invocada, cambia el color de algo.
@@ -289,6 +299,9 @@ Escribir pruebas nos da como beneficio evitar errores posibles o errores conocid
 robusto y que sea más fácil de escalar a largo plazo.
 Teniendo muchas pruebas de nuestro código, podemos reducir casos inesperados que puedan llegar a pasar
 teniendo funciones puras. Podemos tener mayor cantidad de pruebas.
+
+¿Cuál de los siguientes métodos NO es una función pura? Map.clear()  
+¿Qué es una función impura? Una funcion que altera el estado de la aplicación o genera efectos secundarios.
 
 ---
 
@@ -344,6 +357,9 @@ VENTAJAS
 - Pasar comportamientos.
 - Compartir un medio de comunicación.
 - Compartir logica/reglas.
+
+¿Qué es una función de orden mayor? Una funcion que recibe o retorna otras funciones como parte de su ejecución.  
+¿Cuál es una ventaja de una función de orden mayor? Podemos compartir lógica entre funciones.
 
 ---
 
@@ -1016,6 +1032,8 @@ Un método también puede ser una función, la diferencia es que las funciones t
 - Pasarlas como parámetros
 - Recibirlas como retorno de ejecución
 
+La interfaz Function recibe dos parámetros que representan: El tipo de dato de entrada de la función y el tipo del resultado.
+
 ---
 
 ### Clase 12 - Revisando el paquete java.util.function: Predicate
@@ -1046,6 +1064,8 @@ Con los predicados entonces podemos hacer validaciónes rápidas, sobre los mism
 
 - Settings → Editor → Font Seleccionar la fuente fira code (Yo deje JetBrains Mono) y activarlo.
 - Enable in Settings → Editor → Font → Enable Font Ligatures
+
+Un Predicate es: Una función que evalua si su parámetro cumple con una condición.
 
 ---
 
@@ -1098,9 +1118,14 @@ datos de manera infinita a partir de un Supplier.
 
 [Página donde explican mejor algunos conceptos](https://medium.com/swlh/understanding-java-8s-consumer-supplier-predicate-and-function-c1889b9423d)
 
+Consumer es un tipo de funcion que a) _____, mientras que Supplier b) _____.  
+a) Recibe un parámetro y genera un resultado vacio. b) No recibe parámetros y genera un dato de un tipo especifico.
+
 ---
 
 ### Clase 14 - Revisando el paquete java.util.function: Operators y BiFunction
+Un Operator es: Una funcion cuyo parámetro es del mismo tipo que su resultado.
+
 Hasta este punto hemos visto que tenemos funciones que nos permiten validar, los **Predicate**.  
 Tenemos funciones que nos permiten recibir de un tipo y generar otro tipo como resultado, y vimos que tenemos funciones que nos permiten consumir o que nos permiten generar
 objetos o generar datos de alguna manera.
@@ -1237,6 +1262,8 @@ Para poder usarlo a partir de nuestro operador de referencia, el método tiene q
 ---
 
 ### Clase 17 - Analizando la inferencia de tipos
+¿Qué representa la inferencia de tipos? Que el compilador es capaz de determinar el tipo de dato para una función o como resultado.
+
 Hasta ahora vimos que las funciones reciben un Tipo y devuelven un Resultado, hay otras funciones que trabajan sobre diferentes tipos, pero al momento de definir las funciones no estamos definiendo explicitamente los tipos.
 
 **¿Como sabe Java que el dato que enviamos es un entero?** A esto se lo conoce como inferencia de tipos. En tiempo de compilación, Java se encarga de validar que los datos que estan pasando a traves de nuestra función sea del tipo que corresponde, Java "adivina" basado en la definición que es el tipo de dato, tanto el que genera como el que emite de vuelta.
@@ -1476,6 +1503,8 @@ NOTA: Hay mejores estrategias y patrones de diseño para la tarea de administrar
 ---
 
 ### Clase 21 - Entendiendo la composición de funciones
+¿Para qué sirve la composicion de funciones? Para crear nuevas funciones basadas en la ejecucion de otras funciones.
+
 **Función de orden mayor** es una función que o toma como parámetro otra función o devuelve como resultado una función e incluso pueden ser los dos casos. Con esto podemos generar composición de funciones, funciones llamando a otras funciones.
 
 Si queremos una función que a un numero se le agregara 1 y después multiplicara por 3, podemos hacerlo con el método COMPOSE.  

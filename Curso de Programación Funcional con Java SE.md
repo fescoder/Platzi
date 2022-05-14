@@ -886,13 +886,13 @@ git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repo
 ---
 
 ### Clase 10 - Configuración del entorno de trabajo
-Tengo clonado todo los repos con todas las ramas, pero en el branch `job-search` tiene todas las `Clases` que vamos a usar en estos módulos, lo que hice fue situarme en la rama y abrir desde el `Intellij IDEA` la carpeta del proyecto(Repositorios_del_curso_programacion_funcional).
+Tengo clonado todo los `repos` con todas las `ramas`, pero en el `branch` `job-search` tiene todas las `Clases` que vamos a usar en estos módulos, lo que hice fue situarme en la `rama` y abrir desde el `Intellij IDEA` la carpeta del proyecto(Repositorios_del_curso_programacion_funcional).
 
 ---
 
 ### Clase 11 - Revisando el paquete java.util.function: Function
 Creamos una `clase` llamada **MathFunctions** para probar nuestras `funciones`.  
-Para crear una `función` solamente tenemos que utilizar el `tipo`, la `interfaz Function`, que se encuentra disponible en `Java`, basta con escribir y presionar enter para que te lo importe.  
+Para crear una `función` solamente tenemos que utilizar el `tipo` de la `interfaz Function`, que se encuentra disponible en `Java`, basta con escribir y presionar enter para que te lo importe.  
 Si revisamos la definicion de `Function` encontramos lo siguiente:
 
 ![11_Revisando_el_paquete_Function_01](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_Function_01.png)

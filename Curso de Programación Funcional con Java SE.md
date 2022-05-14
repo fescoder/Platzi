@@ -84,6 +84,8 @@ Es importante recalcar que esto ya existe en `Java` en versiones anteriores, sol
 - En la programación funcional no existen los bucles “for” y “while”. En su lugar, para la iteración se depende de la recursividad.
 - Funciones como tipos de datos primitivos: expresiones `lambda` y `funciones` de orden superior.
 
+---
+
 Dos ventajas de la programación funcional es que facilita la concurrencia y escribir pruebas.  
 Una función usualmente Recibe cero, uno o más datos y puede devolver un resultado.  
 Una función también es: Almacenable en una variable, pues es un tipo.
@@ -151,6 +153,8 @@ Por ejemplo, otros ciudadanos de primera clase en `java` son:
 - Anotaciones
 - Generics
 
+---
+
 ¿Qué beneficios tiene ser ciudadano de primera clase?  
 Que pueden ser almacenados en variables y podemos tomarlos como parámetros o valores de retorno. También la definición bajo demanda.
 
@@ -193,6 +197,8 @@ Sin embargo no podemos invocar una función impura desde una función pura porqu
 Y al no poder pronosticar el resultado no tendríamos una función pura.  
 Entendemos que hay una regla entre cómo podemos invocar mutuamente las funciones y qué categorías tenemos para ellas.
 
+---
+
 ¿Qué puede hacer una función pura con sus parámetros? Usarlos para generar un resultado.
 
 ---
@@ -226,6 +232,8 @@ La intención es tener la mayor cantidad de funciones puras, con esto vamos a re
 La **testeabilidad** de nuestro sistema es que tantas pruebas podemos escribir sobre nuestro propio código.  
 Escribir pruebas nos da como beneficio evitar errores posibles o conocidos dentro de nuestro código, nos va a permitir tener un código más robusto y que sea más fácil de escalar a largo plazo.  
 Teniendo muchas pruebas de nuestro código, podemos reducir casos inesperados que puedan llegar a pasar teniendo funciones puras. Podemos tener mayor cantidad de pruebas.
+
+---
 
 ¿Cuál de los siguientes métodos NO es una función pura? Map.clear()  
 ¿Qué es una función impura? Una funcion que altera el estado de la aplicación o genera efectos secundarios.
@@ -857,22 +865,18 @@ public class Outsider {
 }
 ~~~
 
-Entonces a la clase que se creó para generar objetos inmutables se utilizó la palabra **final** tanto en la clase como los atributos o propiedades para evitar la modificación, el método que exige todas las propiedades y por ultimo permitió que se generara una copia de la lista de correos.
+Entonces a la `clase` que se creó para generar `objetos inmutables` se utilizó la palabra `final` tanto en la `clase` como los `atributos o propiedades` para evitar la modificación, el `método` que exige todas las `propiedades` y por ultimo permitió que se generara una copia de la `lista de correos`.
 
-Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es inmutable,
-pero es importante, a nivel código, porque con esto podemos asegurar que nadie llegue y cambie un password, que nadie llegue y cambie un salario, que nadie llegue y cambie correos o me agregue correos spam.
+Tener este tipo de estrategias requiere diseño especial para determinar qué es y qué no es `inmutable`, pero es importante a nivel código, porque con esto podemos asegurar que nadie llegue y cambie un password, o cambie un salario, o correos, o me agregue correos spam.
 
-En muchas ocasiones va a ver objetos fuera de nuestro control que nosotros no podemos evitar que sean
-inmutables, como es el caso de las listas de Java, pero protegernos utilizando copias nuevas es una manera de generar inmutabilidad, incluso cuando no tenemos control sobre ellos.
+En muchas ocasiones va a ver `objetos` fuera de nuestro control que nosotros no podemos evitar que sean `inmutables`, como es el caso de las `listas de Java`, pero protegernos utilizando copias nuevas es una manera de generar `inmutabilidad`.
 
 ---
 
 ## Módulo 3 - Functional Programming en Java
 ### Clase 9 - Repositorio del curso
-¡Vamos a comenzar con el código!  
-Para que tengas todos los archivos descargados de antemano, te comparto el repositorio del curso:  
 [Repositorio del curso](https://github.com/sierisimo/JavaSE-Functional-platzi)  
-Lo hice con:
+
 ~~~
 git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repositorios_del_Curso_Programacion_Funcional
 ~~~
@@ -882,37 +886,39 @@ git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repo
 ---
 
 ### Clase 10 - Configuración del entorno de trabajo
-Tengo clonado todo los repos con todas las ramas, pero en el branch `job-search` tiene todas las pruebas que vamos a usar en estos módulos, lo que hice fue situarme en la rama y abrir desde el Intellij IDEA la carpeta del proyecto(Repositorios_del_curso_programacion_funcional).
+Tengo clonado todo los repos con todas las ramas, pero en el branch `job-search` tiene todas las `Clases` que vamos a usar en estos módulos, lo que hice fue situarme en la rama y abrir desde el `Intellij IDEA` la carpeta del proyecto(Repositorios_del_curso_programacion_funcional).
 
 ---
 
 ### Clase 11 - Revisando el paquete java.util.function: Function
-**Atajos y Plugins**  
-`psvm` o `main` -> public static void main.  
-`sout` -> system.out.println.  
-Plugin Intellij para tener las llaves de apertura y cierre en colores -> [Plugin](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets/).  
-Se puede bajar desde la pág o instalar desde las preferencias del IDE (File -> Settings -> Plugins).  
-`Shift + F6` -> Para reemplazar el nombre de una función, en este caso, y que donde se utiliza también cambie.  
-Acá esta la [Documentación](https://www.jetbrains.com/help/idea/rename-dialogs.html?keymap=secondary_macos) de shorcuts de Intellij.
-
-Empecemos experimentando con funciones, creamos una clase para ello, llamada **MathFunctions**.
-
-Para crear una función solamente tenemos que utilizar el tipo, la interfaz ***Function*** que se encuentra disponible en Java, basta con escribir y presionar enter para que te lo importe. Si revisamos la definicion de Function encontramos lo siguiente:
+Creamos una `clase` llamada **MathFunctions** para probar nuestras `funciones`.  
+Para crear una `función` solamente tenemos que utilizar el `tipo`, la `interfaz Function`, que se encuentra disponible en `Java`, basta con escribir y presionar enter para que te lo importe.  
+Si revisamos la definicion de `Function` encontramos lo siguiente:
 
 ![11_Revisando_el_paquete_Function_01](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_Function_01.png)
 
-La funcion recibe como parametro un tipo y genera un resultado, puede recibir una función y devolver una función.
+La `función` recibe como `parametro` un `tipo` y genera un `resultado`, puede recibir una `función` y devolver una `función`.
 
-Crearemos la funcion **square** que recibe un entero y devuele el cuadrado del mismo.
+Crearemos la `función` `square` que recibe un `entero` y devuele el cuadrado del mismo.
 
 ![11_Revisando_el_paquete_Function_02](src/Curso_Programacion_Funcional_Java_SE/11_Revisando_el_paquete_Function_Function_02.png)
 
-Un método también puede ser una función, la diferencia es que las funciones también son tipos y al ser tipos se puede realizar operaciones con ellas:
-- Involucrarse como variables
-- Pasarlas como parámetros
-- Recibirlas como retorno de ejecución
+Un `método` también puede ser una `función`, la diferencia es que las `funciones` también son `tipos` y pueden realizar operaciones con ellas:
+- Involucrarse como `variables`
+- Pasarlas como `parámetros`
+- Recibirlas como `retorno` de ejecución
 
-La interfaz Function recibe dos parámetros que representan: El tipo de dato de entrada de la función y el tipo del resultado.
+La `interfaz Function` recibe dos `parámetros` que representan: El `tipo de dato` de entrada de la `función` y el `tipo del resultado`.
+
+---
+
+**Atajos y Plugins**  
+`psvm` o `main` -> public static void main.  
+`sout` -> system.out.println.  
+Plugin de `Intellij` para tener las llaves, parentesis en colores -> [Plugin](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets/).  
+Se puede bajar desde la pág o instalar desde las preferencias del IDE (File -> Settings -> Plugins).  
+`Shift + F6` -> Para reemplazar el nombre de una `función`, en este caso, y que donde se utiliza también cambie.  
+Acá esta la [Documentación](https://www.jetbrains.com/help/idea/rename-dialogs.html?keymap=secondary_macos) de shorcuts de Intellij.
 
 ---
 

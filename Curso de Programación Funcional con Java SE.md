@@ -953,25 +953,25 @@ Un Predicate es: Una función que evalua si su parámetro cumple con una condici
 ---
 
 ### Clase 13 - Revisando el paquete java.util.function: Consumer y Supplier
-Dos elementos que están diseñados para consumir o proveer de `datos`.
+Dos elementos que están diseñados para consumir o proveer `datos`.
 
-Crearemos una `clase` llamada `CLIArguments`, lo único que hace es contener los `elementos` que se le pasarán por terminal a nuestro programa.  
-Algo muy común en una terminal es pedir el manual de usuario, entonces crearemos una propiedad que se llame `isHelp`.  
-Es un `booleano` que cuando esta presente lanzaremos el manual de la terminal, o si no, continuaremos operando normalmente.  
-Creamos un `getter` para esta `propiedad`.
+Crearemos una `clase` llamada `CLIArguments`, lo único que hace es contener los `elementos` que se le pasarán por terminal a nuestro programa.
 
 ![13_Revisando_el_paquete_Function_Consumer_Supplier_01](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_01.png)
 
-Hagamos unas utilidades para ésta.  
+Algo muy común en una terminal es pedir el manual de usuario, entonces crearemos una propiedad que se llame `isHelp`.  
+Es un `booleano` que cuando esta presente lanzaremos el manual de la terminal.  
+Creamos un `getter` para esta `propiedad`.
+
 `CLIArgumentsUtils` es una `clase` que contiene una `función` que nos muestra el manual únicamente cuando la `propiedad` `isHelp` está presente.
+
+![13_Revisando_el_paquete_Function_Consumer_Supplier_02](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_02.png)
 
 Llamaremos a `showHelp`, que recibe un `CLIArguments`, y lo que haremos internamente es definir un `Consumer`.  
 Un `Consumer` es una `interfaz genérica` que trabaja sobre un `tipo de dato` (`T`).  
 Lo llamaremos `ConsumerHelper`, evaluará el `CLIArguments` y si solicitaron la ayuda, imprimiremos *"Manual Solicitado"*.
 
 Para invocar a nuestro nuevo `consumer` tenemos que llamar a `ConsumerHelper.accept()` y le pasamos el `dato`.
-
-![13_Revisando_el_paquete_Function_Consumer_Supplier_02](src/Curso_Programacion_Funcional_Java_SE/13_Revisando_el_paquete_Function_Consumer_Supplier_02.png)
 
 Un uso práctico del `Consumer` es realizar operaciones sobre un `tipo de dato`.  
 Tenemos un `listado de datos` y por cada `dato` en esa `lista` vamos consumiendo y operando sobre ese dato en específico.  

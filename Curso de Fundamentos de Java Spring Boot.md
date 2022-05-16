@@ -120,10 +120,35 @@ Spring Boot es el proyecto de Spring, y Spring se encarga de manera abstracta de
 ---
 
 ## Clase 8 - Autoconfiguration y runtime
+Configura automáticamente tus aplicaciones basadas en dependencias `JAR` que agregaste mediante el `pom.xml`, pero si nosotros realizamos una configuración manual esta es priorizada por Spring Boot.
 
 ---
 
 ## Clase 9 - Anotaciones para indicar dependencias en Spring Boot
+Una Anotación es una forma de añadir metadatos al código fuente `Java` que están disponibles para la aplicación en tiempo de ejecución o de compilación.
+
+**TIPOS DE ANOTACIONES**  
+- @Controller: Para indicar que esta será la `clase` que gestionara las peticiones del usuario por `get`, `post`, `put`, `patch` o `delete`.
+- @Service: Con esta notación especificamos que en esta `clase` se encontrara toda nuestra lógica de negocio, cálculos o llamadas a otras `API` externas.
+- @Repository: Se usa para las `clases` o `interfaces` que funcionaran con el acceso a la base de datos.
+
+Si nuestra `clase` o `interfaz` no tiene una especificación clara como `@Service`, `@Repository` o `@Controller`, simplemente recurrimos a `@Component` y le indicamos que sencillamente es un componente.
+
+Por otro lado, no es estrictamente necesario que cumplas con colocar una notación especifica, pero es una buena practica.
+
+---
+
+Diferencias entre las anotaciones:
+- @Component: Es un bean que es reconocido por el componentScan de Spring para su inicialización.
+
+Todas las demás son meta anotaciones de @Component, pero con algunas diferencias:
+- @Repository captura automáticamente las excepciones con la BD por medio de DataAccessExeption.
+- @Sevice Solo se nombra para separación de responsabilidades.
+- @Controller Igual que el anterior, pero además indica a spring que se trata de una clase que sirve métodos HTTP.
+
+![09_Anotaciones_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_01.png)
+
+![09_Anotaciones_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_02.png)
 
 ---
 

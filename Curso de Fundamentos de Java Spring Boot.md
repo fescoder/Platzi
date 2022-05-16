@@ -153,10 +153,29 @@ Todas las demás son meta anotaciones de @Component, pero con algunas diferencia
 ---
 
 ## Clase 10 - Creación de proyecto bajo arquitectura de dependencias
+[Inicializador](https://start.spring.io/) por defecto para crear proyectos con Spring Boot.
+
+![10_Creación_de_proyecto_bajo_arquitectura_de_dependencias_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/10_Creación_de_proyecto_bajo_arquitectura_de_dependencias_01.png)
+
+Descargamos el `ZIP`, lo descompriminos y lo abrimos con **Intellij**. Creamos el repositorio para el proyecto en GitHub, y las carpetas de la notaciones dentro del sistema.
 
 ---
 
 ## Clase 11 - Inyección de dependencia "Component"
+Creamos las siguientes `Clases`, inyactamos dependencia y probamos.
+
+![11_Inyeccion_dependencia_Component_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_01.png)
+
+![11_Inyeccion_dependencia_Component_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_02.png)
+
+![11_Inyeccion_dependencia_Component_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_03.png)
+
+![11_Inyeccion_dependencia_Component_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_04.png)
+
+---
+
+`@Autowired` es muy imporante al momento de autocablear nuestras soluciones, no es tan recomendada para nuestros proyectos, pero la verdad la idea es hacer el código menos verboso y esto simplifica muchísimo el código fuente.
+Por otra parte, `@Qualifier` es una anotación que sirve para especificar el tipo de dependencia se esta inyectando con la funcionalidad de diferenciar nuestras abstracciones o uso de clases que implementan una misma interfaz (Según el principio SOLID) porque si usamos concreciones no seria util usar Qualifiers en la mayoría de los casos.
 
 ---
 

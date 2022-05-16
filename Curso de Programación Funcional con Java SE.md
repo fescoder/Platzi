@@ -1216,7 +1216,7 @@ A partir de `Java 8` se pueden agregar `métodos default`.
 Para poder hacer `funciones` definidas por nosotros tenemos que tener una `interfaz` que tenga un solo `método` sin definición.  
 Pero podemos agregar muchos `métodos` que tengan una definición de como comportarse y estos son los `métodos default`, empiezan con la palabra `default`.
 
-Escencialmente una `interfaz` con la anotación `@FunctionalInterface` solo puede tener 1 `método` abstracto. Como los `métodos default` tienen una implementación no son abstractos y por lo tanto no rompen el contrato de `@FunctionalInterface`.
+Escencialmente una `interfaz` con la anotación `@FunctionalInterface` solo puede tener 1 `método` abstracto. Como los `métodos default` tienen una implementación, no son abstractos y por lo tanto no rompen el contrato de `@FunctionalInterface`.
 
 ![19_Metodos_Default_01](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_01.png)
 
@@ -1242,7 +1242,7 @@ Hagamos una `clase` que haga *chaining*, que lo único que hace es devolver una 
 
 ![20_Chaining_02](src/Curso_Programacion_Funcional_Java_SE/20_Chaining_02.png)
 
-Internamente c/u de los `métodos` está mandando a llamar y después devuelve el mismo `objeto`. Esto se ve mucho cuando estamos haciendo composición de `funciones`.  
+Internamente c/u de los `métodos` está mandando a llamar y después devuelve el mismo `objeto`. Esto se ve mucho cuando estamos haciendo `composición de funciones`.  
 Entonces el chaning nos da la ventaja de no tener que almacenar los resultados.
 
 Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo `tipo` de dato y le vayamos diciendo que haga un filtrado o alguna conversión de datos y podamos ir agregando `funciones` sin necesidad de almacenar el resultado en diferentes variables.
@@ -1251,7 +1251,7 @@ Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo `
 
 Cuando hablamos de chaining o en español encadenamiento es hacer consecutivas las llamadas a diferentes metodos de diferentes resultados.
 
-Por ejemplo si yo tengo una clase con un metodo que me retorna una `lista`:
+Por ejemplo si yo tengo una `clase` con un `método` que me retorna una `lista`:
 ~~~
 classExample{
     public List<String> getList(){ … }
@@ -1342,31 +1342,29 @@ NOTA: Hay mejores estrategias y patrones de diseño para la tarea de administrar
 ---
 
 ### Clase 21 - Entendiendo la composición de funciones
-¿Para qué sirve la composicion de funciones? Para crear nuevas funciones basadas en la ejecucion de otras funciones.
+**Función de orden mayor** es una `función` que o toma como `parámetro` otra `función` o devuelve como `resultado` una `función` e incluso pueden ser los dos casos. Con esto podemos generar `composición de funciones`, `funciones` llamando a otras `funciones`.
 
-**Función de orden mayor** es una función que o toma como parámetro otra función o devuelve como resultado una función e incluso pueden ser los dos casos. Con esto podemos generar composición de funciones, funciones llamando a otras funciones.
-
-Si queremos una función que a un numero se le agregara 1 y después multiplicara por 3, podemos hacerlo con el método COMPOSE.  
-Lo que haremos ahora es agregar un println a nuestra lambda para mostrar en pantalla y saber como se va ejecutando el código, esto es porque **Compose** genera una nueva función en la que no podemos intervenir, pero podemos interferir la lamda, para hacerlo agregamos las llaves y dentro del cuerpo escribimos lo que queremos hacer.
+Si queremos una `función` que a un numero se le agregara 1 y después multiplicara por 3, podemos hacerlo con el `método` `COMPOSE`.  
+Lo que haremos ahora es agregar un `println` a nuestra `lambda` para mostrar en pantalla y saber como se va ejecutando el código, esto es porque `Compose` genera una nueva `función` en la que no podemos intervenir, pero podemos interferir la `lamda`, para hacerlo agregamos las `llaves` y dentro del `cuerpo` escribimos lo que queremos hacer.
 
 ![21_Composicion_de_funciones_01](src/Curso_Programacion_Funcional_Java_SE/21_Composicion_de_funciones_01.png)
 
-De fondo cuando invoco a *add1MultiplyBy3* estoy generando una función intermedia a partir de *compose*, compose toma una función, la ejecuta primero y después ejecuta la función sobre la cual se mandó a llamar, en este caso *multiplyBy3*, de esta manera primero se ejecuta la lamda, después el *multiplyBy3*, acabamos de crear una función compuesta basada en 2 funciones.
+Cuando invoco a `add1MultiplyBy3` estoy generando una `función` intermedia a partir de `compose`, que toma una `función`, la ejecuta primero y después ejecuta la `función` sobre la cual se mandó a llamar, en este caso `multiplyBy3` de esta manera primero se ejecuta la `lambda`, después el `multiplyBy3`, acabamos de crear una `función` compuesta basada en 2 `funciones`.
 
-Entonces tenemos una manera de agregar pasos antes de la ejecución de una función pero si lo queremos hacer después usaremos el *andThen*.  
-Una vez que termine de ejecutar las funciones que ya tiene, le decimos que ejecute esta otra función, le decimos *andThen* y le pasamos una lamda.
+Entonces tenemos una manera de agregar pasos antes de la ejecución de una `función` pero si lo queremos hacer después usaremos el `andThen`.  
+Una vez que termine de ejecutar las `funciones`, le decimos que ejecute esta otra `función`, le decimos `andThen` y le pasamos una `lambda`.
 
 ![21_Composicion_de_funciones_02](src/Curso_Programacion_Funcional_Java_SE/21_Composicion_de_funciones_02.png)
 
-Con esto vemos que al recibir una función podemos generar nuevas funciones que tengan un orden de precedencia o que puedan ejecutar otros pasos adicionales antes de ejecutarse a si mismas. Es una manera en la que podemos crear funciones más complejas a partir de lógica o comportamiento de alguien más.
-
-Con esto podemos asegurarnos de crear un archivo, o que un equipo tenga internet, o revisar que haya una conexión, o generar incluso la conexión antes de hacer una consulta de nuestro lado.
+Con esto vemos que al recibir una `función` podemos generar nuevas `funciones` que tengan un orden de precedencia o que puedan ejecutar otros pasos adicionales antes de ejecutarse a si mismas. Es una manera en la que podemos crear `funciones` más complejas a partir de lógica o comportamiento de alguien más.
 
 ---
 
 **Resumen**  
-Ejecutar una función antes de una función -> **compose**  
-Ejecutar una función despues de una función -> **andThen**
+Ejecutar una `función` antes de una `función` -> **compose**  
+Ejecutar una `función` despues de una `función` -> **andThen**
+
+¿Para qué sirve la composicion de `funciones`? Para crear nuevas `funciones` basadas en la ejecucion de otras `funciones`.
 
 ---
 

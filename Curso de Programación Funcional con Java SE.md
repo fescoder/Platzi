@@ -1003,8 +1003,6 @@ Un `Operator` es una `función` cuyo `parámetro` es del mismo `tipo` que su `re
 Entonces no tenemos que definir una `función` bajo un `tipo` de entrada y un `tipo` de salida.
 
 Generaremos un tipo `UnaryOperator` que se llamara `quote` y tomaremos un texto y le agregaremos comillas.  
-Para hacer eso, haremos una `función` sencilla que tomará un texto y lo que devolverá será la definición de ese texto con comillas.
-
 La manera de utilizar un `UnaryOperator` es la misma que para una `función`, llamamos al método `apply` y le pasaremos un texto, e internamente le pone comillas.
 
 ![14_Revisando_el_paquete_Function_Operators_BiFunction_01](src/Curso_Programacion_Funcional_Java_SE/14_Revisando_el_paquete_Function_Operators_BiFunction_01.png)

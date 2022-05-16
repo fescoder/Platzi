@@ -81,12 +81,9 @@ Por ejemplo, un volante es una dependencia de un vehículo, ya que sin volante, 
 - Las dependencias nos permiten modularizar nuestra aplicación, lo cual nos beneficia en las pruebas unitarias.
 
 **Alta cohesión**: Involucra que la entidad ejecute sus acciones sin involucrar otra clase o entidad.
+
 **Bajo acoplamiento**: Hablamos de acoplamiento bajo cuando existe una independencia entre los componentes entre si, por el contrario un alto acoplamiento es cuando tenemos varias dependencias relacionadas a un solo componente.  
 Entonces podemos afirmar que en la definición de un buen diseño de software se debe tener una ALTA COHESIÓN y un BAJO ACOPLAMIENTO.
-
----
-
-Las dependencias son las relaciones entre tipos. No son objetos, no son características, son relaciones entre objetos y características. Un carro puede existir sin puertas y seguir funcionando igual, pero una puerta de carro carece de sentido sin un carro donde estar. Sin embargo, ambos, puerta y carro pueden existir sin el otro.
 
 ---
 
@@ -99,6 +96,7 @@ Se refiere a todo aquel diseño de software cuyo propósito obedece a la necesid
 "No nos llame, nosotros lo llamamos."  
 Se refiere a la transferencia del control del flujo de un programa a un contenedor o framework.
 - En un website o una app móvil el contenedor sería el usuario.
+
 **Ventajas**  
 - Facil testing por componentes o mocks de dependencias.
 - Mayor modularización.

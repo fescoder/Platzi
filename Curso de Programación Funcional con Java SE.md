@@ -995,23 +995,14 @@ Ya no tienes que proveer una configuración completa, sólo creas una forma de o
 ---
 
 ### Clase 14 - Revisando el paquete java.util.function: Operators y BiFunction
-Un Operator es: Una funcion cuyo parámetro es del mismo tipo que su resultado.
+Un `Operator` es una `función` cuyo `parámetro` es del mismo `tipo` que su `resultado`.
 
-Hasta este punto hemos visto que tenemos funciones que nos permiten validar, los **Predicate**.  
-Tenemos funciones que nos permiten recibir de un tipo y generar otro tipo como resultado, y vimos que tenemos funciones que nos permiten consumir o que nos permiten generar
-objetos o generar datos de alguna manera.
+Hemos visto que tenemos `funciones` que nos permiten validar, los `Predicate`, `funciones` que nos permiten recibir de un `tipo` y generar otro `tipo` como `resultado`, y que nos permiten `consumir` o que nos permiten `generar` datos de alguna manera.
 
 Existen otros tipos de operadores y otros tipos de funciones que nos permiten trabajar sobre un cierto tipo de tipo indefinido, sin
-necesidad o problema para tener que definir qué tipos vamos a estar recibiendo y generando.
-Y esas funciones se les conoce como **Operators**.
+necesidad o problema para tener que definir qué tipos vamos a estar recibiendo y generando, y esas funciones se les conoce como **Operators**.
 
-Creamos la clase **StringFunctions**.
-Hemos estado utilizando hasta ahora métodos estáticos y esto es porque es una manera más sencilla de tener funciones.
-Sin necesidad de crear objetos bajo demanda.  
-Usaremos el *main* ahora.
-
-Usaremos una nueva función que se llama **UnaryOperator** que es una función que trabaja sobre un cierto tipo definido, pero si vamos a la definición. La definición trabaja sobre función y es una función que recibe
-un tipo, pero genera un resultado del mismo tipo.
+Usaremos una nueva función que se llama **UnaryOperator** que es una función que trabaja sobre un cierto tipo definido, pero si vamos a la definición. La definición trabaja sobre función y es una función que recibe un tipo, pero genera un resultado del mismo tipo.
 Entonces no tenemos que definir una función bajo, un tipo de entrada y un tipo de salida.
 
 Entonces generaremos un tipo UnaryOperator que se llamara *quote* y

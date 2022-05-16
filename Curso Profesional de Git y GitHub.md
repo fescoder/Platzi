@@ -1568,4 +1568,6 @@ git submodule add <URL_repo> <Nombre_carpeta_donde_se_alojara>
 git submodule add https://github.com/sierisimo/JavaSE-Functional-platzi.git Repositorios_del_Curso_Programacion_Funcional
 ~~~
 
+Deshacer el `git init` -> Ejecutar comando `rm -rf .git`
+
 ---

@@ -1344,8 +1344,8 @@ NOTA: Hay mejores estrategias y patrones de diseño para la tarea de administrar
 ### Clase 21 - Entendiendo la composición de funciones
 **Función de orden mayor** es una `función` que o toma como `parámetro` otra `función` o devuelve como `resultado` una `función` e incluso pueden ser los dos casos. Con esto podemos generar `composición de funciones`, `funciones` llamando a otras `funciones`.
 
-Si queremos una `función` que a un numero se le agregara 1 y después multiplicara por 3, podemos hacerlo con el `método` `COMPOSE`.  
-Lo que haremos ahora es agregar un `println` a nuestra `lambda` para mostrar en pantalla y saber como se va ejecutando el código, esto es porque `Compose` genera una nueva `función` en la que no podemos intervenir, pero podemos interferir la `lamda`, para hacerlo agregamos las `llaves` y dentro del `cuerpo` escribimos lo que queremos hacer.
+Si queremos una `función` que a un numero se le agregara 1 y después multiplicara por 3, podemos hacerlo con el `método` `compose`.  
+Lo que haremos ahora es agregar un `println` a nuestra `lambda` para mostrar en pantalla y saber como se va ejecutando el código, esto es porque `compose` genera una nueva `función` en la que no podemos intervenir, pero podemos interferir la `lambda`, para hacerlo agregamos las `llaves` y dentro del `cuerpo` escribimos lo que queremos hacer.
 
 ![21_Composicion_de_funciones_01](src/Curso_Programacion_Funcional_Java_SE/21_Composicion_de_funciones_01.png)
 

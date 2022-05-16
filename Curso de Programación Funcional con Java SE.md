@@ -1118,7 +1118,7 @@ que los `tipos` correspondan. Así no tendremos el problema que al mandar nosotr
 
 ### Clase 18 - Comprendiendo la sintaxis de las funciones lambda
 Las `lambdas` son `funciones anónimas` y hasta ahora hemos almacenado todas nuestras `funciones` en un nombre en algún lugar.  
-Las `lamdas` sabemos que no se guardan en ninguna parte del código, esta unica y exculsivamente utilizada en ese fragmento de código, las `lambdas` son para casos únicos, para pequeños ejemplos, para partes muy pequeñas del código que requieren lógica muy simple.
+Las `lamdas` sabemos que no se guardan en ninguna parte del código, esta unica y exculsivamente utilizada en ese fragmento, las `lambdas` son para casos únicos, para pequeños ejemplos, para partes muy pequeñas del código que requieren lógica muy simple.
 
 **Estructura Funciones Lambda**  
 `Lambda` que recibe un `parámetro` y realiza una operación simple:
@@ -1200,21 +1200,23 @@ A veces para hacer nuestro código más legible podemos poner el tipo de dato qu
 usarBiFunction((int x, int y) -> x*y);
 ~~~
 
-Esto nos marcará un error sobre los `argumentos` ya que las `funciones` al ser intefaces trabajan directamente sobre `objetos`, no trabajan sobre `tipos` de datos primitivos, quiere decir que tendremos que usar `clases` y `objetos`, y no podemos usar los `tipos` de datos primitivos (`int`, `char`, `boolean`, `byte`, etc.). En este ejemplo se reemplaza el `int` por `Integer`.
-
-Puede ser que en algunos casos estes trabajando sobre una `clase` que es de un `subtipo` de algún otra `clase` y esto lo vas a encontrar mucho al estar operando, por ejemplo, con las `listas`.  
-Cuando nosotros queremos utilizar el `método` `forEach` directamente Intellij nos sugiere que necesitamos utilizar un `Consumer` de un `tipo` de dato que extienda de `String`.
-Por eso dice `super` la sugerencia, va a pasar mucho que podamos generar `funciones` que trabajen con `subtipos` y siempre y cuando nosotros tengamos una `Lambda` definida para el tipo tal cual.
+Esto nos marcará un error sobre los `argumentos` ya que las `funciones` al ser intefaces trabajan directamente sobre `objetos`, no trabajan sobre `tipos` de datos primitivos, quiere decir que tendremos que usar `clases` y `objetos`, y no podemos usar los `tipos` de datos primitivos (`int`, `char`, `boolean`, `byte`, etc.).  
+En este ejemplo se reemplaza el `int` por `Integer`.
 
 ![18_Sintaxis_Funciones_Lambda_03](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_03.png)
+
+Puede ser que en algunos casos estes trabajando sobre una `clase` que es de un `subtipo` de algún otra `clase` y esto lo vas a encontrar mucho al estar operando, por ejemplo, con las `listas`.  
+Cuando nosotros queremos utilizar el `método` `forEach` directamente ***Intellij*** nos sugiere que necesitamos utilizar un `Consumer` de un `tipo` de dato que extienda de `String`.
+Por eso dice `super` la sugerencia, va a pasar mucho que podamos generar `funciones` que trabajen con `subtipos` y siempre y cuando nosotros tengamos una `Lambda` definida para el tipo tal cual.
 
 ---
 
 ### Clase 19 - Usando métodos default en nuestras interfaces
-A partir de Java 8 se pueden agregar métodos default.  
-Para poder hacer funciones definidas por nosotros tenemos que tener una interfaz que tenga un solo método sin definición. Pero podemos agregar muchos métodos que tengan una definición de como comportarse y estos son los métodos default, empiezan con la palabra **default**.
+A partir de `Java 8` se pueden agregar `métodos default`.  
+Para poder hacer `funciones` definidas por nosotros tenemos que tener una `interfaz` que tenga un solo `método` sin definición.  
+Pero podemos agregar muchos `métodos` que tengan una definición de como comportarse y estos son los `métodos default`, empiezan con la palabra `default`.
 
-Escencialmente una interfaz con la anotación `@FunctionalInterface` solo puede tener 1 método abstracto. Como los métodos default tienen una implementación no son abstractos y por lo tanto no rompen el contrato de @FunctionalInterface.
+Escencialmente una `interfaz` con la anotación `@FunctionalInterface` solo puede tener 1 `método` abstracto. Como los `métodos default` tienen una implementación no son abstractos y por lo tanto no rompen el contrato de `@FunctionalInterface`.
 
 ![19_Metodos_Default_01](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_01.png)
 
@@ -1222,33 +1224,34 @@ Escencialmente una interfaz con la anotación `@FunctionalInterface` solo puede 
 
 ![19_Metodos_Default_02](src/Curso_Programacion_Funcional_Java_SE/19_Metodos_Default_02.png)
 
-La particularidad de esto es que puedo tener una definición a través de la cual ultilice mi método abstacto, esto me da la versatilidad de que podria generar una interfaz que haga queries a una base de datos y simplemente tener un método default que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de lo que se va a hacer con la conexión abierta. O operar sobre un archivo, o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
+La particularidad es que puedo tener una definición a través de la cual ultilice mi `método` abstacto, esto me da la versatilidad de que podria generar una `interfaz` que haga `queries` a una base de datos y simplemente tener un `método default` que haga la conexión y la parte que tendriamos que implementar seria estrictamente la funcionalidad de lo que se va a hacer con la conexión abierta.  
+O operar sobre un archivo, o hacer una comunicación web en la que no tendriamos que saber que método web se está usando si no definir que una vez que el método se vaya a invocar que es los parámetros que se le va a pasar.
 
 ---
 
 ### Clase 20 - Dándole nombre a un viejo amigo: Chaining
 Chaning es sencillamente *encadenar* el resultado de una ejecucion con respecto a otra ejecución.
 
-**StringBuilder** es una clase con la cual podemos crear un String.
+`StringBuilder` es una clase con la cual podemos crear un `String`.
 
 ![20_Chaining_01](src/Curso_Programacion_Funcional_Java_SE/20_Chaining_01.png)
 
-La ejecución de una función nos devuelve un resultado y ese resultado lo usamos para pasarselo a otra función.
+La ejecución de una `función` nos devuelve un resultado y ese resultado lo usamos para pasarselo a otra `función`.
 
-Hagamos una clase que haga chaining, que lo único que hace es devolver una instancia de *Chainer* en cada ocasión o iteración.
+Hagamos una `clase` que haga *chaining*, que lo único que hace es devolver una instancia de `Chainer` en cada ocasión o iteración.
 
 ![20_Chaining_02](src/Curso_Programacion_Funcional_Java_SE/20_Chaining_02.png)
 
-Internamente c/u de los métodos está mandando a llamar y después devuelve el mismo objeto. Esto se ve mucho cuando estamos haciendo composición de funciones.  
+Internamente c/u de los `métodos` está mandando a llamar y después devuelve el mismo `objeto`. Esto se ve mucho cuando estamos haciendo composición de `funciones`.  
 Entonces el chaning nos da la ventaja de no tener que almacenar los resultados.
 
-Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo tipo de dato y le vayamos diciendo que haga un filtrado o alguna conversión de datos y podamos ir agregando funciones sin necesidad de almacenar el resultado en diferentes variables.
+Tiene más sentido cuando hacemos encadenamientos de operaciones sobre un solo `tipo` de dato y le vayamos diciendo que haga un filtrado o alguna conversión de datos y podamos ir agregando `funciones` sin necesidad de almacenar el resultado en diferentes variables.
 
 ---
 
 Cuando hablamos de chaining o en español encadenamiento es hacer consecutivas las llamadas a diferentes metodos de diferentes resultados.
 
-Por ejemplo si yo tengo una clase con un metodo que me retorna una lista:
+Por ejemplo si yo tengo una clase con un metodo que me retorna una `lista`:
 ~~~
 classExample{
     public List<String> getList(){ … }
@@ -1263,14 +1266,14 @@ String firstString = myList.get(0);
 String largeString = firstString.concat("…");
 ~~~
 
-Porque cada metodo devuelve un dato, pero tambien esto es valido:
+Porque cada `método` devuelve un `dato`, pero tambien esto es valido:
 ~~~
 new Example().getList().get(0).concat("…");
 ~~~
 
-Porque los resultados intermedios no son de mi interes. Estoy aplicando unicamente el concepto de chaining entre los resultados de cada metodo.
+Porque los resultados intermedios no son de mi interes. Estoy aplicando únicamente el concepto de chaining entre los resultados de cada `método`.
 
-Cuando hablamos de el patron de diseño **Builder** estamos hablando de una clase en concreto que esta encargada de generar otra clase. Lo utilizas comunmente porque la clase que necesitas es “compleja” de construir y porque podria ser que durante la creacion puedas tener accidentes no contemplados, por ejemplo:
+Cuando hablamos de el patron de diseño `Builder` estamos hablando de una `clase` en concreto que esta encargada de generar otra `clase`. Lo utilizas comunmente porque la `clase` que necesitas es “compleja” de construir y porque podria ser que durante la creacion puedas tener accidentes no contemplados, por ejemplo:
 ~~~
 classPanBuilder{
     public PanBuilder conHuevos(int cantidadDeHuevos){…}
@@ -1289,11 +1292,11 @@ classPanBuilder{
 }
 ~~~
 
-La clase PanBuilder se encarga del proceso de mezclar ingredientes para cuando tu decidas crear un Pan.
+La `clase` `PanBuilder` se encarga del proceso de mezclar ingredientes para cuando tu decidas crear un Pan.
 
-Existe otro patron de diseño que se llama *Chain of Responsability* cuya función es totalmente diferente a lo que buscamos.
+Existe otro patron de diseño que se llama `Chain of Responsability` cuya `función` es totalmente diferente a lo que buscamos.
 
-**Chain of Responsability** hace que un grupo de objetos de un cierto tipo se deleguen una operación hasta que todos los objetos que puedan estar involucrados en la operación han sido llamados, por ejemplo:
+`Chain of Responsability` hace que un grupo de `objetos` de un cierto tipo se deleguen una operación hasta que todos los `objetos` que puedan estar involucrados en la operación han sido llamados, por ejemplo:
 
 En un cajero automatico, tienes un grupo de Repartidores de billetes que se encargan de entregar los billetes que corresponda y pasar el sobrante al siguiente Repartidor de billetes.
 
@@ -1330,7 +1333,9 @@ classRepartidorBilletes20extendsRepartidorBilletes{
 }
 ~~~
 
-Podrias despues hacer una clase que sea tambien `RepartidorBilletes50` que se encargue de repartir billetes de 50… etc. El chiste es que en un Chain of Responsability cada objeto se encarga de mandar a llamar al siguiente objeto en la cadena y pasarle datos para operar. Puedes leer mas [aca](https://refactoring.guru/design-patterns/chain-of-responsibility).  
+Podrias despues hacer una `clase` que sea tambien `RepartidorBilletes50` que se encargue de repartir billetes de 50… etc.  
+El chiste es que en un `Chain of Responsability` cada `objeto` se encarga de mandar a llamar al siguiente `objeto` en la cadena y pasarle datos para operar.  
+Puedes leer mas [aca](https://refactoring.guru/design-patterns/chain-of-responsibility).
 
 NOTA: Hay mejores estrategias y patrones de diseño para la tarea de administrar la entrega de billetes de un cajero automatico.
 

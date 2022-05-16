@@ -2,7 +2,6 @@
 # Curso de Fundamentos de Java Spring Boot
 Índice
 -
-[Curso de Fundamentos de Java Spring Boot](#curso-de-fundamentos-de-java-spring-boot)
 - [Módulo 1 - Introducción a Spring Boot](#módulo-1---introducción-a-spring-boot)
     - [Clase 1 - ¿Qué es Spring Boot?](#clase-1---¿qué-es-spring-boot)
     - [Clase 2 - Características principales de Spring Boot](#clase-2---características-principales-de-spring-boot)

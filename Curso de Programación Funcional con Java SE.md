@@ -995,84 +995,43 @@ Ya no tienes que proveer una configuración completa, sólo creas una forma de o
 ---
 
 ### Clase 14 - Revisando el paquete java.util.function: Operators y BiFunction
+Existen otros tipos de `operadores` y `funciones` que nos permiten trabajar sobre un cierto `tipo`, de `tipo` indefinido, sin necesidad de tener que declarar qué `tipos` vamos a estar recibiendo y generando, y esas funciones se les conoce como `Operators`.
+
 Un `Operator` es una `función` cuyo `parámetro` es del mismo `tipo` que su `resultado`.
 
-Hemos visto que tenemos `funciones` que nos permiten validar, los `Predicate`, `funciones` que nos permiten recibir de un `tipo` y generar otro `tipo` como `resultado`, y que nos permiten `consumir` o que nos permiten `generar` datos de alguna manera.
+`UnaryOperator` es una `función` que trabaja sobre un cierto `tipo` definido, pero la definición nos dice que trabaja sobre `función` y es una `función` que recibe un `tipo`, pero genera un resultado del mismo `tipo`.  
+Entonces no tenemos que definir una `función` bajo un `tipo` de entrada y un `tipo` de salida.
 
-Existen otros tipos de operadores y otros tipos de funciones que nos permiten trabajar sobre un cierto tipo de tipo indefinido, sin
-necesidad o problema para tener que definir qué tipos vamos a estar recibiendo y generando, y esas funciones se les conoce como **Operators**.
+Generaremos un tipo `UnaryOperator` que se llamara `quote` y tomaremos un texto y le agregaremos comillas.  
+Para hacer eso, haremos una `función` sencilla que tomará un texto y lo que devolverá será la definición de ese texto con comillas.
 
-Usaremos una nueva función que se llama **UnaryOperator** que es una función que trabaja sobre un cierto tipo definido, pero si vamos a la definición. La definición trabaja sobre función y es una función que recibe un tipo, pero genera un resultado del mismo tipo.
-Entonces no tenemos que definir una función bajo, un tipo de entrada y un tipo de salida.
-
-Entonces generaremos un tipo UnaryOperator que se llamara *quote* y
-lo que haremos será tomar un texto y agregarle comillas.
-Para hacer eso, haremos una función sencilla que tomará un texto y lo que devolverá será la
-definición de ese texto con comillas.
-
-La manera de utilizar un *UnaryOperator* es exactamente la misma que la que tenemos
-para una función, simplemente tenemos que mandar a llamar al método *apply* y
-le pasaremos cualquier texto, y lo que veremos es que internamente le pone comillas.  
-Podemos hacer esto también para agregar un énfasis.
+La manera de utilizar un `UnaryOperator` es la misma que para una `función`, llamamos al método `apply` y le pasaremos un texto, e internamente le pone comillas.
 
 ![14_Revisando_el_paquete_Function_Operators_BiFunction_01](src/Curso_Programacion_Funcional_Java_SE/14_Revisando_el_paquete_Function_Operators_BiFunction_01.png)
 
-La segunda interfaz que veremos
-ahora será **BiFunction**.
+**BiFunction**  
+El problema que tenemos con las `funciones` es que reciben un único parámetro y que en que muchas de las operaciones generalmente requieren más de uno.
 
-El problema que tenemos con funciones es que cómo están definidas, reciben un elemento
-de un cierto tipo y generan un elemento de un cierto tipo. Eso quiere decir que
-nada más recibimos un parámetro. El problema está en que muchas de las operaciones generalmente requieren
-más de un parámetro.
+`BiFunction` es una `función` que va a tomar dos `tipos` de dato y va a generar otro tercer `tipo` de dato.
 
-BiFunction es una función que va a tomar
-dos tipos de dato y va a generar otro tercer tipo de dato.
+Así como existe `UnaryOperator` para un solo parámetro, también existen `BiFunction` y `BiOperator`.  
+`BiOperator` funciona de la misma manera, recibe un `tipo` y los dos argumentos más el resultado van a ser del mismo `tipo`.
 
-Volviendo este ejemplo rápido de multiplicación tomaríamos un entero, tomaríamos otro entero y generariamos otro entero.
-Y entonces la función de multiplicación sería una función que toma un dato X, uno Y y como resultado nos va a generar simplemente X multiplicado Y.  
-Es relativamente sencillo de entender y la parte curiosa es que tiene el mismo método *apply* que
-función. Entonces podríamos invocarla directamente con multiplicación.apply, pasandole los argumentos, por ejemplo, cinco por cuatro nos daría como resultado veinte.
+Esto es una función famosa conocida como `leftPad`. Tomaremos un `String`, sobre el cual vamos a agregar espacios, un `entero`, que será la cantidad de espacios que nos gustaría agregar y como resultado, generaremos un nuevo `String`.  
+`leftPad` recibirá un texto, el número de espacios y utilizaremos una `función` que existe dentro de `Java`, `String.format`, este va a tratar de generar un nuevo `String` formateado con los parámetros que le demos.  
+En nuestro caso, queremos generar un nuevo `String` que tome la cantidad de espacios que le estamos diciendo y esto está definido por la letra `S`, al agregar la letra estamos diciendo que formatee con espacios.  
+Diremos directamente que queremos, que a la palabra `Java` la convierta en una palabra que tenga al menos un total de diez elementos agregando espacios a la izquierda. Entonces, al ejecutar, vemos que agregan los seis espacios faltantes para tener una palabra de diez espacios.
 
-Así como existe UnaryOperator para un solo parámetro, también existen BiFunction y BiOperator. Entonces, en lugar de definir esta función multiplicación
-con tres tipos de dato, podríamos irnos directamente con un solo tipo de dato y
-cambiando de BiFunction a BiOperator.
-
-BiOperator funciona de la misma manera, recibe un tipo
-y los dos argumentos más el resultado van a ser del mismo tipo.
-
-Hagamos un ejemplo con BiFunction para poder agregar espacios algún String.
-Esto es una función famosa conocida como **leftPad**.
-Tomaremos un String sobre el cual vamos a agregar espacios, un entero, que será la cantidad de espacios
-que nos gustaría agregar y como resultado, generaremos un nuevo String.  
-A este le llamaremos **leftPad** y recibiremos entonces un texto, el número de espacios y
-utilizaremos una función que existe dentro de Java, ya que se llama **String.format**.  
-Este va a tratar de generar un nuevo String formateado con los parámetros que le demos.
-En nuestro caso, queremos generar un nuevo String que tome la cantidad de espacios que le estamos diciendo
-y esto está definido por la letra **S**, al agregar la letra estamos diciendo que formatee con espacios
-y le tenemos que decir que texto tiene que formatear con espacios, utilizaremos el texto que nos están pasando como parámetro. Es importante mencionar que si nuestro texto es más grande que la cantidad de espacios, no va a añadir
-ningún espacio adicional. Es decir, nos va a devolver el texto que ya tenemos.  
-Diremos directamente que queremos, que a la palabra Java la
-convierta en una palabra que tenga al menos un total de diez elementos agregando
-espacios a la izquierda. Y entonces, al ejecutar, vemos que agregan los seis espacios faltantes para
-tener una palabra de diez espacios.
-
-Con esto entendemos que podemos generar funciones
-más complejas o más interesantes que hagan esto mismo de muchas maneras.
-Un ejemplo práctico para poder utilizar una BiFunction sería un formateador de texto.
-Tienes un programa que se encarga de leer un archivo y le vas agregando todos los formatos conforme lo vas necesitando y te paso yo una serie de funciones, podríamos tener entonces incluso
-una lista de BiFuncions que pudieran hacer el tipo de formateo con respecto a lo que necesitamos con
-un String, un Integer y otros String y lo llamaríamos formateadores.
-
-La intención de esto final de cuentas es que podemos empezar a pasar este tipo de lógica entre
-diferentes funciones y entre diferentes métodos para compartir alguna manera de hacer las cosas sin
-necesidad de tener esta lógica regado, definida en múltiples clases o en múltiples métodos y tenerla solamente definidas como variables y estar compartiendo la mutuamente
+Podemos empezar a pasar este tipo de lógica entre diferentes `funciones` y entre diferentes `métodos` para compartir alguna manera de hacer las cosas sin
+necesidad de tener esta lógica definida en múltiples `clases` o `métodos` y tenerla solamente definidas como `variables` y estar compartiendo la mutuamente.
 
 ---
+
 **Resumen**  
-Estas funciones extienden de Function. Quiere decir que tienen el método apply.
-- **UnaryOPerator** --> Solo se especifica un solo tipo de dato. Se entiende que tendrá como resultado el mismo tipo.
-- **BinaryOperator** --> Solo se especifica un tipo de dato. Se entiende que tendrá 2 parámetros de entrada y el de retorno del mismo tipo de dato.
-- **BiFunction** --> 2 parámetros de entrada, se tiene que especificar el tipo de dato. Puede tener diferentes tipos de entradas como también diferente tipo de salida.
+Estas `funciones` extienden de `Function`. Quiere decir que tienen el `método` `apply`.
+- `UnaryOPerator` -> Solo se especifica un `tipo` de dato. Se entiende que tendrá como resultado el mismo `tipo`.
+- `BinaryOperator` -> Solo se especifica un `tipo` de dato. Se entiende que tendrá 2 `parámetros` de entrada y el de retorno del mismo `tipo` de dato.
+- `BiFunction` -> 2 `parámetros` de entrada, se tiene que especificar el `tipo` de dato. Puede tener diferentes `tipos` de entradas como también diferente `tipo` de salida.
 
 [Más información](https://www.baeldung.com/java-bifunction-interface)
 

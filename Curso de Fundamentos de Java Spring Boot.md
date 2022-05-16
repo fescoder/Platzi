@@ -40,6 +40,8 @@
 
 ---
 
+[PDF](https://static.platzi.com/media/public/uploads/slides-fundamentos-springboot_d43cc29e-5845-48a5-a0a2-f182c2ce13dc.pdf)
+
 # Módulo 1 - Introducción a Spring Boot
 ## Clase 1 - ¿Qué es Spring Boot?
 - **Spring Boot** es un proyecto basado en **Spring**, no es lo mismo que **Spring**. Es un proyecto que forma parte del core de **Spring**, al igual que Spring Cloud, Spring Security, Spring Data, etc.
@@ -48,153 +50,167 @@
 - No tendremos que preocuparnos por configuraciones a nivel de XML, sólo configuraciones mínimas a nivel de properties (ponerle el puerto, etc).
 - No tendremos que preocuparnos de desplegar nuestra aplicación en un servidor web local cuando queramos hacer pruebas, Spring Boot también contempla esto y lleva incorporado un servidor web dónde se desplegará nuestra aplicación automáticamente.
 
-
 ---
-
 
 ## Clase 2 - Características principales de Spring Boot
+Características principales de **Spring Boot**:
+- **Independiente**: no tenemos que preocuparnos de las dependencias del core de Spring ni de la compilación de estas.
+- **Incrustado Tomcat, Jetty o Undertow**: Spring Boot trae consigo un servidor web como los tres mencionados donde podemos correr nuestra aplicación sin preocuparnos de generar un artefacto `WAR` o `JAR` y desplegarlo nosotros mismos.
+- **Proporción de dependencias**: no debemos preocuparnos por las configuraciones de dependencias de terceros o del core de Spring, Spring Boot se encargará de inyectar todo lo necesario.
+- **Sin generación de XML**: No debemos preocuparnos de configuración XML para que nuestra aplicación funcione.
+- **Métricas de salud del aplicativo**: podemos validar el estado de un servicio desplegado, sus dependencias, estado de memoria, magnitud de configuración, etc.
 
 ---
-
 
 ## Clase 3 - Instalación de entorno de desarrollo: Windows
 
 ---
 
-
 ## Clase 4 - Instalación de entorno de desarrollo: macOS
 
 ---
-
 
 ## Clase 5 - Instalación de entorno de desarrollo: Ubuntu
 
 ---
 
-
 # Módulo 2 - Dependencias en Spring Boot
 ## Clase 6 - ¿Qué es una dependencia?
+- Objetos definidos como una funcionalidad, sin la cual, los otros objetos no podrían trabajar, ya que dependen de ella.  
+Por ejemplo, un volante es una dependencia de un vehículo, ya que sin volante, no podemos conducir el vehículo.
+- Las dependencias nos permiten modularizar nuestra aplicación, lo cual nos beneficia en las pruebas unitarias.
+
+**Alta cohesión**: Involucra que la entidad ejecute sus acciones sin involucrar otra clase o entidad.
+**Bajo acoplamiento**: Hablamos de acoplamiento bajo cuando existe una independencia entre los componentes entre si, por el contrario un alto acoplamiento es cuando tenemos varias dependencias relacionadas a un solo componente.  
+Entonces podemos afirmar que en la definición de un buen diseño de software se debe tener una ALTA COHESIÓN y un BAJO ACOPLAMIENTO.
 
 ---
 
+Las dependencias son las relaciones entre tipos. No son objetos, no son características, son relaciones entre objetos y características. Un carro puede existir sin puertas y seguir funcionando igual, pero una puerta de carro carece de sentido sin un carro donde estar. Sin embargo, ambos, puerta y carro pueden existir sin el otro.
+
+---
 
 ## Clase 7 - Inversión de control y el patrón de inyección de dependencias
+[Video explicativo](https://www.youtube.com/watch?v=-Cs1HN6pEg4&list=PLU8oAlHdN5Blq85GIxtKjIXdfHPksV_Hm&index=7)
+
+**Inversion of Control (IoC)**: Delegando responsabilidades  
+Se refiere a todo aquel diseño de software cuyo propósito obedece a la necesidad de querer controlar el flujo de ejecución de este, de forma automática y transparente, es decir, ceder el control de ese flujo a un “agente externo”, normalmente un framework.
+
+"No nos llame, nosotros lo llamamos."  
+Se refiere a la transferencia del control del flujo de un programa a un contenedor o framework.
+- En un website o una app móvil el contenedor sería el usuario.
+**Ventajas**  
+- Facil testing por componentes o mocks de dependencias.
+- Mayor modularización.
+- Desacoplamiento cuando lo objetos cuentan con sus dependencias.
+- Segregación de interfaces.
+
+IoC en el contexto de spring boot
+- Los objetos que son administrados por el contenedor, spring boot los denomina `beans`. Un `bean` seria los objetos administrados por el usuario en un website.
+- Un bean es un objeto el cual es instanciado, ensamblado y administrado por el contenedor de spring IoC.
+
+**Dependency Injection (DI)**: Inyectando componentes  
+`DI` es un patrón de diseño que sirve para “inyectar” componentes a las clases que tenemos implementadas. Esos componentes son contratos que necesitan nuestras clases para poder funcionar, de ahí el concepto de “dependencia”. La diferencia sustancial en este patrón de diseño es que nuestras clases no crearán esos objetos que necesitan, sino que se les suministrará otra clase “contenedora” perteneciente al Framework DI que estemos utilizando y que inyectarán la implementación deseada a nuestro contrato, y todo ello sin tener que hacer un solo `new`.
+
+Es el patrón que utiliza IoC para utilizar las dependencias anteriormente instanciadas por el contenedor de spring.
+
+Un `bean` es una dependencia, un `método`, un `objeto`.  
+Los `beans` básicamente son módulos desarrollados en Spring estos se encargan de brindarnos toda la lógica que necesitamos para nuestra aplicación. Ejemplo: Si necesitamos referenciar que nuestra clase es un modelo hacemos uso de el `bean` `@entity` . Esto nos permite usar propiedades creadas para este tipo de modulo que nos agilizan nuestro desarrollo. Al hacer inversión de control nosotros al llamar esos `beans` lo que hacemos es referenciar módulos funcionales creados por spring. Spring boot nos facilita el fácil instanciamiento de estos a nuestra aplicación.
+
+Spring Boot es el proyecto de Spring, y Spring se encarga de manera abstracta de iniciarlizar los `beans`.
 
 ---
-
 
 ## Clase 8 - Autoconfiguration y runtime
 
 ---
 
-
 ## Clase 9 - Anotaciones para indicar dependencias en Spring Boot
 
 ---
-
 
 ## Clase 10 - Creación de proyecto bajo arquitectura de dependencias
 
 ---
 
-
 ## Clase 11 - Inyección de dependencia "Component"
 
 ---
 
-
 ## Clase 12 - Ejemplo de creación de dependencia propia
 
 ---
-
 
 # Módulo 3 - Configuración general de Spring Boot
 ## Clase 13 - Cambio de puerto y path
 
 ---
 
-
 ## Clase 14 - Uso de properties y valores
 
 ---
-
 
 ## Clase 15 - Uso de properties con ejemplo de generación de POJO
 
 ---
 
-
 ## Clase 16 - Qué son los logs y cómo usarlos
 
 ---
-
 
 # Módulo 4 - JPA con Spring y Spring Data
 ## Clase 17 - Modelado de entidades con JPA
 
 ---
 
-
 ## Clase 18 - Configuración de datasource con properties y classes
 
 ---
-
 
 ## Clase 19 - Registro en base de datos con JpaRepository
 
 ---
 
-
 ## Clase 20 - Uso de JPQL en anotación query
 
 ---
-
 
 ## Clase 21 - Uso de anotación value para apuntar a properties
 
 ---
 
-
 ## Clase 22 - Obtención de información usando Query methods
 
 ---
-
 
 ## Clase 23 - Uso de Query methods con Or, and, OrderBy, Between, Sort
 
 ---
 
-
 ## Clase 24 - Uso de JPQL con named parameters
 
 ---
-
 
 ## Clase 25 - Uso de anotación transactional
 
 ---
 
-
 ## Clase 26 - Rollback con la anotación transactional
 
 ---
-
 
 # Módulo 5 - REST con Spring Boot
 ## Clase 27 - CRUD bajo arquitectura REST
 
 ---
 
-
 ## Clase 28 - Métodos CREATE, UPDATE y DELETE
 
 ---
 
-
 ## Clase 29 - Probando la API REST
 
 ---
-
 
 ## Clase 30 - Pagination con Spring Boot
 

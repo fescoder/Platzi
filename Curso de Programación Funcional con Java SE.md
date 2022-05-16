@@ -1117,32 +1117,33 @@ que los `tipos` correspondan. Así no tendremos el problema que al mandar nosotr
 ---
 
 ### Clase 18 - Comprendiendo la sintaxis de las funciones lambda
-Las lambdas son funciones anónimas y hasta ahora hemos almacenado todas nuestras funciones en un nombre en algún lugar.  
-Las lamdas sabemos que no se guardan en ninguna parte del código, esta unica y exculsivamente utilizada en ese fragmento de código, las lambdas son para casos únicos, para pequeños ejemplos, para partes muy pequeñas del código que requieren lógica muy simple.
+Las `lambdas` son `funciones anónimas` y hasta ahora hemos almacenado todas nuestras `funciones` en un nombre en algún lugar.  
+Las `lamdas` sabemos que no se guardan en ninguna parte del código, esta unica y exculsivamente utilizada en ese fragmento de código, las `lambdas` son para casos únicos, para pequeños ejemplos, para partes muy pequeñas del código que requieren lógica muy simple.
 
 **Estructura Funciones Lambda**  
-Lambda que recibe un parámetro y realiza una operación simple:
+`Lambda` que recibe un `parámetro` y realiza una operación simple:
 ~~~
 text -> System.out.println(text)
 ~~~
 
-Lambda que no recibe parámetros y realiza una operación de retorno simple:
+`Lambda` que no recibe `parámetros` y realiza una operación de retorno simple:
 ~~~
 () -> "Hello world"
 ~~~
 
-Lambda que recibe un solo parámetro y realiza una operación de retorno simple:
+`Lambda` que recibe un solo `parámetro` y realiza una operación de retorno simple:
 ~~~
 x -> x % 2 == 0
 ~~~
 
-Lambda que recibe varios parámetros:
+`Lambda` que recibe varios `parámetros`:
 ~~~
 (x, y) -> x * y
 ~~~
 
-Cuando dentro de mi función necesito hacer varias cosas. Cabe la posibilidad que podamos agregar llaves o braces para tener un body o cuerpo más grande. Al hacer esto Java necesita explicitamente que le digamos donde retornamos.
-Lambda que realiza varias operaciones:
+Cuando dentro de mi `función` necesito hacer varias cosas. Cabe la posibilidad que podamos agregar `llaves` o `braces` para tener un `body` o `cuerpo` más grande. Al hacer esto `Java` necesita explicitamente que le digamos donde retornamos.
+
+`Lambda` que realiza varias operaciones:
 ~~~
 (x, y) -> {
   System.out.println("Suma de x: " + x + ", y: " + y);
@@ -1150,7 +1151,7 @@ Lambda que realiza varias operaciones:
 }
 ~~~
 
-Lambda que realiza varias operaciones y retorno:
+`Lambda` que realiza varias operaciones y retorno:
 ~~~
 (x, y) -> {
   System.out.println("Suma de x: " + x + ", y: " + y);
@@ -1158,12 +1159,12 @@ Lambda que realiza varias operaciones y retorno:
 }
 ~~~
 
-Lambda con tipado de parámetros:
+`Lambda` con tipado de `parámetros`:
 ~~~
 (String text) -> System.out.println(text);
 ~~~
 
-Lambda que retorna un dato que ocupa varias lineas:
+`Lambda` que retorna un `dato` que ocupa varias lineas:
 ~~~
 () -> (
   "<div class='movieSearch'>" +
@@ -1178,7 +1179,7 @@ Lambda que retorna un dato que ocupa varias lineas:
 )
 ~~~
 
-Lambda que no recibe por parámetros nada y tampoco retorna nada:
+`Lambda` que no recibe por `parámetros` nada y tampoco retorna nada:
 ~~~
 () -> {}
 
@@ -1194,15 +1195,16 @@ Lambda que no recibe por parámetros nada y tampoco retorna nada:
 
 ![18_Sintaxis_Funciones_Lambda_02](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_02.png)
 
-A veces para hacer nuestro código más legible podemos poner el tipo de dato que recibe.  
-`usarBiFunction((int x, int y) -> x*y)` -> Esto nos marca un error sobre los argumentos ya que las funciones al ser intefaces trabajan directamente sobre objetos, no trabajan sobre tipos de datos primitivos, quiere decir que tendremos que usar clases y objetos y no podemos usar los tipos de datos primitivos (int, char, boolean, byte, etc.). En este ejemplo se reemplaza el int por **Integer**.
+A veces para hacer nuestro código más legible podemos poner el tipo de dato que recibe.
+~~~
+usarBiFunction((int x, int y) -> x*y);
+~~~
 
-Puede ser que en algunos casos estes trabajando sobre una clase que es de un subtipo de algún otra clase
-y esto lo vas a encontrar mucho al estar operando, por ejemplo, con las listas.  
-Cuando nosotros queremos utilizar el método forEach directamente Intellij nos sugiere que
-necesitamos utilizar un Consumer de un tipo de dato que extienda de String.
-Por eso dice super la sugerencia, va a pasar mucho que podamos generar funciones que trabajen con subtipos
-y siempre y cuando nosotros tengamos una Lambda definida para el tipo tal cual.
+Esto nos marcará un error sobre los `argumentos` ya que las `funciones` al ser intefaces trabajan directamente sobre `objetos`, no trabajan sobre `tipos` de datos primitivos, quiere decir que tendremos que usar `clases` y `objetos`, y no podemos usar los `tipos` de datos primitivos (`int`, `char`, `boolean`, `byte`, etc.). En este ejemplo se reemplaza el `int` por `Integer`.
+
+Puede ser que en algunos casos estes trabajando sobre una `clase` que es de un `subtipo` de algún otra `clase` y esto lo vas a encontrar mucho al estar operando, por ejemplo, con las `listas`.  
+Cuando nosotros queremos utilizar el `método` `forEach` directamente Intellij nos sugiere que necesitamos utilizar un `Consumer` de un `tipo` de dato que extienda de `String`.
+Por eso dice `super` la sugerencia, va a pasar mucho que podamos generar `funciones` que trabajen con `subtipos` y siempre y cuando nosotros tengamos una `Lambda` definida para el tipo tal cual.
 
 ![18_Sintaxis_Funciones_Lambda_03](src/Curso_Programacion_Funcional_Java_SE/18_Sintaxis_Funciones_Lambda_03.png)
 

@@ -1066,7 +1066,10 @@ Podemos hacer esto para casos específicos que trabajen con `tipos` especificos 
 ### Clase 16 - Operador de Referencia
 En un proyecto donde ya tenemos definidos `métodos`, `funciones` o tengo definidas `clases`, que ya tiene una manera de trabajar entre ellas o recibiendo `objetos`, `Java` pensó en los `operadores de referencia` y lo que hizo fue proveerte de una manera de hacer referencia a eso que ya tiene definido.
 
-Definiremos un `método` que va a recibir una cantidad indefinida de elementos y nos va a generar una `Lista`, `getList`.  
+Definiremos un `método` que va a recibir una cantidad indefinida de elementos y nos va a generar una `Lista`, `getList`.
+
+![16_Operador_Referencia_01](src/Curso_Programacion_Funcional_Java_SE/16_Operador_Referencia_01.png)
+
 La `lista` incluye un `método` para poder proveerle con un `Consumer`, podemos hacer un `profesores.forEach()`, con este `método`, la estructura nos dice que requiere de un `Consumer` que reciba cada uno de los elementos de la `lista`.  
 Podemos pasarle un `Consumer` propio que lo único que hace es imprimir en pantalla, e internamente la `lista` va a iterar cada uno de los elementos y va a ejecutar el `Consumer` para cada uno.
 
@@ -1077,8 +1080,6 @@ Ya no tenemos la necesidad de crear `funciones` u `objetos` si ya tenemos `méto
 Esto facilita el poder referenciar directamente un `método` que haga una creación de archivo o uno que haga un parseo, o uno que pueda tomar una desición por nosotros que ya esta en nuestro proyecto y no tenemos que convertir en una `función`, de alguna u otra manera los `métodos` también son `funciones`. Los `métodos` son `funciones` que estan ligados a una `clase` u `objeto`.
 
 Para poder usarlo a partir de nuestro operador de referencia, el `método` tiene que cumplir con las mismas caracteristicas que la `función` que deberiamos escribir, en este caso concreto, para poder usar este `método` directamente sobre el `forEach`, tiene que ser una `función` que tome un `String` y devuelva nada, `void`. Entonces para poder usar `métodos` como `funciones` solo tienen que cumplir con la misma cantidad y `tipo` de parámetros para poder generar el mismo resultado. De esa manera puedes usar el operador de referencia sin preocuparte realmente por definir nuevos elementos.
-
-![16_Operador_Referencia_01](src/Curso_Programacion_Funcional_Java_SE/16_Operador_Referencia_01.png)
 
 ---
 

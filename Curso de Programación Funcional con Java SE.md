@@ -1074,35 +1074,34 @@ La `lista` incluye un `método` para poder proveerle con un `Consumer`, podemos 
 Podemos pasarle un `Consumer` propio que lo único que hace es imprimir en pantalla, e internamente la `lista` va a iterar cada uno de los elementos y va a ejecutar el `Consumer` para cada uno.
 
 Pero esto es un poco redundante y `Java` nos da un operador que nos permite hacer referencia a `métodos` o `funciones` que ya estan definidas en alguna clase o algún objeto.  
-Directamente con `forEach` y en lugar de crear un nuevo `Consumer`, podemos usar la referencia de algun `método` que pueda hacer eso. Entonces podemos referirnos a `System.out` y usamos el operador `::` que dice anda a buscar este `método` o `función` definida en este objeto, que en este caso es println. -> `(System.out::println)`, estas dos instrucciones son exactamente lo mismo.
+Directamente con `forEach` y en lugar de crear un nuevo `Consumer`, podemos usar la referencia de algun `método` que pueda hacer eso. Entonces podemos referirnos a `System.out` y usamos el operador `::` que dice anda a buscar este `método` o `función` definida en este objeto, que en este caso es `println` (`System.out::println`), estas dos instrucciones son exactamente lo mismo.
 
 Ya no tenemos la necesidad de crear `funciones` u `objetos` si ya tenemos `métodos estáticos` o `métodos` en objetos con los cuales trabajar.  
-Esto facilita el poder referenciar directamente un `método` que haga una creación de archivo o uno que haga un parseo, o uno que pueda tomar una desición por nosotros que ya esta en nuestro proyecto y no tenemos que convertir en una `función`, de alguna u otra manera los `métodos` también son `funciones`. Los `métodos` son `funciones` que estan ligados a una `clase` u `objeto`.
+Esto facilita el poder referenciar directamente un `método` que haga una creación de archivo o uno que haga un parseo, o uno que pueda tomar una desición por nosotros que ya esta en nuestro proyecto y no tenemos que convertir en una `función`, de alguna u otra manera los `métodos` también son `funciones`.
 
-Para poder usarlo a partir de nuestro operador de referencia, el `método` tiene que cumplir con las mismas caracteristicas que la `función` que deberiamos escribir, en este caso concreto, para poder usar este `método` directamente sobre el `forEach`, tiene que ser una `función` que tome un `String` y devuelva nada, `void`. Entonces para poder usar `métodos` como `funciones` solo tienen que cumplir con la misma cantidad y `tipo` de parámetros para poder generar el mismo resultado. De esa manera puedes usar el operador de referencia sin preocuparte realmente por definir nuevos elementos.
+Los `métodos` son `funciones` que estan ligados a una `clase` u `objeto`.
+
+Para poder usarlo a partir de nuestro operador de referencia, el `método` tiene que cumplir con las mismas caracteristicas que la `función` que deberiamos escribir, en este caso concreto, para poder usar este `método` directamente sobre el `forEach`, tiene que ser una `función` que tome un `String` y devuelva nada, `void`.  
+Entonces para poder usar `métodos` como `funciones` solo tienen que cumplir con la misma cantidad y `tipo` de parámetros para poder generar el mismo resultado. De esa manera puedes usar el operador de referencia sin preocuparte realmente por definir nuevos elementos.
 
 ---
 
 ### Clase 17 - Analizando la inferencia de tipos
-¿Qué representa la inferencia de tipos? Que el compilador es capaz de determinar el tipo de dato para una función o como resultado.
+Hasta ahora vimos que las `funciones` reciben un `Tipo` y devuelven un `Resultado`, hay otras `funciones` que trabajan sobre diferentes `tipos`, pero al momento de definir las `funciones` no estamos definiendo explicitamente los `tipos`.
 
-Hasta ahora vimos que las funciones reciben un Tipo y devuelven un Resultado, hay otras funciones que trabajan sobre diferentes tipos, pero al momento de definir las funciones no estamos definiendo explicitamente los tipos.
+**¿Como sabe Java que el dato que enviamos es un entero?** A esto se lo conoce como inferencia de tipos.  
+En tiempo de compilación, `Java` se encarga de validar que los datos que estan pasando a traves de nuestra `función` sea del tipo que corresponde, `Java` "adivina" basado en la definición que es el `tipo` de dato, tanto el que genera como el que emite de vuelta.
 
-**¿Como sabe Java que el dato que enviamos es un entero?** A esto se lo conoce como inferencia de tipos. En tiempo de compilación, Java se encarga de validar que los datos que estan pasando a traves de nuestra función sea del tipo que corresponde, Java "adivina" basado en la definición que es el tipo de dato, tanto el que genera como el que emite de vuelta.
+Cuando nosotros mandamos a llamar al método `forEach`, no tenemos que definir un `Tipo`, si lo quisieramos hacer seria -> `alumnos.forEach((String name) -> System.out.println(name))`, pero gracias a la inferencia de tipos no hace falta y podemos usar directamente `name` -> `alumnos.forEach(name -> System.out.println(name))` y es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`. Acá estamos invocando una `función` que ya sabe de que `tipo` es.
 
-Cuando nosotros mandamos a llamar al método forEach, no tenemos que definir un Tipo, si lo quisieramos hacer seria -> `alumnos.forEach((String name) -> System.out.println(name))`, pero gracias a la inferencia de tipos no hace falta y podemos usar directamente *name* -> `alumnos.forEach(name -> System.out.println(name))` y es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`. Acá estamos invocando una función que ya sabe de que tipo es.
-
-El entender que para poder utilizar la referencia de otro método, necesitamos
-que ese método también reciba el mismo parámetro y generar el mismo resultado.  
-Java en tiempo de compilación
-va a inferir estos datos de manera que no tengamos que ponerlos explícitamente
-como lo estamos haciendo en el código.  
-Ya No tenemos que definir el tipo estrictamente cuando
-estamos trabajando con funciones, Java se va a encargar de en tiempo de compilación corroborar
-que los tipos correspondan. Así no tendremos el problema que al mandar nosotros una petición de un
-archivo recibamos una conexión a Internet
+El entender que para poder utilizar la referencia de otro `método`, necesitamos que ese `método` también reciba el mismo `parámetro` y generar el mismo `resultado`.  
+`Java` en tiempo de compilación va a inferir estos datos de manera que no tengamos que ponerlos explícitamente como lo estamos haciendo en el código.  
+No tenemos que definir el `tipo` estrictamente cuando estamos trabajando con `funciones`, `Java` se va a encargar de en tiempo de compilación corroborar
+que los `tipos` correspondan. Así no tendremos el problema que al mandar nosotros una petición de un archivo recibamos una conexión a Internet.
 
 ![17_Inferencia_de_Tipos_01](src/Curso_Programacion_Funcional_Java_SE/17_Inferencia_de_Tipos_01.png)
+
+**¿Qué representa la inferencia de tipos?** Que el compilador es capaz de determinar el tipo de dato para una función o como resultado.
 
 ---
 

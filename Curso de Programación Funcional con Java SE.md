@@ -1094,7 +1094,18 @@ En tiempo de compilación, `Java` se encarga de validar que los datos que estan 
 
 ![17_Inferencia_de_Tipos_01](src/Curso_Programacion_Funcional_Java_SE/17_Inferencia_de_Tipos_01.png)
 
-Cuando nosotros mandamos a llamar al método `forEach`, no tenemos que definir un `Tipo`, si lo quisieramos hacer seria -> `alumnos.forEach((String name) -> System.out.println(name))`, pero gracias a la inferencia de tipos no hace falta y podemos usar directamente `name` -> `alumnos.forEach(name -> System.out.println(name))` y es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`. Acá estamos invocando una `función` que ya sabe de que `tipo` es.
+Cuando nosotros mandamos a llamar al método `forEach`, no tenemos que definir un `Tipo`, si lo quisieramos hacer seria
+~~~
+alumnos.forEach((String name) -> System.out.println(name));
+~~~
+
+Pero gracias a la inferencia de tipos no hace falta y podemos usar directamente `name`
+~~~
+alumnos.forEach(name -> System.out.println(name));
+~~~
+
+Es más interesante usando el operador de referencia -> `alumnos.forEach(System.out::println)`.  
+Acá estamos invocando una `función` que ya sabe de que `tipo` es.
 
 El entender que para poder utilizar la referencia de otro `método`, necesitamos que ese `método` también reciba el mismo `parámetro` y generar el mismo `resultado`.  
 `Java` en tiempo de compilación va a inferir estos datos de manera que no tengamos que ponerlos explícitamente como lo estamos haciendo en el código.  

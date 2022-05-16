@@ -999,28 +999,28 @@ Existen otros tipos de `operadores` y `funciones` que nos permiten trabajar sobr
 
 Un `Operator` es una `función` cuyo `parámetro` es del mismo `tipo` que su `resultado`.
 
-`UnaryOperator` es una `función` que trabaja sobre un cierto `tipo` definido, pero la definición nos dice que trabaja sobre `función` y es una `función` que recibe un `tipo`, pero genera un resultado del mismo `tipo`.  
+`UnaryOperator` es una `función` que trabaja sobre un cierto `tipo` definido, la definición nos dice que trabaja sobre `función` y es una `función` que recibe un `tipo`, pero genera un resultado del mismo `tipo`.  
 Entonces no tenemos que definir una `función` bajo un `tipo` de entrada y un `tipo` de salida.
 
-Generaremos un tipo `UnaryOperator` que se llamara `quote` y tomaremos un texto y le agregaremos comillas.  
-La manera de utilizar un `UnaryOperator` es la misma que para una `función`, llamamos al método `apply` y le pasaremos un texto, e internamente le pone comillas.
+Generaremos un `UnaryOperator` que se llamará `quote`, tomaremos un texto y le agregaremos comillas.  
+La manera de utilizar un `UnaryOperator` es la misma que para una `función`, llamamos al método `apply` y le pasaremos el texto, e internamente le pone comillas.
 
 ![14_Revisando_el_paquete_Function_Operators_BiFunction_01](src/Curso_Programacion_Funcional_Java_SE/14_Revisando_el_paquete_Function_Operators_BiFunction_01.png)
 
 **BiFunction**  
-El problema que tenemos con las `funciones` es que reciben un único parámetro y que en que muchas de las operaciones generalmente requieren más de uno.
+El problema que tenemos con las `funciones` es que reciben un único parámetro y en que muchas de las operaciones generalmente requieren más de uno.
 
 `BiFunction` es una `función` que va a tomar dos `tipos` de dato y va a generar otro tercer `tipo` de dato.
 
-Así como existe `UnaryOperator` para un solo parámetro, también existen `BiFunction` y `BiOperator`.  
+Así como existe `UnaryOperator` para un solo `parámetro`, también existen `BiFunction` y `BiOperator`.
+
 `BiOperator` funciona de la misma manera, recibe un `tipo` y los dos argumentos más el resultado van a ser del mismo `tipo`.
 
-Esto es una función famosa conocida como `leftPad`. Tomaremos un `String`, sobre el cual vamos a agregar espacios, un `entero`, que será la cantidad de espacios que nos gustaría agregar y como resultado, generaremos un nuevo `String`.  
-`leftPad` recibirá un texto, el número de espacios y utilizaremos una `función` que existe dentro de `Java`, `String.format`, este va a tratar de generar un nuevo `String` formateado con los parámetros que le demos.  
+`leftPad` recibirá un texto y el número de espacios. Utilizaremos una `función` que existe dentro de `Java`, `String.format`, este va a tratar de generar un nuevo `String` formateado con los parámetros que le demos.  
 En nuestro caso, queremos generar un nuevo `String` que tome la cantidad de espacios que le estamos diciendo y esto está definido por la letra `S`, al agregar la letra estamos diciendo que formatee con espacios.  
 Diremos directamente que queremos, que a la palabra `Java` la convierta en una palabra que tenga al menos un total de diez elementos agregando espacios a la izquierda. Entonces, al ejecutar, vemos que agregan los seis espacios faltantes para tener una palabra de diez espacios.
 
-Podemos empezar a pasar este tipo de lógica entre diferentes `funciones` y entre diferentes `métodos` para compartir alguna manera de hacer las cosas sin
+Podemos empezar a pasar este tipo de lógica entre diferentes `funciones` y `métodos` para compartir alguna manera de hacer las cosas sin
 necesidad de tener esta lógica definida en múltiples `clases` o `métodos` y tenerla solamente definidas como `variables` y estar compartiendo la mutuamente.
 
 ---
@@ -1036,28 +1036,30 @@ Estas `funciones` extienden de `Function`. Quiere decir que tienen el `método` 
 ---
 
 ### Clase 15 - Entendiendo dos jugadores clave: SAM y FunctionalInterface
-Hasta ahora vimos que Java nos proporciona del paquete *Functional* interfaces con la que podemos escribir nuestras propias funciones.  
-Podemos hacer evaluaciones con **Predicate**, funcion con **Function**, funciones de 2 parámetros con **BiFuncion**, y si todos los datos son del mismo tipo podemos usar **UnaryOperator** o **BinaryOperator**, si vamos a consumir algún dato tenemos a **Consumer** y si necesitamos proveer algun datos tenemos a **Supplier**.
+Hasta ahora vimos que `Java` nos proporciona del paquete `Functional` `interfaces` con la que podemos escribir nuestras propias `funciones`.  
+Podemos hacer evaluaciones con `Predicate`, `funcion` con `Function`, `funciones` de 2 `parámetros` con `BiFuncion`, y si todos los datos son del mismo `tipo` podemos usar `UnaryOperator` o `BinaryOperator`, si vamos a consumir algún dato tenemos a `Consumer` y si necesitamos proveer algun datos tenemos a `Supplier`.
 
-Esto no es todo, Java introduce una manera en la que nosotros podemos definir nuestras funciones o nuestra propia estructura de funciones.
-Primero definamos que es una interfaz de tipo **SAM**(Single Abstract Method), es una interfaz que tiene un solo método sin definir, es decir, si creo
-una interfaz tengo que definir un solo método, en este caso **accept** y asi solo ya es una SAM.
-
-Con la notacion `@FunctionalInterface` puedo decir que ese método se va a utilizar como una función. Con esto, el lenguaje sabe que puedo usar esta sintaxis en la que tengo la flecha en la que voy a poder hacer definiciones concretas. Sin embargo si agregaramos otro método Java no va a permitir que compile el método, porque no es un SAM.
+`Java` introduce una manera en la que podemos definir nuestras `funciones` o nuestra propia estructura de `funciones`.  
+`SAM`(Single Abstract Method), es una `interfaz` que tiene un solo `método` sin definir, es decir, si creo una `interfaz` y tengo que definir un solo `método`, en este caso `accept`, ya es una `SAM`.
 
 ![15_SAM_y_FunctionalInterface_01](src/Curso_Programacion_Funcional_Java_SE/15_SAM_y_FunctionalInterface_01.png)
 
-Definiendo nuestras propias funciones.  
-La primera llamada **TriFunction** recibe como parámetros tres tipos de datos *T, U, V* y devuelve un *R*, son genéricos, no sabemos con que tipos de datos va a trabajar pero alguien me lo va a definir después.  
-También vamos a generar un método **Apply**, para tener consistencia con las demás funciones, este retorna un *R* y usa como parámetros *T, U, V*.  
-Tenemos también una función que recibe 3 Integer y devuelve un **LocalDate** para transformar a fecha los valores dados.  
-Entonces si le pasamos los valores a la función **calculateAge** usamos **Period** que es un periodo de tiempo en Java, y calculamos cuanto hay entre hoy y la fecha que hemos generado antes, y devolvemos los años que hay entre ellos.
+Con la notacion `@FunctionalInterface` puedo decir que ese `método` se va a utilizar como una `función`.  
+Con esto, el lenguaje sabe que puedo usar esta sintaxis en la que voy a poder hacer definiciones concretas. Sin embargo si agregaramos otro `método` `Java` no va a permitir que compile el `método`, porque no es un `SAM`.
 
-Para asegurarnos de que la fecha este bien escrita, es decir que los dias o meses tengan un 0 delante si son menores que 10, hacemos una función **addCeros** que toma un Integer y devuelve un String.
+Definiendo nuestras `funciones`.
 
 ![15_SAM_y_FunctionalInterface_02](src/Curso_Programacion_Funcional_Java_SE/15_SAM_y_FunctionalInterface_02.png)
 
-Entonces pudimos crear una nueva función que recibe 3 parámetros que en Java no existe. Podemos hacer esto para casos específicos que trabajen con tipos especificos o que requiramos de algún tipo de nombre de método o necesitemos algún tipo de estructura en específico.
+La primera llamada `TriFunction` recibe como `parámetros` tres `tipos` de datos `T`, `U`, `V` y devuelve un `R`, son `genéricos`, no sabemos con que `tipos` de datos va a trabajar pero alguien me lo va a definir después.  
+Vamos a generar un `método` `apply`, para tener consistencia con las demás `funciones`, este retorna un `R` y usa como `parámetros` `T`, `U`, `V`.  
+Tenemos una `función` que recibe 3 `Integers` y devuelve un `LocalDate` para transformar a fecha los valores dados.  
+Si le pasamos los valores a la `función` `calculateAge` usamos `Period`, que es un periodo de tiempo en `Java`, calculamos cuanto hay entre hoy y la fecha que hemos generado antes, y devolvemos los años que hay entre ellos.
+
+Para asegurarnos de que la `fecha` este bien escrita, es decir que los dias o meses tengan un 0 delante si son menores que 10, hacemos una `función` `addCeros` que toma un `Integer` y devuelve un `String`.
+
+Entonces pudimos crear una nueva `función`, que recibe 3 parámetros, que en `Java` no existe.  
+Podemos hacer esto para casos específicos que trabajen con `tipos` especificos o que requiramos de algún `tipo` de nombre de `método` o necesitemos algún tipo de estructura en específico.
 
 ---
 

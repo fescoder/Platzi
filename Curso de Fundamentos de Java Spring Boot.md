@@ -291,7 +291,7 @@ Creamos la nueva `clase` `GeneralConfiguration`
 
 ![14_Properties_valores_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_02.png)
 
-`@Configuration` indicamos a Spring que va a haber configuraciones, dependencias, etc.
+`@Configuration` indicamos a Spring que va a haber configuraciones, dependencias, etc.  
 `@Value` nos permite llamar a los valores que inicializamos en `properties`
 
 Creamos nuestro nuevo `Bean` con su interfaz y Clase que implementa.
@@ -304,6 +304,9 @@ Luego, la ejecución en nuestro método principal.
 
 ![14_Properties_valores_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_05.png)
 
+---
+
+Lo mas recomendable es usar `@ConfigurationProperties` para encapsular la configuración, como se describe [acá](https://tuhrig.de/using-configurationproperties-to-separate-service-and-configuration/) y no usar `@Value` de manera suelta porque es más complicado de mantener.
 
 ---
 

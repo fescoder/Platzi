@@ -243,6 +243,42 @@ Diagrama secuencial de flujo.
 
 # Módulo 3 - Configuración general de Spring Boot
 ## Clase 13 - Cambio de puerto y path
+Agregamos la dependencia al archivo `pom.xml`.  
+Recordemos que Spring Boot se encarga de autoconfigurar e inicializar todas las dependencias.
+~~~
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+~~~
+
+Luego nos dirigimos a `application.properties` y acá lo que hacemos es cambiar el puerto de nuestra app, el path donde se mostrará el contenido y serán consumidos nuestros servicios.
+
+![13_Puerto_Path_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/13_Puerto_Path_01.png)
+
+Luego creamos `TestController`, un `controlador` para probar el `puerto` y el `path`.
+
+![13_Puerto_Path_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/13_Puerto_Path_02.png)
+
+Desplegando la app. y viendo el navegador. Escribimos `http://localhost:8081/app/` y vemos que nos muestra el mensaje.
+
+![13_Puerto_Path_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/13_Puerto_Path_03.png)
+
+Este servicio lo estamos desplegando dentro de un servidor web o contenedor `servlet` embebido, el contendor actual por defecto es `Tomcat`.  
+También vemos que todas las dependencias funcionan correctamente.
+
+![13_Puerto_Path_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/13_Puerto_Path_04.png)
+
+Agregaremos una nueva dependencia a `pom.xml` que nos dá herramientas para el desarrollo. 
+~~~
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+</dependency>
+~~~
+
+Una de las herramientas que nos da esta dependencia es que podamos reinciar el servidor sin tener que volver a desplegar todo, es decir, una vez que hacemos cambios en el código fuente simplemente con buildear el archivo o reiniciando la app, ya se muestran los cambios.
 
 ---
 

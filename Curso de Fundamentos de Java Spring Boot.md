@@ -142,7 +142,9 @@ Configura automáticamente tus aplicaciones basadas en dependencias `JAR` que ag
 ## Clase 9 - Anotaciones para indicar dependencias en Spring Boot
 Una Anotación es una forma de añadir metadatos al código fuente `Java` que están disponibles para la aplicación en tiempo de ejecución o de compilación.
 
-**TIPOS DE ANOTACIONES**  
+![09_Anotaciones_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_03.png)
+
+**TIPOS DE ANOTACIONES**
 - @Controller: Para indicar que esta será la `clase` que gestionara las peticiones del usuario por `get`, `post`, `put`, `patch` o `delete`.
 - @Service: Con esta notación especificamos que en esta `clase` se encontrara toda nuestra lógica de negocio, cálculos o llamadas a otras `API` externas.
 - @Repository: Se usa para las `clases` o `interfaces` que funcionaran con el acceso a la base de datos.
@@ -164,6 +166,8 @@ Todas las demás son meta anotaciones de @Component, pero con algunas diferencia
 ![09_Anotaciones_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_01.png)
 
 ![09_Anotaciones_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_02.png)
+
+![09_Anotaciones_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/09_Anotaciones_04.png)
 
 ---
 

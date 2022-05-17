@@ -244,7 +244,7 @@ Diagrama secuencial de flujo.
 # Módulo 3 - Configuración general de Spring Boot
 ## Clase 13 - Cambio de puerto y path
 Agregamos la dependencia al archivo `pom.xml`.  
-Recordemos que Spring Boot se encarga de autoconfigurar e inicializar todas las dependencias.
+Spring Boot se encarga de autoconfigurar e inicializar todas las dependencias.
 ~~~
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -283,6 +283,27 @@ Una de las herramientas que nos da esta dependencia es que podamos reinciar el s
 ---
 
 ## Clase 14 - Uso de properties y valores
+Creamos 3 propiedades en `application.properties` que serán usadas dentro de un nuevo archivo de configuración.
+
+![14_Properties_valores_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_01.png)
+
+Creamos la nueva `clase` `GeneralConfiguration`
+
+![14_Properties_valores_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_02.png)
+
+`@Configuration` indicamos a Spring que va a haber configuraciones, dependencias, etc.
+`@Value` nos permite llamar a los valores que inicializamos en `properties`
+
+Creamos nuestro nuevo `Bean` con su interfaz y Clase que implementa.
+
+![14_Properties_valores_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_03.png)
+
+![14_Properties_valores_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_04.png)
+
+Luego, la ejecución en nuestro método principal.
+
+![14_Properties_valores_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_05.png)
+
 
 ---
 

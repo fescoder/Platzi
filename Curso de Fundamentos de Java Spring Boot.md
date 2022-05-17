@@ -180,6 +180,49 @@ Por otra parte, `@Qualifier` es una anotación que sirve para especificar el tip
 ---
 
 ## Clase 12 - Ejemplo de creación de dependencia propia
+Primero creamos una `interfaz` que tendrá una `función` para implementar.
+
+![12_Creacion_dependencia_propia_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_01.png)
+
+Creamos la `Clase` que implemente la `interfaz`.
+
+![12_Creacion_dependencia_propia_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_02.png)
+
+Podemos tener otra `Clase` con otra implementación.
+
+![12_Creacion_dependencia_propia_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_03.png)
+
+Creamos una `clase` de `configuración` para administrar nuestras `dependencias`.  
+Ahora como tenemos 2 implementaciones diferentes, vamos a decir cual es la que se ejecutará.
+
+![12_Creacion_dependencia_propia_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_04.png)
+
+En `FundamentosApplication`, nuestro `main`, instanciamos y ejecutamos, para inyectar la dependencia, crear una `variable` y agregarlo al `constructor`.
+
+![12_Creacion_dependencia_propia_09](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_09.png)
+
+**Una dependencia dentro de otra**  
+En este caso tenemos a `MyOperation` insertada en `MyBeanWithDependency`.
+
+La `interface`
+
+![12_Creacion_dependencia_propia_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_05.png)
+
+La `clase`
+
+![12_Creacion_dependencia_propia_06](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_06.png)
+
+La `interface` `MyBeanWithDependency`
+
+![12_Creacion_dependencia_propia_07](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_07.png)
+
+La `clase` donde se inyecta `MyOperation`
+
+![12_Creacion_dependencia_propia_08](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_08.png)
+
+Diagrama secuencial de flujo.
+
+![12_Creacion_dependencia_propia_10](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_10.webp)
 
 ---
 

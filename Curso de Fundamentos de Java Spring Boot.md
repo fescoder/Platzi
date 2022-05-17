@@ -125,6 +125,11 @@ Spring Boot es el proyecto de Spring, y Spring se encarga de manera abstracta de
 
 ---
 
+`@Autowired` es muy imporante al momento de autocablear nuestras soluciones, no es tan recomendada para nuestros proyectos, pero la verdad la idea es hacer el código menos verboso y esto simplifica muchísimo el código fuente.
+Por otra parte, `@Qualifier` es una anotación que sirve para especificar el tipo de dependencia se esta inyectando con la funcionalidad de diferenciar nuestras abstracciones o uso de clases que implementan una misma interfaz (Según el principio SOLID) porque si usamos concreciones no seria util usar Qualifiers en la mayoría de los casos.
+
+---
+
 ## Clase 8 - Autoconfiguration y runtime
 Configura automáticamente tus aplicaciones basadas en dependencias `JAR` que agregaste mediante el `pom.xml`, pero si nosotros realizamos una configuración manual esta es priorizada por Spring Boot.
 
@@ -177,11 +182,6 @@ Creamos las siguientes `Clases`, inyactamos dependencia y probamos.
 ![11_Inyeccion_dependencia_Component_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_03.png)
 
 ![11_Inyeccion_dependencia_Component_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/11_Inyeccion_dependencia_Component_04.png)
-
----
-
-`@Autowired` es muy imporante al momento de autocablear nuestras soluciones, no es tan recomendada para nuestros proyectos, pero la verdad la idea es hacer el código menos verboso y esto simplifica muchísimo el código fuente.
-Por otra parte, `@Qualifier` es una anotación que sirve para especificar el tipo de dependencia se esta inyectando con la funcionalidad de diferenciar nuestras abstracciones o uso de clases que implementan una misma interfaz (Según el principio SOLID) porque si usamos concreciones no seria util usar Qualifiers en la mayoría de los casos.
 
 ---
 

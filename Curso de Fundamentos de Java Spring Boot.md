@@ -316,7 +316,7 @@ Configuraremos  un `pojo` a nivel de properties.
 
 En nuestro archivo `properties` agregaremos nuevas propiedades a partir de una `clase` (Clase user)
 
-![15_Pojo_01](src/Curso_Programacion_Funcional_Java_SE/15_Pojo_01.png)
+![15_Pojo_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot//15_Pojo_01.png)
 
 Ahora crearemos la `Clase` `UserPojo`, que representa esas propiedades, dentro del nuevo `Package` `POJO`, con su constructor y getters and setters.  
 Usamos la anotación `@ConfugurationProperties`que tiene un valor, `prefix`, al que se le asigna el prefijo que indicamos en `properties`, `user`.

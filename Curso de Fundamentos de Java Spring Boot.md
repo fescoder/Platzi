@@ -97,7 +97,9 @@ Se refiere a todo aquel diseño de software cuyo propósito obedece a la necesid
 Se refiere a la transferencia del control del flujo de un programa a un contenedor o framework.
 - En un website o una app móvil el contenedor sería el usuario.
 
-**Ventajas**  
+![07_IoC_DI_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/07_IoC_DI_01.png)
+
+**Ventajas**
 - Facil testing por componentes o mocks de dependencias.
 - Mayor modularización.
 - Desacoplamiento cuando lo objetos cuentan con sus dependencias.
@@ -107,10 +109,14 @@ IoC en el contexto de spring boot
 - Los objetos que son administrados por el contenedor, spring boot los denomina `beans`. Un `bean` seria los objetos administrados por el usuario en un website.
 - Un bean es un objeto el cual es instanciado, ensamblado y administrado por el contenedor de spring IoC.
 
+![07_IoC_DI_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/07_IoC_DI_02.png)
+
 **Dependency Injection (DI)**: Inyectando componentes  
 `DI` es un patrón de diseño que sirve para “inyectar” componentes a las clases que tenemos implementadas. Esos componentes son contratos que necesitan nuestras clases para poder funcionar, de ahí el concepto de “dependencia”. La diferencia sustancial en este patrón de diseño es que nuestras clases no crearán esos objetos que necesitan, sino que se les suministrará otra clase “contenedora” perteneciente al Framework DI que estemos utilizando y que inyectarán la implementación deseada a nuestro contrato, y todo ello sin tener que hacer un solo `new`.
 
 Es el patrón que utiliza IoC para utilizar las dependencias anteriormente instanciadas por el contenedor de spring.
+
+![07_IoC_DI_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/07_IoC_DI_03.png)
 
 Un `bean` es una dependencia, un `método`, un `objeto`.  
 Los `beans` básicamente son módulos desarrollados en Spring estos se encargan de brindarnos toda la lógica que necesitamos para nuestra aplicación. Ejemplo: Si necesitamos referenciar que nuestra clase es un modelo hacemos uso de el `bean` `@entity` . Esto nos permite usar propiedades creadas para este tipo de modulo que nos agilizan nuestro desarrollo. Al hacer inversión de control nosotros al llamar esos `beans` lo que hacemos es referenciar módulos funcionales creados por spring. Spring boot nos facilita el fácil instanciamiento de estos a nuestra aplicación.
@@ -197,7 +203,8 @@ Ahora como tenemos 2 implementaciones diferentes, vamos a decir cual es la que s
 
 ![12_Creacion_dependencia_propia_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_04.png)
 
-En `FundamentosApplication`, nuestro `main`, instanciamos y ejecutamos, para inyectar la dependencia, crear una `variable` y agregarlo al `constructor`.
+En `FundamentosApplication`, nuestro `main`, instanciamos y ejecutamos.  
+Para inyectar la dependencia, crear una `variable` y agregarlo al `constructor`.
 
 ![12_Creacion_dependencia_propia_09](src/Curso_de_Fundamentos_de_Java_Spring_Boot/12_Creacion_dependencia_propia_09.png)
 

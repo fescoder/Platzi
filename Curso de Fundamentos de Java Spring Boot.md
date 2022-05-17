@@ -311,6 +311,58 @@ Lo mas recomendable es usar `@ConfigurationProperties` para encapsular la config
 ---
 
 ## Clase 15 - Uso de properties con ejemplo de generación de POJO
+Un `POJO` (Plain Old Java Object) es simplemente un objeto de `Java` que no implementa ninguna interfase especial.  
+Configuraremos  un `pojo` a nivel de properties.
+
+En nuestro archivo `properties` agregaremos nuevas propiedades a partir de una `clase` (Clase user)
+
+![15_Pojo_01](src/Curso_Programacion_Funcional_Java_SE/15_Pojo_01.png)
+
+Ahora crearemos la `Clase` `UserPojo`, que representa esas propiedades, dentro del nuevo `Package` `POJO`, con su constructor y getters and setters.  
+Usamos la anotación `@ConfugurationProperties`que tiene un valor, `prefix`, al que se le asigna el prefijo que indicamos en `properties`, `user`.
+También usamos `@ConstructorBinding`para inyectar esto como una dependencia y se contruya el `pojo` con estas propiedades.
+
+![15_Pojo_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/15_Pojo_02.png)
+
+Y la ejecución.
+
+![15_Pojo_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/15_Pojo_03.png)
+
+---
+
+Podemos evitar crear nosotros mismos el `constructor` y los `getters` y `setters` simplemente añadiendo en nuestro `pom.xml` la siguiente dependencia:
+~~~
+<dependency>
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+</dependency>
+~~~
+
+Después de que añadamos esa dependencia, en nuestra `clase` tendremos que usar las anotaciones de esa librería (lombok) @Getter, @Setter y @AllArgsConstructor, quedando nuestra clase de la siguiente manera:
+~~~
+package com.fundamentosplatzi.springboot.fundamentos.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@ConfigurationProperties(prefix = "user")
+@ConstructorBinding
+@Getter
+@Setter
+@AllArgsConstructor
+public class UserPojo {
+
+	private String email;
+	private String password;
+	private int age;
+
+}
+~~~
+
+- @Getter: crea los getters de todas las propiedades declaradas en la clase.
+- @Setter: crea los setters de todas las propiedades declaradas en la clase.
+- @AllArgsConstructor: crea un constructor con todas las propiedades declaradas en la clase.
 
 ---
 

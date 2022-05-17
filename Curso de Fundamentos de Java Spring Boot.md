@@ -314,11 +314,11 @@ Lo mas recomendable es usar `@ConfigurationProperties` para encapsular la config
 Un `POJO` (Plain Old Java Object) es simplemente un objeto de `Java` que no implementa ninguna interfase especial.  
 Configuraremos  un `pojo` a nivel de properties.
 
-En nuestro archivo `properties` agregaremos nuevas propiedades a partir de una `clase` (Clase user)
+En nuestro archivo `properties` agregaremos nuevas propiedades a partir de una `clase` (user)
 
 ![15_Pojo_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot//15_Pojo_01.png)
 
-Ahora crearemos la `Clase` `UserPojo`, que representa esas propiedades, dentro del nuevo `Package` `POJO`, con su constructor y getters and setters.  
+Ahora crearemos la `Clase` `UserPojo`, que representa esas propiedades, dentro del nuevo `Package` `POJO`, con su `constructor`, `getters` y `setters`.  
 Usamos la anotación `@ConfugurationProperties`que tiene un valor, `prefix`, al que se le asigna el prefijo que indicamos en `properties`, `user`.
 También usamos `@ConstructorBinding`para inyectar esto como una dependencia y se contruya el `pojo` con estas propiedades.
 
@@ -338,7 +338,7 @@ Podemos evitar crear nosotros mismos el `constructor` y los `getters` y `setters
 </dependency>
 ~~~
 
-Después de que añadamos esa dependencia, en nuestra `clase` tendremos que usar las anotaciones de esa librería (lombok) @Getter, @Setter y @AllArgsConstructor, quedando nuestra clase de la siguiente manera:
+Después de que añadamos esa dependencia, en nuestra `clase` tendremos que usar las anotaciones de esa librería (lombok) `@Getter`, `@Setter` y `@AllArgsConstructor`, quedando nuestra `clase` de la siguiente manera:
 ~~~
 package com.fundamentosplatzi.springboot.fundamentos.pojo;
 
@@ -360,13 +360,57 @@ public class UserPojo {
 }
 ~~~
 
-- @Getter: crea los getters de todas las propiedades declaradas en la clase.
-- @Setter: crea los setters de todas las propiedades declaradas en la clase.
-- @AllArgsConstructor: crea un constructor con todas las propiedades declaradas en la clase.
+- `@Getter`: crea los getters de todas las propiedades declaradas en la clase.
+- `@Setter`: crea los setters de todas las propiedades declaradas en la clase.
+- `@AllArgsConstructor`: crea un constructor con todas las propiedades declaradas en la clase.
 
 ---
 
 ## Clase 16 - Qué son los logs y cómo usarlos
+Los `logs` es una herramienta que nos permite debugear la información y saber por donde está pasando, que `método`, que `clase` y elegir que nivel de depuración queremos mostrarlo.  
+Usaremos la `librería` **Apache Commons** que tiene estos niveles de error:
+
+![16_Logs_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_01.png)
+
+En `properties` vamos a programar los niveles de `logs` que queremos mostrar en el servidor.
+
+![16_Logs_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_02.png)
+
+Como vemos es una utilidad importante, lo podemos usar en los `try-catch`, cuando tengamos un error, exception, podemos capturarla y mostrarla en el servidor, o consola, y le podemos agregar un mensaje que sea más explicativo o claro para el que lo lea.
+
+![16_Logs_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_03.png)
+
+![16_Logs_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_04.png)
+
+Otro ejemplo, en `MyBeanWithDependencyImplement`
+
+![16_Logs_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_05.png)
+
+Capturando una `exception` y usando error para mostrarlo.
+
+![16_Logs_06](src/Curso_de_Fundamentos_de_Java_Spring_Boot/16_Logs_06.png)
+
+---
+
+Otra manera que usamos en un proyecto es poner los logs con la librería `lombok` de la siguiente manera:
+- Añadimos al pom.xml la librería lombok(está en la clase anterior).
+- Añadimos justo arriba de la clase en la que queremos mostrar logs, la anotación `@Slf4j`
+~~~
+@Slf4j
+public class Prueba {
+	void test() {
+log.info("Entrando al método test");
+	}
+}
+~~~
+
+Con esta simple anotación, nos podemos ahorrar implementar la variable LOGGER. Aunque ambas opciones son buenas.
+
+Pintar de color los LOGS, agregar en el archivo application.properties
+~~~
+spring.output.ansi.enabled=ALWAYS
+~~~
+
 
 ---
 

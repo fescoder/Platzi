@@ -133,6 +133,10 @@ Por otra parte, `@Qualifier` es una anotación que sirve para especificar el tip
 ## Clase 8 - Autoconfiguration y runtime
 Configura automáticamente tus aplicaciones basadas en dependencias `JAR` que agregaste mediante el `pom.xml`, pero si nosotros realizamos una configuración manual esta es priorizada por Spring Boot.
 
+![08_Autoconfiguracion_runtime_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/08_Autoconfiguracion_runtime_01.png)
+
+![08_Autoconfiguracion_runtime_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/08_Autoconfiguracion_runtime_02.png)
+
 ---
 
 ## Clase 9 - Anotaciones para indicar dependencias en Spring Boot

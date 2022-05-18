@@ -429,18 +429,40 @@ Añadimos la dependencia para `JPA`, que nos permite hacer el modelado, las enti
 </dependency>
 ~~~
 
-Creamos un nuevo `package`, `entity`, con una `clase` llamada `Post`, que es lo que el usuario va a usar para pasar las operaciones.  
-Con sus respectivas `propiedades`, `constructores`, `getters` y `setter`, `toString`.
+En el proyecto creamos un nuevo `package`, `entity`, con una `clase` llamada `Post`, que es lo que el usuario va a usar para pasar las operaciones.  
+Con sus respectivas `propiedades`, `constructores`, `getters`, `setters` y `toString`.
 
 ![17_JPA_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/17_JPA_02.png)
 
-La `clase` `User` que representará la tabla de usuarios de la DB, también con sus métodos y atributos.
+También la `clase` `User` que representará la tabla de usuarios de la DB, también con sus métodos y atributos.
 
 ![17_JPA_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/17_JPA_03.png)
+
+Anotaciones que se usaron: `@Table`, `@Id`, `@GeneratedValue`, `@Column`, `@ManyToOne`, `@OneToMany` y `@JsonManagedReference`.
+
+En los comentarios dicen que podemos usar `Lombok` y la anotación `@Data` para no usar tanto código, es equivalente a `@ToString` + `@EqualsAndHashCode` + `@Getter` + `@Setter` + `@RequiredArgsConstructor`. Pero puede traer problemas a futuro.
 
 ---
 
 ## Clase 18 - Configuración de datasource con properties y classes
+Agregamos una nueva dependencia **H2 Database Engine**, que se relaciona con nuestra DB. Puntualmente este DB se ejecuta en memoria, en tiempo de ejecución. Significa que una vez que nuestra app se cierre, los datos persistidos en esta DB se pierden.
+~~~
+<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.1.212</version>
+    <scope>test</scope>
+</dependency>
+~~~
+
+En `properties` configuramos lo relacionado con esta DB. Con esto ya podemos crear nuestra capa de repositorio e insertar valores, actualizar, eliminar u obtener valores a nivel de DB.
+
+![18_Configuracion_datasource_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/18_Configuracion_datasource_01.png)
+
+Pero no lo vamos a usar a estar configuración si no que lo haremos de forma manual en `GeneralConfiguration`, acá haremos toda la implementación o configuración a nivel de DB.
+
+![18_Configuracion_datasource_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/18_Configuracion_datasource_02.png)
 
 ---
 

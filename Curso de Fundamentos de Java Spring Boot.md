@@ -330,7 +330,7 @@ Y la ejecución.
 
 ---
 
-Podemos evitar crear nosotros mismos el `constructor` y los `getters` y `setters` simplemente añadiendo en nuestro `pom.xml` la siguiente dependencia:
+Podemos evitar crear nosotros mismos el `constructor` y los `getters` y `setters` simplemente añadiendo en nuestro `pom.xml` la siguiente dependencia [lombok](https://projectlombok.org/#):
 ~~~
 <dependency>
 	<groupId>org.projectlombok</groupId>
@@ -393,13 +393,13 @@ Capturando una `exception` y usando error para mostrarlo.
 ---
 
 Otra manera que usamos en un proyecto es poner los logs con la librería `lombok` de la siguiente manera:
-- Añadimos al pom.xml la librería lombok(está en la clase anterior).
+- Añadimos al pom.xml la librería lombok (está en la clase anterior).
 - Añadimos justo arriba de la clase en la que queremos mostrar logs, la anotación `@Slf4j`
 ~~~
 @Slf4j
 public class Prueba {
 	void test() {
-log.info("Entrando al método test");
+        log.info("Entrando al método test");
 	}
 }
 ~~~
@@ -411,11 +411,32 @@ Pintar de color los LOGS, agregar en el archivo application.properties
 spring.output.ansi.enabled=ALWAYS
 ~~~
 
-
 ---
 
 # Módulo 4 - JPA con Spring y Spring Data
 ## Clase 17 - Modelado de entidades con JPA
+`JPA` es el enfoque estandar de la industria para modelar objetos a nivel de DB en `Java`. Modelar tablas a `clases`.
+
+![17_JPA_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/17_JPA_01.png)
+
+`JPA` no es `Hibernate` (una biblioteca ORM (Object Relational Mapping)), esta es una implementación de `JPA`.
+
+Añadimos la dependencia para `JPA`, que nos permite hacer el modelado, las entidades, persistir en DB, y más.
+~~~
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+~~~
+
+Creamos un nuevo `package`, `entity`, con una `clase` llamada `Post`, que es lo que el usuario va a usar para pasar las operaciones.  
+Con sus respectivas `propiedades`, `constructores`, `getters` y `setter`, `toString`.
+
+![17_JPA_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/17_JPA_02.png)
+
+La `clase` `User` que representará la tabla de usuarios de la DB, también con sus métodos y atributos.
+
+![17_JPA_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/17_JPA_03.png)
 
 ---
 

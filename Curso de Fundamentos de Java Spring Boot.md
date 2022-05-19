@@ -473,11 +473,11 @@ Creando repositorios, `UserRepository` y `PostRespository`, para poder usar las 
 
 ![19_JpaRepository_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/19_JpaRepository_01.png)
 
-Creando un método para persistir la información, `saveUsersInDataBase`, en nuestro `main`, inyectamos los repositorios como dependencias.
+Creando un método para persistir la información, `saveUsersInDataBase`, en nuestro `main`. Inyectamos los repositorios como dependencias.
 
 ![19_JpaRepository_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/19_JpaRepository_02.png)
 
-En `properties` si queremos mostrar los SQL que se genera el Servidor en el Log.
+En `properties` si queremos mostrar los SQL, que se genera en el Servidor, en el Log.
 ~~~
 spring.jpa.show-sql=true
 ~~~
@@ -487,6 +487,18 @@ spring.jpa.show-sql=true
 ---
 
 ## Clase 20 - Uso de JPQL en anotación query
+
+![20_JPQL_en_Query_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/20_JPQL_en_Query_01.png)
+
+La principal diferencia es que en `SQL` se trabaja con tablas y columnas y en `JPQL` con objetos y propiedades, y nos permite hacer SELECTs, UPDATEs y DELETEs, no permite INSERTs dentro de `JPQL`.
+
+En la repositorio agregamos 2 `funciones` que usan la anotacion`@Query` para formular las consultas a la DB.
+
+![20_JPQL_en_Query_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/20_JPQL_en_Query_02.png)
+
+En nuestro `main` implementamos los nuevos `métodos`
+
+![20_JPQL_en_Query_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/20_JPQL_en_Query_03.png)
 
 ---
 

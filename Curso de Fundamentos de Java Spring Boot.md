@@ -503,7 +503,7 @@ En nuestro `main` implementamos los nuevos `métodos`
 ---
 
 ## Clase 21 - Uso de anotación value para apuntar a properties
-Básicamente creamos unas nuevas `properties`  en el `package` `resources`.
+Creamos una nueva `propertie`  en el `package` `resources`.
 
 ![21_Properties_Value_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/21_Properties_Value_01.png)
 
@@ -520,6 +520,17 @@ Cuando se van a configurar las conexiones a DB es mejor usar `variables de entor
 ---
 
 ## Clase 22 - Obtención de información usando Query methods
+Básicamente es definir una consulta `Query` dentro de un `método`, que se verá reflejado dentro de una `interfaz` o `clase`. Es una alternativa a `JPQL`.
+
+Creamos 2 Querys.
+
+![22_Query_method_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/22_Query_method_01.png)
+
+Las usamos.
+
+![22_Query_method_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/22_Query_method_02.png)
+
+[Documentación](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods) de como usar Query methods.
 
 ---
 

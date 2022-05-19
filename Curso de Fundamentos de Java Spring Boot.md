@@ -452,7 +452,7 @@ Agregamos una nueva dependencia **H2 Database Engine**, que se relaciona con nue
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
     <version>2.1.212</version>
-    <scope>test</scope>
+    <scope>runtime</scope>
 </dependency>
 ~~~
 
@@ -467,6 +467,22 @@ Pero no lo vamos a usar a estar configuración si no que lo haremos de forma man
 ---
 
 ## Clase 19 - Registro en base de datos con JpaRepository
+`JpaRepository` es el package que contiene las interfaces que extienden de `JPA` para que estas clases se conecten a la base de datos. Estas gestionan información ya sea de buscar, borrar, actualizar o crear un registro en la base de datos.
+
+Creando repositorios, `UserRepository` y `PostRespository`, para poder usar las diferentes funcionalidades a nivel de DB, estas extienden de `JpaRepository`.
+
+![19_JpaRepository_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/19_JpaRepository_01.png)
+
+Creando un método para persistir la información, `saveUsersInDataBase`, en nuestro `main`, inyectamos los repositorios como dependencias.
+
+![19_JpaRepository_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/19_JpaRepository_02.png)
+
+En `properties` si queremos mostrar los SQL que se genera el Servidor en el Log.
+~~~
+spring.jpa.show-sql=true
+~~~
+
+![19_JpaRepository_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/19_JpaRepository_03.png)
 
 ---
 

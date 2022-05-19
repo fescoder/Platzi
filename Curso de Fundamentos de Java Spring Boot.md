@@ -503,6 +503,19 @@ En nuestro `main` implementamos los nuevos `métodos`
 ---
 
 ## Clase 21 - Uso de anotación value para apuntar a properties
+Básicamente creamos unas nuevas `properties`  en el `package` `resources`.
+
+![21_Properties_Value_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/21_Properties_Value_01.png)
+
+En `GeneralConfiguration` con `@PropertySource` indicamos que el archivo que pasado son las nuevas configuraciones de conexión, con `@Value` relacionamos el valor de las `properties` a una `variable`.
+
+![21_Properties_Value_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/21_Properties_Value_02.png)
+
+Y luego pasamos esas `variables` a `dataSource`.
+
+![21_Properties_Value_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/21_Properties_Value_03.png)
+
+Cuando se van a configurar las conexiones a DB es mejor usar `variables de entorno`.
 
 ---
 

@@ -551,7 +551,7 @@ Asi como en la clase anterior, lo mismo sucede con las palabras `LIKE`, `OR`, `A
 ## Clase 24 - Uso de JPQL con named parameters
 Los `named parameters` son los `parámetros` que enviamos en las sentencias con un nombre que le podemos asignar, estos `parámetros` van a ser inicializados dentro de un `método` que creamos.
 
-Creamos una `Clase` `UserDto` para retribuir la informacion de la DB a traves de la sentencia `JPQL` con `named parameters`, con su `constructor`, `getters`, `setters`, `toString`, etc.
+Creamos una `Clase` `UserDto` para retribuir la informacion de la DB a traves de la sentencia `JPQL` con `named parameters`, con su `constructor`, `getters`, `setters`, `toString`, etc.  
 Los `DTO` (Data Transfer Object) son un tipo de objetos que sirven únicamente para transportar datos. El `DTO` contiene las propiedades del objeto. Datos que pueden tener su origen en una o más entidades de información. Estos datos son incorporados a una instancia de un `JavaBean`.
 
 ![24_Named_parameters_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/24_Named_parameters_01.png)

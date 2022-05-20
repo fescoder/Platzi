@@ -523,7 +523,7 @@ Cuando se van a configurar las conexiones a DB es mejor usar `variables de entor
 Básicamente es definir una consulta `Query` dentro de un `método`, que se verá reflejado dentro de una `interfaz` o `clase`.  
 Es una alternativa a `JPQL`.
 
-Los nombres de las variables que relacionamos con las que se crean en la DB, influyen en el nombre del `método`. Es decir, en el `método` `findByEmailAndName` tiene una importancia el orden del nombre de los atributos.  
+Los nombres de las variables que relacionamos con las que se crean en la DB, influyen en el nombre del `método`. Es decir, en el `método` `findByEmailAndName` tiene una importancia el orden del nombre de los `parámetros`.  
 En la imagen de esta clase, estaba al revés, y lanzaba la `exception`, porque tenia invertido los argumentos. Ahora se corrigió a `findByNameAndEmail`.  
 
 Creamos 2 Querys.
@@ -549,6 +549,22 @@ Asi como en la clase anterior, lo mismo sucede con las palabras `LIKE`, `OR`, `A
 ---
 
 ## Clase 24 - Uso de JPQL con named parameters
+Los `named parameters` son los `parámetros` que enviamos en las sentencias con un nombre que le podemos asignar, estos `parámetros` van a ser inicializados dentro de un `método` que creamos.
+
+Creamos una `Clase` `UserDto` para retribuir la informacion de la DB a traves de la sentencia `JPQL` con `named parameters`, con su `constructor`, `getters`, `setters`, `toString`, etc.
+Los `DTO` (Data Transfer Object) son un tipo de objetos que sirven únicamente para transportar datos. El `DTO` contiene las propiedades del objeto. Datos que pueden tener su origen en una o más entidades de información. Estos datos son incorporados a una instancia de un `JavaBean`.
+
+![24_Named_parameters_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/24_Named_parameters_01.png)
+
+En `UserRepository` creamos el `getAllByBirthDateAndEmail` que devuelve un `UserDto` en el cual le pasamos una `fecha` y un `email`.  
+En `@Query` escribimos la sentencia que necesitamos y asignamos los `named parameters`, y en los `argumentos` lo relacionamos con `@Param`.
+
+![24_Named_parameters_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/24_Named_parameters_02.png)
+
+En `FundamentosApplication` ejecutamos el `método` con el `Logger info` y si no encuentra lanza una `exception`.
+
+![24_Named_parameters_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/24_Named_parameters_03.png)
+
 
 ---
 

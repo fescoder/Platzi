@@ -520,7 +520,11 @@ Cuando se van a configurar las conexiones a DB es mejor usar `variables de entor
 ---
 
 ## Clase 22 - Obtención de información usando Query methods
-Básicamente es definir una consulta `Query` dentro de un `método`, que se verá reflejado dentro de una `interfaz` o `clase`. Es una alternativa a `JPQL`.
+Básicamente es definir una consulta `Query` dentro de un `método`, que se verá reflejado dentro de una `interfaz` o `clase`.  
+Es una alternativa a `JPQL`.
+
+Los nombres de las variables que relacionamos con las que se crean en la DB, influyen en el nombre del `método`. Es decir, en el `método` `findByEmailAndName` tiene una importancia el orden del nombre de los atributos.  
+En la imagen de esta clase, estaba al revés, y lanzaba la `exception`, porque tenia invertido los argumentos. Ahora se corrigió a `findByNameAndEmail`.  
 
 Creamos 2 Querys.
 
@@ -535,6 +539,12 @@ Las usamos.
 ---
 
 ## Clase 23 - Uso de Query methods con Or, and, OrderBy, Between, Sort
+Más ejemplos de usos de Querys methods.  
+Asi como en la clase anterior, lo mismo sucede con las palabras `LIKE`, `OR`, `AND`, etc., con Spring cumplen la función como sentencias `SQL`.
+
+![23_Mas_Querys_methods_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/23_Mas_Querys_methods_01.png)
+
+![23_Mas_Querys_methods_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/23_Mas_Querys_methods_02.png)
 
 ---
 

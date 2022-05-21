@@ -586,7 +586,7 @@ En `FundamentosApplication` creamos una `función` en donde creamos `usuarios` e
 ---
 
 ## Clase 26 - Rollback con la anotación transactional
-Para generar un error y probar el funcionamiento del `rollback` hacemos el que `email` del `usuario` sea único, en la `clase` `User`.
+Para generar un error y probar el funcionamiento del `rollback` hacemos que `email` del `usuario` sea único, en la `clase` `User`.
 
 ![26_Rollback_Transactional_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/26_Rollback_Transactional_01.png)
 
@@ -602,14 +602,44 @@ Si alguna de las instrucciones falla se realiza un `rollback`, es decir, ninguna
 
 **Consistencia**: Una vez que termina una `transacción` (sin importar si ha sido exitosa o no) la información queda en estado consistente, ya que se realizó todo o nada, y por lo tanto los `datos` no deben estar corruptos en ningún aspecto.
 
-**Aislado**: Múltiples usuarios pueden utilizar los `métodos transaccionales`, sin afectar el acceso de otros usuarios. Sin embargo debemos prevenir errores por accesos múltiples, aislando en la medida de lo posible nuestros `métodos transaccionales`. El aislamiento normalmente involucra el bloqueo de registros o tablas de base de datos, esto se conoce como locking…
+**Aislamiento**: Múltiples usuarios pueden utilizar los `métodos transaccionales`, sin afectar el acceso de otros usuarios. Sin embargo debemos prevenir errores por accesos múltiples, aislando en la medida de lo posible nuestros `métodos transaccionales`. El aislamiento normalmente involucra el bloqueo de registros o tablas de base de datos, esto se conoce como locking…
 
-**Durable**: Sin importar si hay una caída del servidor, una transacción exitosa debe guardarse y perdurar posterior al termino de una `transacción`.
+**Durabilidad**: Sin importar si hay una caída del servidor, una transacción exitosa debe guardarse y perdurar posterior al termino de una `transacción`.
 
 ---
 
 # Módulo 5 - REST con Spring Boot
 ## Clase 27 - CRUD bajo arquitectura REST
+Crearemos un `CRUD` bajo la arquitectura `REST`, vamos a hacer una `API` para que nuestra entidad `user` pueda ser leida. **R** del `CRUD`.
+
+A nivel general, creamos una nueva `clase`, llamada `UserRestController` en nuestro `package` `Controller`, en la que estarán todos los servicios `REST` que van a ser consumidos por el cliente.
+
+Creamos también un `package`, `caseuse`, en donde tendremos todos nuestros casos de uso, sus `interfaces` como implementaciones.  
+Creamos la `interfaz` `GetUser` que tendrá los `métodos` del servicio `get`, y la `clase` implementadora, `GetUserImplement`.
+
+![27_CRUD_REST_Read_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/27_CRUD_REST_Read_01.png)
+
+![27_CRUD_REST_Read_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/27_CRUD_REST_Read_02.png)
+
+Configuramos nuestros casos de uso a nivel de inyección de dependencias, en `configuration` creamos la `clase` `CaseUseConfiguration`, y creamos una dependencia `@Bean`.
+
+![27_CRUD_REST_Read_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/27_CRUD_REST_Read_03.png)
+
+En `UserRestController` con la anotación `@RestController`, que hereda de la anotación `@Controller`, nos permite que todos los `métodos` que creemos se formateen con `JSON`:
+- Inyectamos la dependencia `GetUser` y hacemos un `método` que retorne la `lista` de `usuarios`.
+- Agregaremos la ruta, con `@RequestMapping`, que es por donde va a ser consumido este `servicio`.
+- En el `método get` indicamos como va a ser consumido via `Http` (una `/`), es decir, cuando pongan la ruta `/api/users/`, la última barra indica que se ejecuta este `método` y trae la `lista`.
+
+![27_CRUD_REST_Read_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/27_CRUD_REST_Read_04.png)
+
+Probamos con `Postman`, insertando la url `localhost:8081/app/api/users/`, vemos que nos traen todos los usuarios registrados en la DB.
+
+---
+
+Muy importante hacer lo que hizo el profesor, pues no debemos de depender de implementaciones concretas sino que hay que depender de abstracciones o interfaces.
+Esto permite mayor desacoplamiento entre mis capas de la aplicación. De hecho es la base del 5 principio SOLID.
+
+En las clases de este módulo se muestran varias formas de programar los métodos para el CRUD pero sin ahondar mucho en detalles sobre el proceso… Leyendo esta [guía de Spring](https://spring.io/guides/tutorials/rest/) pude clarificar mucho más los conceptos del módulo.
 
 ---
 

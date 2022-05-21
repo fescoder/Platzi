@@ -573,19 +573,38 @@ En `FundamentosApplication` ejecutamos el `método` con el `Logger info` y si no
 **¿Para qué usar una transacción?**  
 El objetivo de una transacción es ejecutar todas las líneas de código de nuestro método y guardar finalmente la información en un repositorio, por ejemplo en nuestro caso, una base de datos. Esto se conoce como commit de nuestra transacción.
 Si por alguna razón algo fallara en nuestro método de Servicio, se daría marcha atrás a los cambios realizados en la base de datos. Esto se conoce como `rollback`.
-Lo anterior permite que nuestra información, ya sea que se una única base de datos o no, esté íntegra, y no exista posibilidad de datos corruptos por errores o fallas en la ejecución de nuestros métodos Java.
+Lo anterior permite que nuestra información, ya sea que se una única base de datos o no, esté íntegra, y no exista posibilidad de datos corruptos por errores o fallas en la ejecución de nuestros métodos `Java`.
 
 Creamos una `Clase` que tendrá el `método` que implementa `@Transactional`.
 
 ![25_Transactional_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/25_Transactional_01.png)
 
-Creamos una `función` en donde creamos `usuarios` e implementamos la nueva `clase`.
+En `FundamentosApplication` creamos una `función` en donde creamos `usuarios` e implementamos la nueva `clase`.
 
 ![25_Transactional_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/25_Transactional_02.png)
 
 ---
 
 ## Clase 26 - Rollback con la anotación transactional
+Para generar un error y probar el funcionamiento del `rollback` hacemos el que `email` del `usuario` sea único, en la `clase` `User`.
+
+![26_Rollback_Transactional_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/26_Rollback_Transactional_01.png)
+
+Y en `FundamentosApplication` repetimos el `mail` 1 en el `usuario` 3, agregamos un `try-catch` para poder corroborar que ningún `usuario` fue guardado en la DB.
+
+![26_Rollback_Transactional_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/26_Rollback_Transactional_02.png)
+
+Al aplicar la anotación `@transactional` podemos presenciar al conjunto de operaciones ejecutándose de manera total, integral y atómica. Se sigue el acrónimo `ACID` (Atomicity, Consistency, Isolation and Durability: Atomicidad, Consistencia, Aislamiento y Durabilidad, en español).
+
+**Atomicidad**: Las actividades de un `método` se consideran como una unidad de trabajo. Esto se conoce como Atomicidad. Este concepto asegura que todas las operaciones en una `transacción` se ejecuta todo o nada.  
+Si todas las instrucciones o líneas de código de un `método transaccional` son ejecutadas con éxito, entonces al finalizar se realiza un `commit`, es decir, guardado de la información.  
+Si alguna de las instrucciones falla se realiza un `rollback`, es decir, ninguna de la información es guardada en la base de datos o el repositorio donde ser persiste dicha información…
+
+**Consistencia**: Una vez que termina una `transacción` (sin importar si ha sido exitosa o no) la información queda en estado consistente, ya que se realizó todo o nada, y por lo tanto los `datos` no deben estar corruptos en ningún aspecto.
+
+**Aislado**: Múltiples usuarios pueden utilizar los `métodos transaccionales`, sin afectar el acceso de otros usuarios. Sin embargo debemos prevenir errores por accesos múltiples, aislando en la medida de lo posible nuestros `métodos transaccionales`. El aislamiento normalmente involucra el bloqueo de registros o tablas de base de datos, esto se conoce como locking…
+
+**Durable**: Sin importar si hay una caída del servidor, una transacción exitosa debe guardarse y perdurar posterior al termino de una `transacción`.
 
 ---
 

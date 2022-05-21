@@ -565,10 +565,23 @@ En `FundamentosApplication` ejecutamos el `método` con el `Logger info` y si no
 
 ![24_Named_parameters_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/24_Named_parameters_03.png)
 
-
 ---
 
 ## Clase 25 - Uso de anotación transactional
+`@Transactional` nos permite hacer `rollback` de las transacciones que hagamos a la DB. Se guardan todos los datos o ninguno.
+
+**¿Para qué usar una transacción?**  
+El objetivo de una transacción es ejecutar todas las líneas de código de nuestro método y guardar finalmente la información en un repositorio, por ejemplo en nuestro caso, una base de datos. Esto se conoce como commit de nuestra transacción.
+Si por alguna razón algo fallara en nuestro método de Servicio, se daría marcha atrás a los cambios realizados en la base de datos. Esto se conoce como `rollback`.
+Lo anterior permite que nuestra información, ya sea que se una única base de datos o no, esté íntegra, y no exista posibilidad de datos corruptos por errores o fallas en la ejecución de nuestros métodos Java.
+
+Creamos una `Clase` que tendrá el `método` que implementa `@Transactional`.
+
+![25_Transactional_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/25_Transactional_01.png)
+
+Creamos una `función` en donde creamos `usuarios` e implementamos la nueva `clase`.
+
+![25_Transactional_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/25_Transactional_02.png)
 
 ---
 

@@ -750,13 +750,13 @@ En este [post](https://www.baeldung.com/jackson-bidirectional-relationships-and-
 ## Clase 30 - Pagination con Spring Boot
 Crearemos un `servicio` que reciba `parámetros` de `pagination`.
 
-En `UserRestController` creamos un `método` para consumir todo lo relacionado con la `pagination`.
+En `UserRestController` creamos un `método` para consumir todo lo relacionado con la `pagination`.  
 Inyectamos la dependencia `userRepository`, indicamos la ruta para consumirla, `getUSerPageable` devuelve una `lista` de `usuarios` y recibe como `parámetros` un `page` y un `size` que indican la pagina y el tamaño de la `lista`.  
 A través de `userRepository` hacemos un `findAll` que recibe un `Pageable`, que lo construimos con los `parámetros` dados y el `getContent` para traer la `lista`.
 
 ![30_Pagination_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/30_Pagination_01.png)
 
-Lo probamos en `Postman` y vemos que si modificamos los valores nos trae lo indicado.
+Lo probamos en `Postman` y vemos que si modificamos los valores que damos en la `URL` nos trae lo indicado.
 
 ![30_Pagination_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/30_Pagination_02.png)
 

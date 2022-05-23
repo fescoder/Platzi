@@ -661,36 +661,43 @@ Inyectamos `CreaterUser` como dependencia y usamos el `método save` y un `HttpS
 
 ![28_Create_Update_Delete_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_03.png)
 
-Listo el `método Post`, ahora continuamos con `Delete` y `Put`.  
-Asi quedan nuestras `clases` `UserRestController` y `UserService` al final de la clase.
+Listo el `método Post`, ahora continuamos con `Delete` y `Put`.
+
+**Método DELETE**
+- En `UserRestController` mappeamos el ID dentro de una variable con `@PathVariable`, debe ser el mismo nombre que en `@DeleteMapping`, para identificar que `Id` de `usuario` hay que eliminar.
+- Inyectamos `DeleteUser` como dependencia para poder usar su `método` de eliminación de `usuario`.
+- Necesitamos crear la respuesta a nivel de `Entity` que será una `Http.NO_CONTENT` que indica que fue exitoso y sin contenido adicional.
 
 ![28_Create_Update_Delete_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_04.png)
 
+- En `DeleteUser` creamos `remove` que utiliza `userService` e indicamos que va a ejecutar un `metodo delete` nuevo, y le pasamos el `id`.
+
 ![28_Create_Update_Delete_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_05.png)
 
-**Método DELETE**
-- Mappeamos el ID dentro de una variable con `@PathVariable`, debe ser el mismo nombre que en `@DeleteMapping`, para identificar que `Id` de `usuario` hay que eliminar.
-- Inyectamos `DeleteUser` como dependencia para poder usar su `método` de eliminación de `usuario`.
-- Creamos el `método remove` en `DeleteUser`.
-- En `DeleteUser` creamos `remove` que utiliza `userService` e indicamos que va a ejecutar un `metodo delete` nuevo, y le pasamos el `id`.
 - En `UserService` creamos `delete` el cual usa `userRepository` para ejecutar `delete` y este le pasa un nuevo `usuario` con `id`.
-- Creamos el nuevo constructor, y cierra la creacion de estos `métodos`.
 
 ![28_Create_Update_Delete_06](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_06.png)
 
-- Por último necesitamos crear la respuesta a nivel de `Entity` que será una respuesta `Http.NO_CONTENT` que indica que fue exitoso y sin contenido adicional.
+- Creamos el nuevo constructor que nos hace falta y cierra la creacion de estos `métodos`.
 
 ![28_Create_Update_Delete_07](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_07.png)
 
 **Método UPDATE**  
 Siguiendo los mismos pasos anteriores.
-- Llamamos a la anotación `@PutMapping` que recibirá también un `id` para identificar al usuario, creamos `replaceUser`, que recibe un `usuario` y un `id`.
+- Llamamos a la anotación `@PutMapping` que recibirá también un `id` para identificar al usuario.
+- Creamos `replaceUser`, que recibe un `usuario` y un `id`, respectivamente mappeado.
 - Inyectamos `updateUser` y creamos el `método` `update` que le pasamos este `usuario` y `id`.
-- En `UpdateUser` volvemos a crear el `método update` al que le volvemos a pasar `usuario` y `id`.
-- Y en `UserService` hacemos la lógica, buscamos por `id` con el `userRepository.findById` y mappeamos con `map`, si falla, lanzamos una `exception`.
 - La respuesta a nivel de entidad es un `HttpStatus.OK`.
 
 ![28_Create_Update_Delete_08](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_08.png)
+
+- En `UpdateUser` volvemos a crear el `método update` al que le volvemos a pasar `usuario` y `id`.
+
+![28_Create_Update_Delete_09](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_09.png)
+
+- Y en `UserService` hacemos la lógica, buscamos por `id` con el `userRepository.findById` y mappeamos con `map`, si falla, lanzamos una `exception`.
+
+![28_Create_Update_Delete_10](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_10.png)
 
 ---
 

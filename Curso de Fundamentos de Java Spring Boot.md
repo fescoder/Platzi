@@ -695,7 +695,7 @@ Siguiendo los mismos pasos anteriores.
 
 ![28_Create_Update_Delete_09](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_09.png)
 
-- Y en `UserService` hacemos la lógica, buscamos por `id` con el `userRepository.findById` y mappeamos con `map`, si falla, lanzamos una `exception`.
+- Y en `UserService` hacemos la lógica, buscamos por `id` con el `userRepository.findById` y mappeamos con `map` y si todo sale bien lo guardamos, si falla, lanzamos una `exception`.
 
 ![28_Create_Update_Delete_10](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_10.png)
 
@@ -715,6 +715,35 @@ Siguiendo los mismos pasos anteriores.
 ---
 
 ## Clase 29 - Probando la API REST
+En ***Postman*** habiamos probardo el método **GET** para ver si se guardaban bien los usuarios y también el funcionamiento del servicio.  
+Ahora lo que haremos es probar si guarda un nuevo usuario a través del método **POST**.  
+Entonces indicamos que es **POST** el método que usaremos y como `URL` le pasamos `localhost:8081/app/api/users/`, vamos a la pestaña `Body`, seleccionamos `raw`, como tipo elegimos `JSON` y le pasamos los datos del nuevo `usuario`.
+
+![29_Probando_API_REST_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/29_Probando_API_REST_01.png)
+
+Como vemos también de respuesta, generamos el código `Http` 201 Created.
+
+Ahora con el `usuario` creado vamos a hacerle un `update`.  
+- Primero ponemos que lo que haremos será un **PUT** en ***Postman*** e indicamos el `id` del nuevo `usuario` en la `URL`.
+- Modificamos los datos que necesitamos y enviamos con `SEND`.
+
+![29_Probando_API_REST_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/29_Probando_API_REST_02.png)
+
+La respuesta `Http` fue 200 OK.
+
+Ahora eliminaremos un `usuario`.  
+Indicamos que usaremos el `método` **DELETE** , le pasamos el `id` y apretamos `SEND`, no retorna nada a nivel de servicio pero vemos que nos devuelve el código 204, que es que el servidor respondió correctamente, y si revisamos el `usuario` fue eliminado.
+
+![29_Probando_API_REST_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/29_Probando_API_REST_03.png)
+
+---
+
+Hubo error de tipo `Unsupported Media Type` al querer crear un nuevo usuario.  
+Algunos recomiendan eliminar `@JsonManagedReference` de la entidad `User` y usar en vez `@JsonIgnore`, pero lo que hice fue agregar `@JsonBackReference` al `atributo user`.
+
+![29_Probando_API_REST_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/29_Probando_API_REST_04.png)
+
+En este [post](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion) está bien explicado la parte de `@JsonManagedReference` y `@JsonBackReference`.
 
 ---
 

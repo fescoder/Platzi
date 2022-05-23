@@ -87,10 +87,16 @@ Entonces podemos afirmar que en la definición de un buen diseño de software se
 
 ---
 
+¿Cuál de estas es una definición correcta de dependencia?  
+Es una funcionalidad de un programa que a su vez hace parte de otra funcionalidad para lograr un objetivo.
+
+---
+
 ## Clase 7 - Inversión de control y el patrón de inyección de dependencias
 [Video explicativo](https://www.youtube.com/watch?v=-Cs1HN6pEg4&list=PLU8oAlHdN5Blq85GIxtKjIXdfHPksV_Hm&index=7)
 
 **Inversion of Control (IoC)**: Delegando responsabilidades  
+Es un principio de desarrollo de software que permite transferir el control de objetos de un programa a un contenedor o framework.  
 Se refiere a todo aquel diseño de software cuyo propósito obedece a la necesidad de querer controlar el flujo de ejecución de este, de forma automática y transparente, es decir, ceder el control de ese flujo a un “agente externo”, normalmente un framework.
 
 "No nos llame, nosotros lo llamamos."  
@@ -292,7 +298,7 @@ Creamos la nueva `clase` `GeneralConfiguration`
 ![14_Properties_valores_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_02.png)
 
 `@Configuration` indicamos a Spring que va a haber configuraciones, dependencias, etc.  
-`@Value` nos permite llamar a los valores que inicializamos en `properties`
+`@Value` nos permite llamar a los valores que inicializamos en `properties`, sirve para representar valores a nivel de properties.
 
 Creamos nuestro nuevo `Bean` con su interfaz y Clase que implementa.
 

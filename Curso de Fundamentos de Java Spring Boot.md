@@ -625,7 +625,7 @@ Configuramos nuestros casos de uso a nivel de inyección de dependencias, en `co
 
 ![27_CRUD_REST_Read_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/27_CRUD_REST_Read_03.png)
 
-En `UserRestController` con la anotación `@RestController`, que hereda de la anotación `@Controller`, nos permite que todos los `métodos` que creemos se formateen con `JSON`:
+En `UserRestController` con la anotación `@RestController`, que hereda de la anotación `@Controller`, nos permite que todos los `métodos` que creemos se formateen con `JSON` y:
 - Inyectamos la dependencia `GetUser` y hacemos un `método` que retorne la `lista` de `usuarios`.
 - Agregaremos la ruta, con `@RequestMapping`, que es por donde va a ser consumido este `servicio`.
 - En el `método get` indicamos como va a ser consumido via `Http` (una `/`), es decir, cuando pongan la ruta `/api/users/`, la última barra indica que se ejecuta este `método` y trae la `lista`.
@@ -644,6 +644,65 @@ En las clases de este módulo se muestran varias formas de programar los método
 ---
 
 ## Clase 28 - Métodos CREATE, UPDATE y DELETE
+Creamos 3 `clases` para cada acción. `CreateUser`, `UpdateUser` y `DeleteUser` en el `package caseuse`.
+
+**Método CREATE**  
+En la `clase CreateUser` indicamos que es un `@Component` para poder inyectarlo como dependencia, igual que las otras dos `clases`,  creamos también el `método save`, que recibe a un `usuario`. Este usa el `userService` para salvarlo con otro nuevo `método`.
+
+![28_Create_Update_Delete_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_01.png)
+
+En el `UserService` lo implementamos y este utiliza `userRepository` para guardar ese nuevo `usuario`.
+
+![28_Create_Update_Delete_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_02.png)
+
+En `UserControllerRest` usamos `@PostMapping` para indicar como será consumido este servicio.  
+La anotación `@RequestBody` es para tener el cuerpo de entrada en una variable.  
+Inyectamos `CreaterUser` como dependencia y usamos el `método save` y un `HttpStatus.CREATED` para indicar el estado al usuario.
+
+![28_Create_Update_Delete_03](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_03.png)
+
+Listo el `método Post`, ahora continuamos con `Delete` y `Put`.  
+Asi quedan nuestras `clases` `UserRestController` y `UserService`.
+
+![28_Create_Update_Delete_04](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_04.png)
+
+![28_Create_Update_Delete_05](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_05.png)
+
+**Método DELETE**
+-Mappeamos el ID dentro de una variable con `@PathVariable`, debe ser el mismo nombre que en `@DeleteMapping`, para identificar que `Id` de `usuario` hay que eliminar.
+- Inyectamos `DeleteUser` como dependencia para poder usar su `método` de eliminación de `usuario`.
+- Creamos el `método remove` en `DeleteUser`.
+- En `DeleteUser` creamos `remove` que utiliza `userService` e indicamos que va a ejecutar un `metodo delete` nuevo, y le pasamos el `id`.
+- En `UserService` creamos `delete` el cual usa `userRepository` para ejecutar `delete` y este le pasa un nuevo `usuario`.
+- Creamos el nuevo constructor, y cierra la creacion de estos `métodos`.
+
+![28_Create_Update_Delete_06](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_06.png)
+
+- Por último necesitamos crear la respuesta a nivel de `Entity` que será una respuesta `Http.NO_CONTENT` que indica que fue exitoso y sin contenido adicional.
+
+![28_Create_Update_Delete_07](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_07.png)
+
+**Método UPDATE**  
+Siguiendo los mismos pasos anteriores.
+- Llamamos a la anotación `@PutMapping` que recibirá también un `id` para identificar al usuario, creamos `replaceUser`, que recibe un `usuario` y un `id`.
+- Inyectamos `updateUser` y creamos el `método` `update` que le pasamos este `usuario` y `id`.
+- En `UpdateUser` volvemos a crear el `método update` al que le volvemos a pasar `usuario` y `id`.
+- Y en `UserService` hacemos la lógica, buscamos por `id` con el `userRepository.findById` y mappeamos con `map`, si falla, lanzamos una `exception`.
+
+![28_Create_Update_Delete_08](src/Curso_de_Fundamentos_de_Java_Spring_Boot/28_Create_Update_Delete_08.png)
+
+---
+
+**Una petición REST completa se basa en:**
+- URL(Dominio, protocolo)
+- verbo HTTP (GET, PUT, POST, DELETE)
+
+**¿Cuándo conviene usar REST?**
+- Interacciones simples (agregar recursos, quitarlos, modificarlos)
+- Recursos limitados
+
+**¿Cuándo NO conviene usar REST?**
+- Cuando las interacciones son más complejas, ejemplo cuándo necesitamos que el servidor aporte más lógica.
 
 ---
 

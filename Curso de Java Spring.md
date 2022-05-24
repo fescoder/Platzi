@@ -46,8 +46,34 @@
 
 ---
 
+[PDF del curso](https://static.platzi.com/media/public/uploads/presentacion_curso-de-java-spring_76d8fbd4-ad4a-4542-8751-a472edefcf82.pdf)
+
+![05_Herramientas_ambiente_desarrollo](src/Curso_de_Java_Spring/05_Herramientas_ambiente_desarrollo.png)
+
 # Módulo 2 - Introducción a Spring boot
 ## Clase 6 - ¿Qué es y qué usaremos de Spring?
+
+![06_Que_es_Spring_01](src/Curso_de_Java_Spring/06_Que_es_Spring_01.png)
+
+![06_Que_es_Spring_02](src/Curso_de_Java_Spring/06_Que_es_Spring_02.png)
+
+**Framework** es una estructura que nos ayuda a trabajar de una manera más sencilla con algo, en este caso con `Java`. Nos dá herramientas para hacer desarrollos avanzados, utilizando menos código, mejores prácticas en menor tiempo.
+
+**Spring** es el framework más usado de `Java`, y nos dá herramientas a los desarrolladores para que nos ocupemos por lo que es importante y es crear un código increible, delegandole a `Spring` tareas repetitivas o de los cuales uno de los subporyectos de `Spring` se pueda encargar.
+
+También posee una gran comunidad, lo que nos brinda muchísima documentación y ayuda.
+
+`Spring` contiene cerca de 30 proyectos internos, los cuales van desde crear app web, app reactivas o procesamientos de grandes lotes de información con `Batch`.
+
+`Spring` tiene una estructura modular y flexible, lo que nos hace usar solo lo que necesitemos.
+
+Vamos a usar 4 subproyectos de `Sping`:
+- Spring Framework: Permite crear aplicaciones empresariales. Es transversal, ya que todos lo usan.
+- Spring Boot: Con el que podemos crear aplicaciones autocontenidas y autoconfigurables.
+- Spring Data: Gestionar e integrar bases de datos.
+- Spring Security: Gestionar la seguridad de la aplicación.
+
+[Documentación de Spring](https://spring.io/projects)
 
 --
 

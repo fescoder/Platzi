@@ -52,7 +52,6 @@
 
 # Módulo 2 - Introducción a Spring boot
 ## Clase 6 - ¿Qué es y qué usaremos de Spring?
-
 ![06_Que_es_Spring_01](src/Curso_de_Java_Spring/06_Que_es_Spring_01.png)
 
 - **Framework** es una estructura que nos ayuda a trabajar de una manera más sencilla con algo, en este caso con `Java`. Nos dá herramientas para hacer desarrollos avanzados, utilizando menos código, mejores prácticas en menor tiempo.
@@ -68,17 +67,16 @@
 ![06_Que_es_Spring_02](src/Curso_de_Java_Spring/06_Que_es_Spring_02.png)
 
 Vamos a usar 4 subproyectos de `Spring`:
-- Spring Framework: Permite crear aplicaciones empresariales. Es transversal, ya que todos lo usan.
-- Spring Boot: Con el que podemos crear aplicaciones autocontenidas y autoconfigurables.
-- Spring Data: Gestionar e integrar bases de datos.
-- Spring Security: Gestionar la seguridad de la aplicación.
+- **Spring Framework**: Permite crear aplicaciones empresariales. Es transversal, ya que todos lo usan.
+- **Spring Boot**: Con el que podemos crear aplicaciones autocontenidas y autoconfigurables.
+- **Spring Data**: Gestionar e integrar bases de datos.
+- **Spring Security**: Gestionar la seguridad de la aplicación.
 
 [Documentación de Spring](https://spring.io/projects)
 
 ---
 
 ## Clase 7 - Conocer qué es una aplicación autocontenida
-
 ![07_App_autocontenida_01](src/Curso_de_Java_Spring/07_App_autocontenida_01.png)
 
 Antes las apps web empresariales lucian como la imagen izquierda, teniamos un servidor de apps configurada, también se desplegaban todas las apps que queriamos que interactuaran entre si.
@@ -89,13 +87,14 @@ Cada app internamente contiene su propio servidor de apps con una configuración
 ![07_App_autocontenida_02](src/Curso_de_Java_Spring/07_App_autocontenida_02.png)
 
 - `Spring Boot` es el proyecto de `Spring` para crear apps autocontenidas.
-- Esto permite olvidarnos de la arquitectura y enfocarnos en el desarrollo delegandole a Spring boot labores como configuración de dependencias o desplegar nuestro servicio o app a un servidor de aplicaciones y enfocarnos unicamente en crear el mejor código posible.
-- Para esto Spring boot utiliza internamente un servidor de apps embebido o contendor de apps embebido, por defecto usa `Tomcat`.
+- Esto permite olvidarnos de la arquitectura y enfocarnos en el desarrollo delegandole a `Spring Boot` labores como configuración de dependencias o desplegar nuestro servicio o app a un servidor de aplicaciones y enfocarnos unicamente en crear el mejor código posible.
+- Para esto `Spring Boot` utiliza internamente un servidor de apps embebido o contendor de apps embebido, por defecto usa `Tomcat`.
 - También nos provee un completo gestor de dependencias con `Maven` o `Gradle`, configuraciones automaticas y más para que nuestra app sea a la medida
 
 ---
 
 ## Clase 8 - Crear nuestra aplicación con Spring Initializr
+
 
 ---
 

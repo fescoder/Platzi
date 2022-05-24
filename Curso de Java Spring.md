@@ -75,159 +75,159 @@ Vamos a usar 4 subproyectos de `Spring`:
 
 [Documentación de Spring](https://spring.io/projects)
 
---
+---
 
 ## Clase 7 - Conocer qué es una aplicación autocontenida
 
-![07_App_autocontenida_01]
+![07_App_autocontenida_01](src/Curso_de_Java_Spring/07_App_autocontenida_01.png)
 
 Antes las apps web empresariales lucian como la imagen izquierda, teniamos un servidor de apps configurada, también se desplegaban todas las apps que queriamos que interactuaran entre si.
 
 Ahora las arquitecturas modernas, nos sugieren tener algo como el diagrama de la derecha, donde tengamos pequeñas apps o servicios que interactuen entre si, en vez de una gran app, esto nos da mucha facilidad para el desarrollo y mantenimiento de nuestra app.  
 Cada app internamente contiene su propio servidor de apps con una configuración totalmente independiente una de la otra.
 
-![07_App_autocontenida_02]
+![07_App_autocontenida_02](src/Curso_de_Java_Spring/07_App_autocontenida_02.png)
 
 - `Spring Boot` es el proyecto de `Spring` para crear apps autocontenidas.
 - Esto permite olvidarnos de la arquitectura y enfocarnos en el desarrollo delegandole a Spring boot labores como configuración de dependencias o desplegar nuestro servicio o app a un servidor de aplicaciones y enfocarnos unicamente en crear el mejor código posible.
 - Para esto Spring boot utiliza internamente un servidor de apps embebido o contendor de apps embebido, por defecto usa `Tomcat`.
 - También nos provee un completo gestor de dependencias con `Maven` o `Gradle`, configuraciones automaticas y más para que nuestra app sea a la medida
 
---
+---
 
 ## Clase 8 - Crear nuestra aplicación con Spring Initializr
 
---
+---
 
 ## Clase 9 - Hola mundo con Spring Boot
 
---
+---
 
 ## Clase 10 - Configurar Spring Boot
 
---
+---
 
 ## Clase 11 - Crear la estructura del proyecto
 
---
+---
 
 # Módulo 3 - Spring Data
 ## Clase 12 - ¿Qué es JPA?
 
---
+---
 
 ## Clase 13 - Conocer qué es Spring Data
 
---
+---
 
 ## Clase 14 - Conectar la base de datos a nuestra aplicación
 
---
+---
 
 ## Clase 15 - Mapear las tablas como clases
 
---
+---
 
 ## Clase 16 - Crear Entity cuando su clave primaria es compuesta
 
---
+---
 
 ## Clase 17 - Mapear relaciones entre clases
 
---
+---
 
 ## Clase 18 - Usar la interface CrudRepository
 
---
+---
 
 ## Clase 19 - Query Methods
 
---
+---
 
 # Módulo 4 - Construyendo nuestra API
 ## Clase 20 - Implementar la anotación @Repository
 
---
+---
 
 ## Clase 21 - ¿Qué es el patrón Data Mapper y qué resuelve?
 
---
+---
 
 ## Clase 22 - Orientar nuestra API al dominio con MapStruct
 
---
+---
 
 ## Clase 23 - Orientar nuestro repositorio a términos del dominio
 
---
+---
 
 ## Clase 24 - Inyección de dependencias
 
---
+---
 
 ## Clase 25 - Implementar la anotación @Service
 
---
+---
 
 ## Clase 26 - Implementar la anotación @RestController
 
---
+---
 
 ## Clase 27 - Exponer nuestra API
 
---
+---
 
 # Módulo 5 - Mejorando nuestra API
 ## Clase 28 - Controlar las respuestas HTTP
 
---
+---
 
 ## Clase 29 - Crear el dominio de compras
 
---
+---
 
 ## Clase 30 - Mapear el dominio de compras
 
---
+---
 
 ## Clase 31 - Crear el repositorio de compras
 
---
+---
 
 ## Clase 32 - Probando nuestros servicios de compras
 
---
+---
 
 ## Clase 33 - Documentar nuestra API con Swagger
 
---
+---
 
 # Módulo 6 - Spring Security
 ## Clase 34 - Configurar la seguridad de nuestra API con Spring Security
 
---
+---
 
 ## Clase 35 - Generar un JWT
 
---
+---
 
 ## Clase 36 - Autenticación con JWT
 
---
+---
 
 ## Clase 37 - Autorización con JWT
 
---
+---
 
 # Módulo 7 - Despliegue de nuestra aplicación
 ## Clase 38 - Desplegar nuestra API desde la ventana de comandos
 
---
+---
 
 ## Clase 39 - Desplegar nuestra base de datos con Heroku
 
---
+---
 
 ## Clase 40 - Desplegar nuestra API con Heroku
 
---
+---

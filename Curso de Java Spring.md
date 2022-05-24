@@ -67,7 +67,7 @@
 
 ![06_Que_es_Spring_02](src/Curso_de_Java_Spring/06_Que_es_Spring_02.png)
 
-Vamos a usar 4 subproyectos de `Sping`:
+Vamos a usar 4 subproyectos de `Spring`:
 - Spring Framework: Permite crear aplicaciones empresariales. Es transversal, ya que todos lo usan.
 - Spring Boot: Con el que podemos crear aplicaciones autocontenidas y autoconfigurables.
 - Spring Data: Gestionar e integrar bases de datos.
@@ -78,6 +78,20 @@ Vamos a usar 4 subproyectos de `Sping`:
 --
 
 ## Clase 7 - Conocer qué es una aplicación autocontenida
+
+![07_App_autocontenida_01]
+
+Antes las apps web empresariales lucian como la imagen izquierda, teniamos un servidor de apps configurada, también se desplegaban todas las apps que queriamos que interactuaran entre si.
+
+Ahora las arquitecturas modernas, nos sugieren tener algo como el diagrama de la derecha, donde tengamos pequeñas apps o servicios que interactuen entre si, en vez de una gran app, esto nos da mucha facilidad para el desarrollo y mantenimiento de nuestra app.  
+Cada app internamente contiene su propio servidor de apps con una configuración totalmente independiente una de la otra.
+
+![07_App_autocontenida_02]
+
+- `Spring Boot` es el proyecto de `Spring` para crear apps autocontenidas.
+- Esto permite olvidarnos de la arquitectura y enfocarnos en el desarrollo delegandole a Spring boot labores como configuración de dependencias o desplegar nuestro servicio o app a un servidor de aplicaciones y enfocarnos unicamente en crear el mejor código posible.
+- Para esto Spring boot utiliza internamente un servidor de apps embebido o contendor de apps embebido, por defecto usa `Tomcat`.
+- También nos provee un completo gestor de dependencias con `Maven` o `Gradle`, configuraciones automaticas y más para que nuestra app sea a la medida
 
 --
 

@@ -94,7 +94,32 @@ Cada app internamente contiene su propio servidor de apps con una configuración
 ---
 
 ## Clase 8 - Crear nuestra aplicación con Spring Initializr
+![08_Spring_Initializr_01](src/Curso_de_Java_Spring/08_Spring_Initializr_01.png)
 
+[Spring Initializr](https://start.spring.io/) es el sitio oficial de `Spring` para crear apps autocontenidas, nos ofrece la oportunidad de crear nuestra propia app, utilizando las dependencias que necesitemos y con muy pocos clicks.
+
+![08_Spring_Initializr_02](src/Curso_de_Java_Spring/08_Spring_Initializr_02.png)
+
+Lo primero que vemos en `Spring Initializr` es que nos pide es el tipo de proyecto:
+- `Maven`: Gestionan las dependencias con archivos `XML`.
+- `Gradle`: Son escritos en `Groovy` y nos permite crear tareas que se pueden ejecutar al momento de hacer despliegue o integración continua.
+
+Se recomienda siempre usar la versión estable de `Spring Boot`.  
+También podemos incluir las dependencias que sabemos que vamos a necesitar, en este caso usaremos `Spring Web`, que me permite crear `APIs REST` usando `Apache Tomcat` como contenedor por defecto.
+
+![08_Spring_Initializr_03](src/Curso_de_Java_Spring/08_Spring_Initializr_03.png)
+
+Tenemos varios archivos que nos descargamos con el proyecto:
+- `.gitignore`: Nos sirve si queremos montar nuestro código a un servidor de versión de código, un repositorio como ***GitHub***.
+- `HELP.md`: Describe brevemente nuestro proyecto.
+- `build.gradle`: Escrito en `Groovy` esta toda la configuración de la app. Plugins, grupo, versión, versión de `Java`, repositorios, dependencias y pruebas que vamos a utilizar.
+- `gradle`, `gradlew`, `gradlew.bat` y `settings.gradle`: Son necesarios para que `Gradle` funcione y no tenemos que interactuar con ellos.
+- `src`: Contiene internamente 2 carpetas:
+    - `main`: Para todo lo relacionado con el proyecto.
+        - `java`: Contiene todo el paquete de `clases` `Java`.
+        En este caso contiene `com/platzi/market` y dentro está `PlatziMarketApplication`, que es la `clase` que contiene el `método` `main`, y tiene la anotación `@SpringBootApplication` para indicar que es esta `clase` la que gestiona la app.
+        - `resources`: Dentro está `application.properties` y acá configuramos todo lo necesario para que nuestra app se acomode a nuestro gusto, `variables` que podemos encontrar en la documentación de `Spring` o `variables` que nosotros definamos.
+    - `test`: Para nuestras pruebas del proyecto.
 
 ---
 

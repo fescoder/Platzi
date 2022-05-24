@@ -128,7 +128,7 @@ Lo primero que hacemos es descomprimir el zip, abrimos una terminal en esa carpe
 Con `git remote add origin git@github.com:FesCoder/platzi-market.git` enlazamos el repo local con el remoto.
 
 Ahora con **Intellij IDEA** vamos a importar el proyecto, nos dirigimos a donde lo tenemos y seleccionamos `build.gradle`.  
-Lo que haremos ahora es una pequeña `función` para probar que todo es ok y levante el servidor.
+Lo que haremos ahora es un pequeño `Controller` para probar que todo es ok y levante el servidor.
 
 ![09_Hola_mundo_01](src/Curso_de_Java_Spring/09_Hola_mundo_01.png)
 
@@ -140,11 +140,46 @@ En el navegador probamos la app, por defecto el puerto que usa `Spring Boot` es 
 ---
 
 Es buena practica usar otro puerto distinto al 8080, hay veces pone problemas segun lo que tengas instalado y ejecutando en tu maquina.  
-Y se puede cambiar en el `application.properties` con `server.port=8091`.
+Y se puede cambiar en el `application.properties` con `server.port=8090`.
 
 ---
 
 ## Clase 10 - Configurar Spring Boot
+![10_Configurar_Spring_Boot_01](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_01.png)
+
+- En `application.properties` podemos gestionar la configuración que va a tener nuestro proyecto, si queremos modificar el puerto por el que se ejecuta, o el context path de nuestra app, entre otras. De forma alternativa podemos usar `application.yml` directamente en la linea de comandos cuando lancemos la app.
+- También existe la posibilidad de añadir nuestras propias `variables` o `atributos` para la configuración.
+- Nos ofrece la capacidad de gestionar diferentes `perfiles` de acuerdo a los entornos donde estemos. Podemos crear un `perfil` que se ejecute en tiempo de desarrollo y otro que se enfoque unicamente cuando nuestra app esté en producción.
+
+Lo primero que hacemos es modificar el puerto y el class path de nuestra `application.properties`.
+
+![10_Configurar_Spring_Boot_02](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_02.png)
+
+El archivo `application.properties` tiene la capacidad de ser gestionado para varios entornos.  
+Lo que tenemos que hacer es crear un nuevo `archivo.properties`, en este caso `application-dev.properties`, lo hacemos con `New -> File`, para que se comporte para un entorno de desarrollo y añadiremos otro para cuando sea producción, `application-pdn.properties`.
+
+Es importante los nombres de las properties despues del guión(`-`).  
+Indicaremos con que entorno queremos trabajar en `application.properties` con `spring.profiles.active=dev`, decimos que el perfil activo de `Spring` en este momento es `dev`. Y en `dev` le decimos el puerto que vamos a usar, y para producción será el puerto 80.
+
+![10_Configurar_Spring_Boot_03](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_03.png)
+
+![10_Configurar_Spring_Boot_04](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_04.png)
+
+El atributo `class path` se va a compartir con los 2 perfiles ya que lo dejamos en `application.properties`.
+
+![10_Configurar_Spring_Boot_05](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_05.png)
+
+Como podemos ver cuando iniciamos la app nos dice para que perfil está activo en ese momento.
+
+En [este enlace](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html) tenemos todos los atributos de `Spring` que podemos modificar.
+
+---
+
+El tema de los perfiles en Spring Boot es fascinante. Inclusive se pueden utilizar implementaciones de objetos específicos por perfil con la ayuda de la anotación `@Profile`. [Más info](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+
+Formato de configuración con `yml`.
+
+![10_Configurar_Spring_Boot_06](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_06.png)
 
 ---
 

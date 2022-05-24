@@ -44,7 +44,9 @@
 
 # Módulo 1 - Introducción a Spring Boot
 ## Clase 1 - ¿Qué es Spring Boot?
-- **Spring Boot** es un proyecto basado en **Spring**, no es lo mismo que **Spring**. Es un proyecto que forma parte del core de **Spring**, al igual que Spring Cloud, Spring Security, Spring Data, etc.
+- **Spring Boot** es un proyecto basado en **Spring**, no es lo mismo que **Spring**. Es un proyecto que forma parte del core de **Spring**, al igual que Spring Cloud, Spring Security, Spring Data, etc.  
+- Es un proyecto basado en Spring cuyo objetivo principal es correr la aplicación.
+- Al desarrollar no nos centramos en términos de configuración, sino en términos de ejecución.
 - El objetivo principal es que sólo te centres en correr la aplicación, sin preocuparte por temas de configuración, etc.
 - Tiene la gran ventaja poder integrar librerías de terceros de manera muy sencilla.
 - No tendremos que preocuparnos por configuraciones a nivel de XML, sólo configuraciones mínimas a nivel de properties (ponerle el puerto, etc).
@@ -76,6 +78,7 @@ Características principales de **Spring Boot**:
 
 # Módulo 2 - Dependencias en Spring Boot
 ## Clase 6 - ¿Qué es una dependencia?
+Es una funcionalidad de un programa que a su vez hace parte de otra funcionalidad para lograr un objetivo.
 - Objetos definidos como una funcionalidad, sin la cual, los otros objetos no podrían trabajar, ya que dependen de ella.  
 Por ejemplo, un volante es una dependencia de un vehículo, ya que sin volante, no podemos conducir el vehículo.
 - Las dependencias nos permiten modularizar nuestra aplicación, lo cual nos beneficia en las pruebas unitarias.
@@ -84,11 +87,6 @@ Por ejemplo, un volante es una dependencia de un vehículo, ya que sin volante, 
 
 **Bajo acoplamiento**: Hablamos de acoplamiento bajo cuando existe una independencia entre los componentes entre si, por el contrario un alto acoplamiento es cuando tenemos varias dependencias relacionadas a un solo componente.  
 Entonces podemos afirmar que en la definición de un buen diseño de software se debe tener una ALTA COHESIÓN y un BAJO ACOPLAMIENTO.
-
----
-
-¿Cuál de estas es una definición correcta de dependencia?  
-Es una funcionalidad de un programa que a su vez hace parte de otra funcionalidad para lograr un objetivo.
 
 ---
 
@@ -298,7 +296,9 @@ Creamos la nueva `clase` `GeneralConfiguration`
 ![14_Properties_valores_02](src/Curso_de_Fundamentos_de_Java_Spring_Boot/14_Properties_valores_02.png)
 
 `@Configuration` indicamos a Spring que va a haber configuraciones, dependencias, etc.  
-`@Value` nos permite llamar a los valores que inicializamos en `properties`, sirve para representar valores a nivel de properties.
+`@Value` nos permite llamar a los valores que inicializamos en `properties`, sirve para representar valores a nivel de properties.  
+En el ejemplo `@Value("${driver}") private String myDriver;`  
+Captura el valor de la propiedad driver y la representa en la variable myDriver.
 
 Creamos nuestro nuevo `Bean` con su interfaz y Clase que implementa.
 
@@ -493,6 +493,7 @@ spring.jpa.show-sql=true
 ---
 
 ## Clase 20 - Uso de JPQL en anotación query
+Es un lenguaje de consulta de persistencia de datos.
 
 ![20_JPQL_en_Query_01](src/Curso_de_Fundamentos_de_Java_Spring_Boot/20_JPQL_en_Query_01.png)
 

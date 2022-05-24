@@ -124,6 +124,23 @@ Tenemos varios archivos que nos descargamos con el proyecto:
 ---
 
 ## Clase 9 - Hola mundo con Spring Boot
+Lo primero que hacemos es descomprimir el zip, abrimos una terminal en esa carpeta y con `git init` iniciamos el repositorio de nuestro proyecto.  
+Con `git remote add origin git@github.com:FesCoder/platzi-market.git` enlazamos el repo local con el remoto.
+
+Ahora con **Intellij IDEA** vamos a importar el proyecto, nos dirigimos a donde lo tenemos y seleccionamos `build.gradle`.  
+Lo que haremos ahora es una pequeña `función` para probar que todo es ok y levante el servidor.
+
+![09_Hola_mundo_01](src/Curso_de_Java_Spring/09_Hola_mundo_01.png)
+
+A la hora de compilar lo que hace `Spring` es crear un contendor de apps o un servidor de apps para que nuestra app pueda funcionar.
+En el navegador probamos la app, por defecto el puerto que usa `Spring Boot` es el 8080, entonces escribimos `localhost:8080/saludar/hola`.
+
+![09_Hola_mundo_02](src/Curso_de_Java_Spring/09_Hola_mundo_02.png)
+
+---
+
+Es buena practica usar otro puerto distinto al 8080, hay veces pone problemas segun lo que tengas instalado y ejecutando en tu maquina.  
+Y se puede cambiar en el `application.properties` con `server.port=8091`.
 
 ---
 

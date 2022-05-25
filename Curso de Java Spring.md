@@ -245,6 +245,25 @@ Con esto nos queda claro como `Java` se integra con nuestras DB mediante `JPA`.
 ---
 
 ## Clase 13 - Conocer qué es Spring Data
+`Spring Data` no es una implementación de `JPA`, es un proyecto que usa `JPA` para que la gestión de tareas, desde `Java` en las DB, sea más poderosa y llena de posibilidades.
+
+![13_Spring_Data_01](src/Curso_de_Java_Spring/13_Spring_Data_01.png)
+
+- `Spring Data` contiene varios subproyectos, entre ellos:
+    - `Spring Data JPA` o `Spring Data JDBC`: Estos sirven para conectarnos a DBs que son `SQL` o `relacionales`.
+    - `Spring Data MongoDB` o `Spring Data Cassandra`: Para conectarnos a DBs que son no `SQL`.
+- La tarea principal de `Spring Data` es optimizar tareas que resultan repetitivas para los desarrolladores (Escribir, consultar, actualizar y borrar registros).
+- Todo esta ya lo tiene en sus repositorios sin código, que son un sin fin de posibilidades, nos permiten hacer todo tipo de operaciones en DB sin escribir una sola linea de código.
+- También nos provee de auditorias transparentes, de las cuales no nos tenemos que preocupar, `Spring Data` posee un motor de auditorias que nos permiten saber cuando se inserto, borro o actualizo un registro.
+
+Para incluir `Spring Data` dentro de nuestra app primero tenemos que encontrarlo en [MVNRepository](https://mvnrepository.com/) y lo buscamos como `Spring Boot Starter Data JPA`, elegimos la última version y en el tag de `Gradle` vemos que tenemos el grupo y el nombre.
+
+![13_Spring_Data_02](src/Curso_de_Java_Spring/13_Spring_Data_02.png)
+
+
+En `build.gradle`, en la sección de dependencias lo insertamos escribiendo `grupo:nombre` y recargamos `Gradle` para los cambios.
+
+![13_Spring_Data_03](src/Curso_de_Java_Spring/13_Spring_Data_03.png)
 
 ---
 

@@ -225,17 +225,17 @@ Para quien esté interesado en conocer un poco más sobre `DDD` (Domain Driven D
 `JPA` (Java Persistence API) es una especificación de `Java` para un framework `ORM` (Object Relational Mapping, un mappeo objeto relacional).  
 Quiere decir que son unas series de reglas que `Java` define para que cualquier framework que quiera interactuar con la DB, desde `Java`, tenga que seguir.
 
-Para este fin, `JPA` usa anotaciones para conectar clases a tablas de nuestra DB y así evitar hacerlo de manera nativa con `SQLs`, y lo hacemos directamente con código `Java`.
+Para este fin, `JPA` usa anotaciones para conectar `clases` a `tablas` de nuestra DB y así evitar hacerlo de manera nativa con `SQLs`, y lo hacemos directamente con código `Java`.
 
 ![12_JPA_02](src/Curso_de_Java_Spring/12_JPA_02.png)
 
-- `@Entity`: la más importante, es la que indica a una `clase` que está representando una `tabla` de nuestra DB.
-- `@Table`: es la que recibe el nombre de la `tabla` a la cual está mapeando nuestra `clase`.
-- `@Column`: es una anotación que se le pone a los `atributos` de nuestra `clase`. No es obligatoria, solamente debemos ponerla cuando el nombre de nuestra `columna` sea diferente al nombre del `atributo` de nuestra `tabla`.
-- `@Id` y `@EmbededId`: representan la `PK` de nuestra `tabla` en la `clase`.
+- `@Entity`: Es la que indica a una `clase` que está representando una `tabla` de nuestra DB.
+- `@Table`: Es la que recibe el nombre de la `tabla` a la cual está mapeando nuestra `clase`.
+- `@Column`: Es una anotación que se le pone a los `atributos` de nuestra `clase`. No es obligatoria, solamente debemos ponerla cuando el nombre de nuestra `columna` sea diferente al nombre del `atributo` de nuestra `tabla`.
+- `@Id` y `@EmbededId`: Representan la `PK` de nuestra `tabla` en la `clase`.
     - `@Id` se usa cuando es una `PK` sencilla.
     - `@EmbededId` cuando es una `PK` compuesta.
-- `@GeneratedValue`: nos permite generar automaticamente valores para las `PK` de nuestras `tablas` en la `clase`.
+- `@GeneratedValue`: Nos permite generar automaticamente valores para las `PK` de nuestras `tablas` en la `clase`.
 - `@OneToMany` y `@ManyToOne`: Representan las relaciones que existen entre las `tablas`, pero a nivel de las `clases`.
 
 ![12_JPA_03](src/Curso_de_Java_Spring/12_JPA_03.png)

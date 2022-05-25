@@ -184,14 +184,14 @@ Formato de configuración con `yml`.
 ---
 
 ## Clase 11 - Crear la estructura del proyecto
-La arquitectura que usaremos será una por capas orientada al ***Dominio***, `DDD`(Domain Driven Design).
+La arquitectura que usaremos será una por capas orientada al ***Dominio***, conocida como `DDD`(Domain Driven Design).
 
 ![11_Estructura_proyecto_01](src/Curso_de_Java_Spring/11_Estructura_proyecto_01.png)
 
 - La primera capa es la del ***Dominio***, donde vamos a tener:
-    - **Los DTOs y objetos de dominio** que son objetos que hacen parte del contexto de nuestra app, en este caso de un supermercado.
-    - **Los servicios** son los encargados de servir como puente entre los controladores de la API y la capa de persistencia o repositorio, que es quien interviene en la DB.
-    - **La especificación de los repositorios** son interfaces que definen las reglas de juego o contratos, que de cumplir la persistencia, para intervenir entre los objetos de dominio y la DB.
+    - **Los DTOs y objetos de dominio**: que son objetos que hacen parte del contexto de nuestra app, en este caso de un supermercado.
+    - **Los servicios**: son los encargados de servir como puente entre los controladores de la API y la capa de persistencia o repositorio, que es quien interviene en la DB
+    - **La especificación de los repositorios**: son interfaces que definen las reglas de juego o contratos, que de cumplir la persistencia, para intervenir entre los objetos de dominio y la DB.
 - La otra capa es la ***Web***, en esta vamos a tener los `Controladores` de nuestra `API`. Como el que hicimos en la clase anterior.
 - La última capa es la de ***Persistencia***, que es la capa que tiene la obligación de interactuar con lal DB. Acá vamos a tener los `repositorios`, que son los que van a implementar las especificaciónes que tenemos en ***Dominio*** y también los `Entities`. Los `Entities` son las clases que mapean y hacen de tablas de nuestra DB.
 

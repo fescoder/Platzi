@@ -156,9 +156,9 @@ Lo primero que hacemos es modificar el puerto y el class path de nuestra `applic
 ![10_Configurar_Spring_Boot_02](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_02.png)
 
 El archivo `application.properties` tiene la capacidad de ser gestionado para varios entornos.  
-Lo que tenemos que hacer es crear un nuevo `archivo.properties`, en este caso `application-dev.properties`, lo hacemos con `New -> File`, para que se comporte para un entorno de desarrollo y añadiremos otro para cuando sea producción, `application-pdn.properties`.
+Lo que tenemos que hacer es crear un nuevo `archivo.properties`, en este caso `application-dev.properties`, lo hacemos con `New -> File`, para que se comporte para un entorno de desarrollo y añadiremos otro para cuando sea producción, `application-pdn.properties`.  
+Es importante los nombres de las properties despues del guión(`-`).
 
-Es importante los nombres de las properties despues del guión(`-`).  
 Indicaremos con que entorno queremos trabajar en `application.properties` con `spring.profiles.active=dev`, decimos que el perfil activo de `Spring` en este momento es `dev`. Y en `dev` le decimos el puerto que vamos a usar, y para producción será el puerto 80.
 
 ![10_Configurar_Spring_Boot_03](src/Curso_de_Java_Spring/10_Configurar_Spring_Boot_03.png)
@@ -175,7 +175,7 @@ En [este enlace](https://docs.spring.io/spring-boot/docs/current/reference/html/
 
 ---
 
-El tema de los perfiles en Spring Boot es fascinante. Inclusive se pueden utilizar implementaciones de objetos específicos por perfil con la ayuda de la anotación `@Profile`. [Más info](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
+El tema de los perfiles en Spring Boot es fascinante. Inclusive se pueden utilizar implementaciones de objetos específicos por perfil con la ayuda de la anotación `@Profile`. [Más info.](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-profiles)
 
 Formato de configuración con `yml`.
 
@@ -184,6 +184,37 @@ Formato de configuración con `yml`.
 ---
 
 ## Clase 11 - Crear la estructura del proyecto
+La arquitectura que usaremos será una por capas orientada al ***Dominio***, `DDD`(Domain Driven Design).
+
+![11_Estructura_proyecto_01](src/Curso_de_Java_Spring/11_Estructura_proyecto_01.png)
+
+- La primera capa es la del ***Dominio***, donde vamos a tener:
+    - **Los DTOs y objetos de dominio** que son objetos que hacen parte del contexto de nuestra app, en este caso de un supermercado.
+    - **Los servicios** son los encargados de servir como puente entre los controladores de la API y la capa de persistencia o repositorio, que es quien interviene en la DB.
+    - **La especificación de los repositorios** son interfaces que definen las reglas de juego o contratos, que de cumplir la persistencia, para intervenir entre los objetos de dominio y la DB.
+- La otra capa es la ***Web***, en esta vamos a tener los `Controladores` de nuestra `API`. Como el que hicimos en la clase anterior.
+- La última capa es la de ***Persistencia***, que es la capa que tiene la obligación de interactuar con lal DB. Acá vamos a tener los `repositorios`, que son los que van a implementar las especificaciónes que tenemos en ***Dominio*** y también los `Entities`. Los `Entities` son las clases que mapean y hacen de tablas de nuestra DB.
+
+El flujo seria:
+- Un `cliente` hace un llamado a un `Controlador` de nuestra `API`.
+- El `controlador` va al `servicio`, que contiene todo lo necesario para intervenir en esa operación.
+- El `Servicio` va a ir al `repositorio` que necesite, y acá es donde ocurre cuando tenemos que hacer alguna gestion o movimiento a nuestra DB.
+
+![11_Estructura_proyecto_02](src/Curso_de_Java_Spring/11_Estructura_proyecto_02.png)
+
+Entonces en el proyecto creamos:
+- 3 `packages` llamados `domain`, `web` y `persistence`.
+    - Dentro de `domain` creamos 3 `packages` llamados `dto`, `repository` y `service`.
+    - Dentro de `persistence` creamos 2 `packages` llamados `entity` y `crud`.
+    - Dentro de `web` creamos 1 `package` llamado `controller`.
+
+Con esto nuestro proyecto ya cuenta con una estructura solida, que nos permite tener un código más organizado, donde sea más facil escribir código y mantenerlo.
+
+---
+
+Al realizar creaciones de `paquetes` estas deben estar por debajo de la clase donde se encuentre nuestro `main` (`@SpringBootApplication`), ya que `Spring` scanea desde ese punto hacia abajo por defecto, de lo contrario se tendra que mencionar en esa misma clase la ruta que scaneara.
+
+Para quien esté interesado en conocer un poco más sobre DDD (Domain Driven Design) [aquí](https://medium.com/@jonathanloscalzo/domain-driven-design-principios-beneficios-y-elementos-primera-parte-aad90f30aa35) les dejo un artículo introductorio que me pareció excelente para entender de una manera sencilla este patrón de desarrollo.
 
 ---
 

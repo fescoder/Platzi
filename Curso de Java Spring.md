@@ -222,11 +222,13 @@ Para quien esté interesado en conocer un poco más sobre `DDD` (Domain Driven D
 ## Clase 12 - ¿Qué es JPA?
 ![12_JPA_01](src/Curso_de_Java_Spring/12_JPA_01.png)
 
-`JPA` (Java Persistence API) es una especificación de `Java` para un framework `ORM` (Object Relational Mapping, un mappeo objeto relacional), quiere decir que son unas series de reglas, que `Java` define, para que cualquier framework que quiera interactuar con la DB desde `Java` tenga que seguir.
+`JPA` (Java Persistence API) es una especificación de `Java` para un framework `ORM` (Object Relational Mapping, un mappeo objeto relacional).  
+Quiere decir que son unas series de reglas que `Java` define para que cualquier framework que quiera interactuar con la DB, desde `Java`, tenga que seguir.
+
+Para este fin, `JPA` usa anotaciones para conectar clases a tablas de nuestra DB y así evitar hacerlo de manera nativa con `SQLs`, y lo hacemos directamente con código `Java`.
 
 ![12_JPA_02](src/Curso_de_Java_Spring/12_JPA_02.png)
 
-Para este fin, `JPA` usa anotaciones para conectar clases a tablas de nuestra DB y así evitar hacerlo de manera nativa con `SQLs`, y lo hacemos directamente con código `Java`.
 - `@Entity`: la más importante, es la que indica a una `clase` que está representando una `tabla` de nuestra DB.
 - `@Table`: es la que recibe el nombre de la `tabla` a la cual está mapeando nuestra `clase`.
 - `@Column`: es una anotación que se le pone a los `atributos` de nuestra `clase`. No es obligatoria, solamente debemos ponerla cuando el nombre de nuestra `columna` sea diferente al nombre del `atributo` de nuestra `tabla`.

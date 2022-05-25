@@ -190,23 +190,23 @@ La arquitectura que usaremos será una por capas orientada al ***Dominio***, con
 
 - La primera capa es la del ***Dominio***, donde vamos a tener:
     - **Los DTOs y objetos de dominio**: que son objetos que hacen parte del contexto de nuestra app, en este caso de un supermercado.
-    - **Los servicios**: son los encargados de servir como puente entre los controladores de la API y la capa de persistencia o repositorio, que es quien interviene en la DB
+    - **Los servicios**: son los encargados de servir como puente entre los `controladores` de la `API` y la `capa de persistencia` o `repositorio`, que es quien interviene en la DB.
     - **La especificación de los repositorios**: son interfaces que definen las reglas de juego o contratos, que de cumplir la persistencia, para intervenir entre los objetos de dominio y la DB.
 - La otra capa es la ***Web***, en esta vamos a tener los `Controladores` de nuestra `API`. Como el que hicimos en la clase anterior.
-- La última capa es la de ***Persistencia***, que es la capa que tiene la obligación de interactuar con lal DB. Acá vamos a tener los `repositorios`, que son los que van a implementar las especificaciónes que tenemos en ***Dominio*** y también los `Entities`. Los `Entities` son las clases que mapean y hacen de tablas de nuestra DB.
+- La última capa es la de ***Persistencia***, que es la capa que tiene la obligación de interactuar con lal DB. Acá vamos a tener los `repositorios`, que son los que van a implementar las especificaciónes que tenemos en ***Dominio*** y también las `Entities`. Las `Entities` son las clases que mapean y hacen de tablas de nuestra DB.
 
 El flujo seria:
 - Un `cliente` hace un llamado a un `Controlador` de nuestra `API`.
 - El `controlador` va al `servicio`, que contiene todo lo necesario para intervenir en esa operación.
 - El `Servicio` va a ir al `repositorio` que necesite, y acá es donde ocurre cuando tenemos que hacer alguna gestion o movimiento a nuestra DB.
 
-![11_Estructura_proyecto_02](src/Curso_de_Java_Spring/11_Estructura_proyecto_02.png)
-
 Entonces en el proyecto creamos:
 - 3 `packages` llamados `domain`, `web` y `persistence`.
     - Dentro de `domain` creamos 3 `packages` llamados `dto`, `repository` y `service`.
     - Dentro de `persistence` creamos 2 `packages` llamados `entity` y `crud`.
     - Dentro de `web` creamos 1 `package` llamado `controller`.
+
+![11_Estructura_proyecto_02](src/Curso_de_Java_Spring/11_Estructura_proyecto_02.png)
 
 Con esto nuestro proyecto ya cuenta con una estructura solida, que nos permite tener un código más organizado, donde sea más facil escribir código y mantenerlo.
 

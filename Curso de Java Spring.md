@@ -184,7 +184,7 @@ Formato de configuración con `yml`.
 ---
 
 ## Clase 11 - Crear la estructura del proyecto
-La arquitectura que usaremos será una por capas orientada al ***Dominio***, conocida como `DDD`(Domain Driven Design).
+La arquitectura que usaremos será una por capas orientada al ***Dominio***, conocida como `DDD` (Domain Driven Design).
 
 ![11_Estructura_proyecto_01](src/Curso_de_Java_Spring/11_Estructura_proyecto_01.png)
 
@@ -201,9 +201,9 @@ El flujo seria:
 - El `Servicio` va a ir al `repositorio` que necesite, y acá es donde ocurre cuando tenemos que hacer alguna gestion o movimiento a nuestra DB.
 
 Entonces en el proyecto creamos:
-- 3 `packages` llamados `domain`, `web` y `persistence`.
+- 3 `packages` llamados `domain`, `persistence` y `web`.
     - Dentro de `domain` creamos 3 `packages` llamados `dto`, `repository` y `service`.
-    - Dentro de `persistence` creamos 2 `packages` llamados `entity` y `crud`.
+    - Dentro de `persistence` creamos 2 `packages` llamados `crud` y `entity`.
     - Dentro de `web` creamos 1 `package` llamado `controller`.
 
 ![11_Estructura_proyecto_02](src/Curso_de_Java_Spring/11_Estructura_proyecto_02.png)
@@ -214,12 +214,31 @@ Con esto nuestro proyecto ya cuenta con una estructura solida, que nos permite t
 
 Al realizar creaciones de `paquetes` estas deben estar por debajo de la clase donde se encuentre nuestro `main` (`@SpringBootApplication`), ya que `Spring` scanea desde ese punto hacia abajo por defecto, de lo contrario se tendra que mencionar en esa misma clase la ruta que scaneara.
 
-Para quien esté interesado en conocer un poco más sobre DDD (Domain Driven Design) [aquí](https://medium.com/@jonathanloscalzo/domain-driven-design-principios-beneficios-y-elementos-primera-parte-aad90f30aa35) les dejo un artículo introductorio que me pareció excelente para entender de una manera sencilla este patrón de desarrollo.
+Para quien esté interesado en conocer un poco más sobre `DDD` (Domain Driven Design) [aquí](https://medium.com/@jonathanloscalzo/domain-driven-design-principios-beneficios-y-elementos-primera-parte-aad90f30aa35) les dejo un artículo introductorio.
 
 ---
 
 # Módulo 3 - Spring Data
 ## Clase 12 - ¿Qué es JPA?
+![12_JPA_01](src/Curso_de_Java_Spring/12_JPA_01.png)
+
+`JPA` (Java Persistence API) es una especificación de `Java` para un framework `ORM` (Object Relational Mapping, un mappeo objeto relacional), quiere decir que son unas series de reglas, que `Java` define, para que cualquier framework que quiera interactuar con la DB desde `Java` tenga que seguir.
+
+![12_JPA_02](src/Curso_de_Java_Spring/12_JPA_02.png)
+
+Para este fin, `JPA` usa anotaciones para conectar clases a tablas de nuestra DB y así evitar hacerlo de manera nativa con `SQLs`, y lo hacemos directamente con código `Java`.
+- `@Entity`: la más importante, es la que indica a una `clase` que está representando una `tabla` de nuestra DB.
+- `@Table`: es la que recibe el nombre de la `tabla` a la cual está mapeando nuestra `clase`.
+- `@Column`: es una anotación que se le pone a los `atributos` de nuestra `clase`. No es obligatoria, solamente debemos ponerla cuando el nombre de nuestra `columna` sea diferente al nombre del `atributo` de nuestra `tabla`.
+- `@Id` y `@EmbededId`: representan la `PK` de nuestra `tabla` en la `clase`.
+    - `@Id` se usa cuando es una `PK` sencilla.
+    - `@EmbededId` cuando es una `PK` compuesta.
+- `@GeneratedValue`: nos permite generar automaticamente valores para las `PK` de nuestras `tablas` en la `clase`.
+- `@OneToMany` y `@ManyToOne`: Representan las relaciones que existen entre las `tablas`, pero a nivel de las `clases`.
+
+![12_JPA_03](src/Curso_de_Java_Spring/12_JPA_03.png)
+
+Con esto nos queda claro como `Java` se integra con nuestras DB mediante `JPA`.
 
 ---
 

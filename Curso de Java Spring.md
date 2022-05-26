@@ -272,7 +272,7 @@ Modelo de datos del proyecto:
 
 ![14_Conectar_DB_a_App_01](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_01.png)
 
-Tenemos 2 archivos con la clase:
+Tenemos 2 archivos en la clase:
 - `schema.sql`: Contiene el modelo de datos en `SQL` para que podamos crear la DB.
 - `data.sql`: Contiene un set de datos iniciales para interactuar con la DB por medio de la `API`.
 
@@ -285,7 +285,7 @@ Tenemos 2 archivos con la clase:
 
 ![14_Conectar_DB_a_App_02](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_02.png)
 
-Una secuencia es el numero en el que va una PK de nuestro modelo de datos, en este caso reinciamos `producto`, `categorias` y `compras`, para que empiecen conforme en donde dejamos nuestro set de datos. Si el último `producto` tiene `id` 9, lo indicamos en la secuencia y cuando ingresemos un nuevo `producto` sera con el `id` 10.
+Una secuencia es el numero en el que va una `PK` de nuestro modelo de datos, en este caso reinciamos `producto`, `categorias` y `compras`, para que empiecen conforme en donde dejamos nuestro set de datos. Si el último `producto` tiene `id` 9, lo indicamos en la secuencia y cuando ingresemos un nuevo `producto` sera con el `id` 10.
 
 **Conectando la app a la DB**  
 En `Intellij IDEA` añadimos una `dependencia` que se encarga de gestionar el `postgreSQL`.  
@@ -300,6 +300,15 @@ En `application-dev.properties` vamos a añadir la configuración para que la ap
 
 Lanzamos nuestra app, es decir, compila el código, procesa los recursos, crea las `clases` y lanza la app de `Spring Boot`.  
 Nuestra app en poco tiempo es capas de iniciar el servidor, meter la app en ese servidor, crear la conexión a la DB y conectarla a esa DB.
+
+---
+
+Aunque `Java` puede descubrir el `driver` por la `url`, es buena practica decir el `driver`. Para `postgresql`:
+~~~
+spring.datasource.driver-class-name=org.postgresql.Driver
+~~~
+
+De esta forma `Spring` usara ese `driver` y si la `url` esta mal escrita indicará los errores, sino se coloca el `driver` y la `url` esta mal escrita `Spring` dira que no encuentra `driver` para conectarse.
 
 ---
 
@@ -329,8 +338,6 @@ public class DatabaseConfig {
 
 Al correr la aplicación veremos que se genera una `tabla` que lleva el control de las versiones de la base de datos llamada `flyway_schema_history`.  
 Si necesitamos cambiar la estructura de la base de datos ya solo agregaremos archivos `.sql` en la carpeta `db/migration` y `flyway` se encargará de ejecutarlos automáticamente. Así mantenemos la consistencia en todos los ambientes donde ejecutemos la aplicación sin tener que correr los `scripts` manualmente.
-
-spring.datasource.driver-class-name=org.postgresql.Driver
 
 
 ---

@@ -245,18 +245,18 @@ Con esto nos queda claro como `Java` se integra con nuestras DB mediante `JPA`.
 ---
 
 ## Clase 13 - Conocer qué es Spring Data
-`Spring Data` no es una implementación de `JPA`, es un proyecto que usa `JPA` para que la gestión de tareas, desde `Java` en las DB, sea más poderosa y llena de posibilidades.
+`Spring Data` no es una implementación de `JPA`, es un proyecto que usa `JPA` para que la gestión de tareas desde `Java` en las DB sea más poderosa y llena de posibilidades.
 
 ![13_Spring_Data_01](src/Curso_de_Java_Spring/13_Spring_Data_01.png)
 
 - `Spring Data` contiene varios subproyectos, entre ellos:
     - `Spring Data JPA` o `Spring Data JDBC`: Estos sirven para conectarnos a DBs que son `SQL` o `relacionales`.
     - `Spring Data MongoDB` o `Spring Data Cassandra`: Para conectarnos a DBs que son no `SQL`.
-- La tarea principal de `Spring Data` es optimizar tareas que resultan repetitivas para los desarrolladores (Escribir, consultar, actualizar y borrar registros).
+- La tarea principal de `Spring Data` es optimizar tareas que resultan repetitivas para los desarrolladores (escribir, consultar, actualizar y borrar registros).
 - Todo esta ya lo tiene en sus repositorios sin código, que son un sin fin de posibilidades, nos permiten hacer todo tipo de operaciones en DB sin escribir una sola linea de código.
 - También nos provee de auditorias transparentes, de las cuales no nos tenemos que preocupar, `Spring Data` posee un motor de auditorias que nos permiten saber cuando se inserto, borro o actualizo un registro.
 
-Para incluir `Spring Data` dentro de nuestra app primero tenemos que encontrarlo en [MVNRepository](https://mvnrepository.com/) y lo buscamos como `Spring Boot Starter Data JPA`, elegimos la última version y en el tag de `Gradle` vemos que tenemos el grupo y el nombre.
+Para incluir `Spring Data` dentro de nuestra app primero tenemos que encontrarlo en [MVNRepository](https://mvnrepository.com/) y lo buscamos como `Spring Boot Starter Data JPA`, elegimos la última versión y en el tag de `Gradle` vemos que tenemos el grupo y el nombre.
 
 ![13_Spring_Data_02](src/Curso_de_Java_Spring/13_Spring_Data_02.png)
 
@@ -268,6 +268,70 @@ En `build.gradle`, en la sección de dependencias lo insertamos escribiendo `gru
 ---
 
 ## Clase 14 - Conectar la base de datos a nuestra aplicación
+Modelo de datos del proyecto:
+
+![14_Conectar_DB_a_App_01](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_01.png)
+
+Tenemos 2 archivos con la clase:
+- `schema.sql`: Contiene el modelo de datos en `SQL` para que podamos crear la DB.
+- `data.sql`: Contiene un set de datos iniciales para interactuar con la DB por medio de la `API`.
+
+**Creando la DB**
+- Abrimos `PostgreSQL` a través de `pgAdmin4`.
+- Creamos una nueva DB llamada `platzi-market`, `click derecho en Databases -> Create -> Database`.
+- Creamos un nuevo `Script` en la DB, `click derecho en la DB -> CREATE Script`.
+- Copiamos y pegamos el `schema.sql` en el nuevo `Script` y lo ejecutamos.
+- Hacemos lo mismo con `data.sql` y a parte de insertar el set de datos inciales estamos reiniciando las secuencias.
+
+![14_Conectar_DB_a_App_02](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_02.png)
+
+Una secuencia es el numero en el que va una PK de nuestro modelo de datos, en este caso reinciamos `producto`, `categorias` y `compras`, para que empiecen conforme en donde dejamos nuestro set de datos. Si el último `producto` tiene `id` 9, lo indicamos en la secuencia y cuando ingresemos un nuevo `producto` sera con el `id` 10.
+
+**Conectando la app a la DB**  
+En `Intellij IDEA` añadimos una `dependencia` que se encarga de gestionar el `postgreSQL`.  
+En vez de `implementation` escribimos `runtimeOnly`, ya que solo lo necesitamos en tiempo de ejecución, la `dependencia` la obtenemos en `MVNRepository` buscando `postgresql` y encontramos `PostgreSQL JDBC Driver`.  
+Actualizamos `Gradle`, que lo que hace internamente es verificar las nuevas `dependencias` incluidas y cargandolas dentro de nuestra app.
+
+![14_Conectar_DB_a_App_03](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_03.png)
+
+En `application-dev.properties` vamos a añadir la configuración para que la app se conecta a la DB.
+
+![14_Conectar_DB_a_App_04](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_04.png)
+
+Lanzamos nuestra app, es decir, compila el código, procesa los recursos, crea las `clases` y lanza la app de `Spring Boot`.  
+Nuestra app en poco tiempo es capas de iniciar el servidor, meter la app en ese servidor, crear la conexión a la DB y conectarla a esa DB.
+
+---
+
+Podríamos incluir `Flyway` para versionar la base de datos y mantener la consistencia sin importar si ejecutamos la aplicación en desarollo o producción, con solo incluir la `dependencia` de `flyway` en el proyecto, el starter de `Spring Boot Data JPA` se encarga de autoconfigurarlo.
+~~~
+implementation 'org.flywaydb:flyway-core:7.0.0'
+~~~
+
+Dentro de `resources` creamos la estructura de carpetas como se muestra en la imagen y un archivo donde pegaremos el contenido de `schema.sql`.
+
+![14_Conectar_DB_a_App_05](src/Curso_de_Java_Spring/14_Conectar_DB_a_App_05.png)
+
+Ya solo bastaría agregar una `clase` para decirle a `flyway` que ejecute todos los `scripts` que encuentre en la carpeta `db/migration`.
+~~~
+@Configuration
+public class DatabaseConfig {
+
+    @Bean
+    public FlywayMigrationStrategy migrationStrategy() {
+        return flyway -> {
+            flyway.repair();
+            flyway.migrate();
+        };
+    }
+}
+~~~
+
+Al correr la aplicación veremos que se genera una `tabla` que lleva el control de las versiones de la base de datos llamada `flyway_schema_history`.  
+Si necesitamos cambiar la estructura de la base de datos ya solo agregaremos archivos `.sql` en la carpeta `db/migration` y `flyway` se encargará de ejecutarlos automáticamente. Así mantenemos la consistencia en todos los ambientes donde ejecutemos la aplicación sin tener que correr los `scripts` manualmente.
+
+spring.datasource.driver-class-name=org.postgresql.Driver
+
 
 ---
 

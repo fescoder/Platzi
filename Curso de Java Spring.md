@@ -408,7 +408,6 @@ Ahora en la `clase` `ComprasProducto` añadimos un `atributo` de tipo `ComprasPr
 
 ![16_PK_Compuesta_02](src/Curso_de_Java_Spring/16_PK_Compuesta_02.png)
 
-
 ---
 
 Para `variables` que representan dinero se debe de ocupar `Bigdecimal` en vez de `Double`, el `MonetaryAmount` tambien puede ser una posibilidad.  
@@ -417,6 +416,30 @@ Podemos leer todo lo que viene en `Java` para el manejo de dinero en [Java Money
 ---
 
 ## Clase 17 - Mapear relaciones entre clases
+Comenzamos relacionando las `clases` `Producto` y `Categoria`, creamos una `variable` en la `Producto` de tipo `Categoria`, al que le agregaremos `anotaciones`:
+- `@ManyToOne`: Este es el tipo de relación. Porque tengo muchos productos para una categoria.
+- `@JoinColumn(name="id_categoria", insertable = false, updatable = false)`:
+    - `Producto` esta relacionada con `Categoria` a traves de `id_categoria`.
+    - `insertable` y `updatable` es para que no puedan insertar ni actualizar nada en la `tabla` desde acá. Se debe hacer desde `Categoria`.
+
+![17_Mappear_relaciones_clases_01](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_01.png)
+
+Para cerrar, en `Categoria` hay que crear una `lista` de tipo `Producto` y la anotamos con:
+- `@OneToMany(mappedBy="categoria")`: Es el tipo de relación, de una a muchas, una categoria tendrá muchos productos. Y añadimos un `parámetro` `mappedBy` que dice por quien está mepeado o que relación respalda este `atributo`, que es `categoria`.
+
+![17_Mappear_relaciones_clases_02](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_02.png)
+
+Lo mismo con la relación `Cliente` y `Compra`, para saber donde usar el `@ManyToOne` o `@OneToMany` se lee: la primera palabra es de la clase y la otra del atributo, por ejemplo, Many Compras pertenecen a One cliente, al revés, One Cliente tiene Many compras, por eso es una `Lista`.
+
+**Cliente**  
+![17_Mappear_relaciones_clases_03](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_03.png)
+
+**Compra**  
+![17_Mappear_relaciones_clases_04](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_04.png)
+
+Hacemos una vez más la relación `CompraProductos` y `Compra`.  
+**CompraProductos**  
+![17_Mappear_relaciones_clases_05](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_05.png)
 
 ---
 

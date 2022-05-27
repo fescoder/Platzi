@@ -339,10 +339,55 @@ public class DatabaseConfig {
 Al correr la aplicación veremos que se genera una `tabla` que lleva el control de las versiones de la base de datos llamada `flyway_schema_history`.  
 Si necesitamos cambiar la estructura de la base de datos ya solo agregaremos archivos `.sql` en la carpeta `db/migration` y `flyway` se encargará de ejecutarlos automáticamente. Así mantenemos la consistencia en todos los ambientes donde ejecutemos la aplicación sin tener que correr los `scripts` manualmente.
 
-
 ---
 
 ## Clase 15 - Mapear las tablas como clases
+Las `Entities` son las `clases` que mapearan las `tablas` gracias a `JPA` y sus anotaciones.
+
+Para crear nuestras `entity beans` usaremos:
+- `@Entity`: Para que `Java` sepa que es una `clase` que representa una `tabla` de la DB.
+- `@Table(name="nombre_tabla_db")`: Cuando tenemos nombres diferentes entre `tabla` y `clase` agregamos esta anotación.
+- `@Column`: Lo mismo que `@Table` pero para `columnas` y `atributos`.
+- `@Id`: Cuando es la `PK` sencilla.
+- `@GenerateValue(strategy = GenerationType.IDENTITY)`: Cuando la `PK` se genera automáticamente.
+
+![15_Mapear_tablas_clases_01](src/Curso_de_Java_Spring/15_Mapear_tablas_clases_01.png)
+
+También generamos sus respectivos `Getters` y `Setters`.  
+Hacemos lo mismo con las `clases` `Compra`, `Categoria` y `Cliente`.  
+Siempre usar `Atributos` que sean de tipo `clase`, en vez de usar `int` (tipo primitivo) debemos usar `Integer`. Siempre trabajaremos con objetos.  
+
+---
+
+Dicen que es conveniente cambiar los tipo de `Ids` por `Long`.
+
+Con la `libería` `Lombok` podemos generar automáticamente los `Getters` y `Setters` usando anotaciones y así ahorrarnos mucho código.  
+Para incluirla debemos añadir esta `dependencia` en `Gradle`:
+~~~
+compileOnly 'org.projectlombok:lombok'//, version: '1.18.24'
+~~~
+
+Y ya solo bastaría agregar las `anotaciones` en la `clase` para generar los `Getters` y `Setters`.
+~~~
+@Getter
+@Setter
+@Entity
+@Table(name = "products")
+public class Product {}
+~~~
+
+Si ponemos `@Getter` y `@Setter` a nivel de `clase`, se generarán `Getters` y `Setters` para todas sus `propiedades`. Si queremos para sólo una `propiedad` basta con poner las `anotaciones` arriba de la `propiedad`.
+
+Podemos reemplazarlos con la `anotación` `@Data` que nos genera toda la estructura del proyecto (`Getters`, `Setters`, `equals` y `toString`).  
+En IntelliJ, en el lado izquierdo nos aparece una pestaña con el nombre Structure donde muestra todos los métodos generados pero no aparece el código por lo que nos queda un fichero muy limpio.
+~~~
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "products")
+publicclassProduct {}
+~~~
 
 ---
 

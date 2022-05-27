@@ -347,7 +347,7 @@ Las `Entities` son las `clases` que mapearan las `tablas` gracias a `JPA` y sus 
 Para crear nuestras `entity beans` usaremos:
 - `@Entity`: Para que `Java` sepa que es una `clase` que representa una `tabla` de la DB.
 - `@Table(name="nombre_tabla_db")`: Cuando tenemos nombres diferentes entre `tabla` y `clase` agregamos esta anotación.
-- `@Column`: Lo mismo que `@Table` pero para `columnas` y `atributos`.
+- `@Column(name="nombre_columna_db")`: Lo mismo que `@Table` pero para `columnas` y `atributos`.
 - `@Id`: Cuando es la `PK` sencilla.
 - `@GenerateValue(strategy = GenerationType.IDENTITY)`: Cuando la `PK` se genera automáticamente.
 
@@ -355,7 +355,7 @@ Para crear nuestras `entity beans` usaremos:
 
 También generamos sus respectivos `Getters` y `Setters`.  
 Hacemos lo mismo con las `clases` `Compra`, `Categoria` y `Cliente`.  
-Siempre usar `Atributos` que sean de tipo `clase`, en vez de usar `int` (tipo primitivo) debemos usar `Integer`. Siempre trabajaremos con objetos.  
+Siempre usar `Atributos` que sean de tipo `clase`, en vez de usar `int` (tipo primitivo) debemos usar `Integer`. Siempre trabajaremos con objetos ya que es posible que en un determinado momento tengamos un valor null desde la base de datos. Sí tuviéramos un `int` sería 0 por defecto y esto sería un `error`.
 
 ---
 
@@ -389,9 +389,30 @@ import lombok.Data;
 publicclassProduct {}
 ~~~
 
+**Conclusión profe:**  
+Puedes utilizar las anotaciones `@Getter`, `@Setter`, e incluso `@Builder` de `Lombok` para tu `Entity`.  
+Sin embargo, debes tener cuidado con otras anotaciones como `@Data`, `@ToString` ó `@EqualsAndHashCode` ya que generan código que no es 100% correcto para `entities` (estas clases tienen algunos requerimientos especiales para estos métodos).  
+En este [vídeo](https://www.youtube.com/watch?t=65&v=j_hEdLPDczI&feature=youtu.be) puedes ver a lo que me refiero y cómo evitarlo.
+
 ---
 
 ## Clase 16 - Crear Entity cuando su clave primaria es compuesta
+No podemos añadir directamente los `atributos` que componen la `PK` dentro de nuestra `Entity` `comprasProducto`.  
+Lo que debemos hacer es crear otra `clase`, `ComprasProductoPK`, que las contenga y luego meterla dentro de `comprasProducto`.
+
+Como no va a mapear una `tabla` no le ponemos `@Entity`, la `anotación` que usamos es `@Embeddable`, porque esta `clase` la vamos a embeber dentro de `comprasProducto`, debemos implementar una `interfaz` de `Java`, `Serializable`, con esto ya podemos incluir los `atributos` que componen la `PK`.
+
+![16_PK_Compuesta_01](src/Curso_de_Java_Spring/16_PK_Compuesta_01.png)
+
+Ahora en la `clase` `ComprasProducto` añadimos un `atributo` de tipo `ComprasProductoPK` y lo anotamos con `@EmbeddedId`, entonces podemos decir que `@Id` se usa cuando es una `PK` sencilla y `@EmbeddedId` cuando es compuesta y está dada por otra `clase`.
+
+![16_PK_Compuesta_02](src/Curso_de_Java_Spring/16_PK_Compuesta_02.png)
+
+
+---
+
+Para `variables` que representan dinero se debe de ocupar `Bigdecimal` en vez de `Double`, el `MonetaryAmount` tambien puede ser una posibilidad.  
+Podemos leer todo lo que viene en `Java` para el manejo de dinero en [Java Money and Currency API.](https://www.baeldung.com/java-money-and-currency)
 
 ---
 

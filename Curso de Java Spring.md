@@ -416,7 +416,7 @@ Podemos leer todo lo que viene en `Java` para el manejo de dinero en [Java Money
 ---
 
 ## Clase 17 - Mapear relaciones entre clases
-Comenzamos relacionando las `clases` `Producto` y `Categoria`, creamos una `variable` en la `Producto` de tipo `Categoria`, al que le agregaremos `anotaciones`:
+Comenzamos relacionando las `clases` `Producto` y `Categoria`, creamos una `variable` en `Producto` de tipo `Categoria`, al que le agregaremos `anotaciones`:
 - `@ManyToOne`: Este es el tipo de relación. Porque tengo muchos productos para una categoria.
 - `@JoinColumn(name="id_categoria", insertable = false, updatable = false)`:
     - `Producto` esta relacionada con `Categoria` a traves de `id_categoria`.
@@ -437,9 +437,12 @@ Lo mismo con la relación `Cliente` y `Compra`, para saber donde usar el `@ManyT
 **Compra**  
 ![17_Mappear_relaciones_clases_04](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_04.png)
 
-Hacemos una vez más la relación `CompraProductos` y `Compra`.  
+Hacemos la relación `CompraProductos` y `Compra`.
+
 **CompraProductos**  
 ![17_Mappear_relaciones_clases_05](src/Curso_de_Java_Spring/17_Mappear_relaciones_clases_05.png)
+
+Este tipo de relaciones deben ser creadas siempre respondiendo a la pregunta ***"¿De verdad necesito esta relación?"*** porque claramente pueden existir relaciones innecesarias que afecten el rendimiento y la gestión de memoria de nuestra aplicación.
 
 ---
 

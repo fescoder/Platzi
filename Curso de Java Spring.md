@@ -610,16 +610,18 @@ Como no tengo un `método` que me devuelva una `Lista de Optionals` hacemos la c
 
 ![23_Orientar_repositorio_a_dominio_02](src/Curso_de_Java_Spring/23_Orientar_repositorio_a_dominio_02.png)
 
-Una vez que implementamos todos los `métodos` correctamente hicimos que nuestro `ProductoRepository` quedara enfocado al `dominio` en vez de a un `tabla` puntual, en este caso, `Producto`.
+Una vez que implementamos todos los `métodos` correctamente hicimos que nuestro `ProductoRepository` quedara enfocado al `dominio` en vez de a una `tabla` puntual `Producto`.
 
 ---
 
 **¿Cual es la diferencia entre una lista normal y una lista optional?**  
 Uno es una lista “normal” como las que siempre hemos visto en `Java` y el otro es un concepto que fue introducido en `Java 8` y que me permite tener componentes opcionales (que pueden o no estar) con un montón de funcionalidades. Puedo tener un `Optional` ó un `List` o de lo que sea gracias a los `Generics` y el `Diamond operator`.
+
 **¿Si la DB esta en ingles y todo esta en ingles… ya no es necesario usar MapStruct?**  
 Sí vas orientar tu aplicación en términos de `dominio`, si es necesario usar `MapStruct`.  
 Sí el `entity` y la `clase de dominio` tienen los mismos nombres de `atributos` solo basta con crear la `interface Mapper` pero sin definirle ningún mapeo porque se harán automáticamente.  
 La idea es que el objeto de `dominio` solo lleve lo que sea estrictamente necesario, por lo cual debería tener menos campos que el `entity` y en ese sentido el `Mapper` tendrá uno que otro ignore.
+
 **¿Porque Optional.of?**  
 El `Optional.of` permite convertir cualquier objeto en un `Optional`.  
 En nuestro caso puntual lo usamos porque el `método` `findByIdCategoriaOrderByNombreAsc` de la `interface` `ProductoCrudRepository` retornamos una `List<Producto>` y según nuestra `interface` `ProductRepository` debemos retornar un `Optional<List<Product>>`. Para no usarlo simplemente retorna un `Optional` desde este `método` en `ProductoCrudRepository`.

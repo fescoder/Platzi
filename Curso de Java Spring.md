@@ -589,7 +589,7 @@ Diseñamos los mappers, en este caso el que convierte de `Categoria` a `Category
 
 ![22_MapStruct_01](src/Curso_de_Java_Spring/22_MapStruct_01.png)
 
-Conversión externa, invertido, de `Category` a `Categoria`, para este caso usamos la anotación `@InheritInverseConfiguration` que indica a `MapStruct` que la conversion que haremos acá es la inversa (source pasa a ser target y lo de target a source) a la que hacemos en `toCategory`, por lo cual no tenemos que definir `Mappings`.  
+Conversión externa, invertido, de `Category` a `Categoria`, para este caso usamos la anotación `@InheritInverseConfiguration` que indica a `MapStruct` que la conversion que haremos acá es la inversa (source pasa a ser target y lo de target a source) a la que hacemos en `toCategory`, por lo cual no tenemos que definir `@Mappings`.  
 Pero pasa que también tenemos una `lista` de `Productos` en `Categoria` que en la otra clase no, y como no lo mepeamos, lo ignoramos con `@Mapping(taget = "productos", ignore = true)`.
 
 Cuando ya tenemos un `mapper` y lo queremos incluir dentro de otro, como en `toProduct`, agregamos dentro de `@Mapper` otro `parámetro` `uses=CategotyMapper.class`, entonces internamente sabe que cuando convierta `categoria` dentro de `toProduct` tiene que usar `CategoryMapper`.
@@ -601,6 +601,28 @@ Si queremos crear un `mapper` de una `lista` de `productos`, solo debemos defini
 ---
 
 ## Clase 23 - Orientar nuestro repositorio a términos del dominio
+Es momento de tomar nuestro `ProductoRepository` y orientarlo a `dominio`.  
+Lo primero que hacemos es extender de la `interfaz` `ProductRepository`, que habla en terminos de lo que queremos retornar finalmente, y nos pide implementar los `métodos` faltantes, tenemos unos errores de conversión y acá es donde entra nuestro `ProductMapper` para ayudarnos.
+
+Como no tengo un `método` que me devuelva una `Lista de Optionals` hacemos la conversión con `map` y hacemos que cada `producto` de la `lista` lo enviamos al `mapper`, de esta manera el `map` nos retorna un `Optional` de lo que estamos haciendo dentro de la `lambda`.
+
+![23_Orientar_repositorio_a_dominio_01](src/Curso_de_Java_Spring/23_Orientar_repositorio_a_dominio_01.png)
+
+![23_Orientar_repositorio_a_dominio_02](src/Curso_de_Java_Spring/23_Orientar_repositorio_a_dominio_02.png)
+
+Una vez que implementamos todos los `métodos` correctamente hicimos que nuestro `ProductoRepository` quedara enfocado al `dominio` en vez de a un `tabla` puntual, en este caso, `Producto`.
+
+---
+
+**¿Cual es la diferencia entre una lista normal y una lista optional?**  
+Uno es una lista “normal” como las que siempre hemos visto en `Java` y el otro es un concepto que fue introducido en `Java 8` y que me permite tener componentes opcionales (que pueden o no estar) con un montón de funcionalidades. Puedo tener un `Optional` ó un `List` o de lo que sea gracias a los `Generics` y el `Diamond operator`.
+**¿Si la DB esta en ingles y todo esta en ingles… ya no es necesario usar MapStruct?**  
+Sí vas orientar tu aplicación en términos de `dominio`, si es necesario usar `MapStruct`.  
+Sí el `entity` y la `clase de dominio` tienen los mismos nombres de `atributos` solo basta con crear la `interface Mapper` pero sin definirle ningún mapeo porque se harán automáticamente.  
+La idea es que el objeto de `dominio` solo lleve lo que sea estrictamente necesario, por lo cual debería tener menos campos que el `entity` y en ese sentido el `Mapper` tendrá uno que otro ignore.
+**¿Porque Optional.of?**  
+El `Optional.of` permite convertir cualquier objeto en un `Optional`.  
+En nuestro caso puntual lo usamos porque el `método` `findByIdCategoriaOrderByNombreAsc` de la `interface` `ProductoCrudRepository` retornamos una `List<Producto>` y según nuestra `interface` `ProductRepository` debemos retornar un `Optional<List<Product>>`. Para no usarlo simplemente retorna un `Optional` desde este `método` en `ProductoCrudRepository`.
 
 ---
 

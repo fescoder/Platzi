@@ -447,6 +447,35 @@ Este tipo de relaciones deben ser creadas siempre respondiendo a la pregunta ***
 ---
 
 ## Clase 18 - Usar la interface CrudRepository
+![18_CrudRepository_01](src/Curso_de_Java_Spring/18_CrudRepository_01.png)
+
+- Los repositorios de `Spring Data` nos ayuda ahorrando mucho tiempo a la hora de construir nuestras apps.
+- Esto nos permite hacer operaciones sobre ls DB sin escribir tantas lineas de código, los hace automaticamente los repositorios de `Spring Data`
+- Repositorios de `Spring Data`:
+    - `CrudRepository`: Permite realizar operaciones CRUD (Crear, Leer, Actualizar o Eliminar).
+    - `PagingAndSortingRepository`: Nos permite hacer lo del `CrudRepository` + tareas de paginación y ordenamiento del repositorio.
+    - `JPARepository`: Lo mismo que los 2 anteriores + tareas de JPA especificas, como `flush` que combina o guarda todo en memoria sin que otras entidades o entornos vean esos cambios en la DB.
+
+Crearemos una `interfaz`, en `crud`, que interactue con `Producto` implementando `CrudRepository`, a lo cual recibe 2 parámetros, la `Tabla` y el tipo de `PK` y ya con esto nos ahorramos mucho código.
+
+![18_CrudRepository_02](src/Curso_de_Java_Spring/18_CrudRepository_02.png)
+
+Si analizamos un poco dentro de esa interfaz encontramos `métodos` que podemos usar:
+- `save`: Guarda una `entidad`, un registro.
+- `saveAll`: Guarda muchas `entidades`, muchos registros.
+- `findById`: Recibiendo un `Integer` devuelve un `Entity`.
+- `existById`: Verifica dada una `PK` si una `Entidad` existe o no.
+- `findAll`: Para recuperar toda la `lista` de registros que existan en esa `tabla`.
+- `findAllById`: Recupera toda la `lista` con una `PK`.
+- `count`: Para averiguar cuantos elementos existen en esa `tabla`.
+- `deleteById` y `delete`: Para borrar información de esa `tabla`.
+- `deleteAll`: Borra todo lo de la `tabla` que le pasemos como `parametros` en una `lista` o simplemente todo sin `parámetros`.
+
+Nos da muchas utilidades sin apenas escribir código.
+
+Ahora implementaremos nuestra nueva `interfaz`, en el `paquete` `Persistence` creamos la `clase` `ProductoRepository` y vemos como instanciando una variable de esa interfaz podemos acceder a todas estas posibilidades.
+
+![18_CrudRepository_03](src/Curso_de_Java_Spring/18_CrudRepository_03.png)
 
 ---
 

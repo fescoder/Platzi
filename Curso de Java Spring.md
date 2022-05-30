@@ -516,6 +516,7 @@ Se pueden ver más detalles [acá](https://docs.spring.io/spring-data/jpa/docs/c
 
 ---
 
+**¿Por que @Repository y no @Service?**  
 El repositorio (ver Repository Pattern) es una capa de abstracción que se añade a tu sistema para desacoplar el motor de base de datos de tu aplicación, básicamente te ayuda a que tu aplicación no dependa del tipo de base de datos que estas utilizando, si mañana quisieras cambiar Postgres por mysql o MongoDB, solo tendrías que modificar el repositorio y el resto de tu aplicación no debería verse afectada en gran medida (sería lo ideal). Esta capa es solo para interactuar con tu base de datos y NO posee lógica de negocio.
 
 Un service por el contrario, es la capa que guarda la mayor parte de la lógica de tu negocio y su responsabilidad es esa, implementar lógica, no relacionarse con una base de datos.
@@ -523,6 +524,60 @@ Un service por el contrario, es la capa que guarda la mayor parte de la lógica 
 ---
 
 ## Clase 21 - ¿Qué es el patrón Data Mapper y qué resuelve?
+![21_Data_Mapper_01](src/Curso_de_Java_Spring/21_Data_Mapper_01.png)
+
+El patrón `Data Mapper` se encarga de convertir 2 objetos que pueden hacer una misma labor.
+
+![21_Data_Mapper_02](src/Curso_de_Java_Spring/21_Data_Mapper_02.png)
+
+- No exponemos la DB, nos garantizamos de que ningún agente externo va a poder darse cuenta de que forma estan diseñadas nuestras `tablas` de DB.
+- Si a futuro queremos integrar una nueva DB, que contenga otros nombres, no tenemos que cambiar todo el código para que funcione, simplemente creamos otro traductor que sirva para traducir esta nueva `tabla` al dominio.
+- Existen atributos, como `codigoBarras`, que no me interesan llevar hasta la API, porque solo tienen sentido dentro de la DB o la capa de persistencia.
+- Evitamos mezclar idiomas dentro de nuestra app.
+
+Para implementar `Data Mapper` dentro de nuestro proyecto vamos a usar [MapStruct](https://mapstruct.org/) que es un generador de código que simplifica mucho las cosas para hacer este tipo de mapeos, para usarlo instalamos las dependencias de `Gradle`.
+~~~
+implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+~~~
+
+Agregamos tambien un plugin para autocompletar las estrucutras de `MapStruct` dentro de **Intellij** y podemos:
+- Googlear ***map struct for intellij idea*** y nos sale un plugin de Jet Brains. Entramos, le damos a instalar y vemos que Intellij nos dice que acaba de instalar el plugin.
+- O buscarlo dentro de Intellij `File -> Settings -> Plugins -> Buscar MapStruct Support -> Install`.
+
+Como el proyecto está enfocado a `Dominio`, vamos a usar esta estructura, creamos 2 `clases`, `Product` y `Category`, que contendran sus respectivos `atributos` que se convertiran en los `atributos` de las `@Entitys` (`Producto` y `Categoria`).
+
+![21_Data_Mapper_03](src/Curso_de_Java_Spring/21_Data_Mapper_03.png)
+
+![21_Data_Mapper_04](src/Curso_de_Java_Spring/21_Data_Mapper_04.png)
+
+Incluso agregamos `Category` como atributo de `Product` ya que estamos hablando en terminos de `Dominio` y excluimos `codigoBarras`, o sea no lo tenemos dentro del `Dominio`, y agregamos los `Getters` y `Setters` para terminar con mi `Dominio` en ese sentido.
+
+Creamos un nuevo `repositorio` para que le indiquemos a todos los `repositorios` como se deben de comportar cuando estemos hablando en terminos de `Productos`.  
+En el `paquete` `repository` cremos una nueva `interfaz`, `ProductRepository`, en la que indicaremos el nombre de los metodos que queremos que, cualquier repositorio que vaya a trabajar con `Productos`, tenga que implementar.
+
+Una vez construidos la clase `ProductoRepositoy`, la encargada de interactuar con la DB, va a implementar los métodos declarados en este nueve `repositorio` para que al final hablen en terminos de `Dominio`, es decir de `Product` y no de `Producto` que es la `tabla` a la cual estamos haciendo referencia en la DB.
+
+![21_Data_Mapper_05](src/Curso_de_Java_Spring/21_Data_Mapper_05.png)
+
+Con esto ya definimos las reglas que van a tener nuestro `Dominio` al momento que cualquier repositorio quiera usar o acceder a `productos` dentro de una DB, esto nos garantiza no acoplar nuestra solución a una DB especifica si no que siempre estemos hablando en terminos de `Dominio`, en este caso de `Product`, y quedan los objetos de `Dominio` para ser utilizados. Son muy importantes estos objetos ya que se encargan de llevar a cuestas toda la lógica de nuestro Domnio o negocio.
+
+---
+
+**DATA MAPPER**
+- Convertir o traducir dos objetos que pueden hacer una misma labor.
+- No exponer directamente la base datos medianta la API.
+- Esto garantiza que ningun agente externo, vizualice la forma del diseño de la base de datos.
+- Desacoplar la API de una base de datos puntual.
+- En el caso que se desee integrar una nueva base de datos con otros campos, pero que sea para el mismo proyecto, no es necesario cambiar todo el código, simplemente se crea otro traductor que sirva para traducir la nueva tabla al dominio.
+- Evita tener campos innecesarios en la API.
+- Evitar mezclar idiomas en el dominio.
+
+Cuando se construye un software siempre buscamos que exista un bajo acoplamiento entre componentes.  
+En este caso, `MapStruct` me permite evitar que los `entities` se conviertan en objetos transversales de la aplicación (que van desde la base de datos hasta el controlador Rest). Así tendré objetos de dominio que serán los que finalmente estarán expuestos en la `API` y por otra parte tengo los `entities` que solo vivirán en la capa de datos.
+
+**¿Porque en Entity se usa Integer en Id y en Dominio se usa int?**
+La única razón es porque los `entities` deben lidiar con datos `null` que vienen desde la base de datos y que se deben procesar así. En realidad los `DTO` también pudieron ir igual porque sería lo mismo, pero como estoy seguro que desde la base de datos siempre se trae información no hay problema.
 
 ---
 

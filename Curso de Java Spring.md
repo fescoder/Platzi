@@ -531,7 +531,7 @@ El patrón `Data Mapper` se encarga de convertir 2 objetos que pueden hacer una 
 ![21_Data_Mapper_02](src/Curso_de_Java_Spring/21_Data_Mapper_02.png)
 
 - No exponemos la DB, nos garantizamos de que ningún agente externo va a poder darse cuenta de que forma estan diseñadas nuestras `tablas` de DB.
-- Si a futuro queremos integrar una nueva DB, que contenga otros nombres, no tenemos que cambiar todo el código para que funcione, simplemente creamos otro traductor que sirva para traducir esta nueva `tabla` al dominio.
+- Si a futuro queremos integrar una nueva DB, que contenga otros nombres, no tenemos que cambiar todo el código para que funcione, simplemente creamos otro traductor que sirva para traducir esta nueva `tabla` al `dominio`.
 - Existen atributos, como `codigoBarras`, que no me interesan llevar hasta la API, porque solo tienen sentido dentro de la DB o la capa de persistencia.
 - Evitamos mezclar idiomas dentro de nuestra app.
 
@@ -542,8 +542,8 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 ~~~
 
 Agregamos tambien un plugin para autocompletar las estrucutras de `MapStruct` dentro de **Intellij** y podemos:
-- Googlear ***map struct for intellij idea*** y nos sale un plugin de Jet Brains. Entramos, le damos a instalar y vemos que Intellij nos dice que acaba de instalar el plugin.
-- O buscarlo dentro de Intellij `File -> Settings -> Plugins -> Buscar MapStruct Support -> Install`.
+- Googlear ***map struct for intellij idea*** y nos sale un plugin de Jet Brains. Entramos, instalamos y vemos que Intellij nos dice que acaba de instalar el plugin.
+- O buscarlo dentro de Intellij `File-> Settings-> Plugins-> Buscar MapStruct Support-> Install`.
 
 Como el proyecto está enfocado a `Dominio`, vamos a usar esta estructura, creamos 2 `clases`, `Product` y `Category`, que contendran sus respectivos `atributos` que se convertiran en los `atributos` de las `@Entitys` (`Producto` y `Categoria`).
 
@@ -554,13 +554,13 @@ Como el proyecto está enfocado a `Dominio`, vamos a usar esta estructura, cream
 Incluso agregamos `Category` como atributo de `Product` ya que estamos hablando en terminos de `Dominio` y excluimos `codigoBarras`, o sea no lo tenemos dentro del `Dominio`, y agregamos los `Getters` y `Setters` para terminar con mi `Dominio` en ese sentido.
 
 Creamos un nuevo `repositorio` para que le indiquemos a todos los `repositorios` como se deben de comportar cuando estemos hablando en terminos de `Productos`.  
-En el `paquete` `repository` cremos una nueva `interfaz`, `ProductRepository`, en la que indicaremos el nombre de los metodos que queremos que, cualquier repositorio que vaya a trabajar con `Productos`, tenga que implementar.
+En el `paquete` `repository` cremos una nueva `interfaz`, `ProductRepository`, en la que indicaremos el nombre de los métodos que queremos que, cualquier repositorio que vaya a trabajar con `Productos`, tenga que implementar.
 
-Una vez construidos la clase `ProductoRepositoy`, la encargada de interactuar con la DB, va a implementar los métodos declarados en este nueve `repositorio` para que al final hablen en terminos de `Dominio`, es decir de `Product` y no de `Producto` que es la `tabla` a la cual estamos haciendo referencia en la DB.
+Una vez construidos, la clase `ProductoRepositoy` (la encargada de interactuar con la DB) va a implementar los métodos declarados en este nuevo `repositorio` para que al final del día hablen en terminos de `Dominio`, es decir de `Product` y no de `Producto` que es la `tabla` a la cual estamos haciendo referencia en la DB.
 
 ![21_Data_Mapper_05](src/Curso_de_Java_Spring/21_Data_Mapper_05.png)
 
-Con esto ya definimos las reglas que van a tener nuestro `Dominio` al momento que cualquier repositorio quiera usar o acceder a `productos` dentro de una DB, esto nos garantiza no acoplar nuestra solución a una DB especifica si no que siempre estemos hablando en terminos de `Dominio`, en este caso de `Product`, y quedan los objetos de `Dominio` para ser utilizados. Son muy importantes estos objetos ya que se encargan de llevar a cuestas toda la lógica de nuestro Domnio o negocio.
+Con esto ya definimos las reglas que va a tener nuestro `Dominio` al momento que cualquier repositorio quiera usar o acceder a `productos` dentro de una DB, esto nos garantiza no acoplar nuestra solución a una DB especifica si no que siempre estemos hablando en terminos de `Dominio`, en este caso de `Product`, y quedan los objetos de `Dominio` para ser utilizados. Son muy importantes estos objetos ya que se encargan de llevar a cuestas toda la lógica de nuestro Domnio o negocio.
 
 ---
 
@@ -576,12 +576,27 @@ Con esto ya definimos las reglas que van a tener nuestro `Dominio` al momento qu
 Cuando se construye un software siempre buscamos que exista un bajo acoplamiento entre componentes.  
 En este caso, `MapStruct` me permite evitar que los `entities` se conviertan en objetos transversales de la aplicación (que van desde la base de datos hasta el controlador Rest). Así tendré objetos de dominio que serán los que finalmente estarán expuestos en la `API` y por otra parte tengo los `entities` que solo vivirán en la capa de datos.
 
-**¿Porque en Entity se usa Integer en Id y en Dominio se usa int?**
+**¿Porque en Entity se usa Integer en Id y en Dominio se usa int?**  
 La única razón es porque los `entities` deben lidiar con datos `null` que vienen desde la base de datos y que se deben procesar así. En realidad los `DTO` también pudieron ir igual porque sería lo mismo, pero como estoy seguro que desde la base de datos siempre se trae información no hay problema.
 
 ---
 
 ## Clase 22 - Orientar nuestra API al dominio con MapStruct
+Para empezar a mapear nuestros `objetos de Dominio` y las `entities`, primero creamos un `package`, `mapper`, que contengan estos traductores.
+Dentro de `mapper` creamos una `interfaz`, `CategoryMapper`, con la anotación `@Mapper` para indicar que es un mapeador, adicionalmente `MapStruct` nos ofrece una integración con `Spring`, para esto usamos `componentModel` al que le decimos "spring", para que se entienda que es un componente de `Spring`.
+
+Diseñamos los mappers, en este caso el que convierte de `Categoria` a `Category`, lo llamamos `toCategory` y lo anotamos con `@Mappings`, para indicarle como quiero traducir mis objetos, dentro de la anotacion usamos `@Mapping` y le decimos, con `source` (fuente, la variable que pasamos) y `target` (a donde quiero llevarlo, destino `Category`), que `variable` representa a la `variable` de la otra `clase`.
+
+![22_MapStruct_01](src/Curso_de_Java_Spring/22_MapStruct_01.png)
+
+Conversión externa, invertido, de `Category` a `Categoria`, para este caso usamos la anotación `@InheritInverseConfiguration` que indica a `MapStruct` que la conversion que haremos acá es la inversa (source pasa a ser target y lo de target a source) a la que hacemos en `toCategory`, por lo cual no tenemos que definir `Mappings`.  
+Pero pasa que también tenemos una `lista` de `Productos` en `Categoria` que en la otra clase no, y como no lo mepeamos, lo ignoramos con `@Mapping(taget = "productos", ignore = true)`.
+
+Cuando ya tenemos un `mapper` y lo queremos incluir dentro de otro, como en `toProduct`, agregamos dentro de `@Mapper` otro `parámetro` `uses=CategotyMapper.class`, entonces internamente sabe que cuando convierta `categoria` dentro de `toProduct` tiene que usar `CategoryMapper`.
+
+![22_MapStruct_02](src/Curso_de_Java_Spring/22_MapStruct_02.png)
+
+Si queremos crear un `mapper` de una `lista` de `productos`, solo debemos definirla porque `MapStruct` se encarga de usar lo que ya le indicamos para convertirlo ya que es el mismo tipo de conversión.
 
 ---
 

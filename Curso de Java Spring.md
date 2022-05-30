@@ -482,7 +482,7 @@ Una poderosa herramienta de `Spring Data` para hacer consultas sin `SQL`.
 
 ![19_Query_Methods_01](src/Curso_de_Java_Spring/19_Query_Methods_01.png)
 
-Los `Query methods` nos permiten generar consultas solo nombrando a los `métodos` de una manera en particular, y podemos retornar el tipo de dato `Optional`, esto para garantizar que nuestro sistema sea felxible hacia la `programacion funcional`.
+Los `Query Methods` nos permiten generar consultas solo nombrando a los `métodos` de una manera en particular, y podemos retornar el tipo de dato `Optional`, esto para garantizar que nuestro sistema sea felxible hacia la `programacion funcional`.
 
 ![19_Query_Methods_02](src/Curso_de_Java_Spring/19_Query_Methods_02.png)
 
@@ -503,8 +503,8 @@ Los `Query Methods` son muy potentes, también permiten realizar múltiples oper
 - **Números:** Mayores, menores, iguales…
 - **Textos:** Contiene cierta porción de texto, empieza o termina con una porción de texto, ignora case sensitive…
 - **Fechas:** Antes de cierta fecha, después de cierta fecha, entre cierta fecha…
-- **Joins entre entidades:** Si tenemos una entidad que se relaciona con otra, es posible realizar “joins” con esa relación para tener queries más específicas según nuestra necesidad. Por ejemplo, si tengo una relación de Producto y Categoría y quiero tener todos los productos de cierta categoría podría hacer: findAllByCategoriasId(Integer categoriaId) y así poder llegar a esta relación. Esto puede mezclarse con múltiples relaciones en simultáneo
-- **Comparación entre un conjunto de datos:** Si por ejemplo quiero traerme los productos con varias categorías, podría escribir findAllByCategoriasIdIn(List<Integer> categoriaIds); y así trabajar bajo un conjunto de Id de categorías
+- **Joins entre entidades:** Si tenemos una entidad que se relaciona con otra, es posible realizar “joins” con esa relación para tener queries más específicas según nuestra necesidad. Por ejemplo, si tengo una relación de Producto y Categoría y quiero tener todos los productos de cierta categoría podría hacer: findAllByCategoriasId(Integer categoriaId) y así poder llegar a esta relación. Esto puede mezclarse con múltiples relaciones en simultáneo.
+- **Comparación entre un conjunto de datos:** Si por ejemplo quiero traerme los productos con varias categorías, podría escribir findAllByCategoriasIdIn(List<Integer> categoriaIds); y así trabajar bajo un conjunto de Id de categorías.
 
 Se pueden ver más detalles [acá](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
@@ -512,6 +512,13 @@ Se pueden ver más detalles [acá](https://docs.spring.io/spring-data/jpa/docs/c
 
 # Módulo 4 - Construyendo nuestra API
 ## Clase 20 - Implementar la anotación @Repository
+`@Component` es una generalizacion de tipo de anotaciones para `Spring`, estamos diciendo que es una componente de `Spring` basicamente, y con `@Repository` especificamos que tipo de componente es y es una anotación para indicarle a `Spring` que esta `clase` se encarga de interacrtuar con la DB.
+
+---
+
+El repositorio (ver Repository Pattern) es una capa de abstracción que se añade a tu sistema para desacoplar el motor de base de datos de tu aplicación, básicamente te ayuda a que tu aplicación no dependa del tipo de base de datos que estas utilizando, si mañana quisieras cambiar Postgres por mysql o MongoDB, solo tendrías que modificar el repositorio y el resto de tu aplicación no debería verse afectada en gran medida (sería lo ideal). Esta capa es solo para interactuar con tu base de datos y NO posee lógica de negocio.
+
+Un service por el contrario, es la capa que guarda la mayor parte de la lógica de tu negocio y su responsabilidad es esa, implementar lógica, no relacionarse con una base de datos.
 
 ---
 

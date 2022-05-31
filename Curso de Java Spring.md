@@ -631,26 +631,60 @@ En nuestro caso puntual lo usamos porque el `método` `findByIdCategoriaOrderByN
 ## Clase 24 - Inyección de dependencias
 ![24_Inyeccion_dependencias_01](src/Curso_de_Java_Spring/24_Inyeccion_dependencias_01.png)
 
-- Es uno de los 5 principios SOLID.
+- Es uno de los 5 principios SOLID. (No lo es, pero tiene que ver, la D es de **Inversión de Dependencias**)
 Estos principios nos ayuda como desarrolladores a crear código que sea más facil de leer, que sea más mantenible a largo plazo.
 - `DI`: El principio de inyección de dependencia consiste en pasar la dependencia a la clase que lo va a utilizar en lugar de crearla internamente en esa clase, esto con el fin de no acoplar la clase a la implementación que está utilizando.
 - `IoC`: Se refiere a que es un framework a quien toma el control de los objetos, en este caso `Spring` que contiene un contenedor de inversión de control, el cual se encarga de administrar y crear instancias de objetos que se conocen como `Beans` o `Components`.
 - `Spring` usa la anotación `@Autowired` para hacer `DI` .
 
-Como vemos en nuestro `ProductoRepository` estamos usando un par de `atributos`, los declaramos pero en ningún momento lo instanciamos o inicializamos, es decir que tienen valor nulo, es porque en `Java` necesitamos crear los objetos antes de poderlos usar, si dejamos todos como está, podemos encontrarnos con casos de `NullPointerException` cuando llamemos a algún `método`, es nulo porque no lo creamos, no lo inicializamos.  
-`Spring` nos ayuda creando estos objetos gracias a su contenedor de `IoC`. Nosotros solo debemos de escribir `@Autowired`, con esto le damos a entender a `Spring` que estos objetos son cedidos a `Spring` para que cree esas instancias.  
-Gracias a esto no nos tenemos que preocupar por crear objetos manualmente, lo cual sería una mala práctica porque estaríamos violando el principio de `DI`.  
-Solamente tenemos que tener cuidado con cuando usemos `@Autowired` tenemos que estar seguros que el `atributo` sea un componente de `Spring`, es decir que las clases tienen que extender o implementar de otra clase que tenga alguna anotación de `Spring`, asi sí lo podemos inyectar.  
+Como vemos en nuestro `ProductoRepository` estamos usando un par de `atributos`, los declaramos pero en ningún momento lo instanciamos o inicializamos, es decir que tienen valor nulo, es porque en `Java` necesitamos crear los objetos antes de poderlos usar, si dejamos todos como está, podemos encontrarnos con casos de `NullPointerException` cuando llamemos a algún `método`, es nulo porque no lo creamos, no lo inicializamos.
+
+`Spring` nos ayuda creando estos objetos gracias a su contenedor de `IoC`. Nosotros solo debemos de escribir `@Autowired`, con esto le damos a entender a `Spring` que estos objetos son cedidos a él para que cree esas instancias.  
+Gracias a esto no nos tenemos que preocupar por crear objetos manualmente, lo cual sería una mala práctica porque estaríamos violando el principio de `DI`.
+
+Solamente tenemos que tener cuidado cuando usemos `@Autowired`, tenemos que estar seguros que el `atributo` sea un componente de `Spring`, es decir que las clases tienen que extender o implementar de otra clase que tenga alguna anotación de `Spring`, asi sí lo podemos inyectar.  
 Por ejemplo, el `atributo` `mapper` es de `ProdcutMapper`, esta `interfaz` tiene un `@Mapper` (que no es `Spring`) pero le indicamos que es un componente de `Spring`. Por otro lado `ProductoCrudRepository` extiende de `CrudRepository` que tiene, en su propia `interfaz` un `@NoRepositoryBean`.
 
 ---
 
 Es preferible la inyección de dependencias a nivel del constructor.  
-Existen tres maneras de usar la inyección dependencias con @Autowired: En el atributo, en el constructor y en el método set.  
-A pesar de que hacerlo en el atributo (Field-based) es lo más práctico, elegante y la manera en que mejor se lee; lo mejor es hacerlo en el constructor (Constructor-based) para poder declarar los atributos inyectados como final para que sean inmutables, y además es muy recomendado para declarar dependencias obligatorias. Asimismo se evita que la dependencia en un momento determinado pueda ser null.  
+Existen tres maneras de usar la inyección dependencias con `@Autowired`: En el atributo, en el constructor y en el método set.  
+A pesar de que hacerlo en el `atributo` (Field-based) es lo más práctico, elegante y la manera en que mejor se lee; lo mejor es hacerlo en el `constructor` (Constructor-based) para poder declarar los `atributos` inyectados como `final` para que sean `inmutables`, y además es muy recomendado para declarar `dependencias` obligatorias. Así mismo se evita que la `dependencia` en un momento determinado pueda ser `null`.  
 [Más info](https://reflectoring.io/constructor-injection/)
 
 ## Clase 25 - Implementar la anotación @Service
+Una vez terminamos el repositorio, es el momento de crear el servicio de dominio, que va a actuar de intermediario entre el controlador de nuestra `API` y el `repositorio`.
+
+Creamos una `clase` dentro del `package` `service` que se llama `ProductService` al cual lo anotamos con `@Service` y dentro creamos un `atributo` de la `interfaz` `ProductRepository`, que contiene los `métodos` que hicimos, observemos que no es la implementación de `ProductoRepository` si no que es esta `interfaz`, para que `Spring` sepa que tiene que usar, lo anotamos con `@Autowired`, asi `Spring` sabrá que tiene que hacer e internamente incializará un nuevo `productoRepository` que es la `clase` que en realidad está implementada. Podemos usar `@Autowired` porque `ProductoRepository`, que es la implementación, tiene un `@Repository`.
+
+Ahora podemos escribir los `métodos` y podemos observar que estamos trabajando en terminos de dominio ya que donde ocurre la conversión es en `ProductoRepository` y el servicio desconoce totalmente esa operación, el servicio unicamente está trabajando en terminos de lo que mejor conoce, que es el dominio.
+
+---
+
+Las implementaciones del `método` `delete` son buenos ejemplos de los estilos declarativo e imperativo.  
+El primero define el **QUÉ** va a hacer el código mientras que el segundo define el **CÓMO** y por consiguiente se ven más detalles. Cabe aclarar que el estilo declarativo no puede existir sin el estilo imperativo ya que el primero se apoya en el segundo para ocultar las estructuras de control (if, else, switch, etc).
+
+---
+
+**¿Porqué es necesario verificar que el producto exista en la base de datos antes de borrarlo?**  
+El `Id` normalmente se obtiene de procesos anteriores como de un `listado`, y si queremos saber si el borrado es exitoso se podría obtener el número de fila(s) eliminada(s) … lo digo porque esto se ve muy bonito y mantenible, pero es costoso en máquina… ¿no?
+
+Lo hice así era pensando en implementar una solución más imperativa que me permita describir claramente cuando se realiza bien o no este procedimiento.  
+Una solución mucho más optima sería controlar esto con un `try-catch`, así:
+~~~
+public boolean delete(int productId){
+	  	try {
+            productRepository.delete(productId);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
+}
+~~~
+
+- El `repositorio` es la capa simple de acceso o de comunicación con el sistema de almacén de datos (ojo, solo comunicación), mientras que el `servicio` es la lógica de acceso a estos datos desde la aplicación.
+- Nuestros `servicios` son negociadores entre el `repositorio` y los `controladores`.
+- `@Service`: Intermediario entre el controlador de la API y el repositorio
 
 ---
 

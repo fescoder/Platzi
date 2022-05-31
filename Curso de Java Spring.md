@@ -629,6 +629,15 @@ En nuestro caso puntual lo usamos porque el `método` `findByIdCategoriaOrderByN
 ---
 
 ## Clase 24 - Inyección de dependencias
+![]
+
+- Es uno de los 5 principios SOLID.
+Estos principios nos ayuda como desarrolladores a crear código que sea más facil de leer, que sea más mantenible a largo plazo.
+- `DI`: El principio de inyección de dependencia consiste en pasar la dependencia a la clase que lo va a utilizar en lugar de crearla internamente en esa clase, esto con el fin de no acoplar la clase a la implementación que está utilizando.
+- `IoC`: Se refiere a que es un framework a quien toma el control de los objetos, en este caso `Spring` que contiene un contenedor de inversión de control, el cual se encarga de administrar y crear instancias de objetos que se conocen como `Beans` o `Components`.
+- `Spring` usa la anotación `@Autowired` para hacer `DI` .
+
+
 
 ---
 

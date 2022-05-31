@@ -653,11 +653,11 @@ A pesar de que hacerlo en el `atributo` (Field-based) es lo más práctico, eleg
 [Más info](https://reflectoring.io/constructor-injection/)
 
 ## Clase 25 - Implementar la anotación @Service
-Una vez terminamos el repositorio, es el momento de crear el servicio de dominio, que va a actuar de intermediario entre el controlador de nuestra `API` y el `repositorio`.
+Una vez terminamos el `repositorio`, es el momento de crear el `servicio de dominio`, que va a actuar de intermediario entre el `controlador` de nuestra `API` y el `repositorio`.
 
 Creamos una `clase` dentro del `package` `service` que se llama `ProductService` al cual lo anotamos con `@Service` y dentro creamos un `atributo` de la `interfaz` `ProductRepository`, que contiene los `métodos` que hicimos, observemos que no es la implementación de `ProductoRepository` si no que es esta `interfaz`, para que `Spring` sepa que tiene que usar, lo anotamos con `@Autowired`, asi `Spring` sabrá que tiene que hacer e internamente incializará un nuevo `productoRepository` que es la `clase` que en realidad está implementada. Podemos usar `@Autowired` porque `ProductoRepository`, que es la implementación, tiene un `@Repository`.
 
-Ahora podemos escribir los `métodos` y podemos observar que estamos trabajando en terminos de dominio ya que donde ocurre la conversión es en `ProductoRepository` y el servicio desconoce totalmente esa operación, el servicio unicamente está trabajando en terminos de lo que mejor conoce, que es el dominio.
+Ahora podemos escribir los `métodos` y podemos observar que estamos trabajando en terminos de `dominio` ya que donde ocurre la conversión es en `ProductoRepository` y el `servicio` desconoce totalmente esa operación, el `servicio` unicamente está trabajando en terminos de lo que mejor conoce, que es el `dominio`.
 
 ![25_Service_01](src/Curso_de_Java_Spring/25_Service_01.png)
 
@@ -675,12 +675,12 @@ Lo hice así era pensando en implementar una solución más imperativa que me pe
 Una solución mucho más optima sería controlar esto con un `try-catch`, así:
 ~~~
 public boolean delete(int productId){
-	  	try {
-            productRepository.delete(productId);
-            return true;
-        } catch (EmptyResultDataAccessException e) {
-            return false;
-        }
+    try {
+        productRepository.delete(productId);
+        return true;
+    } catch (EmptyResultDataAccessException e) {
+        return false;
+    }
 }
 ~~~
 
@@ -691,6 +691,33 @@ public boolean delete(int productId){
 ---
 
 ## Clase 26 - Implementar la anotación @RestController
+Creando el primer `controlador REST`, para esto usaremos 2 anotaciones de `Spring`:
+- `@RestController`: Indica a `Spring` que esta `clase` es un `controlador` de una `API REST`.
+- `@RequestMapping`: Lleva como `parámetro` el `path` en donde va a aceptar las peticiones.
+
+Una vez agregados podemos empezar a armar el cuerpo, primero inyectamos el `servicio` y luego implementamos los `métodos` necesarios.
+
+![26_RestController_01](src/Curso_de_Java_Spring/26_RestController_01.png)
+
+Probamos la app, al darle al boton **RUN** se empiezan a ejecutar tareas, compilar `Java`, los `recursos`, crear nuestras `clases` y lanzar la app de `Spring Boot` con todas sus `dependencias`.
+
+Aun falta decirle a nuestros `métodos` que como van a responder a las diferentes peticiones, falta exponerlos.
+
+---
+
+Para los que usaron `lombok`, si llegan a tener algún error en `ProductMapper`, por ejemplo `<No property named “idProduco” exists in source parameter(s). Did you mean “null”?>` es debido a que `mapstruct` tiene que esperar a que `lombok` haga todas sus modificaciones antes de que cree las `clases` de mapeo.  
+Para solucionar esto, pueden modificar el archivo `build.gradle` de la siguiente manera:
+~~~
+// MapStruct
+compileOnly 'org.mapstruct:mapstruct:1.4.1.Final'
+annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
+
+// Lombok
+compileOnly 'org.projectlombok:lombok'
+annotationProcessor 'org.projectlombok:lombok'
+~~~
+
+También es importante que el `Lombok` esté antes del de `MapStruct` para evitar el error.
 
 ---
 

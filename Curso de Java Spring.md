@@ -724,16 +724,22 @@ También es importante que el `Lombok` esté antes del de `MapStruct` para evita
 ---
 
 ## Clase 27 - Exponer nuestra API
-![]
+![27_Exponiendo_API_01](src/Curso_de_Java_Spring/27_Exponiendo_API_01.png)
 
 A la hora de exponer nuestra `API`, `Spring` nos da una serie de anotaciones para simplificarnos la tarea.
 
 Nuestra `API` está expuesta como `controlador` a través de `@RequestMapping` y `@RestController`, asi mismo los `métodos` deben tener unas anotaciones especificas para que sean expuestas.
 - `@GetMapping`: Para obtener información.
+    - `@PathVariable`: Sirve para referenciar el `atributo` que se va a usar en `@GetMapping`.
 - `@PostMapping`: Para guardar o actualizar información.
+    - `@RequestBody`: En el `método` `save`, como el `producto` no va a viajar en el `path` si no que va a ser parte del cuerpo de la petición, debemos indicarlo con esta anotación.
 - `@DeleteMapping`: Para borrar algún registro.
 
+En clase:  
+![27_Exponiendo_API_02](src/Curso_de_Java_Spring/27_Exponiendo_API_02.png)
 
+Más limpio:  
+![27_Exponiendo_API_03](src/Curso_de_Java_Spring/27_Exponiendo_API_03.png)
 
 ---
 

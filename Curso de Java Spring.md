@@ -659,6 +659,8 @@ Creamos una `clase` dentro del `package` `service` que se llama `ProductService`
 
 Ahora podemos escribir los `métodos` y podemos observar que estamos trabajando en terminos de dominio ya que donde ocurre la conversión es en `ProductoRepository` y el servicio desconoce totalmente esa operación, el servicio unicamente está trabajando en terminos de lo que mejor conoce, que es el dominio.
 
+![25_Service_01](src/Curso_de_Java_Spring/25_Service_01.png)
+
 ---
 
 Las implementaciones del `método` `delete` son buenos ejemplos de los estilos declarativo e imperativo.  

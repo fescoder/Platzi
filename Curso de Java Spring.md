@@ -629,7 +629,7 @@ En nuestro caso puntual lo usamos porque el `método` `findByIdCategoriaOrderByN
 ---
 
 ## Clase 24 - Inyección de dependencias
-![]
+![24_Inyeccion_dependencias_01](src/Curso_de_Java_Spring/24_Inyeccion_dependencias_01.png)
 
 - Es uno de los 5 principios SOLID.
 Estos principios nos ayuda como desarrolladores a crear código que sea más facil de leer, que sea más mantenible a largo plazo.
@@ -637,9 +637,18 @@ Estos principios nos ayuda como desarrolladores a crear código que sea más fac
 - `IoC`: Se refiere a que es un framework a quien toma el control de los objetos, en este caso `Spring` que contiene un contenedor de inversión de control, el cual se encarga de administrar y crear instancias de objetos que se conocen como `Beans` o `Components`.
 - `Spring` usa la anotación `@Autowired` para hacer `DI` .
 
-
+Como vemos en nuestro `ProductoRepository` estamos usando un par de `atributos`, los declaramos pero en ningún momento lo instanciamos o inicializamos, es decir que tienen valor nulo, es porque en `Java` necesitamos crear los objetos antes de poderlos usar, si dejamos todos como está, podemos encontrarnos con casos de `NullPointerException` cuando llamemos a algún `método`, es nulo porque no lo creamos, no lo inicializamos.  
+`Spring` nos ayuda creando estos objetos gracias a su contenedor de `IoC`. Nosotros solo debemos de escribir `@Autowired`, con esto le damos a entender a `Spring` que estos objetos son cedidos a `Spring` para que cree esas instancias.  
+Gracias a esto no nos tenemos que preocupar por crear objetos manualmente, lo cual sería una mala práctica porque estaríamos violando el principio de `DI`.  
+Solamente tenemos que tener cuidado con cuando usemos `@Autowired` tenemos que estar seguros que el `atributo` sea un componente de `Spring`, es decir que las clases tienen que extender o implementar de otra clase que tenga alguna anotación de `Spring`, asi sí lo podemos inyectar.  
+Por ejemplo, el `atributo` `mapper` es de `ProdcutMapper`, esta `interfaz` tiene un `@Mapper` (que no es `Spring`) pero le indicamos que es un componente de `Spring`. Por otro lado `ProductoCrudRepository` extiende de `CrudRepository` que tiene, en su propia `interfaz` un `@NoRepositoryBean`.
 
 ---
+
+Es preferible la inyección de dependencias a nivel del constructor.  
+Existen tres maneras de usar la inyección dependencias con @Autowired: En el atributo, en el constructor y en el método set.  
+A pesar de que hacerlo en el atributo (Field-based) es lo más práctico, elegante y la manera en que mejor se lee; lo mejor es hacerlo en el constructor (Constructor-based) para poder declarar los atributos inyectados como final para que sean inmutables, y además es muy recomendado para declarar dependencias obligatorias. Asimismo se evita que la dependencia en un momento determinado pueda ser null.  
+[Más info](https://reflectoring.io/constructor-injection/)
 
 ## Clase 25 - Implementar la anotación @Service
 

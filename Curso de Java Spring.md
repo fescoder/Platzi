@@ -642,6 +642,8 @@ Como vemos en nuestro `ProductoRepository` estamos usando un par de `atributos`,
 `Spring` nos ayuda creando estos objetos gracias a su contenedor de `IoC`. Nosotros solo debemos de escribir `@Autowired`, con esto le damos a entender a `Spring` que estos objetos son cedidos a él para que cree esas instancias.  
 Gracias a esto no nos tenemos que preocupar por crear objetos manualmente, lo cual sería una mala práctica porque estaríamos violando el principio de `DI`.
 
+![24_Inyeccion_dependencias_02](src/Curso_de_Java_Spring/24_Inyeccion_dependencias_02.png)
+
 Solamente tenemos que tener cuidado cuando usemos `@Autowired`, tenemos que estar seguros que el `atributo` sea un componente de `Spring`, es decir que las clases tienen que extender o implementar de otra clase que tenga alguna anotación de `Spring`, asi sí lo podemos inyectar.  
 Por ejemplo, el `atributo` `mapper` es de `ProdcutMapper`, esta `interfaz` tiene un `@Mapper` (que no es `Spring`) pero le indicamos que es un componente de `Spring`. Por otro lado `ProductoCrudRepository` extiende de `CrudRepository` que tiene, en su propia `interfaz` un `@NoRepositoryBean`.
 
@@ -722,6 +724,16 @@ También es importante que el `Lombok` esté antes del de `MapStruct` para evita
 ---
 
 ## Clase 27 - Exponer nuestra API
+![]
+
+A la hora de exponer nuestra `API`, `Spring` nos da una serie de anotaciones para simplificarnos la tarea.
+
+Nuestra `API` está expuesta como `controlador` a través de `@RequestMapping` y `@RestController`, asi mismo los `métodos` deben tener unas anotaciones especificas para que sean expuestas.
+- `@GetMapping`: Para obtener información.
+- `@PostMapping`: Para guardar o actualizar información.
+- `@DeleteMapping`: Para borrar algún registro.
+
+
 
 ---
 

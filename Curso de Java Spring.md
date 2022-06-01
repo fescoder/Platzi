@@ -774,17 +774,57 @@ Dentro de `Purchase` vamos a tener todo lo relacionado con la compra, es la que 
 
 ![29_Dominio_Compras_01](src/Curso_de_Java_Spring/29_Dominio_Compras_01.png)
 
-En `PurchaseItem`
+En `PurchaseItem` que será `ComprasProducto`.
 
 ![29_Dominio_Compras_02](src/Curso_de_Java_Spring/29_Dominio_Compras_02.png)
 
-Ahora crearemos la especificación del repositorio, una `interfaz`, lo que yo quiero que luego sus implementaciones hagan cuando estemos hablando de `compras` o `purchase`.
+Ahora crearemos la especificación del repositorio, lo que yo quiero que luego sus implementaciones hagan cuando estemos hablando de `compras` o `purchase`.
 
 ![29_Dominio_Compras_03](src/Curso_de_Java_Spring/29_Dominio_Compras_03.png)
 
 ---
 
 ## Clase 30 - Mapear el dominio de compras
+Creamos las 2 `interfaces` que traducirán nuestras `clases`. `PurcheseItemMapper` y `PurcheseMapper`.
+
+![30_Mappear_Dominio_Compras_01](src/Curso_de_Java_Spring/30_Mappear_Dominio_Compras_01.png)
+
+- Al querer mapear de `ComprasProducto` a `PurcheseItem` vemos que este último tiene un `id` compuesto de tipo `ComprasProductoPK`, entonces para indicar cual es el `id` de `ComprasProducto` tenemos que hacer `id.idProducto`.
+- Como el `atributo` `total` se llama de la misma manera en ambas `clases` se puede suprimir o ignorar el mapeo.
+- Como estamos haciendo referencia a `producto` en el mapeo, debemos indicarle en el `mapper` que lo vamos a usar `ProductMapper.class` para ignorar.
+
+![30_Mappear_Dominio_Compras_02](src/Curso_de_Java_Spring/30_Mappear_Dominio_Compras_02.png)
+
+Siempre en la `clase` destino tiene que tener todos los mapeos, si no tiene todos los mapeos debemos ignorarlos explicitamente.  
+Si bien se explica así porque nos gusta tener control visual de todos los atributos a la hora de mapearlos, también podríamos agregar el parámetro `unmappedTargetPolicy = ReportingPolicy.IGNORE` en la anotación `@Mapper` para no tener que ignorarlos explícitamente en los métodos con `ignore = true`.  
+Por ejemplo, para el PurchaseMapper sería algo así:
+~~~
+@Mapper(..., unmappedTargetPolicy = ReportingPolicy.IGNORE)
+publicinterfacePurchaseMapper {
+		...
+}
+~~~
+
+---
+
+Con respecto a MapStruct desde java 8 en adelante no es necesario usar la anotación @Mappings (No afecta si se usa).  
+Pasamos de esto (CategoryMapper):
+~~~
+@Mappings({
+    @Mapping(source = "idCategoria", target = "categoryId"),
+    @Mapping(source = "descripcion", target = "category"),
+    @Mapping(source = "estado", target = "active")
+})
+Category toCategory(Categoria categoria);
+~~~
+
+A esto:
+~~~
+@Mapping(source = "idCategoria", target = "categoryId")
+@Mapping(source = "descripcion", target = "category")
+@Mapping(source = "estado", target = "active")
+Category toCategory(Categoria categoria);
+~~~
 
 ---
 

@@ -730,7 +730,7 @@ A la hora de exponer nuestra `API`, `Spring` nos da una serie de anotaciones par
 
 Nuestra `API` está expuesta como `controlador` a través de `@RequestMapping` y `@RestController`, asi mismo los `métodos` deben tener unas anotaciones especificas para que sean expuestas.
 - `@GetMapping`: Para obtener información.
-    - `@PathVariable`: Sirve para referenciar el `atributo` que se va a usar en `@GetMapping`.
+    - `@PathVariable`: Sirve para referenciar el `atributo` que se va a usar en el path, `@GetMapping`.
 - `@PostMapping`: Para guardar o actualizar información.
     - `@RequestBody`: En el `método` `save`, como el `producto` no va a viajar en el `path` si no que va a ser parte del cuerpo de la petición, debemos indicarlo con esta anotación.
 - `@DeleteMapping`: Para borrar algún registro.
@@ -745,6 +745,23 @@ Más limpio:
 
 # Módulo 5 - Mejorando nuestra API
 ## Clase 28 - Controlar las respuestas HTTP
+Aprenderemos a controlar de mejor manera los llamados que reciben nuestros **EndPoints**, esto gracias a códigos http particulares para las peticiones.
+
+![28_Respuestas_Http_01](src/Curso_de_Java_Spring/28_Respuestas_Http_01.png)
+
+- `ResponseEntity`: Es una `clase` dedicada para controlar los llamados y respuestas que reciben nuestros `controladores`
+- `HttpStatus`: Se usa para definir que código queremos retornar según el caso.
+
+En nuestro proyecto vamos a cambiar el tipo de retorno de los `métodos` de nuestro `servicio`, ahora serán `ResponseEntity`, que recibe en el operador diamante (`<>`) lo que en realidad está devolviendo, lo que había antes. Y en el `return`, claramente lo tenemos que cambiar por un `new ResponseEntity` que recibirá como `parámetros`, lo que tiene que devolver y el estado de `Http`, `HttpStatus.OK` por ejemplo.
+
+En el caso de `getProduct` que retorna un `Optional` vamos a sacarlo y solo devolvemos un `ResponseEntity<Product>`, pero todavía el `getProduct` de `productService` sigue retornando un `Optional`, entonces podemos usar `map` para poder operar con lo que hay en su interior.
+
+En el caso de `delete`, el `ResponseEntity` no tiene un tipo, solo queremos que responda si se borro OK o si no se encontro en la DB.
+
+---
+
+- Agregué el `método` `update` con la anotación `@PutMapping`, para hacer modificaciones, y el nombre de `save` paso a ser `create`, para también diferenciar las respuestas Http.
+
 
 ---
 

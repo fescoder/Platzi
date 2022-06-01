@@ -756,7 +756,11 @@ En nuestro proyecto vamos a cambiar el tipo de retorno de los `métodos` de nues
 
 En el caso de `getProduct` que retorna un `Optional` vamos a sacarlo y solo devolvemos un `ResponseEntity<Product>`, pero todavía el `getProduct` de `productService` sigue retornando un `Optional`, entonces podemos usar `map` para poder operar con lo que hay en su interior.
 
+![28_Respuestas_Http_02](src/Curso_de_Java_Spring/28_Respuestas_Http_02.png)
+
 En el caso de `delete`, el `ResponseEntity` no tiene un tipo, solo queremos que responda si se borro OK o si no se encontro en la DB.
+
+![28_Respuestas_Http_03](src/Curso_de_Java_Spring/28_Respuestas_Http_03.png)
 
 ---
 

@@ -764,12 +764,23 @@ En el caso de `delete`, el `ResponseEntity` no tiene un tipo, solo queremos que 
 
 ---
 
-- Agregué el `método` `update` con la anotación `@PutMapping`, para hacer modificaciones, y el nombre de `save` paso a ser `create`, para también diferenciar las respuestas Http.
-
+Agregué el `método` `update` con la anotación `@PutMapping`, para hacer modificaciones, y el nombre de `save` paso a ser `create`, para también diferenciar las respuestas Http.
 
 ---
 
 ## Clase 29 - Crear el dominio de compras
+Para crear todo el esquema de `compras` orientandolo a dominio, empezamos creando las `clases` del dominio, `Purchase` y `PurchaseItem`.  
+Dentro de `Purchase` vamos a tener todo lo relacionado con la compra, es la que luego va a ser traducida o mapeada a la `Entidad` `Compra`.
+
+![29_Dominio_Compras_01](src/Curso_de_Java_Spring/29_Dominio_Compras_01.png)
+
+En `PurchaseItem`
+
+![29_Dominio_Compras_02](src/Curso_de_Java_Spring/29_Dominio_Compras_02.png)
+
+Ahora crearemos la especificación del repositorio, una `interfaz`, lo que yo quiero que luego sus implementaciones hagan cuando estemos hablando de `compras` o `purchase`.
+
+![29_Dominio_Compras_03](src/Curso_de_Java_Spring/29_Dominio_Compras_03.png)
 
 ---
 

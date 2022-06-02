@@ -914,7 +914,7 @@ Ahora, podemos modificar como se ve todo esto desde `Swagger`, por ejemplo podem
 - `@ApiOperation`: Agregamos la descripción de lo que hace nuestra `API`.
 - `@ApiResponse`: Indicamos el código `http` que tiene que responder y un mensaje.
 - `@ApiResponses`: En el caso de que pueda tener 2 respuestas o más.
-- `@ApiParam`: Más descripción, que es requerido y hasta con un ejemplo.
+- `@ApiParam`: Descripción del `parámetro` que recibe, que será requerido y hasta con un ejemplo.
 
 ![33_Documentar_API_Swagger_06](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_06.png)
 
@@ -932,7 +932,7 @@ Una forma para ponerle un poco mas de detalle a nuestras `APIs`.
 
 ---
 
-La forma en la que el profesor implementa Swagger ya no funciona hoy en día, le dejo el link de maven repository para que solo copien y agreguen el archivo build.gradle
+La forma en la que el profesor implementa `Swagger` ya no funciona hoy en día, le dejo el link de maven repository para que solo copien y agreguen el archivo `build.gradle`.
 ~~~
 // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
 implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.12'
@@ -943,6 +943,8 @@ Se puede ver en la [documentación](https://mvnrepository.com/artifact/org.sprin
 Recuerden ya no va ser necesario crear en archivo `SwaggerConfig`.
 
 Para acceder a la documentacion -> `http://localhost:8090/api/swagger-ui.html`
+
+---
 
 `Swagger` no es la única manera de hacer esto, hay otra alternativa llamada [RAML](https://raml.org/) que esta bastante interesante.
 

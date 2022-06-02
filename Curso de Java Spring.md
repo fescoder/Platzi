@@ -791,24 +791,24 @@ Creamos las 2 `interfaces` que traducirán nuestras `clases`. `PurcheseItemMappe
 
 - Al querer mapear de `ComprasProducto` a `PurcheseItem` vemos que este último tiene un `id` compuesto de tipo `ComprasProductoPK`, entonces para indicar cual es el `id` de `ComprasProducto` tenemos que hacer `id.idProducto`.
 - Como el `atributo` `total` se llama de la misma manera en ambas `clases` se puede suprimir o ignorar el mapeo.
-- Como estamos haciendo referencia a `producto` en el mapeo, debemos indicarle en el `mapper` que lo vamos a usar `ProductMapper.class` para ignorar.
+- Como estamos haciendo referencia a `producto` en el mapeo, debemos indicarle en el `mapper` que lo vamos a usar `ProductMapper.class` para ignorar. (Al final de esta clase vemos que no hace falta.)
 
 ![30_Mappear_Dominio_Compras_02](src/Curso_de_Java_Spring/30_Mappear_Dominio_Compras_02.png)
 
 Siempre en la `clase` destino tiene que tener todos los mapeos, si no tiene todos los mapeos debemos ignorarlos explicitamente.  
 Si bien se explica así porque nos gusta tener control visual de todos los atributos a la hora de mapearlos, también podríamos agregar el parámetro `unmappedTargetPolicy = ReportingPolicy.IGNORE` en la anotación `@Mapper` para no tener que ignorarlos explícitamente en los métodos con `ignore = true`.  
-Por ejemplo, para el PurchaseMapper sería algo así:
+Por ejemplo, para el `PurchaseMapper` sería algo así:
 ~~~
 @Mapper(..., unmappedTargetPolicy = ReportingPolicy.IGNORE)
-publicinterfacePurchaseMapper {
+public interface PurchaseMapper {
 		...
 }
 ~~~
 
 ---
 
-Con respecto a MapStruct desde java 8 en adelante no es necesario usar la anotación @Mappings (No afecta si se usa).  
-Pasamos de esto (CategoryMapper):
+Con respecto a `MapStruct` desde `Java 8` en adelante no es necesario usar la anotación `@Mappings` (No afecta si se usa).  
+Pasamos de esto (`CategoryMapper`):
 ~~~
 @Mappings({
     @Mapping(source = "idCategoria", target = "categoryId"),
@@ -829,6 +829,36 @@ Category toCategory(Categoria categoria);
 ---
 
 ## Clase 31 - Crear el repositorio de compras
+Crearemos la implementación de nuestro `repositorio` para interactuar con la DB con todo lo relacionado a las `compras` de nuestro **Supermercado**.
+
+- Recordemos que tenemos que agregarle `@Repository` para indicarle a `Spring` que es un `bean` y que es un `repositorio` que se va a comunicar con la DB.
+- Para poder interactuar con la DB también es necesario implementar una `interfaz` que extienda de `CrudRepository`. La creamos e inyectamos.
+
+![31_Repositorio_Compras_01](src/Curso_de_Java_Spring/31_Repositorio_Compras_01.png)
+
+- También inyectamos el `mapper` para que el `repositorio` hable en terminos de dominio.
+
+![31_Repositorio_Compras_02](src/Curso_de_Java_Spring/31_Repositorio_Compras_02.png)
+
+Recordemos que `map` lo usamos para operar con lo que sea que venga dentro de un `Optional`, si es que viene o hay algo, si no sencillamente no se ejecuta.
+
+En `save` recibimos el `purchase`, lo pasamos a tipo `compra` y tenemos que garantizar de que toda esa información se va a guardar en cascada, para hacerlo tenemos que estar seguros de que `compra` conoce los `productos` y los `productos` conocen a que `compra` pertenecen.  
+Entonces traemos la `lista` de `ComprasProducto` de la `clase` `Compra`, la recorremos y le asignamos a cada `producto` a que `compra` pertenece.  
+Para que esto ocurra debemos ir al `entity` de `Compra` e indicarle que se va a guardar `productos` en cascada, esto dentro de la anotación `@OneToMany` con `cascade = {CascadeType.ALL}`.
+
+![31_Repositorio_Compras_03](src/Curso_de_Java_Spring/31_Repositorio_Compras_03.png)
+
+Quiere decir que todos los procesos que se hagan contra la DB de una `Compra` van a incluir en cascada sus productos.
+También lo hacemos en `ComprasProducto` por su relación con `compra`, agregamos la anotación `@MapsId` en el que incluimos la `PK` que queremos que se enlace, `idCompra`.
+
+![31_Repositorio_Compras_04](src/Curso_de_Java_Spring/31_Repositorio_Compras_04.png)
+
+Ya de esta manera cuando `ComprasProducto` se vaya a guardar en cascada va a saber a que `PK` pertenece cada uno de los `productos` que están en una `compra`.
+
+---
+
+Cuando queremos guardar en cascada debemos poner la anotación `@MapsId` porque esta anotación es la que proporciona la asignación para una `clave primaria` cuando se usa `@EmbeddedId`.  
+La anotación `@JoinColumn` solo especifica que columna se relaciona a la hora trabajar con el atributo de la relación.
 
 ---
 

@@ -874,10 +874,77 @@ El `Controlador`, creamos la `Clase` `PurchaseController`, lo anotamos con `@Res
 ---
 
 ## Clase 32 - Probando nuestros servicios de compras
+Me arrojó un error `error Caused by: org.postgresql.util.PSQLException: Bad value for type int : 3104583224 ` y se solucionó cambiando el tipo de dato del atributo `celular` del `Cliente` a tipo `String`.
 
 ---
 
 ## Clase 33 - Documentar nuestra API con Swagger
+[Swagger](https://swagger.io/) una herramienta que nos permite documentar nuestros `servicios` usando anotaciones.
+
+![33_Documentar_API_Swagger_01](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_01.png)
+
+Documentar es una excelente práctica, porque hace que nuestra `API` sea profesional y robusta. Va a ser muy descriptible, decirle a quien quiera consumir como debe hacerlo y de manera oficial.
+
+Lo primero que debemos hacer para usar `Swagger` dentro de nuestro proyecto es incluir las dependencias.  
+Buscamos en [MVNRepository](https://mvnrepository.com/) `Springfox Swagger2`, y como no es de `Spring` vamos a usar la versión más utilizada.  
+También incluiremos otra dependencia para que `Swagger` se convierta en una página donde podamos visualizar todos los **EndPoints** de nuestra `API`.  
+Buscamos `Swagger ui` y nos sale `Springfox Swagger UI`, usamos la misma versión.
+~~~
+implementation 'io.springfox:springfox-swagger2:2.9.2'
+implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+~~~
+
+Ya con `Swagger` vamos a crear dentro de `web` un nuevo `package`, `config` y dentro una `clase`, `SwaggerConfig` al que la anotamos con `@Configuration` y le indicamos que habilitamos en esta `clase` `Swagger2` con `@EnableSwagger2`.  
+Incluimos un `bean`, que es un `método` público que devuelve un `Docket` (de springfox), es específico para la documentación de `Spring`, le indicamos el tipo de documentación que es `DocumentationType.SWAGGER_2`, le decimos qué queremos que exponga en la documentación con `select().apis()` y dentro de `apis` indicamos que solamente los que esten dentro del `paquete` `controller`, porque en `controller` es donde tenemos nuestros `endpoints` del `API`, todo esto con `ResquestHandlerSelectors` (pertenece a springfox) y `basePackage` que recibe el nombre del `paquete` donde están nuestros `controladores`, `"com.platzi.market.web.controller"`. Y para finalizar simplemente debemos construir esta respuesta con `build`.
+
+![33_Documentar_API_Swagger_02](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_02.png)
+
+Al correr mi `servicio` me ocurrio un error de tipo `NullPointerException` y lo solucioné agregando a `application.properties` `spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER`. Para usar la versión 2.9.2 de `Swagger` con la version de `SpringBoot` 2.6+.
+
+Una vez levantado el `servicio` ingresamos a `http://localhost:8090/platzi-market/api/swagger-ui.html` y veremos toda la documentación de nuestros `controladores` dentro de `Swagger`.
+
+![33_Documentar_API_Swagger_03](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_03.png)
+
+Podemos ver todos los `métodos` que tenemos implementados, incluso nos da ejemplos de implementación, de lo que espera que reciba y lo que retorna, nos provee un `cliente` donde podemos probarlo (**Try it out**).
+
+![33_Documentar_API_Swagger_04](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_04.png)
+![33_Documentar_API_Swagger_05](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_05.png)
+
+Ahora, podemos modificar como se ve todo esto desde `Swagger`, por ejemplo podemos ir a `ProductController` y los `métodos` los anotamos con:
+- `@ApiOperation`: Agregamos la descripción de lo que hace nuestra `API`.
+- `@ApiResponse`: Indicamos el código `http` que tiene que responder y un mensaje.
+- `@ApiResponses`: En el caso de que pueda tener 2 respuestas o más.
+- `@ApiParam`: Más descripción, que es requerido y hasta con un ejemplo.
+
+![33_Documentar_API_Swagger_06](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_06.png)
+
+Muestra con ejemplo que indicamos.
+
+![33_Documentar_API_Swagger_07](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_07.png)
+
+---
+
+Una forma para ponerle un poco mas de detalle a nuestras `APIs`.
+
+![33_Documentar_API_Swagger_08](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_08.png)
+
+![33_Documentar_API_Swagger_09](src/Curso_de_Java_Spring/33_Documentar_API_Swagger_09.png)
+
+---
+
+La forma en la que el profesor implementa Swagger ya no funciona hoy en día, le dejo el link de maven repository para que solo copien y agreguen el archivo build.gradle
+~~~
+// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.12'
+~~~
+
+Se puede ver en la [documentación](https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui/1.5.12)
+
+Recuerden ya no va ser necesario crear en archivo `SwaggerConfig`.
+
+Para acceder a la documentacion -> `http://localhost:8090/api/swagger-ui.html`
+
+`Swagger` no es la única manera de hacer esto, hay otra alternativa llamada [RAML](https://raml.org/) que esta bastante interesante.
 
 ---
 

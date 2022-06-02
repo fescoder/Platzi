@@ -842,13 +842,14 @@ Crearemos la implementación de nuestro `repositorio` para interactuar con la DB
 
 Recordemos que `map` lo usamos para operar con lo que sea que venga dentro de un `Optional`, si es que viene o hay algo, si no sencillamente no se ejecuta.
 
-En `save` recibimos el `purchase`, lo pasamos a tipo `compra` y tenemos que garantizar de que toda esa información se va a guardar en cascada, para hacerlo tenemos que estar seguros de que `compra` conoce los `productos` y los `productos` conocen a que `compra` pertenecen.  
-Entonces traemos la `lista` de `ComprasProducto` de la `clase` `Compra`, la recorremos y le asignamos a cada `producto` a que `compra` pertenece.  
+En `save` recibimos el `purchase`, lo pasamos a tipo `compra` y tenemos que garantizar de que toda esa información se va a guardar en cascada en `ComprasProducto`, para hacerlo tenemos que estar seguros de que `compra` conoce los `productos` y los `productos` conocen a que `compra` pertenecen.
+
+Entonces traemos la `lista` de `ComprasProducto`, con `getProductos`, de la `clase` `Compra`, la recorremos y le asignamos a cada `producto` a que `compra` pertenece.  
 Para que esto ocurra debemos ir al `entity` de `Compra` e indicarle que se va a guardar `productos` en cascada, esto dentro de la anotación `@OneToMany` con `cascade = {CascadeType.ALL}`.
 
 ![31_Repositorio_Compras_03](src/Curso_de_Java_Spring/31_Repositorio_Compras_03.png)
 
-Quiere decir que todos los procesos que se hagan contra la DB de una `Compra` van a incluir en cascada sus productos.
+Quiere decir que todos los procesos que se hagan contra la DB de una `Compra` van a incluir en cascada sus productos.  
 También lo hacemos en `ComprasProducto` por su relación con `compra`, agregamos la anotación `@MapsId` en el que incluimos la `PK` que queremos que se enlace, `idCompra`.
 
 ![31_Repositorio_Compras_04](src/Curso_de_Java_Spring/31_Repositorio_Compras_04.png)
@@ -859,6 +860,16 @@ Ya de esta manera cuando `ComprasProducto` se vaya a guardar en cascada va a sab
 
 Cuando queremos guardar en cascada debemos poner la anotación `@MapsId` porque esta anotación es la que proporciona la asignación para una `clave primaria` cuando se usa `@EmbeddedId`.  
 La anotación `@JoinColumn` solo especifica que columna se relaciona a la hora trabajar con el atributo de la relación.
+
+---
+
+El `Servicio`, creamos la `Clase` `PurchaseService`, lo anotamos con `@Service`, inyectamos el `repositorio` e implementamos los `métodos`.
+
+![31_Repositorio_Compras_05](src/Curso_de_Java_Spring/31_Repositorio_Compras_05.png)
+
+El `Controlador`, creamos la `Clase` `PurchaseController`, lo anotamos con `@RestController` y `@ResquestMapping("/purchases")` para poder acceder a él, inyectamos `purchaseService` e implementemos los `métodos` con sus respectivas anotaciones `@GetMapping`, `@PostMapping` y `@PutMapping` que retornan un `ResponseEntity` con el `HttpStatus` correspondiente.
+
+![31_Repositorio_Compras_06](src/Curso_de_Java_Spring/31_Repositorio_Compras_06.png)
 
 ---
 

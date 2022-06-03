@@ -979,7 +979,7 @@ Cabe mencionar que el usuario y el pass son un demo para demostrar, lo que deber
 ---
 
 ## Clase 35 - Generar un JWT
-`JWT` (JSON Web Token) sirve para controlar las peticiones que recibe nuestra app.
+[JWT](https://jwt.io/) (JSON Web Token) sirve para controlar las peticiones que recibe nuestra app.
 
 ![35_JWT_01](src/Curso_de_Java_Spring/35_JWT_01.png)
 

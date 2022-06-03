@@ -1038,13 +1038,14 @@ calendar.add(Calendar.HOUR_OF_DAY,10);
 ---
 
 ## Clase 36 - Autenticación con JWT
-Teniendo nuestros `AuthenticationRequest` y `AuthenticationResponse` es hora de crear el `controlador` que va a ser las veces de autenticación, para esto creamos una `clase` en `controller` llamada `AuthController`, con sus anotaciones de `controller` y va a tener un `método` que se encargue de responder un `JWT` cuando alguien trate de iniciar sesión.
+Teniendo nuestros `AuthenticationRequest` y `AuthenticationResponse` es hora de crear el `controlador` que va a ser las veces de autenticación, para esto creamos una `clase` en `controller` llamada `AuthController`, con sus anotaciones de `controlador` y va a tener un `método` que se encargue de responder un `JWT` cuando alguien trate de iniciar sesión.
 
 ![36_Autenticacion_JWT_01](src/Curso_de_Java_Spring/36_Autenticacion_JWT_01.png)
 
 El `createToken` recibe un `AuthenticationRequest` en el body a través del `@PostMapping` y le decimos al gestor de autenticación de `Spring` que verifique si el usuario y la contraseña son correctos, para esto inyectamos el `AuthenticationManager` que tiene `Spring` y lo verificamos con `autenticate` que recibe un `UsernamePasswordAuthenticationToken`, porque nuestra comprobación se va a hacer a través de un usuario y una contraseña.
 
-Ya con esto vamos a obtener los datos del usuario a través del servicio que creamos para este fin, inyectamos el `PlatziUserDetailsService`, que es el que se encarga de generar la seguridad por usuario y pass, y lo guardamos en un `userDetails`. Y solo nos queda generar el `JWT` con `JWTUtil` que recibe el `userDetails`.  
+Ahora vamos a obtener los datos del usuario a través del servicio que creamos para este fin, inyectamos el `PlatziUserDetailsService`, que es el que se encarga de generar la seguridad por usuario y pass, y lo guardamos en un `userDetails`.  
+Solo nos queda generar el `JWT` con `JWTUtil` que recibe el `userDetails`.  
 Retornamos un `ResponseEntity` con el `jwt` y un `OK`.
 
 Todo esto dentro de un `try-catch`, si el usuario o el pass es incorrecto capturamos la `exception` y simplemente informamos con un `FORBIDDEN`.

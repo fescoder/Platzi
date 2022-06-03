@@ -984,7 +984,7 @@ Cabe mencionar que el usuario y el pass son un demo para demostrar, lo que deber
 ![35_JWT_01](src/Curso_de_Java_Spring/35_JWT_01.png)
 
 `JWT` es un estandar de código abierto basado en `JSON` para controlar la seguridad de nuestra app por medio de `tokens`.  
-Cuando usamos `JWT` para este `método` lo que debemos hacer es incluirlo en el header autorization de la petición con el prefijo `Bearer`.
+Cuando usamos `JWT` para este `método` lo que debemos hacer es incluirlo en el header de la autorization de la petición con el prefijo `Bearer`.
 
 ![35_JWT_02](src/Curso_de_Java_Spring/35_JWT_02.png)
 
@@ -999,7 +999,7 @@ En MVN lo encontramos buscando `JSON Web Token Support For The JVM » 0.9.1`.
 implementation 'io.jsonwebtoken:jjwt:0.9.1'
 ~~~
 
-Creamos una `clase`,`JWTUtil`, que se encargará de generar nuestros `JWT`, esto en `web.security`, creamos un `método` y usamos la reciente dependencia para crear `JWT` en una secuencia de `métodos`.
+Creamos una `clase`,`JWTUtil`, que se encargará de generar nuestros `JWT`, esto en `web.security`, creamos un `método`, lo anotamos con `@Component` y usamos la reciente dependencia para crear `JWT` en una secuencia de `métodos`.
 
 ![35_JWT_03](src/Curso_de_Java_Spring/35_JWT_03.png)
 
@@ -1012,8 +1012,8 @@ Creamos una `clase`,`JWTUtil`, que se encargará de generar nuestros `JWT`, esto
 Para poder generar un `JWT` tenemos que crear un `controlador` que reciba como `parámetro` el usuario y la contraseña y que como respuesta envie el `JWT`.
 
 Antes del `controlador`, es valido crear unas `clases` que controlen esto de una mejor manera, dentro del `paquete` `dto` creamos:
-- `AuthenticationRequest`: Para recibir los 2 `parámetros` a evaluar.
-- `AuthenticationResponse`: Que tendrá el `JWT`.
+- `AuthenticationRequest`: Para recibir los 2 `parámetros` a evaluar, con sus `Getters` y `Setters`.
+- `AuthenticationResponse`: Que tendrá el `JWT`, con sus `Getters`, `Setters` y `constructor`.
 
 ![35_JWT_04](src/Curso_de_Java_Spring/35_JWT_04.png)
 
@@ -1038,6 +1038,91 @@ calendar.add(Calendar.HOUR_OF_DAY,10);
 ---
 
 ## Clase 36 - Autenticación con JWT
+Teniendo nuestros `AuthenticationRequest` y `AuthenticationResponse` es hora de crear el `controlador` que va a ser las veces de autenticación, para esto creamos una `clase` en `controller` llamada `AuthController`, con sus anotaciones de `controller` y va a tener un `método` que se encargue de responder un `JWT` cuando alguien trate de iniciar sesión.
+
+![36_Autenticacion_JWT_01](src/Curso_de_Java_Spring/36_Autenticacion_JWT_01.png)
+
+El `createToken` recibe un `AuthenticationRequest` en el body a través del `@PostMapping` y le decimos al gestor de autenticación de `Spring` que verifique si el usuario y la contraseña son correctos, para esto inyectamos el `AuthenticationManager` que tiene `Spring` y lo verificamos con `autenticate` que recibe un `UsernamePasswordAuthenticationToken`, porque nuestra comprobación se va a hacer a través de un usuario y una contraseña.
+
+Ya con esto vamos a obtener los datos del usuario a través del servicio que creamos para este fin, inyectamos el `PlatziUserDetailsService`, que es el que se encarga de generar la seguridad por usuario y pass, y lo guardamos en un `userDetails`. Y solo nos queda generar el `JWT` con `JWTUtil` que recibe el `userDetails`.  
+Retornamos un `ResponseEntity` con el `jwt` y un `OK`.
+
+Todo esto dentro de un `try-catch`, si el usuario o el pass es incorrecto capturamos la `exception` y simplemente informamos con un `FORBIDDEN`.
+
+Para finalizar vamos a `SecurityConfig` para indicar que queremos autorizar todas las peticiones que se reciba en `"/authenticate"`, porque para invocar este `servicio` no necesitan estar autenticados.
+
+![36_Autenticacion_JWT_02](src/Curso_de_Java_Spring/36_Autenticacion_JWT_02.png)
+
+Para esto sobreescribimos `configure` que recibe un `HttpSecurity`, borramos la configuración por defecto y escribimos esta nueva.
+
+- `csrf().disable()`: Deshabilita las peticiones cruzadas.
+- `authorizeRequest()`: Autoriza las peticiones.
+- `antMatchers()`: Escribimos que es lo que quiero permitir, en este caso este `servicio` `"/authenticate"`, todas las peticiones que terminan con `authenticate` van a tener el permiso.
+- `anyRequest().authenticated()`: Indicamos que el resto de peticiones, si necesitan autenticación.
+
+Como desde `AuthController` estamos usando el `AuthenticationManager` debemos incluirlo también y solo sobreescribimos `authenticationManagerBean` ya que `Spring` es quien controla la gestión de autenticación. Le agregamos `@Bean` para que no simplemente lo use si no para que explicitamente que lo estamos eligiendo como gestor de autenticación de la app.
+
+Ahora para hacer alguna consulta, habrá que autenticarse y con el `JWT`, que obtenemos como respuesta cuando nos logueamos, podemos hacer el resto de las peticiones.
+
+![36_Autenticacion_JWT_03](src/Curso_de_Java_Spring/36_Autenticacion_JWT_03.png)
+
+---
+
+Para permitir la visualización de `Swagger` públicamente sin tener que estar autenticados en la aplicación pueden agregar el siguiente `método` en la clase `SecurityConfig`:
+~~~
+@Override
+public void configure(WebSecurity web) throws Exception {
+    web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui",
+            "/swagger-resources/**", "/configuration/security",
+            "/swagger-ui.html", "/webjars/**");
+}
+~~~
+
+Otra alternativa es agregar estas rutas 👆 al `antMatchers("/**/authenticate", …)` que escribimos en el `método` `configure(HttpSecurity http)` de esta clase que estás viendo.
+
+---
+
+**En un ambiente productivo, ¿Cómo se puede bloquear la pruebas de estas apis en swagger?**  
+En este aporte explico a detalle como proteger Swagger con la autenticación de la aplicación.
+
+![36_Autenticacion_JWT_04](src/Curso_de_Java_Spring/36_Autenticacion_JWT_04.png)
+
+Existen varias formas y te voy a mostrar una.
+
+Para poner ese botón tienes que modificar la clase `SwaggerConfig` y agregar el siguiente `método`:
+~~~
+private ApiKey apiKey(){
+	returnnew ApiKey("JWT", "Authorization", "header");
+}
+~~~
+
+Ahora, en el método `api()` de la misma `clase`, debes adicionar la línea `.securitySchemes(Arrays.asList(apiKey()))` al `builder` de `Docket` que tenemos; te quedará algo así:
+~~~
+@Bean
+public Docket api(){
+	returnnew Docket(DocumentationType.SWAGGER_2)
+		.securitySchemes(Arrays.asList(apiKey()))
+		.select()
+		.apis(RequestHandlerSelectors.basePackage("com.platzi.market.web.controller"))
+		.build();
+}
+~~~
+
+Ahora, a cada operación que quieras incluirle el `JWT` debes agregarle el `parámetro` `authorizations`, teniendo cuidado de usar el valor “JWT” que declaramos en el `método` `apiKey()` de la `clase` `SwaggerConfig`.  
+Por ejemplo, la anotación para el `método` `getAll()` de la clase `ProductController` quedaría así:
+~~~
+@ApiOperation(value = "Get all supermarket products", authorizations = { @Authorization(value="JWT") })
+~~~
+
+Con esto ya tendrás ese botón Authorize. Al darle click te saldrá un modal donde te pedirá que ingreses el `JWT`; ahí lo ingresas (incluyendo el `Bearer`), le das Authorize y luego close.
+
+![36_Autenticacion_JWT_05](src/Curso_de_Java_Spring/36_Autenticacion_JWT_05.jpg)
+
+En este punto ya está cargado el `token` en `Swagger` y todas las peticiones que realices van a tener el `Header` de `Authorization` y se resolverán sin problemas. Verás que tienen un candado abierto o cerrado según el caso.
+
+![36_Autenticacion_JWT_06](src/Curso_de_Java_Spring/36_Autenticacion_JWT_06.jpg)
+
+Otra alternativa sería agregar un `parámetro` global (ya no aparecería el botón Authorize) para todos nuestros `enpoints` tal cual y como lo hacen en este [post](https://thearjunmdas.github.io/entries/authorization-field-in-swagger-ui/).
 
 ---
 

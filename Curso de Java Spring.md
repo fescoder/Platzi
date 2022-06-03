@@ -1042,13 +1042,12 @@ Teniendo nuestros `AuthenticationRequest` y `AuthenticationResponse` es hora de 
 
 ![36_Autenticacion_JWT_01](src/Curso_de_Java_Spring/36_Autenticacion_JWT_01.png)
 
-El `createToken` recibe un `AuthenticationRequest` en el body a través del `@PostMapping` y le decimos al gestor de autenticación de `Spring` que verifique si el usuario y la contraseña son correctos, para esto inyectamos el `AuthenticationManager` que tiene `Spring` y lo verificamos con `autenticate` que recibe un `UsernamePasswordAuthenticationToken`, porque nuestra comprobación se va a hacer a través de un usuario y una contraseña.
+- El `createToken` recibe un `AuthenticationRequest` en el body a través del `@PostMapping` y le decimos al gestor de autenticación de `Spring` que verifique si el usuario y la contraseña son correctos, para esto inyectamos el `AuthenticationManager` que tiene `Spring` y lo verificamos con `autenticate` que recibe un `UsernamePasswordAuthenticationToken`, porque nuestra comprobación se va a hacer a través de un usuario y una contraseña.
+- Ahora vamos a obtener los datos del usuario a través del servicio que creamos para este fin, inyectamos el `PlatziUserDetailsService`, que es el que se encarga de generar la seguridad por usuario y pass, y lo guardamos en un `userDetails`, usando `loadUserByUsername`.
+- Generamos el `JWT` con `JWTUtil` que recibe el `userDetails`.
+- Retornamos un `ResponseEntity` con el `jwt` y un `OK`.
 
-Ahora vamos a obtener los datos del usuario a través del servicio que creamos para este fin, inyectamos el `PlatziUserDetailsService`, que es el que se encarga de generar la seguridad por usuario y pass, y lo guardamos en un `userDetails`.  
-Solo nos queda generar el `JWT` con `JWTUtil` que recibe el `userDetails`.  
-Retornamos un `ResponseEntity` con el `jwt` y un `OK`.
-
-Todo esto dentro de un `try-catch`, si el usuario o el pass es incorrecto capturamos la `exception` y simplemente informamos con un `FORBIDDEN`.
+Todo esto dentro de un `try-catch`, si el usuario o el pass es incorrecto capturamos la `exception` `BadCredentialsException` y simplemente retornamos un `FORBIDDEN`.
 
 Para finalizar vamos a `SecurityConfig` para indicar que queremos autorizar todas las peticiones que se reciba en `"/authenticate"`, porque para invocar este `servicio` no necesitan estar autenticados.
 

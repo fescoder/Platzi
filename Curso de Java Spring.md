@@ -952,6 +952,29 @@ Para acceder a la documentacion -> `http://localhost:8090/api/swagger-ui.html`
 
 # Módulo 6 - Spring Security
 ## Clase 34 - Configurar la seguridad de nuestra API con Spring Security
+![34_Security_Spring_01](src/Curso_de_Java_Spring/34_Security_Spring_01.png)
+
+`Spring Security` ofrece varios mecanismos para autenticación y autorización de apps construidas en `Spring`.  
+La seguridad de `Spring` contiene una configuración por defecto para que no tengamos que ocuparnos directamente.
+
+Agregamos la dependencia, sin incluir la versión ya que de eso se encarga `Spring`
+~~~
+implementation 'org.springframework.boot:spring-boot-starter-security'
+~~~
+
+Con solo esto, ya si queremos acceder a consultar algún dato de nuestro servidor, nos va a pedir nos loguemos y encontramos el password en la consola cuando levantamos el servidor, que cambia cada levantada, y el usuario siempre es ***user***.
+
+Si queremos usar un usuario y contraseña propios podemos hacerlo.
+
+![34_Security_Spring_02](src/Curso_de_Java_Spring/34_Security_Spring_02.png)
+
+Primero creamos una `clase` dentro de `service`, `PlatziUserDetailsService`, que implementara una `interfaz` de `Spring Security`, `UserDetailsService`, implementamos el único método y lo anotamos como `@Service` para poder inyectarlo, y este `método` retornara un nuevo usuario de `Spring Security` en el que se le indica el nombre, el pass, al que le agregamos `{noop}` porque no pasó por ningún encoder, y un array que puede contener los tipos de roles de ese usuario.
+
+Ahora creamos un nuevo `paquete` dentro de `web`, `security`, que se encargará de gestionar la seguridad, dentro una `clase`, `SecurityConfig`, que extenderá de otra `clase` de `Spring Security`, `WebSecurityConfigurerAdapter` (deprecado) y con la anotación `@EnableWebSecurity` le decimos que esta `clase` está encargada de la seguridad, inyectamos `clase` anteriormente creada y le indicamos que usuario y pass queremos loguearnos sobreescribiendo un `método` y usando la dependencia.
+
+![34_Security_Spring_03](src/Curso_de_Java_Spring/34_Security_Spring_03.png)
+
+Cabe mencionar que el usuario y el pass son un demo para demostrar, lo que debería de suceder es ir a una DB o un sistema para que verifique el correcto inicio de sesión antes de usar nuestros servicios.
 
 ---
 

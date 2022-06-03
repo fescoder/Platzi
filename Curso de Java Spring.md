@@ -993,7 +993,8 @@ Un `JWT` por dentro está dividido en 3 secciones:
 - `Payload`: Está toda la información del `token`, el usuario para el cual fue generado, cuando fue su fecha de vencimiento, etc.
 - `Signature`: La firma agarra los dos anteriores y los encripta según el algoritmo seleccionado.
 
-Inyectamos la dependencia
+Inyectamos la dependencia.  
+En MVN lo encontramos buscando `JSON Web Token Support For The JVM » 0.9.1`.
 ~~~
 implementation 'io.jsonwebtoken:jjwt:0.9.1'
 ~~~

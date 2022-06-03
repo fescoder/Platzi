@@ -970,7 +970,7 @@ Si queremos usar un usuario y contraseña propios podemos hacerlo.
 
 Primero creamos una `clase` dentro de `service`, `PlatziUserDetailsService`, que implementara una `interfaz` de `Spring Security`, `UserDetailsService`, implementamos el único método y lo anotamos como `@Service` para poder inyectarlo, y este `método` retornara un nuevo usuario de `Spring Security` en el que se le indica el nombre, el pass, al que le agregamos `{noop}` porque no pasó por ningún encoder, y un array que puede contener los tipos de roles de ese usuario.
 
-Ahora creamos un nuevo `paquete` dentro de `web`, `security`, que se encargará de gestionar la seguridad, dentro una `clase`, `SecurityConfig`, que extenderá de otra `clase` de `Spring Security`, `WebSecurityConfigurerAdapter` (deprecado) y con la anotación `@EnableWebSecurity` le decimos que esta `clase` está encargada de la seguridad, inyectamos `clase` anteriormente creada y le indicamos que usuario y pass queremos loguearnos sobreescribiendo un `método` y usando la dependencia.
+Ahora creamos un nuevo `paquete` dentro de `web`, `security`, que se encargará de gestionar la seguridad, dentro una `clase`, `SecurityConfig`, que extenderá de otra `clase` de `Spring Security`, `WebSecurityConfigurerAdapter` (deprecado) y con la anotación `@EnableWebSecurity` le decimos que esta `clase` está encargada de la seguridad, inyectamos la `clase` anteriormente creada y le indicamos que usuario y pass queremos loguearnos sobreescribiendo un `método` y usando la dependencia.
 
 ![34_Security_Spring_03](src/Curso_de_Java_Spring/34_Security_Spring_03.png)
 
@@ -979,6 +979,60 @@ Cabe mencionar que el usuario y el pass son un demo para demostrar, lo que deber
 ---
 
 ## Clase 35 - Generar un JWT
+`JWT` (JSON Web Token) sirve para controlar las peticiones que recibe nuestra app.
+
+![35_JWT_01](src/Curso_de_Java_Spring/35_JWT_01.png)
+
+`JWT` es un estandar de código abierto basado en `JSON` para controlar la seguridad de nuestra app por medio de `tokens`.  
+Cuando usamos `JWT` para este `método` lo que debemos hacer es incluirlo en el header autorization de la petición con el prefijo `Bearer`.
+
+![35_JWT_02](src/Curso_de_Java_Spring/35_JWT_02.png)
+
+Un `JWT` por dentro está dividido en 3 secciones:
+- `Header`: Incluye el algoritmo y el tipo de `token` que se está generando.
+- `Payload`: Está toda la información del `token`, el usuario para el cual fue generado, cuando fue su fecha de vencimiento, etc.
+- `Signature`: La firma agarra los dos anteriores y los encripta según el algoritmo seleccionado.
+
+Inyectamos la dependencia
+~~~
+implementation 'io.jsonwebtoken:jjwt:0.9.1'
+~~~
+
+Creamos una `clase`,`JWTUtil`, que se encargará de generar nuestros `JWT`, esto en `web.security`, creamos un `método` y usamos la reciente dependencia para crear `JWT` en una secuencia de `métodos`.
+
+![35_JWT_03](src/Curso_de_Java_Spring/35_JWT_03.png)
+
+- `setSubject`: Es el usuario que lo obtenemos de `userDetails`.
+- `setIssuedAt`: Fecha en la que fue creada el `JWT`, en este caso, la actual.
+- `setExpiration`: Fecha de expiración, en este caso, 10 hs.
+- `signWith`: La firma de nuestro `método` que recibe un algoritmo y un pass para firmarlo, que la insertamos con una `constante`.
+- `compact`: Para crear nuestro `token`.
+
+Para poder generar un `JWT` tenemos que crear un `controlador` que reciba como `parámetro` el usuario y la contraseña y que como respuesta envie el `JWT`.
+
+Antes del `controlador`, es valido crear unas `clases` que controlen esto de una mejor manera, dentro del `paquete` `dto` creamos:
+- `AuthenticationRequest`: Para recibir los 2 `parámetros` a evaluar.
+- `AuthenticationResponse`: Que tendrá el `JWT`.
+
+![35_JWT_04](src/Curso_de_Java_Spring/35_JWT_04.png)
+
+![35_JWT_05](src/Curso_de_Java_Spring/35_JWT_05.png)
+
+Estos dos son los encargados de recibir y enviar la información necesaria para crear un `JWT` dentro de un `controlador`.
+
+---
+
+**Cuando es necesario crear un constructor? y cuando no?**  
+Cuando necesites tener información desde el momento en que creas un objeto es necesario que utilices un constructor o un builder (sí son muchos atributos ó si hay algunos opcionales).
+
+Creo que es necesario que se entienda que estamos haciendo con la expiracion.  
+Siento que poner 1000 * 60 * 60… es una mala practica.  
+Esto esta un poco mas largo, pero totalmente leible.
+~~~
+Calendar calendar = Calendar.getInstance();
+calendar.setTime(new Date());
+calendar.add(Calendar.HOUR_OF_DAY,10);
+~~~
 
 ---
 

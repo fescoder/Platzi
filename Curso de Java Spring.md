@@ -1240,6 +1240,8 @@ Ahora podemos crear una app, en el CLI, en donde vamos a poner nuestra app que c
 Ahora debemos añadirle el complemento de `postgres`, porque nuestra app necesita una DB.
 - heroku addons: create heroku-postgresql -> heroku-postgresql es el nombre del complemento
 
+![39_Desplegar_DB_Heroku_04](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_04.png)
+
 Con esto se creo y configuró una DB gratuita donde podemos subir nuestra información.
 
 Para ver la información necesaria para conectarnos a la DB podemos usar `heroku-config` y nos trae la URL con la info.

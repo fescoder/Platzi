@@ -1248,7 +1248,7 @@ Para ver la información necesaria para conectarnos a la DB podemos usar `heroku
 
 ![39_Desplegar_DB_Heroku_01](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_01.png)
 
-Vamos a configurar esto en pgadmin para poder conectarnos y crear la tablas y el set de datos iniciales.  
+Vamos a configurar esto en `pgadmin` para poder conectarnos y crear la `tablas` y el set de datos iniciales.  
 Entonces creamos un nuevo Server -> `BotDer -> Register -> Server`. Heroku como nombre y en conexión:
 
 ![39_Desplegar_DB_Heroku_02](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_02.png)
@@ -1263,16 +1263,14 @@ Describiendo la URL con info:
 Ya tenemos nuestro server ahora buscamos a la DB en la lista por su nombre o será la que tenga un cambio, en este caso el color del logo como conectado.  
 Hacemos `ClickDer` en el esquema público y `CREATE Script`, aquí creamos nuestras `tablas` y el set de datos iniciales, como hicimos antes con los mismos archivos.
 
-Con esto nuestra DB de Heroku está con el esquema creado y con información, cuando creamos una app dentro de una plataforma y creamos tmb el complemento de postgres, heroku automáticamente crea unas variables de entorno que podemos usar desde `applicatiokn.properties`, especificamente en el archivo de producción.
+Con esto nuestra DB de Heroku está con el esquema creado y con información, cuando creamos una app dentro de una plataforma y creamos tmb el complemento de postgres, heroku automáticamente crea unas variables de entorno que podemos usar desde `application.properties`, especificamente en el archivo de producción.
 
 Abrimos `application-pdn.properties` y modificamos los valores para conectarnos con esta nueva DB.
 
-![39_Desplegar_DB_Heroku_02](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_02.png)
+![39_Desplegar_DB_Heroku_03](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_03.png)
 
 Esto es importante porque estamos usando las variables de entorno que Heroku creó para nosotros.
 Entonces ya tenemos nuestro proyecto creado en Heroku, nuestra DB instalada y configurada, asi mismo este `propertie` está listo para ser desplegado dentro de nuestra app en la plataforma.
-
-![39_Desplegar_DB_Heroku_03](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_03.png)
 
 ---
 

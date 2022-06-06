@@ -1235,23 +1235,28 @@ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 Tenemos que estar en la raiz de nuestro proyecto desde la consola y ejecutar `heroku login`, nos abrirá el navegador y debemos logearnos con nuestra cuenta en Heroku.
 
 Ahora podemos crear una app, en el CLI, en donde vamos a poner nuestra app que construimos con `Spring`.
-- heroku create platzimarket -> platzimarket es el nombre de esta app.
+- heroku create platzimarket -> fesplatzimarket es el nombre de esta app.
 
 Ahora debemos añadirle el complemento de `postgres`, porque nuestra app necesita una DB.
 - heroku addons: create heroku-postgresql -> heroku-postgresql es el nombre del complemento
 
-Con esto se creo y configuró una DB gratuita donde podemos subir nuestra información.  
+Con esto se creo y configuró una DB gratuita donde podemos subir nuestra información.
+
 Para ver la información necesaria para conectarnos a la DB podemos usar `heroku-config` y nos trae la URL con la info.
+
+![39_Desplegar_DB_Heroku_01](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_01.png)
 
 Vamos a configurar esto en pgadmin para poder conectarnos y crear la tablas y el set de datos iniciales.  
 Entonces creamos un nuevo Server -> `BotDer -> Register -> Server`. Heroku como nombre y en conexión:
 
-![39_Desplegar_DB_Heroku_01](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_01.png)
+![39_Desplegar_DB_Heroku_02](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_02.png)
 
-El hostname esta despues del @ y antes de los : en `heroku config`, el ṕuerto es 5432.
-El nombre de la DB está despues del puerto.
-El usuario despues del doble slash // y hasta los :
-La contraseña es lo que hay despues de los : y el @
+Describiendo la URL con info:
+- El hostname esta despues del `@` y antes de los `:`.
+- El puerto es 5432.
+- El nombre de la DB está despues del puerto.
+- El usuario despues del doble slash `//` y hasta los `:`.
+- La contraseña es lo que hay despues de los `:` y el `@`.
 
 Ya tenemos nuestro server ahora buscamos a la DB en la lista por su nombre o será la que tenga un cambio, en este caso el color del logo como conectado.  
 Hacemos `ClickDer` en el esquema público y `CREATE Script`, aquí creamos nuestras `tablas` y el set de datos iniciales, como hicimos antes con los mismos archivos.

@@ -1166,6 +1166,7 @@ Para ello:
 - Extraigo el username del `JWT`.
 - Verifico el usuario de ese `JWT`, extraemos el nombre y hacemos una validación, si el usuario es diferente a nulo y que todavía no haya ingresado a nuestra app y que no aun no está debidamente logueado, para esto usamos `SecurityContextHolder.getContext().getAuthentication()`.  
 Esto se usa para verificar que en el contexto aun no existe ninguna autenticación para este usuario.
+- Guardamos el usuario si existe en nuestro sistema.
 - Validamos el token y si pasa, usamos `UsernamePasswordAuthenticationToken`para levantar una sesión para ese usuario al que le enviamos los `userDetails`, `null` en las credenciales y `userDetails.getAuthorities` para que se envien ahí todos los roles que tiene nuestro usuario.
 - Ahora al `authenticationToken` le agregamos los detalles de la conexión que está recibiendo con `new WebAuthenticationDetailsSource().buildDetails(request)`, esto con el fin de que podamos también evaluar que navegador está usando, a que hora se conectó, que sistema operativo tiene, etc.
 - Asignamos la autenticación con `SecurityContextHolder.getContext().setAuthentication(authenticationToken)` para que la próxima vez no tenga que pasar por toda la validación de este filtro.
@@ -1196,6 +1197,24 @@ A groso modo.
 
 # Módulo 7 - Despliegue de nuestra aplicación
 ## Clase 38 - Desplegar nuestra API desde la ventana de comandos
+![37_Desplegar_API_terminal_01](src/Curso_de_Java_Spring/37_Desplegar_API_terminal_01.png)
+
+- -Xmx2048m: Asigna la memoria ram que le damos a la app.
+- -Dspring.profiles.active=pdn: Para que se comporte en un ambiente de producción.
+- -Dserver.port=88: Para cambiar el puerto de la app.
+
+Generaremos la app autocontenida y desplegarla usando el terminal.
+
+![37_Desplegar_API_terminal_02](src/Curso_de_Java_Spring/37_Desplegar_API_terminal_02.png)
+
+- Primero cambiamos la versión, en `build.gradle`, `version = 1.0`.
+- `bootRun` es la tarea que estabamos usando hasta ahora para correr la app, pero lo que queremos ahora es generar el artefacto final o app autocontenida para poder desplegarla donde nosotros queramos.
+- En `build` encontramos una tarea `bootJar`, doble click y esperamos.
+
+Una vez termine la tarea podemos ir a la terminal y ubicados dentro de la carpeta de nuestro proyecto ejecutamos `java -jar` y el nombre y la ubicación de donde está nuestra app autocontenida, `build/libs/platzi-market-1.0.jar`.  
+Inicialmente tenemosel perfil dev, si queremos cambiarlo a otro solo tenemos que enviar un `parámetro` adicional `java -jar -Dspring.profiles.active=pdn build/libs/platzi-market-1.0.jar`.
+
+Ya con esto sabemos generar el JAR que contiene la app autocontenida, este archivo lo podemos subir donde querramos, un servidor u otro equipo, el único requisito es que tengan la misma versión de Java en la cual se desarrolló el proyecto.
 
 ---
 

@@ -1207,18 +1207,65 @@ Generaremos la app autocontenida y desplegarla usando el terminal.
 
 ![37_Desplegar_API_terminal_02](src/Curso_de_Java_Spring/37_Desplegar_API_terminal_02.png)
 
-- Primero cambiamos la versión, en `build.gradle`, `version = 1.0`.
-- `bootRun` es la tarea que estabamos usando hasta ahora para correr la app, pero lo que queremos ahora es generar el artefacto final o app autocontenida para poder desplegarla donde nosotros queramos.
+- Primero cambiamos la versión, en `build.gradle`, `version = '1.0'`.
+- `bootRun` es la tarea que estabamos usando hasta ahora para correr la app, pero lo que queremos ahora es generar el artefacto final o app autocontenida para poder desplegarla donde nosotros queramos(JAR).
 - En `build` encontramos una tarea `bootJar`, doble click y esperamos.
 
-Una vez termine la tarea podemos ir a la terminal y ubicados dentro de la carpeta de nuestro proyecto ejecutamos `java -jar` y el nombre y la ubicación de donde está nuestra app autocontenida, `build/libs/platzi-market-1.0.jar`.  
+Una vez termine la tarea podemos ir a la terminal y ubicados dentro de la carpeta de nuestro proyecto ejecutamos `java -jar` y el nombre y la ubicación de donde está nuestra app autocontenida, `build/libs/platzi-market-1.0.jar`.
+
 Inicialmente tenemosel perfil dev, si queremos cambiarlo a otro solo tenemos que enviar un `parámetro` adicional `java -jar -Dspring.profiles.active=pdn build/libs/platzi-market-1.0.jar`.
 
-Ya con esto sabemos generar el JAR que contiene la app autocontenida, este archivo lo podemos subir donde querramos, un servidor u otro equipo, el único requisito es que tengan la misma versión de Java en la cual se desarrolló el proyecto.
+Ya con esto sabemos generar el JAR que contiene la app autocontenida, este archivo lo podemos subir donde querramos, un servidor u otro equipo, el único requisito es que tengan la misma versión de `Java` en la cual se desarrolló el proyecto.
 
 ---
 
 ## Clase 39 - Desplegar nuestra base de datos con Heroku
+Vamos a crear y configurar nuestra DB en [Heroku](https://www.heroku.com/), una plataforma que de forma sencilla nos permite compilar y desplegar nuestra app en la nube evitando toda la configuración de infraestructura.
+
+Necesitamos 3 cosas:
+- Cuenta de Heroku
+- Heroku CLI: Para poder llamar a comandos de Heroku desde la terminal.
+- Git
+
+Primero vamos a instalar el [CLI de Heroku](https://devcenter.heroku.com/articles/heroku-cli) desde la terminal con:
+~~~
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+~~~
+
+Tenemos que estar en la raiz de nuestro proyecto desde la consola y ejecutar `heroku login`, nos abrirá el navegador y debemos logearnos con nuestra cuenta en Heroku.
+
+Ahora podemos crear una app, en el CLI, en donde vamos a poner nuestra app que construimos con `Spring`.
+- heroku create platzimarket -> platzimarket es el nombre de esta app.
+
+Ahora debemos añadirle el complemento de `postgres`, porque nuestra app necesita una DB.
+- heroku addons: create heroku-postgresql -> heroku-postgresql es el nombre del complemento
+
+Con esto se creo y configuró una DB gratuita donde podemos subir nuestra información.  
+Para ver la información necesaria para conectarnos a la DB podemos usar `heroku-config` y nos trae la URL con la info.
+
+Vamos a configurar esto en pgadmin para poder conectarnos y crear la tablas y el set de datos iniciales.  
+Entonces creamos un nuevo Server -> `BotDer -> Register -> Server`. Heroku como nombre y en conexión:
+
+![39_Desplegar_DB_Heroku_01](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_01.png)
+
+El hostname esta despues del @ y antes de los : en `heroku config`, el ṕuerto es 5432.
+El nombre de la DB está despues del puerto.
+El usuario despues del doble slash // y hasta los :
+La contraseña es lo que hay despues de los : y el @
+
+Ya tenemos nuestro server ahora buscamos a la DB en la lista por su nombre o será la que tenga un cambio, en este caso el color del logo como conectado.  
+Hacemos `ClickDer` en el esquema público y `CREATE Script`, aquí creamos nuestras `tablas` y el set de datos iniciales, como hicimos antes con los mismos archivos.
+
+Con esto nuestra DB de Heroku está con el esquema creado y con información, cuando creamos una app dentro de una plataforma y creamos tmb el complemento de postgres, heroku automáticamente crea unas variables de entorno que podemos usar desde `applicatiokn.properties`, especificamente en el archivo de producción.
+
+Abrimos `application-pdn.properties` y modificamos los valores para conectarnos con esta nueva DB.
+
+![39_Desplegar_DB_Heroku_02](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_02.png)
+
+Esto es importante porque estamos usando las variables de entorno que Heroku creó para nosotros.
+Entonces ya tenemos nuestro proyecto creado en Heroku, nuestra DB instalada y configurada, asi mismo este `propertie` está listo para ser desplegado dentro de nuestra app en la plataforma.
+
+![39_Desplegar_DB_Heroku_03](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_03.png)
 
 ---
 

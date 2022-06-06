@@ -1127,6 +1127,68 @@ Otra alternativa sería agregar un `parámetro` global (ya no aparecería el bot
 ---
 
 ## Clase 37 - Autorización con JWT
+Vamos a autorizar estos servicios para que funcionen a través de la creación de un filtro con `Spring Security`.
+
+Para hacer el proceso de autorización de nuestras peticiones lo primero es validar que el `JWT` que recibimos sea correcto.  
+Verificar el `JWT` correcto:
+- Verificar que esté creado para el usuario de que envió la petición.
+- Que no haya expirado el token.
+
+Para poder ver que no esté vencido hacemos un `método`, `getClaims`, que retorne un `Claims`, que son como los objetos dentro del `JWT`.
+- `Jwts.parser()`: Parseador.
+- `setSigningKey(KEY)`: Va la llave de la firma para poder verificarla y acceder.
+- `parseClaimsJws(token).getBody()`: Obtiene los `claims` del `JWT` separados por cada uno de los objetos.
+
+Creamos un `método` que se encarga de extraer los datos del usuario llamado `extractUsername`, el cual retorna el `subject` del `Claim` que es donde está el usuario de la petición.
+
+Hacemos otro `método` para verificar la expiración del token, `isTokenExpired` en donde obtenemos la expiración del token y lo comparamos con la fecha actual.
+
+En el `validateToken` hacemos:
+- `userDetails.getUsername` : Para traer el nombre del usuario que hace la petición.
+- `equals(extractUsername(token))`: Lo comparamos si es igual al nombre del usuario del token.
+- `&& !isTokenExpired(token)`: Y que el token no haya expirado.
+
+No necesitamos validar si el token está bien o mal firmado porque cuando pase por `getClaims` y se de cuenta que tiene una firma que no es valida el proceso se detiene, y la respuesta será un **FORBIDDEN**.
+
+![37_Autorizacion_JWT_01](src/Curso_de_Java_Spring/37_Autorizacion_JWT_01.png)
+
+Ahora crearemos un filtro que se encargará de atrapar todas las peticiones que reciba la app y verifique si el `JWT` es correcto.
+
+Primero hacemos un `paquete`, `filter`, en `web.security`, que tendrá una `clase` llamada `JwtFilterRequest`, de la que extenderá de `OncePerRequestFilter` para que el filtro se ejecute cada vez que existe una petición.  
+Lo anotamos con `@Component` para poder inyectarlo, y sobreescribimos el `método` en el que debemos verificar si lo que viene en el encabezado de la petición es un token y si es correcto.  
+Para ello:
+- Primero capturamos el encabezado de la petición, el header Autorization con `request.getHeader("Authorization")`.
+- Luego le preguntamos si no es nulo y si comienza con `Bearer`, recordemos que con `JWT` debemos de usar el prefijo `Bearer`.
+- Si se da el caso es que hay un `JWT`, lo capturamos y hacemos un `substring` desde la posición 7 (el bearer + espacio), ya que desde aquí es donde está el `JWT`.
+- Extraigo el username del `JWT`.
+- Verifico el usuario de ese `JWT`, extraemos el nombre y hacemos una validación, si el usuario es diferente a nulo y que todavía no haya ingresado a nuestra app y que no aun no está debidamente logueado, para esto usamos `SecurityContextHolder.getContext().getAuthentication()`.  
+Esto se usa para verificar que en el contexto aun no existe ninguna autenticación para este usuario.
+- Validamos el token y si pasa, usamos `UsernamePasswordAuthenticationToken`para levantar una sesión para ese usuario al que le enviamos los `userDetails`, `null` en las credenciales y `userDetails.getAuthorities` para que se envien ahí todos los roles que tiene nuestro usuario.
+- Ahora al `authenticationToken` le agregamos los detalles de la conexión que está recibiendo con `new WebAuthenticationDetailsSource().buildDetails(request)`, esto con el fin de que podamos también evaluar que navegador está usando, a que hora se conectó, que sistema operativo tiene, etc.
+- Asignamos la autenticación con `SecurityContextHolder.getContext().setAuthentication(authenticationToken)` para que la próxima vez no tenga que pasar por toda la validación de este filtro.
+- Luego, saliendo de todos los `ifs` le indicamos que el filtro sea evaluado con `filterChain`.
+
+![37_Autorizacion_JWT_02](src/Curso_de_Java_Spring/37_Autorizacion_JWT_02.png)
+![37_Autorizacion_JWT_03](src/Curso_de_Java_Spring/37_Autorizacion_JWT_03.png)
+
+Solo nos queda decirle en el `SecurityConfig` decirle que ese filtro será encargado de recibir todas las peticiones y procesarlas, entonces agregamos al `configure` http un `and()sessionManagement().sessionCreationPolicy()` y le indicamos de que la sesión que usamos dentro de nuestra app será sin sesión poque los `JWT` son los que controlan cada petición en particular, esto con `SessionCreationPolicy.STATELESS`.
+
+Por último agregamos el filtro, que debemos inyectar primero `JwtFilterRequest`, y le decimos que tipo de filtro es (de usuario y contraseña).
+
+![37_Autorizacion_JWT_04](src/Curso_de_Java_Spring/37_Autorizacion_JWT_04.png)
+
+---
+
+Con usuarios registrados en DB  
+Lo único que tendríamos que hacer es reemplazar el código del método `loadUserByUsername(String username)` que está en la clase `PlatziUserDetailsService` para que vaya a la base de datos en lugar de quemarle el usuario como lo estamos haciendo.  
+Crear una nueva `tabla` que tenga usuarios y contraseñas, crear un `Repository` para ello e integrar todo.  
+Lo primero sería crear un `CrudUserRepository` que tenga un `método` que haga algo como esto (En términos prácticos, sin encriptación de contraseña y demás):
+~~~
+Optional<Usuario> findByUsernameAndPassword(String username, String password)
+~~~
+
+Creas un `Repository` que use ese Crud (creando el método que llame al method query) como lo vimos en el curso; y luego desde el `PlatziUserDetailsService` inyectas ese `repositorio` reemplazas el código por el método que acabas de crear y si retorna null es porque no hizo login correctamente.  
+A groso modo.
 
 ---
 

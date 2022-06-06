@@ -1134,7 +1134,7 @@ Verificar el `JWT` correcto:
 - Verificar que esté creado para el usuario de que envió la petición.
 - Que no haya expirado el token.
 
-Para poder ver que no esté vencido hacemos un `método`, `getClaims`, que retorne un `Claims`, que son como los objetos dentro del `JWT`.
+Para poder ver que no esté vencido hacemos un `método`, `getClaims` en `JWTUtil`, que retorne `Claims`, que son como los objetos dentro del `JWT`.
 - `Jwts.parser()`: Parseador.
 - `setSigningKey(KEY)`: Va la llave de la firma para poder verificarla y acceder.
 - `parseClaimsJws(token).getBody()`: Obtiene los `claims` del `JWT` separados por cada uno de los objetos.
@@ -1155,7 +1155,10 @@ No necesitamos validar si el token está bien o mal firmado porque cuando pase p
 Ahora crearemos un filtro que se encargará de atrapar todas las peticiones que reciba la app y verifique si el `JWT` es correcto.
 
 Primero hacemos un `paquete`, `filter`, en `web.security`, que tendrá una `clase` llamada `JwtFilterRequest`, de la que extenderá de `OncePerRequestFilter` para que el filtro se ejecute cada vez que existe una petición.  
-Lo anotamos con `@Component` para poder inyectarlo, y sobreescribimos el `método` en el que debemos verificar si lo que viene en el encabezado de la petición es un token y si es correcto.  
+Lo anotamos con `@Component` para poder inyectarlo, y sobreescribimos el `método` en el que debemos verificar si lo que viene en el encabezado de la petición es un token y si es correcto.
+
+![37_Autorizacion_JWT_02](src/Curso_de_Java_Spring/37_Autorizacion_JWT_02.png)
+
 Para ello:
 - Primero capturamos el encabezado de la petición, el header Autorization con `request.getHeader("Authorization")`.
 - Luego le preguntamos si no es nulo y si comienza con `Bearer`, recordemos que con `JWT` debemos de usar el prefijo `Bearer`.
@@ -1168,7 +1171,6 @@ Esto se usa para verificar que en el contexto aun no existe ninguna autenticaci�
 - Asignamos la autenticación con `SecurityContextHolder.getContext().setAuthentication(authenticationToken)` para que la próxima vez no tenga que pasar por toda la validación de este filtro.
 - Luego, saliendo de todos los `ifs` le indicamos que el filtro sea evaluado con `filterChain`.
 
-![37_Autorizacion_JWT_02](src/Curso_de_Java_Spring/37_Autorizacion_JWT_02.png)
 ![37_Autorizacion_JWT_03](src/Curso_de_Java_Spring/37_Autorizacion_JWT_03.png)
 
 Solo nos queda decirle en el `SecurityConfig` decirle que ese filtro será encargado de recibir todas las peticiones y procesarlas, entonces agregamos al `configure` http un `and()sessionManagement().sessionCreationPolicy()` y le indicamos de que la sesión que usamos dentro de nuestra app será sin sesión poque los `JWT` son los que controlan cada petición en particular, esto con `SessionCreationPolicy.STATELESS`.

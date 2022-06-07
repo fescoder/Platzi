@@ -82,7 +82,7 @@ Cuando se hereda puedo implementar la función de ese `método` o si quiero segu
 ## Clase 3 - Implementando clases abstractas al proyecto
 Importamos el proyecto desde [Github](https://github.com/anncode1/JavaSEBasico/tree/31.MakeReportAllEntities), yo lo tomé desde [acá](https://github.com/wpbreak/AmazonViewer.git) que ya esta para Intellij.
 
-Se analizó un poco como está compuesto el proyecto y se escribió en la `clase Film` un `método abstracto` llamado `view` que lo implementarán las `clases` `Movie` y `Serie`.
+Se analizó un poco como está compuesto el proyecto y se escribió en la `clase Film` un `método abstracto`, hace a la `clase film` `abstracto`, llamado `view` que lo implementarán las `clases` `Movie` y `Serie`.
 
 ![03_Implementacion_clase_abstracta_01](src/Curso_Avanzado_de_Java_SE/03_Implementacion_clase_abstracta_01.png)
 
@@ -113,6 +113,14 @@ public class Triangulo extends Figura{
 ---
 
 ## Clase 5 - Implementando métodos abstractos en Java
+Polimorfismo a nivel de `clases`, ya no se puede instanciar la `clase` `Film` porque ahora es abstracta.  
+Pero si necesito un objeto, puedo instanciar uno que herede de `Film`.
+
+Entonces estamos viendo el polimorfismo en su máxima expresión, el mismo objeto `Film` tiene 2 comportamientos diferentes, puede ser un `Movie` o un `Chapter`.
+
+![05_Implementacion_metodos_abstractos_01](src/Curso_Avanzado_de_Java_SE/05_Implementacion_metodos_abstractos_01.png)
+
+Se hizo las modificaciones en el código, llevando el `método view` a cada `clase` implementandola, y en el main, a través de un objeto se lo invoca.
 
 ---
 

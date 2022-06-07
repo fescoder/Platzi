@@ -100,7 +100,7 @@ He creado una `clase abstracta` llamada `Figura`, esta tiene un `método` llamad
 public abstract class Figura {
     public abstract void dibujate();
 }
-
+------------------------------------------------
 public class Triangulo extends Figura{
 
     @Override

@@ -1269,11 +1269,38 @@ Abrimos `application-pdn.properties` y modificamos los valores para conectarnos 
 
 ![39_Desplegar_DB_Heroku_03](src/Curso_de_Java_Spring/39_Desplegar_DB_Heroku_03.png)
 
-Esto es importante porque estamos usando las variables de entorno que Heroku creó para nosotros.
+Esto es importante porque estamos usando las variables de entorno que Heroku creó para nosotros.  
 Entonces ya tenemos nuestro proyecto creado en Heroku, nuestra DB instalada y configurada, asi mismo este `propertie` está listo para ser desplegado dentro de nuestra app en la plataforma.
 
 ---
 
 ## Clase 40 - Desplegar nuestra API con Heroku
+Tenemos la app creada dentro de Heroku y le agregamos el complemento de la DB `postgres`, también configuramos las `tablas` y cargamos los datos iniciales y en `application-pdn` y agregamos las `variables de entorno` que Heroku crea para nosotros.
+
+Ahora desplegaremos nuestra app, vale aclarar que Heroku usa `Java 8` para desplegar apps dentro de su plataforma y nuestro `API` está construido con la versión 11 del `JDK`, entonces crearemos un archivo en la raiz de nuestro proyecto, llamado `system.properties` en el que agregamos:
+
+![40_Desplegar_API_Heroku_01](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_01.png)
+
+Heroku también usa `OpenJDK` para desplegar las apps por lo cual no tendremos ningún inconveniente.  
+Tampoco queremos que la app se despliegue con la configuración por defecto si no lo que tenemos en `application-pdn.properties`, entonces debemos modificar el perfil activo que se encuentra configurado dentro de `application.properties`, ahora es `deb`, lo que haremos es indicarle a Heroku que cuando vaya a desplegar la app modifique ese perfil y use el de producción, entonces `clickDer` en la raiz y `new file` y creamos `Procfile`, este archivo será el que use Heroku para desplegar nuestra app, será el comando que se ejecutará cuando vaya a desplegarla.
+
+![40_Desplegar_API_Heroku_02](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_02.png)
+
+No necesitamos hacer el build jar antes de crear este archivo porque cuando Heroku tome nuestro proyecto desde Git va a compilarlo, generar el JAR para ejecutar y va a desplegarlo, todo automático.
+
+Heroku usa los cambios y los agarra desde la rama main asique vamos a hacer un push de estos nuevos archivos.  
+Ahora vamos a la terminal y escribimos `git push heroku main`. Con esto Heroku toma todo nuestro proyecto desde el repo de Github y lo carga dentro de la plataforma de Heroku.
+
+![40_Desplegar_API_Heroku_03](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_03.png)
+
+Cuando el proceso de despliegue termine solo hay que ir a la URL que nos muestra + el path `https://fesplatzimarket.herokuapp.com/platzi-market/api` o desde comandos poniendo `heroku open`.
+
+Probando en Postman
+
+![40_Desplegar_API_Heroku_04](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_04.png)
+
+![40_Desplegar_API_Heroku_05](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_05.png)
+
+Entonces vemos como retorna la información cuando consultamos pasandole el encabezado "Authorization", que inicia con `Bearer` + el `token`, agarrandola de desde la DB que configuramos en Heroku, en este punto nuestra `API` está lista para ser consumida desde cualquier dispositivo en cualquier lugar del mundo.
 
 ---

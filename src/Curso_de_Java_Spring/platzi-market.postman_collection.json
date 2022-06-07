@@ -235,7 +235,61 @@
 				}
 			},
 			"response": []
-		}
+		},
+		{
+			"name": "Authenticate in Heroku",
+			"request": {
+			  "method": "POST",
+			  "header": [],
+			  "body": {
+				"mode": "raw",
+				"raw": "{\n    \"username\" : \"alejandro\",\n    \"password\": \"platzi\"\n}",
+				"options": {
+				  "raw": {
+					"language": "json"
+				  }
+				}
+			  },
+			  "url": {
+				"raw": "http://fesplatzimarket.herokuapp.com/platzi-market/api/auth/authenticate",
+				"protocol": "http",
+				"host": [
+				  "fesplatzimarket",
+				  "herokuapp",
+				  "com"
+				],
+				"path": [
+				  "platzi-market",
+				  "api",
+				  "auth",
+				  "authenticate"
+				]
+			  }
+			},
+			"response": []
+		  },
+		  {
+			"name": "Get all Products in Heroku",
+			"request": {
+			  "method": "GET",
+			  "header": [],
+			  "url": {
+				"raw": "http://fesplatzimarket.herokuapp.com/platzi-market/api/products",
+				"protocol": "http",
+				"host": [
+				  "fesplatzimarket",
+				  "herokuapp",
+				  "com"
+				],
+				"path": [
+				  "platzi-market",
+				  "api",
+				  "products"
+				]
+			  }
+			},
+			"response": []
+		  }
 	],
 	"protocolProfileBehavior": {}
 }

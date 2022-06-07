@@ -86,6 +86,8 @@ Se analizó un poco como está compuesto el proyecto y se escribió en la `clase
 
 ![03_Implementacion_clase_abstracta_01](src/Curso_Avanzado_de_Java_SE/03_Implementacion_clase_abstracta_01.png)
 
+![03_Implementacion_clase_abstracta_02](src/Curso_Avanzado_de_Java_SE/03_Implementacion_clase_abstracta_02.png)
+
 ---
 
 ## Clase 4 - Ejercicio. Clases Abstractas

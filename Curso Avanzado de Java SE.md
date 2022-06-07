@@ -89,6 +89,26 @@ Se analizó un poco como está compuesto el proyecto y se escribió en la `clase
 ---
 
 ## Clase 4 - Ejercicio. Clases Abstractas
+Tengo un programa que dibuja figuras automáticamente.
+
+![04_Ejercicio_01](src/Curso_Avanzado_de_Java_SE/04_Ejercicio_01.jpg)
+
+He creado una `clase abstracta` llamada `Figura`, esta tiene un `método` llamado `dibujate()`.  
+¿Qué tendría que hacer para que la `clase Triangulo` pueda sobreescribir este `método` y poner el código que haga que dibuje la forma indicada?
+
+~~~
+public abstract class Figura {
+    public abstract void dibujate();
+}
+
+public class Triangulo extends Figura{
+
+    @Override
+    public void dibujate() {
+        System.out.println("Dibujar Triangulo");
+    }
+}
+~~~
 
 ---
 

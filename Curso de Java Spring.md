@@ -1281,7 +1281,8 @@ Ahora desplegaremos nuestra app, vale aclarar que Heroku usa `Java 8` para despl
 
 ![40_Desplegar_API_Heroku_01](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_01.png)
 
-Heroku también usa `OpenJDK` para desplegar las apps por lo cual no tendremos ningún inconveniente.  
+Heroku también usa `OpenJDK` para desplegar las apps por lo cual no tendremos ningún inconveniente.
+
 Tampoco queremos que la app se despliegue con la configuración por defecto si no lo que tenemos en `application-pdn.properties`, entonces debemos modificar el perfil activo que se encuentra configurado dentro de `application.properties`, ahora es `deb`, lo que haremos es indicarle a Heroku que cuando vaya a desplegar la app modifique ese perfil y use el de producción, entonces `clickDer` en la raiz y `new file` y creamos `Procfile`, este archivo será el que use Heroku para desplegar nuestra app, será el comando que se ejecutará cuando vaya a desplegarla.
 
 ![40_Desplegar_API_Heroku_02](src/Curso_de_Java_Spring/40_Desplegar_API_Heroku_02.png)

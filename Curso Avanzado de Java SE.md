@@ -362,6 +362,10 @@ public class Album {
 ---
 
 ## Clase 13 - Implementando una clase anidada al proyecto
+Se agregará una `clase anidada` llamada `Page` a `Book` para corregir su manera de ser consumida por el `view`.
+Recordemos que usaríamos una `clase Inner` cuando quiero tener acceso a algún `método` de la `clase Outer`, `Book` en este caso y una `clase estática` cuando no necesito esos `métodos`.
+
+![13_Clase_anidada_proyecto_01](src/Curso_Avanzado_de_Java_SE/13_Clase_anidada_proyecto_01.png)
 
 ---
 

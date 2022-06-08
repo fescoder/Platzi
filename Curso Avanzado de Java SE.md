@@ -287,12 +287,29 @@ Sin `{@inheritDoc}`
 
 ![09_Tags_herencia_interfaces_05](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_05.png)
 
-
-
-
 ---
 
 ## Clase 10 - Generado Java Docs
+En `Chapter` tenemos una doble herencia, es decir, `Chapter` -> `Movie` -> `Film`, entonces lo que podemos hacer es usar la etiqueta `@see` que lo que hace es recomendarte ver `Film` en este caso ya que es la `clase` más alta.
+
+![10_Generando_JavaDocs_01](src/Curso_Avanzado_de_Java_SE/10_Generando_JavaDocs_01.png)
+
+![10_Generando_JavaDocs_02](src/Curso_Avanzado_de_Java_SE/10_Generando_JavaDocs_02.png)
+
+Generamos el JavaDocs, en Intellij está en `Tools` -> `Generate JavaDocs...`, le indicamos donde lo guardamos y `Generate`.
+
+Abriendo en el navegador podremos ver algo como esto:
+
+![10_Generando_JavaDocs_03](src/Curso_Avanzado_de_Java_SE/10_Generando_JavaDocs_03.png)
+
+Descripción `método view` de `Film`
+
+![10_Generando_JavaDocs_04](src/Curso_Avanzado_de_Java_SE/10_Generando_JavaDocs_04.png)
+
+`IVisualizable`
+
+![10_Generando_JavaDocs_05](src/Curso_Avanzado_de_Java_SE/10_Generando_JavaDocs_05.png)
+
 
 ---
 

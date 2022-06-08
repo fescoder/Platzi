@@ -326,23 +326,23 @@ Acá podemos ver como de las `clases anidadas` (`Nested Classes`) se despligan 2
 - `Inner Classes`: Clases interiores/internas y se dividen en 3.
     - `Inner Classes`: Clase normal como aparece en `ClaseAnidada`.
     - `Method local Inner classes`: una clase dentro de un método.
-    - `Anonymous Inner classes`: clases abstractas, lamdas.
+    - `Anonymous Inner classes`: clases abstractas.
 - `Static Nested Classes`: Clases estáticas.
 
-Clase estática e interna
+Clase estática e interna  
 ![11_Clases_anidadas_03](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_03.png)
 
 Las `clases estáticas` no necesitan crear instancias para llamarlas y solo pueden llamar a métodos estáticos.
 
 ![11_Clases_anidadas_04](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_04.png)
 
-Clases anidadas
+Clases anidadas  
 ![11_Clases_anidadas_05](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_05.png)
 
-Clases locales al método
+Clases locales al método  
 ![11_Clases_anidadas_06](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_06.png)
 
-Clases anónimas
+Clases anónimas  
 ![11_Clases_anidadas_07](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_07.png)
 
 

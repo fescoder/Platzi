@@ -378,11 +378,11 @@ Aplicamos `clases anidadas` al proyecto, usamos la `clase Page` y modificamos el
 ---
 
 ## Clase 15 - Enumerations
-Los enumerations son tipos de datos muy especiales pues es el único tipo de dato que posee una colección de constantes, al ser constantes estaremos obligados a escribirlos con mayúsculas.
+Los [enumerations](https://jarroba.com/enum-enumerados-en-java-con-ejemplos/) son tipos de datos muy especiales pues es el único tipo de dato que posee una `colección de constantes`, al ser constantes estaremos obligados a escribirlos con mayúsculas.
 
-Usaremos enum cada vez que necesitemos representar un conjunto fijo de constantes. Por ejemplo los días de la semana.
+Usaremos `enum` cada vez que necesitemos representar un conjunto fijo de constantes. Por ejemplo los días de la semana.
 
-Así podemos declarar un enumeration usando la palabra reservada enum.
+Así podemos declarar un enumeration usando la palabra reservada `enum`.
 ~~~
 public enum Day {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY

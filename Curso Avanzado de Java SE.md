@@ -339,17 +339,25 @@ Las `clases estáticas` no necesitan crear instancias para llamarlas y solo pued
 Clases anidadas  
 ![11_Clases_anidadas_05](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_05.png)
 
-Clases locales al método  
+Clases locales a método  
 ![11_Clases_anidadas_06](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_06.png)
 
 Clases anónimas  
 ![11_Clases_anidadas_07](src/Curso_Avanzado_de_Java_SE/11_Clases_anidadas_07.png)
 
-
-
 ---
 
 ## Clase 12 - Ejercicio. Clases Anidadas
+Spotify tiene una relación Album - Song en donde Song será una clase que solo es utilizada en Album pues la definición de este es una colección de Song’s.  
+¿Cuál sería la forma más adecuada de tratar la clase Song si esta solamente se utilizará en Album?
+
+~~~
+public class Album {
+    public class Song {
+        ...
+    }
+}
+~~~
 
 ---
 

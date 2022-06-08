@@ -370,7 +370,7 @@ Recordemos que usaríamos una `clase Inner` cuando quiero tener acceso a algún 
 ---
 
 ## Clase 14 - Instanciando clases estáticas anidadas
-Aplicamos `clases anidadas` al proyecto, usamos la `clase Page` y modificamos el `código` de `view` y `makeBookList` para que recorra el `Libro`.
+Aplicamos `clases anidadas` al proyecto, usamos la `clase Page` y modificamos el código de `view` y `makeBookList` para que recorra el `Libro`.
 
 ![14_Instanciando_clase_anidada_01](src/Curso_Avanzado_de_Java_SE/14_Instanciando_clase_anidada_01.png)
 ![14_Instanciando_clase_anidada_02](src/Curso_Avanzado_de_Java_SE/14_Instanciando_clase_anidada_02.png)
@@ -378,6 +378,74 @@ Aplicamos `clases anidadas` al proyecto, usamos la `clase Page` y modificamos el
 ---
 
 ## Clase 15 - Enumerations
+Los enumerations son tipos de datos muy especiales pues es el único tipo de dato que posee una colección de constantes, al ser constantes estaremos obligados a escribirlos con mayúsculas.
+
+Usaremos enum cada vez que necesitemos representar un conjunto fijo de constantes. Por ejemplo los días de la semana.
+
+Así podemos declarar un enumeration usando la palabra reservada enum.
+~~~
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+}
+~~~
+
+Puedo crear referencias de `enumerations` de la siguiente forma:
+~~~
+Day day;
+switch(day) {
+    case MONDAY:
+        System.out.println("Mondays are bad.");
+        break;
+
+    case FRIDAY:
+        System.out.println("Fridays are better.");
+        break;
+
+    case SATURDAY: case SUNDAY:
+        System.out.println("Weekends are best.");
+        break;
+
+    case default:
+        System.out.println("Midweek days are so-so.");
+        break;
+}
+~~~
+
+Y puedo llamar un valor del enumeration así:
+~~~
+Day.MONDAY
+Day.FRIDAY
+Day.SATURDAY
+~~~
+
+Los `enumerations` pueden tener `atributos`, `métodos` y `constructores`, como se muestra:
+~~~
+public enum Day {
+    SUNDAY("Domingo"),
+    MONDAY("Lunes"),
+    TUESDAY("Martes"),
+    WEDNESDAY("Miercoles"),
+    THURSDAY("Jueves"),
+    FRIDAY("Viernes"),
+    SATURDAY("Sabado")
+
+    private String spanish;
+
+    private Day(String s) {
+        spanish = s;
+    }
+
+    public String getSpanish() {
+        return spanish;
+    }
+}
+~~~
+
+Y para utilizarlo lo podemos hacer así:
+~~~
+System.out.println(Day.MONDAY);// MONDAY
+System.out.println(Day.MONDAY.getSpanish());// Lunes
+~~~
 
 ---
 

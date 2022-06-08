@@ -277,9 +277,11 @@ Muestra de como se ven las documentaciones y un nuevo tag.
 
 ![09_Tags_herencia_interfaces_02](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_02.png)
 
+`{@inheritDoc}` Trae toda la ascendencia de `view()` en este caso, se ve reflejado en donde dice **Specified by**.
+
 ![09_Tags_herencia_interfaces_03](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_03.png)
 
-`{@inheritDoc}` Trae toda la ascendencia de `view()` en este caso, se ve reflejado en donde dice **Specified by**.
+Sin `{@inheritDoc}`
 
 ![09_Tags_herencia_interfaces_04](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_04.png)
 

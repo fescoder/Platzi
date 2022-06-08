@@ -258,7 +258,8 @@ Ejemplo de documentación de métodos
 ---
 
 ## Clase 8 - Reto
-Ahora que ya conoces las `tags` y su uso para documentar, te pongo el siguiente reto que consiste en general la documentación para librería `Report`, que creamos en el Curso Básico de Java SE el proyecto lo encuentras [aquí](https://github.com/anncode1/JavaSEBasico/tree/26.EscribirArchivos)  
+Ahora que ya conoces las `tags` y su uso para documentar, te pongo el siguiente reto que consiste en general la documentación para librería `Report`, que creamos en el Curso Básico de Java SE el proyecto lo encuentras [aquí](https://github.com/anncode1/JavaSEBasico/tree/26.EscribirArchivos).
+
 Genera la librería documentada e implementala en el proyecto.
 
 ![08_Reto_01](src/Curso_Avanzado_de_Java_SE/08_Reto_01.png)
@@ -269,6 +270,23 @@ Genera la librería documentada e implementala en el proyecto.
 ---
 
 ## Clase 9 - JavaDocs tags para herencia e interfaces
+
+Muestra de como se ven las documentaciones y un nuevo tag.
+
+![09_Tags_herencia_interfaces_01](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_01.png)
+
+![09_Tags_herencia_interfaces_02](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_02.png)
+
+![09_Tags_herencia_interfaces_03](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_03.png)
+
+`{@inheritDoc}` Trae toda la ascendencia de `view()` en este caso, se ve reflejado en donde dice **Specified by**.
+
+![09_Tags_herencia_interfaces_04](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_04.png)
+
+![09_Tags_herencia_interfaces_05](src/Curso_Avanzado_de_Java_SE/09_Tags_herencia_interfaces_05.png)
+
+
+
 
 ---
 

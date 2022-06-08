@@ -128,7 +128,7 @@ Se hizo las modificaciones en el código, llevando el `método view` a cada `cla
 
 # Módulo 3 - JavaDocs
 ## Clase 6 - Qué es JavaDocs
-`JavaDocs` es la documentación de `Java`, aprenderemos a generarla.
+`JavaDocs` es la [documentación](https://www.tutorialspoint.com/java/java_documentation.htm) de `Java`, aprenderemos a generarla.
 
 ![06_JavaDocs_01](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_01.png)
 
@@ -245,6 +245,15 @@ Ejemplo de documentación de la `clase String`
 ---
 
 ## Clase 7 - Implementando JavaDocs al proyecto
+Ejemplo de documentación de clase
+
+![07_Implementando_JavaDocs_01](src/Curso_Avanzado_de_Java_SE/07_Implementando_JavaDocs_01.png)
+
+Ejemplo de documentación de métodos
+
+![07_Implementando_JavaDocs_02](src/Curso_Avanzado_de_Java_SE/07_Implementando_JavaDocs_02.png)
+
+![07_Implementando_JavaDocs_03](src/Curso_Avanzado_de_Java_SE/07_Implementando_JavaDocs_03.png)
 
 ---
 

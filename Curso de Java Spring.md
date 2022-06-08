@@ -514,6 +514,11 @@ Se pueden ver más detalles [acá](https://docs.spring.io/spring-data/jpa/docs/c
 ## Clase 20 - Implementar la anotación @Repository
 `@Component` es una generalizacion de tipo de anotaciones para `Spring`, estamos diciendo que es una componente de `Spring` basicamente, y con `@Repository` especificamos que tipo de componente es y es una anotación para indicarle a `Spring` que esta `clase` se encarga de interacrtuar con la DB.
 
+Como bien dice la documentación de `Spring`, `@Component` es el estereotipo principal e indica que una `clase` con esta anotación es un `component` o `Bean` de `Spring`.  
+`@Repository`, `@Service` y `@Controller` son especificaciones de la anotación `@Component` para casos concretos, por ejemplo, para la persistencia de datos, servicios o para la capa de presentación respectivamente.
+
+Por lo tanto, puedes anotar tus `beans` con la anotación `@Component`, pero al anotarlas con `@Repository`, `@Service` o `@Controller` obtendrás beneficios adicionales ya que algunos de los `Spring modules` procesan de manera distinta estas anotaciones.
+
 ---
 
 **¿Por que @Repository y no @Service?**  

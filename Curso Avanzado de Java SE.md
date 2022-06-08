@@ -82,7 +82,7 @@ Cuando se hereda puedo implementar la función de ese `método` o si quiero segu
 ## Clase 3 - Implementando clases abstractas al proyecto
 Importamos el proyecto desde [Github](https://github.com/anncode1/JavaSEBasico/tree/31.MakeReportAllEntities), yo lo tomé desde [acá](https://github.com/wpbreak/AmazonViewer.git) que ya esta para Intellij.
 
-Se analizó un poco como está compuesto el proyecto y se escribió en la `clase Film` un `método abstracto`, hace a la `clase film` `abstracto`, llamado `view` que lo implementarán las `clases` `Movie` y `Serie`.
+Se analizó un poco como está compuesto el proyecto y se escribió en la `clase Film` un `método abstracto`, hace a la `clase film` `abstracto`, llamado `view` que lo implementarán las `clases` `Movie`, `Serie` y `Book`.
 
 ![03_Implementacion_clase_abstracta_01](src/Curso_Avanzado_de_Java_SE/03_Implementacion_clase_abstracta_01.png)
 
@@ -128,6 +128,119 @@ Se hizo las modificaciones en el código, llevando el `método view` a cada `cla
 
 # Módulo 3 - JavaDocs
 ## Clase 6 - Qué es JavaDocs
+`JavaDocs` es la documentación de `Java`, aprenderemos a generarla.
+
+![06_JavaDocs_01](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_01.png)
+
+Ejemplo de documentación de **Spring**
+
+![06_JavaDocs_02](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_02.png)
+
+Básicamente es para informar como funciona el sistema, los `métodos`, los `parámetros` que recibe, y toda explicación que se crea necesaria para que un usuario pueda utilizar nuestro código de manera eficiente.
+
+`JavaDocs` funciona a base de comentarios.
+
+![06_JavaDocs_03](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_03.png)
+
+![06_JavaDocs_04](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_04.png)
+
+La documentación que se genera también se puede incluir `html`, además de los tags, estos nos sirve mucho para dar un buen formato a la documentación.
+
+![06_JavaDocs_05](src/Curso_Avanzado_de_Java_SE/06_JavaDocs_05.png)
+
+
+Algunos tags de `Javadoc`:
+~~~
+@author
+{@docRoot}
+@deprecated
+@exception
+{@inheritDoc}
+{@link}
+{@linkplain}
+@param
+@return
+@see
+@serial
+@serialData
+@serialField
+@since
+@throws
+{@value}
+@version
+~~~
+
+Ejemplo de documentación de la `clase String`
+~~~
+/**
+ * The {@code String} class represents character strings. All
+ * string literals in Java programs, such as {@code "abc"}, are
+ * implemented as instances of this class.
+ * <p>
+ * Strings are constant; their values cannot be changed after they
+ * are created. String buffers support mutable strings.
+ * Because String objects are immutable they can be shared. For example:
+ * <blockquote><pre>
+ *     String str = "abc";
+ * </pre></blockquote><p>
+ * is equivalent to:
+ * <blockquote><pre>
+ *     char data[] = {'a', 'b', 'c'};
+ *     String str = new String(data);
+ * </pre></blockquote><p>
+ * Here are some more examples of how strings can be used:
+ * <blockquote><pre>
+ *     System.out.println("abc");
+ *     String cde = "cde";
+ *     System.out.println("abc" + cde);
+ *     String c = "abc".substring(2,3);
+ *     String d = cde.substring(1, 2);
+ * </pre></blockquote>
+ * <p>
+ * The class {@code String} includes methods for examining
+ * individual characters of the sequence, for comparing strings, for
+ * searching strings, for extracting substrings, and for creating a
+ * copy of a string with all characters translated to uppercase or to
+ * lowercase. Case mapping is based on the Unicode Standard version
+ * specified by the {@link java.lang.Character Character} class.
+ * <p>
+ * The Java language provides special support for the string
+ * concatenation operator (&nbsp;+&nbsp;), and for conversion of
+ * other objects to strings. String concatenation is implemented
+ * through the {@code StringBuilder}(or {@code StringBuffer})
+ * class and its {@code append} method.
+ * String conversions are implemented through the method
+ * {@code toString}, defined by {@code Object} and
+ * inherited by all classes in Java. For additional information on
+ * string concatenation and conversion, see Gosling, Joy, and Steele,
+ * <i>The Java Language Specification</i>.
+ *
+ * <p> Unless otherwise noted, passing a <tt>null</tt> argument to a constructor
+ * or method in this class will cause a {@link NullPointerException} to be
+ * thrown.
+ *
+ * <p>A {@code String} represents a string in the UTF-16 format
+ * in which <em>supplementary characters</em> are represented by <em>surrogate
+ * pairs</em> (see the section <a href="Character.html#unicode">Unicode
+ * Character Representations</a> in the {@code Character} class for
+ * more information).
+ * Index values refer to {@code char} code units, so a supplementary
+ * character uses two positions in a {@code String}.
+ * <p>The {@code String} class provides methods for dealing with
+ * Unicode code points (i.e., characters), in addition to those for
+ * dealing with Unicode code units (i.e., {@code char} values).
+ *
+ * @author  Lee Boynton
+ * @author  Arthur van Hoff
+ * @author  Martin Buchholz
+ * @author  Ulf Zibis
+ * @see     java.lang.Object#toString()
+ * @see     java.lang.StringBuffer
+ * @see     java.lang.StringBuilder
+ * @see     java.nio.charset.Charset
+ * @since   JDK1.0
+ */
+ ~~~
 
 ---
 

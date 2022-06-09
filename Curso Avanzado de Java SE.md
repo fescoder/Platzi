@@ -494,6 +494,44 @@ Existen también `métodos` de más alto nivel que definen el comportamiento del
 ---
 
 ## Clase 19 - Diferencia Interfaces y Clases Abstractas
+![19_Interfaces_clases_abstractas_01](src/Curso_Avanzado_de_Java_SE/19_Interfaces_clases_abstractas_01.png)
+
+Tenemos las `clases abstractas` (Una clase abstracta no es más que una clase común la cual posee atributos, métodos, constructores y por lo menos un método abstracto. Una clase abstracta no puede ser instanciada, solo heredada.) que tiene `métodos abstractos`, y otros que no, para ser definidos por quienes implementan dicha `clase`.  
+Las `interfaces` por otro lado conocimos los nuevos modificadores de accesos `default` y `private`, que ya con estos estamos pudiendo definir comportamiento del `método` de la `interfaz`, entonces una `interfaz` ahora puede tener `métodos` con y sin implementación como las `clases abstractas`.
+
+Las diferencias
+
+![19_Interfaces_clases_abstractas_02](src/Curso_Avanzado_de_Java_SE/19_Interfaces_clases_abstractas_02.png)
+
+- `Clase abstracta` se usara para definir sus `clases`, es decir, esta siempre deberá ser heredada para poder utilizar y sobreescribir los `métodos`, una restriccion que tiene esta `clase` es que no podré crear instancias u objetos a partir de ella, unicamente siempre podré heredarla, por lo tanto, la herencia de `métodos` será de forma lineal, de padre a hijo sucesivamente.
+    - Podemos ir heredando `métodos abstractos` y no abstractos, por lo tanto este tipo de `clase` solo me sirve para definir nuevas `clases` sin necesidad de crear nuevos objetos.
+
+- `Interfaces` tenemos una estructura similar de `métodos abstractos` y no abstractos, pero la vista principal será en los `métodos` que pueden implementarse en muchas familias de `clases`, la implementación de los `métodos` dejará de ser lineal.
+
+Cuando usar cada una?
+Usaremos `interfaces` para implementar `métodos` que se comparten entre familias, es decir, la relación va más allá de la herencia entre dos `clases`.
+- Otra diferencia es en como nombramos una `clase abstracta` y una `interfaz`.
+    - En la abstracta pensaremos más en objetos.
+    - En la `interfaz` pensaremos más en las acciones que puede tener en común muchos objetos.
+
+
+![19_Interfaces_clases_abstractas_03](src/Curso_Avanzado_de_Java_SE/19_Interfaces_clases_abstractas_03.png)
+
+Es común encontrar nombres como `Drawable`, `Runnable`, `Callable`, `Visualizable` (este último cuestionado por Spanglish, otros piensan `Viewable`) para `interfaces`. En las `clases abstractas` es común encontrar con el nombre de la `clase` como `Film`, `Publication`, `Figure` que esta última será heredad en otros tipos de figuras como cuadrados, triangulos, circulos, etc.
+
+![19_Interfaces_clases_abstractas_04](src/Curso_Avanzado_de_Java_SE/19_Interfaces_clases_abstractas_04.png)
+
+La palabra clave en ambos elementos es `abstract`, una buena práctica es que en el diseño de las apps siempre esté orientado a `interfaces` y no a la implementación
+- Concentrarse en crear buenas abstracciones.
+- Intenta encontrar el comportamiento en común.
+- Enfocarse en la declaración de los `métodos`.
+
+
+***Si tratas de manera homogenea y con independencia tus módulos, tus programas serán mucho más escalables y eficientes.***
+
+
+
+
 
 --
 

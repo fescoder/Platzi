@@ -470,24 +470,26 @@ Hasta ahora la forma de ver películas en el proyecta esta hardcodeado, porque n
 ---
 
 ## Clase 17 - Creando Interfaz DAO con métodos default y private
-Creamos un `paquete dao` en el que tendrá, no todos pero la mayoria de las entidades que hay en el proyecto, empezamos creando la `interfaz` `MovieDAO`, en el que se concentrarán los `métodos CRUD`, que son los `métodos` especificos para tratar la DB.
+Creamos un `paquete dao` en el que tendrá, no todos pero la mayoria de las entidades que hay en el proyecto, empezamos creando la `interfaz` `MovieDAO`, en el que se concentrarán los `métodos CRUD`, que son los `métodos` especificos para tratar la DB, pero solo en este caso se podrá consumir una `Movie` y modificar como visto, no se puede crear ni eliminar.
 
 ![17_Interfaz_DAO_01](src/Curso_Avanzado_de_Java_SE/17_Interfaz_DAO_01.png)
 
 ---
 
 ## Clase 18 - Ejercicio. Interfaz DAO
+Tengo un proyecto en el que he creado un `API` de `métodos` que manipulan el comportamiento de un Robot.
 
+![18_Ejercicio_DAO](src/Curso_Avanzado_de_Java_SE/18_Ejercicio_DAO.jpg)
 
+El código que genera la conexión es de más bajo nivel y está encapsulado en una `interfaz`. Este está solo disponible para ser llamado dentro de la `interfaz`.
 
+Existen también `métodos` de más alto nivel que definen el comportamiento del robot y están disponibles para ser llamados desde dónde se esté generando una instancia/objeto de ella.
 
+¿Cuál es el concepto que estamos aplicando al tener capas disponibles y otras no disponibles en mi proyecto?
 
-
-
-
-
-
-
+- `Encapsulamiento` -> ya que la `interfaz` esta pre definiendo una parte del comportamiento de las `clases` que la implementen, al contar ya con código de bajo nivel.  
+`Polimorfismo` -> ya que la `interfaz` si bien tiene una parte del comportamiento definida, puede ser implementada por varias clases que terminen de definir el comportamiento como tal del robot.  
+`Modularidad` -> ya que permite definir comportamientos por capas que definen `métodos` de alto nivel y `métodos` de bajo nivel.
 
 ---
 

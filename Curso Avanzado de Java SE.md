@@ -710,12 +710,11 @@ En programación existen 3 grandes tipos de errores:
 ## Clase 23 - Try-catch-finally / Try-with-resources
 Manejar exceptions significa que añadirás un bloque de código para manejar un error.
 
-**Try-catch-finally**  
 ![23_Try_catch_all_01](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_01.png)
 
 - En el `try` va el código que es vulnerable a una excepcion.
-- Si sucede algo entrará al bloque `catch`, y dependiendo del error es al bloque que ingrese, es decir que nosotros podemos manejar diferentes tipos de errores especificos en un mismo `try-catch`, o hace un `catch` con `Exception e` que atrapará cualquier error que suceda.
-- El `finally` es opcional pero es una buena práctica para darle un cierre al proceso ya que siempre se ejecutará si está declarada, por ejemplo si se abrió un archivo en el `try` lo correcto es cerrarlo en el `finally`
+- Si sucede algo entrará al bloque `catch`, y dependiendo del error es al bloque que ingrese, es decir que nosotros podemos manejar diferentes tipos de errores especificos en un mismo `try-catch`, o hacer un `catch` con `Exception e` que atrapará cualquier error que suceda.
+- El `finally` es opcional pero es una buena práctica para darle un cierre al proceso ya que siempre se ejecutará si está declarada, por ejemplo si se abrió un archivo en el `try` lo correcto es cerrarlo en el `finally`.
 
 ![23_Try_catch_all_02](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_02.png)
 
@@ -739,6 +738,49 @@ Cuando un método es susceptible a un error, se usa el `try-catch` o incluso par
 
 # Módulo 8 - JDBC
 ## Clase 24 - Definición y composición del API
+Es momento de darle persistencia a los datos que tenemos en el proyecto y lo que suceda con ellos. El motor que usaremos acá es MySQL.
+
+![24_Composicion_JDBC_01](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_01.png)
+
+Lo que usaremos también es **JDBC** (Java Data Base Connectivity) que es un conjunto de APIs o clases que nos ayudan a generar una conectividad con una DB.
+
+![24_Composicion_JDBC_02](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_02.png)
+
+Entonces vamos a tener:
+- Nuestra `app de Java` gracias al `API de JDBC`.
+- Tendremos otro componente que será el `JDBC Driver`, que es un conector de la libería JAR (archivo de Java), que dependiendo del motor que se usará es el que necesitas especificar (Oracle, MySQL, postgreSQL, etc.), que nos permite enlazarnos a la DB.
+- `API de JDBC` contiene todas esas clases que nos permiten conectarnos a la DB y hacer las operaciones que necesitemos.
+
+Lo que compone nuestro `API de JDBC` son:
+
+![24_Composicion_JDBC_03](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_03.png)
+
+- `DriverManager`: Nos permite crear una instancia de la conexión, básicamente toma el JAR y genera un objeto que podamos usar.
+- `Connection`: Maneja todo el ciclo de vida de la sesión. La sesión se produce cuando nos conectamos a la DB, este almacena esa sesión, su ciclo de vida mientras estemos conectados.
+
+![24_Composicion_JDBC_04](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_04.png)
+
+Estos dos son la clave cuando queremos consultar datos
+- `Statement`: Nos ayuda a traer datos de una tabla especifica.
+- `PreparedStatement`: Algo similar con la diferencia que puede recibir parámetros dentro de la clausula WHERE.
+
+![24_Composicion_JDBC_05](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_05.png)
+
+- `ResultSet`: Es una interfaz y nos ayuda a manejar los datos que obtenemos. Si obtenemos un conjunto de datos de una tabla, `ResultSet` nos ayuda a manejar y extraer esos datos para finalmente pasarlos a nuestro objeto.
+
+![24_Composicion_JDBC_06](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_06.png)
+
+Con el método `next()` lo que hace es ir iterando todos los resultados que trajimos con la consulta.
+
+![24_Composicion_JDBC_07](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_07.png)
+
+Para generar un CRUD, porque no solo ejecutamos queries tipo SELECT, si no que también necesitaremos usar INSERT, UPDATE, DELETE, etc., estos tienen sus propios métodos que son provistos por `Statement` y `PreparedStatement`.
+
+---
+
+En este caso tambien hay otro concepto que se maneja en programacion que es `datasources` que es una forma de conectarse a una base de datos atraves del servidor
+
+![24_Composicion_JDBC_08](src/Curso_Avanzado_de_Java_SE/24_Composicion_JDBC_08.png)
 
 ---
 

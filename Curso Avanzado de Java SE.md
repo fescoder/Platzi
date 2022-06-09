@@ -527,21 +527,64 @@ La palabra clave en ambos elementos es `abstract`, una buena práctica es que en
 - Intenta encontrar el comportamiento en común.
 - Enfocarse en la declaración de los `métodos`.
 
-
 ***Si tratas de manera homogenea y con independencia tus módulos, tus programas serán mucho más escalables y eficientes.***
 
+---
 
+En la implementacion de una `clase abstracta`, un `método abstracto` es opcional, a diferencia de una `interfaz` en la cual si no es un `método privado`, obligatoriamente se tiene que implementar el `método abstracto` en la `clase` que la implementa.
 
-
+Las `clases abstractas`, como cualquier otra `clase`, usan la herencia para transferir sus `atributos`, pero las `interfaces` con sobre el **comportamiento**.  
+Ejemplo: Puedes usar una `clase abstracta` `Animal` de la cual heredan las clases `Insecto`, `Mamifero`, `Ave`. Una vez hecha la herencia, te vez tentado crear en `Ave` el `método volar();` sin embargo te das cuenta que no todas las aves vuelan (ejm: pingüinos) y que además hay mamiíferos que sí vuelan.  
+Yo creo que **comportamiento** es la palabra clave. Un comportamiento similar aparece indistintamente de la relación entre dos `clases`.
 
 ---
 
 ## Clase 20 - Herencia en Interfaces
+Las interfaces pueden heredar de otras interfaces utilizando la palabra clave extends, el concepto de herencia se aplicará como naturalmente se practica en clases, es decir, la interfaz heredará y adquirirá los métodos de la interfaz padre.
+
+Una cosa interesante que sucede en caso de herencia con interfaces es que, aquí sí es permitido la herencia múltiple como ves a continuación:
+~~~
+public interface IReadable {
+    public void read();
+}
+
+public interface Visualizable extends IReadable, Serializable {
+    public void setViewed();
+    public Boolean isViewed();
+    public String timeViewed();
+}
+~~~
+
+Además siguiendo las nuevas implementaciones de métodos default y private de las versiones Java 8 y 9 respectivamente podemos sobreescribir métodos y añadirles comportamiento, si es el caso.
+~~~
+public interface Visualizable extends IReadable, Serializable {
+    public void setViewed();
+    public Boolean isViewed();
+    public String timeViewed();
+
+    @Override
+    default void read() {
+        ...
+    }
+}
+~~~
+
+---
+
+Un ejemplo de esto es en `Spring 5`, cuando creas un repositorio llamado por ejemplo `MovieRepository(interfaz)` y esta extiende de `JpaRepository`. Inmediatamente donde implementes `MovieRepository` puedes usar los `métodos default` de la `interfaz jpa`.  
+Lo interesante es que la `interfaz JpaRepository` extiende de `CrudRepository` y de `PagingAndSortingRepository` y estos extienden de `Repository` dejando ver la utilidad inmediata de este feature de Java.
+
+Las `variables` de `interface` por defecto siempre son `static` y `final`.
 
 ---
 
 # Módulo 6 - Colecciones Avanzadas
 ## Clase 21 - Map, HashMap, TreeMap y LinkedHashMap
+
+
+
+
+
 
 ---
 

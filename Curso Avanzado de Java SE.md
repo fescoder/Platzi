@@ -613,7 +613,8 @@ Como te conté hace un momento `Map` tiene implementaciones:
 
 - `HashMap`: Los elementos no se ordenan. No aceptan claves duplicadas ni valores nulos.
 - `LinkedHashMap`: Ordena los elementos conforme se van insertando; provocando que las búsquedas sean más lentas que las demás clases.
-- `TreeMap`: El Mapa lo ordena de forma “natural”. Por ejemplo, si la clave son valores enteros (como luego veremos), los ordena de menos a mayor.
+- `TreeMap`: El Mapa lo ordena de forma “natural”. Por ejemplo, si la clave son valores enteros (como luego veremos), los ordena de menor a mayor.
+
 Para iterar alguno de estos será necesario utilizar la interface Iterator y para recorrerlo lo haremos un bucle while así como se muestra:
 
 Para **HashMap**
@@ -648,16 +649,74 @@ while(it.hasNext()){
 
 Ahora lee [esta](https://docs.oracle.com/javase/tutorial/collections/interfaces/deque.html) lectura y en la sección de tutoriales cuentanos en tus palabras cómo funciona `Deque`.
 
+---
 
+`Deque` es un arreglo de elementos similar a un `hashMap` (Que inserta los elementos, sin un orden particular, uno después del otro) pero con la particularidad de que se puede insertar, remover y hacer otra operaciónes sobre los elementos en ambos extremos del arreglo usando métodos como:
+~~~
+addLast(); removeLast();
+addFirst(); removeFirst();
+~~~
+
+Se pronuncia como deck, un `deque` es una cola de doble extremo (double-ended-queue). Un double-ended-queue es una colección lineal de elementos que soportan la inserción y eliminación de elementos en ambos finales (extremos).
+La interfaz `Deque` es un tipo de dato abstracto más enriquecido que `Stack` y `Queue` porque implementa ambos al mismo tiempo (stacks y queues).
+La interfaz `Deque`, define métodos para acceder a los elementos de ambos finales o extremos de una instancia `Deque`.
+Se proporcionan métodos para insertar, quitar y examinar los elementos.
+Las clases predefinidas como `ArrayDeque` y `LinkedList` impelementan la interfaz `Deque`.
+
+**Insert**
+Los métodos `addfirst` y `offerFirst` agregan elementos al principio de una instancia Deque. Los métodos `addLast` y `offerLast` agregan elementos al final de una instancia. Cuando la capacidad de la instancia es restringida, los métodos preferidos son: `offerFirst` y `OfferLast` porque `addFirst` puede no arrojar una excepción si esta lleno.
+
+**Remove**
+Los métodos `removeFirst` y `pollFirst` eliminan elementos al principio de la instancia y, `removeLast` y `pollLast`, eliminan elementos al final. Los métodos `pollFirst` y `pollLast` retornan null si la instancia esta vacia (empty) mientras que, los métodos `removeFirst` y `removeLast`, arrojan una excepción si la instancia esta vacia (empty).
+
+**Retrieve**
+Los métodos `getFirst` y `peekFirst` recuperan los primeros elementos de una instancia `Deque`. Estos métodos no eliminan el valor de una instancia `Deque`.
+Los métodos `getLast` y `peekLast` recuperan los últimos elementos.
+Los métodos `getFirst` y `getLast` arrojan una excepción si la instancia esta vacia (empty) mientras que, los métodos `peekFirst` y `peekLast` retornan NULL.
+
+Los 12 métodos de inserción, eliminación y recuperación de elementos de un `Deque`, se resumen en la siguiente tabla:
+
+![21_Map_HashMap_TreeMap_LinkedHashMap_03](src/Curso_Avanzado_de_Java_SE/21_Map_HashMap_TreeMap_LinkedHashMap_03.png)
+
+La interfaz `Deque` es una colección lineal de elementos cuyo funcionamiento permite de manera eficiente la inserción y remoción elementos del principio y final de la colección, esto favorece el uso eficiente de pilas y colas.
 
 ---
 
 # Módulo 7 - Excepciones
 ## Clase 22 - Manejo de errores
+Siempre que ocurre una Exception lanzará un objetos `Throwable` y en Java podemos tener 2 tipos de errores sustancialmente:
+- Clase Error: Son erroes causados por la propia maquina virtual de Java (JVM).
+- Clase Exception: De los que si somos responsables y pueden ser causados de dos modos:
+    **Unchecked**, son situaciones excepcionales, que de repente no sabemos que sucedió, como un error aritmético al dividir un número entre 0, estos generalmente te avisa el IDE, pero no si usas un editor de texto, estos son errores de programación, de lógica que no controlamos o también cuando queremos acceder al indice de un arreglo que no existe y lanza un:
+    - `RuntimeException`: Es decir en el momento en que la app se está ejecutando.
+
+    **Checked**, errores más esperados, especificos y que podemos verificar como por ejemplo si espero encontrar un archivo y por razones ajenas a mi, este archivo no existe en ese momento, yo debo preparar mi código para poder `cachar` con este tipo de excepciones y que no se cierre inesperadamente el programa o si hay un error en una sentencia SQL, que la tabla o registro no exista, todas estas cosas lanzan diferentes tipos de exceptions:
+    - `SQLException`: Error en la sintaxis SQL.
+    - `IOException`: Al momento de tratar de leer un archivo, una entrada y salida de datos.
+    - `FileNotFoundException`: Si un archivo no fue encontrado.
+
+---
+
+Errores que se pueden presentar:
+![22_Manejo_de_errores_01](src/Curso_Avanzado_de_Java_SE/22_Manejo_de_errores_01.jpg)
+
+En programación existen 3 grandes tipos de errores:
+- **Errores de Compilación:** Suceden por una mala implementación de la sintaxis del lenguaje de programación, es decir algo se ha escrito mal.
+- **Errores de Ejecución:** Son errores que suceden en el momento de la ejecución de un programa, por ejemplo, dividir por cero, acceder a un elemento que no existe en un array, intentar abrir un archivo inexistente, entre otros.
+- **Errores Lógicos:** Son errores que surgen cuando el programa no hace lo que el programador quiere que haga, estos errores se deben a que el programador dejó algún hueco en la lógica que programó.
 
 ---
 
 ## Clase 23 - Try-catch-finally / Try-with-resources
+
+
+
+
+
+
+
+
+
 
 ---
 

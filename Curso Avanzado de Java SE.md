@@ -785,6 +785,21 @@ En este caso tambien hay otro concepto que se maneja en programacion que es `dat
 ---
 
 ## Clase 25 - Ejercicio. JDBC API
+Estás trabajando en un programa que es catálogo de guitarras.  
+Dependiendo de la membresía del usuario debemos mostrar ciertas guitarras.  
+Para usuarios premium mostrar guitarras premium.  
+Las guitarras tienen un identificador en la base de datos que les hace pertenecer al tipo premium.
+
+Planeando realizar una consulta en la que generes un filtro de usuarios y guitarras premium. ¿Qué elemento de JDBC deberás usar para ejecutar una consulta con filtros?
+
+---
+
+Los elementos JDBC que debemos usar en orden para ejecutar esta sentencia son:
+- DriverManager: Para manejar la base de datos.
+- Conecction: Para conectarnos a la base de datos.
+- PreparedStatement: Para crear una sentencia de tipo “Select * From” con filtros de tipo "Where"
+- ExecuteQuery: Para ejecutar sentencias de tipo select.
+- Resultset: Para capturar los datos devueltos por la BBDD debido al select ejecutado.
 
 ---
 

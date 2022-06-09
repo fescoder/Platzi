@@ -451,10 +451,11 @@ System.out.println(Day.MONDAY.getSpanish());// Lunes
 
 # Módulo 5 - Interfaces Avanzadas
 ## Clase 16 - Métodos con implementación métodos default y private
-Hasta ahora lo que sabiamos de interfaces avanzadas era que una `interfaz` se va a componer de `métodos abstractos`, sin implementación, y que puede tener campos constantes, no variables, que se declaran con la palabra reservada `final`.  
-A demás podemos crear tipos de referencia, que se parece a cuando trabajamos con `clases abstractas`, puedo definir un objeto del tipo de la `interfaz`, instanciarlo con una `clase` que implemente la `interfaz`.
+Hasta ahora lo que sabiamos de interfaces avanzadas era que una `interfaz` se va a componer de `métodos abstractos`, sin implementación, y que puede tener campos constantes, no variables, que se declaran con la palabra reservada `final`.
 
-A partír de Java 8 dentro de los `métodos ` de una `interfaz` podemos tener el modificador `default`, cuando lo definimos explicitamente podemos implementarle comportamiento, código, dentro de la `interfaz`. En Java 9 podemos colocar `private`.
+Además podemos crear tipos de referencia, que se parece a cuando trabajamos con `clases abstractas`, puedo definir un objeto del tipo de la `interfaz`, instanciarlo con una `clase` que implemente la `interfaz`.
+
+A partír de Java 8 dentro de los `métodos` de una `interfaz` podemos tener el modificador `default`, cuando lo definimos explicitamente podemos implementarle comportamiento, código, dentro de la `interfaz`. En Java 9 podemos colocar `private`.
 
 Entonces ahora podemos tener implementación en `métodos`.
 
@@ -469,10 +470,24 @@ Hasta ahora la forma de ver películas en el proyecta esta hardcodeado, porque n
 ---
 
 ## Clase 17 - Creando Interfaz DAO con métodos default y private
+Creamos un `paquete dao` en el que tendrá, no todos pero la mayoria de las entidades que hay en el proyecto, empezamos creando la `interfaz` `MovieDAO`, en el que se concentrarán los `métodos CRUD`, que son los `métodos` especificos para tratar la DB.
+
+![17_Interfaz_DAO_01](src/Curso_Avanzado_de_Java_SE/17_Interfaz_DAO_01.png)
 
 ---
 
 ## Clase 18 - Ejercicio. Interfaz DAO
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 

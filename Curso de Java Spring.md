@@ -184,8 +184,7 @@ Formato de configuración con `yml`.
 ---
 
 ## Clase 11 - Crear la estructura del proyecto
-Arquitectura por capas
-
+Arquitectura por capas  
 ![11_Estructura_proyecto_03](src/Curso_de_Java_Spring/11_Estructura_proyecto_03.gif)
 
 La arquitectura que usaremos será una por capas orientada al ***Dominio***, conocida como `DDD` (Domain Driven Design).

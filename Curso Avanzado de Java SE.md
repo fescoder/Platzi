@@ -451,6 +451,20 @@ System.out.println(Day.MONDAY.getSpanish());// Lunes
 
 # Módulo 5 - Interfaces Avanzadas
 ## Clase 16 - Métodos con implementación métodos default y private
+Hasta ahora lo que sabiamos de interfaces avanzadas era que una `interfaz` se va a componer de `métodos abstractos`, sin implementación, y que puede tener campos constantes, no variables, que se declaran con la palabra reservada `final`.  
+A demás podemos crear tipos de referencia, que se parece a cuando trabajamos con `clases abstractas`, puedo definir un objeto del tipo de la `interfaz`, instanciarlo con una `clase` que implemente la `interfaz`.
+
+A partír de Java 8 dentro de los `métodos ` de una `interfaz` podemos tener el modificador `default`, cuando lo definimos explicitamente podemos implementarle comportamiento, código, dentro de la `interfaz`. En Java 9 podemos colocar `private`.
+
+Entonces ahora podemos tener implementación en `métodos`.
+
+![16_Metodos_default_private_01](src/Curso_Avanzado_de_Java_SE/16_Metodos_default_private_01.png)
+
+Ahora con estos tipos de `interfaces` podemos crear una capa `DAO` (Data Access Object), que lo que hace es generar una cantidad de `métodos` especificos que atacarán al modelo u objeto en si.
+
+![16_Metodos_default_private_02](src/Curso_Avanzado_de_Java_SE/16_Metodos_default_private_02.png)
+
+Hasta ahora la forma de ver películas en el proyecta esta hardcodeado, porque no implementamos una DB todavía, cuando la tengamos nos vamos a comunicar con ella a través de las `interfaz` que tenga los `métodos` que consulten, creen, modifiquen y eliminen registros.
 
 ---
 

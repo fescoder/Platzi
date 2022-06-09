@@ -663,13 +663,13 @@ La interfaz `Deque`, define métodos para acceder a los elementos de ambos final
 Se proporcionan métodos para insertar, quitar y examinar los elementos.
 Las clases predefinidas como `ArrayDeque` y `LinkedList` impelementan la interfaz `Deque`.
 
-**Insert**
+**Insert**  
 Los métodos `addfirst` y `offerFirst` agregan elementos al principio de una instancia Deque. Los métodos `addLast` y `offerLast` agregan elementos al final de una instancia. Cuando la capacidad de la instancia es restringida, los métodos preferidos son: `offerFirst` y `OfferLast` porque `addFirst` puede no arrojar una excepción si esta lleno.
 
-**Remove**
+**Remove**  
 Los métodos `removeFirst` y `pollFirst` eliminan elementos al principio de la instancia y, `removeLast` y `pollLast`, eliminan elementos al final. Los métodos `pollFirst` y `pollLast` retornan null si la instancia esta vacia (empty) mientras que, los métodos `removeFirst` y `removeLast`, arrojan una excepción si la instancia esta vacia (empty).
 
-**Retrieve**
+**Retrieve**  
 Los métodos `getFirst` y `peekFirst` recuperan los primeros elementos de una instancia `Deque`. Estos métodos no eliminan el valor de una instancia `Deque`.
 Los métodos `getLast` y `peekLast` recuperan los últimos elementos.
 Los métodos `getFirst` y `getLast` arrojan una excepción si la instancia esta vacia (empty) mientras que, los métodos `peekFirst` y `peekLast` retornan NULL.
@@ -685,15 +685,15 @@ La interfaz `Deque` es una colección lineal de elementos cuyo funcionamiento pe
 # Módulo 7 - Excepciones
 ## Clase 22 - Manejo de errores
 Siempre que ocurre una Exception lanzará un objetos `Throwable` y en Java podemos tener 2 tipos de errores sustancialmente:
-- Clase Error: Son erroes causados por la propia maquina virtual de Java (JVM).
+- Clase Error: Son errores causados por la propia maquina virtual de Java (JVM).
 - Clase Exception: De los que si somos responsables y pueden ser causados de dos modos:
-    **Unchecked**, son situaciones excepcionales, que de repente no sabemos que sucedió, como un error aritmético al dividir un número entre 0, estos generalmente te avisa el IDE, pero no si usas un editor de texto, estos son errores de programación, de lógica que no controlamos o también cuando queremos acceder al indice de un arreglo que no existe y lanza un:
-    - `RuntimeException`: Es decir en el momento en que la app se está ejecutando.
+    - **Unchecked**, son situaciones excepcionales, que de repente no sabemos que sucedió, como un error aritmético al dividir un número entre 0, estos generalmente te avisa el IDE, pero no si usas un editor de texto, estos son errores de programación, de lógica que no controlamos o también cuando queremos acceder al indice de un arreglo que no existe y lanza un:
+        - `RuntimeException`: Es decir en el momento en que la app se está ejecutando.
 
-    **Checked**, errores más esperados, especificos y que podemos verificar como por ejemplo si espero encontrar un archivo y por razones ajenas a mi, este archivo no existe en ese momento, yo debo preparar mi código para poder `cachar` con este tipo de excepciones y que no se cierre inesperadamente el programa o si hay un error en una sentencia SQL, que la tabla o registro no exista, todas estas cosas lanzan diferentes tipos de exceptions:
-    - `SQLException`: Error en la sintaxis SQL.
-    - `IOException`: Al momento de tratar de leer un archivo, una entrada y salida de datos.
-    - `FileNotFoundException`: Si un archivo no fue encontrado.
+    - **Checked**, errores más esperados, especificos y que podemos verificar como por ejemplo si espero encontrar un archivo y por razones ajenas a mi, este archivo no existe en ese momento, yo debo preparar mi código para poder `cachar` con este tipo de excepciones y que no se cierre inesperadamente el programa o si hay un error en una sentencia SQL, que la tabla o registro no exista, todas estas cosas lanzan diferentes tipos de exceptions:
+        - `SQLException`: Error en la sintaxis SQL.
+        - `IOException`: Al momento de tratar de leer un archivo, una entrada y salida de datos.
+        - `FileNotFoundException`: Si un archivo no fue encontrado.
 
 ---
 

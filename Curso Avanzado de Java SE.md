@@ -687,10 +687,10 @@ La interfaz `Deque` es una colección lineal de elementos cuyo funcionamiento pe
 Siempre que ocurre una Exception lanzará un objetos `Throwable` y en Java podemos tener 2 tipos de errores sustancialmente:
 - Clase Error: Son errores causados por la propia maquina virtual de Java (JVM).
 - Clase Exception: De los que si somos responsables y pueden ser causados de dos modos:
-    - **Unchecked**, son situaciones excepcionales, que de repente no sabemos que sucedió, como un error aritmético al dividir un número entre 0, estos generalmente te avisa el IDE, pero no si usas un editor de texto, estos son errores de programación, de lógica que no controlamos o también cuando queremos acceder al indice de un arreglo que no existe y lanza un:
+    - **Unchecked**: Son situaciones excepcionales, que de repente no sabemos que sucedió, como un error aritmético al dividir un número entre 0, estos generalmente te avisa el IDE, pero no si usas un editor de texto, estos son errores de programación, de lógica que no controlamos o también cuando queremos acceder al indice de un arreglo que no existe y lanza un:
         - `RuntimeException`: Es decir en el momento en que la app se está ejecutando.
 
-    - **Checked**, errores más esperados, especificos y que podemos verificar como por ejemplo si espero encontrar un archivo y por razones ajenas a mi, este archivo no existe en ese momento, yo debo preparar mi código para poder `cachar` con este tipo de excepciones y que no se cierre inesperadamente el programa o si hay un error en una sentencia SQL, que la tabla o registro no exista, todas estas cosas lanzan diferentes tipos de exceptions:
+    - **Checked**: Errores más esperados, especificos y que podemos verificar como por ejemplo si espero encontrar un archivo y por razones ajenas a mi, este archivo no existe en ese momento, yo debo preparar mi código para poder `cachar` con este tipo de excepciones y que no se cierre inesperadamente el programa o si hay un error en una sentencia SQL, que la tabla o registro no exista, todas estas cosas lanzan diferentes tipos de exceptions:
         - `SQLException`: Error en la sintaxis SQL.
         - `IOException`: Al momento de tratar de leer un archivo, una entrada y salida de datos.
         - `FileNotFoundException`: Si un archivo no fue encontrado.
@@ -708,15 +708,32 @@ En programación existen 3 grandes tipos de errores:
 ---
 
 ## Clase 23 - Try-catch-finally / Try-with-resources
+Manejar exceptions significa que añadirás un bloque de código para manejar un error.
 
+**Try-catch-finally**  
+![23_Try_catch_all_01](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_01.png)
 
+- En el `try` va el código que es vulnerable a una excepcion.
+- Si sucede algo entrará al bloque `catch`, y dependiendo del error es al bloque que ingrese, es decir que nosotros podemos manejar diferentes tipos de errores especificos en un mismo `try-catch`, o hace un `catch` con `Exception e` que atrapará cualquier error que suceda.
+- El `finally` es opcional pero es una buena práctica para darle un cierre al proceso ya que siempre se ejecutará si está declarada, por ejemplo si se abrió un archivo en el `try` lo correcto es cerrarlo en el `finally`
 
+![23_Try_catch_all_02](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_02.png)
 
+Pero que pasa cuando queremos cerrar un recurso, esto no obligaria a volver a implementar un `try-catch` y la legibilidad de mi código empeoraria.
 
+![23_Try_catch_all_03](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_03.png)
 
+Para solucionar esto usamos `try-with-resources`, cabe mencionar que tiene una versión mejorada a partir de Java 9.
 
+![23_Try_catch_all_04](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_04.png)
 
+Entonces declaramos un elemento de entrada y salida de datos, lo colocamos en un `try-with-resources`, no tiene `finally`, y este automáticamente cuando se termine de ejecutar las sentencias se encarga de cerrar el flujo de datos, los recursos abiertos.
 
+![23_Try_catch_all_05](src/Curso_Avanzado_de_Java_SE/23_Try_catch_all_05.png)
+
+---
+
+Cuando un método es susceptible a un error, se usa el `try-catch` o incluso para cualquier linea de código es buena practica que siempre esté dentro de un `try-catch`, estos errores o exceptions se verán reflejados en el cliente, por ende se deben imprimir o entregar como información HTTP, y para esto hay una asignación `throw exception` que se debe insertar en los métodos que sean llamados por otras clases o por la clase principal que ejecuta, así siendo apto el método para lanzar las errores y la clase que ejecuta pueda capturarlos.
 
 ---
 

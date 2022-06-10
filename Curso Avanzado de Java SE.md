@@ -846,17 +846,31 @@ Lo único que nos faltará será descargar la librería que será el conector en
 
 Pasa a la siguiente clase para usar todo lo que hoy creamos.
 
+---
+
 Descargar dependencias desde Intellij
 
 ![26_Creando_DB_conectando_proyecto_MySQL_09](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_09.webp)
-
----
 
 Recomiendan mucho usar **Docker**.
 
 ---
 
 ## Clase 27 - Generando conexión a la base de datos y creando clase de constantes
+Instalamos el connector, en mi caso lo descargué del enlace e **Install**.
+
+Creamos un paquete `bd` en `src`, donde crearemos la interfaz, `IDBConnection`, para conectarnos a la DB.
+
+![27_Conexion_DB_01](src/Curso_Avanzado_de_Java_SE/27_Conexion_DB_01.png)
+
+- El primer objeto que usaremos será `Connection` ya que al crear la conexión lo que haremos es devolver la instancia de la sesión.
+- El segundo es `Driver Manager` que nos ayuda a obtener la conexión a partir de una URL ("jdbc:subprotocol:subname"). Que es la dirección a la conexión a la DB.
+
+Creamos una clase en el mismo paquete llamada `DataBase`, que contiene constantes de nuestra DB, para que siempre coincidan con lo que queremos consultar y haya menos margen de error en sintaxis, estas constantes serán los nombres de las tablas y campos de la DB.
+
+Mappeamos la tablas tablas que tenemos
+
+![27_Conexion_DB_02](src/Curso_Avanzado_de_Java_SE/27_Conexion_DB_02.png)
 
 ---
 

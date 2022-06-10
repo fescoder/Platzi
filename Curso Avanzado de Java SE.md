@@ -797,6 +797,7 @@ Planeando realizar una consulta en la que generes un filtro de usuarios y guitar
 Los elementos JDBC que debemos usar en orden para ejecutar esta sentencia son:
 - DriverManager: Para manejar la base de datos.
 - Conecction: Para conectarnos a la base de datos.
+
 - PreparedStatement: Para crear una sentencia de tipo “Select * From” con filtros de tipo "Where"
 - ExecuteQuery: Para ejecutar sentencias de tipo select.
 - Resultset: Para capturar los datos devueltos por la BBDD debido al select ejecutado.
@@ -804,6 +805,54 @@ Los elementos JDBC que debemos usar en orden para ejecutar esta sentencia son:
 ---
 
 ## Clase 26 - Creando la base de datos y conectando el proyecto con MySQL
+Para montar la base de datos y enfocarme en el proyecto utilizaré lo más simple y sencillo de manejar, este es phpmyadmin.
+
+Para tener un servidor de phpmyadmin deberás instalar XAMPP que encontrarás disponible la versión de tu Sistema Operativo en el siguiente [enlace](https://www.apachefriends.org/es/index.html)
+
+Una vez instalado abrelo e inicia el servidor MySQL y Apache como se muestra a continuación:
+
+![26_Creando_DB_conectando_proyecto_MySQL_01](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_01.jpg)
+![26_Creando_DB_conectando_proyecto_MySQL_02](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_02.jpg)
+
+Una vez iniciados los servicios abriremos el navegador e iremos al [enlace](http://localhost/phpmyadmin/)
+
+Mirarás algo así:
+
+![26_Creando_DB_conectando_proyecto_MySQL_03](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_03.jpg)
+
+Este es el panel donde crearemos nuestra base de datos así que lo primero que harás será crear un usuario llamado amazonviewer para ello iremos a Cuentas de usuario:
+
+![26_Creando_DB_conectando_proyecto_MySQL_04](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_04.jpg)
+
+Buscaremos la opción de Agregar Cuenta de Usuario:
+
+![26_Creando_DB_conectando_proyecto_MySQL_05](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_05.jpg)
+
+Capturaremos el nombre de usuario y password, en ambos pondremos amazonviewer en Host seleccionaremos Local y finalmente haremos Check en la opción: Crear base de datos con el mismo nombre y otorgar todos los privilegios. Para después dar click en Continuar.
+
+![26_Creando_DB_conectando_proyecto_MySQL_06](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_06.jpg)
+
+Verás que ahora del lado izquierdo estará la base de datos creada, selecciónala y da click en importar. Descarga la base de datos de [aquí](https://drive.google.com/file/d/1uneLZrRZ0y1ASOUkVzzw7qRQwrS0Ui-d/view?usp=sharing)
+
+Ahora da click en Seleccionar archivo y pon el archivo sql de la base de datos.
+
+![26_Creando_DB_conectando_proyecto_MySQL_07](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_07.jpg)
+
+En seguida verás la base de datos creada:
+
+![26_Creando_DB_conectando_proyecto_MySQL_08](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_08.jpg)
+
+Lo único que nos faltará será descargar la librería que será el conector entre nuestra base de datos MySQL y nuestro proyecto, este lo puedes descargar del sitio oficial [aquí mismo](https://dev.mysql.com/downloads/connector/j/5.1.html).
+
+Pasa a la siguiente clase para usar todo lo que hoy creamos.
+
+Descargar dependencias desde Intellij
+
+![26_Creando_DB_conectando_proyecto_MySQL_09](src/Curso_Avanzado_de_Java_SE/26_Creando_DB_conectando_proyecto_MySQL_09.webp)
+
+---
+
+Recomiendan mucho usar **Docker**.
 
 ---
 

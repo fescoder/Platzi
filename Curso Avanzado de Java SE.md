@@ -857,8 +857,6 @@ Recomiendan mucho usar **Docker**.
 ---
 
 ## Clase 27 - Generando conexión a la base de datos y creando clase de constantes
-Instalamos el connector, en mi caso lo descargué del enlace e **Install**.
-
 Creamos un paquete `bd` en `src`, donde crearemos la interfaz, `IDBConnection`, para conectarnos a la DB.
 
 ![27_Conexion_DB_01](src/Curso_Avanzado_de_Java_SE/27_Conexion_DB_01.png)

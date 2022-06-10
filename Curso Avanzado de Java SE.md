@@ -873,6 +873,15 @@ Mappeamos la tablas tablas que tenemos
 ---
 
 ## Clase 28 - Sentencia SELECT en Java
+Continuamos con la interfaz `MovieDAO` extendiendo de `IDBConnection` para obtener la conexión a la DB con un `try-with-resources` para que se cierren automáticamente los recursos.  
+Empezamos a usar `PreparedStatement` y seteamos los valores que se traigan desde la DB al objeto que usaremos.
+
+![28_Sentencia_Select_01](src/Curso_Avanzado_de_Java_SE/28_Sentencia_Select_01.png)
+
+En `Movie` implementamos `MovieDAO` así podremos llamar a `read` y en `makeMovieList` modificamos el código para que ejecute este método.  
+Para poder usar el `read` es importante crear un objeto del tipo de la clase donde se está implementando.
+
+![28_Sentencia_Select_02](src/Curso_Avanzado_de_Java_SE/28_Sentencia_Select_02.png)
 
 ---
 

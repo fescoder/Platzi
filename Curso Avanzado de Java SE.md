@@ -886,6 +886,10 @@ Para poder usar el `read` es importante crear un objeto del tipo de la clase don
 ---
 
 ## Clase 29 - Sentencia SELECT con Parámetros
+No estamos guardando en la DB cuando vimos la película o leemos un libro, entendemos entonces que en la tabla de la DB `viewed` vamos a tener el `material` que identifica si es una película, libro, serie, etc. que recibé también el `id` de ese `material/elemento` y el usuario que la vió.  
+Todo esto en el método `getMovieViewed` al cual lo llamamos únicamente del método `read`, por eso tiene un modificador de acceso `private`.
+
+![29_Select_con_parametros_01](src/Curso_Avanzado_de_Java_SE/29_Select_con_parametros_01.png)
 
 ---
 

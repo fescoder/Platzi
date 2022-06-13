@@ -894,6 +894,15 @@ Todo esto en el método `getMovieViewed` al cual lo llamamos únicamente del mé
 ---
 
 ## Clase 30 - Sentencia INSERT en Java
+Anteriormente insertamos una película como visto manualmente, desde phpmyadmin, ahora haremos que lo haga el método `setMovieViewed` de nuestra app.
+
+![30_Sentencia_insert_01](src/Curso_Avanzado_de_Java_SE/30_Sentencia_insert_01.png)
+
+Cuando trabajamos con el Statement tenemos el método `execute`, que devuelve un booleano, se usa generalmente con el método `DELETE` más que con el de `INSERT` o `UPDATE` que tiene su función `executeUpdate`, que nos devuelve la cantidad de raws afectadas.
+
+Llamamos desde `view` al nuevo método para que lo marque en visto.
+
+![30_Sentencia_insert_02](src/Curso_Avanzado_de_Java_SE/30_Sentencia_insert_02.png)
 
 ---
 

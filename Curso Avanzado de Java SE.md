@@ -910,7 +910,7 @@ Llamamos desde `view` al nuevo método para que lo marque en visto.
 
 **Tuve inconvenientes con los servidores y no pude comprobar este reto.**
 
-Primero creamos la nueva columna en la tabla viewed:
+Primero creamos la nueva columna en la tabla viewed en phpmyadmin:
 
 `ALTER TABLE AmazonViewer.viewed ADD viewed_date DATETIME;`
 
@@ -927,9 +927,9 @@ public static String getCurrentDate() {
 
 Modificamos en el metodo `setMoviedViewed` el query para agregar la fecha:
 ~~~
-String query = “INSERT INTO " + TVIEWED + " (” + TVIEWED_ID_MATERIAL + “,” + TVIEWED_ID_ELEMENT + “,”
-+ TVIEWED_ID_USER + “,” + TVIEWED_DATE + “)” + " VALUES(" + ID_MATERIALS[0] + “,” + movie.getId()
-+ “,” + TUSER_IDEUSUARIO + “,”"+AmazonUtil.getCurrentDate() + “”)";
+String query = “INSERT INTO " + TVIEWED + " (" + TVIEWED_ID_MATERIAL + "," + TVIEWED_ID_ELEMENT + ", "
++ TVIEWED_ID_USER + ", " + TVIEWED_DATE + ")" + " VALUES(" + ID_MATERIALS[0] + "," + movie.getId()
++ "," + TUSER_IDEUSUARIO + ", " + AmazonUtil.getCurrentDate() + ")";
 ~~~
 
 Agrego dos métodos nuevos a la interfaz `MovieDAO` para buscar por fecha actual
@@ -1001,6 +1001,24 @@ for (Movie movie : moviesDay) {
 
 # Módulo 9 - Lambdas
 ## Clase 32 - Interfaces funcionales
+
+![32_Interfaces_funcionales_01](src/Curso_Avanzado_de_Java_SE/32_Interfaces_funcionales_01.png)
+
+Las interfaces funcionales tienen un solo método el cual debe ser abstracto, estas tienen una anotación, `@FunctionalInterface`.
+
+![32_Interfaces_funcionales_02](src/Curso_Avanzado_de_Java_SE/32_Interfaces_funcionales_02.png)
+
+Estas interfaces se parecen mucho a las clases anónimas que usaremos.
+
+![32_Interfaces_funcionales_03](src/Curso_Avanzado_de_Java_SE/32_Interfaces_funcionales_03.png)
+
+---
+
+**Interfaces funcionales**
+Concepto nuevo en Java SE 8 y que es la base para que podamos escribir expresiones lambda.  
+Una interface funcional se define como una interface que tiene uno y solo un método abstracto y que éste sea diferente a los métodos definidos en java.lang.Object (a saber: equals, hashcode, clone, etc.). La interface puede tener métodos por defecto y estáticos sin que esto afecte su condición de ser interface funcional.
+
+Existe una nueva anotación denominada `@FunctionalInterface` que permite al compilador realizar la validación de que la interface tenga solamente un método abstracto
 
 ---
 

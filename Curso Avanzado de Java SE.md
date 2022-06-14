@@ -908,6 +908,94 @@ Llamamos desde `view` al nuevo método para que lo marque en visto.
 
 ## Clase 31 - Reto: Reporte por fecha
 
+Tuve inconvenientes con los servidores y no pude comprobar este reto por falta de tiempo.
+
+Primero creamos la nueva columna en la tabla viewed:
+
+ALTER TABLE AmazonViewer.viewed ADD viewed_date DATETIME;
+
+Modificamos la clase utilitaria AmazonUtil y agregamos un método nuevo que nos formatee la fecha actual:
+
+public static String getCurrentDate() {
+Date date = new Date();
+SimpleDateFormat format = new SimpleDateFormat(“yyyy-MM-dd 00:00:00.0”);
+String dateString = format.format(date);
+return dateString;
+}
+
+Modificamos en el metodo setMoviedViewed el query para agregar la fecha:
+
+String query = “INSERT INTO " + TVIEWED + " (” + TVIEWED_ID_MATERIAL + “,” + TVIEWED_ID_ELEMENT + “,”
++ TVIEWED_ID_USER + “,” + TVIEWED_DATE + “)” + " VALUES(" + ID_MATERIALS[0] + “,” + movie.getId()
++ “,” + TUSER_IDEUSUARIO + “,”"+AmazonUtil.getCurrentDate() + “”)";
+
+Agrego dos métodos nuevos a la interfaz MovieDAO para buscar por fecha actual
+~~~
+ private boolean getMovieViewedByDay(PreparedStatement preparedStatement, Connection connection, int id_movie) {
+ boolean viewed = false;
+ String query = "SELECT * FROM " + TVIEWED + " WHERE " + TVIEWED_ID_MATERIAL + "= ?" + " AND "
+ 		+ TVIEWED_ID_ELEMENT + "= ?" + " AND " + TVIEWED_ID_USER + "= ?" +" AND " + TVIEWED_DATE +"=\""+AmazonUtil.getCurrentDate()+"\"";
+ ResultSet rs = null;
+ try {
+ 	preparedStatement = connection.prepareStatement(query);
+ 	preparedStatement.setInt(1, ID_MATERIALS[0]);
+ 	preparedStatement.setInt(2, id_movie);
+ 	preparedStatement.setInt(3, TUSER_IDEUSUARIO);
+ 	System.out.println(query);
+ 	rs = preparedStatement.executeQuery();
+ 	viewed = rs.next();
+ } catch (Exception e) {
+ 	e.printStackTrace();
+ }
+
+ return viewed;
+ }
+~~~
+
+~~~
+default ArrayList<Movie> readByDay() {
+ArrayList<Movie> movies = new ArrayList<>();
+try (Connection connection = connectToDB()) {
+String query = "SELECT * FROM " + TMOVIE;
+PreparedStatement preparedStatement = connection.prepareStatement(query);
+ResultSet rs = preparedStatement.executeQuery();
+while (rs.next()) {
+Movie movie = new Movie(rs.getString(TMOVIE_TITLE), rs.getString(TMOVIE_GENRE),
+rs.getString(TMOVIE_CREATOR), Integer.valueOf(rs.getString(TMOVIE_DURATION)),
+Short.valueOf(rs.getString(TMOVIE_YEAR)));
+movie.setId(Integer.valueOf(rs.getString(TMOVIE_ID)));
+movie.setViewed(
+getMovieViewedByDay(preparedStatement, connection, Integer.valueOf(rs.getString(TMOVIE_ID))));
+movies.add(movie);
+}
+} catch (SQLException e) {
+e.printStackTrace();
+}
+return movies;
+}
+~~~
+
+
+Agregamos método a la clase Movie para listar las pelicualas vistas solo del día
+~~~
+public static ArrayList<Movie> makeMoviesListByDay() {
+Movie movie = new Movie();
+return movie.readByDay();
+}
+~~~
+
+Modifico el método MakeReport(Date date) en la clase Main para pintar solo las diarias
+~~~
+ArrayList<Movie> moviesDay = Movie.makeMoviesListByDay();
+for (Movie movie : moviesDay) {
+if (movie.getIsViewed()) {
+contentReport += movie.toString() + “\n”;
+    }
+}
+~~~
+
+
+
 ---
 
 # Módulo 9 - Lambdas

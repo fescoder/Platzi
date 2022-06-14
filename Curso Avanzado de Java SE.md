@@ -1014,7 +1014,7 @@ Estas interfaces se parecen mucho a las clases anónimas que usaremos.
 
 ---
 
-**Interfaces funcionales**
+**Interfaces funcionales**  
 Concepto nuevo en Java SE 8 y que es la base para que podamos escribir expresiones lambda.  
 Una interface funcional se define como una interface que tiene uno y solo un método abstracto y que éste sea diferente a los métodos definidos en java.lang.Object (a saber: equals, hashcode, clone, etc.). La interface puede tener métodos por defecto y estáticos sin que esto afecte su condición de ser interface funcional.
 
@@ -1023,6 +1023,19 @@ Existe una nueva anotación denominada `@FunctionalInterface` que permite al com
 ---
 
 ## Clase 33 - Programación Funcional
+Las lambdas provienen especificamente de la programación funcional, que es un paradigma de programación más.  
+El paradigma que aprendimos antes fue el de orientado a objetos, este es otro ya que la programación tiene diversos paradigmas y el paradigma es la forma o serie de normas en las que un lenguaje tiene que ajustarse para resolver un problema.
+
+Existen diferentes paradigmas y vemos cuales usan algunos lenguajes
+
+![33_Programacion_funcional_01](src/Curso_Avanzado_de_Java_SE/33_Programacion_funcional_01.png)
+
+Paradigma imperativo (Cómo hacer las cosas): Lenguajes estructurados, procedimentales y POO.
+Paradigma declarativo (Qué cosas hacer): Lenguajes funcionales, lógica, etc.
+
+Entonces la programación funcional se va a centrar en QUE se necesita hacer y su caracteristica principal es que las funciones van a estar siendo entradas y salidas de otras funciones, estas se conocen como funciones de orden superior.
+
+Funciones de orden superior: Es aquella que recibe como parametro una función y tiene de salida otra función.
 
 ---
 

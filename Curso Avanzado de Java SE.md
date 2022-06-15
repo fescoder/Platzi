@@ -1171,7 +1171,7 @@ System.out::println // Expresión lambda con referencia a método estático.
 ## Clase 37 - Stream y Filter
 ![37_Stream_Filter_01](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_01.png)
 
-Stream es un método que se agregó en Java 8 para darle el super poder de poder manejar lambdas en las colecciones, son wrappers, envuelven la colección y la habilitan para poder trabajar con lambdas.
+`Stream` es un método que se agregó en Java 8 para darle el superpoder de poder manejar lambdas en las colecciones, son wrappers, envuelven la colección y la habilitan para poder trabajar con lambdas.
 Se opera `objects.stream()`.
 
 ![37_Stream_Filter_02](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_02.png)
@@ -1185,7 +1185,7 @@ En este caso `contentReport` era un String y lo cambiamos por un `StringBuilder`
 
 ---
 
-![37_Stream_Filter_04](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_04.png)
+![37_Stream_Filter_04](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_04.jpg)
 
 **La clase `StringBuilder` crea cadenas que permiten mutación.**
 El encadenado es distinto a String, con String el resultado es una nueva cadena.  

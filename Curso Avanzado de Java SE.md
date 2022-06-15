@@ -1057,6 +1057,26 @@ Comparaciones de clases abstractas y con lambdas
 ---
 
 ## Clase 35 - Ejercicio. Lambdas
+Estoy construyendo una interfaz gráfica que puede contener botones, etiquetas de texto, imágenes etc., cada elemento representa una clase.
+
+¿Cómo resolvería que un elemento pueda ser clickeable en determinado momento?
+
+Interfaz
+~~~
+@FunctionalInterface
+public interface IClickable {
+    public void OnClickListener(Element element);
+}
+~~~
+
+Comportamiento
+~~~
+IClickable clickable = (Element element) -> {
+    System.out.println("Se clickeó " + element.getName());
+};
+
+clickable.OnClickListener(element);
+~~~
 
 ---
 

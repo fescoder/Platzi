@@ -1081,6 +1081,86 @@ clickable.OnClickListener(element);
 ---
 
 ## Clase 36 - Lambdas como variables y Recursividad
+Las lambdas pueden ser utilizadas como variables.
+
+Ejemplos
+
+![36_Lambdas_variables_recursividad_01](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_01.png)
+
+![36_Lambdas_variables_recursividad_02](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_02.png)
+
+![36_Lambdas_variables_recursividad_03](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_03.png)
+
+La programación funcional aplicado a lambdas no utiliza iteración, usa recursividad, que nos ayuda a dejar mejor expresados nuestros problemas.
+
+![36_Lambdas_variables_recursividad_04](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_04.png)
+
+![36_Lambdas_variables_recursividad_05](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_05.png)
+
+
+Atomic integer genera un numero entero, único, integro y lo usamos en este caso para representar el número que debe apretar el cliente por cada película ya que los ids no corresponden y esto es vital para el proyecto.
+
+![36_Lambdas_variables_recursividad_06](src/Curso_Avanzado_de_Java_SE/36_Lambdas_variables_recursividad_06.png)
+
+Una de las cosas de la programación funcional es que es sumamente declarativo, no puedo hacer ninguna operación dentro, cambiar el valor de una variable explicitamente, lo puedo hacer a través de una función como en este ejemplo.
+
+---
+
+La notacion Dos puntos Dobles ( :: ) como ya han explicado acá, permite acceder a un método referenciandolo directamente desde la clase a la que pertenece, ejemplo:
+~~~
+class GFG {
+
+    // static function to be called
+    static void someFunction(String s)
+    {
+        System.out.println(s);
+    }
+
+    public static void main(String[] args)
+    {
+
+        List<String> list = new ArrayList<String>();
+        list.add("Geeks");
+        list.add("For");
+        list.add("GEEKS");
+
+        // call the static method
+        // using double colon operator
+        list.forEach(GFG::someFunction);
+    }
+}
+~~~
+
+En el ejemplo vemos que para llamar a la función someFunction hace uso de la clase GFG y la notación Dos puntos Dobles ( :: ) para referenciar directamente el método:
+~~~
+GFG::someFunction
+~~~
+
+Esto en realidad difiere de las Lambas debido a que se vale del llamado por referencia al método previamente definido; mientras que la Lambda lo que hace es definir directamente en la sentencia lo que va a hacer el método.
+.
+2. La recursividad es la forma que tiene la programación funcional para crear estructuras de repetición (que casi siempre son necesarias a la hora de resolver problemas), y cuenta con la enorme ventaja de facilitar la lectura y comprensión del código; por ejemplo una función para calcular una sumatoria usando recursividad es tan simple y fácil de entender como esto:
+~~~
+    public static int sumaN_recursivo(int n){
+	return (n<=0) ? 0 : n + sumaN_recursivo(n-1);
+}
+~~~
+
+Que en cambio se torna un poco más compleja de entender cuando en vez de usar la recursividad usamos estructuras de bucle o iteraciones (while, for). El ejemplo anterior usando iteración queda así:
+~~~
+public static int sumaN_iterativo(int n){
+	int result= 0;
+	for(int i=1; i<=n; i++){
+		result +=i;
+	}
+	return result;
+}
+~~~
+
+Como se darán cuenta tratar de hacer seguimiento de lo que hace el ciclo for y por tanto entenderlo resulta más complejo (o al menos les tomará más tiempo) que el código del ejemplo de la recursividad.
+.
+Sin embargo existe una razón muy poderosa por la que casí nunca se prefiere el uso de la recursividad por sobre la interación y es el error de tipo StackOverflowError, que se debe al enorme gasto de tiempo y espacio en memoria que normalmente implica que una función se llame a sí misma (recursividad). Concretamente en los casos en que los datos a procesar son significativamente grandes (o se requieren muchas repeticiones del código) los códigos recursivos tienden a “reventar” la aplicación debido a que la “Pila de datos a trabajar Desborda la capacidad de la máquina” o lo que es lo mismo StackOverflowError.
+
+
 
 ---
 

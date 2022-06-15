@@ -918,32 +918,31 @@ Modificamos la clase utilitaria `AmazonUtil` y agregamos un método nuevo que no
 ~~~
 public static String getCurrentDate() {
     Date date = new Date();
-    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd 00:00:00.0");
-    String dateString = format.format(date);
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-    return dateString;
+    return format.format(date);
 }
 ~~~
 
 Modificamos en el metodo `setMoviedViewed` el query para agregar la fecha:
 ~~~
-String query = “INSERT INTO " + TVIEWED + " (" + TVIEWED_ID_MATERIAL + "," + TVIEWED_ID_ELEMENT + ", "
-+ TVIEWED_ID_USER + ", " + TVIEWED_DATE + ")" + " VALUES(" + ID_MATERIALS[0] + "," + movie.getId()
-+ "," + TUSER_IDEUSUARIO + ", " + AmazonUtil.getCurrentDate() + ")";
+String query = "INSERT INTO " + TVIEWED + " (" +
+        TVIEWED_IDMATERIAL + ", " + TVIEWED_IDELEMENT + ", " + TVIEWED_IDUSER + ", " + TVIEWED_DATE + ")" +
+        " VALUES(" + TMATERIAL_ID[0] + ", " + movie.getId() + ", " + TUSER_IDUSUARIO + ","+ AmazonUtil.getCurrentDate() + ")";
 ~~~
 
 Agrego dos métodos nuevos a la interfaz `MovieDAO` para buscar por fecha actual
 ~~~
- private boolean getMovieViewedByDay(PreparedStatement preparedStatement, Connection connection, int id_movie) {
+private boolean getMovieViewedByDay(PreparedStatement preparedStatement, Connection connection, int id_movie) {
     boolean viewed = false;
-    String query = "SELECT * FROM " + TVIEWED + " WHERE " + TVIEWED_ID_MATERIAL + "= ?" + " AND "
-            + TVIEWED_ID_ELEMENT + "= ?" + " AND " + TVIEWED_ID_USER + "= ?" +" AND " + TVIEWED_DATE +"=\""+AmazonUtil.getCurrentDate()+"\"";
+    String query = "SELECT * FROM " + TVIEWED + " WHERE " + TVIEWED_IDMATERIAL + " = ? " + "AND "
+            + TVIEWED_IDELEMENT + " = ? " + "AND " + TVIEWED_IDUSER + " = ? " + "AND " + TVIEWED_DATE + " = " + AmazonUtil.getCurrentDate();
     ResultSet rs = null;
     try {
         preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setInt(1, ID_MATERIALS[0]);
+        preparedStatement.setInt(1, TMATERIAL_ID[0]);
         preparedStatement.setInt(2, id_movie);
-        preparedStatement.setInt(3, TUSER_IDEUSUARIO);
+        preparedStatement.setInt(3, TUSER_IDUSUARIO);
         System.out.println(query);
         rs = preparedStatement.executeQuery();
         viewed = rs.next();
@@ -952,7 +951,7 @@ Agrego dos métodos nuevos a la interfaz `MovieDAO` para buscar por fecha actual
     }
 
     return viewed;
- }
+}
 ~~~
 
 ~~~
@@ -964,16 +963,16 @@ default ArrayList<Movie> readByDay() {
         ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()) {
             Movie movie = new Movie(rs.getString(TMOVIE_TITLE), rs.getString(TMOVIE_GENRE),
-            rs.getString(TMOVIE_CREATOR), Integer.valueOf(rs.getString(TMOVIE_DURATION)),
-            Short.valueOf(rs.getString(TMOVIE_YEAR)));
-            movie.setId(Integer.valueOf(rs.getString(TMOVIE_ID)));
-            movie.setViewed(getMovieViewedByDay(preparedStatement, connection, Integer.valueOf(rs.getString(TMOVIE_ID))));
+                    rs.getString(TMOVIE_CREATOR), Integer.parseInt(rs.getString(TMOVIE_DURATION)),
+                    Short.parseShort(rs.getString(TMOVIE_YEAR)));
+            movie.setId(Integer.parseInt(rs.getString(TMOVIE_ID)));
+            movie.setViewed(
+                    getMovieViewedByDay(preparedStatement, connection, Integer.parseInt(rs.getString(TMOVIE_ID))));
             movies.add(movie);
         }
     } catch (SQLException e) {
         e.printStackTrace();
     }
-
     return movies;
 }
 ~~~
@@ -992,7 +991,7 @@ Modifico el método `MakeReport(Date date)` en la clase `Main` para pintar solo 
 ArrayList<Movie> moviesDay = Movie.makeMoviesListByDay();
 for (Movie movie : moviesDay) {
     if (movie.getIsViewed()) {
-        contentReport += movie.toString() + “\n”;
+        contentReport += movie.toString() + "\n";
     }
 }
 ~~~
@@ -1040,6 +1039,20 @@ Funciones de orden superior: Es aquella que recibe como parametro una función y
 ---
 
 ## Clase 34 - Lambdas
+Las lambdas es una forma de escribir código.
+
+![34_Lambdas_01](src/Curso_Avanzado_de_Java_SE/34_Lambdas_01.png)
+
+Cuando usamos lambdas es cuando tenemos que trabajar con código que su ciclo de vide dentro de la app es demasiado corto.  
+Usar expresiones lambdas nos ayuda a encapsular código especifico que se ejecute unicamente en ese momento del proceso.
+
+Comparaciones de clases abstractas y con lambdas
+
+![34_Lambdas_02](src/Curso_Avanzado_de_Java_SE/34_Lambdas_02.png)
+
+![34_Lambdas_03](src/Curso_Avanzado_de_Java_SE/34_Lambdas_03.png)
+
+![34_Lambdas_04](src/Curso_Avanzado_de_Java_SE/34_Lambdas_04.png)
 
 ---
 

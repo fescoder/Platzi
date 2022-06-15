@@ -1106,7 +1106,7 @@ Una de las cosas de la programación funcional es que es sumamente declarativo, 
 
 ---
 
-La notacion Dos puntos Dobles ( :: ) como ya han explicado acá, permite acceder a un método referenciandolo directamente desde la clase a la que pertenece, ejemplo:
+La notacion Dos puntos Dobles ( :: ) permite acceder a un método referenciandolo directamente desde la clase a la que pertenece, ejemplo:
 ~~~
 class GFG {
 
@@ -1137,8 +1137,8 @@ GFG::someFunction
 ~~~
 
 Esto en realidad difiere de las Lambas debido a que se vale del llamado por referencia al método previamente definido; mientras que la Lambda lo que hace es definir directamente en la sentencia lo que va a hacer el método.
-.
-2. La recursividad es la forma que tiene la programación funcional para crear estructuras de repetición (que casi siempre son necesarias a la hora de resolver problemas), y cuenta con la enorme ventaja de facilitar la lectura y comprensión del código; por ejemplo una función para calcular una sumatoria usando recursividad es tan simple y fácil de entender como esto:
+
+La recursividad es la forma que tiene la programación funcional para crear estructuras de repetición (que casi siempre son necesarias a la hora de resolver problemas), y cuenta con la enorme ventaja de facilitar la lectura y comprensión del código; por ejemplo una función para calcular una sumatoria usando recursividad es tan simple y fácil de entender como esto:
 ~~~
     public static int sumaN_recursivo(int n){
 	return (n<=0) ? 0 : n + sumaN_recursivo(n-1);
@@ -1156,11 +1156,15 @@ public static int sumaN_iterativo(int n){
 }
 ~~~
 
-Como se darán cuenta tratar de hacer seguimiento de lo que hace el ciclo for y por tanto entenderlo resulta más complejo (o al menos les tomará más tiempo) que el código del ejemplo de la recursividad.
-.
-Sin embargo existe una razón muy poderosa por la que casí nunca se prefiere el uso de la recursividad por sobre la interación y es el error de tipo StackOverflowError, que se debe al enorme gasto de tiempo y espacio en memoria que normalmente implica que una función se llame a sí misma (recursividad). Concretamente en los casos en que los datos a procesar son significativamente grandes (o se requieren muchas repeticiones del código) los códigos recursivos tienden a “reventar” la aplicación debido a que la “Pila de datos a trabajar Desborda la capacidad de la máquina” o lo que es lo mismo StackOverflowError.
+Como se darán cuenta tratar de hacer seguimiento de lo que hace el ciclo for y por tanto entenderlo resulta más complejo (o al menos les tomará más tiempo) que el código del ejemplo de la recursividad.  
+Sin embargo existe una razón muy poderosa por la que casí nunca se prefiere el uso de la recursividad por sobre la interación y es el error de tipo StackOverflowError, que se debe al enorme gasto de tiempo y espacio en memoria que normalmente implica que una función se llame a sí misma (recursividad).  
+Concretamente en los casos en que los datos a procesar son significativamente grandes (o se requieren muchas repeticiones del código) los códigos recursivos tienden a “reventar” la aplicación debido a que la “Pila de datos a trabajar Desborda la capacidad de la máquina” o lo que es lo mismo StackOverflowError.
 
-
+Las referencias a los métodos nos permiten reutilizar un método como expresión lambda. Para hacer uso de las referencias a métodos basta con utilizar la siguiente sintáxis: `referenciaObjetivo::nombreDelMetodo`.
+~~~
+(String info) -> System.out.println(info) // Expresión lambda sin referencias.
+System.out::println // Expresión lambda con referencia a método estático.
+~~~
 
 ---
 

@@ -1183,6 +1183,8 @@ Las lambdas las trabajaremos dentro del método `filter` que equivale a un `if` 
 En la programación funcional no existen asignaciones porque lo que tenemos es la inmutabilidad, que nos dice que una varibale no puede cambiar o hacerle alguna operación, lo que tenemos que hacer es usar algún método para trabajarlo.  
 En este caso `contentReport` era un String y lo cambiamos por un `StringBuilder` ya que nos permite trabajar con métodos para concatenar Strings.
 
+![37_Stream_Filter_05](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_05.png)
+
 ---
 
 ![37_Stream_Filter_04](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_04.jpg)

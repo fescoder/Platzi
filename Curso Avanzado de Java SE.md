@@ -1189,7 +1189,7 @@ En este caso `contentReport` era un String y lo cambiamos por un `StringBuilder`
 
 ![37_Stream_Filter_04](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_04.jpg)
 
-**La clase `StringBuilder` crea cadenas que permiten mutación.**
+**La clase `StringBuilder` crea cadenas que permiten mutación.**  
 El encadenado es distinto a String, con String el resultado es una nueva cadena.  
 `StringBuilder` realiza los cambios en la misma cadena, y devuelve una referencia a la misma.
 ~~~
@@ -1203,5 +1203,48 @@ StringBuilder otro = sb.append("+tres");
 ---
 
 ## Clase 38 - Predicate y Consumer
+Un `Predicate` es una interfaz que se usa para pasar al un `filter` por ejemplo, en el que podemos declarar condiciones, acciones. Se le coloca el tipo de dato, en este caso `Series`, el nombre del objeto y la lambda que quiero asignarle a ese predicado.  
+Es conveniente declarar un predicado cuando la lamda es muy extensa, asi directamente le pasamos el nombre del objeto.
+
+Ejemplo
+![38_Predicate_Consumer_01](src/Curso_Avanzado_de_Java_SE/38_Predicate_Consumer_01.png)
+
+Otro tipo de dato que podemos manejar son los `Consumer`, que son todas las acciones de iteración que queremos manejar, igualmente es una interfaz y le podemos asignar una lambda.
+
+`Consumer` va a tener toda la lógica, entonces la forma más agíl de hacer esto es asignarlo a un objeto de tipo interfaz y pasarlo a una función.
+
+![38_Predicate_Consumer_02](src/Curso_Avanzado_de_Java_SE/38_Predicate_Consumer_02.png)
+
+---
+
+Existen 4 tipos de expresiones Lambda:
+
+**Funciones (Function):** Recibe como argumento dos parámetros de los cuales el primero `<T>` corresponde al tipo (objeto) de entrada y el segundo `<R>` como el tipo de salida de aquella operación.
+~~~
+Function<String, Integer> function = s -> s.length() + s.indexOf(" "); // 10 + 4?
+
+Integer result = function.apply("Hola mundo"); // Tiene 10 caracteres y el " " se ubica en la posición 4.
+~~~
+
+**Consumidores (Consumer):** Un consumidor es aquella expresión que recibe un parámetro de entrada `<T>` pero que no retorna o genera ningún valor de salida. Son funciones terminales.
+~~~
+Consumer<String> consumer = s -> System.out.println(s.toLowerCase());
+consumer.accept("Hola Mundo");
+~~~
+
+**Proveedores (Supplier):** Un proveedor es una expresión que no recibe parámetros de entrada pero que retornan o generan un tipo de salida `<T>`
+~~~
+Supplier<String> supplier = () -> "Hola mundo";
+supplier.get();
+
+Salida: "Hola mundo"
+~~~
+
+**Predicados (Predicate):** Los predicados son expresiones que aceptan expresiones booleanas, es decir, condiciones lógicas.
+~~~
+Predicate<String> predicate = (str) -> str.length() > 6;
+predicate.test("Hola mundo");
+Salida: true
+~~~
 
 ---

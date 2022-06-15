@@ -1169,6 +1169,34 @@ System.out::println // Expresión lambda con referencia a método estático.
 ---
 
 ## Clase 37 - Stream y Filter
+![37_Stream_Filter_01](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_01.png)
+
+Stream es un método que se agregó en Java 8 para darle el super poder de poder manejar lambdas en las colecciones, son wrappers, envuelven la colección y la habilitan para poder trabajar con lambdas.
+Se opera `objects.stream()`.
+
+![37_Stream_Filter_02](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_02.png)
+
+Las lambdas las trabajaremos dentro del método `filter` que equivale a un `if` de programación estructurada y recibe como parámetro una lambda para filtrar la coleccion. Se pueden usar varios `filter`, es decir concatenar varias condiciones para una función.
+
+![37_Stream_Filter_03](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_03.png)
+
+En la programación funcional no existen asignaciones porque lo que tenemos es la inmutabilidad, que nos dice que una varibale no puede cambiar o hacerle alguna operación, lo que tenemos que hacer es usar algún método para trabajarlo.  
+En este caso `contentReport` era un String y lo cambiamos por un `StringBuilder` ya que nos permite trabajar con métodos para concatenar Strings.
+
+---
+
+![37_Stream_Filter_04](src/Curso_Avanzado_de_Java_SE/37_Stream_Filter_04.png)
+
+**La clase `StringBuilder` crea cadenas que permiten mutación.**
+El encadenado es distinto a String, con String el resultado es una nueva cadena.  
+`StringBuilder` realiza los cambios en la misma cadena, y devuelve una referencia a la misma.
+~~~
+StringBuilder sb = new StringBuilder(“uno”);
+sb.append("+dos");
+StringBuilder otro = sb.append("+tres");
+~~~
+[.append](https://www.geeksforgeeks.org/stringbuilder-append-method-in-java-with-examples/)
+[.insert](https://www.geeksforgeeks.org/stringbuffer-insert-java/)
 
 ---
 

@@ -1,0 +1,25 @@
+Programacion Basica WEB
+
+16 - Para elejir solo un radio deben pertenecer al grupo con el mismo name
+<input type="radio" name="mascota"/>
+<input type="radio" name="mascota"/>
+<input type="radio" name="mascota"/>
+
+17 - el atributo FOR vincula el input con el mismo nombre id
+<label for="perro">Perro</label>
+<input type="radio" name="mascota" id="perro">
+
+19 - Que inicie el juego cuando termine de cargar la pagina
+<script>
+    window.addEventListener('load', iniciarJuego)
+</script>
+
+20 - Verificar si selecciono ese radio, devuele true o false
+<script>
+    document.getElementById('perro').checked
+</script>
+
+21 - Manipulacion del DOM - Ver el contenido de un elemento/etiqueta HTML, y podemos cambiarle el valor
+<script>
+    document.getElementById('perro').innerHTML = 'gato'
+</script>

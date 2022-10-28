@@ -413,7 +413,7 @@ Ahora en la `clase` `ComprasProducto` añadimos un `atributo` de tipo `ComprasPr
 
 ---
 
-Para `variables` que representan dinero se debe de ocupar `Bigdecimal` en vez de `Double`, el `MonetaryAmount` tambien puede ser una posibilidad.  
+Para `variables` que representan dinero se debe de ocupar `BigDecimal` en vez de `Double`, el `MonetaryAmount` tambien puede ser una posibilidad.  
 Podemos leer todo lo que viene en `Java` para el manejo de dinero en [Java Money and Currency API.](https://www.baeldung.com/java-money-and-currency)
 
 ---
@@ -653,7 +653,7 @@ Gracias a esto no nos tenemos que preocupar por crear objetos manualmente, lo cu
 ![24_Inyeccion_dependencias_02](src/Curso_de_Java_Spring/24_Inyeccion_dependencias_02.png)
 
 Solamente tenemos que tener cuidado cuando usemos `@Autowired`, tenemos que estar seguros que el `atributo` sea un componente de `Spring`, es decir que las clases tienen que extender o implementar de otra clase que tenga alguna anotación de `Spring`, asi sí lo podemos inyectar.  
-Por ejemplo, el `atributo` `mapper` es de `ProdcutMapper`, esta `interfaz` tiene un `@Mapper` (que no es `Spring`) pero le indicamos que es un componente de `Spring`. Por otro lado `ProductoCrudRepository` extiende de `CrudRepository` que tiene, en su propia `interfaz` un `@NoRepositoryBean`.
+Por ejemplo, el `atributo` `mapper` es de `ProductMapper`, esta `interfaz` tiene un `@Mapper` (que no es `Spring`) pero le indicamos que es un componente de `Spring`. Por otro lado `ProductoCrudRepository` extiende de `CrudRepository` que tiene, en su propia `interfaz` un `@NoRepositoryBean`.
 
 ---
 
@@ -738,7 +738,7 @@ A la hora de exponer nuestra `API`, `Spring` nos da una serie de anotaciones par
 
 Nuestra `API` está expuesta como `controlador` a través de `@RequestMapping` y `@RestController`, asi mismo los `métodos` deben tener unas anotaciones especificas para que sean expuestas.
 - `@GetMapping`: Para obtener información.
-    - `@PathVariable`: Sirve para referenciar el `atributo` que se va a usar en el path, `@GetMapping`.
+    - `@PathVariable`: Sirve para referenciar el `atributo` que se va a usar en el path.
 - `@PostMapping`: Para guardar o actualizar información.
     - `@RequestBody`: En el `método` `save`, como el `producto` no va a viajar en el `path` si no que va a ser parte del cuerpo de la petición, debemos indicarlo con esta anotación.
 - `@DeleteMapping`: Para borrar algún registro.
@@ -748,6 +748,20 @@ En clase:
 
 Más limpio:  
 ![27_Exponiendo_API_03](src/Curso_de_Java_Spring/27_Exponiendo_API_03.png)
+
+---
+
+**¿Diferencias entre las anotaciones @RequestParam y @PathVariable en Spring MVC?**  
+Si la solicitud HTTP entrante para recuperar un libro sobre el tema "Java" es `http://localhost:8080/shop/order/1001/receipts?date=12-05-2017`.  
+Entonces puede usar la anotación `@RequestParam` para recuperar la fecha del parámetro de consulta.
+Puede usar `@PathVariable` para extraer el ID de pedido, es decir, "1001", como se muestra a continuación:
+~~~
+@RequestMapping(value="/order/{orderId}/receipts", method = RequestMethod.GET)
+public List listUsersInvoices( @PathVariable("orderId") int order,
+ @RequestParam(value = "date", required = false) Date dateOrNull) {
+...
+}
+~~~
 
 ---
 

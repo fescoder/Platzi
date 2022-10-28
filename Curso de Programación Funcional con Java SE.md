@@ -30,7 +30,7 @@
     - [Módulo 4 - Optional y streams datos mas interesantes](#módulo-4---optional-y-streams-datos-mas-interesantes)
         - [Clase 22 - La clase optional](#clase-22---la-clase-optional)
         - [Clase 23 - Entendiendo los streams](#clase-23---entendiendo-los-streams)
-        - [Clase 24 - ¿Qué son los stream listeners](#clase-24---¿qué-son-los-stream-listeners)
+        - [Clase 24 - ¿Qué son los stream listeners?](#clase-24---¿qué-son-los-stream-listeners?)
         - [Clase 25 - Operaciones y Collectors](#clase-25---operaciones-y-collectors)
         - [Clase 26 - Stream de tipo específico y paralelismo](#clase-26---stream-de-tipo-específico-y-paralelismo)
         - [Clase 27 - Operaciones terminales](#clase-27---operaciones-terminales)

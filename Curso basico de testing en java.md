@@ -97,11 +97,6 @@ Apretando `Alt + Enter` sobre el nombre de la Clase podemos ver la opción para 
 
 Se crea una nueva Clase con el nombre de la Clase seleccionada agregandole la palabra *Test* al final.
 
-En Intellij tenemos algunos **shortcut**
-- `psvm` (Public Static Void Main) que nos crea automaticamente la función Main.
-- `sout` -> `System.out.println();`
-- `fori` -> Bucle For
-
 Clase StringUtil
 ![03_Tests_Unitarios_01](src/Curso_Basico_de_Testing_en_Java/03_Tests_Unitarios_01.png)
 

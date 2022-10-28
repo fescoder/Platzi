@@ -21,6 +21,7 @@
     - [Módulo 3 - Flujo de trabajo básico en Git](#módulo-3---flujo-de-trabajo-básico-en-git)
         - [Clase 14 - Flujo de trabajo básico con un repositorio remoto](#clase-14---flujo-de-trabajo-básico-con-un-repositorio-remoto)
         - [Clase 15 - Introducción a las ramas o branches de Git](#clase-15---introducción-a-las-ramas-o-branches-de-git)
+            - [Plus 15.1 - Flujo creando repositorio en Github, creando rama local gh-pages y pusheando](#plus-15.1---Flujo-creando-repositorio-en-Github,-creando-rama-local-gh-pages-y-pusheando)
         - [Clase 16 - Fusión de ramas con Git merge](#clase-16---fusión-de-ramas-con-git-merge)
         - [Clase 17 - Resolución de conflictos al hacer un merge](#clase-17---resolución-de-conflictos-al-hacer-un-merge)
     - [Módulo 4 - Trabajando con repositorios remotos en GitHub](#módulo-4---trabajando-con-repositorios-remotos-en-github)
@@ -329,6 +330,33 @@ Algunas extensiones recomendadas por Platzi
 -snippets
 
 `git config remote.origin.push HEAD` -> Soluciona a "fatal: The current branch main has multiple upstream branches, refusing to push."
+
+Podemos comprobar las ramas que tenemos en la configuración:  
+Lo más probable es que haya 2 o más `branch.main.remote` en tu configuración de git. Uno de su configuración global de git y otro de su configuración de git local de repositorio.
+
+Cuando hay 2 de estos especificados en la configuración de git, git se asegura de no asumir uno u otro, aunque el último definido debería anular al primero.
+
+Los repositorios modernos que clone deben incluir la configuración localmente, pero es muy probable que su configuración global de git también tenga definido `branch.main.remote`.
+
+Para verificar si lo tiene configurado en su configuración global, use:
+~~~
+git config --global --list | grep branch.main
+~~~
+
+Puede eliminar o comentar la sección de rama en su configuración global de git y debería estar listo para comenzar.
+~~~
+git config --global --remove-section branch.main
+~~~
+
+Esto eliminará la sección [branch "main"] por completo.
+
+Si desea mantenerlo en su configuración global por si acaso, puede cambiarle el nombre a alguna otra rama que probablemente no usará.
+
+`git config --global --rename-section branch.main branch.someothername`  
+Con esto, no debería obtener un error de múltiples ramas ascendentes cuando hace git push en la rama main.
+
+`git remote show origin` tampoco debería causar más una advertencia.
+
 
 ### Clase 7 - Introducción a la terminal y línea de comandos
 La línea de comandos nos permite interactuar con nuestro computador sin necesidad de utilizar una interfaz gráfica. Sin embargo, los computadores emplean distintos sistemas de archivos y
@@ -693,6 +721,19 @@ Las ramas son la manera de hacer cambios en nuestro proyecto sin afectar el fluj
 ![15_Introduccion_a_las_ramas_o_branches_de_Git_02](src/Curso_Profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_02.webp)
 
 ![15_Introduccion_a_las_ramas_o_branches_de_Git_03](src/Curso_Profesional_de_Git_y_GitHub/15_Introduccion_a_las_ramas_o_branches_de_Git_03.webp)
+
+---
+
+### Plus 15.1 - Flujo creando repositorio en Github, creando rama local gh-pages y pusheando
+1. Creamos un repositorio en Github, copiamos la URL o el SSH. (Lo único desde Github)
+2. En local, abrimos la terminal donde se encuentra nuestro proyecto e iniciamos con `git init` el repositorio.
+3. Creamos una nueva rama con `git checkout -b gh-pages`.
+4. Hacemos `git remote add origin [enlace-ssh-o-url]`. (Si hacemos `git remote` nos muestra el origin)
+5. `git add .` y `git commit -m "[comentario-del-push]"`.
+6. Luego `git push -u origin gh-pages`. (-u es para hacer push desde el nuevo branch a ese repositorio)
+
+Finalmente en el repositorio vemos la nueva rama con los archivos y en settings -> Pages encontramos el link a la página.
+
 
 ---
 

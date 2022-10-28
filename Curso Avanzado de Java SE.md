@@ -1029,8 +1029,8 @@ Existen diferentes paradigmas y vemos cuales usan algunos lenguajes
 
 ![33_Programacion_funcional_01](src/Curso_Avanzado_de_Java_SE/33_Programacion_funcional_01.png)
 
-Paradigma imperativo (Cómo hacer las cosas): Lenguajes estructurados, procedimentales y POO.
-Paradigma declarativo (Qué cosas hacer): Lenguajes funcionales, lógica, etc.
+- Paradigma imperativo (Cómo hacer las cosas): Lenguajes estructurados, procedimentales y POO.
+- Paradigma declarativo (Qué cosas hacer): Lenguajes funcionales, lógica, etc.
 
 Entonces la programación funcional se va a centrar en QUE se necesita hacer y su caracteristica principal es que las funciones van a estar siendo entradas y salidas de otras funciones, estas se conocen como funciones de orden superior.
 
@@ -1203,13 +1203,12 @@ StringBuilder otro = sb.append("+tres");
 ---
 
 ## Clase 38 - Predicate y Consumer
-Un `Predicate` es una interfaz que se usa para pasar al un `filter` por ejemplo, en el que podemos declarar condiciones, acciones. Se le coloca el tipo de dato, en este caso `Series`, el nombre del objeto y la lambda que quiero asignarle a ese predicado.  
+Un `Predicate` es una interfaz que se usa para pasar a un `filter` por ejemplo, en el que podemos declarar condiciones, acciones. Se le coloca el tipo de dato, en este caso `Series`, el nombre del objeto y la lambda que quiero asignarle a ese predicado.  
 Es conveniente declarar un predicado cuando la lamda es muy extensa, asi directamente le pasamos el nombre del objeto.
 
-Ejemplo
 ![38_Predicate_Consumer_01](src/Curso_Avanzado_de_Java_SE/38_Predicate_Consumer_01.png)
 
-Otro tipo de dato que podemos manejar son los `Consumer`, que son todas las acciones de iteración que queremos manejar, igualmente es una interfaz y le podemos asignar una lambda.
+Otro tipo de dato que podemos usar son los `Consumer`, que son todas las acciones de iteración que queremos manejar, igualmente es una interfaz y le podemos asignar una lambda.
 
 `Consumer` va a tener toda la lógica, entonces la forma más agíl de hacer esto es asignarlo a un objeto de tipo interfaz y pasarlo a una función.
 
